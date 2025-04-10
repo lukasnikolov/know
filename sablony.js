@@ -1422,7 +1422,7 @@ poštou, případně také s odpovědí ZK o výši příkonu)<br>
 <li>Stálý měsíční plat</li>
 <p>Celkové období za které je faktura vystavena:<b> XXXXX měsíců</b></p>
 <table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse; font-family:Arial; font-size:14px; width:100%;">
-  <tr style="background-color:#e6e6e6; font-weight:bold;">
+  <tr style="background-color:#fefefe; font-weight:bold;">
     <td colspan="5">Detailní struktura složení ceny Období: XXXX (Ceny bez DPH)</td>
   </tr>
 
@@ -1456,7 +1456,7 @@ poštou, případně také s odpovědí ZK o výši příkonu)<br>
   <tr style="background-color:#fefefe; font-weight:bold;">
     <td colspan="5">Neregulované platby:</td>
   </tr>
-  <tr style="background-color:#fff3b0; font-weight:bold;">
+  <tr style="background-color:#fefefe; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -1494,7 +1494,7 @@ poštou, případně také s odpovědí ZK o výši příkonu)<br>
   <tr style="background-color:#fefefe; font-weight:bold;">
     <td colspan="5">Regulované platby:</td>
   </tr>
-  <tr style="background-color:#fff3b0; font-weight:bold;">
+  <tr style="background-color:#fefefe; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -1520,7 +1520,7 @@ poštou, případně také s odpovědí ZK o výši příkonu)<br>
   <tr style="background-color:#fefefe; font-weight:bold;">
     <td colspan="5">Neregulované platby:</td>
   </tr>
-  <tr style="background-color:#fff3b0; font-weight:bold;">
+  <tr style="background-color:#fefefe; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -1539,7 +1539,7 @@ poštou, případně také s odpovědí ZK o výši příkonu)<br>
   <tr style="background-color:#fefefe; font-weight:bold;">
     <td colspan="5">Daň:</td>
   </tr>
-  <tr style="background-color:#fff3b0; font-weight:bold;">
+  <tr style="background-color:#fefefe; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -1560,7 +1560,7 @@ poštou, případně také s odpovědí ZK o výši příkonu)<br>
 <li>Cena stálý plat - Dodavatel</li>
 <p>Celkové období za které je faktura vystavena:<b> XXXXX měsíců</b></p>
 <table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse; font-family:Arial; font-size:14px; width:100%;">
-  <tr style="background-color:#e6e6e6; font-weight:bold;">
+  <tr style="background-color:#fefefe; font-weight:bold;">
     <td colspan="5">Detailní struktura složení ceny Období: XXXX (Ceny bez DPH)</td>
   </tr>
 
@@ -1568,7 +1568,7 @@ poštou, případně také s odpovědí ZK o výši příkonu)<br>
   <tr style="background-color:#fefefe; font-weight:bold;">
     <td colspan="5">Regulované platby:</td>
   </tr>
-  <tr style="background-color:#fff3b0; font-weight:bold;">
+  <tr style="background-color:#fefefe; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -1587,7 +1587,7 @@ poštou, případně také s odpovědí ZK o výši příkonu)<br>
   <tr style="background-color:#fefefe; font-weight:bold;">
     <td colspan="5">Neregulované platby:</td>
   </tr>
-  <tr style="background-color:#fff3b0; font-weight:bold;">
+  <tr style="background-color:#fefefe; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
