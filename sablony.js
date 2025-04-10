@@ -1273,7 +1273,7 @@ poštou, případně také s odpovědí ZK o výši příkonu)<br>
   <tr style="background-color:#fefefe; font-weight:bold;">
     <td colspan="5">Regulované platby:</td>
   </tr>
-  <tr style="background-color:#fefefe; font-weight:bold;">
+  <tr style="background-color:#f9f6f2; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -1306,7 +1306,7 @@ poštou, případně také s odpovědí ZK o výši příkonu)<br>
   <tr style="background-color:#fefefe; font-weight:bold;">
     <td colspan="5">Neregulované platby:</td>
   </tr>
-  <tr style="background-color:#fefefe; font-weight:bold;">
+  <tr style="background-color:#f9f6f2; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -1325,7 +1325,7 @@ poštou, případně také s odpovědí ZK o výši příkonu)<br>
   <tr style="background-color:#fefefe; font-weight:bold;">
     <td colspan="5">Daň:</td>
   </tr>
-  <tr style="background-color:#fefefe; font-weight:bold;">
+  <tr style="background-color:#f9f6f2; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -1348,7 +1348,7 @@ poštou, případně také s odpovědí ZK o výši příkonu)<br>
   <tr style="background-color:#fefefe; font-weight:bold;">
     <td colspan="5">Regulované platby:</td>
   </tr>
-  <tr style="background-color:#fefefe; font-weight:bold;">
+  <tr style="background-color:#f9f6f2; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -1381,7 +1381,7 @@ poštou, případně také s odpovědí ZK o výši příkonu)<br>
   <tr style="background-color:#fefefe; font-weight:bold;">
     <td colspan="5">Neregulované platby:</td>
   </tr>
-  <tr style="background-color:#fefefe; font-weight:bold;">
+  <tr style="background-color:#f9f6f2; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -1400,7 +1400,7 @@ poštou, případně také s odpovědí ZK o výši příkonu)<br>
   <tr style="background-color:#fefefe; font-weight:bold;">
     <td colspan="5">Daň:</td>
   </tr>
-  <tr style="background-color:#fefefe; font-weight:bold;">
+  <tr style="background-color:#f9f6f2; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -1427,7 +1427,7 @@ poštou, případně také s odpovědí ZK o výši příkonu)<br>
   </tr>
 
   <!-- Regulované platby -->
-  <tr style="background-color:#fefefe; font-weight:bold;">
+  <tr style="background-color:#f9f6f2; font-weight:bold;">
     <td colspan="5">Regulované platby:</td>
   </tr>
   <tr style="background-color:#fefefe; font-weight:bold;">
@@ -1456,7 +1456,7 @@ poštou, případně také s odpovědí ZK o výši příkonu)<br>
   <tr style="background-color:#fefefe; font-weight:bold;">
     <td colspan="5">Neregulované platby:</td>
   </tr>
-  <tr style="background-color:#fefefe; font-weight:bold;">
+  <tr style="background-color:#f9f6f2; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -1486,7 +1486,7 @@ poštou, případně také s odpovědí ZK o výši příkonu)<br>
 <p>Váš konkrétní výpočet byl proveden v souladu s uvedenými pravidly a nebyly zjištěny žádné nesrovnalosti. Níže zasíláme výpočet jednotkové ceny a jak jsme k danému výsledku došli: </p>
 <u>Celková spotřeba odběrného místa pro <b>Plyn:</b> XXX KWh = XXX MWh</u>
 <table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse; font-family:Arial; font-size:14px; width:100%;">
-  <tr style="background-color:#e6e6e6; font-weight:bold;">
+  <tr style="background-color:#f9f6f2; font-weight:bold;">
     <td colspan="5">Detailní struktura složení ceny Období: XXXX (Ceny bez DPH)</td>
   </tr>
 
@@ -1494,7 +1494,7 @@ poštou, případně také s odpovědí ZK o výši příkonu)<br>
   <tr style="background-color:#fefefe; font-weight:bold;">
     <td colspan="5">Regulované platby:</td>
   </tr>
-  <tr style="background-color:#fefefe; font-weight:bold;">
+  <tr style="background-color:#f9f6f2; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -1520,7 +1520,7 @@ poštou, případně také s odpovědí ZK o výši příkonu)<br>
   <tr style="background-color:#fefefe; font-weight:bold;">
     <td colspan="5">Neregulované platby:</td>
   </tr>
-  <tr style="background-color:#fefefe; font-weight:bold;">
+  <tr style="background-color:#f9f6f2; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -1539,7 +1539,7 @@ poštou, případně také s odpovědí ZK o výši příkonu)<br>
   <tr style="background-color:#fefefe; font-weight:bold;">
     <td colspan="5">Daň:</td>
   </tr>
-  <tr style="background-color:#fefefe; font-weight:bold;">
+  <tr style="background-color:#f9f6f2; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -1568,7 +1568,7 @@ poštou, případně také s odpovědí ZK o výši příkonu)<br>
   <tr style="background-color:#fefefe; font-weight:bold;">
     <td colspan="5">Regulované platby:</td>
   </tr>
-  <tr style="background-color:#fefefe; font-weight:bold;">
+  <tr style="background-color:#f9f6f2; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -1587,7 +1587,7 @@ poštou, případně také s odpovědí ZK o výši příkonu)<br>
   <tr style="background-color:#fefefe; font-weight:bold;">
     <td colspan="5">Neregulované platby:</td>
   </tr>
-  <tr style="background-color:#fefefe; font-weight:bold;">
+  <tr style="background-color:#f9f6f2; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
