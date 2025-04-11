@@ -1155,8 +1155,8 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
   	 		files: [],
  tags: ["Kontaktní osoby"]   
     },	
-/* Výkup */	
-"FVE - Dle nové legislativy": { 
+/* Výkup */		
+"FVE - Dle nové legislativy - Nepoužíváme od 10.04.2025": { 
         text: `<p>Dobrý den, pane/paní XY,</p>
 <p>děkujeme za Vaši zprávu. Vámi uvedený výrobní EAN jsme zaevidovali a počítáme také s převzetím
 odpovědnosti za odchylku.</p>
@@ -1169,13 +1169,11 @@ doby bude vše vyřešeno k Vaší plné spokojenosti.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>
 <p>--------------------------------------------------------------------------------------------------------------------</p>
 <p><b>
-- následně založíš ÚKOL, který ale NECHÁŠ NA SOBĚ, stav “ČEKÁ NA SCHVÁLENÍ” propojíš s došlou
-poštou, případně také s odpovědí ZK o výši příkonu)<br>
-- a čekáme na další pokyny, do té doby s těmito úkoly NIC NEDĚLÁTE</b></p>`,
+- NA E-MAIL, KDE NÁS ZÁKAZNÍK INFORMUJE, ŽE MU PŘIŠEL DOPIS OD PDS O VZNIKU MIKROZDROJE - NEODPOVÍDÁME! Měníme garanta na <b>NABÍDKY</B> + ZAKLÁDÁME ÚKOL VE STAVU <B>NOVÝ </B> A <B>ŘEŠITELEM</B> Nabídky (propojíme e-mail s úkolem)</p>`,
   	 		files: [],
  tags: ["Výkup"]   
     },
-"FVE - Dle nové legislativy - Odpověď zákazníkovi po doložení informací, které jsme po něm chtěli": { 
+"FVE - Dle nové legislativy - Odpověď zákazníkovi po doložení informací, které jsme po něm chtěli - Nepoužíváme od 10.04.2025": { 
         text: `<p>Dobrý den, pane/paní XY,</p>
 <p>děkujeme za zaslání požadovaných informací. Vaše údaje jsme zaevidovali a zahrneme je do dalšího postupu.</p>
 <p>Jak jsme již avizovali, o dalším průběhu Vás budeme informovat.</p>
@@ -1183,10 +1181,7 @@ poštou, případně také s odpovědí ZK o výši příkonu)<br>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>
 <p>--------------------------------------------------------------------------------------------------------------------</p>
 <p><b>
-- propojit došlý mail + odpověď na něj se založeným úkolem
--NECHÁŠ NA SOBĚ, stav “ČEKÁ NA SCHVÁLENÍ”<br>
-- a čekáme na další pokyny, do té doby s těmito úkoly NIC NEDĚLÁTE</b>
-`,
+- NA E-MAIL, KDE NÁS ZÁKAZNÍK INFORMUJE, ŽE MU PŘIŠEL DOPIS OD PDS O VZNIKU MIKROZDROJE - NEODPOVÍDÁME! Měníme garanta na <b>NABÍDKY</B> + ZAKLÁDÁME ÚKOL VE STAVU <B>NOVÝ </B> A <B>ŘEŠITELEM</B> Nabídky (propojíme e-mail s úkolem)</p>`,
   	 		files: [],
  tags: ["Výkup"]   
     },	
