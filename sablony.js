@@ -1063,11 +1063,12 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
 /* SPK */	
 "Žádost o vystavení SPK": { 
         text: `<p>Vážený pane XXXXX / Vážená paní YYYY, </p>
-<p>děkujeme za Vaši žádost o vystavení splátkového kalendáře (SPK). Rádi bychom Vás informovali o podmínkách, které je nutné splnit, aby mohla být Vaše žádost posouzena a schválena:</p>
+<p>děkujeme za Vaši žádost o vystavení splátkového kalendáře (SPK). Rádi bychom Vás informovali o podmínkách, které je nutné splnit, aby mohla být Vaše žádost posouzena a schválena: <br><br></p>
+<ul>
 <p><li><b>Stav záloh:</b></li> Je nezbytné, aby byly uhrazeny všechny zálohy po splatnosti. Pokud máte aktuálně neuhrazené zálohy, prosíme o jejich doplacení před podáním žádosti o SPK. [<strong>případně zákazníkovi vypíšeme zda u něj evidujeme zálohy po splatnosti)</strong>]</p>
 <p><li><b>Úhrada části dluhu:</b></li> Podle našich podmínek je nutné uhradit alespoň 1/3 celkového dluhu Ve Vašem případě se jedná o částku: <strong>XXXXXXXX</strong>. Toto opatření slouží k prokázání zájmu o řádné vyřízení dluhu. Po provedení této platby je třeba zaslat potvrzení o úhrazení.</p>
 <p><li><b>Podmínky splátkového kalendáře:</b></li> Splátkový kalendář je možné rozložit maximálně do 3 splátek.</p>
-<li><b>Další kroky:</li> </b>Jakmile bude potvrzení o úhrazení 1/3 dluhu odesláno, prosíme, abyste kontaktoval/a naši zákaznickou linku (nejlépe telefonicky). Potvrzení bude předáno našemu finančnímu oddělení, které zajistí další zpracování žádosti a vystavení splátkového kalendáře.</p>
+<li><b>Další kroky:</li> </b>Jakmile bude potvrzení o úhrazení 1/3 dluhu odesláno, prosíme, abyste kontaktoval/a naši zákaznickou linku (nejlépe telefonicky). Potvrzení bude předáno našemu finančnímu oddělení, které zajistí další zpracování žádosti a vystavení splátkového kalendáře.</p></ul>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
   	 		files: [],
  tags: ["SPK"]   
