@@ -515,7 +515,8 @@ files: [],
 /* Ostatní */
 "Potvrzení přijetí požadavku": { 
         text: `<p>Dobrý den, pane/paní XXXX,</p>
-<p>potvrzujeme, že Váš požadavek byl předán na příslušné oddělení. Jakmile obdržíme všechny potřebné informace, budeme Vás kontaktovat.</p>
+<p>děkujeme za zaslání Vašeho požadavku. Rádi bychom Vás informovali, že jsme jej zaevidovali a v tuto chvíli je v řešení. Budeme Vás informovat nejpozději do <b>xx.xx.XXXX</b> o dalším postupu nebo vyřešení požadavku.
+V případě jakýchkoliv dotazů se na nás neváhejte obrátit.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
   	 		files: [],
  tags: ["Ostatní"]   
