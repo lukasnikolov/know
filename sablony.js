@@ -1189,7 +1189,7 @@ doby bude vše vyřešeno k Vaší plné spokojenosti.</p>
     },	
 /* Dopisy */	
 "DOPIS - Jak zasílat": { 
-        text:`<p>Pokud chceme zákazníkovi zaslat dopis - je potřeba, v ZIS zatím nechávat poštu na sobě! Jakmile budeme mít info na koho se má posíalt bude tato sekce aktualizovaná s předmětem: <b>korespondence určená k tisku </b> - jiný předmět není možné uvést!!!</p>
+        text:`<p>Pokud chceme zákazníkovi zaslat dopis - je potřeba, v ZIS poslat e-mail na <b>sandra.faltus@epet.cz</b>!  s předmětem: <b>korespondence určená k tisku </b> - jiný předmět není možné uvést!!!</p>
 <p>Případně můžete použít tuto <a href="https://sites.google.com/view/znalostn-bze/%C5%A1ablony/%C5%A1ablona-e-mail-korespondence-ur%C4%8Den%C3%A1-k-tisku?authuser=0" title="stránku">stránku</a> k vytvoření správného e-mailu.</p>
 <p><i>V textu e-mailu bude stát: </i><br><br> Ahoj,<br> prosím o zaslání dopisu za Epet na adresu:  a sem vypíšeme adresu ze ZIS např. </p>
 <ul><p>Jan Omáčka</p> 
