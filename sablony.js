@@ -1163,8 +1163,6 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
 <p>Bohužel neevidujeme podepsanou plnou moc opravňující k Vašemu zastupování, a z tohoto důvodu nemůžeme Váš požadavek v tuto chvíli zpracovat. </p>
 <p>Prosíme Vás proto o doložení platné plné mocí. Po jejím obdržení se Vaším požadavkem budeme ihned dále zabývat.</p>
 <p>Děkujeme za pochopení a spolupráci. </p>
-<p>Na základě tel. hovoru provedeme Vaši identifikaci a aktualizujeme kontaktní údaje.</p>
-<p>Děkujeme za pochopení.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
   	 		files: [],
  tags: ["Kontaktní osoby"]   
