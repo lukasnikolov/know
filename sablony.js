@@ -1160,7 +1160,7 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
 "NENÍ KONTAKTNÍ E-MAIL - OZ PÍŠE POŽADAVEK, ALE NEMÁME DOLOŽENOU PM PRO ZASTUPOVÁNÍ": { 
         text: `<p>Dobrý den, paní/pane xxxx, </p>
 <p>děkujeme za Váš e-mail. </p><br>
-<p>Bohužel neevidujeme podepsanou plnou moc opravňující k Vašemu zastupování, a z tohoto důvodu nemůžeme Váš požadavek v tuto chvíli zpracovat. </p>
+<p>Bohužel neevidujeme podepsanou plnou moc opravňující k zastupování zákazníka, a z tohoto důvodu nemůžeme Váš požadavek v tuto chvíli zpracovat. </p>
 <p>Prosíme Vás proto o doložení platné plné mocí. Po jejím obdržení se Vaším požadavkem budeme ihned dále zabývat.</p>
 <p>Děkujeme za pochopení a spolupráci. </p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
