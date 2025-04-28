@@ -1160,8 +1160,8 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
 "NENÍ KONTAKTNÍ E-MAIL - OZ PÍŠE POŽADAVEK, ALE NEMÁME DOLOŽENOU PM PRO ZASTUPOVÁNÍ": { 
         text: `<p>Dobrý den, paní/pane xxxx, </p>
 <p>děkujeme za Váš e-mail. </p><br>
-<p>Bohužel neevidujeme podepsanou plnou moc opravňující k Vašemu zastupování, a z tohoto důvodu nemůžeme Váš požadavek v tuto chvíli zpracovat. </p><br>
-<p>Prosíme Vás proto o doložení platné plné mocí. Po jejím obdržení se Vaším požadavkem budeme ihned dále zabývat.</p><br>
+<p>Bohužel neevidujeme podepsanou plnou moc opravňující k Vašemu zastupování, a z tohoto důvodu nemůžeme Váš požadavek v tuto chvíli zpracovat. </p>
+<p>Prosíme Vás proto o doložení platné plné mocí. Po jejím obdržení se Vaším požadavkem budeme ihned dále zabývat.</p>
 <p>Děkujeme za pochopení a spolupráci. </p>
 <p>Na základě tel. hovoru provedeme Vaši identifikaci a aktualizujeme kontaktní údaje.</p>
 <p>Děkujeme za pochopení.</p>
