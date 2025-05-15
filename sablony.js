@@ -1851,3 +1851,28 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
  tags: ["Sdílená elektřina"]   
     },	
 };
+/* FVE - MIKROZDROJE */ 
+"Šablona č.1 s Předmětem:Zamítnutý výrobní EAN": { 
+        text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+<p>množství energie, které jste fyzicky sdílel/a, si můžete vypočítat následovně:</p>
+<ol>
+  <li><b>Zjistěte svou celkovou spotřebu</b> – Ve svém vyúčtování se podívejte na konečný a počáteční stav
+elektroměru. Rozdíl mezi těmito hodnotami představuje vaši skutečnou fyzickou spotřebu za dané období.</li>
+ <li><b>Podívejte se na hodnoty ve vyúčtování</b> – V kolonkách "Distribuováno" a "Dodáno" najdete množství
+energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energii, kterou jste sdílel.</li>
+ <li><b>Výpočet sdílené energie</b> – Sdílené množství zjistíte takto: <i>Sdílená energie (kWh) = Fyzicky spotřebovaná energie – Účtovaná spotřeba</i></li>
+</ol>
+<p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
+  	  files: [],
+ tags: ["Výkup - Odchylky"]   
+    },
+"Šablona č.2 s Předmětem:Žádost o doplnění údajů k připojení Vaší výrobny elektřiny z FVE ": { 
+        text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+<p>děkujeme za Váš dotaz.</p>
+<p>Rádi bychom vás informovali, že společnost epet v současné době nenabízí možnost sdílení energií. Pokud máte zájem o tuto službu, doporučujeme se obrátit na Operátora trhu s energií (OTE), který tuto možnost poskytuje</p>
+<p>Bližší informace týkající se sdílení elektřiny naleznete na stránkách <a href="https://www.edc-cr.cz/" target="_blank"> EDC - Energetického datového centra</a>.</p>
+<p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
+  	  files: [],
+ tags: ["Výkup - Odchylky"]   
+    },	
+};
