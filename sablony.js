@@ -1859,7 +1859,7 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
     <p>Děkujeme za pochopení a spolupráci.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
   	  files: [],
- tags: ["Výkup - Odchylky"]   
+ tags: ["Převzetí odchylky"]   
     },
 "Šablona č.2 s Předmětem:Žádost o doplnění údajů k připojení Vaší výrobny elektřiny z FVE ": { 
         text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
@@ -1883,6 +1883,6 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
     <p>Vyplněné údaje prosím zašlete na e-mailovou adresu: <strong>info@epet.cz</strong></p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
   	  files: [],
- tags: ["Výkup - Odchylky"]   
+ tags: ["Převzetí odchylky"]   
     },	
 };
