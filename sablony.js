@@ -1854,23 +1854,34 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
 /* FVE - MIKROZDROJE */ 
 "Šablona č.1 s Předmětem:Zamítnutý výrobní EAN": { 
         text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
-<p>množství energie, které jste fyzicky sdílel/a, si můžete vypočítat následovně:</p>
-<ol>
-  <li><b>Zjistěte svou celkovou spotřebu</b> – Ve svém vyúčtování se podívejte na konečný a počáteční stav
-elektroměru. Rozdíl mezi těmito hodnotami představuje vaši skutečnou fyzickou spotřebu za dané období.</li>
- <li><b>Podívejte se na hodnoty ve vyúčtování</b> – V kolonkách "Distribuováno" a "Dodáno" najdete množství
-energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energii, kterou jste sdílel.</li>
- <li><b>Výpočet sdílené energie</b> – Sdílené množství zjistíte takto: <i>Sdílená energie (kWh) = Fyzicky spotřebovaná energie – Účtovaná spotřeba</i></li>
-</ol>
+<p>rádi bychom Vás informovali, že jsme se pokusili převzít za Vás odchylku u Operátora trhu. Bohužel nám bylo přihlášení zamítnuto z důvodu, že nemáte aktivovaný druhý EAN, který Vám přidělil distributor.</p>
+    <p>Prosíme Vás proto o co nejrychlejší aktivaci tohoto EAN, nejpozději do 3 pracovních dnů. Po provedení registrace Vám distributor zašle potvrzovací e-mail, ve kterém uvede, že byl EAN aktivován a od jakého data. Jakmile tento e-mail obdržíte, přepošlete nám jej prosím jako potvrzení.</p>
+    <p>Vzhledem k vysokému zájmu o převzetí odchylek v tomto období a nutnosti zajištění technických kroků předem, nemůžeme v případě Vaší nesoučinnosti zaručit včasné převzetí odchylky. To může vést k neoprávněnému odběru, za který nese odpovědnost zákazník.</p>
+    <p>Děkujeme za pochopení a spolupráci.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
   	  files: [],
  tags: ["Výkup - Odchylky"]   
     },
 "Šablona č.2 s Předmětem:Žádost o doplnění údajů k připojení Vaší výrobny elektřiny z FVE ": { 
         text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
-<p>děkujeme za Váš dotaz.</p>
-<p>Rádi bychom vás informovali, že společnost epet v současné době nenabízí možnost sdílení energií. Pokud máte zájem o tuto službu, doporučujeme se obrátit na Operátora trhu s energií (OTE), který tuto možnost poskytuje</p>
-<p>Bližší informace týkající se sdílení elektřiny naleznete na stránkách <a href="https://www.edc-cr.cz/" target="_blank"> EDC - Energetického datového centra</a>.</p>
+ <p>děkujeme Vám za zájem o připojení Vaší výrobny elektřiny z fotovoltaické elektrárny (FVE).</p>
+    <p>Abychom mohli zahájit proces připojení, prosíme Vás o zaslání následujících údajů:</p>
+    <p><strong>Povinné údaje:</strong><br>
+    • Jméno a příjmení (nebo název společnosti):<br>
+    • Datum narození (nebo IČ):<br>
+    • EAN kód výrobny:<br>
+    • Adresa výrobny:<br>
+    • Mám aktivovaný výrobní EAN (pouze u ČEZ distribuce): ANO/NE/NEVÍM (Vyberte jednu možnost)</p>
+    <p><strong>Nepovinný údaj (doporučeno):</strong><br>
+    • EAN kód odběrného (spotřebního) místa:</p>
+    <p>Dovolujeme si Vás také informovat, že aktuální výkupní cena elektřiny činí 0,- Kč/MWh.</p>
+    <p>Díky změně legislativy začne od 1. 7. 2025 příslušný distributor ukládat pokuty výrobnám, které nemají sjednaného obchodníka.<br>
+    Společnosti epet za Vás převezmou odpovědnost za odchylku, aby k těmto pokutám nedocházelo.</p>
+    <p>Pokud budete mít zájem o výkup elektřiny za jiné než nulové ceny, bude možné se přihlásit do výkupního režimu v průběhu srpna 2025, s aktivací nejdříve od 1. září 2025.</p>
+    <hr>
+    <p>Vyjadřuji tímto souhlas a projevuji vůli, aby se společnost epet stala obchodníkem pro mé výrobní místo a provedla jeho registraci u Operátora trhu s elektřinou (OTE).<br>
+    Samotnou smlouvu obdržíte k podpisu nejpozději do 31. 7. 2025.</p>
+    <p>Vyplněné údaje prosím zašlete na e-mailovou adresu: <strong>info@epet.cz</strong></p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
   	  files: [],
  tags: ["Výkup - Odchylky"]   
