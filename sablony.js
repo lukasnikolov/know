@@ -889,7 +889,7 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
     },
 "Žádost o doložení BÚ pro vyplacení přeplatku na základě dědického řízení(žádost o doložení ČP)": { 
         text: `<p>Vážený pane XXXX, Vážená paní XXXX</p>
-<p>na základě doručeného usnesení o dědickém řízení nám byl notářem sdělen Váš status jednoho z dědiců po zemřelé /zákazníkovi <b>XXXXXXX</b>. V souvislosti s touto skutečností bychom Vás rádi informovali, že na zákaznickém účtu zesnulého evidujeme přeplatek, který je možné vyplatit.</p>
+<p>na základě doručeného usnesení o dědickém řízení nám byl notářem sdělen Váš status jednoho z dědiců po zemřelém/zemřelé zákaznici/zákazníkovi <b>XXXXXXX</b>. V souvislosti s touto skutečností bychom Vás rádi informovali, že na zákaznickém účtu zesnulého evidujeme přeplatek, který je možné vyplatit.</p>
 <p>Abychom mohli přistoupit k jeho výplatě, je třeba z Vaší strany doložit:</p>
 <li><b>Čestné prohlášení o souhlasu s vyplacením přeplatku</b> – slouží jako potvrzení, že souhlasíte s vyplacením příslušné částky na základě dědictví.</li>
 <li>Číslo bankovního účtu, na který si přejete přeplatek poukázat.</li>
