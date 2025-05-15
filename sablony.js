@@ -1850,7 +1850,6 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
   	  files: [],
  tags: ["Sdílená elektřina"]   
     },	
-};
 /* FVE - MIKROZDROJE */ 
 "Šablona č.1 s Předmětem:Zamítnutý výrobní EAN": { 
         text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
