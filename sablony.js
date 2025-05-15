@@ -886,6 +886,18 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href='https://zakaznici.epet.cz/login' target='_blank'>Zákaznický portál</a></p>`,
      files: [ { url: 'https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
         tags: ["Dědické řízení"]
+    },
+"Žádost o doložení BÚ pro vyplacení přeplatku na základě dědického řízení(žádost o doložení ČP)": { 
+        text: `<p>Vážený pane XXXX, Vážená paní XXXX</p>
+<p>na základě doručeného usnesení o dědickém řízení nám byl notářem sdělen Váš status jednoho z dědiců po zemřelé /zákazníkovi <b>XXXXXXX</b>. V souvislosti s touto skutečností bychom Vás rádi informovali, že na zákaznickém účtu zesnulého evidujeme přeplatek, který je možné vyplatit.</p>
+<p>Abychom mohli přistoupit k jeho výplatě, je třeba z Vaší strany doložit:</p>
+<li><b>Čestné prohlášení o souhlasu s vyplacením přeplatku</b> – slouží jako potvrzení, že souhlasíte s vyplacením příslušné částky na základě dědictví.</li>
+<li>Číslo bankovního účtu, na který si přejete přeplatek poukázat.</li>
+<p>Oba výše uvedené údaje jsou nezbytné k provedení platby.Formulář čestného prohlášení Vám zasíláme v příloze tohoto e-mailu. </p>
+<p>Prosíme o jeho vyplnění, vlastnoruční podepsání a zaslání zpět – poštou na adresu <b>EP ENERGY TRADING, a.s., Klimentská 46, 110 02 Praha 1</b> nebo e-mailem na <b>info@epet.cz.</b> </p>
+<p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href='https://zakaznici.epet.cz/login' target='_blank'>Zákaznický portál</a></p>`,
+     files: [ { url: 'https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
+        tags: ["Dědické řízení"]
     },				
 /* Platby */	
 "Ukončené odběrné místo - Platby": { 
@@ -1850,6 +1862,7 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
   	  files: [],
  tags: ["Sdílená elektřina"]   
     },	
+};
 /* FVE - MIKROZDROJE */ 
 "Šablona č.1 s Předmětem:Zamítnutý výrobní EAN": { 
         text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
