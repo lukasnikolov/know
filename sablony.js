@@ -1013,6 +1013,15 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
   	 		files: [],
  tags: ["Platby"]   
+    },	
+"Potvrzení o zápočtu! Předmět e-mailu: Potvrzení dohody o zápočtu faktur č. XXXX a č. XXXX": { 
+        text: `<p>Dobrý den,pane XXXX, Dobrý den, paní YYYYY,  </p>
+<p>v návaznosti na náš telefonický hovor si Vám dovolujeme potvrdit, že jsme se dohodli na provedení zápočtu vzájemných pohledávek, a to konkrétně faktur č. XXXX a č. XXXX. (vypsat všechny čísla FA které se dají započíst)</p>
+<p>Příslušný zápočet Vám bude zaslán k potvrzení v průběhu několika následujících pracovních dnů. </p>
+<p>Děkujeme za součinnost a v případě jakýchkoliv dotazů se na nás neváhejte obrátit. </p>
+<p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
+  	 		files: [],
+ tags: ["Platby"]   
     },		
 /* Zálohy */	
 "Prosba o zaslání fotografie měřidla - stávající zákazník": { 
