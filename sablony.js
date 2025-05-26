@@ -898,7 +898,15 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href='https://zakaznici.epet.cz/login' target='_blank'>Zákaznický portál</a></p>`,
      files: [ { url: 'https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
         tags: ["Dědické řízení"]
-    },				
+    },
+"Žádost o doložení dodatku k usnesení převážně z důvodu zastaveného dědického řízení z důvodu majetku nepatrné hodnoty v němž není uvedeno kdo je dědicem, jen vystavitel pohřbu": { 
+        text: `<p>Vážený pane XXXX, Vážená paní XXXX</p>
+<p>děkujeme za doložené usnesení o pozůstalosti po panu/paní <strong> XXXXXX.</strong> Dovolujeme si Vás informovat, že z předloženého usnesení vyplývá, že dědické řízení bylo soudem zastaveno z důvodu majetku nepatrné hodnoty, a že nebyl určen žádný dědic.</p>
+<p>Vzhledem k tomu, že nedošlo k právnímu přechodu majetku (včetně případného přeplatku) na žádnou osobu, nemůžeme Vám bez dalšího právního podkladu (např. dodatečné dohody dědiců nebo nového rozhodnutí soudu) případný přeplatek vyplatit.</p>
+<p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href='https://zakaznici.epet.cz/login' target='_blank'>Zákaznický portál</a></p>`,
+     	files: [],
+        tags: ["Dědické řízení"]
+    },					
 /* Platby */	
 "Ukončené odběrné místo - Platby": { 
         text: `<p>Dobrý den, pane/paní XY,</p>
