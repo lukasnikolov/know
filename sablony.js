@@ -903,6 +903,14 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
         text: `<p>Vážený pane XXXX, Vážená paní XXXX</p>
 <p>děkujeme za doložené usnesení o pozůstalosti po panu/paní <strong> XXXXXX.</strong> Dovolujeme si Vás informovat, že z předloženého usnesení vyplývá, že dědické řízení bylo soudem zastaveno z důvodu majetku nepatrné hodnoty, a že nebyl určen žádný dědic.</p>
 <p>Vzhledem k tomu, že nedošlo k právnímu přechodu majetku (včetně případného přeplatku) na žádnou osobu, nemůžeme Vám bez dalšího právního podkladu (např. dodatečné dohody dědiců nebo nového rozhodnutí soudu) případný přeplatek vyplatit.</p>
+<p><strong>Jak můžete dále postupovat:</strong><br>
+Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc projednával) a požádat o:</p>
+<ul>
+  <li>doplnění usnesení o určení dědice přeplatku, nebo</li>
+  <li>uzavření dodatečné dohody mezi případnými dědici, která bude schválena soudem.</li>
+</ul>
+<p>Jakmile obdržíme doplňující právní dokument, budeme schopni vyplacení přeplatku posoudit a případně provést.</p>
+<p>Děkujeme za pochopení. V případě jakýchkoli dotazů jsme Vám rádi k dispozici.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href='https://zakaznici.epet.cz/login' target='_blank'>Zákaznický portál</a></p>`,
      	files: [],
         tags: ["Dědické řízení"]
