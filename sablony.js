@@ -914,7 +914,23 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href='https://zakaznici.epet.cz/login' target='_blank'>Zákaznický portál</a></p>`,
      	files: [],
         tags: ["Dědické řízení"]
-    },					
+    },
+"Žádost o doložení usnesení + informaci, že pokud v usnesení je více dědiců, aby poslali i ČP": { 
+        text: `<p>Vážený pane XXXX, Vážená paní XXXX</p>
+<p><p>je nám líto, že jste musel/a řešit tuto smutnou událost. Dovolte nám, abychom Vám vyjádřili upřímnou soustrast.</p>
+<p>Abychom mohli provést potřebné změny na zákaznickém účtu, budeme potřebovat Vaši součinnost. Zejména je důležité, abyste nám doručil/a kopii: 
+<ul>
+  <li>kopii úmrtního listu</li>
+  <li>kopii usnesení z dědického řízení</li>
+</ul>
+</p>
+<p>Do doby doložení usnesení bude případný přeplatek nebo nedoplatek blokován proti upomínání a vyplacení. Vyplacení bude možné až po sdělení výsledku dědického řízení.</p>
+<p>V případě, že v doloženém usnesení bude uvedeno více dědiců a budete chtít přeplatek vyplatit na jednotný bankovní účet, bude nutné doložit také čestné prohlášení, které musí být vyplněno a podepsáno všemi dědici. Kopii daného čestného prohlášení přikládáme do přílohy tohoto e-mailu.</p>
+<p>Děkujeme za pochopení. V případě jakýchkoli dotazů jsme Vám rádi k dispozici.</p>
+<p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href='https://zakaznici.epet.cz/login' target='_blank'>Zákaznický portál</a></p>`,
+     	files: [ { url: 'https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
+        tags: ["Dědické řízení"]
+    },	
 /* Platby */	
 "Ukončené odběrné místo - Platby": { 
         text: `<p>Dobrý den, pane/paní XY,</p>
