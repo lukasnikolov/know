@@ -917,7 +917,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
     },
 "Žádost o doložení usnesení + informaci, že pokud v usnesení je více dědiců, aby poslali i ČP": { 
         text: `<p>Vážený pane XXXX, Vážená paní XXXX</p>
-<p><p>je nám líto, že jste musel/a řešit tuto smutnou událost.Abychom mohli provést potřebné změny na zákaznickém účtu, budeme potřebovat Vaši součinnost. Zejména je důležité, abyste nám doručil/a kopii: 
+<p><p>je nám líto, že jste musel/a řešit tuto smutnou událost.Abychom mohli provést potřebné změny na zákaznickém účtu, budeme potřebovat Vaši součinnost. Zejména je důležité, abyste nám doručil/a: 
 <ul>
   <li>kopii úmrtního listu</li>
   <li>kopii usnesení z dědického řízení</li>
