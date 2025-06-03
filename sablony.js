@@ -1296,7 +1296,8 @@ doby bude vše vyřešeno k Vaší plné spokojenosti.</p>
     <li><strong>Doporučujeme využít také automatické generátory dopisů</strong>, které naleznete níže – zajistí správné vyplnění a profesionální výstup.</li>
     <li>V rámci výše uvedené <a href="https://sites.google.com/view/znalostn-bze/%C5%A1ablony/%C5%A1ablona-e-mail-korespondence-ur%C4%8Den%C3%A1-k-tisku?authuser=0" target="_blank">
       znalostní báze</a> je také dostupná <strong>možnost automatického vygenerování e-mailu</strong> pro zaslání na zodpovědnou osobu – tedy na <strong>martin.blazek@epet.cz</strong>.</li>
-  </ul>`
+  </ul> `
+},
   	 		files: [
 			{ url: "https://drive.google.com/file/d/1DKM958grbFkRFuy4MrqYtXJjd4ZK0Uun/view?usp=drive_web", name: "ČESTNÉ PROHLÁŠENÍ ČEZ",type: "pdf" },
 			{ url: "https://drive.google.com/open?id=1g_qi7NC8ncY2YW10r0aPD2JYIvCPXMyG", name: "ČESTNÉ PROHLÁŠENÍ - PRE",type: "pdf" }, 
