@@ -1262,31 +1262,32 @@ doby bude vše vyřešeno k Vaší plné spokojenosti.</p>
 <p>Děkuji</p>
 <p>Do přílohy nahrajete dokument, který zákazníkovi chcete poslat! Dokument bude vždy ve formátu <b> PDF</b> - nikdy né v jiném!! + tento dokument bude mít vždy název <u> "příjmení zákazníka_dopis" </u>.<br> Níže máte šablony dopisů, ty si prosím vždy stáhněte a upravujte až v počítači nikoliv v <b> online provedení </b>, upravíte to všem ostatním děkuji!</p> `,
   	 		files: [
-			{ url: "https://docs.google.com/document/d/1HVzidK1XJeQEflNfuW4n2JbQ3DQPKFbJH8BVtue-feA/edit?usp=drive_link", name: "Aktualizace kontaktních údajů",type: "doc" },
-			{ url: "https://docs.google.com/document/d/1qz-gHIxUKgA5xX9vTvho8B23nkX58USDY7mo9xmRu0s/edit?usp=drive_link", name: "Kopie Faktury",type: "doc" },    
-            { url:"https://docs.google.com/document/d/1aD6EQyOeymJrozb9ryzJb_qQMztQjhSYLgqLiq_7uWA/edit?usp=drive_link", name: "Kopie platebního kalendáře",type: "doc" },              
-			{ url: "https://docs.google.com/document/d/1rOojNJwZTtIrDyS6BSNG6G9WEWiW--KOsr7GExPmlwo/edit?usp=drive_link", name: "Kopie smlouvy",type: "doc" },               
-			{ url: "https://docs.google.com/document/d/1bHHeUM3u0TYTlSNyG6FMzMOn0cSi8yY6-MQDDSBYD0A/edit?usp=drive_link", name: "Neproběhlé SIPO - ověření spojovacího čísla",type: "doc" },               
-			{ url: "https://docs.google.com/document/d/17i2zeMKfO_IrQJ7pGtL9hL4_KGnaHXW2JsqhnM4FON8/edit?usp=drive_link", name: "Neuhrazené pohledávky",type: "doc" },
-			{ url: "https://docs.google.com/document/d/13UQbQCQev4DwRmk0JhDu6F-6MlyKhgJqi5BHk23imNg/edit?usp=drive_link", name: "Ověření nastavení způsobu úhrady záloh přes INKASO",type: "doc" },
-			{ url: "https://docs.google.com/document/d/1PHEGB_fZEG0md4lHsn6WZdnjgxTNuKF0-K4gRny7wCE/edit?usp=drive_link", name: "Plánovaná odstávka dodávek energií",type: "doc" },
-			{ url: "https://docs.google.com/document/d/18THjWbaLmX6H6YxuBigmq2a_zRIXQcJ0t_cl_L6GnZA/edit?usp=drive_link", name: "Prosba o doložení předávacího protokolu",type: "doc" },
-     	    { url: "https://docs.google.com/document/d/1MFGh4FMJyPkc9nM5O9EqhWDwzeZFp_M0cVchWePfSts/edit?usp=drive_link", name: "Úhrada pohledávky",type: "doc" },          
-			{ url: "https://docs.google.com/document/d/1NpLClIrXeYOdx8OpwixU1WNvTfqM6GqlCtGfImZaeiY/edit?usp=drive_link", name: "Výzva k úhradě smluvní pokuty",type: "doc" },
-			{ url: "https://docs.google.com/document/d/1WyXldEIX-2DiYAeREPscgm53wWOC4gK4bQQaAZSJfpg/edit?usp=drive_link", name: "Vzor dopisu - společnost",type: "doc" },
-			{ url: "https://docs.google.com/document/d/1NabtbfMrmQrLyRLCg48p38ksKJlZi9_T3roxy5zgXU4/edit?usp=drive_link", name: "Změna měření z B na C",type: "doc" },
-			{ url: "https://docs.google.com/document/d/1Dllp_B9xcG3hDnk_PzRHi-9PaiBKAzB9fHG17pq_QQg/edit?usp=drive_link", name: "Změna měření z C na B",type: "doc" },
-			{ url: "https://docs.google.com/document/d/1WfsZiyWK-PHMakJWJ9zmAhQaKN7A0C4KsSIUbw8KetE/edit?usp=drive_link", name: "Změna příjemní - zaslání čp",type: "doc" },
-			{ url: "https://docs.google.com/document/d/1cGHVHdV5ZxRQ-j8yb4F0TwWG7RXUb5cbgmP9KxFkywI/edit?usp=drive_link", name: "Změna Rezervovaného příkonu",type: "doc" },
-			{ url: "https://docs.google.com/document/d/1eDwFs4P9zM2-6TsNRNHwNb0YI6ZUj9QvdqloAawCowc/edit?usp=drive_link", name: "Změna trvalé adresy",type: "doc" },
-            { url: "https://drive.google.com/file/d/1DKM958grbFkRFuy4MrqYtXJjd4ZK0Uun/view?usp=drive_web", name: "ČESTNÉ PROHLÁŠENÍ ČEZ",type: "pdf" },
+			{ url: "https://drive.google.com/file/d/1DKM958grbFkRFuy4MrqYtXJjd4ZK0Uun/view?usp=drive_web", name: "ČESTNÉ PROHLÁŠENÍ ČEZ",type: "pdf" },
 			{ url: "https://drive.google.com/open?id=1g_qi7NC8ncY2YW10r0aPD2JYIvCPXMyG", name: "ČESTNÉ PROHLÁŠENÍ - PRE",type: "pdf" }, 
 			{ url: "https://drive.google.com/open?id=1Zz5Gx_UHY3hgHAAOl66xqs0hzI5p-o25", name: "ČESTNÉ PROHLÁŠENÍ - EGD",type: "pdf" }, 
 			{ url: "https://drive.google.com/open?id=1HKsGDY14VD8bREp744I2ze7EXC29j7J6", name: "ČESTNÉ PROHLÁŠENÍ - ZMD",type: "pdf" },               
 			{ url: "https://drive.google.com/open?id=1UhAkyEzAaPizqFZrPhB9BbNiRCB8YnUW", name: "ČESTNÉ PROHLÁŠENÍ - PPL",type: "pdf" },               
 			{ url: "https://drive.google.com/open?id=1XAoZ_xy-4IOmwAHATnHSjbi9j7yw0Sd0", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - DOM",type: "pdf" },               
-			{ url: "https://drive.google.com/open?id=1n7kXH_5h0Utb8yZDkr2V-HK9rPysV-BN", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - FIRMA",type: "pdf" },
- ],
+			{ url: "https://drive.google.com/open?id=1n7kXH_5h0Utb8yZDkr2V-HK9rPysV-BN", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - FIRMA",type: "pdf" },],
+			<ul>
+  <li><a href="https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-aktualizace-kontaktních-údajů" target="_blank">📄 Aktualizace kontaktních údajů – generátor</a></li>
+  <li><a href="https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-kopie-faktury" target="_blank">📄 Kopie faktury – generátor</a></li>
+  <li><a href="https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-kopie-platebního-kalendáře" target="_blank">📄 Kopie platebního kalendáře – generátor</a></li>
+  <li><a href="https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-kopie-smlouvy" target="_blank">📄 Kopie smlouvy – generátor</a></li>
+  <li><a href="https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-neproběhlé-sipo-ověření-spojovacího-čísla" target="_blank">📄 Neproběhlé SIPO – generátor</a></li>
+  <li><a href="https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-neuhrazené-pohledávky" target="_blank">📄 Neuhrazené pohledávky – generátor</a></li>
+  <li><a href="https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-ověření-nastavení-způsobu-úhrady-záloh-přes-inkaso" target="_blank">📄 Ověření úhrady záloh – generátor</a></li>
+  <li><a href="https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-plánovaná-odstávka-dodávek-energií" target="_blank">📄 Plánovaná odstávka – generátor</a></li>
+  <li><a href="https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-prosba-o-doložení-předávacího-protokolu" target="_blank">📄 Doložení předávacího protokolu – generátor</a></li>
+  <li><a href="https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-úhrada-konečné-faktury-dědické-řízení" target="_blank">📄 Úhrada konečné faktury – generátor</a></li>
+  <li><a href="https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-výzva-k-úhradě-smluvní-pokuty-dodávky-nezahájeny" target="_blank">📄 Výzva k úhradě – nezahájené dodávky – generátor</a></li>
+  <li><a href="https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-výzva-k-úhradě-smluvní-pokuty-předčasně-ukončené-dodávky" target="_blank">📄 Výzva k úhradě – předčasné ukončení – generátor</a></li>
+  <li><a href="https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-změna-měření-z-b-na-c" target="_blank">📄 Změna měření B → C – generátor</a></li>
+  <li><a href="https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-změna-měření-z-c-na-b" target="_blank">📄 Změna měření C → B – generátor</a></li>
+  <li><a href="https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-změna-příjemní-zaslání-čp" target="_blank">📄 Změna příjemní – zaslání čp – generátor</a></li>
+  <li><a href="https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-změna-rezervovaného-příkonu" target="_blank">📄 Změna rezervovaného příkonu – generátor</a></li>
+  <li><a href="https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-změna-trvalé-adresy" target="_blank">📄 Změna trvalé adresy – generátor</a></li>
+</ul>
  tags: ["Dopisy"]   
     },	
 /* Montáže */	
