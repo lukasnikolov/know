@@ -1254,20 +1254,16 @@ doby bude vše vyřešeno k Vaší plné spokojenosti.</p>
 "DOPIS - Jak zasílat": {
   text: `<p><strong>V ZIS</strong> je potřeba e-mail zaslat na:<br>
   📧 <strong>martin.blazek@epet.cz</strong></p>
-
   <p><strong>Předmět e-mailu musí být přesně:</strong><br>
   <code>korespondence určená k tisku</code><br>
   ❗ Jiný předmět není možné uvést!</p>
-
   <p><strong>Do přílohy nahrajte dokument, který chcete zákazníkovi zaslat:</strong><br>
   ✅ Formát: <strong>PDF</strong><br>
   ❌ Jiný formát není přípustný!<br>
   📝 Název souboru: <code>příjmení zákazníka_dopis</code></p>
-
   <p><strong>Pozor!</strong> Pokud přikládáte dokument jako např. PK (platební kalendář), FA (faktura) nebo kopii smlouvy,<br>
   vždy musí být přiložen také <strong>dopis</strong>!<br>
   ❌ Neexistuje, aby byl odeslán dokument bez dopisu.</p>
-
   <p>V textu e-mailu napište:</p>
   <blockquote>
     Ahoj,<br>
@@ -1277,15 +1273,12 @@ doby bude vše vyřešeno k Vaší plné spokojenosti.</p>
     000 00 Pampeliškov<br>
     Děkuji
   </blockquote>
-
   <p>Šablony dopisů pro případnou ruční úpravu najdete zde:<br>
   🔗 <a href="https://sites.google.com/view/znalostn-bze/%C5%A1ablony/%C5%A1ablona-e-mail-korespondence-ur%C4%8Den%C3%A1-k-tisku?authuser=0" target="_blank" title="Zobrazit šablony">Znalostní báze – Šablona e-mail: korespondence určená k tisku</a><br>
   ➡️ V sekci <strong>Šablony ke stažení</strong></p>
-
   <p><em>Vždy si šablonu stáhněte a upravujte ji pouze v počítači, nikoliv online – změny by se propsaly všem ostatním!</em></p>
-
   <p>🛠️ <strong>Pro snadné a správné vyplnění dopisů doporučujeme využít také automatické generátory dopisů,</strong><br>
-  které jsou uvedené níže na této stránce.</p>`
+  které jsou uvedené níže na této stránce.</p>`,
   	 		files: [
 			{ url: "https://drive.google.com/file/d/1DKM958grbFkRFuy4MrqYtXJjd4ZK0Uun/view?usp=drive_web", name: "ČESTNÉ PROHLÁŠENÍ ČEZ",type: "pdf" },
 			{ url: "https://drive.google.com/open?id=1g_qi7NC8ncY2YW10r0aPD2JYIvCPXMyG", name: "ČESTNÉ PROHLÁŠENÍ - PRE",type: "pdf" }, 
