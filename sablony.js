@@ -1053,6 +1053,15 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
   	 		files: [],
  tags: ["Platby"]   
+    },	
+"Otevřené platby - Zákazníkovi vracíme platbu, kterou uhradil pod chybným VS": { 
+        text: `<p>Dobrý den, pane/paní XXXX,<p>
+<p>dovolujeme si Vás informovat, že částka ve výši <strong> XXXX Kč</strong>, kterou jste uhradil(a) pod chybným variabilním symbolem, Vám bude vrácena na bankovní účet číslo <strong> XXXXX </strong></p>
+<p>Upozorňujeme, že platby je nutné hradit výhradně pod správným variabilním symbolem uvedeným v <strong>platebním kalendáři</strong>, který naleznete v příloze tohoto e-mailu.</p>
+<p>Zároveň Vám v příloze zasíláme <strong>daňový doklad</strong> k vrácené platbě.</p>
+<p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
+  	 		files: [],
+ tags: ["Platby"]   
     },		
 /* Zálohy */	
 "Prosba o zaslání fotografie měřidla - stávající zákazník": { 
@@ -1251,6 +1260,76 @@ doby bude vše vyřešeno k Vaší plné spokojenosti.</p>
  tags: ["Výkup"]   
     },	
 /* Dopisy */	
+"DOPIS - Jak zasílat": {
+  text: `<p>na základě potřeby zaslat zákazníkovi dopis prostřednictvím ZIS Vám zasíláme postup, který je nutné dodržet:</p>
+  <ul>
+    <li><strong>E-mail je třeba zaslat na adresu:</strong><br>
+      📧 <strong>martin.blazek@epet.cz</strong>
+    </li>
+    <li><strong>Předmět e-mailu musí být přesně uveden jako:</strong><br>
+      <code>korespondence určená k tisku</code><br>
+      ❗ <em>Jiný předmět není možné uvést – systém jej nezpracuje!</em>
+    </li>
+    <li><strong>Do přílohy přiložte dokument určený k odeslání zákazníkovi:</strong><br>
+      ✅ <strong>formát PDF</strong><br>
+      ❌ <em>jiný formát není přípustný!</em><br>
+      📝 <strong>Název souboru:</strong> <code>příjmení zákazníka_dopis</code>
+    </li>
+    <li><strong>Pokud přikládáte dokument typu PK (platební kalendář), FA (faktura) nebo kopii smlouvy,</strong><br>
+      ➕ <em>vždy musí být přiložen také dopis!</em><br>
+      ❌ <em>Nelze odeslat samotný dokument bez doprovodného dopisu.</em>
+    </li>
+  </ul>
+  <p><strong>Vzorový text e-mailu:</strong></p>
+  <blockquote style="border-left: 4px solid #ccc; margin: 0 0 1em 0; padding-left: 1em;">
+    Ahoj,<br>
+    prosím o zaslání dopisu za Epet na adresu:<br><br>
+    Jan Omáčka<br>
+    Ohořov 414<br>
+    000 00 Pampeliškov<br><br>
+    Děkuji
+  </blockquote>
+
+  <p><strong>Další možnosti:</strong></p>
+  <ul>
+    <li>Pro ruční úpravu dopisu si můžete stáhnout šablonu ze znalostní báze:<br>
+      🔗 <a href="https://sites.google.com/view/znalostn-bze/%C5%A1ablony/%C5%A1ablona-e-mail-korespondence-ur%C4%8Den%C3%A1-k-tisku?authuser=0" target="_blank">
+      Znalostní báze – Šablona e-mail: korespondence určená k tisku</a><br>
+      ➡️ sekce <strong>Šablony ke stažení</strong>
+    </li>
+    <li><strong>Doporučujeme využít také automatické generátory dopisů</strong>, které naleznete níže – zajistí správné vyplnění a profesionální výstup.</li>
+    <li>V rámci výše uvedené <a href="https://sites.google.com/view/znalostn-bze/%C5%A1ablony/%C5%A1ablona-e-mail-korespondence-ur%C4%8Den%C3%A1-k-tisku?authuser=0" target="_blank">
+      znalostní báze</a> je také dostupná <strong>možnost automatického vygenerování e-mailu</strong> pro zaslání na zodpovědnou osobu – tedy na <strong>martin.blazek@epet.cz</strong>.</li>
+  </ul>`, 		
+			files: [
+			{ url: "https://drive.google.com/file/d/1DKM958grbFkRFuy4MrqYtXJjd4ZK0Uun/view?usp=drive_web", name: "ČESTNÉ PROHLÁŠENÍ ČEZ",type: "pdf" },
+			{ url: "https://drive.google.com/open?id=1g_qi7NC8ncY2YW10r0aPD2JYIvCPXMyG", name: "ČESTNÉ PROHLÁŠENÍ - PRE",type: "pdf" }, 
+			{ url: "https://drive.google.com/open?id=1Zz5Gx_UHY3hgHAAOl66xqs0hzI5p-o25", name: "ČESTNÉ PROHLÁŠENÍ - EGD",type: "pdf" }, 
+			{ url: "https://drive.google.com/open?id=1HKsGDY14VD8bREp744I2ze7EXC29j7J6", name: "ČESTNÉ PROHLÁŠENÍ - ZMD",type: "pdf" },               
+			{ url: "https://drive.google.com/open?id=1UhAkyEzAaPizqFZrPhB9BbNiRCB8YnUW", name: "ČESTNÉ PROHLÁŠENÍ - PPL",type: "pdf" },               
+			{ url: "https://drive.google.com/open?id=1XAoZ_xy-4IOmwAHATnHSjbi9j7yw0Sd0", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - DOM",type: "pdf" },               
+			{ url: "https://drive.google.com/open?id=1n7kXH_5h0Utb8yZDkr2V-HK9rPysV-BN", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - FIRMA",type: "pdf" },],
+			generators: [
+		  { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-aktualizace-kontaktních-údajů", name: "Aktualizace kontaktních údajů – generátor" },
+		  { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-kopie-faktury", name: "Kopie faktury – generátor" },
+		  { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-kopie-platebního-kalendáře", name: "Kopie platebního kalendáře – generátor" },
+		  { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-kopie-smlouvy", name: "Kopie smlouvy – generátor" },
+		  { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-neproběhlé-sipo-ověření-spojovacího-čísla", name: "Neproběhlé SIPO – generátor" },
+		  { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-neuhrazené-pohledávky", name: "Neuhrazené pohledávky – generátor" },
+		  { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-ověření-nastavení-způsobu-úhrady-záloh-přes-inkaso", name: "Ověření úhrady záloh – generátor" },
+		  { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-plánovaná-odstávka-dodávek-energií", name: "Plánovaná odstávka – generátor" },
+		  { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-prosba-o-doložení-předávacího-protokolu", name: "Doložení předávacího protokolu – generátor" },
+		  { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-úhrada-konečné-faktury-dědické-řízení", name: "Úhrada konečné faktury – generátor" },
+		  { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-výzva-k-úhradě-smluvní-pokuty-dodávky-nezahájeny", name: "Výzva k úhradě – nezahájené dodávky – generátor" },
+		  { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-výzva-k-úhradě-smluvní-pokuty-předčasně-ukončené-dodávky", name: "Výzva k úhradě – předčasné ukončení – generátor" },
+		  { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-změna-měření-z-b-na-c", name: "Změna měření B → C – generátor" },
+		  { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-změna-měření-z-c-na-b", name: "Změna měření C → B – generátor" },
+		  { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-změna-příjemní-zaslání-čp", name: "Změna příjemní – zaslání čp – generátor" },
+		  { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-změna-rezervovaného-příkonu", name: "Změna rezervovaného příkonu – generátor" },
+		  { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-změna-trvalé-adresy", name: "Změna trvalé adresy – generátor" }
+		],
+ tags: ["Dopisy"]   
+    },		
 /* Montáže */	
 "Montáž měřidla - potvrzení termínu": { 
         text: `<p>Vážený pane XXXX / Vážená paní XXXX,</p>
