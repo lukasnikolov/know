@@ -1062,7 +1062,16 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
   	 		files: [],
  tags: ["Platby"]   
-    },		
+    },
+"Otevřené platby - Zákazníkovi vracíme platbu, kterou uhradil mimo PK (nadrámec)": { 
+        text: `<p>Dobrý den, pane/paní XXXX,<p>
+<p>dovolujeme si Vás informovat, že částka ve výši <strong>XXXX Kč</strong>, kterou jste uhradil(a) nad rámec předepsaných záloh, Vám bude vrácena na bankovní účet číslo <strong>XXXXX</strong>.</p>
+<p>Zároveň si Vás dovolujeme upozornit, že platby byly hrazeny ve vyšší výši, než stanovuje aktuální rozpis záloh. Doporučujeme proto upravit trvalý příkaz dle <strong>platného platebního kalendáře</strong>, který Vám zasíláme v příloze tohoto e-mailu.</p>
+<p>Zároveň Vám v příloze zasíláme <strong>daňový doklad</strong> k vrácené platbě.</p>
+<p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
+  	 		files: [],
+ tags: ["Platby"]   
+    },			
 /* Zálohy */	
 "Prosba o zaslání fotografie měřidla - stávající zákazník": { 
         text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
