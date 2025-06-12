@@ -1149,7 +1149,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
 <p>chtěli bychom Vás informovat, že jsme schválili Vaši žádost o poskytnutí splátkového kalendáře.</p>
 <p>Jednotlivé splátky dlužné částky za dodávky elektřiny/plynu plaťte dle níže uvedeného rozpisu a platebních údajů:</p>
 <li><b>VS:</b> XXXXXXXX</li>
-<li><b>Částka:</b> XXXXX</li>
+<li><b>Částka:</b> XXXXX Kč</li>
 <li><b>Bankovní spojení:</b> 9960227/0100</li> <br>
 <p>Detailní rozpis splátek najdete v dokumentu přiloženém v příloze tohoto e-mailu.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
