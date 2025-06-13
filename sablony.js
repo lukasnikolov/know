@@ -257,7 +257,7 @@ files: [
 files: [
     {url: "https://drive.google.com/file/d/17g2ZuWmzZlnlWW_-6I-eZ224ct_DClco/view?usp=drive_link", name: "EPET_ZADOST_ZMENA_SMLOUVY_Domácnost",type: "pdf"},
 	{url: "https://www.epet.cz/data/folders/epet-zadost-zmena-smlouvy-profit-f2696.pdf", name: "EPET_ZADOST_ZMENA_SMLOUVY_Firma",type: "pdf"},
-	{url: "https://drive.google.com/file/d/11mtR4LhEQE-bDlq9_-3jhkx1q6SGXrWo/view", name: "ZMĚNA SAZBY A JISTIČE - EGD - DOM+PODN",type: "pdf"},
+	{url: "https://drive.google.com/file/d/11lbuZv6IW4UO4Jmejzy__ZxKf9v1Ispz/view?usp=drive_link", name: "ZMĚNA SAZBY A JISTIČE - EGD - DOM+PODN",type: "pdf"},
 	{url: "https://drive.google.com/open?id=1jEHuxEKF7kiW2dCL2ejMCV-hd6NrOJeh", name: "ŽÁDOST O PŘIPOJENÍ ČEZ",type: "pdf"}
 ],
  tags: ["Distribuční změny"]   
@@ -276,7 +276,7 @@ files: [
     files: [
         {url: "https://drive.google.com/file/d/17g2ZuWmzZlnlWW_-6I-eZ224ct_DClco/view?usp=drive_link", name: "EPET_ZADOST_ZMENA_SMLOUVY_Domácnost",type: "pdf"},
         {url: "https://www.epet.cz/data/folders/epet-zadost-zmena-smlouvy-profit-f2696.pdf", name: "EPET_ZADOST_ZMENA_SMLOUVY_Firma",type: "pdf"},
-		{url:"https://drive.google.com/open?id=11unN2RyEHVpvPrIy57bLQVpsy0OldIbw", name: "ZMĚNA SAZBY A JISTIČE - EGD - DOM+PODN",type: "pdf"},
+		{url:"https://drive.google.com/file/d/11lbuZv6IW4UO4Jmejzy__ZxKf9v1Ispz/view?usp=drive_link", name: "ZMĚNA SAZBY A JISTIČE - EGD - DOM+PODN",type: "pdf"},
 		{url:"https://drive.google.com/open?id=1jEHuxEKF7kiW2dCL2ejMCV-hd6NrOJeh", name: "ŽÁDOST O PŘIPOJENÍ ČEZ",type: "pdf"}
             ],
  tags: ["Distribuční změny"]   
