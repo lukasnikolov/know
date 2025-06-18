@@ -406,8 +406,8 @@ files: [
 <p>Potvrzujeme, že jsme na základě těchto podkladů podali žádost u příslušného distributora o vystavení nové Smlouvy o připojení. Jakmile Vám bude ze strany distributora tato smlouva doručena (na vyřízení požadavku má distributor 30 kalendářních dní. Po uplynutí této lhůty Vám distributor zašle Smlouvu o připojení. V ní bude uvedeno, jaké změny je nutné realizovat na odběrném místě. Pokud ve Smlouvě o připojení naleznete, že je třeba hradit podíl, prosíme o doložení potvrzení o platbě či datum, kdy byl podíl uhrazen.), prosíme o její podpis a následné zaslání:
 </p>
 <ul>
-<li><strong>originálu podepsané Smlouvy o připojení zpět distributorovi,</strong></li>
-<li><strong>a kopie podepsané smlouvy také na naši adresu, ideálně elektronicky na e-mail <strong>info@epet.cz</strong>, případně poštou na <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 02 Praha 1.</strong></li></ul>
+<li><b>originálu podepsané Smlouvy o připojení zpět distributorovi,</b></li>
+<li><b>a kopie podepsané smlouvy také na naši adresu, ideálně elektronicky na e-mail </b>info@epet.cz</b>, případně poštou na <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 02 Praha 1.</b></li></ul>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
   	  files: [],
  tags: ["Distribuční změny"]   
