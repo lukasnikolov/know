@@ -401,13 +401,15 @@ files: [
  tags: ["Distribuční změny"]   
     },
 "Potvrzení zk, že na základě dokumentů (ŽOP) došlo k podání žádosti o SOP na distribuci": { 
-        text: `<p>Dobrý den, pane/paní …,</p>
+         text: `<p>Dobrý den, pane/paní …,</p>
 <p>děkujeme Vám za zaslání vyplněných dokumentů.</p>
-<p>Potvrzujeme, že jsme na základě těchto podkladů podali žádost u příslušného distributora o vystavení nové Smlouvy o připojení. Jakmile Vám bude ze strany distributora tato smlouva doručena (na vyřízení požadavku má distributor 30 kalendářních dní. Po uplynutí této lhůty Vám distributor zašle Smlouvu o připojení. V ní bude uvedeno, jaké změny je nutné realizovat na odběrném místě. Pokud ve Smlouvě o připojení naleznete, že je třeba hradit podíl, prosíme o doložení potvrzení o platbě či datum, kdy byl podíl uhrazen.), prosíme o její podpis a následné zaslání:
-</p>
+<p>Potvrzujeme, že jsme na základě těchto podkladů podali žádost u příslušného distributora o vystavení nové Smlouvy o připojení. Distributor má na vyřízení požadavku lhůtu 30 kalendářních dní. Po jejím uplynutí Vám zašle Smlouvu o připojení.</p>
+<p>Ve smlouvě bude uvedeno, jaké změny je třeba realizovat na odběrném místě. Pokud v ní naleznete informaci o nutnosti úhrady podílu, prosíme o doložení potvrzení o platbě či uvedení data, kdy byl podíl uhrazen.</p>
+<p>Po podpisu smlouvy prosíme o její zaslání:</p>
 <ul>
-<li><b>originálu podepsané Smlouvy o připojení zpět distributorovi,</b></li>
-<li><b>a kopie podepsané smlouvy také na naši adresu, ideálně elektronicky na e-mail </b>info@epet.cz</b>, případně poštou na <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 02 Praha 1.</b></li></ul>
+  <li><b>originálu podepsané Smlouvy o připojení zpět distributorovi,</b></li>
+  <li><b>kopie podepsané smlouvy také na naši adresu – ideálně elektronicky na e-mail</b> <a href="mailto:info@epet.cz">info@epet.cz</a>, případně poštou na <b>EP ENERGY TRADING, a.s., Klimentská 46, 110 02 Praha 1</b>.</li>
+</ul>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
   	  files: [],
  tags: ["Distribuční změny"]   
