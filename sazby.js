@@ -1,4 +1,4 @@
-const distribuceCeny = {
+const sazby = {
   CEZ: {
     VT: {
       D01d: 2803.18, D02d: 2099.63, D25d: 2267.11, D26d: 1046.00, D27d: 2267.11,
