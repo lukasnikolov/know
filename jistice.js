@@ -1,4 +1,4 @@
- const jisticoveCeny = [
+ const jistice = {
   { distributor: 'CEZ', sazba: 'D01d', faze: 1, min: 0, max: 25, cena: 44.0 },
   { distributor: 'CEZ', sazba: 'D02d', faze: 1, min: 0, max: 25, cena: 98.0 },
   { distributor: 'CEZ', sazba: 'D25d', faze: 1, min: 0, max: 25, cena: 95.0 },
@@ -725,4 +725,4 @@
   { distributor: 'PRE', sazba: 'C62d', faze: 3, min: 41, max: 50, cena: 824.0 },
   { distributor: 'PRE', sazba: 'C62d', faze: 3, min: 51, max: 63, cena: 1038.0 },
   { distributor: 'PRE', sazba: 'C62d', faze: 3, min: 64, max: 999, cenaZaAmp: 1318.0 }
-  ];
+ };
