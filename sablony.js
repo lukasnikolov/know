@@ -943,7 +943,129 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href='https://zakaznici.epet.cz/login' target='_blank'>Zákaznický portál</a></p>`,
      	files: [ { url: 'https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
         tags: ["Dědické řízení"]
-    },	
+    },
+"Výzva k úhradě dlužných plateb, zákaznické číslo: xxxx": { 
+        text: `<p>Vážený pane xxxx / Vážená paní xxxxx,</p>
+
+<p>dovolujeme si Vás informovat, že naše společnost <b>EP ENERGY TRADING, a.s.,</b>, IČO <b>27386643</b>, se sídlem Klimentská 46, 110 02 Praha 1, obdržela od Obvodního soudu pro Prahu 6 informaci o skončení řízení o pozůstalosti (resp. dědického řízení).</p>
+
+<p>Na základě pravomocného rozhodnutí soudu, kterým bylo řízení ukončeno, jsme byli informováni, že právním nástupcem zákazníka <b>[jméno, příjmení, datum narození, trvalý pobyt]</b> (dále jen „<b>Zůstavitel</b>“) v oblasti dodávky energií do odběrného místa EAN/EIC <b>XXXX</b> na adrese <b>XXXX</b> (dále jen „<b>Odběrné místo</b>“), zajišťované naší společností na základě <b>Smlouvy o sdružených službách dodávky elektřiny/plynu č. XXXX</b>, uzavřené dne XXXX mezi Zůstavitelem a naší společností (dále jen „<b>Smlouva</b>“), se stal(i):</p>
+
+<ul>
+  <li>Josef Novák – [datum narození, trvalý pobyt]</li>
+  <li>Josefína Nováková – [datum narození, trvalý pobyt]</li>
+</ul>
+
+<p>Dnem nabytí právní moci rozhodnutí o dědictví přešla všechna práva a povinnosti vyplývající ze Smlouvy na Vás jakožto právní nástupce. Znamená to mimo jiné povinnost plnit závazky vyplývající ze Smlouvy, zejména hrazení záloh a úhrady ročního vyúčtování.</p>
+
+<p>Za období od skončení dědického řízení do <b>XXXX</b> naše společnost eviduje na Odběrném místě následující neuhrazené závazky (dále jen „<b>Pohledávka</b>“):</p>
+
+<table border="1" cellpadding="6" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Druh dokladu</th>
+      <th>Variabilní symbol</th>
+      <th>Smluvní účet</th>
+      <th>Splatnost</th>
+      <th>Částka</th>
+      <th>Měna</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>XXXX</td>
+      <td>XXXX</td>
+      <td>XXXX</td>
+      <td>XXXX</td>
+      <td>XXXX</td>
+      <td>Kč</td>
+    </tr>
+    <tr>
+      <td>XXXX</td>
+      <td>XXXX</td>
+      <td>XXXX</td>
+      <td>XXXX</td>
+      <td>XXXX</td>
+      <td>Kč</td>
+    </tr>
+    <tr>
+      <td colspan="4"><strong>Platby po splatnosti celkem</strong></td>
+      <td><strong>2 000,00</strong></td>
+      <td><strong>Kč</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Žádáme Vás tímto o úhradu výše uvedené Pohledávky na účet č. <b>xxxxx/xxxxx</b>, s variabilním symbolem <b>XXXX</b>, a to nejpozději do 10 dnů od doručení této výzvy.</p>
+
+<p>Upozorňujeme, že dodávka energií do Odběrného místa nadále probíhá. Nebude-li Pohledávka ve stanovené lhůtě uhrazena, budeme nuceni přistoupit k přerušení dodávky a zároveň zahájit právní kroky k vymáhání dlužné částky, což může vést k jejímu dalšímu navýšení (např. o náklady soudního řízení).</p>
+
+<p>Děkujeme za pochopení.</p>
+<p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href='https://zakaznici.epet.cz/login' target='_blank'>Zákaznický portál</a></p>`,
+     	files: [],
+        tags: ["Dědické řízení"]
+    },
+"Výzva k úhradě dlužných plateb, zákaznické číslo: xxxx": { 
+        text: `<p>Vážený pane xxxx / Vážená paní xxxxx,</p>
+
+<p>dovolujeme si Vás informovat, že naše společnost <b>EP ENERGY TRADING, a.s.,</b>, IČO <b>27386643</b>, se sídlem Klimentská 46, 110 02 Praha 1, obdržela od Obvodního soudu pro Prahu 6 informaci o skončení řízení o pozůstalosti (resp. dědického řízení).</p>
+
+<p>Na základě pravomocného rozhodnutí soudu, kterým bylo řízení ukončeno, jsme byli informováni, že právním nástupcem zákazníka <b>[jméno, příjmení, datum narození, trvalý pobyt]</b> (dále jen „<b>Zůstavitel</b>“) v oblasti dodávky energií do odběrného místa EAN/EIC <b>XXXX</b> na adrese <b>XXXX</b> (dále jen „<b>Odběrné místo</b>“), zajišťované naší společností na základě <b>Smlouvy o sdružených službách dodávky elektřiny/plynu č. XXXX</b>, uzavřené dne XXXX mezi Zůstavitelem a naší společností (dále jen „<b>Smlouva</b>“), se stal(i):</p>
+
+<ul>
+  <li>Josef Novák – [datum narození, trvalý pobyt]</li>
+  <li>Josefína Nováková – [datum narození, trvalý pobyt]</li>
+</ul>
+
+<p>Dnem nabytí právní moci rozhodnutí o dědictví přešla všechna práva a povinnosti vyplývající ze Smlouvy na Vás jakožto právní nástupce. Znamená to mimo jiné povinnost plnit závazky vyplývající ze Smlouvy, zejména hrazení záloh a úhrady ročního vyúčtování.</p>
+
+<p>Za období od skončení dědického řízení do <b>XXXX</b> naše společnost eviduje na Odběrném místě následující neuhrazené závazky (dále jen „<b>Pohledávka</b>“):</p>
+
+<table border="1" cellpadding="6" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Druh dokladu</th>
+      <th>Variabilní symbol</th>
+      <th>Smluvní účet</th>
+      <th>Splatnost</th>
+      <th>Částka</th>
+      <th>Měna</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>XXXX</td>
+      <td>XXXX</td>
+      <td>XXXX</td>
+      <td>XXXX</td>
+      <td>XXXX</td>
+      <td>Kč</td>
+    </tr>
+    <tr>
+      <td>XXXX</td>
+      <td>XXXX</td>
+      <td>XXXX</td>
+      <td>XXXX</td>
+      <td>XXXX</td>
+      <td>Kč</td>
+    </tr>
+    <tr>
+      <td colspan="4"><strong>Platby po splatnosti celkem</strong></td>
+      <td><strong>2 000,00</strong></td>
+      <td><strong>Kč</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Žádáme Vás tímto o úhradu výše uvedené Pohledávky na účet č. <b>xxxxx/xxxxx</b>, s variabilním symbolem <b>XXXX</b>, a to nejpozději do 10 dnů od doručení této výzvy.</p>
+
+<p>Upozorňujeme, že dodávka energií do Odběrného místa nadále probíhá. Nebude-li Pohledávka ve stanovené lhůtě uhrazena, budeme nuceni přistoupit k přerušení dodávky a zároveň zahájit právní kroky k vymáhání dlužné částky, což může vést k jejímu dalšímu navýšení (např. o náklady soudního řízení).</p>
+
+<p>Děkujeme za pochopení.</p>
+<p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href='https://zakaznici.epet.cz/login' target='_blank'>Zákaznický portál</a></p>`,
+     	files: [],
+        tags: ["Dědické řízení"]
+    },			
 /* Platby */	
 "Ukončené odběrné místo - Platby": { 
         text: `<p>Dobrý den, pane/paní XY,</p>
@@ -1371,7 +1493,35 @@ doby bude vše vyřešeno k Vaší plné spokojenosti.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
   	 		files: [],
  tags: ["Přepisy"]   
-    },	
+    },
+"Přepis odběrného místa - Bez zaslání odkazů (V rámci DINHE NAPŘÍKLAD)": { 
+        text: `<p>Vážený/á [Jméno pozůstalého],</p>
+
+<p>stále evidujeme nevyřešený požadavek týkající se přepisu smlouvy na odběr energií po zemřelém <b>XXXXXX</b>. Rádi bychom Vás informovali o nutnosti provést tento přepis na nového odběratele. Tento krok je nezbytný pro zajištění kontinuity dodávky energií na odběrném místě <b>[Adresa odběrného místa]</b>.</p>
+
+<p>Prosíme Vás, abyste co nejdříve kontaktovali naši zákaznickou podporu na telefonním čísle <b>255 70 70 99</b> nebo e-mailem na <b>info@epet.cz</b>, kde Vám poskytneme veškeré potřebné formuláře a informace k přepisu smlouvy.</p>
+
+<p>Děkujeme za Vaši spolupráci a jsme Vám k dispozici pro jakékoliv dotazy či další informace.</p>
+<p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
+  	 		files: [],
+ tags: ["Přepisy"]   
+    },
+"Přepis urgence  - Bez zaslání odkazů (V rámci DINHE NAPŘÍKLAD)": { 
+        text: `<p>Vážený/á [Jméno pozůstalého],</p>
+
+<p>rádi bychom Vás znovu upozornili na nutnost přepsání smlouvy na odběr energií na nového odběratele. Původní smlouva č. byla uzavřena na zemřelého <b>XXXXX</b> a je nezbytné uzavřít novou smlouvu, aby byla zajištěna kontinuální dodávka energií na odběrném místě <b>[Adresa odběrného místa]</b>.</p>
+
+<p>Dosud jsme neobdrželi žádnou odpověď na naši předchozí výzvu. Prosíme Vás, abyste co nejdříve kontaktovali naši zákaznickou podporu na telefonním čísle <b>255 70 70 99</b> nebo e-mailem na <b>info@epet.cz</b>, kde Vám poskytneme veškeré potřebné formuláře a informace k přepisu smlouvy.</p>
+
+<p>Pokud nebude přepis smlouvy proveden do <b>[Datum – D+30 dní]</b>, budeme nuceni přistoupit k přerušení dodávky energií na uvedeném odběrném místě. Tento krok je nezbytný pro zajištění správné evidence a správy odběrného místa.</p>
+
+<p>Děkujeme za Vaši spolupráci a pochopení. Jsme Vám k dispozici pro jakékoliv dotazy či další informace.</p>
+
+<p>Děkujeme za Vaši spolupráci a jsme Vám k dispozici pro jakékoliv dotazy či další informace.</p>
+<p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
+  	 		files: [],
+ tags: ["Přepisy"]   
+    },		
 /* Zranitelný zákazník */	
 "Upozornění na blížící se konec platnosti potvrzení pro přiznání práv zranitelného zákazníka": { 
         text: `<p>Vážený pane XXXX, / Vážená paní XXXX,</p>
