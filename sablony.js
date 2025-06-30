@@ -1409,7 +1409,7 @@ doby bude vše vyřešeno k Vaší plné spokojenosti.</p>
   text: `<p>na základě potřeby zaslat zákazníkovi dopis prostřednictvím ZIS Vám zasíláme postup, který je nutné dodržet:</p>
   <ul>
     <li><strong>E-mail je třeba zaslat na adresu:</strong><br>
-      📧 <strong>martin.blazek@epet.cz</strong>
+      📧 <strong>tisk@epet.cz</strong>
     </li>
     <li><strong>Předmět e-mailu musí být přesně uveden jako:</strong><br>
       <code>korespondence určená k tisku</code><br>
