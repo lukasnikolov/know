@@ -1287,7 +1287,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
 <li><b>VS:</b> XXXXXXXX</li>
 <li><b>Částka:</b> XXXXX Kč</li>
 <li><b>Bankovní spojení:</b> 9960227/0100</li>
-<li>První splátka je splatná ke dni:</li> <b>XX.XX.XXXX</b> <br>
+<li>První splátka je splatná ke dni: <b>XX.XX.XXXX</b></li> <br>
 <p>Detailní rozpis splátek najdete v dokumentu přiloženém v příloze tohoto e-mailu.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
   	 		files: [
