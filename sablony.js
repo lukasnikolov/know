@@ -1291,7 +1291,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
 <p>Detailní rozpis splátek najdete v dokumentu přiloženém v příloze tohoto e-mailu.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
   	 		files: [
-			{ url: "https://docs.google.com/document/d/15rX3jLT3fao84I11pcQYUQrjyrsBwiJX7Vw3YRctzkM/edit?usp=drive_link", name: " Splátkový kalendář - rozpis splátek",type: "doc" },
+			{ url: "https://docs.google.com/document/d/13fDHRHzFAzN79kNSr-ECLBv4lUedUvLNxvxAJ7KeIO4/edit?usp=drive_link", name: " Splátkový kalendář - rozpis splátek",type: "doc" },
  ],
  tags: ["SPK"]   
     },	
