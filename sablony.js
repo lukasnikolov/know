@@ -947,7 +947,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
   "Výzva k úhradě dlužných plateb, zákaznické číslo: xxxx (šablona číslo 3)": {
     text: `<p>Vážený pane xxxx,/Vážená paní xxxxx,</p>
 
-<p>dovolujeme si Vás informovat, že naše společnost <strong>EP ENERGY TRADING, a.s.</strong>, IČO <strong>27386643</strong>, se sídlem Klimentská 46, Praha 1, 110 02 obdržela od Obvodního soudu pro Prahu 6 informaci o skončení řízení o pozůstalosti (resp. dědického řízení), kterou bylo naší společnosti sděleno, že <strong>právním nástupcem zákazníka [jméno, příjmení, datum narození, trvalý pobyt]</strong> (dále jen „Zůstavitel“) se na základě pravomocného rozhodnutí o dědictví (kterým dědické řízení skončilo) uvedeným soudem v oblasti dodávky energií v odběrném místě EAN/EIC _____ na adrese [ulice, PSČ, město] (dále jen „Odběrné místo“) zajišťované naší společností na základě Smlouvy o sdružených službách dodávky elektřiny/plynu a uzavřené mezi naší společností a Zůstavitelem (dále jako „Smlouva“) stala tato osoba:</p>
+<p>dovolujeme si Vás informovat, že naše společnost <strong>EP ENERGY TRADING, a.s.</strong>, IČO <strong>27386643</strong>, se sídlem Klimentská 46, Praha 1, 110 02 obdržela od Obvodního soudu pro Prahu 6 informaci o skončení řízení o pozůstalosti (resp. dědického řízení), kterou bylo naší společnosti sděleno, že právním nástupcem zákazníka [jméno, příjmení, datum narození, trvalý pobyt] (dále jen <b>„Zůstavitel“</b>) se na základě pravomocného rozhodnutí o dědictví (kterým dědické řízení skončilo) uvedeným soudem v oblasti dodávky energií v odběrném místě EAN/EIC _____ na adrese [ulice, PSČ, město] (dále jen <b>„Odběrné místo“</b>) zajišťované naší společností na základě Smlouvy o sdružených službách dodávky elektřiny/plynu a uzavřené mezi naší společností a Zůstavitelem (dále jako <b>„Smlouva“</b>) stala tato osoba:</p>
 
 <ul>
   <li>[jméno, příjmení, datum narození, trvalý pobyt]</li>
@@ -999,7 +999,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
 
 <p>Na základě výše uvedeného Vás vyzýváme k úhradě Pohledávky na účet č. xxxxxxxxxx/xxxx s variabilním symbolem ______, a to do 10 dnů od data doručení této upomínky.</p>
 
-<p><strong>Upozorňujeme Vás, že dodávky energií do Odběrného místa ze strany naší společnosti na základě Smlouvy v současné době nadále probíhají a nebude-li Pohledávka uhrazena, budeme nuceni přistoupit k procesu přerušení dodávky energií do Odběrného místa. Zároveň přistoupíme k vymáhání Pohledávky všemi dostupnými právními prostředky, např. soudní cestou, v rámci které může dojít k navýšení dlužné částky zejména o náklady soudního řízení.</p>
+<p>Upozorňujeme Vás, že dodávky energií do Odběrného místa ze strany naší společnosti na základě Smlouvy v současné době nadále probíhají a nebude-li Pohledávka uhrazena, budeme nuceni přistoupit k procesu přerušení dodávky energií do Odběrného místa. Zároveň přistoupíme k vymáhání Pohledávky všemi dostupnými právními prostředky, např. soudní cestou, v rámci které může dojít k navýšení dlužné částky zejména o náklady soudního řízení.</p></strong>
 
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: 
 <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
@@ -1010,7 +1010,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
        text: `
 <p>Vážený pane xxxx,/Vážená paní xxxxx,</p>
 
-<p>obracíme se na Vás jakožto na potenciálního dědice pana/paní [jméno, příjmení, datum narození, trvalý pobyt] (dále jako „Zůstavitel“) s informací, že naše společnost EP ENERGY TRADING, a.s., IČO 27386643, se sídlem Klimentská 46, Praha 1, 110 02 na základě Smlouvy o sdružených službách dodávky elektřiny/plynu č. ______ uzavřené mezi naší společností a Zůstavitelem (dále jen „Smlouva“) je dodavatelem elektřiny/plynu do odběrného místa EAN/EIC _____ na adrese [ulice, PSČ, město] (dále jen „Odběrné místo“).</p>
+<p>obracíme se na Vás jakožto na potenciálního dědice pana/paní [jméno, příjmení, datum narození, trvalý pobyt] (dále jako „Zůstavitel“) s informací, že naše společnost <b>EP ENERGY TRADING, a.s.</b>, <b>IČO 27386643</b>, se sídlem Klimentská 46, Praha 1, 110 02 na základě Smlouvy o sdružených službách dodávky elektřiny/plynu č. ______ uzavřené mezi naší společností a Zůstavitelem (dále jen <b>„Smlouva“</b>) je dodavatelem elektřiny/plynu do odběrného místa EAN/EIC _____ na adrese [ulice, PSČ, město] (dále jen <b>„Odběrné místo“</b>).</p>
 
 <p>Ke dni úmrtí naše společnost u <b>odběrného místa</b> eviduje následující pohledávku (dále jako <b>„Pohledávka“</b>):
 </p>
@@ -1056,7 +1056,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
 
 <p>Nežli správa pozůstalosti přejde na dědice, je nutné naléhavě vyřešit úhradu evidovaných pohledávek. Pohledávku může být úspěšně uhrazena i z majetku náležejícího do pozůstalosti. Není-li správa pozůstalosti ještě určena, lze pohledávku uhradit zůstavitelem sepsanou závětí, pakliže správce pozůstalosti ještě nebyl přidělen, je zde ideálně osoba nejblíže dědického řízení. Každý případ se posléze řeší samostatně s oddělením Pohledávek společnosti a nevrací se.</p>
 
-<p><strong>Upozorňujeme Vás</strong>, že dodávky energií od Odběrného místa ze strany naší společnosti na základě Smlouvy v současné době nadále probíhají. Abychom z důvodu neuhrazené Pohledávky nemuseli přistoupit k přerušení dodávky energií do Odběrného místa, žádáme o její úhradu, a to včetně dalších případných nákladů, které by mohly být účtovány v rámci řízení o vymáhání dlužných částek (např. soudních nákladů, právního zastoupení a podobně).</p>
+<p><strong>Upozorňujeme Vás, že dodávky energií od Odběrného místa ze strany naší společnosti na základě Smlouvy v současné době nadále probíhají. Abychom z důvodu neuhrazené Pohledávky nemuseli přistoupit k přerušení dodávky energií do Odběrného místa, žádáme o její úhradu, a to včetně dalších případných nákladů, které by mohly být účtovány v rámci řízení o vymáhání dlužných částek (např. soudních nákladů, právního zastoupení a podobně).</strong></p>
 
 <p>Vyzýváme Vás tímto:</p>
 <ul>
@@ -1073,7 +1073,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
     text: `
 <p>Vážený pane xxxx,/Vážená paní xxxxx,</p>
 
-<p>obracíme se na Vás jakožto na potenciálního dědice pana/paní [jméno, příjmení, datum narození, trvalý pobyt] (dále jako „Zůstavitel“) s informací, že naše společnost EP ENERGY TRADING, a.s., IČO 27386643, se sídlem Klimentská 46, Praha 1, 110 02 na základě Smlouvy o sdružených službách dodávky elektřiny/plynu č. ______ uzavřené mezi naší společností a Zůstavitelem (dále jen „Smlouva“) je dodavatelem této energie do odběrného místa EAN/EIC _____ na adrese [ulice, PSČ, město] (dále jen „Odběrné místo“).</p>
+<p>obracíme se na Vás jakožto na potenciálního dědice pana/paní [jméno, příjmení, datum narození, trvalý pobyt] (dále jako <b>„Zůstavitel“</b>) s informací, že naše společnost <b>EP ENERGY TRADING, a.s.</b>, <b>IČO 27386643</b>, se sídlem Klimentská 46, Praha 1, 110 02 na základě Smlouvy o sdružených službách dodávky elektřiny/plynu č. ______ uzavřené mezi naší společností a Zůstavitelem (dále jen <b>„Smlouva“</b>) je dodavatelem této energie do odběrného místa EAN/EIC _____ na adrese [ulice, PSČ, město] (dále jen <b>„Odběrné místo“</b>).</p>
 
 <p>Ke dni úmrtí naše společnost u <b>odběrného místa</b> eviduje následující pohledávku (dále jako <b>„Pohledávka“</b>):
 </p>
@@ -1118,7 +1118,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
 
 <p>V této souvislosti Vás žádáme o sdělení identifikačních a kontaktních údajů v rozsahu jméno, příjmení, adresy trvalého pobytu, telefonního čísla a e-mailu osoby, která spravuje pozůstalost. Pozůstalost může ve smyslu § 1877 zákona č. 89/2012 Sb., občanský zákoník, spravovat vykonavatel závěti, nebo pověřený či příslušným soudem jmenovaný správce pozůstalosti. Poté co dědické řízení ve smyslu § 1703 občanského zákoníku bude rozhodnuto pravomocně, Pohledávka může být uspokojena jen z majetku náležejícího do pozůstalosti. Není-li správa pozůstalosti vykonávána správcem pozůstalosti nebo ustanovením závěti, pakliže správu pozůstalosti dědici přejímají, je ze dědiců více a neujednají-li si jinak, spraví pozůstalost většinou dědiců v odpovídající výši k uspokojení Pohledávky společnosti. V takovém případě naše společnost zasílá obdobný dopis též těmto dalším dědicům.</p>
 
-<p><strong>Upozorňujeme Vás</strong>, že z důvodu neuhrazené Pohledávky nemusíme přistoupit k vymáhání její úhrady dostupnými právními prostředky (např. soudní cestou, v rámci které může dojít k navýšení částky zejména o náklady soudního řízení), žádáme Vás tedy:</p>
+<p><strong>Upozorňujeme Vás, že z důvodu neuhrazené Pohledávky nemusíme přistoupit k vymáhání její úhrady dostupnými právními prostředky (např. soudní cestou, v rámci které může dojít k navýšení částky zejména o náklady soudního řízení), žádáme Vás tedy:</p></strong>
 
 <ul>
   <li>o sdělení identifikačních a kontaktních údajů osoby spravující pozůstalost (viz výše), a to do 10 dnů od doručení této upomínky, nebo</li>
