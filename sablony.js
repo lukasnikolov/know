@@ -958,7 +958,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
 
 <p>Ke dni úmrtí naše společnost u <b>odběrného místa</b> eviduje následující pohledávku (dále jako <b>„Pohledávka“</b>):
 </p>
-<table class="table table-bordered">
+<table class="table-upominka">
   <thead>
     <tr>
       <th>Druh dokladu</th>
@@ -989,7 +989,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
   </tbody>
   <tfoot>
     <tr>
-      <td colspan="4" class="text-end">Platby po splatnosti celkem</td>
+      <td colspan="4" style="text-align:right;">Platby po splatnosti celkem</td>
       <td>XXXXX,00</td>
       <td>Kč</td>
     </tr>
