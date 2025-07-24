@@ -995,8 +995,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
     </tr>
   </tfoot>
 </table>
-
-
+<br>
 <p>Na základě výše uvedeného Vás vyzýváme k úhradě Pohledávky na účet č. xxxxxxxxxx/xxxx s variabilním symbolem ______, a to do 10 dnů od data doručení této upomínky.</p>
 
 <p>Upozorňujeme Vás, že dodávky energií do Odběrného místa ze strany naší společnosti na základě Smlouvy v současné době nadále probíhají a nebude-li Pohledávka uhrazena, budeme nuceni přistoupit k procesu přerušení dodávky energií do Odběrného místa. Zároveň přistoupíme k vymáhání Pohledávky všemi dostupnými právními prostředky, např. soudní cestou, v rámci které může dojít k navýšení dlužné částky zejména o náklady soudního řízení.</p></strong>
@@ -1014,7 +1013,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
 
 <p>Ke dni úmrtí naše společnost u <b>odběrného místa</b> eviduje následující pohledávku (dále jako <b>„Pohledávka“</b>):
 </p>
-<table class="table table-bordered">
+<table class="table-upominka">
   <thead>
     <tr>
       <th>Druh dokladu</th>
@@ -1045,12 +1044,13 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
   </tbody>
   <tfoot>
     <tr>
-      <td colspan="4" class="text-end">Platby po splatnosti celkem</td>
+      <td colspan="4" style="text-align:right;">Platby po splatnosti celkem</td>
       <td>XXXXX,00</td>
       <td>Kč</td>
     </tr>
   </tfoot>
 </table>
+<br>
 
 <p>V této souvislosti Vás žádáme o sdělení identifikačních a kontaktních údajů v rozsahu jméno, příjmení, adresy trvalého pobytu, telefonního čísla a e-mailu osoby, která spravuje pozůstalost. Pozůstalost může ve smyslu § 1877 zákona č. 89/2012 Sb., občanský zákoník, spravovat vykonavatel závěti, nebo pověřený či příslušným soudem jmenovaný správce pozůstalosti. Poté co dědické řízení ve smyslu § 1703 občanského zákoníku bude rozhodnuto pravomocně, pohledávky naší společnosti bude zajišťovat ten z dědiců nebo zmíněných osob.</p>
 
@@ -1077,7 +1077,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
 
 <p>Ke dni úmrtí naše společnost u <b>odběrného místa</b> eviduje následující pohledávku (dále jako <b>„Pohledávka“</b>):
 </p>
-<table class="table table-bordered">
+<table class="table-upominka">
   <thead>
     <tr>
       <th>Druh dokladu</th>
@@ -1108,13 +1108,13 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
   </tbody>
   <tfoot>
     <tr>
-      <td colspan="4" class="text-end">Platby po splatnosti celkem</td>
+      <td colspan="4" style="text-align:right;">Platby po splatnosti celkem</td>
       <td>XXXXX,00</td>
       <td>Kč</td>
     </tr>
   </tfoot>
 </table>
-
+<br>
 
 <p>V této souvislosti Vás žádáme o sdělení identifikačních a kontaktních údajů v rozsahu jméno, příjmení, adresy trvalého pobytu, telefonního čísla a e-mailu osoby, která spravuje pozůstalost. Pozůstalost může ve smyslu § 1877 zákona č. 89/2012 Sb., občanský zákoník, spravovat vykonavatel závěti, nebo pověřený či příslušným soudem jmenovaný správce pozůstalosti. Poté co dědické řízení ve smyslu § 1703 občanského zákoníku bude rozhodnuto pravomocně, Pohledávka může být uspokojena jen z majetku náležejícího do pozůstalosti. Není-li správa pozůstalosti vykonávána správcem pozůstalosti nebo ustanovením závěti, pakliže správu pozůstalosti dědici přejímají, je ze dědiců více a neujednají-li si jinak, spraví pozůstalost většinou dědiců v odpovídající výši k uspokojení Pohledávky společnosti. V takovém případě naše společnost zasílá obdobný dopis též těmto dalším dědicům.</p>
 
