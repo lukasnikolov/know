@@ -944,7 +944,6 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
      	files: [ { url: 'https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
         tags: ["Dědické řízení"]
     },
-{
   "Výzva k úhradě dlužných plateb, zákaznické číslo: xxxx (šablona číslo 3)": {
     text: `<p>Vážený pane xxxx,/Vážená paní xxxxx,</p>
 
@@ -1004,8 +1003,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
 `files: [],
         tags: ["Dědické řízení"]
     },
-{
-  "Výzva k úhradě dluhu – potencionální dědic – aktivní odběr (šablona číslo 5)": {
+ "Výzva k úhradě dluhu – potencionální dědic – aktivní odběr (šablona číslo 5)": {
        text: `
 <p>Vážený pane xxxx,/Vážená paní xxxxx,</p>
 
@@ -1066,7 +1064,6 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
 `files: [],
         tags: ["Dědické řízení"]
     },
-{
   "Výzva k úhradě dluhu – potencionální dědic – neaktivní odběr (šablona číslo 6)": {
     text: `
 <p>Vážený pane xxxx,/Vážená paní xxxxx,</p>
