@@ -956,10 +956,10 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
 
 <p>V tomto ohledu je třeba zdůraznit, že dnem, kdy rozhodnutí o dědictví nabylo právní moci, přechází práva a povinnosti vyplývající ze Smlouvy na Vás, jakožto právního nástupce Zůstavitele. To znamená, že od tohoto okamžiku je právní nástupce Zůstavitele zákazníkem naší společnosti a je povinen plnit mimo jiné též ve Smlouvě sjednané platební povinnosti, spojené zejména s úhradou zálohových plateb a ročního vyúčtování.</p>
 
-<p>Ke dni úmrtí naše společnost u Odběrného místa evidujeme následující pohledávku (dále jako <strong>„Pohledávka“</strong>):</p>
-
-<table class="table table-bordered text-center align-middle">
-  <thead class="table-success">
+<p>Ke dni úmrtí naše společnost u <b>odběrného místa</b> eviduje následující pohledávku (dále jako <b>„Pohledávka“</b>):
+</p>
+<table class="table table-bordered">
+  <thead>
     <tr>
       <th>Druh dokladu</th>
       <th>Variabilní symbol</th>
@@ -986,13 +986,16 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
       <td>XXXXX,00</td>
       <td>Kč</td>
     </tr>
-    <tr class="table-success fw-bold">
+  </tbody>
+  <tfoot>
+    <tr>
       <td colspan="4" class="text-end">Platby po splatnosti celkem</td>
       <td>XXXXX,00</td>
       <td>Kč</td>
     </tr>
-  </tbody>
+  </tfoot>
 </table>
+
 
 <p>Na základě výše uvedeného Vás vyzýváme k úhradě Pohledávky na účet č. xxxxxxxxxx/xxxx s variabilním symbolem ______, a to do 10 dnů od data doručení této upomínky.</p>
 
@@ -1009,10 +1012,10 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
 
 <p>obracíme se na Vás jakožto na potenciálního dědice pana/paní [jméno, příjmení, datum narození, trvalý pobyt] (dále jako „Zůstavitel“) s informací, že naše společnost EP ENERGY TRADING, a.s., IČO 27386643, se sídlem Klimentská 46, Praha 1, 110 02 na základě Smlouvy o sdružených službách dodávky elektřiny/plynu č. ______ uzavřené mezi naší společností a Zůstavitelem (dále jen „Smlouva“) je dodavatelem elektřiny/plynu do odběrného místa EAN/EIC _____ na adrese [ulice, PSČ, město] (dále jen „Odběrné místo“).</p>
 
-<p>Ke dni úmrtí naše společnost u Odběrného místa evidujeme následující pohledávku (dále jako <b>„Pohledávka“</b>):</p>
-
-<table class="table table-bordered text-center align-middle">
-  <thead class="table-success">
+<p>Ke dni úmrtí naše společnost u <b>odběrného místa</b> eviduje následující pohledávku (dále jako <b>„Pohledávka“</b>):
+</p>
+<table class="table table-bordered">
+  <thead>
     <tr>
       <th>Druh dokladu</th>
       <th>Variabilní symbol</th>
@@ -1039,12 +1042,14 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
       <td>XXXXX,00</td>
       <td>Kč</td>
     </tr>
-    <tr class="table-success fw-bold">
+  </tbody>
+  <tfoot>
+    <tr>
       <td colspan="4" class="text-end">Platby po splatnosti celkem</td>
       <td>XXXXX,00</td>
       <td>Kč</td>
     </tr>
-  </tbody>
+  </tfoot>
 </table>
 
 <p>V této souvislosti Vás žádáme o sdělení identifikačních a kontaktních údajů v rozsahu jméno, příjmení, adresy trvalého pobytu, telefonního čísla a e-mailu osoby, která spravuje pozůstalost. Pozůstalost může ve smyslu § 1877 zákona č. 89/2012 Sb., občanský zákoník, spravovat vykonavatel závěti, nebo pověřený či příslušným soudem jmenovaný správce pozůstalosti. Poté co dědické řízení ve smyslu § 1703 občanského zákoníku bude rozhodnuto pravomocně, pohledávky naší společnosti bude zajišťovat ten z dědiců nebo zmíněných osob.</p>
@@ -1070,10 +1075,10 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
 
 <p>obracíme se na Vás jakožto na potenciálního dědice pana/paní [jméno, příjmení, datum narození, trvalý pobyt] (dále jako „Zůstavitel“) s informací, že naše společnost EP ENERGY TRADING, a.s., IČO 27386643, se sídlem Klimentská 46, Praha 1, 110 02 na základě Smlouvy o sdružených službách dodávky elektřiny/plynu č. ______ uzavřené mezi naší společností a Zůstavitelem (dále jen „Smlouva“) je dodavatelem této energie do odběrného místa EAN/EIC _____ na adrese [ulice, PSČ, město] (dále jen „Odběrné místo“).</p>
 
-<p>Ke dni úmrtí u Odběrného místa evidujeme následující pohledávku (dále jako „Pohledávka“):</p>
-
-<table class="table table-bordered text-center align-middle">
-  <thead class="table-success">
+<p>Ke dni úmrtí naše společnost u <b>odběrného místa</b> eviduje následující pohledávku (dále jako <b>„Pohledávka“</b>):
+</p>
+<table class="table table-bordered">
+  <thead>
     <tr>
       <th>Druh dokladu</th>
       <th>Variabilní symbol</th>
@@ -1100,13 +1105,16 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
       <td>XXXXX,00</td>
       <td>Kč</td>
     </tr>
-    <tr class="table-success fw-bold">
+  </tbody>
+  <tfoot>
+    <tr>
       <td colspan="4" class="text-end">Platby po splatnosti celkem</td>
       <td>XXXXX,00</td>
       <td>Kč</td>
     </tr>
-  </tbody>
+  </tfoot>
 </table>
+
 
 <p>V této souvislosti Vás žádáme o sdělení identifikačních a kontaktních údajů v rozsahu jméno, příjmení, adresy trvalého pobytu, telefonního čísla a e-mailu osoby, která spravuje pozůstalost. Pozůstalost může ve smyslu § 1877 zákona č. 89/2012 Sb., občanský zákoník, spravovat vykonavatel závěti, nebo pověřený či příslušným soudem jmenovaný správce pozůstalosti. Poté co dědické řízení ve smyslu § 1703 občanského zákoníku bude rozhodnuto pravomocně, Pohledávka může být uspokojena jen z majetku náležejícího do pozůstalosti. Není-li správa pozůstalosti vykonávána správcem pozůstalosti nebo ustanovením závěti, pakliže správu pozůstalosti dědici přejímají, je ze dědiců více a neujednají-li si jinak, spraví pozůstalost většinou dědiců v odpovídající výši k uspokojení Pohledávky společnosti. V takovém případě naše společnost zasílá obdobný dopis též těmto dalším dědicům.</p>
 
