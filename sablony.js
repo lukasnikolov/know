@@ -999,8 +999,8 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
 <p><strong>Upozorňujeme Vás, že dodávky energií do Odběrného místa ze strany naší společnosti na základě Smlouvy v současné době nadále probíhají a nebude-li Pohledávka uhrazena, budeme nuceni přistoupit k procesu přerušení dodávky energií do Odběrného místa. Zároveň přistoupíme k vymáhání Pohledávky všemi dostupnými právními prostředky, např. soudní cestou, v rámci které může dojít k navýšení dlužné částky zejména o náklady soudního řízení.</p>
 
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: 
-<a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>
-`files: [],
+<a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
+     	files: [],
         tags: ["Dědické řízení"]
     },
  "Výzva k úhradě dluhu – potencionální dědic – aktivní odběr (šablona číslo 5)": {
@@ -1060,8 +1060,8 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
 </ul>
 
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: 
-<a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>
-`files: [],
+<a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
+     	files: [],
         tags: ["Dědické řízení"]
     },
   "Výzva k úhradě dluhu – potencionální dědic – neaktivní odběr (šablona číslo 6)": {
@@ -1118,10 +1118,10 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
 </ul>
 
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: 
-<a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>
-`files: [],
+<a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
+     	files: [],
         tags: ["Dědické řízení"]
-    },						
+    },
 /* Platby */	
 "Ukončené odběrné místo - Platby": { 
         text: `<p>Dobrý den, pane/paní XY,</p>
