@@ -944,6 +944,29 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
      	files: [ { url: 'https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
         tags: ["Dědické řízení"]
     },
+"Přepis (šablona číslo 1)": {
+    text: `<p>Vážený pane xxxx,/Vážená paní xxxxx,</p>
+<p>stále evidujeme nevyřešený požadavek týkající se přepisu smlouvy na odběr energií po zemřelém <span style="background-color: yellow;">xxxxxx</span>. Rádi bychom Vás informovali o nutnosti provést tento přepis na nového odběratele. Tento krok je nezbytný pro zajištění kontinuity dodávky energií na odběrném místě <span style="background-color: yellow;">[Adresa odběrného místa]</span>.</p>
+<p>Prosíme Vás, abyste co nejdříve kontaktovali naši zákaznickou podporu na telefonním čísle <b>255 70 70 99 </b> nebo e-mailem na <b>info@epet.cz </b>, kde Vám poskytneme veškeré potřebné formuláře a informace k přepisu smlouvy. Přepis je možné také dořešit pomocí online formuláře na tomto  <a href="https://www.epet.cz/formular-zmena-zakaznika/" target="_blank"> Odkazu</a></p>
+<p>Děkujeme za Vaši spolupráci a jsme Vám k dispozici pro jakékoliv dotazy či další informace.</p>
+<p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: 
+<a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
+     	files: [],
+        tags: ["Dědické řízení"]
+    },
+"Urgence přepisu (šablona číslo 2)": {
+    text: `<p>Vážený pane xxxx,/Vážená paní xxxxx,</p>
+<p><strong>Vážený/á [Jméno pozůstalého],</strong></p>
+<p>rádi bychom Vás znovu upozornili na nutnost přepsání smlouvy na odběr energií na nového odběratele. Původní smlouva č. byla uzavřena na zemřelého <span style="background-color: yellow;">xxxxx</span>, a je nezbytné uzavřít novou smlouvu, aby byla zajištěna kontinuální dodávka energií na odběrném místě <span style="background-color: yellow;">[Adresa odběrného místa]</span>.</p>
+<p>Dosud jsme neobdrželi žádnou odpověď na naši předchozí výzvu. Prosíme Vás, abyste co nejdříve kontaktovali naši zákaznickou podporu na telefonním čísle <b>255 70 70 99 </b> nebo e-mailem na <b>info@epet.cz </b>, kde Vám poskytneme veškeré potřebné formuláře a informace k přepisu smlouvy. Přepis je možné také dořešit pomocí online formuláře na tomto <a href="https://www.epet.cz/formular-zmena-zakaznika/" target="_blank"> Odkazu</a></p>
+
+<p>Pokud nebude přepis smlouvy proveden do <b>[Datum – D+30 dní]</b>, budeme nuceni přistoupit k přerušení dodávky energií na uvedeném odběrném místě. Tento krok je nezbytný pro zajištění správné evidence a správy odběrného místa.</p>
+
+<p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: 
+<a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
+     	files: [],
+        tags: ["Dědické řízení"]
+    }, 
   "Výzva k úhradě dlužných plateb, zákaznické číslo: xxxx (šablona číslo 3)": {
     text: `<p>Vážený pane xxxx,/Vážená paní xxxxx,</p>
 
@@ -1005,6 +1028,40 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
      	files: [],
         tags: ["Dědické řízení"]
     },
+ "Oslovení notáře (šablona číslo 4)": {
+    text: `<p>Vážený/Vážená pane/paní magistře/magistro/doktore/doktorko,</p>
+
+<p>tímto Vás zdvořile žádáme o sdělení informací týkajících se probíhajícího dědického řízení u zákazníka (zůstavitele) naší společnosti:</p>
+
+<p><span style="background-color: yellow; font-weight: bold;">JMÉNO/PŘÍJMENÍ, DATUM NAROZENÍ, ADRESA ZÁKAZNÍKA</span></p>
+
+<p>Na výše uvedeného zůstavitele evidujeme následující Smlouvu o sdružených službách dodávky <span style="background-color: yellow;">elektřiny /plynu (dále jako “Smlouva”)</span>, ze které vyplývají, resp. vyplynou nároky naší společnosti ve smyslu úhrady zálohových plateb sjednaných v této Smlouvě a úhrady přeplatku/nedoplatku plynoucího z vystavení konečné faktury:</p>
+
+<ul style="list-style-type: none; padding-left: 0;">
+  <li>– Číslo Smlouvy:   XXXXXXX</li>
+  <li>– Datum podpisu Smlouvy: XX. YY. MMDD</li>
+  <li>– Datum zahájení dodávek: XX. YY. MMDD</li>
+  <li>– Doba trvání Smlouvy: XX měsíců</li>
+</ul>
+
+<p>V souvislosti s výše uvedenými nároky naší společnosti a v rámci prevence před vznikem či zvýšením pohledávek naší společnosti vyplývajících ze Smlouvy, Vás dále žádáme o sdělení těchto informací:</p>
+
+<ul>
+  <li>– Kdo je správcem pozůstalosti</li>
+  <li>– Jména a kontaktní údaje potenciálních dědiců</li>
+  <li>– Zda bylo dědické řízení uzavřeno a jaký je jeho výsledek</li>
+</ul>
+
+<p><strong>Prosíme o zaslání informací do datové schránky <b>E5KGTT5</b> na e-mail <b>info@epet.cz</b></strong></p>
+
+<p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: 
+<a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
+     	files: [],
+        tags: ["Dědické řízení"]
+    },  
+
+
+
  "Výzva k úhradě dluhu – potencionální dědic – aktivní odběr (šablona číslo 5)": {
        text: `
 <p>Vážený pane xxxx,/Vážená paní xxxxx,</p>
