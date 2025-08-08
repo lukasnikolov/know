@@ -1870,7 +1870,8 @@ doby bude vše vyřešeno k Vaší plné spokojenosti.</p>
 <p>Když všechny tyto hodnoty sečteme a vydělíme počtem měsíců, za které je dané vyúčtování vystavené získáme průměrnou jednotkovou cenu za vyúčtované období. Tedy: <strong> XXXXXX Kč </strong>. Případné haléřové vyrovnání je způsobené zaokrouhlováním.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [],
-                tags: ["Jednotková cena"]
+                tags: ["Jednotková cena"],
+                category: "Jednotková cena"
         },
         "Zamítnutí reklamace: Jednotková cena (Případně pokud chceme zákazníkovi vysvětlit co to jednotková cena je a jak se počítá - PLYN": {
                 text: `<p>Dobrý den, pane/paní XXXX,</p>
@@ -2001,7 +2002,8 @@ doby bude vše vyřešeno k Vaší plné spokojenosti.</p>
 <p>Když všechny tyto hodnoty sečteme a vydělíme počtem měsíců, za které je dané vyúčtování vystavené získáme průměrnou jednotkovou cenu za vyúčtované období. Tedy: <strong> XXXXXX Kč </strong>. Případné haléřové vyrovnání je způsobené zaokrouhlováním.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [],
-                tags: ["Jednotková cena"]
+                tags: ["Jednotková cena"],
+                category: "Jednotková cena"
         },
         /* Zákaznický portál */
         "Zákaznický portál - Registrace": {
