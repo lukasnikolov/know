@@ -2274,3 +2274,6 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
  tags: ["Převzetí odchylky"]   
     },	
 };
+// pokud už máš pole, třeba const SABLONY = [ ... ];
+window.SABLONY = SABLONY;
+// nebo: window.SABLONY = mojePoleSeSablonami;
