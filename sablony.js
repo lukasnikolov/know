@@ -1377,7 +1377,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
 <p>Nový platební kalendář Vám bude zaslán v samostatném e-mailu. / poštou.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
   	 		files: [],
- tags: ["zálohy"]   
+ tags: ["Zálohy"]
     },
 "Snížení zálohových plateb - zamítnutí na minumum": { 
         text: `<p>Dobrý den, pane XXX, / paní XXX,<p>
@@ -1386,7 +1386,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
 <p>Děkujeme Vám za pochopení.</p> 
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
   	 		files: [],
- tags: ["zálohy"]   
+ tags: ["Zálohy"] 
     },
 /* SPK */	
 "Žádost o vystavení SPK": { 
