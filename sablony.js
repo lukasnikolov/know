@@ -2275,5 +2275,6 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
     },	
 };
 // pokud už máš pole, třeba const SABLONY = [ ... ];
-window.SABLONY = SABLONY;
+window.SABLONY = data;
 // nebo: window.SABLONY = mojePoleSeSablonami;
+
