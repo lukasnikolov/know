@@ -1189,10 +1189,10 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
         },
         /* Platby */
         "Ukončené odběrné místo - Platby": {
-                text: `<p>Dobrý den, pane/paní XY,</p>
+                text: `<p>Dobrý den, pane XXX / paní XXX,,</p>
 <p>rádi bychom Vás informovali, že jsme obdrželi platbu ve výši <strong>XXXX Kč</strong> pro <strong>zákaznický účet XXXX</strong>, pod <strong>variabilním symbolem XXXXXX.</strong></p> 
 <p>Nicméně se jedná o odběrné místo, které bylo u naší společnosti již ukončeno. Z tohoto důvodu vracíme platbu zpět na bankovní účet <strong>pod variabilním symbolem XXXXX.</strong></p>
-<p>Žádáme Vás, abyste tuto platbu již na tento smluvní účet nezasílali a zrušili si trvalý příkaz.</p>
+<p>Žádáme Vás, abyste tuto platbu již na tento smluvní účet <strong>nezasílali</strong> a <strong>zrušili</strong> si trvalý příkaz.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [],
                 tags: ["Platby"]
@@ -1498,7 +1498,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
 
         /* Výkup */
         "FVE - Dle nové legislativy - Nepoužíváme od 10.04.2025": {
-                text: `<p>Dobrý den, pane/paní XY,</p>
+                text: `<p>Dobrý den, pane XXX / paní XXX,</p>
 <p>děkujeme za Vaši zprávu. Vámi uvedený výrobní EAN jsme zaevidovali a počítáme také s převzetím
 odpovědnosti za odchylku.</p>
 <p><i> Rádi bychom Vás požádali o doplnění následujících informací:</i></p>
@@ -1515,7 +1515,7 @@ doby bude vše vyřešeno k Vaší plné spokojenosti.</p>
                 tags: ["Výkup"]
         },
         "FVE - Dle nové legislativy - Odpověď zákazníkovi po doložení informací, které jsme po něm chtěli - Nepoužíváme od 10.04.2025": {
-                text: `<p>Dobrý den, pane/paní XY,</p>
+                text: `<p>Dobrý den, pane XXX / paní XXX,</p>
 <p>děkujeme za zaslání požadovaných informací. Vaše údaje jsme zaevidovali a zahrneme je do dalšího postupu.</p>
 <p>Jak jsme již avizovali, o dalším průběhu Vás budeme informovat.</p>
 <p>Děkujeme za spolupráci, trpělivost a přejeme hezký den.</p>
@@ -1945,10 +1945,10 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
 <u>Celková spotřeba odběrného místa pro <b>VT:</b> XXX KWh = XXX MWh</u>
 <table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse; font-family:Arial; font-size:14px; width:100%;">
   <!-- Regulované platby -->
-  <tr style="background-color:#fefefe; font-weight:bold;">
+  <tr style="background-color:#ffffff; font-weight:bold;">
     <td colspan="5">Regulované platby:</td>
   </tr>
-  <tr style="background-color:#f9f6f2; font-weight:bold;">
+  <tr style="background-color:#94c11f; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -1978,10 +1978,10 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
   </tr>
 
   <!-- Neregulované platby -->
-  <tr style="background-color:#fefefe; font-weight:bold;">
+  <tr style="background-color:#ffffff; font-weight:bold;">
     <td colspan="5">Neregulované platby:</td>
   </tr>
-  <tr style="background-color:#f9f6f2; font-weight:bold;">
+  <tr style="background-color:#94c11f; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -1997,10 +1997,10 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
   </tr>
 
   <!-- Daň -->
-  <tr style="background-color:#fefefe; font-weight:bold;">
+  <tr style="background-color:#ffffff; font-weight:bold;">
     <td colspan="5">Daň:</td>
   </tr>
-  <tr style="background-color:#f9f6f2; font-weight:bold;">
+  <tr style="background-color:#94c11f; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -2020,10 +2020,10 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
 <p><u>Celková spotřeba odběrného místa pro <b>NT:</b> XXX KWh = XXXX MWh</u></p>
 <table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse; font-family:Arial; font-size:14px; width:100%;">
   <!-- Regulované platby -->
-  <tr style="background-color:#fefefe; font-weight:bold;">
+  <tr style="background-color:#ffffff; font-weight:bold;">
     <td colspan="5">Regulované platby:</td>
   </tr>
-  <tr style="background-color:#f9f6f2; font-weight:bold;">
+  <tr style="background-color:#94c11f; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -2053,10 +2053,10 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
   </tr>
 
   <!-- Neregulované platby -->
-  <tr style="background-color:#fefefe; font-weight:bold;">
+  <tr style="background-color:#ffffff; font-weight:bold;">
     <td colspan="5">Neregulované platby:</td>
   </tr>
-  <tr style="background-color:#f9f6f2; font-weight:bold;">
+  <tr style="background-color:#94c11f; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -2072,10 +2072,10 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
   </tr>
 
   <!-- Daň -->
-  <tr style="background-color:#fefefe; font-weight:bold;">
+  <tr style="background-color:#fffffff; font-weight:bold;">
     <td colspan="5">Daň:</td>
   </tr>
-  <tr style="background-color:#f9f6f2; font-weight:bold;">
+  <tr style="background-color:#f94c11f; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -2097,15 +2097,15 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
 <li>Stálý měsíční plat</li>
 <p>Celkové období za které je faktura vystavena:<b> XXXXX měsíců</b></p>
 <table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse; font-family:Arial; font-size:14px; width:100%;">
-  <tr style="background-color:#fefefe; font-weight:bold;">
+  <tr style="background-color:#ffffff; font-weight:bold;">
     <td colspan="5">Detailní struktura složení ceny Období: XXXX (Ceny bez DPH)</td>
   </tr>
 
   <!-- Regulované platby -->
-  <tr style="background-color:#f9f6f2; font-weight:bold;">
+  <tr style="background-color:#ffffff; font-weight:bold;">
     <td colspan="5">Regulované platby:</td>
   </tr>
-  <tr style="background-color:#fefefe; font-weight:bold;">
+  <tr style="background-color:#94c11f; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -2128,10 +2128,10 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
   </tr>
 
   <!-- Neregulované platby -->
-  <tr style="background-color:#fefefe; font-weight:bold;">
+  <tr style="background-color:#ffffff; font-weight:bold;">
     <td colspan="5">Neregulované platby:</td>
   </tr>
-  <tr style="background-color:#f9f6f2; font-weight:bold;">
+  <tr style="background-color:#94c11f; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -2167,10 +2167,10 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
   </tr>
 
   <!-- Regulované platby -->
-  <tr style="background-color:#fefefe; font-weight:bold;">
+  <tr style="background-color:#ffffff; font-weight:bold;">
     <td colspan="5">Regulované platby:</td>
   </tr>
-  <tr style="background-color:#f9f6f2; font-weight:bold;">
+  <tr style="background-color:#94c11f; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -2193,10 +2193,10 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
   </tr>
 
   <!-- Neregulované platby -->
-  <tr style="background-color:#fefefe; font-weight:bold;">
+  <tr style="background-color:#fffffff; font-weight:bold;">
     <td colspan="5">Neregulované platby:</td>
   </tr>
-  <tr style="background-color:#f9f6f2; font-weight:bold;">
+  <tr style="background-color:#94c11f; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -2212,10 +2212,10 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
   </tr>
 
   <!-- Daň -->
-  <tr style="background-color:#fefefe; font-weight:bold;">
+  <tr style="background-color:#ffffff; font-weight:bold;">
     <td colspan="5">Daň:</td>
   </tr>
-  <tr style="background-color:#f9f6f2; font-weight:bold;">
+  <tr style="background-color:#94c11f; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -2236,15 +2236,15 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
 <li>Cena stálý plat - Dodavatel</li>
 <p>Celkové období za které je faktura vystavena:<b> XXXXX měsíců</b></p>
 <table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse; font-family:Arial; font-size:14px; width:100%;">
-  <tr style="background-color:#fefefe; font-weight:bold;">
+  <tr style="background-color:#ffffff; font-weight:bold;">
     <td colspan="5">Detailní struktura složení ceny Období: XXXX (Ceny bez DPH)</td>
   </tr>
 
   <!-- Regulované platby -->
-  <tr style="background-color:#fefefe; font-weight:bold;">
+  <tr style="background-color:#94c11f; font-weight:bold;">
     <td colspan="5">Regulované platby:</td>
   </tr>
-  <tr style="background-color:#f9f6f2; font-weight:bold;">
+  <tr style="background-color:#ffffff; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -2260,10 +2260,10 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
   </tr>
 
   <!-- Neregulované platby -->
-  <tr style="background-color:#fefefe; font-weight:bold;">
+  <tr style="background-color:#ffffff; font-weight:bold;">
     <td colspan="5">Neregulované platby:</td>
   </tr>
-  <tr style="background-color:#f9f6f2; font-weight:bold;">
+  <tr style="background-color:#94c11f; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
