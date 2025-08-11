@@ -6,21 +6,21 @@ const data = {
         },
         /* Nedoručenky */
         "NEDORUČENKA - PK": {
-                text: ` <p>Vážený zákazníku,</p>
+                text: ` <p>Dobrý den, pane/paní XXXX,</p>
 <p>v příloze tohoto e-mailu Vám zasíláme platební kalendář k dodávce elektřiny/plynu pro následující období.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [],
                 tags: ["Nedoručenky"]
         },
         "NEDORUČENKA - ÚVODNÍ DOPIS": {
-                text: ` <p>Vážený zákazníku,</p>
+                text: ` <p>Dobrý den, pane/paní XXXX,</p>
 <p>děkujeme Vám, že jste si za dodavatele energií vybral právě společnost epet. Věříme, že s našimi službami budete spokojeni.V příloze tohoto e-mailu Vám zasíláme <strong>Uvítací dopis</strong>, <strong>Rekapitulaci smlouvy</strong> a případně i rozpis zálohových plateb pro následující období dodávky, tedy <strong>Platební kalendář</strong>, který je v souladu s Vaší smlouvou.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [],
                 tags: ["Nedoručenky"]
         },
         "NEDORUČENKA - NEDORUČENKA - UPOMÍNKA": {
-                text: ` <p>Vážený zákazníku,</p>
+                text: ` <p>Dobrý den, pane/paní XXXX,</p>
 <p>dovolujeme si Vás upozornit, že u Vaší smlouvy evidujeme neuhrazenou platbu/y. V příloze tohoto e-mailu naleznete detailní informace. Prosíme Vás o kontrolu plateb a v případě prodlení žádáme o urychlené zaplacení neuhrazené částky.</p>
 <p>Nedojde-li k uhrazení pohledávky do 5 pracovních dnů od data odeslání této upomínky, budeme nuceni vystavit penalizační fakturu a účtovat Vám úroky z prodlení a smluvní pokutu dle <em>Všeobecných obchodních podmínek.</em></p>
 <p>Jedná-li se o neuhrazenou zálohu, vězte, že přijaté platby jsou použity na úhradu nejstarších neuhrazených předpisů záloh. Dodržováním předpisu záloh předejdete nesprávnému přiřazování plateb.</p>
@@ -48,14 +48,14 @@ rádi bychom Vás informovali, že jsme obdrželi opravná data pro fakturaci ze
                 tags: ["Fakturace"]
         },
         "Kopie faktury": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>na základě Vašeho požadavku Vám zasíláme kopii faktury za dodávky energií.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [],
                 tags: ["Fakturace"]
         },
         "Výpočet SPOT cen": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>v příloze tohoto e-mailu naleznete výpočetní tabulku a návod, jak si můžete odkontrolovat cenu SPOT. </p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [
@@ -65,7 +65,7 @@ rádi bychom Vás informovali, že jsme obdrželi opravná data pro fakturaci ze
                 tags: ["Fakturace"]
         },
         "Vystavení FA za krátký úsek - (zpravidla z důvodu zahájení dodávek k termínům odečtů": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>Faktura byla vystavena na základě zahájení vaší smlouvy, která začala platit dne <b>DD.MM.RRRR </b> Váš distributor má však pro odběrné místo nastaven odečtový měsíc <b>Název měsíce </b>. Z tohoto důvodu byla první faktura vystavena za období od <b>DD. MM. RRRR do DD. MM. RRRR </b>, aby byl zajištěn soulad s pravidelnými odečty a zúčtovacím obdobím stanoveným distributorem.</p>
 <p>Další faktury budou již standardně vystavovány na základě dohodnutého cyklu. </p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
@@ -74,7 +74,7 @@ rádi bychom Vás informovali, že jsme obdrželi opravná data pro fakturaci ze
         },
 
         "Vysvětlení zúčtování záloh na vyúčtovací faktuře - Odečet záloh na vyúčtovací faktuře": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>rádi bychom Vám poskytli stručné vysvětlení, jak dochází k započítávání zaplacených záloh ve Vašich vyúčtovacích fakturách, aby bylo vše co nejjasnější:</p>
 <p><li><b>Zálohy jsou zúčtovány pouze tehdy, pokud byly uhrazeny</b> na náš účet <b> nejpozději k datu vystavení (DUZP) </b>vyúčtovací faktury.</p></li>
 <p><li>Rozhodujícím faktorem pro zúčtování zálohy je zúčtovací období, nikoliv datum vystavení faktury.</p></li>
@@ -163,7 +163,7 @@ rádi bychom Vás informovali, že jsme obdrželi opravná data pro fakturaci ze
                 tags: ["Smlouvy"]
         },
         "KOPIE SMLOUVY": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>na základě Vašeho požadavku Vám zasíláme kopii Smlouvy o sdružených službách dodávky elektřiny/plynu č. <strong>XXXXXXXXX</strong>.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [],
@@ -319,7 +319,7 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
                 tags: ["Distribuční změny"]
         },
         "Ověření výše hodnoty jističe - nesoulad s DI": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>Váš distributor nás upozornil, že hodnota jističe, kterou eviduje, se liší od hodnoty, kterou máme uvedenou na Vašem zákaznickém účtu. Rádi bychom Vás proto požádali o sdělení informace o skutečné hodnotě jističe.</p>
 <p>Jedná se o odběrné místo <strong>EAN XXXXXXXX</strong></p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
@@ -327,7 +327,7 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
                 tags: ["Distribuční změny"]
         },
         "Doložení dokladu – změna hodnoty hlavního jističe - ČEZ A EG.D": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>Váš distributor nám sdělil informaci, že u odběrného místa <strong>EAN XXXXXXXXXX</strong> byla sjednána nová hodnota jističe, která je <strong>XXX A.</strong></p>
 <p>Rádi bychom Vás požádali o potvrzení této informace, doložení <b>Smlouvy o připojení</b> a <b>revizní zprávy</b> od elektrikáře. Tyto dokumenty můžete zaslat oscanované na e-mail info@epet.cz nebo poštou na adresu EP ENERGY TRADING, a.s., Klimentská 46, 110 02 Praha 1.</p>
 <p>Následně potřebné informace zaevidujeme na Vašem zákaznickém účtu. </p>
@@ -336,7 +336,7 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
                 tags: ["Distribuční změny"]
         },
         "Změna jističe / Sazby – informovat zk o termínu provedení změny": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>potvrzujeme vyřízení Vašeho požadavku na změnu distribuční sazby na XXXX / změnu jističe na XXXX A u odběrného místa <strong>EAN XXXXXXXX.</strong></p>
 <p>Distributor tuto změnu provede k DD. MM. RRRR. Prosíme Vás o zajištění přístupu technikovi do prostor, kde bude servisní zakázka  probíhat. Připravte si také svoji revizní zprávu.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
@@ -344,7 +344,7 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
                 tags: ["Distribuční změny"]
         },
         "Změna jističe / Sazby – potvrzení provedené změny": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>potvrzujeme vyřízení Vašeho požadavku na změnu distribuční sazby na XXXX / změnu jističe na XXXX A u odběrného místa <strong>EAN XXXXXXXX</strong>.</p>
 <p>Distributor tuto změnu provedl k DD. MM. RRRR. </p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
@@ -416,7 +416,7 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
         },
         /* Demontáže */
         "Ukončení smlouvy s demontáží elektroměru – sezónní odběr FIRMA – ČEZ": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>v příloze tohoto e-mailu naleznete podklady k ukončení smlouvy s demontáží měřidla. Jedná se o Žádost o ukončení smlouvy / dodávky elektřiny do odběrného místa – Firma a Žádost o demontáž měřícího zařízení.</p>
 <p>Podklady musí podepsat osoba, která je oprávněna jednat za společnost. Případně lze k Žádosti doložit plnou moc, opravňující k podpisu žádosti, kterou Vám zasíláme v příloze.</p>
 <p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokumenty můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 02 Praha 1.</strong></p>
@@ -429,7 +429,7 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
                 tags: ["Demontáže"]
         },
         "Ukončení smlouvy s demontáží elektroměru DOMÁCNOST - ČEZ": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>v příloze tohoto e-mailu naleznete podklady k ukončení smlouvy s demontáží měřidla. Jedná se o Žádost o ukončení smlouvy / dodávky elektřiny do odběrného místa – Domácnost a Žádost o ukončení smlouvy. </p>
 <p>Prosíme o jejich vyplnění a zaslání zpět na naši e-mailovou adresu. Dokumenty můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 02 Praha 1.</strong> </p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
@@ -441,7 +441,7 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
                 tags: ["Demontáže"]
         },
         "Ukončení smlouvy s demontáží Elektroměru – DOMÁCNOST - EGD/PRE": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>v příloze tohoto e-mailu naleznete podklad k ukončení smlouvy s demontáží měřidla. Jedná se o Žádost o ukončení smlouvy / dodávky elektřiny do odběrného místa – Domácnost.</p>
 <p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokument můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 02 Praha 1.</strong></p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
@@ -451,7 +451,7 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
                 tags: ["Demontáže"]
         },
         "Demontáž elektroměru FIRMA - ČEZ": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>v příloze tohoto e-mailu naleznete podklady k ukončení smlouvy s demontáží měřidla. Jedná se o Žádost o ukončení smlouvy / dodávky elektřiny do odběrného místa – Firma a Žádost o ukončení smlouvy.</p>
 <p>Podklady musí podepsat osoba, která je oprávněna jednat za společnost. Případně lze k Žádosti doložit plnou moc, opravňující k podpisu žádosti, kterou Vám zasíláme v příloze.</p>
 <p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokumenty můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 02 Praha 1</strong>.</p>
@@ -465,7 +465,7 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
                 tags: ["Demontáže"]
         },
         "Demontáž elektroměru FIRMA - EG.D_PRE": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>v příloze tohoto e-mailu naleznete podklad k ukončení smlouvy s demontáží měřidla. Jedná se o Žádost o ukončení smlouvy / dodávky elektřiny do odběrného místa – Firma</p>
 <p>Podklady musí podepsat osoba, která je oprávněna jednat za společnost. Případně lze k Žádosti doložit plnou moc, opravňující k podpisu žádosti, kterou Vám zasíláme v příloze.</p>
 <p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokumenty můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 02 Praha 1.</strong></p>
@@ -478,7 +478,7 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
                 tags: ["Demontáže"]
         },
         "Ukončení smlouvy s demontáží plynoměru DOMÁCNOST - EG.D_PPD_GASNET_RWE": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>v příloze tohoto e-mailu naleznete podklad k ukončení smlouvy s demontáží měřidla. Jedná se o Žádost o ukončení smlouvy / dodávky plynu do odběrného místa – Domácnost.</p>
 <p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokument můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 02 Praha 1.</strong></p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
@@ -488,7 +488,7 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
                 tags: ["Demontáže"]
         },
         "Ukončení smlouvy s demontáží plynoměru FIRMA - EG.D_PPD_GASNET_RWE": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>v příloze tohoto e-mailu naleznete podklad k ukončení smlouvy s demontáží měřidla. Jedná se o Žádost o ukončení smlouvy / dodávky plynu do odběrného místa – Maloodběratel.</p>
 <p>Podklady musí podepsat osoba, která je oprávněna jednat za společnost. Případně lze k Žádosti doložit plnou moc, opravňující k podpisu žádosti, kterou Vám zasíláme v příloze.</p>
 <p>Prosíme o jejich vyplnění a zaslání zpět na naši e-mailovou adresu. Dokument můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 02 Praha 1.</strong></p>
@@ -528,7 +528,7 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
         },
         /* Ostatní */
         "Potvrzení přijetí požadavku": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>děkujeme za zaslání Vašeho požadavku. Rádi bychom Vás informovali, že jsme jej zaevidovali a v tuto chvíli je v řešení. Budeme Vás informovat nejpozději do <b>xx.xx.XXXX</b> o dalším postupu nebo vyřešení požadavku.
 V případě jakýchkoliv dotazů se na nás neváhejte obrátit.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
@@ -555,7 +555,7 @@ V případě jakýchkoliv dotazů se na nás neváhejte obrátit.</p>
         },
         /* Samoodečty */
         "Prosba o doložení protokolu o výměně měřidla": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>je nám líto, ale Váš požadavek na vystavení faktury na základě doručených podkladů se nám nepodařilo vyřešit. Odečtové hodnoty měřidla na sebe nenavazují. Důvodem bude zřejmě výměna měřidla, která proběhla na odběrném místě.</p> 
 <p>V případě, že opravdu došlo k výměně měřidla, Vás prosíme o urychlené dodání protokolu o výměně. Ten naleznete přiložený přímo u měřidla. Pokud protokol nenaleznete, kontaktujte prosím svého distributora, který Vám vystaví jeho opis.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
@@ -588,7 +588,7 @@ V případě jakýchkoliv dotazů se na nás neváhejte obrátit.</p>
                 tags: ["Samoodečty"]
         },
         "Nezpracovaný odečet - omluva ZK": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>omlouváme se, ale Váš požadavek na vystavení faktury na základě nahlášených odečtových hodnot Vašeho měřidla se nám nepodařilo zpracovat v termínu. Faktura Vám bude vystavena na základě dat, která nám doručí distributor.</p>
 <p>Velice se za tuto skutečnost omlouváme a děkujeme za pochopení.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít své faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
@@ -596,7 +596,7 @@ V případě jakýchkoliv dotazů se na nás neváhejte obrátit.</p>
                 tags: ["Samoodečty"]
         },
         "Počáteční stav elektroměru": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>je nám líto, ale Váš požadavek na evidenci počátečního odečtového stavu Vašeho měřidla není možné zpracovat.</p>
 <p>Tento údaj je třeba sdělit Vašemu původnímu dodavateli, který na základě těchto hodnot vystaví konečnou fakturu. Při nejbližší fakturaci na tento stav měřidla navážeme.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
@@ -613,7 +613,7 @@ V případě jakýchkoliv dotazů se na nás neváhejte obrátit.</p>
         },
         /* Samoodečty - Kontrolní + Mimořádné vyúčtování + Konečné */
         "Přijetí samoodečtu - Mimořádná faktura": {
-                text: `<p>Vážený zákazníku, </p>
+                text: `<p>Dobrý den, pane/paní XXXX,</p>
 <p>děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet jsme zpracovali. Nyní čekáme na schválení dat, abychom mohli následně vystavit fakturu.</p>
 <p>Tento schvalovací proces může trvat <strong>2-3 týdny</strong>. Z tohoto důvodu Vás prosíme o trpělivost s vystavením faktury.</p>
 <p>Abychom příště mohli Váš požadavek zpracovat ještě dříve, zasíláme Vám v příloze evidenční tabulku, do které můžete tyto hodnoty vepsat, a následně nám ji zaslat e-mailem případně Vás žádáme, abyste si odečty měřidel nově hlásili prostřednictvím <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznického portálu</a></p>  
@@ -628,7 +628,7 @@ V případě jakýchkoliv dotazů se na nás neváhejte obrátit.</p>
                 tags: ["Samoodečty - Kontrolní + Mimořádné vyúčtování + Konečné"]
         },
         "Přijetí samoodečtu - kontrolní": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet jsme zpracovali jako kontrolní odečet, bez vystavení mimořádné faktury. 
 Odečet bude zohledněn při příští periodické fakturaci.</p>
 <p>Abychom příště mohli Váš požadavek zpracovat ještě dříve, zasíláme Vám v příloze evidenční tabulku, do které můžete tyto hodnoty vepsat, a následně nám ji zaslat e-mailem případně Vás žádáme, abyste si odečty měřidel nově hlásili prostřednictvím <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznického portálu</a></p>
@@ -643,7 +643,7 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
                 tags: ["Samoodečty - Kontrolní + Mimořádné vyúčtování + Konečné"]
         },
         "Přijetí samoodečtu - kontrolní - bez poslání tabulek pro samoodečty": {
-                text: `<p>Dobrý den, pane/paní XXXX,<p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,<p>
 <p>děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet jsme zpracovali jako kontrolní odečet, bez vystavení mimořádné faktury. 
 Odečet bude zohledněn při příští periodické fakturaci, případně Vás žádáme, abyste si odečty měřidel nově hlásili prostřednictvím <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznického portálu</a></p>
 <p><u>Termíny pro nahlášení kontrolních odečtů:</u><p>
@@ -683,7 +683,7 @@ Odečet bude zohledněn při příští periodické fakturaci, případně Vás 
                 tags: ["Samoodečty - Kontrolní + Mimořádné vyúčtování + Konečné"]
         },
         "Přijetí samoodečtu - Mimořádná faktura - Zákazník zadal již do portálu (duplicitní odečet)": {
-                text: `<p>Vážený zákazníku, </p>
+                text: `<p>Dobrý den, pane/paní XXXX,</p>
 <p>děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet jsme zpracovali. Nyní čekáme na schválení dat, abychom mohli následně vystavit fakturu.</p>
 <p>Tento schvalovací proces může trvat 2-3 týdny. Z tohoto důvodu Vás prosíme o trpělivost s vystavením faktury.</p>
 <p>Abychom příště mohli Váš požadavek zpracovat ještě dříve, zasíláme Vám v příloze evidenční tabulku, do které můžete tyto hodnoty vepsat, a následně nám ji zaslat e-mailem případně Vás žádáme, abyste si odečty měřidel nově hlásili prostřednictvím <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznického portálu</a>. 
@@ -700,7 +700,7 @@ Odečet bude zohledněn při příští periodické fakturaci, případně Vás 
 
         },
         "Přijetí samoodečtu - kontrolní - Zákazník zadal již do portálu (duplicitní odečet)": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet jsme zpracovali jako kontrolní odečet, bez vystavení mimořádné faktury. 
 Odečet bude zohledněn při příští periodické fakturaci.</p> 
 <p>Abychom příště mohli Váš požadavek zpracovat ještě dříve, zasíláme Vám v příloze evidenční tabulku, do které můžete tyto hodnoty vepsat, a následně nám ji zaslat e-mailem případně Vás žádáme, abyste si odečty měřidel nově hlásili prostřednictvím <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznického portálu</a></p>
@@ -716,7 +716,7 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
                 tags: ["Samoodečty - Kontrolní + Mimořádné vyúčtování + Konečné"]
         },
         "Přijetí samoodečtu - Konečné vyúčtování (po ukončení smlouvy)": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>děkujeme Vám za zaslání konečného samoodečtu. Tímto potvrzujeme jeho přijetí a nyní čekáme na schválení dat ze strany distributora.</p>
 <p>Tento schvalovací proces může trvat 2-3 týdny. Z tohoto důvodu Vás prosíme o trpělivost s vystavením faktury. </p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
@@ -725,7 +725,7 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
                 tags: ["Samoodečty - Kontrolní + Mimořádné vyúčtování + Konečné"]
         },
         "Přijetí samoodečtu - Konečné vyúčtování (zákazník stavy hlásí ještě před termínem ukončení smlouvy)": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>děkujeme Vám za nahlášení samoodečtu ke konečné faktuře.</p>
 <p>Dovolujeme si Vás informovat, že Vaše smlouva bude ukončena k <b> termín ukončení </b>. Z tohoto důvodu je možné zadat stav samoodečtu až po tomto datu, a to nejpozději do <b> uvedeme termín do kdy stav může nahlásit (5 dní od ukončení smlouvy) </b> </p>
 <p>Prosíme Vás tedy o nahlášení samoodečtu v uvedeném termínu, aby mohla být konečná faktura vystavena s odpovídající spotřebou. Případně Vás žádáme, abyste si odečty měřidel nově hlásili prostřednictvím <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznického portálu</a></p> </p>
@@ -735,7 +735,7 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
                 tags: ["Samoodečty - Kontrolní + Mimořádné vyúčtování + Konečné"]
         },
         "Přijetí samoodečtu - Konečné - Zákazník zadal již do portálu (duplicitní odečet)": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet jsme zpracovali. Nyní čekáme na schválení dat, abychom mohli následně vystavit fakturu.</p>
 <p>Tento schvalovací proces může trvat 2-3 týdny. Z tohoto důvodu Vás prosíme o trpělivost s vystavením faktury. 
 <p>Pokud odečty zadáte přímo prostřednictvím tohoto portálu a zobrazí se zelená zpráva o úspěšném přijetí, není nutné nás dále informovat ani zasílat údaje e-mailem. Tento stav můžete považovat za potvrzení, že samoodečet byl úspěšně zpracován.</p>
@@ -747,14 +747,14 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
                 tags: ["Samoodečty - Kontrolní + Mimořádné vyúčtování + Konečné"]
         },
         "Přijetí samoodečtu - k aktivaci smlouvy": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet k aktivaci smlouvy jsme zpracovali.Tímto potvrzujeme jeho přijetí a zaevidování jako počáteční stav. Upozorňujeme, že na základě tohoto samoodečtu nedochází  k vystavení faktury. Tento stav však bude zohledněn při řádné periodické fakturaci.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [],
                 tags: ["Samoodečty - Kontrolní + Mimořádné vyúčtování + Konečné"]
         },
         "Přijetí samoodečtu - k aktivaci smlouvy - Zákazník zadal již do portálu (duplicitní odečet)": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet k aktivaci smlouvy jsme zpracovali.Tímto potvrzujeme jeho přijetí a zaevidování jako počáteční stav. Upozorňujeme, že na základě tohoto samoodečtu nedochází  k vystavení faktury. Tento stav však bude zohledněn při řádné periodické fakturaci.</p>
 <p>Pokud odečty zadáte přímo prostřednictvím zákaznického portálu a zobrazí se zelená zpráva o úspěšném přijetí, není nutné nás dále informovat ani zasílat údaje e-mailem. Tento stav můžete považovat za potvrzení, že samoodečet byl úspěšně zpracován.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
@@ -763,7 +763,7 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
         },
         /* Reklamace */
         "Přijetí reklamace  – není potřeba od ZK nic doložit": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>potvrzujeme Vám přijetí reklamace, jejíž obsah je blíže specifikován níže v popisu reklamace. U této reklamace evidujeme následující údaje:</p>
 <p>Datum přijetí/uplatnění reklamace: <strong>DD. MM. RRRR</strong> </p>
 <p>Důvod reklamace:</p>
@@ -774,7 +774,7 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
                 tags: ["Reklamace"]
         },
         "Přijetí reklamace s požadavkem o doložení chybějících podkladů": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>potvrzujeme Vám přijetí reklamace, jejíž obsah je blíže specifikován níže v popisu reklamace. U této reklamace evidujeme následující údaje: </p> 
 <p>Datum přijetí/uplatnění reklamace: <strong>DD. MM. RRRR</strong></p>
 <p>Důvod reklamace:</p>
@@ -787,7 +787,7 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
                 tags: ["Reklamace"]
         },
         "Vyřízení reklamace - oprávněná": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>reagujeme na Vaši reklamaci podanou dne DD. MM. RRRR, která se týká UVÉST DŮVOD.</p>
 <p>Vámi podaná reklamace byla z naší strany důkladně posouzena a následně vyhodnocena jako <strong>oprávněná.</p></strong>
 <p>UVEDEME, JAK BUDE REKLAMACE VYŘEŠENA - NAPŘ. VYSTAVENÍ OPRAVNÉ FAKTURY APOD. – uvedeno v ÚKOLU</p>
@@ -798,7 +798,7 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
                 tags: ["Reklamace"]
         },
         "Vyřízení reklamace - neoprávněná": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>reagujeme na Vaši reklamaci podanou dne <strong>DD. MM. RRRR</strong>, která se týká <strong>UVÉST DŮVOD</strong>.</p>
 <p>Vámi podaná reklamace byla důkladně posouzena a následně vyhodnocena jako <strong>neoprávněná.</strong></p>
 <p>Důvodem zamítnutí reklamace je:</p>
@@ -809,7 +809,7 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
                 tags: ["Reklamace"]
         },
         "Zamítnutí požadavku na uplatnění náhrady - Elektřina": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>reagujeme na Vaši žádost týkající se uplatnění náhrady škody za nedodržení standardu kvality dodávek/distribuce elektřiny dle vyhlášky č. 540/2005 Sb., o kvalitě dodávek elektřiny a souvisejících služeb v elektroenergetice.</p>
 <p>Je nám líto, ale Vaši žádost jsme nuceni zamítnout. Důvodem našeho zamítavého stanoviska je marné uplynutí lhůty pro uplatnění náhrady škody v souladu s § 4 odst. 4 písm. a) uvedené vyhlášky, tj. 60 kalendářních dnů ode dne následujícího po dni, ve kterém uplynula lhůta podle standardů.</p>
 <p>Zákazníci, kteří jsou spotřebiteli ve smyslu § 419 zákona č. 89/2012 Sb., občanský zákoník, se můžou v souladu s § 17 odst. 7 písm. e) zákona č. 458/2000 Sb., energetický zákon, ve znění pozdějších předpisů, v případě vzniklého sporu obracet na Energetický regulační úřad (www.eru.cz), jakožto orgán mimosoudního řešení sporů v oblasti energetiky. Energetický regulační úřad může rozhodnout spor mezi zákazníkem a společností EP ENERGY TRADING, a.s., o splnění povinností z uzavřené smlouvy, jejíž předmětem je dodávka nebo distribuce elektřiny nebo plynu a spor o určení, zda taková smlouva vznikla, trvá, nebo zanikla, a kdy se tak stalo. </p>
@@ -818,7 +818,7 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
                 tags: ["Reklamace"]
         },
         "Zamítnutí požadavku na uplatnění náhrady - Plyn": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>reagujeme na Vaši žádost týkající se uplatnění náhrady za nedodržení standardu kvality dodávek/distribuce plynu dle vyhlášky č. 545/2006 Sb., o kvalitě dodávek plynu a souvisejících služeb v plynárenství.</p>
 <p>Je nám líto, ale Vaši žádost jsme nuceni zamítnout. Důvodem našeho zamítavého stanoviska je marné uplynutí lhůty pro uplatnění náhrady v souladu s § 3 odst. 1 písm. b) uvedené vyhlášky, tj. 60 kalendářních dnů ode dne následujícího po dni, ve kterém uplynula lhůta podle standardů.
 </p>
@@ -829,7 +829,7 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
         },
         /* Dědické řízení */
         "Informace k doložení dokladů po úmrtí odběratele": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>je nám líto, že řešíte tuto smutnou událost. Abychom mohli provést potřebné změny na zákaznickém účtu, budeme potřebovat jistou součinnost.</p>
 <p>Zejména je důležité nám doručit <strong>kopii úmrtního listu</strong> a <strong>usnesení z dědického řízení.</strong></p>
 <p>Je také potřebné, abyste nám sdělili, na koho bude odběrné místo přepsáno, nebo zda budete odběrné místo ukončovat s demontáží měřidla.</p>
@@ -850,14 +850,14 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
                 tags: ["Dědické řízení"]
         },
         "Potvrzení přijetí dokumentů": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>potvrzujeme přijetí Vašich podkladů, které jsme předali ke zpracování. Po ukončení smlouvy a dodávek do odběrného místa Vám bude vystavena konečná faktura. Přeplatky nebo nedoplatky budou řešeny s osobou oprávněnou dle rozhodnutí o dědickém řízení.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href='https://zakaznici.epet.cz/login' target='_blank'>Zákaznický portál</a></p>`,
                 files: [],
                 tags: ["Dědické řízení", "Přepisy"]
         },
         "Zákazník doložil veškeré dokumenty k vyplacení přeplatku - úkol předán na finance": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>děkujeme za zaslání požadovaných dokumentů. Vaše podklady jsme předali příslušnému oddělení k dalšímu zpracování.</p>
 <p>Jakmile dojde k vyplacení přeplatku, budeme Vás o této skutečnosti bezodkladně informovat.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href='https://zakaznici.epet.cz/login' target='_blank'>Zákaznický portál</a></p>`,
@@ -865,7 +865,7 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
                 tags: ["Dědické řízení"]
         },
         "Zákazník doložil usnesení, ale je v něm uvedeno více dědiců a zk. si přeje vyplatit přeplatek na jednotnÝ BÚ": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>děkujeme za zaslání usnesení o dědictví. Vážíme si Vaší spolupráce.</p>
 <p>V e-mailu uvádíte, že si přejete přeplatek vyplatit na konkrétní bankovní účet. Abychom mohli tento krok uskutečnit, je nutné vyplnit a podepsat čestné prohlášení, které přikládáme v příloze tohoto e-mailu.</p>
 <li>Toto prohlášení musí podepsat všichni dědicové uvedení v usnesení.</li>
@@ -877,7 +877,7 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
                 tags: ["Dědické řízení"]
         },
         "Zákazník doložil usnesení, ale je v něm uvedeno více dědiců - bez toho aniž by uvedl, že si ho přeje vyplatit na jednotný BÚ": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>děkujeme za zaslání usnesení o dědictví. Vážíme si Vaší spolupráce.</p>
 <p>Po prozkoumání přiloženého usnesení jsme zjistili, že je v něm uvedeno více dědiců. Abychom mohli pokračovat ve vyplacení přeplatku na bankovní účet, je nutné, aby všichni dědicové podepsali čestné prohlášení, které přikládáme v příloze tohoto e-mailu.</p>
 <li>Toto prohlášení musí podepsat všichni dědicové uvedení v usnesení.</li>
@@ -889,7 +889,7 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
                 tags: ["Dědické řízení"]
         },
         "Zákazník se rozčiluje, že nevidí důvod proč zasílat ČP NA ZÁKLADĚ ČEHO TO PO NĚM CHCEME - KDYŽ CHCE VYPLATIT PŘEPLATEK NA JEDNOTNÉ BÚ": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>děkujeme za Váš dotaz ohledně požadavku na vyplnění čestného prohlášení pro vyplacení přeplatku po úmrtí zákazníka.</p>
 <p>Tento krok vychází z legislativních požadavků na správné vypořádání finančních závazků v rámci dědického řízení. Přestože bylo vydáno usnesení o dědictví, je nutné doložit, že se dědicové shodli na způsobu vyplacení přeplatku, zejména pokud se má celá částka poukázat na konkrétní bankovní účet jednoho z dědiců.</p>
 <p><b>Požadavek na čestné prohlášení vychází z následujících principů:</b></p>
@@ -1198,7 +1198,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
                 tags: ["Platby"]
         },
         "Upomínka - před předáním na Agenturu": {
-                text: `<p>Dobrý den, pane/paní xxxxx ( nebo „Vážený zákazníku,“ v případě firmy)</p>
+                text: `<p>Dobrý den, pane/paní XXXX, ( nebo „Vážený zákazníku,“ v případě firmy)</p>
 <p>dnes jsme se Vás pokusili telefonicky kontaktovat, ale nebyli jsme úspěšní, proto volíme tuto formu kontaktu.</p>
 <p>I přes opakované výzvy evidujeme ke dni <strong>xxxxx</strong> pohledávky v celkové výši <strong>xxxx,-Kč</strong>, tato částka zahrnuje:</p>
 <li>Zálohové platby za měsíce: <strong>xxxx</strong>,<strong>xxxx</strong>,<strong>xxxxx</strong> </li>
@@ -1225,14 +1225,14 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
                 tags: ["Platby"]
         },
         "Potvrzení zk - že na základě potvrení o platbě je na jeho ZÚ vše v pořádku uhrazeno": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>děkujeme za zaslané potvrzení o platbě. Rádi bychom Vás informovali, že se nám na základě tohoto potvrzení podařilo platbu dohledat. Na Vašem zákaznickém účtu nyní evidujeme vše v pořádku uhrazeno.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [],
                 tags: ["Platby"]
         },
         "Hrazení plateb pod špatným variabilním symbolem": {
-                text: `<p>Dobrý den, pane/paní XXXX,<p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,<p>
 <p>při kontrole Vašeho zákaznického účtu jsme zjistili, že nám pravidelné zálohové platby hradíte pod špatným variabilním symbolem. Při následujících platbách uvádějte prosím tento symbol: XXXXXX.</p>
 <p>Pro jistotu Vám v příloze zasíláme i aktuální rozpis záloh, kde tento variabilní symbol máte také uvedený.</p>
 <p>Vaši platbu tak budeme moct rychleji identifikovat a poté správně zaevidovat na Váš zákaznický účet.</p>
@@ -1241,7 +1241,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
                 tags: ["Platby"]
         },
         "Hrazení plateb bez variabilního symbolu": {
-                text: `<p>Dobrý den, pane/paní XXXX,<p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,<p>
 <p>při kontrole Vašeho zákaznického účtu jsme zjistili, že nám pravidelné zálohové platby hradíte bez variabilního symbolu. Při následujících platbách uvádějte prosím tento symbol: XXXXXX.</p>
 <p>Pro jistotu Vám v příloze zasíláme i aktuální rozpis záloh, kde tento variabilní symbol máte také uvedený.</p>
 <p>Vaši platbu tak budeme moct rychleji identifikovat a poté správně zaevidovat na Váš zákaznický účet.</p>
@@ -1260,7 +1260,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
                 tags: ["Platby"]
         },
         "Ověření nastavení způsobu úhrady záloh přes INKASO": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>při kontrole Vašeho zákaznického účtu jsme zjistili, že se nám nedaří provádět inkasování plateb z bankovního účtu, který byl uveden. Rádi bychom Vás požádali o kontrolu správnosti čísla účtu anebo nastavení podmínek inkasování u Vaší banky.</p>
 <p>V současnosti u Vás evidujeme toto číslo účtu: <strong>XXXXXXXXXXX</strong>.</p>
 <p>Jelikož se nám nepodařilo inkasovat aktuálně splatnou zálohovou platbu, učiňte tak jednorázově převodem na číslo účtu <strong>9960227/0100</strong> pod variabilním symbolem <strong>XXXXXX</strong>. </p>
@@ -1269,7 +1269,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
                 tags: ["Platby"]
         },
         "SIPO – ověření spojovacího čísla": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>při kontrole Vašeho zákaznického účtu jsme zjistili, že se nám nedaří provádět inkasování plateb prostřednictvím SIPO. Rádi bychom Vás požádali o kontrolu spojovacího čísla, které naleznete na SIPO složence v pravém horním rohu, na druhém řádku.</p>
 <p>V současnosti u Vás evidujeme toto spojovací číslo: <strong>XXXXXXXXXXX</strong>.</p>
 <p>Jelikož se nám nepodařilo inkasovat aktuálně splatnou zálohovou platbu, učiňte tak jednorázově převodem na <strong>číslo účtu 9960227/0100</strong> pod variabilním symbolem <strong>XXXXXX</strong>.</p>
@@ -1278,7 +1278,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
                 tags: ["Platby"]
         },
         "Nesrovnalosti ve způsobu úhrady zálohových plateb": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>při kontrole Vašeho zákaznického účtu jsme zjistili, že využíváte jiný způsob hrazení zálohových plateb, než byl sjednán ve smlouvě nebo dohodnutý v minulosti.</p>
 <p>Rádi bychom Vás požádali o potvrzení, jakým způsobem máme tedy trvale nastavit způsob plateb na Vašem zákaznickém účtu. Vaše platby tak budeme moci přehledně a rychle evidovat.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
@@ -1312,7 +1312,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
                 tags: ["Platby"]
         },
         "Otevřené platby - Zákazníkovi vracíme platbu, kterou uhradil pod chybným VS": {
-                text: `<p>Dobrý den, pane/paní XXXX,<p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,<p>
 <p>dovolujeme si Vás informovat, že částka ve výši <strong> XXXX Kč</strong>, kterou jste uhradil(a) pod chybným variabilním symbolem, Vám bude vrácena na bankovní účet číslo <strong> XXXXX </strong></p>
 <p>Upozorňujeme, že platby je nutné hradit výhradně pod správným variabilním symbolem uvedeným v <strong>platebním kalendáři</strong>, který naleznete v příloze tohoto e-mailu.</p>
 <p>Zároveň Vám v příloze zasíláme <strong>daňový doklad</strong> k vrácené platbě.</p>
@@ -1321,7 +1321,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
                 tags: ["Platby"]
         },
         "Otevřené platby - Zákazníkovi vracíme platbu, kterou uhradil mimo PK (nadrámec)": {
-                text: `<p>Dobrý den, pane/paní XXXX,<p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,<p>
 <p>dovolujeme si Vás informovat, že částka ve výši <strong>XXXX Kč</strong>, kterou jste uhradil(a) nad rámec předepsaných záloh, Vám bude vrácena na bankovní účet číslo <strong>XXXXX</strong>.</p>
 <p>Zároveň si Vás dovolujeme upozornit, že platby byly hrazeny ve vyšší výši, než stanovuje aktuální rozpis záloh. Doporučujeme proto upravit trvalý příkaz dle <strong>platného platebního kalendáře</strong>, který Vám zasíláme v příloze tohoto e-mailu.</p>
 <p>Zároveň Vám v příloze zasíláme <strong>daňový doklad</strong> k vrácené platbě.</p>
@@ -1347,7 +1347,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
                 tags: ["Zálohy"]
         },
         "Snížení zálohových plateb - zamítnutí": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>je nám líto, ale Vašemu požadavku nemůžeme v tuto chvíli vyhovět.</p>
 <p>Výše záloh, kterou jsme Vám stanovili v platebním kalendáři, se odvíjí od smluvní ceny a očekávaného množství dodané energie.</p>
 <p>V případě, že disponujete informacemi, které prokazují důvodné snížení plateb na daném odběrném místě - instalace fotovoltaické elektrárny, přechod na jiný způsob vytápění (instalace plynového kotle, instalace tepelného čerpadla), případně konečné vyúčtování od původního dodavatele, rádi bychom Vás požádali o jejich doložení <b>(protokol o instalaci, konečné vyúčtování + aktuální foto měřidla s datumovkou)</b>. Následně posoudíme požadavek na výši zálohy.</p>
@@ -1357,14 +1357,14 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
                 tags: ["Zálohy"]
         },
         "Kopie rozpisu záloh": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>na základě Vašeho požadavku Vám zasíláme kopii platebního kalendáře k dodávkám energií.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [],
                 tags: ["Zálohy"]
         },
         "Platební kalendář – daňový doklad": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>rádi bychom Vás informovali, že platební kalendář, který jsme Vám zaslali, splňuje všechny zákonné náležitosti a slouží jako daňový doklad.</p>
 <p>Daňový doklad navíc Vám vystavíme pouze na přijaté platby, které nám zašlete nad rámec částek stanovených platebním kalendářem.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
@@ -1656,7 +1656,7 @@ doby bude vše vyřešeno k Vaší plné spokojenosti.</p>
         },
         /* Zákaznický portál */
         "Zákaznický portál - Registrace": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>děkujeme za Váš e-mail a rádi bychom Vás informovali, že jsme úspěšně provedli registraci Vašeho účtu.
 Registrační e-mail s přístupovými údaji a pokyny k aktivaci Vám bude doručen v samostatné zprávě. Pokud byste e-mail neobdržel(a) do několika minut, prosíme o kontrolu složky se spamem nebo hromadnou poštou.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
@@ -1664,7 +1664,7 @@ Registrační e-mail s přístupovými údaji a pokyny k aktivaci Vám bude doru
                 tags: ["Zákaznický portál"]
         },
         "Zákaznický portál - Sloučení účtů": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>rádi bychom Vás informovali, že jsme na základě Vašeho požadavku úspěšně provedli sloučení Vašich zákaznických účtů v rámci "Zákaznického portálu".
 Veškeré sloučené účty nyní naleznete v portálu pod svým jménem, umístěné vpravo nahoře. Nově budete mít možnost:
 <li>změnit výchozí účet dle Vašich preferencí,</li>
@@ -1675,7 +1675,7 @@ Veškeré sloučené účty nyní naleznete v portálu pod svým jménem, umíst
                 tags: ["Zákaznický portál"]
         },
         "Zákaznický portál - Deaktivace": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>na základě Vašeho požadavku jsme úspěšně deaktivovali Váš přístup do Zákaznického portálu.
 Pokud byste si svou volbu v budoucnu rozmyslel(a) a přál(a) si přístup do portálu znovu aktivovat, neváhejte se na nás obrátit. Rádi Vám jej kdykoliv obnovíme.
 Děkujeme, že jste využíval(a) náš Zákaznický portál.</p>
@@ -1684,7 +1684,7 @@ Děkujeme, že jste využíval(a) náš Zákaznický portál.</p>
                 tags: ["Zákaznický portál"]
         },
         "Zákaznický portál - Odpověď na úkol - Všebecné dotazy z webu ": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>děkujeme za váš dotaz, týkající se <strong> stručný popis požadavku</strong>, který jste zadal/a prostřednictvím našeho zákaznického portálu.Rádi bychom vám poskytli odpověď:</p>
 <p>Sem uveďte konkrétní odpověď na dotaz</p>`,
                 files: [],
@@ -1796,7 +1796,7 @@ Děkujeme, že jste využíval(a) náš Zákaznický portál.</p>
         },
 
         "Přezkoumání smluvní pokuty - je oprávněná": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>informujeme Vás, že jsme znovu a důkladně prozkoumali důvody udělení smluvní pokuty týkající se odběrného místa <strong>EAN/EIC XXXXXXXXX</strong>.</p>
 <p>I po opětovném přezkoumání však uplatňujeme náš nárok na vystavení smluvní pokuty. Důvodem je <strong>XXXXX</strong> (důvod vypsat z úkolu).</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a>.</p>`,
@@ -1805,7 +1805,7 @@ Děkujeme, že jste využíval(a) náš Zákaznický portál.</p>
         },
 
         "Smluvní pokutu nepožadujeme - storno": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>přehodnotili jsme náš požadavek na úhradu smluvní pokuty pro odběrné místo <strong>EAN/EIC XXXXXXXXX</strong>.</p>
 <p>Na úhradě této pokuty již netrváme.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a>.</p>`,
@@ -1814,7 +1814,7 @@ Děkujeme, že jste využíval(a) náš Zákaznický portál.</p>
         },
         /* Změna typu měření */
         "Změna typu měření z B na C": {
-                text: `<p>Dobrý den, pane XXX / paní XXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>informujeme Vás, že u odběrného místa EAN <b>[EAN kód]</b> na adrese <b>[Adresa]</b> distributor provedl změnu typu měření z <i> B </i> na <i>C</i>. Od této chvíle tedy bude odečet na Vašem měřidle vykonáván pouze jednou ročně.</p>
 <p>Pokud byste si přáli nadále využívat možnost měsíční fakturace, je to možné na základě zasílání samoodečtů. Tato možnost je zpoplatněná <i> 41,32 Kč/odběrné místo bez DPH</i>. </p>
 <p>Pro využití této možnosti nám zasílejte stavy Vašeho měřidla zaznamenané v tabulce, kterou naleznete v příloze a to nejpozději dle níže uvedených termínů. Využít můžete i <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a>. </p>
@@ -1830,7 +1830,7 @@ Děkujeme, že jste využíval(a) náš Zákaznický portál.</p>
         },
 
         "Změna typu měření z C na B - Domácnost": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>informujeme Vás, že u odběrného místa EAN <b>xxxxx </b> na adrese <b>xxxxxx</b> distributor provedl změnu typu měření z <b>C</b> na <b>B</b>. Od této chvíle se tedy bude odečet na Vašem měřidle vykonávat za každý kalendářní měsíc.</p>
 <p>Každý měsíc Vám budeme zasílat i fakturu. Rádi bychom Vás také upozornili, že fakturace jednou ročně již není možná. Platební kalendář a placení záloh zůstává nezměněn.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a>.</p>`,
@@ -1839,7 +1839,7 @@ Děkujeme, že jste využíval(a) náš Zákaznický portál.</p>
         },
 
         "Změna typu měření z C na B - Firma -  nabídka bezzálohového režimu": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>informujeme Vás, že u odběrného místa EAN <b>xxxxx</b> na adrese <b>xxxxxx</b> distributor provedl změnu typu měření z <b>C</b> na <b>B</b>. Od této chvíle se tedy bude odečet na Vašem měřidle vykonávat za každý kalendářní měsíc.</p>
 <p>Každý měsíc Vám budeme zasílat i fakturu. Rádi bychom Vás také upozornili, že fakturace jednou ročně již není možná.</p>
 <p>V návaznosti na tuto změnu Vám rovněž zasíláme podmínky pro případný přechod na bezzálohový režim:</p>
@@ -1857,7 +1857,7 @@ Děkujeme, že jste využíval(a) náš Zákaznický portál.</p>
                 tags: ["Změna typu měření"]
         },
         "Změna typu měření z C na B - Firma - bez nabídky bezzálohového režimu": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>informujeme Vás, že u odběrného místa EAN <b>xxxxx </b> na adrese <b>xxxxxx</b> distributor provedl změnu typu měření z <b>C</b> na <b>B</b>. Od této chvíle se tedy bude odečet na Vašem měřidle vykonávat za každý kalendářní měsíc.</p>
 <p>Každý měsíc Vám budeme zasílat i fakturu. Rádi bychom Vás také upozornili, že fakturace jednou ročně již není možná. Platební kalendář a placení záloh zůstává nezměněn.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a>.</p>`,
@@ -1935,7 +1935,7 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
         },
         /* Jednotková cena */
 "Zamítnutí reklamace: Jednotková cena (Případně pokud chceme zákazníkovi vysvětlit co to jednotková cena je a jak se počítá - ELE": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>Po pečlivém přezkoumání Vaší žádosti a zaslaných podkladů jsme dospěli k závěru, že průměrná jednotková cena za energie, která je uvedena ve vyúčtování, odpovídá podmínkám smlouvy a aktuálním cenám na trhu. Z tohoto důvodu nemůžeme Vaši reklamaci uznat. Pro lepší porozumění si dovolujeme uvést vysvětlení jednotkové ceny:</p>
 <p>Jednotková cena za energie je stanovena jako celková částka za spotřebu energií (včetně pevných poplatků a daní) vydělená celkovým množstvím odebraných energií. Tato cena zahrnuje náklady na:</p>
 <li>Ceny za dodávku</li>
@@ -2153,7 +2153,7 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
                 category: "Jednotková cena"
         },
 "Zamítnutí reklamace: Jednotková cena (Případně pokud chceme zákazníkovi vysvětlit co to jednotková cena je a jak se počítá - PLYN": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>Po pečlivém přezkoumání Vaší žádosti a zaslaných podkladů jsme dospěli k závěru, že průměrná jednotková cena za energie, která je uvedena ve vyúčtování, odpovídá podmínkám smlouvy a aktuálním cenám na trhu. Z tohoto důvodu nemůžeme Vaši reklamaci uznat. Pro lepší porozumění si dovolujeme uvést vysvětlení jednotkové ceny:</p>
 <p>Jednotková cena za energie je stanovena jako celková částka za spotřebu energií (včetně pevných poplatků a daní) vydělená celkovým množstvím odebraných energií. Tato cena zahrnuje náklady na:</p>
 <li>Ceny za dodávku</li>
@@ -2286,4 +2286,3 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
         },
 };
 window.SABLONY = data;
-
