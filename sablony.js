@@ -6,21 +6,21 @@ const data = {
         },
         /* Nedoručenky */
         "NEDORUČENKA - PK": {
-                text: ` <p>Dobrý den, pane/paní XXXX,</p>
+                text: ` <p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>v příloze tohoto e-mailu Vám zasíláme platební kalendář k dodávce elektřiny/plynu pro následující období.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [],
                 tags: ["Nedoručenky"]
         },
         "NEDORUČENKA - ÚVODNÍ DOPIS": {
-                text: ` <p>Dobrý den, pane/paní XXXX,</p>
+                text: ` <p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>děkujeme Vám, že jste si za dodavatele energií vybral právě společnost epet. Věříme, že s našimi službami budete spokojeni.V příloze tohoto e-mailu Vám zasíláme <strong>Uvítací dopis</strong>, <strong>Rekapitulaci smlouvy</strong> a případně i rozpis zálohových plateb pro následující období dodávky, tedy <strong>Platební kalendář</strong>, který je v souladu s Vaší smlouvou.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [],
                 tags: ["Nedoručenky"]
         },
         "NEDORUČENKA - NEDORUČENKA - UPOMÍNKA": {
-                text: ` <p>Dobrý den, pane/paní XXXX,</p>
+                text: ` <p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>dovolujeme si Vás upozornit, že u Vaší smlouvy evidujeme neuhrazenou platbu/y. V příloze tohoto e-mailu naleznete detailní informace. Prosíme Vás o kontrolu plateb a v případě prodlení žádáme o urychlené zaplacení neuhrazené částky.</p>
 <p>Nedojde-li k uhrazení pohledávky do 5 pracovních dnů od data odeslání této upomínky, budeme nuceni vystavit penalizační fakturu a účtovat Vám úroky z prodlení a smluvní pokutu dle <em>Všeobecných obchodních podmínek.</em></p>
 <p>Jedná-li se o neuhrazenou zálohu, vězte, že přijaté platby jsou použity na úhradu nejstarších neuhrazených předpisů záloh. Dodržováním předpisu záloh předejdete nesprávnému přiřazování plateb.</p>
