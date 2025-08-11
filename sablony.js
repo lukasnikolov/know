@@ -956,7 +956,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
         },
         "Urgence přepisu (šablona číslo 2)": {
                 text: `<p>Vážený pane xxxx,/Vážená paní xxxxx,</p>
-<p><strong>Vážený/á [Jméno pozůstalého],</strong></p>
+<p><strong>Dobrý den, pane XXX, / paní XXX,,</strong></p>
 <p>rádi bychom Vás znovu upozornili na nutnost přepsání smlouvy na odběr energií na nového odběratele. Původní smlouva č. byla uzavřena na zemřelého <b>xxxxx</b>, a je nezbytné uzavřít novou smlouvu, aby byla zajištěna kontinuální dodávka energií na odběrném místě <b>[Adresa odběrného místa]</b>.</p>
 <p>Dosud jsme neobdrželi žádnou odpověď na naši předchozí výzvu. Prosíme Vás, abyste co nejdříve kontaktovali naši zákaznickou podporu na telefonním čísle <b>255 70 70 99 </b> nebo e-mailem na <b>info@epet.cz </b>, kde Vám poskytneme veškeré potřebné formuláře a informace k přepisu smlouvy. Přepis je možné také dořešit pomocí online formuláře na tomto <a href="https://www.epet.cz/formular-zmena-zakaznika/" target="_blank"> Odkazu</a></p>
 
@@ -1599,7 +1599,7 @@ doby bude vše vyřešeno k Vaší plné spokojenosti.</p>
         },
         /* Montáže */
         "Montáž měřidla - potvrzení termínu": {
-                text: `<p>Vážený pane XXXX / Vážená paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,,</p>
 <p>děkujeme Vám za Váš zájem o odběr energií od společnosti epet.</p>
 <p>Rádi bychom Vás informovali, že jsme zpracovali Váš požadavek na montáž u odběrného místa <strong>EIC/EAN XXXX</strong> na adrese <strong>Ulice č.p./č.o., XXX XX Město.</strong></p>
 <p>Montáž Vašeho měřidla provede distributor dne <strong>DD.MM.RRRR v HH</strong>.</p>
@@ -1610,14 +1610,14 @@ doby bude vše vyřešeno k Vaší plné spokojenosti.</p>
         },
         /* Přepisy */
         "Přepis odběrného místa - Zaslání Odkazu": {
-                text: `<p>Dobrý den, pane XY,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,,</p>
 <p>na základě naší telefonické dohody Vám zasíláme odkaz na elektronický formulář pro přepis odběrného místa. Tento formulář můžete vyplnit a odeslat prostřednictvím následujícího odkazu: <a href="https://www.epet.cz/formular-zmena-zakaznika/" target="_blank"> Formulář k přepisu odběrného místa.</a></p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [],
                 tags: ["Přepisy"]
         },
         "Přepis odběrného místa - Bez zaslání odkazů (V rámci DINHE NAPŘÍKLAD)": {
-                text: `<p>Vážený/á [Jméno pozůstalého],</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,,</p>
 
 <p>stále evidujeme nevyřešený požadavek týkající se přepisu smlouvy na odběr energií po zemřelém <b>XXXXXX</b>. Rádi bychom Vás informovali o nutnosti provést tento přepis na nového odběratele. Tento krok je nezbytný pro zajištění kontinuity dodávky energií na odběrném místě <b>[Adresa odběrného místa]</b>.</p>
 
@@ -1629,7 +1629,7 @@ doby bude vše vyřešeno k Vaší plné spokojenosti.</p>
                 tags: ["Přepisy"]
         },
         "Přepis urgence  - Bez zaslání odkazů (V rámci DINHE NAPŘÍKLAD)": {
-                text: `<p>Vážený/á [Jméno pozůstalého],</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,,</p>
 
 <p>rádi bychom Vás znovu upozornili na nutnost přepsání smlouvy na odběr energií na nového odběratele. Původní smlouva č. byla uzavřena na zemřelého <b>XXXXX</b> a je nezbytné uzavřít novou smlouvu, aby byla zajištěna kontinuální dodávka energií na odběrném místě <b>[Adresa odběrného místa]</b>.</p>
 
