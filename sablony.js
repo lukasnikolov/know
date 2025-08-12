@@ -1924,7 +1924,7 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
     <p>Dovolujeme si Vás také informovat, že aktuální výkupní cena elektřiny činí 0,- Kč/MWh.</p>
     <p>Díky změně legislativy začne od 1. 7. 2025 příslušný distributor ukládat pokuty výrobnám, které nemají sjednaného obchodníka.<br>
     Společnosti epet za Vás převezmou odpovědnost za odchylku, aby k těmto pokutám nedocházelo.</p>
-    <p>Pokud budete mít zájem o výkup elektřiny za jiné než nulové ceny, bude možné se přihlásit do výkupního režimu v průběhu srpna 2025, s aktivací nejdříve od 1. září 2025.</p>
+    <p>Pokud budete mít zájem o výkup elektřiny za jiné než nulové ceny, bude možné se přihlásit do výkupního režimu v průběhu září 2025.</p>
     <hr>
     <p>Vyjadřuji tímto souhlas a projevuji vůli, aby se společnost epet stala obchodníkem pro mé výrobní místo a provedla jeho registraci u Operátora trhu s elektřinou (OTE).<br>
     Samotnou smlouvu obdržíte k podpisu nejpozději do 31. 7. 2025.</p>
@@ -2286,3 +2286,4 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
         },
 };
 window.SABLONY = data;
+
