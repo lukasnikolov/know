@@ -31,7 +31,7 @@ V případě nejasností nás kontaktujte na zákaznické lince nebo e-mailem uv
         },
         /* Fakturace */
         "OPRAVNÁ DATA": {
-                text: `<p>Dobrý den, pane XXXX, paní XXXX,</p> 
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p> 
 rádi bychom Vás informovali, že jsme obdrželi opravná data pro fakturaci ze strany distributora za období <strong>XXXXXX - XXXXXXXXX.</strong></p>
 <p>Na základě této skutečnosti Vám byla vystavena opravná faktura, která Vám dorazí v samostatném e-mailu nebo poštou. </p> 
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál.Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
@@ -177,7 +177,7 @@ rádi bychom Vás informovali, že jsme obdrželi opravná data pro fakturaci ze
                 tags: ["Smlouvy"]
         },
         "VYSVĚTLENÍ PŘETRŽKY": {
-                text: `<p>Dobrý den,pane XXXX, Dobrý den, paní YYYY,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>informujeme Vás, že o odběrné místo <strong>EAN xxx</strong> s adresou <strong>yyy</strong> bylo z naší strany požádáno k nejbližšímu legislativně možnému termínu, tedy k datu <strong>xx.yy.2023</strong></p>
 <p>Aktuálně registrace odběrného místa k naší společnosti probíhá v pořádku.</p>
 <p>Odběrné místo se od <strong>DD.MM.RRRR</strong> nachází v ochranné lhůtě 10 pracovních dní, kdy zákazníkovi neoprávněný odběr nehrozí.
@@ -187,7 +187,7 @@ Jakmile bude odběrné místo u naší společnosti aktivní, na pokyn distribut
                 tags: ["Smlouvy"]
         },
         "ZMĚNA PŘÍJEMNÍ - ZASLÁNÍ ČP": {
-                text: `<p>Dobrý den, paní xxx/ pane xxx, </p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX, </p>
 <p>pro změnu příjmení budeme potřebovat Vaši součinnost. Prosíme o doložení kopie občanského průkazu, kde na průkazu bude začerněna Vaše fotografie, číslo občanského průkazu, rodné číslo a Váš podpis. Bez začerněných údajů nemůžeme doklad přijmout.
 Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasíláme v příloze tohoto e-mailu.</p>
 <p>Čestné prohlášení prosím vyplňte, podepište a naskenované zašlete zpět na náš e-mail.</p>
@@ -205,7 +205,7 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
                 tags: ["Smlouvy"]
         },
         "ZMĚNA PŘÍJEMNÍ - POTVRZENÍ ZMĚNY": {
-                text: `<p>Dobrý den, paní xxx/ pane xxx, </p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX, </p>
 <p>děkujeme Vám za doložení podkladu pro změnu.Potvrzujeme Vám změnu příjmení.</p>
 <p>Děkujeme za spolupráci.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
@@ -221,7 +221,7 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
         },
         /* Distribuční změny */
         "ZMĚNA REZERVOVANÉHO PŘÍKONU": {
-                text: `<p>Dobrý den, pane/paní XXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>kontaktujeme Vás na základě informace od distributora, že u Vašeho odběrného místa <strong>EAN XXXXXXX</strong> došlo ke snížení/navýšení rezervovaného příkonu.</p> 
 <p>Abychom mohli tuto změnu zpracovat i v našem systému, prosíme Vás o doložení následujících dokumentů:</p>
        <ul>1) Kopie smlouvy o připojení,</B> kterou Vám distributor vystavil.</ul>
@@ -234,7 +234,7 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
                 tags: ["Distribuční změny"]
         },
         "PŘIPOJENÍ MIKROZDROJE": {
-                text: `<p>Vážená paní XXXXX, Vážený pane XXXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>dovolujeme si Vás informovat, že distributor nás aktuálně informoval o plánované montáži nového 4Q elektroměru u odběrného místa <strong>EAN XXXXXXX</strong> na adrese <strong>XXXXXXXXX</strong>.</p>
 <p>Montáž Vašeho měřidla provede distributor <strong>DD.MM.RRRR</strong>.</p>
 <p>Prosíme Vás o zajištění přístupu technikovi do prostor, kde bude montáž měřidla probíhat. Také si připravte prosím svou <strong>revizní zprávu</strong>.</p>
@@ -352,7 +352,7 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
                 tags: ["Distribuční změny"]
         },
         "Změna jističe / Sazby – Info ZK o změně termínu provedení změny z důvodu závad na OM": {
-                text: `<p>Dobrý den, pane XXXX,paní YYYYY, </p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX, </p>
 <p>potvrzujeme vyřízení Vašeho požadavku na změnu jističe / sazby na hodnotu XXXX u odběrného místa <strong>EAN XXXXXX.</strong></p>
 <p>Distributor nás však informoval, že z důvodu závady na odběrném místě nebylo možné plánovanou změnu uskutečnit v původním termínu. Byl stanoven nový termín pro realizaci změny, a to v rozmezí <strong>DD.MM.RRRR - DD.MM.RRRR  </strong>.</p>
 <p>Prosíme Vás o zajištění přístupu technikovi do prostor, kde bude servisní zásah probíhat, a o přípravu Vaší aktuální revizní zprávy.</p>
@@ -382,7 +382,7 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
                 tags: ["Distribuční změny", "Reklamace", "Fakturace"]
         },
         "ZMĚNA DISTRIBUČNÍ SAZBY Z C NA D U SVJ - ZASLÁNÍ PODKLADŮ": {
-                text: `<p>Dobrý den, pane/paní … ,</p>
+                text: `<p>DDobrý den, pane XXX, / paní XXX,,</p>
 <p>abychom mohli zažádat o změnu typu sazby u distributora, prosíme o vyplnění a zaslání potřebných dokumentů:</p>
 <ul><strong>1) Čestné prohlášení</strong></ul>
 <p>Rádi bychom Vás upozornili, že v důsledku změny distribuční sazby dojde ke změně ceny za regulované a neregulované položky související s provedenou změnou.</p>
@@ -393,7 +393,7 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
                 tags: ["Distribuční změny"]
         },
         "Potvrzení o provedené změně distribuční sazby z C na D u SVJ": {
-                text: `<p>Dobrý den, pane/paní …,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>informujeme Vás, že na základě Vaší žádosti došlo dne …… ke změně typu sazby z C..d na  D…d u odběrného místa EAN: …., na adrese ….</p>
 <p>V příloze tohoto e-mailu Vám zasíláme nový Ceník, který obsahuje ceny pro sazby v kategorii D. (větu použijeme jen pokud již nebyl Ceník zaslán s dodatkem ze strany BO)</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
@@ -401,7 +401,7 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
                 tags: ["Distribuční změny"]
         },
         "Potvrzení zk, že na základě dokumentů (ŽOP) došlo k podání žádosti o SOP na distribuci": {
-                text: `<p>Dobrý den, pane/paní …,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>děkujeme Vám za zaslání vyplněných dokumentů.</p>
 <p>Potvrzujeme, že jsme na základě těchto podkladů podali žádost u příslušného distributora o vystavení nové Smlouvy o připojení. Distributor má na vyřízení požadavku lhůtu 30 kalendářních dní. Po jejím uplynutí Vám zašle Smlouvu o připojení.</p>
 <p>Ve smlouvě bude uvedeno, jaké změny je třeba realizovat na odběrném místě. Pokud v ní naleznete informaci o nutnosti úhrady podílu, prosíme o doložení potvrzení o platbě či uvedení data, kdy byl podíl uhrazen.</p>
@@ -536,14 +536,14 @@ V případě jakýchkoliv dotazů se na nás neváhejte obrátit.</p>
                 tags: ["Ostatní"]
         },
         "Žádost o přiřazení zk. pod konkrétního OZ": {
-                text: `<p>Vážená paní XXXX, Vážený pane XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>Žádost o přiřazení si zašlete na email <b>poptavky@epet.cz</b></p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [],
                 tags: ["Ostatní"]
         },
         "Žádost o doložení podkladů pro vyřízení požadavku": {
-                text: `<p>Vážená paní XXXX, Vážený pane XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>aby bylo možné vyřídit Váš požadavek, potřebujeme Vaši součinnost.</p>
 <p>Konkrétně prosíme o doložení XXXXX, a to z důvodu XXXXX.</p>
 <p>Vše potřebné nám prosím zašlete do data XX.XX.XXXX.</p>
@@ -613,7 +613,7 @@ V případě jakýchkoliv dotazů se na nás neváhejte obrátit.</p>
         },
         /* Samoodečty - Kontrolní + Mimořádné vyúčtování + Konečné */
         "Přijetí samoodečtu - Mimořádná faktura": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,,</p>
 <p>děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet jsme zpracovali. Nyní čekáme na schválení dat, abychom mohli následně vystavit fakturu.</p>
 <p>Tento schvalovací proces může trvat <strong>2-3 týdny</strong>. Z tohoto důvodu Vás prosíme o trpělivost s vystavením faktury.</p>
 <p>Abychom příště mohli Váš požadavek zpracovat ještě dříve, zasíláme Vám v příloze evidenční tabulku, do které můžete tyto hodnoty vepsat, a následně nám ji zaslat e-mailem případně Vás žádáme, abyste si odečty měřidel nově hlásili prostřednictvím <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznického portálu</a></p>  
@@ -683,7 +683,7 @@ Odečet bude zohledněn při příští periodické fakturaci, případně Vás 
                 tags: ["Samoodečty - Kontrolní + Mimořádné vyúčtování + Konečné"]
         },
         "Přijetí samoodečtu - Mimořádná faktura - Zákazník zadal již do portálu (duplicitní odečet)": {
-                text: `<p>Dobrý den, pane/paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,,</p>
 <p>děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet jsme zpracovali. Nyní čekáme na schválení dat, abychom mohli následně vystavit fakturu.</p>
 <p>Tento schvalovací proces může trvat 2-3 týdny. Z tohoto důvodu Vás prosíme o trpělivost s vystavením faktury.</p>
 <p>Abychom příště mohli Váš požadavek zpracovat ještě dříve, zasíláme Vám v příloze evidenční tabulku, do které můžete tyto hodnoty vepsat, a následně nám ji zaslat e-mailem případně Vás žádáme, abyste si odečty měřidel nově hlásili prostřednictvím <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznického portálu</a>. 
@@ -839,7 +839,7 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
                 tags: ["Dědické řízení"]
         },
         "Dědické řízení - urgence (pro doložení usnesení)": {
-                text: `<p>Dobrý den, pane/paní XXXXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,XX,</p>
 <p>je nám líto, že jste musel/a řešit tuto smutnou událost. Abychom mohli provést potřebné změny na zákaznickém účtu, budeme potřebovat Vaši součinnost.</p>
 <p>Zejména je důležité, abyste nám doručil/a kopii <strong>úmrtního listu</strong> a <strong>usnesení z dědického řízení</strong>.</p>
 <p>Do doložení usnesení bude případný přeplatek nebo nedoplatek blokován proti upomínání a vyplacení až do sdělení výsledku dědického řízení.</p>
@@ -902,7 +902,7 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
                 tags: ["Dědické řízení"]
         },
         "Žádost o doložení BÚ pro vyplacení přeplatku na základě dědického řízení(žádost o doložení ČP)": {
-                text: `<p>Vážený pane XXXX, Vážená paní XXXX</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>na základě doručeného usnesení o dědickém řízení nám byl notářem sdělen Váš status jednoho z dědiců po zemřelém/zemřelé zákaznici/zákazníkovi <b>XXXXXXX</b>. V souvislosti s touto skutečností bychom Vás rádi informovali, že na zákaznickém účtu zesnulého evidujeme přeplatek, který je možné vyplatit.</p>
 <p>Abychom mohli přistoupit k jeho výplatě, je třeba z Vaší strany doložit:</p>
 <li><b>Čestné prohlášení o souhlasu s vyplacením přeplatku</b> – slouží jako potvrzení, že souhlasíte s vyplacením příslušné částky na základě dědictví.</li>
@@ -914,7 +914,7 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
                 tags: ["Dědické řízení"]
         },
         "Žádost o doložení dodatku k usnesení převážně z důvodu zastaveného dědického řízení z důvodu majetku nepatrné hodnoty v němž není uvedeno kdo je dědicem, jen vystavitel pohřbu": {
-                text: `<p>Vážený pane XXXX, Vážená paní XXXX</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>děkujeme za doložené usnesení o pozůstalosti po panu/paní <strong> XXXXXX.</strong> Dovolujeme si Vás informovat, že z předloženého usnesení vyplývá, že dědické řízení bylo soudem zastaveno z důvodu majetku nepatrné hodnoty, a že nebyl určen žádný dědic.</p>
 <p>Vzhledem k tomu, že nedošlo k právnímu přechodu majetku (včetně případného přeplatku) na žádnou osobu, nemůžeme Vám bez dalšího právního podkladu (např. dodatečné dohody dědiců nebo nového rozhodnutí soudu) případný přeplatek vyplatit.</p>
 <p><strong>Jak můžete dále postupovat:</strong><br>
@@ -930,7 +930,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
                 tags: ["Dědické řízení"]
         },
         "Žádost o doložení usnesení + informaci, že pokud v usnesení je více dědiců, aby poslali i ČP": {
-                text: `<p>Vážený pane XXXX, Vážená paní XXXX</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p><p>je nám líto, že jste musel/a řešit tuto smutnou událost.Abychom mohli provést potřebné změny na zákaznickém účtu, budeme potřebovat Vaši součinnost. Zejména je důležité, abyste nám doručil/a: 
 <ul>
   <li>kopii úmrtního listu</li>
@@ -945,7 +945,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
                 tags: ["Dědické řízení"]
         },
         "Přepis (šablona číslo 1)": {
-                text: `<p>Vážený pane xxxx,/Vážená paní xxxxx,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>stále evidujeme nevyřešený požadavek týkající se přepisu smlouvy na odběr energií po zemřelém <b>xxxxxx</b>. Rádi bychom Vás informovali o nutnosti provést tento přepis na nového odběratele. Tento krok je nezbytný pro zajištění kontinuity dodávky energií na odběrném místě <b>[Adresa odběrného místa]</B>.</p>
 <p>Prosíme Vás, abyste co nejdříve kontaktovali naši zákaznickou podporu na telefonním čísle <b>255 70 70 99 </b> nebo e-mailem na <b>info@epet.cz </b>, kde Vám poskytneme veškeré potřebné formuláře a informace k přepisu smlouvy. Přepis je možné také dořešit pomocí online formuláře na tomto  <a href="https://www.epet.cz/formular-zmena-zakaznika/" target="_blank"> Odkazu</a></p>
 <p>Děkujeme za Vaši spolupráci a jsme Vám k dispozici pro jakékoliv dotazy či další informace.</p>
@@ -955,7 +955,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
                 tags: ["Dědické řízení"]
         },
         "Urgence přepisu (šablona číslo 2)": {
-                text: `<p>Vážený pane xxxx,/Vážená paní xxxxx,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p><strong>Dobrý den, pane XXX, / paní XXX,,</strong></p>
 <p>rádi bychom Vás znovu upozornili na nutnost přepsání smlouvy na odběr energií na nového odběratele. Původní smlouva č. byla uzavřena na zemřelého <b>xxxxx</b>, a je nezbytné uzavřít novou smlouvu, aby byla zajištěna kontinuální dodávka energií na odběrném místě <b>[Adresa odběrného místa]</b>.</p>
 <p>Dosud jsme neobdrželi žádnou odpověď na naši předchozí výzvu. Prosíme Vás, abyste co nejdříve kontaktovali naši zákaznickou podporu na telefonním čísle <b>255 70 70 99 </b> nebo e-mailem na <b>info@epet.cz </b>, kde Vám poskytneme veškeré potřebné formuláře a informace k přepisu smlouvy. Přepis je možné také dořešit pomocí online formuláře na tomto <a href="https://www.epet.cz/formular-zmena-zakaznika/" target="_blank"> Odkazu</a></p>
@@ -968,7 +968,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
                 tags: ["Dědické řízení"]
         },
         "Výzva k úhradě dlužných plateb, zákaznické číslo: xxxx (šablona číslo 3)": {
-                text: `<p>Vážený pane xxxx,/Vážená paní xxxxx,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 
 <p>dovolujeme si Vás informovat, že naše společnost <strong>EP ENERGY TRADING, a.s.</strong>, IČO <strong>27386643</strong>, se sídlem Klimentská 46, Praha 1, 110 02 obdržela od Obvodního soudu pro Prahu 6 informaci o skončení řízení o pozůstalosti (resp. dědického řízení), kterou bylo naší společnosti sděleno, že právním nástupcem zákazníka [jméno, příjmení, datum narození, trvalý pobyt] (dále jen <b>„Zůstavitel“</b>) se na základě pravomocného rozhodnutí o dědictví (kterým dědické řízení skončilo) uvedeným soudem v oblasti dodávky energií v odběrném místě EAN/EIC _____ na adrese [ulice, PSČ, město] (dále jen <b>„Odběrné místo“</b>) zajišťované naší společností na základě Smlouvy o sdružených službách dodávky elektřiny/plynu a uzavřené mezi naší společností a Zůstavitelem (dále jako <b>„Smlouva“</b>) stala tato osoba:</p>
 
@@ -1064,7 +1064,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
 
         "Výzva k úhradě dluhu – potencionální dědic – aktivní odběr (šablona číslo 5)": {
                 text: `
-<p>Vážený pane xxxx,/Vážená paní xxxxx,</p>
+<p>Dobrý den, pane XXX, / paní XXX,</p>
 
 <p>obracíme se na Vás jakožto na potenciálního dědice pana/paní [jméno, příjmení, datum narození, trvalý pobyt] (dále jako „Zůstavitel“) s informací, že naše společnost <b>EP ENERGY TRADING, a.s.</b>, <b>IČO 27386643</b>, se sídlem Klimentská 46, Praha 1, 110 02 na základě Smlouvy o sdružených službách dodávky elektřiny/plynu č. ______ uzavřené mezi naší společností a Zůstavitelem (dále jen <b>„Smlouva“</b>) je dodavatelem elektřiny/plynu do odběrného místa EAN/EIC _____ na adrese [ulice, PSČ, město] (dále jen <b>„Odběrné místo“</b>).</p>
 
@@ -1128,7 +1128,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
         },
         "Výzva k úhradě dluhu – potencionální dědic – neaktivní odběr (šablona číslo 6)": {
                 text: `
-<p>Vážený pane xxxx,/Vážená paní xxxxx,</p>
+<p>Dobrý den, pane XXX, / paní XXX,</p>
 
 <p>obracíme se na Vás jakožto na potenciálního dědice pana/paní [jméno, příjmení, datum narození, trvalý pobyt] (dále jako <b>„Zůstavitel“</b>) s informací, že naše společnost <b>EP ENERGY TRADING, a.s.</b>, <b>IČO 27386643</b>, se sídlem Klimentská 46, Praha 1, 110 02 na základě Smlouvy o sdružených službách dodávky elektřiny/plynu č. ______ uzavřené mezi naší společností a Zůstavitelem (dále jen <b>„Smlouva“</b>) je dodavatelem této energie do odběrného místa EAN/EIC _____ na adrese [ulice, PSČ, město] (dále jen <b>„Odběrné místo“</b>).</p>
 
@@ -1198,7 +1198,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
                 tags: ["Platby"]
         },
         "Upomínka - před předáním na Agenturu": {
-                text: `<p>Dobrý den, pane/paní XXXX, ( nebo „Vážený zákazníku,“ v případě firmy)</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>dnes jsme se Vás pokusili telefonicky kontaktovat, ale nebyli jsme úspěšní, proto volíme tuto formu kontaktu.</p>
 <p>I přes opakované výzvy evidujeme ke dni <strong>xxxxx</strong> pohledávky v celkové výši <strong>xxxx,-Kč</strong>, tato částka zahrnuje:</p>
 <li>Zálohové platby za měsíce: <strong>xxxx</strong>,<strong>xxxx</strong>,<strong>xxxxx</strong> </li>
@@ -1286,7 +1286,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
                 tags: ["Platby"]
         },
         "Potvrzení závazků - KONFIRMACE (Vzájemné započtení pohledávek)": {
-                text: `<p>Dobrý den, </p>
+                text: `<p>Dobrý den,pane XXX, / paní XXX, </p>
 <p>je nám líto, ale naše společnost konfirmace nepotvrzuje.</p>
 <p>Děkujeme za pochopení. </p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
@@ -1294,7 +1294,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
                 tags: ["Platby"]
         },
         "Žádost o doložení čísla bankovního účtu": {
-                text: `<p>Dobrý den, </p>
+                text: `<p>Dobrý den,pane XXX, / paní XXX, </p>
 <p>v rámci kontroly doložené smlouvy jsme zjistili, že byla označena možnost vyplácení přeplatků na bankovní účet. Nicméně ve smlouvě není uvedeno číslo účtu, na který by měly být případné přeplatky zasílány.</p>
 <p>Dovolujeme si Vás proto požádat o jeho doplnění. Číslo účtu můžete zaslat odpovědí na tento e-mail nebo prostřednictvím telefonického hovoru na naší zákaznickou linku. </p>
 <p>Děkujeme za spolupráci a v případě dotazů jsme Vám k dispozici. </p>
@@ -1390,7 +1390,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
         },
         /* SPK */
         "Žádost o vystavení SPK": {
-                text: `<p>Vážený pane XXXXX / Vážená paní YYYY, </p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX, </p>
 <p>děkujeme za Vaši žádost o vystavení splátkového kalendáře (SPK). Rádi bychom Vás informovali o podmínkách, které je nutné splnit, aby mohla být Vaše žádost posouzena a schválena:</p>
 <ul>
 <li><b>Stav záloh:</b></li> Je nezbytné, aby byly uhrazeny všechny zálohy po splatnosti. Pokud máte aktuálně neuhrazené zálohy, prosíme o jejich doplacení před podáním žádosti o SPK. [<strong>případně zákazníkovi vypíšeme zda u něj evidujeme zálohy po splatnosti)</strong>]
@@ -1402,7 +1402,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
                 tags: ["SPK"]
         },
         "SPLÁTKOVÝ KALENDÁŘ - Vystavení": {
-                text: `<p>Dobrý den, pane/paní XXXXX, </p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,X, </p>
 <p>chtěli bychom Vás informovat, že jsme schválili Vaši žádost o poskytnutí splátkového kalendáře. Splátkový kalendář se vztahuje k faktuře s variabilním symbolem <b>XXXXXXXX</b>, která byla vystavena na dodávku elektřiny/plynu.</p>
 <p>Jednotlivé splátky dlužné částky za dodávky elektřiny/plynu plaťte dle níže uvedeného rozpisu a platebních údajů:</p>
 <li><b>VS:</b> XXXXXXXX</li>
@@ -1417,7 +1417,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
                 tags: ["SPK"]
         },
         "Výzva k úhradě SPK - Zákazník SPK nehradí ": {
-                text: `<p>Vážený pane XXXXX / Vážená paní YYYY, </p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX, </p>
 <p>rádi bychom Vás informovali, že k datu <strong>XXXXXXXX</strong> Vám byl schválen splátkový kalendář na nedoplatkovou fakturu ve výši <strong>XXXXXX Kč</strong>. O této skutečnosti jsme Vás informovali e-mailem/telefonicky dne <strong>XXXXXXX</strong>,ve kterém byl uveden rozpis jednotlivých měsíčních splátek.</p>
 <p>Do dnešního dne však evidujeme, že splátky nebyly uhrazeny. Žádáme Vás proto o nápravu této situace. V opačném případě dojde ke zrušení splátkového kalendáře a bude nutné celý dluh ve výši <strong>XXXXXXX Kč</strong> uhradit neprodleně v plné výši.</p> 
 <p>Pokud platba nebude provedena, může být pohledávka předána k inkasnímu vymáhání.</p>
@@ -1476,7 +1476,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
                 tags: ["Kontaktní osoby"]
         },
         "NENÍ KONTAKTNÍ E-MAIL": {
-                text: `<p>Dobrý den, paní/pane xxxx, </p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX, </p>
 <p>je nám líto, ale Váš požadavek nemůžeme zpracovat, jelikož Váš e-mail, ze kterého nám píšete neevidujeme jako kontaktní.</p>
 <p>Prosíme Vás o zaslání požadavku z e-mailu, který jste uvedli do smlouvy jako kontaktní, případně nás <b>telefonicky</b> kontaktujte.</p>
 <p>Na základě tel. hovoru provedeme Vaši identifikaci a aktualizujeme kontaktní údaje.</p>
@@ -1486,7 +1486,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
                 tags: ["Kontaktní osoby"]
         },
         "NENÍ KONTAKTNÍ E-MAIL - OZ PÍŠE POŽADAVEK, ALE NEMÁME DOLOŽENOU PM PRO ZASTUPOVÁNÍ": {
-                text: `<p>Dobrý den, paní/pane xxxx, </p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX, </p>
 <p>děkujeme za Váš e-mail. </p><br>
 <p>Bohužel neevidujeme podepsanou plnou moc opravňující k zastupování zákazníka, a z tohoto důvodu nemůžeme Váš požadavek v tuto chvíli zpracovat. </p>
 <p>Prosíme Vás proto o doložení platné plné mocí. Po jejím obdržení se Vaším požadavkem budeme ihned dále zabývat.</p>
@@ -1646,7 +1646,7 @@ doby bude vše vyřešeno k Vaší plné spokojenosti.</p>
         },
         /* Zranitelný zákazník */
         "Upozornění na blížící se konec platnosti potvrzení pro přiznání práv zranitelného zákazníka": {
-                text: `<p>Vážený pane XXXX, / Vážená paní XXXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>dovolujeme si Vás kontaktovat ohledně blížícího se konce platnosti Vašeho potvrzení o splnění podmínek pro přiznání zvláštních práv zranitelného zákazníka.</p>
 <p>Po datu <strong>XX.XX.XXXX</strong> Vám bude status zranitelného zákazníka ukončen. Abychom Vám mohli práva zranitelného zákazníka přiznávat i po tomto termínu, prosíme Vás o doložení nového lékařského potvrzení vydaného Vaším ošetřujícím lékařem na následující období. Vzor dokumentu naleznete ke stažení také na našich webových stránkách na adrese <a href="https://www.epet.cz/zranitelny-zakaznik/" target="_blank">Zranitelný zákazník</a>.</p>
 <p>Nové potvrzení pošlete prosím nejpozději do výše uvedeného data. V případě, že nám nebude dokument doložen, přejde Vaše odběrné místo <strong>EAN XXXXXXXXXX</strong>, na adrese <strong>XXXXXXXXXXXXXXXXX</strong> do standardního režimu, na který se nevztahují práva spojená se statusem zranitelného zákazníka.</p>
