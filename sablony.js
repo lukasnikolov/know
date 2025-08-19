@@ -1330,6 +1330,16 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
                 tags: ["Platby"]
         },
         /* Zálohy */
+        "Úprava výše záloh - Navýšení s informací dle § 11 odst. 6": {
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+<p><p>potvrzujeme Vám změnu zálohových plateb na částku <strong>XXXXX Kč</strong>. Tato změna bude provedena od <strong>MM.RRRR.</strong></p>
+<p>Nový platební kalendář Vám bude zaslán v samostatném e-mailu. / poštou.</p>
+<p><i>Informujeme Vás, že v důsledku navýšení záloh může při vyúčtování vzniknout vyšší přeplatek. Vzhledem k této úpravě již rozpis záloh neodpovídá postupu dle § 11 odst. 6 energetického zákona.</i></p>
+<p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
+                files: [],
+                tags: ["Zálohy"]
+        },
+        
         "Prosba o zaslání fotografie měřidla - stávající zákazník": {
                 text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>pro změnu zálohy na Vámi požadovanou výši Vás prosíme o zaslání aktuální fotografie měřidla.</p>
@@ -2286,4 +2296,3 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
         },
 };
 window.SABLONY = data;
-
