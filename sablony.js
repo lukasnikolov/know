@@ -1908,7 +1908,6 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
 <li><strong>Změna dodavatele</strong> není nutná. Sdílení zohledníme v rámci Vaší stávající smlouvy.</li>
 <li>Započtení sdílené energie vychází z údajů EDC-ČR; regulované složky (distribuce, daně, stálé platby) se účtují dle platné regulace.</li>
 <li>Pro zapojená odběrná místa je obvykle vyžadováno průběhové (dálkově odečítané) měření.</li>
-</ul>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [],
                 tags: ["Sdílená elektřina"]
