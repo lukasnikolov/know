@@ -1900,28 +1900,20 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
                 tags: ["Sdílená elektřina"]
         },
 "ODPOVĚĎ ZÁKAZNÍKOVI DO MAILU - INFORMACE,KE SDÍLENÍ": {
-  text: `
-    <p>Dobrý den, pane XXX / paní XXX,</p>
-
+  text: `<p>Dobrý den, pane XXX / paní XXX,</p>
     <p>děkujeme za Váš dotaz ke sdílené elektřině.</p>
-
     <p>Sdílení elektřiny není samostatný produkt dodavatele – jde o proces v režii zákazníka. 
     My jako dodavatel do tohoto procesu nezasahujeme.</p>
-
     <p>Pro registraci a správu sdílení prosím využijte oficiální portál 
     <a href="https://edc-cr.cz/" target="_blank" rel="noopener noreferrer">EDC-ČR</a>, 
     kde si založíte účet a nastavíte potřebné údaje. Jakmile EDC-ČR zveřejní a potvrdí Vaše alokace, 
     promítneme sdílené množství do Vašeho vyúčtování.</p>
-
     <p><strong>Stručně:</strong></p>
     <ul>
       <li><strong>Změna dodavatele</strong> není nutná – sdílení zohledníme v rámci Vaší stávající smlouvy.</li>
       <li>Započtení sdílené energie vychází z údajů EDC-ČR; regulované složky (distribuce, daně, stálé platby) se účtují dle platné regulace.</li>
       <li>Pro zapojená odběrná místa je obvykle vyžadováno průběhové (dálkově odečítané) měření.</li>
     </ul>
-
-    <p>Současně Vás informujeme o našem novém zákaznickém portálu – najdete v něm faktury, 
-    platební kalendář, můžete zadat samoodečet nebo upravit výši záloh. 
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
   files: [],
   tags: ["Sdílená elektřina"]
