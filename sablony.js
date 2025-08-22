@@ -1922,10 +1922,8 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
 
     <p>Současně Vás informujeme o našem novém zákaznickém portálu – najdete v něm faktury, 
     platební kalendář, můžete zadat samoodečet nebo upravit výši záloh. 
-    Přihlášení: <a href="https://zakaznici.epet.cz/login" target="_blank" rel="noopener noreferrer">Zákaznický portál</a>.</p>
-
-    <p>Děkujeme a přejeme hezký den.</p>
-  `,
+<p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
+`,
   files: [],
   tags: ["Sdílená elektřina"]
 },
@@ -1936,9 +1934,7 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
     <p>Prosíme Vás proto o co nejrychlejší aktivaci tohoto EAN, nejpozději do 3 pracovních dnů. Po provedení registrace Vám distributor zašle potvrzovací e-mail, ve kterém uvede, že byl EAN aktivován a od jakého data. Jakmile tento e-mail obdržíte, přepošlete nám jej prosím jako potvrzení.</p>
     <p>Vzhledem k vysokému zájmu o převzetí odchylek v tomto období a nutnosti zajištění technických kroků předem, nemůžeme v případě Vaší nesoučinnosti zaručit včasné převzetí odchylky. To může vést k neoprávněnému odběru, za který nese odpovědnost zákazník.</p>
     <p>Děkujeme za pochopení a spolupráci.</p>
-<p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
-                files: [],
-                tags: ["Převzetí odchylky"]
+<p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>
         },
         "Šablona č.2 s Předmětem:Žádost o doplnění údajů k připojení Vaší výrobny elektřiny z FVE ": {
                 text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
