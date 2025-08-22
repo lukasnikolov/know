@@ -1923,7 +1923,6 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
     <p>Současně Vás informujeme o našem novém zákaznickém portálu – najdete v něm faktury, 
     platební kalendář, můžete zadat samoodečet nebo upravit výši záloh. 
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
-`,
   files: [],
   tags: ["Sdílená elektřina"]
 },
