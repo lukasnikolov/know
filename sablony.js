@@ -1899,25 +1899,20 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
                 files: [],
                 tags: ["Sdílená elektřina"]
         },
-"ODPOVĚĎ ZÁKAZNÍKOVI DO MAILU - INFORMACE,KE SDÍLENÍ": {
-  text: `<p>Dobrý den, pane XXX / paní XXX,</p>
-    <p>děkujeme za Váš dotaz ke sdílené elektřině.</p>
-    <p>Sdílení elektřiny není samostatný produkt dodavatele – jde o proces v režii zákazníka. 
-    My jako dodavatel do tohoto procesu nezasahujeme.</p>
-    <p>Pro registraci a správu sdílení prosím využijte oficiální portál 
-    <a href="https://edc-cr.cz/" target="_blank" rel="noopener noreferrer">EDC-ČR</a>, 
-    kde si založíte účet a nastavíte potřebné údaje. Jakmile EDC-ČR zveřejní a potvrdí Vaše alokace, 
-    promítneme sdílené množství do Vašeho vyúčtování.</p>
-    <p><strong>Stručně:</strong></p>
-    <ul>
-      <li><strong>Změna dodavatele</strong> není nutná – sdílení zohledníme v rámci Vaší stávající smlouvy.</li>
-      <li>Započtení sdílené energie vychází z údajů EDC-ČR; regulované složky (distribuce, daně, stálé platby) se účtují dle platné regulace.</li>
-      <li>Pro zapojená odběrná místa je obvykle vyžadováno průběhové (dálkově odečítané) měření.</li>
-    </ul>
+        "ODPOVĚĎ ZÁKAZNÍKOVI DO MAILU - INFORMACE,KE SDÍLENÍ": {
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+<p>děkujeme za Váš dotaz ke sdílené elektřině.</p>
+<p>Sdílení elektřiny není nabízeno jako samostatný produkt dodavatele, jedná se o proces, který je plně v rukou zákazníka. My, jako dodavatel, do tohoto procesu zákazníkovi nezasahujeme.</p>
+<p>Pro registraci a správu sdílení prosím využijte oficiální portál  <a href="http://edc-cr.cz/"target="_blank">EDC-ČR </a>, kde si založíte účet a nastavíte potřebné údaje. Jakmile EDC-ČR zveřejní a potvrdí Vaše alokace, promítneme sdílené množství do Vašeho vyúčtování.</p>
+<p><ul><strong>Důležité stručně:</strong></p>
+<li><strong>Změna dodavatele</strong> není nutná. Sdílení zohledníme v rámci Vaší stávající smlouvy.</li>
+<li>Započtení sdílené energie vychází z údajů EDC-ČR; regulované složky (distribuce, daně, stálé platby) se účtují dle platné regulace.</li>
+<li>Pro zapojená odběrná místa je obvykle vyžadováno průběhové (dálkově odečítané) měření.</li>
+</ul>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
-  files: [],
-  tags: ["Sdílená elektřina"]
-},
+                files: [],
+                tags: ["Sdílená elektřina"]
+        },
         /* FVE - MIKROZDROJE */
         "Šablona č.1 s Předmětem:Zamítnutý výrobní EAN": {
                 text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
@@ -1925,7 +1920,9 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
     <p>Prosíme Vás proto o co nejrychlejší aktivaci tohoto EAN, nejpozději do 3 pracovních dnů. Po provedení registrace Vám distributor zašle potvrzovací e-mail, ve kterém uvede, že byl EAN aktivován a od jakého data. Jakmile tento e-mail obdržíte, přepošlete nám jej prosím jako potvrzení.</p>
     <p>Vzhledem k vysokému zájmu o převzetí odchylek v tomto období a nutnosti zajištění technických kroků předem, nemůžeme v případě Vaší nesoučinnosti zaručit včasné převzetí odchylky. To může vést k neoprávněnému odběru, za který nese odpovědnost zákazník.</p>
     <p>Děkujeme za pochopení a spolupráci.</p>
-<p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>
+<p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
+                files: [],
+                tags: ["Převzetí odchylky"]
         },
         "Šablona č.2 s Předmětem:Žádost o doplnění údajů k připojení Vaší výrobny elektřiny z FVE ": {
                 text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
