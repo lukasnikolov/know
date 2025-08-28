@@ -1700,6 +1700,15 @@ Děkujeme, že jste využíval(a) náš Zákaznický portál.</p>
                 files: [],
                 tags: ["Zákaznický portál"]
         },
+        "Zákaznický portál - Odpověď na zapomenuté heslo ": {
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+<p>pokud se Vám nedaří přihlásit do zákaznického portálu s heslem, které jste si nastavil/a, případně jste zapomněl/a heslo z automaticky vygenerovaného e-mailu, je nutné provést <b>reset hesla.</b></p>
+<p>Prosíme, klikněte na následující odkaz: <a href="https://zakaznici.epet.cz/forgotten-password" target="_blank">Reset hesla</a></p>
+<p>Na zadanou e-mailovou adresu Vám bude doručeno nové heslo, se kterým se přihlásíte do portálu.</p>
+<p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
+                files: [],
+                tags: ["Zákaznický portál"]
+        },        
         /* Přeplatky */
         "Žádost o potvrzení údajů pro vrácení přeplatku - Vrácená složenka": {
                 text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
