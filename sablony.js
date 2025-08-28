@@ -1713,8 +1713,10 @@ Děkujeme, že jste využíval(a) náš Zákaznický portál.</p>
         "Žádost o potvrzení údajů pro vrácení přeplatku - Vrácená složenka": {
                 text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>rádi bychom Vás informovali, že se nám vrátila složenka s přeplatkem, který jsme Vám zasílali. Abychom mohli přeplatek co nejdříve vyřídit, prosíme Vás o následující:</p>
+<ul>
 <li><strong>Potvrzení správnosti Vaší korespondenční adresy</strong> – zda je stále aktuální adresa: <strong> uvést aktuální kam přeplatek odcházel </strong> správná, případně o sdělení nové adresy.</li>
 <li><strong>Sdělte nám, zda si přejete přeplatek zaslat na bankovní účet</strong> – v tomto případě nám, prosím, zašlete číslo Vašeho bankovního účtu.</li>
+</ul>
 <p>Vaše údaje můžete zaslat odpovědí na tento e-mail nebo nás kontaktovat na níže uvedeném telefonním čísle</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [],
