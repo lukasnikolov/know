@@ -630,10 +630,9 @@ V případě jakýchkoliv dotazů se na nás neváhejte obrátit.</p>
 <i>Důvod odečtu:</i> Mimořádné vyúčtování</li><br>
 </ul>
 <ul>
-<li><strong>při mimořádném vyúčtování plynu</strong><br>
-<li>
-<i>Typ odečtu:</i> Mimořádné vyúčtování<br>
-<i>Důvod odečtu:</i> Mimořádné vyúčtování s DUF</li><br>
+<strong>při mimořádném vyúčtování plynu</strong><br>
+<li><i>Typ odečtu:</i> Mimořádné vyúčtování<br>
+<li><i>Důvod odečtu:</i> Mimořádné vyúčtování s DUF</li><br>
 </ul>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [
