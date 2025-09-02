@@ -613,13 +613,15 @@ V případě jakýchkoliv dotazů se na nás neváhejte obrátit.</p>
         },
         /* Samoodečty - Kontrolní + Mimořádné vyúčtování + Konečné */
         "Přijetí samoodečtu - Mimořádná faktura": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet jsme zpracovali. Nyní čekáme na schválení dat, abychom mohli následně vystavit fakturu.</p>
 <p>Tento schvalovací proces může trvat <strong>2-3 týdny</strong>. Z tohoto důvodu Vás prosíme o trpělivost s vystavením faktury.</p>
 <p>Abychom příště mohli Váš požadavek zpracovat ještě dříve, zasíláme Vám v příloze evidenční tabulku, do které můžete tyto hodnoty vepsat, a následně nám ji zaslat e-mailem případně Vás žádáme, abyste si odečty měřidel nově hlásili prostřednictvím <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznického portálu</a></p>  
 <p><u>Termíny pro nahlášení odečtů pro mimořádné vyúčtování:</u></p>
+<ul>
 <li><strong>Elektřina:</strong> Odečet může být nahlášen k jakémukoli datu, musí být však nahlášen do 20 kalendářních dní od provedení odečtu.</li>
 <li><strong>Plyn:</strong> Odečet musí být nahlášen k poslednímu dni v měsíci, musí být však nahlášen do 5 kalendářních dní. </li> <br>
+</ul>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [
                         { url: 'https://docs.google.com/spreadsheets/d/13wHIPy047lL1JOVuEX1phxT_JqE22cHPscAZj9iF1cQ/edit?gid=197074618#gid=197074618', name: "ŠABLONA PRO E-MAIL", type: "xls" },
@@ -633,8 +635,10 @@ V případě jakýchkoliv dotazů se na nás neváhejte obrátit.</p>
 Odečet bude zohledněn při příští periodické fakturaci.</p>
 <p>Abychom příště mohli Váš požadavek zpracovat ještě dříve, zasíláme Vám v příloze evidenční tabulku, do které můžete tyto hodnoty vepsat, a následně nám ji zaslat e-mailem případně Vás žádáme, abyste si odečty měřidel nově hlásili prostřednictvím <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznického portálu</a></p>
 <p><u>Termíny pro nahlášení kontrolních odečtů:</u></p>
+<ul>
 <li><strong>Elektřina:</strong> Odečet může být nahlášen k jakémukoli datu, musí být však nahlášen do 20 kalendářních dní od provedení odečtu.</li>
-<li><strong>Plyn:</strong> Odečet může být nahlášen k jakémukoli datu, musí být však nahlášen do 14 kalendářních dní. </li><br>
+<li><strong>Plyn:</strong> Odečet může být nahlášen k jakémukoli datu, musí být však nahlášen do 14 kalendářních dní. </li>
+</ul>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [
                         { url: 'https://docs.google.com/spreadsheets/d/13wHIPy047lL1JOVuEX1phxT_JqE22cHPscAZj9iF1cQ/edit?gid=197074618#gid=197074618', name: "ŠABLONA PRO E-MAIL", type: "xls" },
@@ -647,8 +651,10 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
 <p>děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet jsme zpracovali jako kontrolní odečet, bez vystavení mimořádné faktury. 
 Odečet bude zohledněn při příští periodické fakturaci, případně Vás žádáme, abyste si odečty měřidel nově hlásili prostřednictvím <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznického portálu</a></p>
 <p><u>Termíny pro nahlášení kontrolních odečtů:</u><p>
+<ul>
 <li><strong>Elektřina:</strong> Odečet může být nahlášen k jakémukoli datu, musí být však nahlášen do 20 kalendářních dní od provedení odečtu.</li>
-<li><strong>Plyn: </strong> Odečet může být nahlášen k jakémukoli datu, musí být však nahlášen do 14 kalendářních dní. </li><br>
+<li><strong>Plyn: </strong> Odečet může být nahlášen k jakémukoli datu, musí být však nahlášen do 14 kalendářních dní. </li>
+</ul>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [
                 ],
@@ -659,8 +665,10 @@ Odečet bude zohledněn při příští periodické fakturaci, případně Vás 
 <p>děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet jsme zpracovali. Nyní čekáme na schválení dat, abychom mohli následně vystavit fakturu.</p>
 <p>Tento schvalovací proces může trvat 2-3 týdny. Z tohoto důvodu Vás prosíme o trpělivost s vystavením faktury, případně Vás žádáme, abyste si odečty měřidel nově hlásili prostřednictvím <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznického portálu</a></p>  
 <p><u>Termíny pro nahlášení odečtů pro mimořádné vyúčtování:</u></p>
+<ul>
 <li><strong>Elektřina:</strong> Odečet může být nahlášen k jakémukoli datu, musí být však nahlášen do 20 kalendářních dní od provedení odečtu.</li>
-<li><strong>Plyn:</strong> Odečet musí být nahlášen k poslednímu dni v měsíci, musí být však nahlášen do 5 kalendářních dní. </li> <br>
+<li><strong>Plyn:</strong> Odečet musí být nahlášen k poslednímu dni v měsíci, musí být však nahlášen do 5 kalendářních dní. </li> 
+</ul><br>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [],
                 tags: ["Samoodečty - Kontrolní + Mimořádné vyúčtování + Konečné"]
@@ -673,8 +681,10 @@ Odečet bude zohledněn při příští periodické fakturaci, případně Vás 
 <li><b>Zadáním odečtů</b> prostřednictvím našeho Zákaznického portálu.</li>
 </ol>
 <p>Níže uvádíme termíny pro nahlášení odečtů pro mimořádné vyúčtování:</p>
+<ul>
 <b><li>Elektřina:</b> Odečet může být proveden k jakémukoliv datu, je však nutné jej nahlásit do 20 kalendářních dnů od provedení odečtu tedy do <b>20.1.2025.</b> (pokud bude odečet proveden k 31.12.20XX) </li>
-<b><li>Plyn:</b> Odečet je třeba provést k poslednímu dni v měsíci a nahlásit jej nejpozději do 5 kalendářních dnů -  tedy do <b>05.01.20XX.</b></li><br>
+<b><li>Plyn:</b> Odečet je třeba provést k poslednímu dni v měsíci a nahlásit jej nejpozději do 5 kalendářních dnů -  tedy do <b>05.01.20XX.</b></li>
+</ul><br>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [
                         { url: 'https://docs.google.com/spreadsheets/d/13wHIPy047lL1JOVuEX1phxT_JqE22cHPscAZj9iF1cQ/edit?gid=197074618#gid=197074618', name: "ŠABLONA PRO E-MAIL", type: "xls" },
@@ -689,8 +699,10 @@ Odečet bude zohledněn při příští periodické fakturaci, případně Vás 
 <p>Abychom příště mohli Váš požadavek zpracovat ještě dříve, zasíláme Vám v příloze evidenční tabulku, do které můžete tyto hodnoty vepsat, a následně nám ji zaslat e-mailem případně Vás žádáme, abyste si odečty měřidel nově hlásili prostřednictvím <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznického portálu</a>. 
 <p>Pokud odečty zadáte přímo prostřednictvím tohoto portálu a zobrazí se zelená zpráva o úspěšném přijetí, není nutné nás dále informovat ani zasílat údaje e-mailem. Tento stav můžete považovat za potvrzení, že samoodečet byl úspěšně zpracován.</p>
 <p><u>Termíny pro nahlášení odečtů pro mimořádné vyúčtování:</u></p>
+<ul>
 <li><b>Elektřina:</b><br> Odečet může být nahlášen k jakémukoli datu, musí být však nahlášen do 20 kalendářních dní od provedení odečtu.</li>
-<li>Plyn:</b><br> Odečet musí být nahlášen k poslednímu dni v měsíci, musí být však nahlášen do 5 kalendářních dní. </li><br>
+<li>Plyn:</b><br> Odečet musí být nahlášen k poslednímu dni v měsíci, musí být však nahlášen do 5 kalendářních dní. </li>
+</ul><br>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [
                         { url: 'https://docs.google.com/spreadsheets/d/13wHIPy047lL1JOVuEX1phxT_JqE22cHPscAZj9iF1cQ/edit?gid=197074618#gid=197074618', name: "ŠABLONA PRO E-MAIL", type: "xls" },
@@ -706,8 +718,10 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
 <p>Abychom příště mohli Váš požadavek zpracovat ještě dříve, zasíláme Vám v příloze evidenční tabulku, do které můžete tyto hodnoty vepsat, a následně nám ji zaslat e-mailem případně Vás žádáme, abyste si odečty měřidel nově hlásili prostřednictvím <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznického portálu</a></p>
 <p>Pokud odečty zadáte přímo prostřednictvím tohoto portálu a zobrazí se zelená zpráva o úspěšném přijetí, není nutné nás dále informovat ani zasílat údaje e-mailem. Tento stav můžete považovat za potvrzení, že samoodečet byl úspěšně zpracován.</p>
 <p><u>Termíny pro nahlášení kontrolních odečtů:</u></p>
+<ul>
 <li><b>Elektřina:</b> Odečet může být nahlášen k jakémukoli datu, musí být však nahlášen do 20 kalendářních dní od provedení odečtu.</li>
-<li><b>Plyn:</b> Odečet může být nahlášen k jakémukoli datu, musí být však nahlášen do 14 kalendářních dní. </li><br>
+<li><b>Plyn:</b> Odečet může být nahlášen k jakémukoli datu, musí být však nahlášen do 14 kalendářních dní. </li>
+</ul><br>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [
                         { url: 'https://docs.google.com/spreadsheets/d/13wHIPy047lL1JOVuEX1phxT_JqE22cHPscAZj9iF1cQ/edit?gid=197074618#gid=197074618', name: "ŠABLONA PRO E-MAIL", type: "xls" },
