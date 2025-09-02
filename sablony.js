@@ -620,19 +620,19 @@ V případě jakýchkoliv dotazů se na nás neváhejte obrátit.</p>
 <p><u>Termíny pro nahlášení odečtů pro mimořádné vyúčtování:</u></p>
 <ul>
 <li><strong>Elektřina:</strong> Odečet může být nahlášen k jakémukoli datu, musí být však nahlášen do 20 kalendářních dní od provedení odečtu.</li>
-<li><strong>Plyn:</strong> Odečet musí být nahlášen k poslednímu dni v měsíci, musí být však nahlášen do 5 kalendářních dní. </li> <br>
+<li><strong>Plyn:</strong> Odečet musí být nahlášen k poslednímu dni v měsíci, musí být však nahlášen do 5 kalendářních dní. </li>
 </ul>
 <p><u>Pro správné zpracování odečtů v tabulce doporučujeme vyplnit tyto údaje:</u></p>
 <ul>
 <p><strong>při mimořádném vyúčtování elektřiny:</strong></p>
 <li>
-<i>Typ odečtu:</i> Mimořádné vyúčtování <br>
-<i>Důvod odečtu:</i> Mimořádné vyúčtování</li><br>
+<li><i>Typ odečtu:</i> Mimořádné vyúčtování <br>
+<li><i>Důvod odečtu:</i> Mimořádné vyúčtování</li><br>
 </ul>
 <ul>
 <strong>při mimořádném vyúčtování plynu</strong><br>
 <li><i>Typ odečtu:</i> Mimořádné vyúčtování<br>
-<li><i>Důvod odečtu:</i> Mimořádné vyúčtování s DUF</li><br>
+<li><i>Důvod odečtu:</i> Mimořádné vyúčtování s DUF</li>
 </ul>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [
@@ -654,9 +654,9 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
 <p><u>Pro správné zpracování odečtů v tabulce doporučujeme vyplnit tyto údaje:</u></p>
 <ul>
 <p><strong>při hlášení kontrolního odečtu jak pro elektřinu i plyn:</strong></p>
-<li>
-<i>Typ odečtu:</i> Samoodečet
-<i>Důvod odečtu:</i> Kontrolní</li>
+
+<li><i>Typ odečtu:</i> Samoodečet<br>
+<li><i>Důvod odečtu:</i> Kontrolní</li>
 </ul>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [
