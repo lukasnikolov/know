@@ -761,11 +761,13 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
 <li><b>Elektřina:</b> Odečet může být nahlášen k jakémukoli datu, musí být však nahlášen do 20 kalendářních dní od provedení odečtu.</li>
 <li><b>Plyn:</b> Odečet může být nahlášen k jakémukoli datu, musí být však nahlášen do 14 kalendářních dní. </li>
 <p><u>Pro správné zpracování odečtů v tabulce doporučujeme vyplnit tyto údaje:</u></p>
+</ul>
+<p><u>Pro správné zpracování odečtů v tabulce doporučujeme vyplnit tyto údaje:</u></p>
 <ul>
 <p><strong>při hlášení kontrolního odečtu jak pro elektřinu i plyn:</strong></p>
-<li>
-<i>Typ odečtu:</i> Samoodečet
-<i>Důvod odečtu:</i> Kontrolní</li>
+
+<li><i>Typ odečtu:</i> Samoodečet<br>
+<li><i>Důvod odečtu:</i> Kontrolní</li>
 </ul>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [
