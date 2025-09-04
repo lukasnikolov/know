@@ -1824,6 +1824,15 @@ Děkujeme, že jste využíval(a) náš Zákaznický portál.</p>
                 files: [],
                 tags: ["Přeplatky"]
         },
+        "Potvrzení zk. že nové BÚ bylo nastaveno a požadavek na vyplacení předán na finance": {
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+<p>děkujeme za zaslání správného čísla bankovního účtu <strong>nové BÚ</strong>, které jsme zaevidovali k Vašemu zákaznickému účtu.</p>
+<p>Informace jsme předali k dalšímu zpracování. Jakmile dojde k vyplacení přeplatku, budeme Vás o této skutečnosti neprodleně informovat</p>
+
+<p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
+                files: [],
+                tags: ["Přeplatky"]
+        },
         /* Bezzálohový režim */
         "Žádost o Bezzálohový režim": {
                 text: `<p>Dobrý den, pane XXX, / paní XXX,</p> 
