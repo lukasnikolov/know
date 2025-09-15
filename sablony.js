@@ -406,7 +406,7 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
 <p>Zároveň bychom Vás chtěli informovat, že technik distributora si na místě ověří, že se skutečně jedná o společné prostory domu. V opačném případě nebude změna provedena.</p>
 <p>Všechny potřebné dokumenty k vyplnění zasíláme v příloze tohoto e-mailu.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
-                files: [{ url: "https://drive.google.com/file/d/1xzCjn761_-18PmiGRmjSaTLtUYP_fR9u/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ", type: "pdf" }],
+                files: [{ url: "https://drive.google.com/file/d/14JwJ2-7d3FtTbm8Q6xGzQ0PU4yu39-et/view?usp=drive_link", name: "ČP z PO - Pro změnu sazby z Firmy na DOM", type: "pdf" }],
                 tags: ["Distribuční změny"]
         },
         "Potvrzení o provedené změně distribuční sazby z C na D u SVJ": {
