@@ -570,6 +570,15 @@ V případě jakýchkoliv dotazů se na nás neváhejte obrátit.</p>
                 files: [],
                 tags: ["Ostatní"]
         },
+                "Zpětná Vazba - zaslání hodnotícího formuláře zákazníkovi": {
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+<p>na základě tel. hovoru Vám zasíláme odkaz pro zanechání své pozitivní zpětné vazby, na které nám velmi záleží.</p>
+<p>Dotazník můžete vyplnit pod tímto <a href="https://g.page/r/CXbczwzq5JZ8EB0/review" target="_blank">odkazem</a>.</p>
+<p>Děkujeme za Váš čas.</p>
+<p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
+                files: [],
+                tags: ["Ostatní"]
+        },
         /* Samoodečty */
         "Prosba o doložení protokolu o výměně měřidla": {
                 text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
@@ -2398,4 +2407,3 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
         },
 };
 window.SABLONY = data;
-
