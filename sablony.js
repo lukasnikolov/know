@@ -956,7 +956,7 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
 <p>děkujeme za zaslání usnesení o dědictví. Vážíme si Vaší spolupráce.</p>
 <p>V e-mailu uvádíte, že si přejete přeplatek vyplatit na konkrétní bankovní účet. Abychom mohli tento krok uskutečnit, je nutné vyplnit a podepsat čestné prohlášení, které přikládáme v příloze tohoto e-mailu.</p>
 <li>Toto prohlášení musí podepsat všichni dědicové uvedení v usnesení.</li>
-<li>Jelikož jsou  v usnesení [<b>uvést počet dědiců </b>] dědiců/dědicové, je nutné zaslat toto čestné prohlášení ve [<b> počet kopii čp</b>] vyhotoveních – každé podepsané příslušnou osobou.</li>
+<li>Jelikož jsou  v usnesení [<b>uvést počet dědiců </b>] dědiců/dědicové, je nutné zaslat toto čestné prohlášení ve [<b> počet kopii čp</b>] vyhotoveních – každé podepsané příslušnou osobou. Požadujeme úředně ověřené podpisy všech podepisujících. Ověření lze provést na Czech POINTu (pošta/obecní úřad), u notáře nebo na matrice.</li>
 <li>Vyplněné a podepsané dokumenty nám, prosím, zašlete zpět v odpovědi na tento e-mail.</li><br>
 <p>Jakmile obdržíme všechny potřebné dokumenty, přeplatek bude vyplacen na uvedený účet v souladu s platnými právními předpisy.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href='https://zakaznici.epet.cz/login' target='_blank'>Zákaznický portál</a></p>`,
@@ -968,7 +968,7 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
 <p>děkujeme za zaslání usnesení o dědictví. Vážíme si Vaší spolupráce.</p>
 <p>Po prozkoumání přiloženého usnesení jsme zjistili, že je v něm uvedeno více dědiců. Abychom mohli pokračovat ve vyplacení přeplatku na bankovní účet, je nutné, aby všichni dědicové podepsali čestné prohlášení, které přikládáme v příloze tohoto e-mailu.</p>
 <li>Toto prohlášení musí podepsat všichni dědicové uvedení v usnesení.</li>
-<li>Jelikož jsou  v usnesení [<b>uvést počet dědiců </b>] dědiců/dědicové, je nutné zaslat toto čestné prohlášení ve [<b> počet kopii čp</b>] vyhotoveních – každé podepsané příslušnou osobou.</li>
+<li>Jelikož jsou  v usnesení [<b>uvést počet dědiců </b>] dědiců/dědicové, je nutné zaslat toto čestné prohlášení ve [<b> počet kopii čp</b>] vyhotoveních – každé podepsané příslušnou osobou. Požadujeme úředně ověřené podpisy všech podepisujících. Ověření lze provést na Czech POINTu (pošta/obecní úřad), u notáře nebo na matrice.</li>
 <li>Vyplněné a podepsané dokumenty nám, prosím, zašlete zpět v odpovědi na tento e-mail.</li><br>
 <p>Jakmile obdržíme všechny potřebné dokumenty, přeplatek bude vyplacen na uvedený účet v souladu s platnými právními předpisy.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href='https://zakaznici.epet.cz/login' target='_blank'>Zákaznický portál</a></p>`,
@@ -992,7 +992,7 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
                 text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>na základě doručeného usnesení o dědickém řízení nám byl notářem sdělen Váš status jednoho z dědiců po zemřelém/zemřelé zákaznici/zákazníkovi <b>XXXXXXX</b>. V souvislosti s touto skutečností bychom Vás rádi informovali, že na zákaznickém účtu zesnulého evidujeme přeplatek, který je možné vyplatit.</p>
 <p>Abychom mohli přistoupit k jeho výplatě, je třeba z Vaší strany doložit:</p>
-<li><b>Čestné prohlášení o souhlasu s vyplacením přeplatku</b> – slouží jako potvrzení, že souhlasíte s vyplacením příslušné částky na základě dědictví.</li>
+<li><b>Čestné prohlášení o souhlasu s vyplacením přeplatku</b> – slouží jako potvrzení, že souhlasíte s vyplacením příslušné částky na základě dědictví. Požadujeme úředně ověřené podpisy všech podepisujících. Ověření lze provést na Czech POINTu (pošta/obecní úřad), u notáře nebo na matrice.</li>
 <li>Číslo bankovního účtu, na který si přejete přeplatek poukázat.</li>
 <p>Oba výše uvedené údaje jsou nezbytné k provedení platby.Formulář čestného prohlášení Vám zasíláme v příloze tohoto e-mailu. </p>
 <p>Prosíme o jeho vyplnění, vlastnoruční podepsání a zaslání zpět – poštou na adresu <b>EP ENERGY TRADING, a.s., Klimentská 46, 110 02 Praha 1</b> nebo e-mailem na <b>info@epet.cz.</b> </p>
@@ -1025,7 +1025,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
 </ul>
 </p>
 <p>Do doby doložení usnesení bude případný přeplatek nebo nedoplatek blokován proti upomínání a vyplacení. Vyplacení bude možné až po sdělení výsledku dědického řízení.</p>
-<p>V případě, že v doloženém usnesení bude uvedeno více dědiců a budete chtít přeplatek vyplatit na jednotný bankovní účet, bude nutné doložit také čestné prohlášení, které musí být vyplněno a podepsáno všemi dědici. Kopii daného čestného prohlášení přikládáme do přílohy tohoto e-mailu.</p>
+<p>V případě, že v doloženém usnesení bude uvedeno více dědiců a budete chtít přeplatek vyplatit na jednotný bankovní účet, bude nutné doložit také čestné prohlášení, které musí být vyplněno a podepsáno všemi dědici. Požadujeme úředně ověřené podpisy všech podepisujících. Ověření lze provést na Czech POINTu (pošta/obecní úřad), u notáře nebo na matrice. Kopii daného čestného prohlášení přikládáme do přílohy tohoto e-mailu.</p>
 <p>Děkujeme za pochopení. V případě jakýchkoli dotazů jsme Vám rádi k dispozici.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href='https://zakaznici.epet.cz/login' target='_blank'>Zákaznický portál</a></p>`,
                 files: [{ url: 'https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
