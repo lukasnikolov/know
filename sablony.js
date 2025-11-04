@@ -2034,17 +2034,21 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
                 text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
  <p>děkujeme Vám za zájem o připojení Vaší výrobny elektřiny z fotovoltaické elektrárny (FVE).</p>
     <p>Abychom mohli zahájit proces připojení, prosíme Vás o zaslání následujících údajů:</p>
-    <p><strong>Povinné údaje:</strong><br>
-    • Jméno a příjmení (nebo název společnosti):<br>
-    • Datum narození (nebo IČ):<br>
-    • EAN kód výrobny:<br>
-    • Adresa výrobny:<br>
-    • Mám aktivovaný výrobní EAN (pouze u ČEZ distribuce): ANO/NE/NEVÍM (Vyberte jednu možnost)<br>
-    • Je výrobní EAN nový ? Pokud <b>Ne</b>: Poprosíme o doložení akceptace ukončení smlouvy od původního dodavatele.<br>
-    • Sdílíte v tuto chvíli energie? Pokud ano, tak z kolika % <br>
-    • Dále poprosíme o doložení <b>Smlouvy o připojení</b>, kterou Vám vystavil Váš distributor</p>
-    <p><strong>Nepovinný údaj (doporučeno):</strong><br>
-    • EAN kód odběrného (spotřebního) místa:</p>
+    <p><strong>Povinné údaje:</strong></p>
+<ul>
+  <li>Jméno a příjmení (nebo název společnosti)</li>
+  <li>Datum narození (nebo IČ)</li>
+  <li>EAN kód výrobny</li>
+  <li>Adresa výrobny</li>
+  <li>Mám aktivovaný výrobní EAN (pouze u ČEZ Distribuce): <b>ANO / NE / NEVÍM</b></li>
+  <li>Je výrobní EAN nový? Pokud <b>ne</b>, prosíme o doložení akceptace ukončení smlouvy od původního dodavatele</li>
+  <li>Sdílíte v tuto chvíli energie? Pokud ano, uveďte prosím podíl v&nbsp;%</li>
+  <li>Dále prosíme o doložení <b>Smlouvy o připojení (SOP)</b> od distributora</li>
+</ul>
+   <p><strong>Nepovinný údaj (doporučeno):</strong></p>
+<ul>
+  <li>EAN kód odběrného (spotřebního) místa</li>
+</ul>
     <p>Dovolujeme si Vás také informovat, že aktuální výkupní cena elektřiny činí 0,- Kč/MWh.</p>
     <p>Díky změně legislativy začne od 1. 7. 2025 příslušný distributor ukládat pokuty výrobnám, které nemají sjednaného obchodníka.<br>
     Společnosti epet za Vás převezmou odpovědnost za odchylku, aby k těmto pokutám nedocházelo.</p>
@@ -2408,3 +2412,4 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
         },
 };
 window.SABLONY = data;
+
