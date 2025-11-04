@@ -2042,16 +2042,14 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
     • Mám aktivovaný výrobní EAN (pouze u ČEZ distribuce): ANO/NE/NEVÍM (Vyberte jednu možnost)<br>
     • Je výrobní EAN nový ? Pokud <b>Ne</b>: Poprosíme o doložení akceptace ukončení smlouvy od původního dodavatele.<br>
     • Sdílíte v tuto chvíli energie? Pokud ano, tak z kolika % <br>
-    • Dále poprosíme o doložení Smlouvy o připojení, kterou Vám vystavil Váš distributor</p>
+    • Dále poprosíme o doložení <b>Smlouvy o připojení</b>, kterou Vám vystavil Váš distributor</p>
     <p><strong>Nepovinný údaj (doporučeno):</strong><br>
     • EAN kód odběrného (spotřebního) místa:</p>
     <p>Dovolujeme si Vás také informovat, že aktuální výkupní cena elektřiny činí 0,- Kč/MWh.</p>
     <p>Díky změně legislativy začne od 1. 7. 2025 příslušný distributor ukládat pokuty výrobnám, které nemají sjednaného obchodníka.<br>
     Společnosti epet za Vás převezmou odpovědnost za odchylku, aby k těmto pokutám nedocházelo.</p>
-    <p>Pokud budete mít zájem o výkup elektřiny za jiné než nulové ceny, bude možné se přihlásit do výkupního režimu v průběhu září 2025.</p>
     <hr>
     <p>Vyjadřuji tímto souhlas a projevuji vůli, aby se společnost epet stala obchodníkem pro mé výrobní místo a provedla jeho registraci u Operátora trhu s elektřinou (OTE).<br>
-    Samotnou smlouvu obdržíte k podpisu nejpozději do 31. 7. 2025.</p>
     <p>Vyplněné údaje prosím zašlete na e-mailovou adresu: <strong>info@epet.cz</strong></p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [],
