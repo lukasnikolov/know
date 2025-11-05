@@ -848,6 +848,21 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
                 files: [],
                 tags: ["Samoodečty - Kontrolní + Mimořádné vyúčtování + Konečné"]
         },
+ "Zamítnutí samoodečtů - Z důvodu překročení limitu 10 samoodečtů v rámci roku": {
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+<p>děkujeme za Váš požadavek na zadání samoodečtu.</p>
+<p>U daného odběrného místa již v tomto kalendářním roce nelze přijmout další běžný samoodečet, protože byl vyčerpán roční limit <b>10 samoodečtů.</b></p>
+<p>Současně připomínáme, že v rámci roku lze zadat ještě jeden mimořádný samoodečet k <b>31. 12. – tedy k 31. 12. 20XX.</b>. Ten můžete zadat standardním způsobem (stejným kanálem, jako obvykle), a bude použit pro uzavření roku.</p>
+<b>>Praktické doporučení</b>
+<p>Aby nedocházelo k duplicitám a zbytečnému „vyčerpání“ limitu, <b>nedoporučujeme hlásit samoodečet v měsíci, kdy má distributor plánovaný řádný odečet</b>.</p>
+<p><b>Proč:</b> Řádný odečet PDS je pro vyúčtování nadřazený a nahradí samoodečet; nahlášení stavu ve stejném měsíci Vám tak nepřinese výhodu a může být zamítnuto jako duplicitní. A tím dojde k vyčerpání jeho limitu.</p>
+<p><b>Příklad:</b> Pokud víte, že PDS provádí řádný odečet v <i>dubnu</i>, samoodečet v dubnu neposílejte. Stav případně nahlaste v <i>březnu</i> nebo <i>květnu</i>.</p>
+<p>Tento princip platí jak u elektřiny, tak u plynu.</p>
+<p>Děkujeme za pochopení a spolupráci.</p>
+<p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
+                files: [],
+                tags: ["Samoodečty - Kontrolní + Mimořádné vyúčtování + Konečné"]
+        },
         /* Reklamace */
         "Přijetí reklamace  – není potřeba od ZK nic doložit": {
                 text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
@@ -2034,21 +2049,17 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
                 text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
  <p>děkujeme Vám za zájem o připojení Vaší výrobny elektřiny z fotovoltaické elektrárny (FVE).</p>
     <p>Abychom mohli zahájit proces připojení, prosíme Vás o zaslání následujících údajů:</p>
-    <p><strong>Povinné údaje:</strong></p>
-<ul>
-  <li>Jméno a příjmení (nebo název společnosti)</li>
-  <li>Datum narození (nebo IČ)</li>
-  <li>EAN kód výrobny</li>
-  <li>Adresa výrobny</li>
-  <li>Mám aktivovaný výrobní EAN (pouze u ČEZ Distribuce): <b>ANO / NE / NEVÍM</b></li>
-  <li>Je výrobní EAN nový? Pokud <b>ne</b>, prosíme o doložení akceptace ukončení smlouvy od původního dodavatele</li>
-  <li>Sdílíte v tuto chvíli energie? Pokud ano, uveďte prosím podíl v&nbsp;%</li>
-  <li>Dále prosíme o doložení <b>Smlouvy o připojení (SOP)</b> od distributora</li>
-</ul>
-   <p><strong>Nepovinný údaj (doporučeno):</strong></p>
-<ul>
-  <li>EAN kód odběrného (spotřebního) místa</li>
-</ul>
+    <p><strong>Povinné údaje:</strong><br>
+    • Jméno a příjmení (nebo název společnosti):<br>
+    • Datum narození (nebo IČ):<br>
+    • EAN kód výrobny:<br>
+    • Adresa výrobny:<br>
+    • Mám aktivovaný výrobní EAN (pouze u ČEZ distribuce): ANO/NE/NEVÍM (Vyberte jednu možnost)<br>
+    • Je výrobní EAN nový ? Pokud <b>Ne</b>: Poprosíme o doložení akceptace ukončení smlouvy od původního dodavatele.<br>
+    • Sdílíte v tuto chvíli energie? Pokud ano, tak z kolika % <br>
+    • Dále poprosíme o doložení <b>Smlouvy o připojení</b>, kterou Vám vystavil Váš distributor</p>
+    <p><strong>Nepovinný údaj (doporučeno):</strong><br>
+    • EAN kód odběrného (spotřebního) místa:</p>
     <p>Dovolujeme si Vás také informovat, že aktuální výkupní cena elektřiny činí 0,- Kč/MWh.</p>
     <p>Díky změně legislativy začne od 1. 7. 2025 příslušný distributor ukládat pokuty výrobnám, které nemají sjednaného obchodníka.<br>
     Společnosti epet za Vás převezmou odpovědnost za odchylku, aby k těmto pokutám nedocházelo.</p>
@@ -2412,4 +2423,3 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
         },
 };
 window.SABLONY = data;
-
