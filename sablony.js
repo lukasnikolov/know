@@ -856,8 +856,8 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
 <b>Praktické doporučení</b>
 <p>Aby nedocházelo k duplicitám a zbytečnému „vyčerpání“ limitu, <b>nedoporučujeme hlásit samoodečet v měsíci, kdy má distributor plánovaný řádný odečet</b>.</p>
 <ul>
-<li><b>Proč:</b> Řádný odečet PDS je pro vyúčtování nadřazený a nahradí samoodečet; nahlášení stavu ve stejném měsíci Vám tak nepřinese výhodu a může být zamítnuto jako duplicitní. A tím dojde k vyčerpání jeho limitu.</li><br>
-<li><b>Příklad:</b> Pokud víte, že PDS provádí řádný odečet v <i>dubnu</i>, samoodečet v dubnu neposílejte. Stav případně nahlaste v <i>březnu</i> nebo <i>květnu</i>.</li><br></ul>
+<li><b>Proč:</b> Řádný odečet distributora je pro vyúčtování nadřazený a nahradí samoodečet; nahlášení stavu ve stejném měsíci Vám tak nepřinese výhodu a může být zamítnuto jako duplicitní. A tím dojde k vyčerpání jeho limitu.</li><br>
+<li><b>Příklad:</b> Pokud víte, že distributor provádí řádný odečet v <i>dubnu</i>, samoodečet v dubnu neposílejte. Stav případně nahlaste v <i>březnu</i> nebo <i>květnu</i>.</li><br></ul>
 <p>Tento princip platí jak u elektřiny, tak u plynu.</p>
 <p>Děkujeme za pochopení a spolupráci.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
