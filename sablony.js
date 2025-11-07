@@ -1906,7 +1906,7 @@ Děkujeme, že jste využíval(a) náš Zákaznický portál.</p>
                 files: [],
                 tags: ["Přeplatky"]
         },
-        "Vrácená složenka – potvrzení adresy / převod na účet (přeplatek za 09/2025)": {
+        "Vrácená složenka – potvrzení adresy / převod na účet  (nejedená se o přeplatky, ale o platby nad rámec PK)": {
   text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>rádi bychom Vás informovali, že se nám vrátila poštovní poukázka (složenka) na částku <strong>XXX Kč</strong>, kterou jsme Vám zasílali z důvodu platby nad rámec platebního kalendáře za <strong>XXXXX</strong>.</p>
 <p>Podle předpisu byla záloha <strong>XXX Kč</strong>, od Vás jsme obdrželi <strong>XXX Kč</strong> – rozdíl <strong>XXX Kč</strong> jsme odeslali složenkou na adresu <strong>XXX</strong>, složenka se však vrátila jako nedoručená.</p>
