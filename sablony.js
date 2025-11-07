@@ -1906,6 +1906,32 @@ Děkujeme, že jste využíval(a) náš Zákaznický portál.</p>
                 files: [],
                 tags: ["Přeplatky"]
         },
+        "Vrácená složenka – potvrzení adresy / převod na účet (přeplatek za 09/2025)": {
+  text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+<p>rádi bychom Vás informovali, že se nám vrátila poštovní poukázka (složenka) na částku <strong>XXX Kč</strong>, kterou jsme Vám zasílali z důvodu platby nad rámec platebního kalendáře za <strong>XXXXX</strong>.</p>
+<p>Podle předpisu byla záloha <strong>XXX Kč</strong>, od Vás jsme obdrželi <strong>XXX Kč</strong> – rozdíl <strong>XXX Kč</strong> jsme odeslali složenkou na adresu <strong>XXX</strong>, složenka se však vrátila jako nedoručená.</p>
+<p>Abychom mohli přeplatek vyřídit co nejdříve, prosíme o:</p>
+<ul>
+  <li><strong>Potvrzení korespondenční adresy</strong> (případně sdělte <strong>novou doručovací adresu</strong> pro opětovné zaslání složenkou), nebo</li>
+  <li>informaci, zda si přejete přeplatek <strong>poukázat na bankovní účet</strong> – v tom případě nám, prosím, zašlete <strong>číslo účtu</strong> (formát: předčíslí–číslo/kód banky).</li>
+</ul>
+<p>Údaje nám můžete zaslat odpovědí na tento e-mail, případně nás kontaktovat na níže uvedeném telefonním čísle.</p>
+<p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
+  files: [],
+  tags: ["Přeplatky"]
+},
+
+
+"Vrácená platba – z důvodu neexistujícího bankovního účtu (nejedená se o přeplatky, ale o platby nad rámec PK)": {
+  text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+<p>rádi bychom Vás informovali, že se nám vrátila platba na částku <strong>XXX Kč</strong>, kterou jsme Vám zasílali na bankovní účet <b>číslo účtu kam platba odcházela </b>, z důvodu platby nad rámec platebního kalendáře za <strong>XXXXX</strong>.</p>
+<p>Podle předpisu byla záloha <strong>XXX Kč</strong>, od Vás jsme obdrželi <strong>XXX Kč</strong> – rozdíl <strong>XXX Kč</strong>. Platba se bohužel vrátila z důvodu, že výše uvedený bankovní účet je bohužel neexistující.</p> <br>
+<p>Pro úspěšné zpracování vrácení této částky Vás tímto zdvořile žádáme o sdělení nového bankovního účtu, na který můžeme přeplatek odeslat. Prosíme o zaslání těchto údajů co nejdříve, abychom mohli platbu bez odkladu uskutečnit.</p>
+Vaše údaje můžete zaslat odpovědí na tento e-mail nebo nás kontaktovat na níže uvedeném telefonním čísle.</p>
+<p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
+  files: [],
+  tags: ["Přeplatky"]
+},
         "Informace pro ZK - nutné vrátit přeplatek, který mu byl chybně vyplacen": {
                 text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>rádi bychom Vás informovali, že v rámci naší interní kontroly jsme zjistili administrativní chybu ve vystavení přeplatku ve výši  <strong> částka Kč</strong>,který Vám byl omylem připsán. Tento přeplatek Vám bohužel nenáleží, a proto bychom Vás chtěli požádat o jeho vrácení.</p>
