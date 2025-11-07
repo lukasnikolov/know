@@ -1817,7 +1817,7 @@ doby bude vše vyřešeno k Vaší plné spokojenosti.</p>
 </ul>
 <p>Na základě obdržených údajů pro Vás připravíme a zašleme <b>návrh smlouvy</b> k odsouhlasení a podpisu.</p>
 <p>Pokud byste přesto chtěli formulář vyplnit, můžete jej otevřít zde: <a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank">Formulář k přepisu odběrného místa</a>.</p>
-<p>Rádi bychom Vás také informovali o našem zákaznickém portálu, kde najdete faktury, platební kalendář, můžete zadat samoodečet nebo upravit výši záloh: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
+<p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
   files: [],
   tags: ["Přepisy"]
 },
