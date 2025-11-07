@@ -1781,6 +1781,27 @@ doby bude vše vyřešeno k Vaší plné spokojenosti.</p>
                 files: [],
                 tags: ["Přepisy"]
         },
+        "Přepis odběrného místa - Zaslání Odkazu (kde např. zákazník reaguje, že mu formulář nefunguje/nejde vyplnit / neví jak)": {
+  text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+<p>na základě naší telefonické dohody Vám zasíláme odkaz na elektronický formulář pro přepis odběrného místa. Tento formulář můžete vyplnit a odeslat prostřednictvím následujícího odkazu: <a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank">Formulář k přepisu odběrného místa</a>.</p>
+<p><b>Máte potíže s online formulářem?</b> V tom případě nám můžete potřebné údaje zaslat přímo v odpovědi na tento e-mail. Uveďte prosím následující doplňující údaje k novému odběrateli:</p>
+<ul>
+  <li><b>Jméno a příjmení / Název společnosti</b></li>
+  <li><b>Datum narození</b></li>
+  <li><b>Adresa trvalého bydliště / Sídlo firmy</b></li>
+  <li><b>E-mail</b></li>
+  <li><b>Telefonní číslo</b></li>
+  <li><b>Počáteční výše a četnost záloh</b></li>
+  <li><b>Platnost smlouvy</b>: 12 / 24 / 36 měsíců</li>
+  <li><b>Způsob úhrady záloh</b> (SIPO – uveďte spojovací číslo / převodní či inkasní příkaz – uveďte číslo bankovního účtu)</li>
+  <li><b>Způsob vrácení přeplatků</b> (složenka / převodní příkaz)</li>
+</ul>
+<p>Na základě obdržených údajů pro Vás připravíme a zašleme návrh smlouvy k odsouhlasení.</p>
+<p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
+  files: [],
+  tags: ["Přepisy"]
+},
+
         /* Zranitelný zákazník */
         "Upozornění na blížící se konec platnosti potvrzení pro přiznání práv zranitelného zákazníka": {
                 text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
