@@ -2146,10 +2146,10 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
     • Datum narození (nebo IČ):<br>
     • EAN kód výrobny:<br>
     • Adresa výrobny:<br>
-    • Mám aktivovaný výrobní EAN (pouze u ČEZ distribuce): ANO/NE/NEVÍM (Vyberte jednu možnost)<br>
+    • K jakému datu je/bude výrobna připojena do distribuční sítě?: <br>
     • Je výrobní EAN nový ? Pokud <b>Ne</b>: Poprosíme o doložení akceptace ukončení smlouvy od původního dodavatele.<br>
     • Sdílíte v tuto chvíli energie? Pokud ano, tak z kolika % <br>
-    • Dále poprosíme o doložení <b>Smlouvy o připojení</b>, kterou Vám vystavil Váš distributor</p>
+    • Dále poprosíme o doložení <b>Smlouvy o připojení</b>, kterou Vám vystavil Váš distributor nebo je možné doložit <b>Protokol o připojení k distribuční síti</b></p>
     <p><strong>Nepovinný údaj (doporučeno):</strong><br>
     • EAN kód odběrného (spotřebního) místa:</p>
     <p>Dovolujeme si Vás také informovat, že aktuální výkupní cena elektřiny činí 0,- Kč/MWh.</p>
@@ -2515,3 +2515,4 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
         },
 };
 window.SABLONY = data;
+
