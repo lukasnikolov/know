@@ -431,6 +431,16 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
                 files: [],
                 tags: ["Distribuční změny"]
         },
+        "Potvrzení zk, že na základě doložených dokumentů,  byl požadavek předán na distribuci pro sdělení termínu (ÚKol předán na EK - pro sdělení termínu)": {
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+<p>děkujeme za zaslání požadovaných dokumentů k Vaší žádosti o změnu distribuční sazby / změny výše hlavního jističe</p>
+<p>Tímto potvrzujeme, že jsme na základě Vámi doložených podkladů požadavek předali k posouzení a zpracování příslušnému distributorovi. Distributor Nám následně sdělí konkrétní termín realizace změny. Jakmile od něj obdržíme potvrzení o plánovaném termínu, budeme Vás neprodleně informovat.</p>
+<p>V případě doplnění dalších údajů nebo potřeby upřesnění Vás budeme kontaktovat.</p>
+<p>Děkujeme Vám za spolupráci.</p>
+<p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
+                files: [],
+                tags: ["Distribuční změny"]
+        },
         /* Demontáže */
         "Ukončení smlouvy s demontáží elektroměru – sezónní odběr FIRMA – ČEZ": {
                 text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
@@ -2515,4 +2525,5 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
         },
 };
 window.SABLONY = data;
+
 
