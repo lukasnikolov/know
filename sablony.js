@@ -287,7 +287,7 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
 <ul><strong>2) Žádost o připojení </strong>– dokument provozovatele distribuční soustavy, ve kterém je nutné vyplnit všechny využívané spotřebiče a jejich příkon v kW.</ul>
 <p>Doručit nám je můžete prostřednictvím e-mailu nebo poštou. Žádáme vás o jeho kompletní vyplnění ve spolupráci s revizním technikem, jedině tak bude distributorem přijat. Na vyřízení požadavku má distributor 30 kalendářních dní.</p>
 <p>Po uplynutí této lhůty Vám distributor zašle Smlouvu o připojení. V ní bude uvedeno, jaké změny je nutné realizovat na odběrném místě. Pokud ve Smlouvě o připojení naleznete, že je třeba hradit podíl, prosíme o doložení potvrzení o platbě či datum, kdy byl podíl uhrazen.</p>
-<p>Podepsaný originál <b>Smlouvy o připojení</b> a <b>revizní zprávu</b>, kterou Vám vystaví po úpravách na odběrném místě revizní technik, zašlete zpět distributorovi. Před odesláním dokumenty prosím oscanujte a pošlete na e-mail info@epet.cz nebo okopírujte a zašlete poštou na adresu EP ENERGY TRADING, a.s., Klimentská 46, 110 02 Praha 1.</p>
+<p>Podepsaný originál <b>Smlouvy o připojení</b> a <b>revizní zprávu</b>, kterou Vám vystaví po úpravách na odběrném místě revizní technik, zašlete zpět distributorovi. Před odesláním dokumenty prosím oscanujte a pošlete na e-mail info@epet.cz nebo okopírujte a zašlete poštou na adresu EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</p>
 <p>Následně změnu zaevidujeme na Vašem zákaznickém účtu.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [
@@ -306,7 +306,7 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
 <ul><strong>2) Žádost o připojení:</strong> Jedná se o dokument provozovatele distribuční soustavy, ve kterém je nutné vyplnit všechny využívané spotřebiče a jejich příkon v kW.</ul>
 <p>Originál žádosti zašlete na adresu <strong>PREdistribuce, a.s., Svornosti 3199/19 a, 150 00 Praha 5.</strong></p>
 <p>Na vyřízení požadavku má distributor 30 kalendářních dní. Po uplynutí této lhůty Vám distributor zašle <b> Smlouvu o připojení.</b> V ní bude uvedeno, jaké změny je nutné realizovat na odběrném místě. Pokud ve Smlouvě o připojení naleznete, že je třeba hradit podíl, prosíme o doložení potvrzení o platbě či datum, kdy byl podíl uhrazen.</p>
-<p>Podepsaný originál Smlouvy o připojení a revizní zprávu, kterou Vám vystaví po úpravách na odběrném místě revizní technik, zašlete zpět distributorovi. Před odesláním dokumenty prosím oscanujte a pošlete na e-mail info@epet.cz nebo okopírujte a zašlete poštou na adresu <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 02 Praha 1</strong>.</p>
+<p>Podepsaný originál Smlouvy o připojení a revizní zprávu, kterou Vám vystaví po úpravách na odběrném místě revizní technik, zašlete zpět distributorovi. Před odesláním dokumenty prosím oscanujte a pošlete na e-mail info@epet.cz nebo okopírujte a zašlete poštou na adresu <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</p>
 <p>Následně změnu zaevidujeme na Vašem zákaznickém účtu. </p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [
@@ -324,7 +324,7 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
 <ul><strong>2) Žádost o připojení:</strong> Jedná se o dokument provozovatele distribuční soustavy, ve kterém je nutné vyplnit všechny využívané spotřebiče a jejich příkon v kW.</ul>
 <p>Originál žádosti zašlete na adresu <strong>PREdistribuce, a.s., Svornosti 3199/19 a, 150 00 Praha 5.</strong></p>
 <p>Na vyřízení požadavku má distributor 30 kalendářních dní. Po uplynutí této lhůty Vám distributor zašle <b> Smlouvu o připojení.</b> V ní bude uvedeno, jaké změny je nutné realizovat na odběrném místě. Pokud ve Smlouvě o připojení naleznete, že je třeba hradit podíl, prosíme o doložení potvrzení o platbě či datum, kdy byl podíl uhrazen.</p>
-<p>Podepsaný originál Smlouvy o připojení a revizní zprávu, kterou Vám vystaví po úpravách na odběrném místě revizní technik, zašlete zpět distributorovi. Před odesláním dokumenty prosím oscanujte a pošlete na e-mail info@epet.cz nebo okopírujte a zašlete poštou na adresu <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 02 Praha 1</strong>.</p>
+<p>Podepsaný originál Smlouvy o připojení a revizní zprávu, kterou Vám vystaví po úpravách na odběrném místě revizní technik, zašlete zpět distributorovi. Před odesláním dokumenty prosím oscanujte a pošlete na e-mail info@epet.cz nebo okopírujte a zašlete poštou na adresu <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</p>
 <p>Dále nám prosím zašlete <b>protokol o instalaci tepelného čerpadla</b> a <b>výpočet tepelných ztrát</b>. Dokumenty předáme distributorovi, který jej vyžaduje pro změnu sazby.</p>
 <p>Následně změnu zaevidujeme na Vašem zákaznickém účtu. </p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
@@ -346,7 +346,7 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
         "Doložení dokladu – změna hodnoty hlavního jističe - ČEZ A EG.D": {
                 text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>Váš distributor nám sdělil informaci, že u odběrného místa <strong>EAN XXXXXXXXXX</strong> byla sjednána nová hodnota jističe, která je <strong>XXX A.</strong></p>
-<p>Rádi bychom Vás požádali o potvrzení této informace, doložení <b>Smlouvy o připojení</b> a <b>revizní zprávy</b> od elektrikáře. Tyto dokumenty můžete zaslat oscanované na e-mail info@epet.cz nebo poštou na adresu EP ENERGY TRADING, a.s., Klimentská 46, 110 02 Praha 1.</p>
+<p>Rádi bychom Vás požádali o potvrzení této informace, doložení <b>Smlouvy o připojení</b> a <b>revizní zprávy</b> od elektrikáře. Tyto dokumenty můžete zaslat oscanované na e-mail info@epet.cz nebo poštou na adresu EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</p>
 <p>Následně potřebné informace zaevidujeme na Vašem zákaznickém účtu. </p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [],
@@ -425,7 +425,7 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
 <p>Po podpisu smlouvy prosíme o její zaslání:</p>
 <ul>
   <li><b>originálu podepsané Smlouvy o připojení zpět distributorovi,</b></li>
-  <li><b>kopie podepsané smlouvy také na naši adresu – ideálně elektronicky na e-mail</b> <a href="mailto:info@epet.cz">info@epet.cz</a>, případně poštou na <b>EP ENERGY TRADING, a.s., Klimentská 46, 110 02 Praha 1</b>.</li>
+  <li><b>kopie podepsané smlouvy také na naši adresu – ideálně elektronicky na e-mail</b> <a href="mailto:info@epet.cz">info@epet.cz</a>, případně poštou na <b>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</b>.</li>
 </ul>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [],
@@ -446,7 +446,7 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
                 text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>v příloze tohoto e-mailu naleznete podklady k ukončení smlouvy s demontáží měřidla. Jedná se o Žádost o ukončení smlouvy / dodávky elektřiny do odběrného místa – Firma a Žádost o demontáž měřícího zařízení.</p>
 <p>Podklady musí podepsat osoba, která je oprávněna jednat za společnost. Případně lze k Žádosti doložit plnou moc, opravňující k podpisu žádosti, kterou Vám zasíláme v příloze.</p>
-<p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokumenty můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 02 Praha 1.</strong></p>
+<p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokumenty můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong></p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [
                         { url: "https://drive.google.com/file/d/1IxIb56DEjGqZal6L73uQtnGlgVFg2eDQ/view?usp=drive_link", name: "PLNÁ MOC", type: "pdf" },
@@ -458,7 +458,7 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
         "Ukončení smlouvy s demontáží elektroměru DOMÁCNOST - ČEZ": {
                 text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>v příloze tohoto e-mailu naleznete podklady k ukončení smlouvy s demontáží měřidla. Jedná se o Žádost o ukončení smlouvy / dodávky elektřiny do odběrného místa – Domácnost a Žádost o ukončení smlouvy. </p>
-<p>Prosíme o jejich vyplnění a zaslání zpět na naši e-mailovou adresu. Dokumenty můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 02 Praha 1.</strong> </p>
+<p>Prosíme o jejich vyplnění a zaslání zpět na naši e-mailovou adresu. Dokumenty můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong> </p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [
                         { url: "https://drive.google.com/file/d/10OtoVJApxNBiA_L8C0G2qjxaK22VNczx/view?usp=drive_web", name: "Žádost o ukončení_DOM", type: "pdf" },
@@ -470,7 +470,7 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
         "Ukončení smlouvy s demontáží Elektroměru – DOMÁCNOST - EGD/PRE": {
                 text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>v příloze tohoto e-mailu naleznete podklad k ukončení smlouvy s demontáží měřidla. Jedná se o Žádost o ukončení smlouvy / dodávky elektřiny do odběrného místa – Domácnost.</p>
-<p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokument můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 02 Praha 1.</strong></p>
+<p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokument můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong></p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [
                         { url: "https://drive.google.com/file/d/10OtoVJApxNBiA_L8C0G2qjxaK22VNczx/view?usp=drive_web", name: "Žádost o ukončení", type: "pdf" }
@@ -481,7 +481,7 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
                 text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>v příloze tohoto e-mailu naleznete podklady k ukončení smlouvy s demontáží měřidla. Jedná se o Žádost o ukončení smlouvy / dodávky elektřiny do odběrného místa – Firma a Žádost o ukončení smlouvy.</p>
 <p>Podklady musí podepsat osoba, která je oprávněna jednat za společnost. Případně lze k Žádosti doložit plnou moc, opravňující k podpisu žádosti, kterou Vám zasíláme v příloze.</p>
-<p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokumenty můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 02 Praha 1</strong>.</p>
+<p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokumenty můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [
                         { url: "https://drive.google.com/file/d/1IxIb56DEjGqZal6L73uQtnGlgVFg2eDQ/view?usp=drive_link", name: "PLNÁ MOC", type: "pdf" },
@@ -495,7 +495,7 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
                 text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>v příloze tohoto e-mailu naleznete podklad k ukončení smlouvy s demontáží měřidla. Jedná se o Žádost o ukončení smlouvy / dodávky elektřiny do odběrného místa – Firma</p>
 <p>Podklady musí podepsat osoba, která je oprávněna jednat za společnost. Případně lze k Žádosti doložit plnou moc, opravňující k podpisu žádosti, kterou Vám zasíláme v příloze.</p>
-<p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokumenty můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 02 Praha 1.</strong></p>
+<p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokumenty můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong></p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [
                         { url: "https://drive.google.com/open?id=1U-3hFZF25hXpdj9-8XrYpbI6w_rQH5S7", name: "Žádost o ukončení", type: "pdf" },
@@ -507,7 +507,7 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
         "Ukončení smlouvy s demontáží plynoměru DOMÁCNOST - EG.D_PPD_GASNET_RWE": {
                 text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>v příloze tohoto e-mailu naleznete podklad k ukončení smlouvy s demontáží měřidla. Jedná se o Žádost o ukončení smlouvy / dodávky plynu do odběrného místa – Domácnost.</p>
-<p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokument můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 02 Praha 1.</strong></p>
+<p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokument můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong></p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [
                         { url: "https://drive.google.com/file/d/10DdFgk1KL9NBIYUv3tpcMvVjEFurYSJV/view?usp=drive_web", name: "Žádost o ukončení", type: "pdf" }
@@ -518,7 +518,7 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
                 text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>v příloze tohoto e-mailu naleznete podklad k ukončení smlouvy s demontáží měřidla. Jedná se o Žádost o ukončení smlouvy / dodávky plynu do odběrného místa – Maloodběratel.</p>
 <p>Podklady musí podepsat osoba, která je oprávněna jednat za společnost. Případně lze k Žádosti doložit plnou moc, opravňující k podpisu žádosti, kterou Vám zasíláme v příloze.</p>
-<p>Prosíme o jejich vyplnění a zaslání zpět na naši e-mailovou adresu. Dokument můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 02 Praha 1.</strong></p>
+<p>Prosíme o jejich vyplnění a zaslání zpět na naši e-mailovou adresu. Dokument můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong></p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [
                         { url: "https://drive.google.com/file/d/1IxIb56DEjGqZal6L73uQtnGlgVFg2eDQ/view?usp=drive_link", name: "PLNÁ MOC", type: "pdf" },
@@ -1021,7 +1021,7 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
 <li><b>Čestné prohlášení o souhlasu s vyplacením přeplatku</b> – slouží jako potvrzení, že souhlasíte s vyplacením příslušné částky na základě dědictví. U všech podpisů je nutné úřední ověření – lze provést na Czech POINTu (pošta/obecní úřad), u notáře nebo na matrice.</li>
 <li>Číslo bankovního účtu, na který si přejete přeplatek poukázat.</li>
 <p>Oba výše uvedené údaje jsou nezbytné k provedení platby.Formulář čestného prohlášení Vám zasíláme v příloze tohoto e-mailu. </p>
-<p>Prosíme o jeho vyplnění, vlastnoruční podepsání a zaslání zpět – poštou na adresu <b>EP ENERGY TRADING, a.s., Klimentská 46, 110 02 Praha 1</b> nebo e-mailem na <b>info@epet.cz.</b> </p>
+<p>Prosíme o jeho vyplnění, vlastnoruční podepsání a zaslání zpět – poštou na adresu <b>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</b> nebo e-mailem na <b>info@epet.cz.</b> </p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href='https://zakaznici.epet.cz/login' target='_blank'>Zákaznický portál</a></p>`,
                 files: [{ url: 'https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
                 tags: ["Dědické řízení"]
@@ -1083,7 +1083,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
         "Výzva k úhradě dlužných plateb, zákaznické číslo: xxxx (šablona číslo 3)": {
                 text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 
-<p>dovolujeme si Vás informovat, že naše společnost <strong>EP ENERGY TRADING, a.s.</strong>, IČO <strong>27386643</strong>, se sídlem Klimentská 46, Praha 1, 110 02 obdržela od Obvodního soudu pro Prahu 6 informaci o skončení řízení o pozůstalosti (resp. dědického řízení), kterou bylo naší společnosti sděleno, že právním nástupcem zákazníka [jméno, příjmení, datum narození, trvalý pobyt] (dále jen <b>„Zůstavitel“</b>) se na základě pravomocného rozhodnutí o dědictví (kterým dědické řízení skončilo) uvedeným soudem v oblasti dodávky energií v odběrném místě EAN/EIC _____ na adrese [ulice, PSČ, město] (dále jen <b>„Odběrné místo“</b>) zajišťované naší společností na základě Smlouvy o sdružených službách dodávky elektřiny/plynu a uzavřené mezi naší společností a Zůstavitelem (dále jako <b>„Smlouva“</b>) stala tato osoba:</p>
+<p>dovolujeme si Vás informovat, že naše společnost <strong>EP ENERGY TRADING, a.s.</strong>, IČO <strong>27386643</strong>, se sídlem Klimentská 46, Praha 1, 110 00 obdržela od Obvodního soudu pro Prahu 6 informaci o skončení řízení o pozůstalosti (resp. dědického řízení), kterou bylo naší společnosti sděleno, že právním nástupcem zákazníka [jméno, příjmení, datum narození, trvalý pobyt] (dále jen <b>„Zůstavitel“</b>) se na základě pravomocného rozhodnutí o dědictví (kterým dědické řízení skončilo) uvedeným soudem v oblasti dodávky energií v odběrném místě EAN/EIC _____ na adrese [ulice, PSČ, město] (dále jen <b>„Odběrné místo“</b>) zajišťované naší společností na základě Smlouvy o sdružených službách dodávky elektřiny/plynu a uzavřené mezi naší společností a Zůstavitelem (dále jako <b>„Smlouva“</b>) stala tato osoba:</p>
 
 <ul>
   <li>[jméno, příjmení, datum narození, trvalý pobyt]</li>
@@ -1179,7 +1179,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
                 text: `
 <p>Dobrý den, pane XXX, / paní XXX,</p>
 
-<p>obracíme se na Vás jakožto na potenciálního dědice pana/paní [jméno, příjmení, datum narození, trvalý pobyt] (dále jako „Zůstavitel“) s informací, že naše společnost <b>EP ENERGY TRADING, a.s.</b>, <b>IČO 27386643</b>, se sídlem Klimentská 46, Praha 1, 110 02 na základě Smlouvy o sdružených službách dodávky elektřiny/plynu č. ______ uzavřené mezi naší společností a Zůstavitelem (dále jen <b>„Smlouva“</b>) je dodavatelem elektřiny/plynu do odběrného místa EAN/EIC _____ na adrese [ulice, PSČ, město] (dále jen <b>„Odběrné místo“</b>).</p>
+<p>obracíme se na Vás jakožto na potenciálního dědice pana/paní [jméno, příjmení, datum narození, trvalý pobyt] (dále jako „Zůstavitel“) s informací, že naše společnost <b>EP ENERGY TRADING, a.s.</b>, <b>IČO 27386643</b>, se sídlem Klimentská 46, Praha 1, 110 00 na základě Smlouvy o sdružených službách dodávky elektřiny/plynu č. ______ uzavřené mezi naší společností a Zůstavitelem (dále jen <b>„Smlouva“</b>) je dodavatelem elektřiny/plynu do odběrného místa EAN/EIC _____ na adrese [ulice, PSČ, město] (dále jen <b>„Odběrné místo“</b>).</p>
 
 <p>Ke dni úmrtí naše společnost u <b>odběrného místa</b> eviduje následující pohledávku (dále jako <b>„Pohledávka“</b>):
 </p>
@@ -1243,7 +1243,7 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
                 text: `
 <p>Dobrý den, pane XXX, / paní XXX,</p>
 
-<p>obracíme se na Vás jakožto na potenciálního dědice pana/paní [jméno, příjmení, datum narození, trvalý pobyt] (dále jako <b>„Zůstavitel“</b>) s informací, že naše společnost <b>EP ENERGY TRADING, a.s.</b>, <b>IČO 27386643</b>, se sídlem Klimentská 46, Praha 1, 110 02 na základě Smlouvy o sdružených službách dodávky elektřiny/plynu č. ______ uzavřené mezi naší společností a Zůstavitelem (dále jen <b>„Smlouva“</b>) je dodavatelem této energie do odběrného místa EAN/EIC _____ na adrese [ulice, PSČ, město] (dále jen <b>„Odběrné místo“</b>).</p>
+<p>obracíme se na Vás jakožto na potenciálního dědice pana/paní [jméno, příjmení, datum narození, trvalý pobyt] (dále jako <b>„Zůstavitel“</b>) s informací, že naše společnost <b>EP ENERGY TRADING, a.s.</b>, <b>IČO 27386643</b>, se sídlem Klimentská 46, Praha 1, 110 00 na základě Smlouvy o sdružených službách dodávky elektřiny/plynu č. ______ uzavřené mezi naší společností a Zůstavitelem (dále jen <b>„Smlouva“</b>) je dodavatelem této energie do odběrného místa EAN/EIC _____ na adrese [ulice, PSČ, město] (dále jen <b>„Odběrné místo“</b>).</p>
 
 <p>Ke dni úmrtí naše společnost u <b>odběrného místa</b> eviduje následující pohledávku (dále jako <b>„Pohledávka“</b>):
 </p>
@@ -2525,6 +2525,5 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
         },
 };
 window.SABLONY = data;
-
 
 
