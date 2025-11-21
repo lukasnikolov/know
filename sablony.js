@@ -267,7 +267,7 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
 <ul> <strong>2) Žádost o připojení</strong> – dokument provozovatele distribuční soustavy, ve kterém je nutné vyplnit všechny využívané spotřebiče a jejich příkon v kW.</ul>
 <p>Doručit nám je můžete prostřednictvím e-mailu nebo poštou. Žádáme vás o jeho kompletní vyplnění ve spolupráci s revizním technikem, jedině tak bude distributorem přijat. Na vyřízení požadavku má distributor 30 kalendářních dní.</p>
 <p>Po uplynutí této lhůty Vám distributor zašle Smlouvu o připojení. V ní bude uvedeno, jaké změny je nutné realizovat na odběrném místě. Pokud ve Smlouvě o připojení naleznete, že je třeba hradit podíl, prosíme o doložení potvrzení o platbě či datum, kdy byl podíl uhrazen.</p>
-<p>Podepsaný originál <b>Smlouvy o připojení</b> a <b>revizní zprávu</b>, kterou Vám vystaví po úpravách na odběrném místě revizní technik, zašlete zpět distributorovi. Před odesláním dokumenty prosím oscanujte a pošlete na e-mail info@epet.cz nebo okopírujte a zašlete poštou na adresu <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 02 Praha 1.</strong></p>
+<p>Podepsaný originál <b>Smlouvy o připojení</b> a <b>revizní zprávu</b>, kterou Vám vystaví po úpravách na odběrném místě revizní technik, zašlete zpět distributorovi. Před odesláním dokumenty prosím oscanujte a pošlete na e-mail info@epet.cz nebo okopírujte a zašlete poštou na adresu <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong></p>
 <p>Dále nám prosím zašlete <b>protokol o instalaci tepelného čerpadla</b> a <b>výpočet tepelných ztrát</b>. Dokumenty předáme distributorovi, který jej vyžaduje pro změnu sazby.</p>
 <p>Následně změnu zaevidujeme na Vašem zákaznickém účtu.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
@@ -2525,5 +2525,6 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
         },
 };
 window.SABLONY = data;
+
 
 
