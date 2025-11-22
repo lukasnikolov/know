@@ -121,22 +121,22 @@ rádi bychom Vás informovali, že jsme obdrželi opravná data pro fakturaci ze
 <p>Děkujeme Vám za spolupráci. </p> 
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [
-  { url: "https://drive.google.com/file/d/10vEwfyGojwqZ81yvP6xSLI-krF7sD0c0/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ČEZ - FIRMA", type: "pdf" },
-  { url: "https://drive.google.com/file/d/1DKM958grbFkRFuy4MrqYtXJjd4ZK0Uun/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ČEZ - DOM", type: "pdf" },
-  { url: "https://drive.google.com/file/d/1Zz5Gx_UHY3hgHAAOl66xqs0hzI5p-o25/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - EGD", type: "pdf" },
-  { url: "https://drive.google.com/file/d/1n7kXH_5h0Utb8yZDkr2V-HK9rPysV-BN/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - FIRMA", type: "pdf" },
-  { url: "https://drive.google.com/file/d/1XAoZ_xy-4IOmwAHATnHSjbi9j7yw0Sd0/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - DOM", type: "pdf" },
-  { url: "https://drive.google.com/file/d/1t-FFOcEzZWbmqzf-EL40m1hJ78dimmJE/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - původní zákazník neznámý", type: "pdf" },
-  { url: "https://drive.google.com/file/d/1UhAkyEzAaPizqFZrPhB9BbNiRCB8YnUW/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRAŽ-PLYN.", type: "pdf" },
-  { url: "https://drive.google.com/file/d/1g_qi7NC8ncY2YW10r0aPD2JYIvCPXMyG/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRE", type: "pdf" },
-  { url: "https://drive.google.com/file/d/1tUTwgDiU9L4dTsoa_DfHvDrIJi4IDTuQ/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - z C na D", type: "pdf" },
-  { url: "https://drive.google.com/file/d/1HKsGDY14VD8bREp744I2ze7EXC29j7J6/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ZMD", type: "pdf" },
-  { url: "https://drive.google.com/file/d/14JwJ2-7d3FtTbm8Q6xGzQ0PU4yu39-et/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ z PO – změna sazby Firma → Dom", type: "pdf" },
-  { url: "https://drive.google.com/file/d/1Xra9Xs7KsPb-Tua_2V_8NE1F1__uCoo2/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRAŽ-PLYN - FIRMA", type: "pdf" },
-  { url: "https://drive.google.com/file/d/1BjeKuD2NOpyYjJCMO2TnU2tTrST3musN/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - EGD - FIRMA", type: "pdf" },
-  { url: "https://drive.google.com/file/d/18CENh1sJWOtFSE7yiU8yNE1MopDxRhbi/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRE - FIRMA", type: "pdf" },
-  { url: "https://drive.google.com/file/d/1RSfEY2py1TVAD-PNSK6F0IaWZtH_msub/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ZMD - FIRMA", type: "pdf" }
-],
+                        { url: "https://drive.google.com/file/d/10vEwfyGojwqZ81yvP6xSLI-krF7sD0c0/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ČEZ - FIRMA", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/1DKM958grbFkRFuy4MrqYtXJjd4ZK0Uun/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ČEZ - DOM", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/1Zz5Gx_UHY3hgHAAOl66xqs0hzI5p-o25/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - EGD", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/1n7kXH_5h0Utb8yZDkr2V-HK9rPysV-BN/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - FIRMA", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/1XAoZ_xy-4IOmwAHATnHSjbi9j7yw0Sd0/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - DOM", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/1t-FFOcEzZWbmqzf-EL40m1hJ78dimmJE/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - původní zákazník neznámý", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/1UhAkyEzAaPizqFZrPhB9BbNiRCB8YnUW/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRAŽ-PLYN.", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/1g_qi7NC8ncY2YW10r0aPD2JYIvCPXMyG/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRE", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/1tUTwgDiU9L4dTsoa_DfHvDrIJi4IDTuQ/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - z C na D", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/1HKsGDY14VD8bREp744I2ze7EXC29j7J6/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ZMD", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/14JwJ2-7d3FtTbm8Q6xGzQ0PU4yu39-et/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ z PO – změna sazby Firma → Dom", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/1Xra9Xs7KsPb-Tua_2V_8NE1F1__uCoo2/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRAŽ-PLYN - FIRMA", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/1BjeKuD2NOpyYjJCMO2TnU2tTrST3musN/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - EGD - FIRMA", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/18CENh1sJWOtFSE7yiU8yNE1MopDxRhbi/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRE - FIRMA", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/1RSfEY2py1TVAD-PNSK6F0IaWZtH_msub/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ZMD - FIRMA", type: "pdf" }
+                ],
                 tags: ["Smlouvy"]
         },
         "ZMĚNA ADRESA TRVALÉHO BYDLIŠTĚ - Potvrzení změny adresy": {
@@ -203,22 +203,22 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
 <p>Děkujeme za spolupráci.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
                 files: [
-  { url: "https://drive.google.com/file/d/10vEwfyGojwqZ81yvP6xSLI-krF7sD0c0/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ČEZ - FIRMA", type: "pdf" },
-  { url: "https://drive.google.com/file/d/1DKM958grbFkRFuy4MrqYtXJjd4ZK0Uun/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ČEZ - DOM", type: "pdf" },
-  { url: "https://drive.google.com/file/d/1Zz5Gx_UHY3hgHAAOl66xqs0hzI5p-o25/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - EGD", type: "pdf" },
-  { url: "https://drive.google.com/file/d/1n7kXH_5h0Utb8yZDkr2V-HK9rPysV-BN/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - FIRMA", type: "pdf" },
-  { url: "https://drive.google.com/file/d/1XAoZ_xy-4IOmwAHATnHSjbi9j7yw0Sd0/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - DOM", type: "pdf" },
-  { url: "https://drive.google.com/file/d/1t-FFOcEzZWbmqzf-EL40m1hJ78dimmJE/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - původní zákazník neznámý", type: "pdf" },
-  { url: "https://drive.google.com/file/d/1UhAkyEzAaPizqFZrPhB9BbNiRCB8YnUW/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRAŽ-PLYN.", type: "pdf" },
-  { url: "https://drive.google.com/file/d/1g_qi7NC8ncY2YW10r0aPD2JYIvCPXMyG/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRE", type: "pdf" },
-  { url: "https://drive.google.com/file/d/1tUTwgDiU9L4dTsoa_DfHvDrIJi4IDTuQ/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - z C na D", type: "pdf" },
-  { url: "https://drive.google.com/file/d/1HKsGDY14VD8bREp744I2ze7EXC29j7J6/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ZMD", type: "pdf" },
-  { url: "https://drive.google.com/file/d/14JwJ2-7d3FtTbm8Q6xGzQ0PU4yu39-et/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ z PO – změna sazby Firma → Dom", type: "pdf" },
-  { url: "https://drive.google.com/file/d/1Xra9Xs7KsPb-Tua_2V_8NE1F1__uCoo2/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRAŽ-PLYN - FIRMA", type: "pdf" },
-  { url: "https://drive.google.com/file/d/1BjeKuD2NOpyYjJCMO2TnU2tTrST3musN/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - EGD - FIRMA", type: "pdf" },
-  { url: "https://drive.google.com/file/d/18CENh1sJWOtFSE7yiU8yNE1MopDxRhbi/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRE - FIRMA", type: "pdf" },
-  { url: "https://drive.google.com/file/d/1RSfEY2py1TVAD-PNSK6F0IaWZtH_msub/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ZMD - FIRMA", type: "pdf" }
-],
+                        { url: "https://drive.google.com/file/d/10vEwfyGojwqZ81yvP6xSLI-krF7sD0c0/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ČEZ - FIRMA", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/1DKM958grbFkRFuy4MrqYtXJjd4ZK0Uun/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ČEZ - DOM", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/1Zz5Gx_UHY3hgHAAOl66xqs0hzI5p-o25/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - EGD", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/1n7kXH_5h0Utb8yZDkr2V-HK9rPysV-BN/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - FIRMA", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/1XAoZ_xy-4IOmwAHATnHSjbi9j7yw0Sd0/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - DOM", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/1t-FFOcEzZWbmqzf-EL40m1hJ78dimmJE/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - původní zákazník neznámý", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/1UhAkyEzAaPizqFZrPhB9BbNiRCB8YnUW/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRAŽ-PLYN.", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/1g_qi7NC8ncY2YW10r0aPD2JYIvCPXMyG/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRE", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/1tUTwgDiU9L4dTsoa_DfHvDrIJi4IDTuQ/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - z C na D", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/1HKsGDY14VD8bREp744I2ze7EXC29j7J6/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ZMD", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/14JwJ2-7d3FtTbm8Q6xGzQ0PU4yu39-et/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ z PO – změna sazby Firma → Dom", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/1Xra9Xs7KsPb-Tua_2V_8NE1F1__uCoo2/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRAŽ-PLYN - FIRMA", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/1BjeKuD2NOpyYjJCMO2TnU2tTrST3musN/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - EGD - FIRMA", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/18CENh1sJWOtFSE7yiU8yNE1MopDxRhbi/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRE - FIRMA", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/1RSfEY2py1TVAD-PNSK6F0IaWZtH_msub/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ZMD - FIRMA", type: "pdf" }
+                ],
                 tags: ["Smlouvy"]
         },
         "ZMĚNA PŘÍJEMNÍ - POTVRZENÍ ZMĚNY": {
@@ -580,7 +580,7 @@ V případě jakýchkoliv dotazů se na nás neváhejte obrátit.</p>
                 files: [],
                 tags: ["Ostatní"]
         },
-                "Zpětná Vazba - zaslání hodnotícího formuláře zákazníkovi": {
+        "Zpětná Vazba - zaslání hodnotícího formuláře zákazníkovi": {
                 text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>na základě tel. hovoru Vám zasíláme odkaz pro zanechání své pozitivní zpětné vazby, na které nám velmi záleží.</p>
 <p>Dotazník můžete vyplnit pod tímto <a href="https://g.page/r/CXbczwzq5JZ8EB0/review" target="_blank">odkazem</a>.</p>
@@ -858,7 +858,7 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
                 files: [],
                 tags: ["Samoodečty - Kontrolní + Mimořádné vyúčtování + Konečné"]
         },
- "Zamítnutí samoodečtů - Z důvodu překročení limitu 10 samoodečtů v rámci roku": {
+        "Zamítnutí samoodečtů - Z důvodu překročení limitu 10 samoodečtů v rámci roku": {
                 text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>děkujeme za Váš požadavek na zadání samoodečtu.</p>
 <p>U daného odběrného místa již v tomto kalendářním roce nelze přijmout další běžný samoodečet, protože byl vyčerpán roční limit <b>10 samoodečtů.</b></p>
@@ -1300,8 +1300,8 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
                 files: [],
                 tags: ["Dědické řízení"]
         },
-"Přijetí Usnesení ještě před ukončením smlouvy, přejí si vyplatit na BÚ v usnesení uveden jeden dědic (neznáme tedy zda FA bude přeplatek/nedoplatek)": {
-  text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+        "Přijetí Usnesení ještě před ukončením smlouvy, přejí si vyplatit na BÚ v usnesení uveden jeden dědic (neznáme tedy zda FA bude přeplatek/nedoplatek)": {
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>potvrzujeme přijetí Vašich podkladů, které jsme předali ke zpracování. Po ukončení smlouvy a dodávky do odběrného místa vystavíme konečnou fakturu. Případný přeplatek či nedoplatek bude vypořádán s osobou oprávněnou dle usnesení o dědictví.</p>
 <p>V usnesení je jako dědic/dědička uveden/a <b>XXXXXX</b>. Pro vyplacení případného přeplatku na bankovní účet přikládáme k vyplnění čestné prohlášení (v příloze). Prosíme o dodržení těchto náležitostí:</p>
 <li>Prohlášení musí podepsat dědic uvedený v usnesení.</li>
@@ -1309,11 +1309,11 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
 <li>Vyplněný a podepsaný dokument nám, prosím, zašlete zpět v odpovědi na tento e-mail.</li>
 <p>Jakmile obdržíme všechny potřebné dokumenty a dojde k ukončení smlouvy, bude případný přeplatek vyplacen na uvedený účet bez zbytečného odkladu v souladu s platnými právními předpisy.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
-  files: [{ url: 'https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
-  tags: ["Dědické řízení"]
-},
-"Přijetí Usnesení ještě před ukončením smlouvy, přejí si vyplatit na BÚ v usnesení uvedeno  více dědiců (neznáme tedy zda FA bude přeplatek/nedoplatek)": {
-    text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                files: [{ url: 'https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
+                tags: ["Dědické řízení"]
+        },
+        "Přijetí Usnesení ještě před ukončením smlouvy, přejí si vyplatit na BÚ v usnesení uvedeno  více dědiců (neznáme tedy zda FA bude přeplatek/nedoplatek)": {
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>potvrzujeme přijetí Vašich podkladů, které jsme předali ke zpracování. Po ukončení smlouvy a dodávky do odběrného místa vystavíme konečnou fakturu. Případný přeplatek či nedoplatek bude vypořádán s osobou oprávněnou dle usnesení o dědictví.</p>
 <p>V usnesení je uvedeno více dědiců (<b>XXXXXX</b>). Pro vyplacení případného přeplatku na bankovní účet přikládáme k vyplnění čestné prohlášení (v příloze). Prosíme o dodržení těchto náležitostí:</p>
 <li>Čestné prohlášení musí doložit <b>všichni</b> dědicové uvedení v usnesení. Každý dědic vyplní a podepíše <b>vlastní</b> formulář (počet prohlášení = počet dědiců).</li>
@@ -1321,9 +1321,9 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
 <li>Vyplněná a podepsaná prohlášení <b>od všech dědiců</b> nám, prosím, zašlete zpět v odpovědi na tento e-mail.</li>
 <p>Jakmile obdržíme všechny potřebné dokumenty a dojde k ukončení smlouvy, bude případný přeplatek vyplacen na uvedený účet bez zbytečného odkladu v souladu s platnými právními předpisy.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
-  files: [{ url: 'https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
-  tags: ["Dědické řízení"]
-},
+                files: [{ url: 'https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
+                tags: ["Dědické řízení"]
+        },
         /* Platby */
         "Ukončené odběrné místo - Platby": {
                 text: `<p>Dobrý den, pane XXX / paní XXX,,</p>
@@ -1792,7 +1792,7 @@ doby bude vše vyřešeno k Vaší plné spokojenosti.</p>
                 tags: ["Přepisy"]
         },
         "Přepis odběrného místa - Zaslání Odkazu (kdy např. zákazník reaguje v hovoru, že tedy zkusí formulář, nebo že neví jak ho vyplnit)": {
-  text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>na základě naší telefonické dohody Vám zasíláme odkaz na elektronický formulář pro přepis odběrného místa. Tento formulář můžete vyplnit a odeslat prostřednictvím následujícího odkazu: <a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank">Formulář k přepisu odběrného místa</a>.</p>
 <p><b>Máte potíže s online formulářem?</b> V tom případě nám můžete potřebné údaje zaslat přímo v odpovědi na tento e-mail. Uveďte prosím následující doplňující údaje k novému odběrateli:</p>
 <ul>
@@ -1808,11 +1808,11 @@ doby bude vše vyřešeno k Vaší plné spokojenosti.</p>
 </ul>
 <p>Na základě obdržených údajů pro Vás připravíme a zašleme návrh smlouvy k odsouhlasení.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
-  files: [],
-  tags: ["Přepisy"]
-},
-"Přepis odběrného místa - Reakce na potíže s online formulářem": {
-  text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                files: [],
+                tags: ["Přepisy"]
+        },
+        "Přepis odběrného místa - Reakce na potíže s online formulářem": {
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>děkujeme za Váš e-mail a omlouváme se za komplikace s online formulářem. Rozumíme, že ne každému tento způsob vyhovuje. Přepis odběrného místa můžeme vyřídit i <b>bez vyplnění formuláře</b> – stačí, když nám v odpovědi na tento e-mail zašlete následující údaje k novému odběrateli:</p>
 <ul>
   <li><b>Jméno a příjmení / Název společnosti</b></li>
@@ -1828,9 +1828,9 @@ doby bude vše vyřešeno k Vaší plné spokojenosti.</p>
 <p>Na základě obdržených údajů pro Vás připravíme a zašleme <b>návrh smlouvy</b> k odsouhlasení a podpisu.</p>
 <p>Pokud byste přesto chtěli formulář vyplnit, můžete jej otevřít zde: <a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank">Formulář k přepisu odběrného místa</a>.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
-  files: [],
-  tags: ["Přepisy"]
-},
+                files: [],
+                tags: ["Přepisy"]
+        },
 
         /* Zranitelný zákazník */
         "Upozornění na blížící se konec platnosti potvrzení pro přiznání práv zranitelného zákazníka": {
@@ -1917,7 +1917,7 @@ Děkujeme, že jste využíval(a) náš Zákaznický portál.</p>
                 tags: ["Přeplatky"]
         },
         "Vrácená složenka – potvrzení adresy / převod na účet  (nejedená se o přeplatky, ale o platby nad rámec PK)": {
-  text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>rádi bychom Vás informovali, že se nám vrátila poštovní poukázka (složenka) na částku <strong>XXX Kč</strong>, kterou jsme Vám zasílali z důvodu platby nad rámec platebního kalendáře za <strong>XXXXX</strong>.</p>
 <p>Podle předpisu byla záloha <strong>XXX Kč</strong>, od Vás jsme obdrželi <strong>XXX Kč</strong> – rozdíl <strong>XXX Kč</strong> jsme odeslali složenkou na adresu <strong>XXX</strong>, složenka se však vrátila jako nedoručená.</p>
 <p>Abychom mohli přeplatek vyřídit co nejdříve, prosíme o:</p>
@@ -1927,21 +1927,21 @@ Děkujeme, že jste využíval(a) náš Zákaznický portál.</p>
 </ul>
 <p>Údaje nám můžete zaslat odpovědí na tento e-mail, případně nás kontaktovat na níže uvedeném telefonním čísle.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
-  files: [],
-  tags: ["Přeplatky"]
-},
+                files: [],
+                tags: ["Přeplatky"]
+        },
 
 
-"Vrácená platba – z důvodu neexistujícího bankovního účtu (nejedená se o přeplatky, ale o platby nad rámec PK)": {
-  text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+        "Vrácená platba – z důvodu neexistujícího bankovního účtu (nejedená se o přeplatky, ale o platby nad rámec PK)": {
+                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>rádi bychom Vás informovali, že se nám vrátila platba na částku <strong>XXX Kč</strong>, kterou jsme Vám zasílali na bankovní účet <b>číslo účtu kam platba odcházela </b>, z důvodu platby nad rámec platebního kalendáře za <strong>XXXXX</strong>.</p>
 <p>Podle předpisu byla záloha <strong>XXX Kč</strong>, od Vás jsme obdrželi <strong>XXX Kč</strong> – rozdíl <strong>XXX Kč</strong>. Platba se bohužel vrátila z důvodu, že výše uvedený bankovní účet je bohužel neexistující.</p> <br>
 <p>Pro úspěšné zpracování vrácení této částky Vás tímto zdvořile žádáme o sdělení nového bankovního účtu, na který můžeme přeplatek odeslat. Prosíme o zaslání těchto údajů co nejdříve, abychom mohli platbu bez odkladu uskutečnit.</p>
 Vaše údaje můžete zaslat odpovědí na tento e-mail nebo nás kontaktovat na níže uvedeném telefonním čísle.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
-  files: [],
-  tags: ["Přeplatky"]
-},
+                files: [],
+                tags: ["Přeplatky"]
+        },
         "Informace pro ZK - nutné vrátit přeplatek, který mu byl chybně vyplacen": {
                 text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>rádi bychom Vás informovali, že v rámci naší interní kontroly jsme zjistili administrativní chybu ve vystavení přeplatku ve výši  <strong> částka Kč</strong>,který Vám byl omylem připsán. Tento přeplatek Vám bohužel nenáleží, a proto bychom Vás chtěli požádat o jeho vrácení.</p>
@@ -2523,7 +2523,27 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
                 tags: ["Jednotková cena"],
                 category: "Jednotková cena"
         },
+        /* Spínání NT a VT */
+        "Dotaz na časy spínání NT/VT (HDO)": {
+                text: `
+<p>Dobrý den, pane XXX, / paní XXX,</p>
+
+<p>děkujeme za Váš dotaz týkající se časů spínání vysokého (VT) a nízkého tarifu (NT).</p>
+<p>Abychom Vám mohli poskytnout přesnou informaci, je potřeba znát <strong>kód povelu HDO</strong>, který naleznete na přijímači HDO v rozvodné skříni u elektroměru (např. A1B5, E2, Q3).</p>
+<p><strong>Pokud již máte kód povelu k dispozici</strong>, prosím zašlete nám jej zpět v odpovědi na tento e-mail. Poté Vám přesné časy spínání NT/VT obratem zjistíme.</p>
+<p><strong>Pro rychlé ověření můžete využít i oficiální stránky Vašeho distributora:</strong><br>
+<ul>
+  <li>ČEZ Distribuce – <a href="https://www.cezdistribuce.cz/pro-zakazniky/potrebuji-vyresit/stavajici-pripojeni/casy-spinani-nizkeho-tarifu" target="_blank">zde</a></li>
+  <li>PREdistribuce – <a href="https://www.predistribuce.cz/cs/potrebuji-zaridit/zakaznici/stav-hdo/" target="_blank">zde</a></li>
+  <li>EG.D (E.ON) – <a href="https://www.eon.cz/domacnosti/zakaznicka-pece/technicke-dotazy/casy-nizkeho-tarifu-hdo/" target="_blank">zde</a></li>
+</ul>
+<p><strong>Pokud kód povelu zatím neznáte</strong>, doporučujeme jej opsat nebo vyfotit přímo z HDO u elektroměru. Jakmile nám jej sdělíte, časy spínání NT/VT Vám následně doplníme.</p>
+
+<p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
+                files: [],
+                tags: ["Spínání NT a VT"],
+                category: "Spínání NT a VT"
+        },
 };
 window.SABLONY = data;
-
 
