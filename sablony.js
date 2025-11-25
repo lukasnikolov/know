@@ -951,83 +951,106 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
                 files: [],
                 tags: ["Dědické řízení"]
         },
-        "Dědické řízení - urgence (pro doložení usnesení)": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,XX,</p>
+ "Dědické řízení - urgence (pro doložení usnesení)": { 
+  text: `<p>Dobrý den, pane XXX, / paní XXX,XX,</p>
 <p>je nám líto, že jste musel/a řešit tuto smutnou událost. Abychom mohli provést potřebné změny na zákaznickém účtu, budeme potřebovat Vaši součinnost.</p>
-<p>Zejména je důležité, abyste nám doručil/a kopii <strong>úmrtního listu</strong> a <strong>usnesení z dědického řízení</strong>.</p>
+<p>Zejména je důležité, abyste nám doručil/a:</p>
+<ul>
+  <li>kopii <strong>úmrtního listu</strong></li>
+  <li>kopii <strong>usnesení z dědického řízení</strong></li>
+</ul>
 <p>Do doložení usnesení bude případný přeplatek nebo nedoplatek blokován proti upomínání a vyplacení až do sdělení výsledku dědického řízení.</p>
-<p>Dále prosíme, abyste nám sdělil/a, na koho bude odběrné místo přepsáno, nebo zda plánujete odběrné místo ukončit s demontáží měřidla.</p>
+<p>Dále prosíme, abyste nám sdělil/a, jak si přejete s odběrným místem dále naložit – zda bude požadováno:</p>
+<ul>
+  <li>přepsání odběrného místa na nového odběratele, nebo</li>
+  <li>ukončení odběrného místa s demontáží měřidla.</li>
+</ul>
 <p>V případě <em>přepisu odběrného místa</em> můžete využít tento  <a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank">odkaz</a></p> 
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
-                files: [],
-                tags: ["Dědické řízení"]
-        },
-        "Potvrzení přijetí dokumentů": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+  files: [],
+  tags: ["Dědické řízení"]
+},
+
+"Potvrzení přijetí dokumentů": {
+  text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>potvrzujeme přijetí Vašich podkladů, které jsme předali ke zpracování. Po ukončení smlouvy a dodávek do odběrného místa Vám bude vystavena konečná faktura. Přeplatky nebo nedoplatky budou řešeny s osobou oprávněnou dle rozhodnutí o dědickém řízení.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href='https://zakaznici.epet.cz/login' target='_blank'>Zákaznický portál</a></p>`,
-                files: [],
-                tags: ["Dědické řízení", "Přepisy"]
-        },
-        "Zákazník doložil veškeré dokumenty k vyplacení přeplatku - úkol předán na finance": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+  files: [],
+  tags: ["Dědické řízení", "Přepisy"]
+},
+
+"Zákazník doložil veškeré dokumenty k vyplacení přeplatku - úkol předán na finance": {
+  text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>děkujeme za zaslání požadovaných dokumentů. Vaše podklady jsme předali příslušnému oddělení k dalšímu zpracování.</p>
 <p>Jakmile dojde k vyplacení přeplatku, budeme Vás o této skutečnosti bezodkladně informovat.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href='https://zakaznici.epet.cz/login' target='_blank'>Zákaznický portál</a></p>`,
-                files: [],
-                tags: ["Dědické řízení"]
-        },
-        "Zákazník doložil usnesení, ale je v něm uvedeno více dědiců a zk. si přeje vyplatit přeplatek na jednotnÝ BÚ": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+  files: [],
+  tags: ["Dědické řízení"]
+},
+
+"Zákazník doložil usnesení, ale je v něm uvedeno více dědiců a zk. si přeje vyplatit přeplatek na jednotnÝ BÚ": {
+  text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>děkujeme za zaslání usnesení o dědictví. Vážíme si Vaší spolupráce.</p>
 <p>V e-mailu uvádíte, že si přejete přeplatek vyplatit na konkrétní bankovní účet. Abychom mohli tento krok uskutečnit, je nutné vyplnit a podepsat čestné prohlášení, které přikládáme v příloze tohoto e-mailu.</p>
-<li>Toto prohlášení musí podepsat všichni dědicové uvedení v usnesení.</li>
-<li>Jelikož jsou  v usnesení [<b>uvést počet dědiců </b>] dědiců/dědicové, je nutné zaslat toto čestné prohlášení ve [<b> počet kopii čp</b>] vyhotoveních – každé podepsané příslušnou osobou. U všech podpisů je nutné úřední ověření – lze provést na Czech POINTu (pošta/obecní úřad), u notáře nebo na matrice.</li>
-<li>Vyplněné a podepsané dokumenty nám, prosím, zašlete zpět v odpovědi na tento e-mail.</li><br>
+<ul>
+  <li>Toto prohlášení musí podepsat všichni dědicové uvedení v usnesení.</li>
+  <li>Jelikož jsou v usnesení [<b>uvést počet dědiců </b>] dědiců/dědicové, je nutné zaslat toto čestné prohlášení ve [<b> počet kopii čp</b>] vyhotoveních – každé podepsané příslušnou osobou. U všech podpisů je nutné úřední ověření – lze provést na Czech POINTu (pošta/obecní úřad), u notáře nebo na matrice.</li>
+  <li>Vyplněné a podepsané dokumenty nám, prosím, zašlete zpět v odpovědi na tento e-mail.</li>
+</ul>
 <p>Jakmile obdržíme všechny potřebné dokumenty, přeplatek bude vyplacen na uvedený účet v souladu s platnými právními předpisy.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href='https://zakaznici.epet.cz/login' target='_blank'>Zákaznický portál</a></p>`,
-                files: [{ url: 'https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
-                tags: ["Dědické řízení"]
-        },
-        "Zákazník doložil usnesení, ale je v něm uvedeno více dědiců - bez toho aniž by uvedl, že si ho přeje vyplatit na jednotný BÚ": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+  files: [{ url: 'https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
+  tags: ["Dědické řízení"]
+},
+
+"Zákazník doložil usnesení, ale je v něm uvedeno více dědiců - bez toho aniž by uvedl, že si ho přeje vyplatit na jednotný BÚ": {
+  text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>děkujeme za zaslání usnesení o dědictví. Vážíme si Vaší spolupráce.</p>
 <p>Po prozkoumání přiloženého usnesení jsme zjistili, že je v něm uvedeno více dědiců. Abychom mohli pokračovat ve vyplacení přeplatku na bankovní účet, je nutné, aby všichni dědicové podepsali čestné prohlášení, které přikládáme v příloze tohoto e-mailu.</p>
-<li>Toto prohlášení musí podepsat všichni dědicové uvedení v usnesení.</li>
-<li>Jelikož jsou  v usnesení [<b>uvést počet dědiců </b>] dědiců/dědicové, je nutné zaslat toto čestné prohlášení ve [<b> počet kopii čp</b>] vyhotoveních – každé podepsané příslušnou osobou. U všech podpisů je nutné úřední ověření – lze provést na Czech POINTu (pošta/obecní úřad), u notáře nebo na matrice.</li>
-<li>Vyplněné a podepsané dokumenty nám, prosím, zašlete zpět v odpovědi na tento e-mail.</li><br>
+<ul>
+  <li>Toto prohlášení musí podepsat všichni dědicové uvedení v usnesení.</li>
+  <li>Jelikož jsou v usnesení [<b>uvést počet dědiců </b>] dědiců/dědicové, je nutné zaslat toto čestné prohlášení ve [<b> počet kopii čp</b>] vyhotoveních – každé podepsané příslušnou osobou. U všech podpisů je nutné úřední ověření – lze provést na Czech POINTu (pošta/obecní úřad), u notáře nebo na matrice.</li>
+  <li>Vyplněné a podepsané dokumenty nám, prosím, zašlete zpět v odpovědi na tento e-mail.</li>
+</ul>
 <p>Jakmile obdržíme všechny potřebné dokumenty, přeplatek bude vyplacen na uvedený účet v souladu s platnými právními předpisy.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href='https://zakaznici.epet.cz/login' target='_blank'>Zákaznický portál</a></p>`,
-                files: [{ url: 'https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
-                tags: ["Dědické řízení"]
-        },
-        "Zákazník se rozčiluje, že nevidí důvod proč zasílat ČP NA ZÁKLADĚ ČEHO TO PO NĚM CHCEME - KDYŽ CHCE VYPLATIT PŘEPLATEK NA JEDNOTNÉ BÚ": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+  files: [{ url: 'https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
+  tags: ["Dědické řízení"]
+},
+
+"Zákazník se rozčiluje, že nevidí důvod proč zasílat ČP NA ZÁKLADĚ ČEHO TO PO NĚM CHCEME - KDYŽ CHCE VYPLATIT PŘEPLATEK NA JEDNOTNÉ BÚ": {
+  text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>děkujeme za Váš dotaz ohledně požadavku na vyplnění čestného prohlášení pro vyplacení přeplatku po úmrtí zákazníka.</p>
 <p>Tento krok vychází z legislativních požadavků na správné vypořádání finančních závazků v rámci dědického řízení. Přestože bylo vydáno usnesení o dědictví, je nutné doložit, že se dědicové shodli na způsobu vyplacení přeplatku, zejména pokud se má celá částka poukázat na konkrétní bankovní účet jednoho z dědiců.</p>
 <p><b>Požadavek na čestné prohlášení vychází z následujících principů:</b></p>
-<li><b>Ochrana oprávněných osob</b> – Čestné prohlášení slouží jako potvrzení, že všichni uvedení dědicové souhlasí s vyplacením částky na konkrétní účet.</li>
-<li><b>Právní jistota</b> – Tímto dokumentem se předchází případným sporům mezi dědici o rozdělení přeplatku.</li>
-<li><b>Soulad s interními postupy a právními předpisy</b> – Tento postup zajišťuje, že platba bude provedena v souladu s rozhodnutím o dědictví a v rámci našich povinností jako poskytovatele služby.</li><br>
+<ul>
+  <li><b>Ochrana oprávněných osob</b> – Čestné prohlášení slouží jako potvrzení, že všichni uvedení dědicové souhlasí s vyplacením částky na konkrétní účet.</li>
+  <li><b>Právní jistota</b> – Tímto dokumentem se předchází případným sporům mezi dědici o rozdělení přeplatku.</li>
+  <li><b>Soulad s interními postupy a právními předpisy</b> – Tento postup zajišťuje, že platba bude provedena v souladu s rozhodnutím o dědictví a v rámci našich povinností jako poskytovatele služby.</li>
+</ul>
 <p>Z tohoto důvodu je nutné, aby čestné prohlášení podepsali všichni dědicové uvedení v usnesení o dědictví. Pokud je dědiců více, je třeba doložit příslušný počet vyhotovení.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href='https://zakaznici.epet.cz/login' target='_blank'>Zákaznický portál</a></p>`,
-                files: [{ url: 'https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
-                tags: ["Dědické řízení"]
-        },
-        "Žádost o doložení BÚ pro vyplacení přeplatku na základě dědického řízení(žádost o doložení ČP)": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+  files: [{ url: 'https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
+  tags: ["Dědické řízení"]
+},
+
+"Žádost o doložení BÚ pro vyplacení přeplatku na základě dědického řízení(žádost o doložení ČP)": {
+  text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>na základě doručeného usnesení o dědickém řízení nám byl notářem sdělen Váš status jednoho z dědiců po zemřelém/zemřelé zákaznici/zákazníkovi <b>XXXXXXX</b>. V souvislosti s touto skutečností bychom Vás rádi informovali, že na zákaznickém účtu zesnulého evidujeme přeplatek, který je možné vyplatit.</p>
 <p>Abychom mohli přistoupit k jeho výplatě, je třeba z Vaší strany doložit:</p>
-<li><b>Čestné prohlášení o souhlasu s vyplacením přeplatku</b> – slouží jako potvrzení, že souhlasíte s vyplacením příslušné částky na základě dědictví. U všech podpisů je nutné úřední ověření – lze provést na Czech POINTu (pošta/obecní úřad), u notáře nebo na matrice.</li>
-<li>Číslo bankovního účtu, na který si přejete přeplatek poukázat.</li>
-<p>Oba výše uvedené údaje jsou nezbytné k provedení platby.Formulář čestného prohlášení Vám zasíláme v příloze tohoto e-mailu. </p>
+<ul>
+  <li><b>Čestné prohlášení o souhlasu s vyplacením přeplatku</b> – slouží jako potvrzení, že souhlasíte s vyplacením příslušné částky na základě dědictví. U všech podpisů je nutné úřední ověření – lze provést na Czech POINTu (pošta/obecní úřad), u notáře nebo na matrice.</li>
+  <li>Číslo bankovního účtu, na který si přejete přeplatek poukázat.</li>
+</ul>
+<p>Oba výše uvedené údaje jsou nezbytné k provedení platby. Formulář čestného prohlášení Vám zasíláme v příloze tohoto e-mailu. </p>
 <p>Prosíme o jeho vyplnění, vlastnoruční podepsání a zaslání zpět – poštou na adresu <b>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</b> nebo e-mailem na <b>info@epet.cz.</b> </p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href='https://zakaznici.epet.cz/login' target='_blank'>Zákaznický portál</a></p>`,
-                files: [{ url: 'https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
-                tags: ["Dědické řízení"]
-        },
-        "Žádost o doložení dodatku k usnesení převážně z důvodu zastaveného dědického řízení z důvodu majetku nepatrné hodnoty v němž není uvedeno kdo je dědicem, jen vystavitel pohřbu": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+  files: [{ url: 'https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
+  tags: ["Dědické řízení"]
+},
+
+"Žádost o doložení dodatku k usnesení převážně z důvodu zastaveného dědického řízení z důvodu majetku nepatrné hodnoty v němž není uvedeno kdo je dědicem, jen vystavitel pohřbu": {
+  text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>děkujeme za doložené usnesení o pozůstalosti po panu/paní <strong> XXXXXX.</strong> Dovolujeme si Vás informovat, že z předloženého usnesení vyplývá, že dědické řízení bylo soudem zastaveno z důvodu majetku nepatrné hodnoty, a že nebyl určen žádný dědic.</p>
 <p>Vzhledem k tomu, že nedošlo k právnímu přechodu majetku (včetně případného přeplatku) na žádnou osobu, nemůžeme Vám bez dalšího právního podkladu (např. dodatečné dohody dědiců nebo nového rozhodnutí soudu) případný přeplatek vyplatit.</p>
 <p><strong>Jak můžete dále postupovat:</strong><br>
@@ -1039,24 +1062,24 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
 <p>Jakmile obdržíme doplňující právní dokument, budeme schopni vyplacení přeplatku posoudit a případně provést.</p>
 <p>Děkujeme za pochopení. V případě jakýchkoli dotazů jsme Vám rádi k dispozici.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href='https://zakaznici.epet.cz/login' target='_blank'>Zákaznický portál</a></p>`,
-                files: [],
-                tags: ["Dědické řízení"]
-        },
-        "Žádost o doložení usnesení + informaci, že pokud v usnesení je více dědiců, aby poslali i ČP": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
-<p><p>je nám líto, že jste musel/a řešit tuto smutnou událost.Abychom mohli provést potřebné změny na zákaznickém účtu, budeme potřebovat Vaši součinnost. Zejména je důležité, abyste nám doručil/a: 
+  files: [],
+  tags: ["Dědické řízení"]
+},
+
+"Žádost o doložení usnesení + informaci, že pokud v usnesení je více dědiců, aby poslali i ČP": {
+  text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+<p>je nám líto, že jste musel/a řešit tuto smutnou událost. Abychom mohli provést potřebné změny na zákaznickém účtu, budeme potřebovat Vaši součinnost. Zejména je důležité, abyste nám doručil/a:</p>
 <ul>
   <li>kopii úmrtního listu</li>
   <li>kopii usnesení z dědického řízení</li>
 </ul>
-</p>
 <p>Do doby doložení usnesení bude případný přeplatek nebo nedoplatek blokován proti upomínání a vyplacení. Vyplacení bude možné až po sdělení výsledku dědického řízení.</p>
 <p>V případě, že v doloženém usnesení bude uvedeno více dědiců a budete chtít přeplatek vyplatit na jednotný bankovní účet, bude nutné doložit také čestné prohlášení, které musí být vyplněno a podepsáno všemi dědici. U všech podpisů je nutné úřední ověření – lze provést na Czech POINTu (pošta/obecní úřad), u notáře nebo na matrice. Kopii daného čestného prohlášení přikládáme do přílohy tohoto e-mailu.</p>
 <p>Děkujeme za pochopení. V případě jakýchkoli dotazů jsme Vám rádi k dispozici.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href='https://zakaznici.epet.cz/login' target='_blank'>Zákaznický portál</a></p>`,
-                files: [{ url: 'https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
-                tags: ["Dědické řízení"]
-        },
+  files: [{ url: 'https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
+  tags: ["Dědické řízení"]
+},
         "Přepis (šablona číslo 1)": {
                 text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>stále evidujeme nevyřešený požadavek týkající se přepisu smlouvy na odběr energií po zemřelém <b>xxxxxx</b>. Rádi bychom Vás informovali o nutnosti provést tento přepis na nového odběratele. Tento krok je nezbytný pro zajištění kontinuity dodávky energií na odběrném místě <b>[Adresa odběrného místa]</B>.</p>
@@ -2546,4 +2569,5 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
         },
 };
 window.SABLONY = data;
+
 
