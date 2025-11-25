@@ -1323,30 +1323,34 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
                 files: [],
                 tags: ["Dědické řízení"]
         },
-        "Přijetí Usnesení ještě před ukončením smlouvy, přejí si vyplatit na BÚ v usnesení uveden jeden dědic (neznáme tedy zda FA bude přeplatek/nedoplatek)": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+"Přijetí Usnesení ještě před ukončením smlouvy, přejí si vyplatit na BÚ v usnesení uveden jeden dědic (neznáme tedy zda FA bude přeplatek/nedoplatek)": {
+  text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>potvrzujeme přijetí Vašich podkladů, které jsme předali ke zpracování. Po ukončení smlouvy a dodávky do odběrného místa vystavíme konečnou fakturu. Případný přeplatek či nedoplatek bude vypořádán s osobou oprávněnou dle usnesení o dědictví.</p>
 <p>V usnesení je jako dědic/dědička uveden/a <b>XXXXXX</b>. Pro vyplacení případného přeplatku na bankovní účet přikládáme k vyplnění čestné prohlášení (v příloze). Prosíme o dodržení těchto náležitostí:</p>
-<li>Prohlášení musí podepsat dědic uvedený v usnesení.</li>
-<li>Podpis musí být úředně ověřen – ověření je možné na Czech POINTu (pošta/obecní úřad), u notáře nebo na matrice.</li>
-<li>Vyplněný a podepsaný dokument nám, prosím, zašlete zpět v odpovědi na tento e-mail.</li>
+<ul>
+  <li>Prohlášení musí podepsat dědic uvedený v usnesení.</li>
+  <li>Podpis musí být úředně ověřen – ověření je možné na Czech POINTu (pošta/obecní úřad), u notáře nebo na matrice.</li>
+  <li>Vyplněný a podepsaný dokument nám, prosím, zašlete zpět v odpovědi na tento e-mail.</li>
+</ul>
 <p>Jakmile obdržíme všechny potřebné dokumenty a dojde k ukončení smlouvy, bude případný přeplatek vyplacen na uvedený účet bez zbytečného odkladu v souladu s platnými právními předpisy.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
-                files: [{ url: 'https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
-                tags: ["Dědické řízení"]
-        },
-        "Přijetí Usnesení ještě před ukončením smlouvy, přejí si vyplatit na BÚ v usnesení uvedeno  více dědiců (neznáme tedy zda FA bude přeplatek/nedoplatek)": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+  files: [{ url: '/mnt/data/SOUHLAS PRO VYPLACENÍ PŘEPLATKU.pdf', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
+  tags: ["Dědické řízení"]
+},
+"Přijetí Usnesení ještě před ukončením smlouvy, přejí si vyplatit na BÚ v usnesení uvedeno více dědiců (neznáme tedy zda FA bude přeplatek/nedoplatek)": {
+  text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>potvrzujeme přijetí Vašich podkladů, které jsme předali ke zpracování. Po ukončení smlouvy a dodávky do odběrného místa vystavíme konečnou fakturu. Případný přeplatek či nedoplatek bude vypořádán s osobou oprávněnou dle usnesení o dědictví.</p>
 <p>V usnesení je uvedeno více dědiců (<b>XXXXXX</b>). Pro vyplacení případného přeplatku na bankovní účet přikládáme k vyplnění čestné prohlášení (v příloze). Prosíme o dodržení těchto náležitostí:</p>
-<li>Čestné prohlášení musí doložit <b>všichni</b> dědicové uvedení v usnesení. Každý dědic vyplní a podepíše <b>vlastní</b> formulář (počet prohlášení = počet dědiců).</li>
-<li>U <b>všech podpisů</b> je nutné úřední ověření – ověření je možné na Czech POINTu (pošta/obecní úřad), u notáře nebo na matrice.</li>
-<li>Vyplněná a podepsaná prohlášení <b>od všech dědiců</b> nám, prosím, zašlete zpět v odpovědi na tento e-mail.</li>
+<ul>
+  <li>Čestné prohlášení musí doložit <b>všichni</b> dědicové uvedení v usnesení. Každý dědic vyplní a podepíše <b>vlastní</b> formulář (počet prohlášení = počet dědiců).</li>
+  <li>U <b>všech podpisů</b> je nutné úřední ověření – ověření je možné na Czech POINTu (pošta/obecní úřad), u notáře nebo na matrice.</li>
+  <li>Vyplněná a podepsaná prohlášení <b>od všech dědiců</b> nám, prosím, zašlete zpět v odpovědi na tento e-mail.</li>
+</ul>
 <p>Jakmile obdržíme všechny potřebné dokumenty a dojde k ukončení smlouvy, bude případný přeplatek vyplacen na uvedený účet bez zbytečného odkladu v souladu s platnými právními předpisy.</p>
 <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
-                files: [{ url: 'https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
-                tags: ["Dědické řízení"]
-        },
+  files: [{ url: '/mnt/data/SOUHLAS PRO VYPLACENÍ PŘEPLATKU.pdf', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
+  tags: ["Dědické řízení"]
+},
         /* Platby */
         "Ukončené odběrné místo - Platby": {
                 text: `<p>Dobrý den, pane XXX / paní XXX,,</p>
@@ -2569,5 +2573,6 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
         },
 };
 window.SABLONY = data;
+
 
 
