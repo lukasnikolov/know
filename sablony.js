@@ -1562,6 +1562,17 @@ Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc proj
                 files: [],
                 tags: ["Zálohy"]
         },
+          "Rozpis záloh – Nový zákazník": {
+                text: `<p>Dobrý den, pane XXX, / paní XXX,<p>
+<p>děkujeme, že jste si vybral/a naši společnost pro dodávky energií.</p>
+<p>Rádi bychom Vás informovali, že k vystavení a odeslání platebního kalendáře (rozpisu záloh) dochází standardně <b>do 14 dnů od data zahájení dodávek.</b></p>
+<p>Ve Vašem případě začínají dodávky u naší společnosti od <b>{{datum_zahajeni}} </b>, proto Vás prosíme o krátké strpení.</b></p>
+<p>Jakmile bude platební kalendář vystaven, bude Vám automaticky zaslán na e-mail uvedený ve smlouvě</p>
+<p>Děkujeme Vám za pochopení.</p> 
+<p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
+                files: [],
+                tags: ["Zálohy"]
+        },
         /* SPK */
         "Žádost o vystavení SPK": {
                 text: `<p>Dobrý den, pane XXX, / paní XXX, </p>
@@ -2573,6 +2584,7 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
         },
 };
 window.SABLONY = data;
+
 
 
 
