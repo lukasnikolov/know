@@ -627,7 +627,8 @@ V případě jakýchkoliv dotazů se na nás neváhejte obrátit.</p>
                 text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>omlouváme se, ale Váš požadavek na vystavení faktury na základě nahlášených odečtových hodnot Vašeho měřidla se nám nepodařilo zpracovat v termínu. Faktura Vám bude vystavena na základě dat, která nám doručí distributor.</p>
 <p>Velice se za tuto skutečnost omlouváme a děkujeme za pochopení.</p>
-<p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít své faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
+<p>Rádi bychom Vás také informovali, že požadavky můžete řešit i přes náš Zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
+                files: [],
                 files: [],
                 tags: ["Samoodečty"]
         },
@@ -2584,6 +2585,7 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
         },
 };
 window.SABLONY = data;
+
 
 
 
