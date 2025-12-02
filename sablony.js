@@ -1496,6 +1496,21 @@ Toto prohlášení musí být vyplněno a podepsáno všemi dědici / přísluš
                 files: [],
                 tags: ["Platby"]
         },
+"Otevřené platby - Zákazníkovi vracíme platbu, kterou uhradil mimo PK (nadrámec)": {
+    "text": `
+<p>Dobrý den, pane XXX / paní XXX,</p>
+
+<p>dovolujeme si Vás informovat, že částka ve výši <strong>XXXX Kč</strong>, kterou jste obdržel(a) dne <strong>XX.XX.2025</strong>, byla vrácena z naší strany z důvodu zaplacení zálohy ve vyšší výši, než stanovuje aktuální platební kalendář.</p>
+<p>Po posledním vyúčtování ze dne <strong>XX.XX.2025</strong> byla výše zálohy upravena na <strong>XXXX Kč</strong>. Z Vaší strany nám však byla nadále zasílána platba ve výši <strong>XXXX Kč</strong>, tedy částka nad rámec předepsaných záloh. Rozdíl jsme proto v souladu s platnou legislativou a našimi interními procesy vrátili zpět na bankovní účet, ze kterého byla úhrada provedena.</p>
+<p>Aby v budoucnu nedocházelo k opakovanému vracení plateb, doporučujeme upravit trvalý příkaz dle <strong>platného platebního kalendáře</strong>. Pokud byste měl(a) zájem o navýšení nebo snížení záloh dle Vašeho preferovaného nastavení, rádi Vám platební kalendář upravíme.</p>
+<p>Pro Vaši informaci Vám v příloze zasíláme také <strong>daňový doklad</strong> týkající se vrácené částky.</p>
+<p>Rádi bychom Vás také informovali, že požadavky můžete řešit i přes náš Zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
+`,
+    "files": [],
+    "tags": ["Platby"]
+}
+
+        },
         /* Zálohy */
         "Úprava výše záloh - Navýšení s informací dle § 11 odst. 6": {
                 text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
@@ -2587,6 +2602,7 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
         },
 };
 window.SABLONY = data;
+
 
 
 
