@@ -1498,7 +1498,7 @@ Toto prohlášení musí být vyplněno a podepsáno všemi dědici / přísluš
         },
 "Otevřené platby - Zákazníkovi vracíme platbu, kterou uhradil mimo PK (nadrámec)": {
     "text": `
-<p>Dobrý den, paní/pane {{prijmeni}},</p>
+<p>Dobrý den, pane XXX, / paní XXX,<p>
 <p>děkujeme Vám za Váš e-mail.</p>
 <p>Rádi bychom Vás informovali, že částka <strong>{{castka_vracena}} Kč</strong>, kterou jste obdržel/a dne <strong>{{datum_vratky}}</strong>, byla vrácena z naší strany na základě Vámi provedené platby ve výši <strong>{{castka_uhrazena}} Kč</strong>.</p>
 <p>Po posledním vyúčtování ze dne <strong>{{datum_vyuctovani}}</strong> došlo k úpravě platebního kalendáře, ve kterém je aktuální výše měsíční zálohy stanovena na <strong>{{aktualni_zaloha}} Kč</strong>. Z Vaší strany nám však nadále chodí platby ve výši <strong>{{vase_trvala_platba}} Kč</strong>, tedy vyšší částky, než odpovídá aktuálnímu platebnímu kalendáři.</p>
@@ -2604,6 +2604,7 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
         },
 };
 window.SABLONY = data;
+
 
 
 
