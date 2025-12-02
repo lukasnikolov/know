@@ -953,7 +953,7 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
                 tags: ["Dědické řízení"]
         },
  "Dědické řízení - urgence (pro doložení usnesení)": { 
-  text: `<p>Dobrý den, pane XXX, / paní XXX,XX,</p>
+  text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>je nám líto, že jste musel/a řešit tuto smutnou událost. Abychom mohli provést potřebné změny na zákaznickém účtu, budeme potřebovat Vaši součinnost.</p>
 <p>Zejména je důležité, abyste nám doručil/a:</p>
 <ul>
@@ -2587,6 +2587,7 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
         },
 };
 window.SABLONY = data;
+
 
 
 
