@@ -2602,8 +2602,33 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
                 tags: ["Spínání NT a VT"],
                 category: "Spínání NT a VT"
         },
+           /* Zastavení odpojení - Dluhy*/
+        "Odpojení - Dotaz na znovupřipojovací poplatek, případně dotaz zda není možné zastavit, případně posunout proces odpojení(a pořád dluží)": {
+                text: `
+<p>Dobrý den, pane XXX, / paní XXX,</p>
+<p>děkujeme Vám za Váš e-mail.</p>
+<p>Bohužel musíme uvést, že požadavek na odpojení je plně v kompetenci <strong>distributora</strong>, který provádí technické úkony na odběrném místě. Jako dodavatel nemáme možnost proces odpojení posunout, oddálit ani jinak ovlivnit.</p>
+<p>Stejně tak případné <strong>poplatky za znovupřipojení</strong> stanovuje a účtuje přímo distributor dle svých platných ceníků a pravidel.</p>
+<p>Aby k odpojení nedošlo, je nutné, aby byly všechny částky po splatnosti <strong>připsané v našem systému</strong> ještě před provedením technického zásahu. Doporučujeme proto úhradu provést co nejdříve, ideálně okamžitou platbou.</p>
+<p>Rádi bychom Vás také informovali, že požadavky můžete řešit i přes náš Zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
+                files: [],
+                tags: ["Zastavení odpojení - Dluhy"],
+                category: "Zastavení odpojení - Dluhy"
+        },
+           "Odpojení - Odpojení - Výzva k okamžité úhradě pro zastavení procesu": {
+                text: `
+<p>Dobrý den, pane XXX, / paní XXX,</p>
+<p>děkujeme Vám za Váš e-mail.</p>
+<p>Abychom mohli zabránit pokračování procesu odpojení elektřiny, je nezbytné <strong>obratem uhradit všechny částky po splatnosti</strong>. Teprve po <strong>připsání plateb v našem systému</strong> bude možné zastavit další kroky týkající se odpojení.</p>
+<p>Doporučujeme provést úhradu co nejdříve, ideálně okamžitou platbou. Pokud budete chtít, můžete nám po provedení úhrady zaslat potvrzení o platbě – ověření můžeme urychlit, nicméně rozhodující je její skutečné připsání.</p>
+<p>Rádi bychom Vás také informovali, že požadavky můžete řešit i přes náš Zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
+                files: [],
+                tags: ["Zastavení odpojení - Dluhy"],
+                category: "Zastavení odpojení - Dluhy"
+        }
 };
 window.SABLONY = data;
+
 
 
 
