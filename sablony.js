@@ -1505,16 +1505,13 @@ Toto prohlášení musí být vyplněno a podepsáno všemi dědici / přísluš
 <p>Aby v budoucnu nedocházelo k opakovanému vracení plateb, doporučujeme upravit trvalý příkaz dle <strong>platného platebního kalendáře</strong>. Pokud byste měl(a) zájem o navýšení nebo snížení záloh dle Vašeho preferovaného nastavení, rádi Vám platební kalendář upravíme.</p>
 <p>Pro Vaši informaci Vám v příloze zasíláme také <strong>daňový doklad</strong> týkající se vrácené částky.</p>
 <p>Rádi bychom Vás také informovali, že požadavky můžete řešit i přes náš Zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
-`,
-    "files": [],
-    "tags": ["Platby"]
-}
-
+       files: [],
+                tags: ["Platby"]
         },
         /* Zálohy */
         "Úprava výše záloh - Navýšení s informací dle § 11 odst. 6": {
                 text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
-<p><p>potvrzujeme Vám změnu zálohových plateb na částku <strong>XXXXX Kč</strong>. Tato změna bude provedena od <strong>MM.RRRR.</strong></p>
+<p>potvrzujeme Vám změnu zálohových plateb na částku <strong>XXXXX Kč</strong>. Tato změna bude provedena od <strong>MM.RRRR.</strong></p>
 <p>Nový platební kalendář Vám bude zaslán v samostatném e-mailu. / poštou.</p>
 <p><i>Informujeme Vás, že v důsledku navýšení záloh může při vyúčtování vzniknout vyšší přeplatek. Vzhledem k této úpravě již rozpis záloh neodpovídá postupu dle § 11 odst. 6 energetického zákona.</i></p>
 <p>Rádi bychom Vás také informovali, že požadavky můžete řešit i přes náš Zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a></p>`,
@@ -2602,6 +2599,7 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
         },
 };
 window.SABLONY = data;
+
 
 
 
