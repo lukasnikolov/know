@@ -971,7 +971,7 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
   files: [],
   tags: ["Dědické řízení"]
 },
-"Dědické řízení – Vyplacení přeplatku na bankovní účet – žádost o doplnění dokumentu (pot. dědic/dědic žádá o přeplatek na BÚ": {
+"Dědické řízení – Vyplacení přeplatku na bankovní účet – žádost o doplnění dokumentu (pot. dědic/dědic žádá o přeplatek na BÚ)": {
   "text": `
     <p>Dobrý den, pane XXX, / paní XXX,</p>
     <p>děkujeme Vám za zaslané dokumenty týkající se úmrtí pana/paní <strong>{{jmeno_zemreleho}}</strong>. 
@@ -989,9 +989,16 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
       <li>e-mailem na adresu <strong>info@epet.cz</strong>, nebo</li>
       <li>poštou na adresu: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong></li>
     </ul>
-   <p>Jakmile obdržíme kompletní dokumentaci, zajistíme vyplacení přeplatku na uvedený účet.</p>
-   <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href='https://zakaznici.epet.cz/login' target='_blank'>Zákaznický portál</a></p>`,
-  "files: [{ url: 'https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
+    <p>Jakmile obdržíme kompletní dokumentaci, zajistíme vyplacení přeplatku na uvedený účet.</p>
+    <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href='https://zakaznici.epet.cz/login' target='_blank'>Zákaznický portál</a></p>
+  `,
+  "files": [
+    {
+      "url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
+      "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+      "type": "pdf"
+    }
+  ],
   "tags": ["Dědické řízení"]
 },
 "Potvrzení přijetí dokumentů": {
@@ -2650,6 +2657,7 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
         }
 };
 window.SABLONY = data;
+
 
 
 
