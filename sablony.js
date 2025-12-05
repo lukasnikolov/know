@@ -971,7 +971,29 @@ Odečet bude zohledněn při příští periodické fakturaci.</p>
   files: [],
   tags: ["Dědické řízení"]
 },
-
+"Dědické řízení – Vyplacení přeplatku na bankovní účet – žádost o doplnění dokumentu (pot. dědic/dědic žádá o přeplatek na BÚ": {
+  "text": `
+    <p>Dobrý den, pane XXX, / paní XXX,</p>
+    <p>děkujeme Vám za zaslané dokumenty týkající se úmrtí pana/paní <strong>{{jmeno_zemreleho}}</strong>. 
+    Na základě doloženého usnesení z dědického řízení evidujeme, že oprávněným dědicem je 
+    <strong>{{jmeno_dedice}}</strong>.</p>
+    <p>Na zákaznickém účtu zesnulého evidujeme přeplatek ve výši <strong>{{vyse_preplatku}} Kč</strong>, 
+    který je možné vyplatit.</p>
+    <p>Protože si přejete, aby byl přeplatek vyplacen na bankovní účet 
+    <strong>{{cislo_uctu}}</strong>, je nutné doložit <strong>čestné prohlášení</strong>. 
+    Tento dokument slouží jako potvrzení a souhlas dědice s vyplacením přeplatku na uvedený účet.</p>
+    <p>U podpisu na čestném prohlášení je nutné <strong>úřední ověření podpisu</strong> – lze provést 
+    na Czech POINTu (pošta, obecní úřad, matrika) nebo u notáře.</p>
+    <p>Vyplněné a ověřené čestné prohlášení nám prosím zašlete:</p>
+    <ul>
+      <li>e-mailem na adresu <strong>info@epet.cz</strong>, nebo</li>
+      <li>poštou na adresu: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong></li>
+    </ul>
+   <p>Jakmile obdržíme kompletní dokumentaci, zajistíme vyplacení přeplatku na uvedený účet.</p>
+   <p>Rádi bychom Vás také informovali, že jsme spustili nový zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu: <a href='https://zakaznici.epet.cz/login' target='_blank'>Zákaznický portál</a></p>`,
+  "files: [{ url: 'https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
+  "tags": ["Dědické řízení"]
+}
 "Potvrzení přijetí dokumentů": {
   text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
 <p>potvrzujeme přijetí Vašich podkladů, které jsme předali ke zpracování. Po ukončení smlouvy a dodávek do odběrného místa Vám bude vystavena konečná faktura. Přeplatky nebo nedoplatky budou řešeny s osobou oprávněnou dle rozhodnutí o dědickém řízení.</p>
@@ -2628,6 +2650,7 @@ energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energ
         }
 };
 window.SABLONY = data;
+
 
 
 
