@@ -2,6 +2,11 @@
 const PORTAL_URL = "https://zakaznici.epet.cz/login";
 const PORTAL_BLOCK = `
 <p>Rádi bychom Vás také informovali, že požadavky můžete řešit i přes náš Zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu <a href="${PORTAL_URL}" target="_blank">Zákaznický portál</a></p>`;
+
+// ===== Společný blok: Oslovení (sjednocené) =====
+// Pozn.: Výchozí je "pane". V UI se automaticky přepíná na "paní" dle volby pohlaví.
+const OSLOVENI_BLOCK = `<p>Dobrý den, pane XXX,</p>`;
+// ===============================================
 // =====================================================================
 
 const data = {
@@ -12,21 +17,21 @@ const data = {
         },
         /* Nedoručenky */
         "NEDORUČENKA - PK": {
-                text: ` <p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: ` ${OSLOVENI_BLOCK}
 <p>v příloze tohoto e-mailu Vám zasíláme platební kalendář k dodávce elektřiny/plynu pro následující období.</p>
 ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Nedoručenky"]
         },
         "NEDORUČENKA - ÚVODNÍ DOPIS": {
-                text: ` <p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: ` ${OSLOVENI_BLOCK}
 <p>děkujeme Vám, že jste si za dodavatele energií vybral právě společnost epet. Věříme, že s našimi službami budete spokojeni.V příloze tohoto e-mailu Vám zasíláme <strong>Uvítací dopis</strong>, <strong>Rekapitulaci smlouvy</strong> a případně i rozpis zálohových plateb pro následující období dodávky, tedy <strong>Platební kalendář</strong>, který je v souladu s Vaší smlouvou.</p>
 ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Nedoručenky"]
         },
         "NEDORUČENKA - NEDORUČENKA - UPOMÍNKA": {
-                text: ` <p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: ` ${OSLOVENI_BLOCK}
 <p>dovolujeme si Vás upozornit, že u Vaší smlouvy evidujeme neuhrazenou platbu/y. V příloze tohoto e-mailu naleznete detailní informace. Prosíme Vás o kontrolu plateb a v případě prodlení žádáme o urychlené zaplacení neuhrazené částky.</p>
 <p>Nedojde-li k uhrazení pohledávky do 5 pracovních dnů od data odeslání této upomínky, budeme nuceni vystavit penalizační fakturu a účtovat Vám úroky z prodlení a smluvní pokutu dle <em>Všeobecných obchodních podmínek.</em></p>
 <p>Jedná-li se o neuhrazenou zálohu, vězte, že přijaté platby jsou použity na úhradu nejstarších neuhrazených předpisů záloh. Dodržováním předpisu záloh předejdete nesprávnému přiřazování plateb.</p>
@@ -37,7 +42,7 @@ ${PORTAL_BLOCK}`,
         },
         /* Fakturace */
         "OPRAVNÁ DATA": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p> 
+                text: `${OSLOVENI_BLOCK} 
 rádi bychom Vás informovali, že jsme obdrželi opravná data pro fakturaci ze strany distributora za období <strong>XXXXXX - XXXXXXXXX.</strong></p>
 <p>Na základě této skutečnosti Vám byla vystavena opravná faktura, která Vám dorazí v samostatném e-mailu nebo poštou. </p> 
 ${PORTAL_BLOCK}`,
@@ -45,7 +50,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Fakturace"]
         },
         "Zpětná fakturace (backbilling)": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>tato záležitost souvisí fakturou vystavenou <strong>DD.MM.RRRR</strong>, kterou jsme Vám zaslali na základě Vámi hlášeného samoodečtu. Následně Vám byla zaslána i standardní periodická faktura vystavená na základě odečtů od distributora. Ta má číslo <strong>Číslo tiskového dokladu</strong>. V této faktuře je zaznamenáno i období, které bylo zahrnuto v předchozí faktuře vystavené právě na základě zaslaného samoodečtu. Tuto fakturu jsme na základě požadavků distributora povinni každoročně vystavit.</p>
 <p>V detailním rozpisu periodické faktury od distributora si však můžete všimnout, že položky, které byl zahrnuty do faktury vystavené na základě samoodečtu, jsou v něm odečteny (<em>a uvedeny tedy se znaménkem minus</em>).</p>
 <p>Nemusíte se tedy obávat, jelikož vyúčtována je pouze skutečná spotřeba, která doposud fakturována nebyla.</p>  
@@ -54,14 +59,14 @@ ${PORTAL_BLOCK}`,
                 tags: ["Fakturace"]
         },
         "Kopie faktury": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>na základě Vašeho požadavku Vám zasíláme kopii faktury za dodávky energií.</p>
 ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Fakturace"]
         },
         "Výpočet SPOT cen": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>v příloze tohoto e-mailu naleznete výpočetní tabulku a návod, jak si můžete odkontrolovat cenu SPOT. </p>
 ${PORTAL_BLOCK}`,
                 files: [
@@ -71,7 +76,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Fakturace"]
         },
         "Vystavení FA za krátký úsek - (zpravidla z důvodu zahájení dodávek k termínům odečtů": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>Faktura byla vystavena na základě zahájení vaší smlouvy, která začala platit dne <b>DD.MM.RRRR </b> Váš distributor má však pro odběrné místo nastaven odečtový měsíc <b>Název měsíce </b>. Z tohoto důvodu byla první faktura vystavena za období od <b>DD. MM. RRRR do DD. MM. RRRR </b>, aby byl zajištěn soulad s pravidelnými odečty a zúčtovacím obdobím stanoveným distributorem.</p>
 <p>Další faktury budou již standardně vystavovány na základě dohodnutého cyklu. </p>
 ${PORTAL_BLOCK}`,
@@ -80,7 +85,7 @@ ${PORTAL_BLOCK}`,
         },
 
         "Vysvětlení zúčtování záloh na vyúčtovací faktuře - Odečet záloh na vyúčtovací faktuře": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>rádi bychom Vám poskytli stručné vysvětlení, jak dochází k započítávání zaplacených záloh ve Vašich vyúčtovacích fakturách, aby bylo vše co nejjasnější:</p>
 <p><li><b>Zálohy jsou zúčtovány pouze tehdy, pokud byly uhrazeny</b> na náš účet <b> nejpozději k datu vystavení (DUZP) </b>vyúčtovací faktury.</p></li>
 <p><li>Rozhodujícím faktorem pro zúčtování zálohy je zúčtovací období, nikoliv datum vystavení faktury.</p></li>
@@ -95,7 +100,7 @@ ${PORTAL_BLOCK}`,
         },
         /* Smlouvy */
         "ZMĚNA - ADRESA KORESPONDEČNÍ": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>na základě Vašeho požadavku Vás informujeme, že pro odběrné místo <b>EAN/EIC XXXX</b> jsme upravili doručovací adresu na <b>XXXX.</b></p>
 <p>Děkujeme Vám za aktualizaci kontaktních údajů.</p>
 ${PORTAL_BLOCK}`,
@@ -103,7 +108,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Smlouvy"]
         },
         "ZMĚNA - ADRESA ODBĚRNÉHO MÍSTA - DOLOŽENÍ DOKUMENTŮ": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>abychom mohli adresu odběrného místa u Vašeho zákaznického účtu změnit, budeme potřebovat doložit výpis z katastru nemovitostí, popřípadě doklad o změně adresy, který Vám vydá obecní nebo městský úřad.</p>
 <p>Jakmile potřebný dokument obdržíme, změnu adresy Vám potvrdíme.</p>
 <p>Děkujeme Vám za spolupráci.</p>
@@ -112,7 +117,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Smlouvy"]
         },
         "ZMĚNA - ADRESA ODBĚRNÉHO MÍSTA - POTVRZENÍ ZMĚNY": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>na základě Vašeho požadavku Vás informujeme, že jsme v našem systému upravili adresu odběrného místa na <strong>XXXX.</strong></p>
 <p>Děkujeme Vám za sdělení informace.</p>
 ${PORTAL_BLOCK}`,
@@ -120,7 +125,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Smlouvy"]
         },
         "ZMĚNA ADRESA TRVALÉHO BYDLIŠTĚ - DOLOŽENÍ DOKUMENTŮ": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>abychom mohli adresu trvalého bydliště u Vašeho zákaznického účtu změnit, budeme potřebovat doložit čestné prohlášení, jehož vzor zasíláme v příloze. Podepsaný sken tohoto prohlášení nám prosím zašlete na e-mail info@epet.cz.</p>
 <p>Pokud byste změnu adresu raději doložili prostřednictvím kopie občanského průkazu, je na této kopii z důvodu ochrany osobních údajů nutno vymazat všechny <strong>osobní údaje</strong> kromě <em>jména a příjmení</em>, <em>data narození</em> a <em>adresy</em>.</p>
 <p>Jakmile potřebný dokument obdržíme, změnu adresy Vám potvrdíme.</p>
@@ -146,7 +151,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Smlouvy"]
         },
         "ZMĚNA ADRESA TRVALÉHO BYDLIŠTĚ - Potvrzení změny adresy": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>na základě Vašeho požadavku Vás informujeme, že jsme v našem systému upravili Vaši trvalou adresu na <strong>XXXX</strong>.</p>
 <p>Děkujeme Vám za sdělení informace.</p> 
 ${PORTAL_BLOCK}`,
@@ -154,7 +159,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Smlouvy"]
         },
         "ZMĚNA NOVÉ SÍDLO FIRMY - DOLOŽENÍ DOKUMENTŮ": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>abychom mohli adresu sídla společnosti u Vašeho zákaznického účtu změnit, budeme potřebovat doložit výpis z obchodního rejstříku. Pokud v něm provedená změna ještě není zapsána, můžete změnu doložit i zasláním notářského zápisu.</p>
 <p>Jakmile potřebný dokument obdržíme, změnu adresy Vám potvrdíme.</p>
 <p>Děkujeme Vám za spolupráci. </p>
@@ -163,7 +168,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Smlouvy"]
         },
         "ZMĚNA NOVÉ SÍDLO FIRMY - POTVRZENÍ ZMĚNY": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>na základě Vašeho požadavku Vás informujeme, že jsme v našem systému upravili adresu sídla společnosti na <strong>XXXX</strong>.</p>
 <p>Děkujeme Vám za sdělení informace.</p>
 ${PORTAL_BLOCK}`,
@@ -171,28 +176,28 @@ ${PORTAL_BLOCK}`,
                 tags: ["Smlouvy"]
         },
         "Zrušení zasílání SMS": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>na základě Vašeho požadavku potvrzujeme, že jsme zrušili zasílání informativních SMS zpráv o přijaté platbě na telefonní číslo <strong>XXX.</strong></p>
 ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Smlouvy"]
         },
         "KOPIE SMLOUVY": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>na základě Vašeho požadavku Vám zasíláme kopii Smlouvy o sdružených službách dodávky elektřiny/plynu č. <strong>XXXXXXXXX</strong>.</p>
 ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Smlouvy"]
         },
         "ZMĚNA ZPŮSOBU ZASÍLÁNÍ DOKUMENTŮ": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>na základě Vašeho požadavku potvrzujeme, že jsme pro smluvní účet s číslem <strong>XXXX</strong> nastavili zasílání korespondence prostřednictvím České pošty na příslušnou doručovací adresu / e-mailu / e-mailu i České pošty s příslušnou doručovací adresou.</p> 
 ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Smlouvy"]
         },
         "VYSVĚTLENÍ PŘETRŽKY": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>informujeme Vás, že o odběrné místo <strong>EAN xxx</strong> s adresou <strong>yyy</strong> bylo z naší strany požádáno k nejbližšímu legislativně možnému termínu, tedy k datu <strong>xx.yy.2023</strong></p>
 <p>Aktuálně registrace odběrného místa k naší společnosti probíhá v pořádku.</p>
 <p>Odběrné místo se od <strong>DD.MM.RRRR</strong> nachází v ochranné lhůtě 10 pracovních dní, kdy zákazníkovi neoprávněný odběr nehrozí.
@@ -202,7 +207,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Smlouvy"]
         },
         "ZMĚNA PŘÍJEMNÍ - ZASLÁNÍ ČP": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX, </p>
+                text: `${OSLOVENI_BLOCK}
 <p>pro změnu příjmení budeme potřebovat Vaši součinnost. Prosíme o doložení kopie občanského průkazu, kde na průkazu bude začerněna Vaše fotografie, číslo občanského průkazu, rodné číslo a Váš podpis. Bez začerněných údajů nemůžeme doklad přijmout.
 Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasíláme v příloze tohoto e-mailu.</p>
 <p>Čestné prohlášení prosím vyplňte, podepište a naskenované zašlete zpět na náš e-mail.</p>
@@ -228,7 +233,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Smlouvy"]
         },
         "ZMĚNA PŘÍJEMNÍ - POTVRZENÍ ZMĚNY": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX, </p>
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme Vám za doložení podkladu pro změnu.Potvrzujeme Vám změnu příjmení.</p>
 <p>Děkujeme za spolupráci.</p>
 ${PORTAL_BLOCK}`,
@@ -236,7 +241,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Smlouvy"]
         },
         "Změna kontaktních údajů - Potvrzení (při změně @, telefonu)": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme Vám za zaslání aktuálních kontaktních údajů a potvrzujeme Vám jejich zaevidování k zákaznickému účtu.</p>
 ${PORTAL_BLOCK}`,
                 files: [],
@@ -244,7 +249,7 @@ ${PORTAL_BLOCK}`,
         },
         /* Distribuční změny */
         "ZMĚNA REZERVOVANÉHO PŘÍKONU": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>kontaktujeme Vás na základě informace od distributora, že u Vašeho odběrného místa <strong>EAN XXXXXXX</strong> došlo ke snížení/navýšení rezervovaného příkonu.</p> 
 <p>Abychom mohli tuto změnu zpracovat i v našem systému, prosíme Vás o doložení následujících dokumentů:</p>
        <ul>1) Kopie smlouvy o připojení,</B> kterou Vám distributor vystavil.</ul>
@@ -257,7 +262,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Distribuční změny"]
         },
         "PŘIPOJENÍ MIKROZDROJE": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>dovolujeme si Vás informovat, že distributor nás aktuálně informoval o plánované montáži nového 4Q elektroměru u odběrného místa <strong>EAN XXXXXXX</strong> na adrese <strong>XXXXXXXXX</strong>.</p>
 <p>Montáž Vašeho měřidla provede distributor <strong>DD.MM.RRRR</strong>.</p>
 <p>Prosíme Vás o zajištění přístupu technikovi do prostor, kde bude montáž měřidla probíhat. Také si připravte prosím svou <strong>revizní zprávu</strong>.</p>
@@ -266,7 +271,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Distribuční změny"]
         },
         "Změna výše hodnoty jističe / Změna distribuční sazby PRO: ČEZ A EGD - TEPELNÉ ČERPADLO": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>přijali jsme Váš požadavek na změnu výše hodnoty jističe / distribuční sazby. Abychom mohli tento požadavek vyřídit u distributora, je nutné, abyste nám zaslali vyplněné a podepsané dokumenty, které naleznete v příloze tohoto e-mailu.</p>
 <p>Jedná se o:</p>
 <ul> <strong>1) Žádost o změnu smlouvy</strong></ul>
@@ -286,7 +291,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Distribuční změny"]
         },
         "Změna výše hodnoty jističe / Změna distribuční sazby PRO: ČEZ A EGD": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>přijali jsme Váš požadavek na změnu výše hodnoty jističe / distribuční sazby. Abychom mohli tento požadavek vyřídit u distributora, je nutné, abyste nám zaslali vyplněné a podepsané dokumenty, které naleznete v příloze tohoto e-mailu.</p>
 <p>Jedná se o:</p>
 <ul><strong>1) Žádost o změnu smlouvy</strong></ul>
@@ -305,7 +310,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Distribuční změny"]
         },
         "Změna výše hodnoty jističe / Změna distribuční sazby PRO: PRE": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>přijali jsme Váš požadavek na změnu výše hodnoty jističe/distribuční sazby. Abychom mohli tento požadavek vyřídit u distributora, je nutné, abyste nám zaslali vyplněné a podepsané dokumenty, které naleznete v příloze tohoto e-mailu.</p>
 <p>Jedná se o:</p>
 <ul><strong>1) Žádost o změnu smlouvy:</strong> Tento dokument zašlete prostřednictvím e-mailu info@epet.cz nebo na adresu naší společnosti.</ul>
@@ -323,7 +328,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Distribuční změny"]
         },
         "Změna výše hodnoty jističe / Změna distribuční sazby PRO: PRE – TEPELNÉ ČERPADLO": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>přijali jsme Váš požadavek na změnu výše hodnoty jističe/distribuční sazby. Abychom mohli tento požadavek vyřídit u distributora, je nutné, abyste nám zaslali vyplněné a podepsané dokumenty, které naleznete v příloze tohoto e-mailu.</p>
 <p>Jedná se o:</p>
 <ul><strong>1) Žádost o změnu smlouvy:</strong> Tento dokument zašlete prostřednictvím e-mailu info@epet.cz nebo na adresu naší společnosti.</ul>
@@ -342,7 +347,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Distribuční změny"]
         },
         "Ověření výše hodnoty jističe - nesoulad s DI": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>Váš distributor nás upozornil, že hodnota jističe, kterou eviduje, se liší od hodnoty, kterou máme uvedenou na Vašem zákaznickém účtu. Rádi bychom Vás proto požádali o sdělení informace o skutečné hodnotě jističe.</p>
 <p>Jedná se o odběrné místo <strong>EAN XXXXXXXX</strong></p>
 ${PORTAL_BLOCK}`,
@@ -350,7 +355,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Distribuční změny"]
         },
         "Doložení dokladu – změna hodnoty hlavního jističe - ČEZ A EG.D": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>Váš distributor nám sdělil informaci, že u odběrného místa <strong>EAN XXXXXXXXXX</strong> byla sjednána nová hodnota jističe, která je <strong>XXX A.</strong></p>
 <p>Rádi bychom Vás požádali o potvrzení této informace, doložení <b>Smlouvy o připojení</b> a <b>revizní zprávy</b> od elektrikáře. Tyto dokumenty můžete zaslat oscanované na e-mail info@epet.cz nebo poštou na adresu EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</p>
 <p>Následně potřebné informace zaevidujeme na Vašem zákaznickém účtu. </p>
@@ -359,7 +364,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Distribuční změny"]
         },
         "Změna jističe / Sazby – informovat zk o termínu provedení změny": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>potvrzujeme vyřízení Vašeho požadavku na změnu distribuční sazby na XXXX / změnu jističe na XXXX A u odběrného místa <strong>EAN XXXXXXXX.</strong></p>
 <p>Distributor tuto změnu provede k DD. MM. RRRR. Prosíme Vás o zajištění přístupu technikovi do prostor, kde bude servisní zakázka  probíhat. Připravte si také svoji revizní zprávu.</p>
 ${PORTAL_BLOCK}`,
@@ -367,7 +372,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Distribuční změny"]
         },
         "Změna jističe / Sazby – potvrzení provedené změny": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>potvrzujeme vyřízení Vašeho požadavku na změnu distribuční sazby na XXXX / změnu jističe na XXXX A u odběrného místa <strong>EAN XXXXXXXX</strong>.</p>
 <p>Distributor tuto změnu provedl k DD. MM. RRRR. </p>
 ${PORTAL_BLOCK}`,
@@ -375,7 +380,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Distribuční změny"]
         },
         "Změna jističe / Sazby – Info ZK o změně termínu provedení změny z důvodu závad na OM": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX, </p>
+                text: `${OSLOVENI_BLOCK}
 <p>potvrzujeme vyřízení Vašeho požadavku na změnu jističe / sazby na hodnotu XXXX u odběrného místa <strong>EAN XXXXXX.</strong></p>
 <p>Distributor nás však informoval, že z důvodu závady na odběrném místě nebylo možné plánovanou změnu uskutečnit v původním termínu. Byl stanoven nový termín pro realizaci změny, a to v rozmezí <strong>DD.MM.RRRR - DD.MM.RRRR  </strong>.</p>
 <p>Prosíme Vás o zajištění přístupu technikovi do prostor, kde bude servisní zásah probíhat, a o přípravu Vaší aktuální revizní zprávy.</p>
@@ -384,7 +389,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Distribuční změny"]
         },
         "Prosba o doplnění údajů - chybějící na ŽOP": {
-                text: `<p>Dobrý den, pane XXX / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>při kontrole pokladů pro XXX jsme zjistili, že na žádosti chybějí následující údaje: XXX.</p>
 <p>Prosíme Vás tedy o jejich doplnění/podpis. Opravené podklady následně prosím zašlete zpět na náš e-mail info@epet.cz.</p>
 <p>Děkujeme Vám za spolupráci.</p>
@@ -393,7 +398,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Distribuční změny"]
         },
         "Prosba o doložení předávacího protokolu": {
-                text: `<p>Dobrý den, pane XXX / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>kontaktoval nás Váš distributor ohledně nenavazujících stavů na Vašem měřidle. Pro opravu stavů distributor vyžaduje předávací protokol k datu fyzického přepisu smlouvy. Pokud je Váš předávací protokol podepsán k jinému datu než k <strong>DD.MM.RRRR</strong>, prosíme Vás o opravu tohoto protokolu.</p>
 <p>Fyzický přepis smlouvy proběhl <strong>DD.MM.RRRR</strong>, a tak Vás prosíme o doplnění právě tohoto data.</p>
 <p>Následně opravený protokol předáme distributorovi, který stavy měřidla upraví.</p>
@@ -416,7 +421,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Distribuční změny"]
         },
         "Potvrzení o provedené změně distribuční sazby z C na D u SVJ": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>informujeme Vás, že na základě Vaší žádosti došlo dne …… ke změně typu sazby z C..d na  D…d u odběrného místa EAN: …., na adrese ….</p>
 <p>V příloze tohoto e-mailu Vám zasíláme nový Ceník, který obsahuje ceny pro sazby v kategorii D. (větu použijeme jen pokud již nebyl Ceník zaslán s dodatkem ze strany BO)</p>
 ${PORTAL_BLOCK}`,
@@ -424,7 +429,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Distribuční změny"]
         },
         "Potvrzení zk, že na základě dokumentů (ŽOP) došlo k podání žádosti o SOP na distribuci": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme Vám za zaslání vyplněných dokumentů.</p>
 <p>Potvrzujeme, že jsme na základě těchto podkladů podali žádost u příslušného distributora o vystavení nové Smlouvy o připojení. Distributor má na vyřízení požadavku lhůtu 30 kalendářních dní. Po jejím uplynutí Vám zašle Smlouvu o připojení.</p>
 <p>Ve smlouvě bude uvedeno, jaké změny je třeba realizovat na odběrném místě. Pokud v ní naleznete informaci o nutnosti úhrady podílu, prosíme o doložení potvrzení o platbě či uvedení data, kdy byl podíl uhrazen.</p>
@@ -438,7 +443,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Distribuční změny"]
         },
         "Potvrzení zk, že na základě doložených dokumentů,  byl požadavek předán na distribuci pro sdělení termínu (ÚKol předán na EK - pro sdělení termínu)": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme za zaslání požadovaných dokumentů k Vaší žádosti o změnu distribuční sazby / změny výše hlavního jističe</p>
 <p>Tímto potvrzujeme, že jsme na základě Vámi doložených podkladů požadavek předali k posouzení a zpracování příslušnému distributorovi. Distributor Nám následně sdělí konkrétní termín realizace změny. Jakmile od něj obdržíme potvrzení o plánovaném termínu, budeme Vás neprodleně informovat.</p>
 <p>V případě doplnění dalších údajů nebo potřeby upřesnění Vás budeme kontaktovat.</p>
@@ -449,7 +454,7 @@ ${PORTAL_BLOCK}`,
         },
         /* Demontáže */
         "Ukončení smlouvy s demontáží elektroměru – sezónní odběr FIRMA – ČEZ": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>v příloze tohoto e-mailu naleznete podklady k ukončení smlouvy s demontáží měřidla. Jedná se o Žádost o ukončení smlouvy / dodávky elektřiny do odběrného místa – Firma a Žádost o demontáž měřícího zařízení.</p>
 <p>Podklady musí podepsat osoba, která je oprávněna jednat za společnost. Případně lze k Žádosti doložit plnou moc, opravňující k podpisu žádosti, kterou Vám zasíláme v příloze.</p>
 <p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokumenty můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong></p>
@@ -462,7 +467,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Demontáže"]
         },
         "Ukončení smlouvy s demontáží elektroměru DOMÁCNOST - ČEZ": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>v příloze tohoto e-mailu naleznete podklady k ukončení smlouvy s demontáží měřidla. Jedná se o Žádost o ukončení smlouvy / dodávky elektřiny do odběrného místa – Domácnost a Žádost o ukončení smlouvy. </p>
 <p>Prosíme o jejich vyplnění a zaslání zpět na naši e-mailovou adresu. Dokumenty můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong> </p>
 ${PORTAL_BLOCK}`,
@@ -474,7 +479,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Demontáže"]
         },
         "Ukončení smlouvy s demontáží Elektroměru – DOMÁCNOST - EGD/PRE": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>v příloze tohoto e-mailu naleznete podklad k ukončení smlouvy s demontáží měřidla. Jedná se o Žádost o ukončení smlouvy / dodávky elektřiny do odběrného místa – Domácnost.</p>
 <p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokument můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong></p>
 ${PORTAL_BLOCK}`,
@@ -484,7 +489,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Demontáže"]
         },
         "Demontáž elektroměru FIRMA - ČEZ": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>v příloze tohoto e-mailu naleznete podklady k ukončení smlouvy s demontáží měřidla. Jedná se o Žádost o ukončení smlouvy / dodávky elektřiny do odběrného místa – Firma a Žádost o ukončení smlouvy.</p>
 <p>Podklady musí podepsat osoba, která je oprávněna jednat za společnost. Případně lze k Žádosti doložit plnou moc, opravňující k podpisu žádosti, kterou Vám zasíláme v příloze.</p>
 <p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokumenty můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</p>
@@ -498,7 +503,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Demontáže"]
         },
         "Demontáž elektroměru FIRMA - EG.D_PRE": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>v příloze tohoto e-mailu naleznete podklad k ukončení smlouvy s demontáží měřidla. Jedná se o Žádost o ukončení smlouvy / dodávky elektřiny do odběrného místa – Firma</p>
 <p>Podklady musí podepsat osoba, která je oprávněna jednat za společnost. Případně lze k Žádosti doložit plnou moc, opravňující k podpisu žádosti, kterou Vám zasíláme v příloze.</p>
 <p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokumenty můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong></p>
@@ -511,7 +516,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Demontáže"]
         },
         "Ukončení smlouvy s demontáží plynoměru DOMÁCNOST - EG.D_PPD_GASNET_RWE": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>v příloze tohoto e-mailu naleznete podklad k ukončení smlouvy s demontáží měřidla. Jedná se o Žádost o ukončení smlouvy / dodávky plynu do odběrného místa – Domácnost.</p>
 <p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokument můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong></p>
 ${PORTAL_BLOCK}`,
@@ -521,7 +526,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Demontáže"]
         },
         "Ukončení smlouvy s demontáží plynoměru FIRMA - EG.D_PPD_GASNET_RWE": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>v příloze tohoto e-mailu naleznete podklad k ukončení smlouvy s demontáží měřidla. Jedná se o Žádost o ukončení smlouvy / dodávky plynu do odběrného místa – Maloodběratel.</p>
 <p>Podklady musí podepsat osoba, která je oprávněna jednat za společnost. Případně lze k Žádosti doložit plnou moc, opravňující k podpisu žádosti, kterou Vám zasíláme v příloze.</p>
 <p>Prosíme o jejich vyplnění a zaslání zpět na naši e-mailovou adresu. Dokument můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong></p>
@@ -533,7 +538,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Demontáže"]
         },
         "Přijetí žádosti k demontáži měřidla": {
-                text: `<p>Dobrý den, pane XXX / paní XXX, </p>
+                text: `${OSLOVENI_BLOCK}
 <p>potvrzujeme přijetí Vaší žádosti k demontáži měřidla na odběrném místě <strong>EAN XXX / EIC XXX</strong> s adresou <strong>XXX</strong>.</p>
 <p>Podklady jsme předali na distribuci a jakmile nám žádost potvrdí, sdělíme Vám termín návštěvy technika.</p>
 ${PORTAL_BLOCK}`,
@@ -541,7 +546,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Demontáže"]
         },
         "Termín demontáže měřidla": {
-                text: `<p>Dobrý den, pane XXX / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>informujeme Vás, že nás nyní kontaktoval distributor s termínem demontáže měřidla pro odběrné místo <strong>EAN/EIC XXX</strong> na adrese <strong>XXX</strong>.</p>
 <p>Demontáž proběhne <strong>DD.MM.RRRR</strong>.</p>
 <p>Přesný čas demontáže nám distributor nesdělil. V případě potřeby Vás však bude s předstihem informovat.</p>
@@ -552,7 +557,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Demontáže"]
         },
         "Neprovedená demontáž": {
-                text: `<p>Dobrý den, pane XXX / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>informujeme Vás, že demontáž měřidla na odběrném místě pro <strong>EAN/EIC XXX</strong> na adrese <strong>XXX</strong> naplánovaná na den <strong>DD.MM.RRRR</strong> nebyla provedena, jelikož odběrné místo nebylo zpřístupněno.</p>
 <p>S novým termínem demontáže měřidla Vás bude kontaktovat přímo distributor.</p>
 ${PORTAL_BLOCK}`,
@@ -561,7 +566,7 @@ ${PORTAL_BLOCK}`,
         },
         /* Ostatní */
         "Potvrzení přijetí požadavku": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme za zaslání Vašeho požadavku. Rádi bychom Vás informovali, že jsme jej zaevidovali a v tuto chvíli je v řešení. Budeme Vás informovat nejpozději do <b>xx.xx.XXXX</b> o dalším postupu nebo vyřešení požadavku.
 V případě jakýchkoliv dotazů se na nás neváhejte obrátit.</p>
 ${PORTAL_BLOCK}`,
@@ -569,14 +574,14 @@ ${PORTAL_BLOCK}`,
                 tags: ["Ostatní"]
         },
         "Žádost o přiřazení zk. pod konkrétního OZ": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>Žádost o přiřazení si zašlete na email <b>poptavky@epet.cz</b></p>
 ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Ostatní"]
         },
         "Žádost o doložení podkladů pro vyřízení požadavku": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>aby bylo možné vyřídit Váš požadavek, potřebujeme Vaši součinnost.</p>
 <p>Konkrétně prosíme o doložení XXXXX, a to z důvodu XXXXX.</p>
 <p>Vše potřebné nám prosím zašlete do data XX.XX.XXXX.</p>
@@ -587,7 +592,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Ostatní"]
         },
         "Zpětná Vazba - zaslání hodnotícího formuláře zákazníkovi": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>na základě tel. hovoru Vám zasíláme odkaz pro zanechání své pozitivní zpětné vazby, na které nám velmi záleží.</p>
 <p>Dotazník můžete vyplnit pod tímto <a href="https://g.page/r/CXbczwzq5JZ8EB0/review" target="_blank">odkazem</a>.</p>
 <p>Děkujeme za Váš čas.</p>
@@ -597,7 +602,7 @@ ${PORTAL_BLOCK}`,
         },
         /* Samoodečty */
         "Prosba o doložení protokolu o výměně měřidla": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>je nám líto, ale Váš požadavek na vystavení faktury na základě doručených podkladů se nám nepodařilo vyřešit. Odečtové hodnoty měřidla na sebe nenavazují. Důvodem bude zřejmě výměna měřidla, která proběhla na odběrném místě.</p> 
 <p>V případě, že opravdu došlo k výměně měřidla, Vás prosíme o urychlené dodání protokolu o výměně. Ten naleznete přiložený přímo u měřidla. Pokud protokol nenaleznete, kontaktujte prosím svého distributora, který Vám vystaví jeho opis.</p>
 ${PORTAL_BLOCK}`,
@@ -612,7 +617,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Samoodečty"]
         },
         "Kontrola stavů měřidla": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>informujeme Vás, že odečty, které jste nám nahlásili, byly distributorem zamítnuty. Důvodem zamítnutí je, že stavy nenavazují na poslední hlášený odečet</p>
 <p>Prosíme o ověření a poslání správného stavu, popřípadě o zaslání fotografie přístroje s aktuálním stavem.</p>
 <p>Děkujeme Vám za spolupráci.</p>
@@ -621,7 +626,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Samoodečty"]
         },
         "Zamítnutí odečtů": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>informujeme Vás, že odečty, které jste nám nahlásili, byly distributorem zamítnuty. Důvodem zamítnutí je, že stavy nenavazují na poslední hlášený odečet.</p>
 <p>Prosíme o ověření a poslání správného stavu, popřípadě o zaslání fotografie přístroje s datumovkou tedy viditelné datum zobrazené přímo na fotografii, které ukazuje, kdy byla fotografie pořízena. Případně na lístečku přiloženém k měřidlu a aktuálním stavem.</p>
 <p>Děkujeme Vám za spolupráci.</p>
@@ -630,7 +635,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Samoodečty"]
         },
         "Nezpracovaný odečet - omluva ZK": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>omlouváme se, ale Váš požadavek na vystavení faktury na základě nahlášených odečtových hodnot Vašeho měřidla se nám nepodařilo zpracovat v termínu. Faktura Vám bude vystavena na základě dat, která nám doručí distributor.</p>
 <p>Velice se za tuto skutečnost omlouváme a děkujeme za pochopení.</p>
 ${PORTAL_BLOCK}`,
@@ -639,7 +644,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Samoodečty"]
         },
         "Počáteční stav elektroměru": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>je nám líto, ale Váš požadavek na evidenci počátečního odečtového stavu Vašeho měřidla není možné zpracovat.</p>
 <p>Tento údaj je třeba sdělit Vašemu původnímu dodavateli, který na základě těchto hodnot vystaví konečnou fakturu. Při nejbližší fakturaci na tento stav měřidla navážeme.</p>
 ${PORTAL_BLOCK}`,
@@ -647,7 +652,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Samoodečty"]
         },
         "Prosba o zaslání fotografie měřidla": {
-                text: `<p>Dobrý den, pane XXX, / paní XX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>informujeme Vás, že odečty, které jste nám nahlásili, byly distributorem zamítnuty. Proto Vás prosíme o zaslání fotografie s aktuálním stavem měřidla.</p>
 <p>Děkujeme Vám za spolupráci.</p> 
 ${PORTAL_BLOCK}`,
@@ -656,7 +661,7 @@ ${PORTAL_BLOCK}`,
         },
         /* Samoodečty - Kontrolní + Mimořádné vyúčtování + Konečné */
         "Přijetí samoodečtu - Mimořádná faktura": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet jsme zpracovali. Nyní čekáme na schválení dat, abychom mohli následně vystavit fakturu.</p>
 <p>Tento schvalovací proces může trvat <strong>2-3 týdny</strong>. Z tohoto důvodu Vás prosíme o trpělivost s vystavením faktury.</p>
 <p>Abychom Vám do budoucna mohli vyúčtování připravit ještě rychleji, přikládáme evidenční tabulku, do které je možné hodnoty zapsat a zaslat nám ji zpět e-mailem. Je to pouze doporučený nástroj, který celý proces usnadní a zrychlí. Alternativně můžete své odečty jednoduše nahlásit i prostřednictvím <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznického portálu</a></p>  
@@ -684,7 +689,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Samoodečty - Kontrolní + Mimořádné vyúčtování + Konečné"]
         },
         "Přijetí samoodečtu - kontrolní": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet jsme zpracovali jako kontrolní odečet, bez vystavení mimořádné faktury. 
 Odečet bude zohledněn při příští periodické fakturaci.</p>
 <p>Abychom příště mohli Váš požadavek zpracovat ještě rychleji, přikládáme evidenční tabulku, do které je možné hodnoty zapsat a zaslat nám ji zpět e-mailem. Je to pouze doporučený nástroj, který celý proces usnadní a zrychlí. Alternativně můžete své odečty jednoduše nahlásit i prostřednictvím <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznického portálu</a></p>
@@ -708,7 +713,8 @@ ${PORTAL_BLOCK}`,
                 tags: ["Samoodečty - Kontrolní + Mimořádné vyúčtování + Konečné"]
         },
         "Přijetí samoodečtu - kontrolní - bez poslání tabulek pro samoodečty": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,<p>
+                text: `${OSLOVENI_BLOCK}
+<p>
 <p>děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet jsme zpracovali jako kontrolní odečet, bez vystavení mimořádné faktury. 
 Odečet bude zohledněn při příští periodické fakturaci, případně Vás žádáme, abyste si odečty měřidel nově hlásili prostřednictvím <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznického portálu</a></p>
 <p><u>Termíny pro nahlášení kontrolních odečtů:</u><p>
@@ -794,7 +800,7 @@ ${PORTAL_BLOCK}`,
 
         },
         "Přijetí samoodečtu - kontrolní - Zákazník zadal již do portálu (duplicitní odečet)": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet jsme zpracovali jako kontrolní odečet, bez vystavení mimořádné faktury. 
 Odečet bude zohledněn při příští periodické fakturaci.</p> 
 <p>Abychom příště mohli Váš požadavek zpracovat ještě dříve, zasíláme Vám v příloze evidenční tabulku, do které můžete tyto hodnoty vepsat, a následně nám ji zaslat e-mailem případně Vás žádáme, abyste si odečty měřidel nově hlásili prostřednictvím <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznického portálu</a></p>
@@ -820,7 +826,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Samoodečty - Kontrolní + Mimořádné vyúčtování + Konečné"]
         },
         "Přijetí samoodečtu - Konečné vyúčtování (po ukončení smlouvy)": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme Vám za zaslání konečného samoodečtu. Tímto potvrzujeme jeho přijetí a nyní čekáme na schválení dat ze strany distributora.</p>
 <p>Tento schvalovací proces může trvat 2-3 týdny. Z tohoto důvodu Vás prosíme o trpělivost s vystavením faktury. </p>
 ${PORTAL_BLOCK}`,
@@ -829,7 +835,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Samoodečty - Kontrolní + Mimořádné vyúčtování + Konečné"]
         },
         "Přijetí samoodečtu - Konečné vyúčtování (zákazník stavy hlásí ještě před termínem ukončení smlouvy)": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme Vám za nahlášení samoodečtu ke konečné faktuře.</p>
 <p>Dovolujeme si Vás informovat, že Vaše smlouva bude ukončena k <b> termín ukončení </b>. Z tohoto důvodu je možné zadat stav samoodečtu až po tomto datu, a to nejpozději do <b> uvedeme termín do kdy stav může nahlásit (5 dní od ukončení smlouvy) </b> </p>
 <p>Prosíme Vás tedy o nahlášení samoodečtu v uvedeném termínu, aby mohla být konečná faktura vystavena s odpovídající spotřebou. Případně Vás žádáme, abyste si odečty měřidel nově hlásili prostřednictvím <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznického portálu</a></p> </p>
@@ -839,7 +845,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Samoodečty - Kontrolní + Mimořádné vyúčtování + Konečné"]
         },
         "Přijetí samoodečtu - Konečné - Zákazník zadal již do portálu (duplicitní odečet)": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet jsme zpracovali. Nyní čekáme na schválení dat, abychom mohli následně vystavit fakturu.</p>
 <p>Tento schvalovací proces může trvat 2-3 týdny. Z tohoto důvodu Vás prosíme o trpělivost s vystavením faktury. 
 <p>Pokud odečty zadáte přímo prostřednictvím tohoto portálu a zobrazí se zelená zpráva o úspěšném přijetí, není nutné nás dále informovat ani zasílat údaje e-mailem. Tento stav můžete považovat za potvrzení, že samoodečet byl úspěšně zpracován.</p>
@@ -851,14 +857,14 @@ ${PORTAL_BLOCK}`,
                 tags: ["Samoodečty - Kontrolní + Mimořádné vyúčtování + Konečné"]
         },
         "Přijetí samoodečtu - k aktivaci smlouvy": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet k aktivaci smlouvy jsme zpracovali.Tímto potvrzujeme jeho přijetí a zaevidování jako počáteční stav. Upozorňujeme, že na základě tohoto samoodečtu nedochází  k vystavení faktury. Tento stav však bude zohledněn při řádné periodické fakturaci.</p>
 ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Samoodečty - Kontrolní + Mimořádné vyúčtování + Konečné"]
         },
         "Přijetí samoodečtu - k aktivaci smlouvy - Zákazník zadal již do portálu (duplicitní odečet)": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet k aktivaci smlouvy jsme zpracovali.Tímto potvrzujeme jeho přijetí a zaevidování jako počáteční stav. Upozorňujeme, že na základě tohoto samoodečtu nedochází  k vystavení faktury. Tento stav však bude zohledněn při řádné periodické fakturaci.</p>
 <p>Pokud odečty zadáte přímo prostřednictvím zákaznického portálu a zobrazí se zelená zpráva o úspěšném přijetí, není nutné nás dále informovat ani zasílat údaje e-mailem. Tento stav můžete považovat za potvrzení, že samoodečet byl úspěšně zpracován.</p>
 ${PORTAL_BLOCK}`,
@@ -866,7 +872,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Samoodečty - Kontrolní + Mimořádné vyúčtování + Konečné"]
         },
         "Zamítnutí samoodečtů - Z důvodu překročení limitu 10 samoodečtů v rámci roku": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme za Váš požadavek na zadání samoodečtu.</p>
 <p>U daného odběrného místa již v tomto kalendářním roce nelze přijmout další běžný samoodečet, protože byl vyčerpán roční limit <b>10 samoodečtů.</b></p>
 <p>Současně připomínáme, že v rámci roku lze zadat ještě jeden mimořádný samoodečet k <b>31. 12. – tedy k 31. 12. 20XX.</b>. Ten můžete zadat standardním způsobem (stejným kanálem, jako obvykle), a bude použit pro uzavření roku.</p>
@@ -883,7 +889,7 @@ ${PORTAL_BLOCK}`,
         },
         /* Reklamace */
         "Přijetí reklamace  – není potřeba od ZK nic doložit": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>potvrzujeme Vám přijetí reklamace, jejíž obsah je blíže specifikován níže v popisu reklamace. U této reklamace evidujeme následující údaje:</p>
 <p>Datum přijetí/uplatnění reklamace: <strong>DD. MM. RRRR</strong> </p>
 <p>Důvod reklamace:</p>
@@ -894,7 +900,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Reklamace"]
         },
         "Přijetí reklamace s požadavkem o doložení chybějících podkladů": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>potvrzujeme Vám přijetí reklamace, jejíž obsah je blíže specifikován níže v popisu reklamace. U této reklamace evidujeme následující údaje: </p> 
 <p>Datum přijetí/uplatnění reklamace: <strong>DD. MM. RRRR</strong></p>
 <p>Důvod reklamace:</p>
@@ -907,7 +913,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Reklamace"]
         },
         "Vyřízení reklamace - oprávněná": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>reagujeme na Vaši reklamaci podanou dne DD. MM. RRRR, která se týká UVÉST DŮVOD.</p>
 <p>Vámi podaná reklamace byla z naší strany důkladně posouzena a následně vyhodnocena jako <strong>oprávněná.</p></strong>
 <p>UVEDEME, JAK BUDE REKLAMACE VYŘEŠENA - NAPŘ. VYSTAVENÍ OPRAVNÉ FAKTURY APOD. – uvedeno v ÚKOLU</p>
@@ -918,7 +924,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Reklamace"]
         },
         "Vyřízení reklamace - neoprávněná": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>reagujeme na Vaši reklamaci podanou dne <strong>DD. MM. RRRR</strong>, která se týká <strong>UVÉST DŮVOD</strong>.</p>
 <p>Vámi podaná reklamace byla důkladně posouzena a následně vyhodnocena jako <strong>neoprávněná.</strong></p>
 <p>Důvodem zamítnutí reklamace je:</p>
@@ -929,7 +935,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Reklamace"]
         },
         "Zamítnutí požadavku na uplatnění náhrady - Elektřina": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>reagujeme na Vaši žádost týkající se uplatnění náhrady škody za nedodržení standardu kvality dodávek/distribuce elektřiny dle vyhlášky č. 540/2005 Sb., o kvalitě dodávek elektřiny a souvisejících služeb v elektroenergetice.</p>
 <p>Je nám líto, ale Vaši žádost jsme nuceni zamítnout. Důvodem našeho zamítavého stanoviska je marné uplynutí lhůty pro uplatnění náhrady škody v souladu s § 4 odst. 4 písm. a) uvedené vyhlášky, tj. 60 kalendářních dnů ode dne následujícího po dni, ve kterém uplynula lhůta podle standardů.</p>
 <p>Zákazníci, kteří jsou spotřebiteli ve smyslu § 419 zákona č. 89/2012 Sb., občanský zákoník, se můžou v souladu s § 17 odst. 7 písm. e) zákona č. 458/2000 Sb., energetický zákon, ve znění pozdějších předpisů, v případě vzniklého sporu obracet na Energetický regulační úřad (www.eru.cz), jakožto orgán mimosoudního řešení sporů v oblasti energetiky. Energetický regulační úřad může rozhodnout spor mezi zákazníkem a společností EP ENERGY TRADING, a.s., o splnění povinností z uzavřené smlouvy, jejíž předmětem je dodávka nebo distribuce elektřiny nebo plynu a spor o určení, zda taková smlouva vznikla, trvá, nebo zanikla, a kdy se tak stalo. </p>
@@ -938,7 +944,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Reklamace"]
         },
         "Zamítnutí požadavku na uplatnění náhrady - Plyn": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>reagujeme na Vaši žádost týkající se uplatnění náhrady za nedodržení standardu kvality dodávek/distribuce plynu dle vyhlášky č. 545/2006 Sb., o kvalitě dodávek plynu a souvisejících služeb v plynárenství.</p>
 <p>Je nám líto, ale Vaši žádost jsme nuceni zamítnout. Důvodem našeho zamítavého stanoviska je marné uplynutí lhůty pro uplatnění náhrady v souladu s § 3 odst. 1 písm. b) uvedené vyhlášky, tj. 60 kalendářních dnů ode dne následujícího po dni, ve kterém uplynula lhůta podle standardů.
 </p>
@@ -949,7 +955,7 @@ ${PORTAL_BLOCK}`,
         },
         /* Dědické řízení */
         "Informace k doložení dokladů po úmrtí odběratele": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>je nám líto, že řešíte tuto smutnou událost. Abychom mohli provést potřebné změny na zákaznickém účtu, budeme potřebovat jistou součinnost.</p>
 <p>Zejména je důležité nám doručit <strong>kopii úmrtního listu</strong> a <strong>usnesení z dědického řízení.</strong></p>
 <p>Je také potřebné, abyste nám sdělili, na koho bude odběrné místo přepsáno, nebo zda budete odběrné místo ukončovat s demontáží měřidla.</p>
@@ -959,7 +965,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Dědické řízení"]
         },
  "Dědické řízení - urgence (pro doložení usnesení)": { 
-  text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+  text: `${OSLOVENI_BLOCK}
 <p>je nám líto, že jste musel/a řešit tuto smutnou událost. Abychom mohli provést potřebné změny na zákaznickém účtu, budeme potřebovat Vaši součinnost.</p>
 <p>Zejména je důležité, abyste nám doručil/a:</p>
 <ul>
@@ -979,7 +985,7 @@ ${PORTAL_BLOCK}`,
 },
 "Dědické řízení – Vyplacení přeplatku na bankovní účet – žádost o doplnění dokumentu (pot. dědic/dědic žádá o přeplatek na BÚ)": {
   "text": `
-    <p>Dobrý den, pane XXX, / paní XXX,</p>
+    ${OSLOVENI_BLOCK}
     <p>děkujeme Vám za zaslané dokumenty týkající se úmrtí pana/paní <strong>{{jmeno_zemreleho}}</strong>. 
     Na základě doloženého usnesení z dědického řízení evidujeme, že oprávněným dědicem je 
     <strong>{{jmeno_dedice}}</strong>.</p>
@@ -1007,7 +1013,7 @@ ${PORTAL_BLOCK}`,
   "tags": ["Dědické řízení"]
 },
 "Potvrzení přijetí dokumentů": {
-  text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+  text: `${OSLOVENI_BLOCK}
 <p>potvrzujeme přijetí Vašich podkladů, které jsme předali ke zpracování. Po ukončení smlouvy a dodávek do odběrného místa Vám bude vystavena konečná faktura. Přeplatky nebo nedoplatky budou řešeny s osobou oprávněnou dle rozhodnutí o dědickém řízení.</p>
 ${PORTAL_BLOCK}`,
   files: [],
@@ -1015,7 +1021,7 @@ ${PORTAL_BLOCK}`,
 },
 
 "Zákazník doložil veškeré dokumenty k vyplacení přeplatku - úkol předán na finance": {
-  text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+  text: `${OSLOVENI_BLOCK}
 <p>děkujeme za zaslání požadovaných dokumentů. Vaše podklady jsme předali příslušnému oddělení k dalšímu zpracování.</p>
 <p>Jakmile dojde k vyplacení přeplatku, budeme Vás o této skutečnosti bezodkladně informovat.</p>
 ${PORTAL_BLOCK}`,
@@ -1024,7 +1030,7 @@ ${PORTAL_BLOCK}`,
 },
 
 "Zákazník doložil usnesení, ale je v něm uvedeno více dědiců a zk. si přeje vyplatit přeplatek na jednotnÝ BÚ": {
-  text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+  text: `${OSLOVENI_BLOCK}
 <p>děkujeme za zaslání usnesení o dědictví. Vážíme si Vaší spolupráce.</p>
 <p>V e-mailu uvádíte, že si přejete přeplatek vyplatit na konkrétní bankovní účet. Abychom mohli tento krok uskutečnit, je nutné vyplnit a podepsat čestné prohlášení, které přikládáme v příloze tohoto e-mailu.</p>
 <ul>
@@ -1039,7 +1045,7 @@ ${PORTAL_BLOCK}`,
 },
 
 "Zákazník doložil usnesení, ale je v něm uvedeno více dědiců - bez toho aniž by uvedl, že si ho přeje vyplatit na jednotný BÚ": {
-  text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+  text: `${OSLOVENI_BLOCK}
 <p>děkujeme za zaslání usnesení o dědictví. Vážíme si Vaší spolupráce.</p>
 <p>Po prozkoumání přiloženého usnesení jsme zjistili, že je v něm uvedeno více dědiců. Abychom mohli pokračovat ve vyplacení přeplatku na bankovní účet, je nutné, aby všichni dědicové podepsali čestné prohlášení, které přikládáme v příloze tohoto e-mailu.</p>
 <ul>
@@ -1054,7 +1060,7 @@ ${PORTAL_BLOCK}`,
 },
 
 "Zákazník se rozčiluje, že nevidí důvod proč zasílat ČP NA ZÁKLADĚ ČEHO TO PO NĚM CHCEME - KDYŽ CHCE VYPLATIT PŘEPLATEK NA JEDNOTNÉ BÚ": {
-  text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+  text: `${OSLOVENI_BLOCK}
 <p>děkujeme za Váš dotaz ohledně požadavku na vyplnění čestného prohlášení pro vyplacení přeplatku po úmrtí zákazníka.</p>
 <p>Tento krok vychází z legislativních požadavků na správné vypořádání finančních závazků v rámci dědického řízení. Přestože bylo vydáno usnesení o dědictví, je nutné doložit, že se dědicové shodli na způsobu vyplacení přeplatku, zejména pokud se má celá částka poukázat na konkrétní bankovní účet jednoho z dědiců.</p>
 <p><b>Požadavek na čestné prohlášení vychází z následujících principů:</b></p>
@@ -1070,7 +1076,7 @@ ${PORTAL_BLOCK}`,
 },
 
 "Žádost o doložení BÚ pro vyplacení přeplatku na základě dědického řízení(žádost o doložení ČP)": {
-  text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+  text: `${OSLOVENI_BLOCK}
 <p>na základě doručeného usnesení o dědickém řízení nám byl notářem sdělen Váš status jednoho z dědiců po zemřelém/zemřelé zákaznici/zákazníkovi <b>XXXXXXX</b>. V souvislosti s touto skutečností bychom Vás rádi informovali, že na zákaznickém účtu zesnulého evidujeme přeplatek, který je možné vyplatit.</p>
 <p>Abychom mohli přistoupit k jeho výplatě, je třeba z Vaší strany doložit:</p>
 <ul>
@@ -1085,7 +1091,7 @@ ${PORTAL_BLOCK}`,
 },
 
 "Žádost o doložení dodatku k usnesení převážně z důvodu zastaveného dědického řízení z důvodu majetku nepatrné hodnoty v němž není uvedeno kdo je dědicem, jen vystavitel pohřbu": {
-  text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+  text: `${OSLOVENI_BLOCK}
 <p>děkujeme za doložené usnesení o pozůstalosti po panu/paní <strong> XXXXXX.</strong> Dovolujeme si Vás informovat, že z předloženého usnesení vyplývá, že dědické řízení bylo soudem zastaveno z důvodu majetku nepatrné hodnoty, a že nebyl určen žádný dědic.</p>
 <p>Vzhledem k tomu, že nedošlo k právnímu přechodu majetku (včetně případného přeplatku) na žádnou osobu, nemůžeme Vám bez dalšího právního podkladu (např. dodatečné dohody dědiců nebo nového rozhodnutí soudu) případný přeplatek vyplatit.</p>
 <p><strong>Jak můžete dále postupovat:</strong><br>
@@ -1102,7 +1108,7 @@ ${PORTAL_BLOCK}`,
 },
 
 "Žádost o doložení usnesení + informaci, že pokud v usnesení je více dědiců, aby poslali i ČP": {
-  text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+  text: `${OSLOVENI_BLOCK}
 <p>je nám líto, že jste musel/a řešit tuto smutnou událost. Abychom mohli provést potřebné změny na zákaznickém účtu, budeme potřebovat Vaši součinnost. Zejména je důležité, abyste nám doručil/a:</p>
 <ul>
   <li>kopii úmrtního listu</li>
@@ -1118,7 +1124,7 @@ ${PORTAL_BLOCK}`,
   tags: ["Dědické řízení"]
 },
         "Přepis (šablona číslo 1)": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>stále evidujeme nevyřešený požadavek týkající se přepisu smlouvy na odběr energií po zemřelém <b>xxxxxx</b>. Rádi bychom Vás informovali o nutnosti provést tento přepis na nového odběratele. Tento krok je nezbytný pro zajištění kontinuity dodávky energií na odběrném místě <b>[Adresa odběrného místa]</B>.</p>
 <p>Prosíme Vás, abyste co nejdříve kontaktovali naši zákaznickou podporu na telefonním čísle <b>255 70 70 99 </b> nebo e-mailem na <b>info@epet.cz </b>, kde Vám poskytneme veškeré potřebné formuláře a informace k přepisu smlouvy. Přepis je možné také dořešit pomocí online formuláře na tomto  <a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank"> Odkazu</a></p>
 <p>Děkujeme za Vaši spolupráci a jsme Vám k dispozici pro jakékoliv dotazy či další informace.</p>
@@ -1127,7 +1133,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Dědické řízení"]
         },
         "Urgence přepisu (šablona číslo 2)": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p><strong>Dobrý den, pane XXX, / paní XXX,,</strong></p>
 <p>rádi bychom Vás znovu upozornili na nutnost přepsání smlouvy na odběr energií na nového odběratele. Původní smlouva č. byla uzavřena na zemřelého <b>xxxxx</b>, a je nezbytné uzavřít novou smlouvu, aby byla zajištěna kontinuální dodávka energií na odběrném místě <b>[Adresa odběrného místa]</b>.</p>
 <p>Dosud jsme neobdrželi žádnou odpověď na naši předchozí výzvu. Prosíme Vás, abyste co nejdříve kontaktovali naši zákaznickou podporu na telefonním čísle <b>255 70 70 99 </b> nebo e-mailem na <b>info@epet.cz </b>, kde Vám poskytneme veškeré potřebné formuláře a informace k přepisu smlouvy. Přepis je možné také dořešit pomocí online formuláře na tomto <a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank"> Odkazu</a></p>
@@ -1139,7 +1145,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Dědické řízení"]
         },
         "Výzva k úhradě dlužných plateb, zákaznické číslo: xxxx (šablona číslo 3)": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 
 <p>dovolujeme si Vás informovat, že naše společnost <strong>EP ENERGY TRADING, a.s.</strong>, IČO <strong>27386643</strong>, se sídlem Klimentská 46, Praha 1, 110 00 obdržela od Obvodního soudu pro Prahu 6 informaci o skončení řízení o pozůstalosti (resp. dědického řízení), kterou bylo naší společnosti sděleno, že právním nástupcem zákazníka [jméno, příjmení, datum narození, trvalý pobyt] (dále jen <b>„Zůstavitel“</b>) se na základě pravomocného rozhodnutí o dědictví (kterým dědické řízení skončilo) uvedeným soudem v oblasti dodávky energií v odběrném místě EAN/EIC _____ na adrese [ulice, PSČ, město] (dále jen <b>„Odběrné místo“</b>) zajišťované naší společností na základě Smlouvy o sdružených službách dodávky elektřiny/plynu a uzavřené mezi naší společností a Zůstavitelem (dále jako <b>„Smlouva“</b>) stala tato osoba:</p>
 
@@ -1233,7 +1239,7 @@ ${PORTAL_BLOCK}`,
 
         "Výzva k úhradě dluhu – potencionální dědic – aktivní odběr (šablona číslo 5)": {
                 text: `
-<p>Dobrý den, pane XXX, / paní XXX,</p>
+${OSLOVENI_BLOCK}
 
 <p>obracíme se na Vás jakožto na potenciálního dědice pana/paní [jméno, příjmení, datum narození, trvalý pobyt] (dále jako „Zůstavitel“) s informací, že naše společnost <b>EP ENERGY TRADING, a.s.</b>, <b>IČO 27386643</b>, se sídlem Klimentská 46, Praha 1, 110 00 na základě Smlouvy o sdružených službách dodávky elektřiny/plynu č. ______ uzavřené mezi naší společností a Zůstavitelem (dále jen <b>„Smlouva“</b>) je dodavatelem elektřiny/plynu do odběrného místa EAN/EIC _____ na adrese [ulice, PSČ, město] (dále jen <b>„Odběrné místo“</b>).</p>
 
@@ -1296,7 +1302,7 @@ ${PORTAL_BLOCK}`,
         },
         "Výzva k úhradě dluhu – potencionální dědic – neaktivní odběr (šablona číslo 6)": {
                 text: `
-<p>Dobrý den, pane XXX, / paní XXX,</p>
+${OSLOVENI_BLOCK}
 
 <p>obracíme se na Vás jakožto na potenciálního dědice pana/paní [jméno, příjmení, datum narození, trvalý pobyt] (dále jako <b>„Zůstavitel“</b>) s informací, že naše společnost <b>EP ENERGY TRADING, a.s.</b>, <b>IČO 27386643</b>, se sídlem Klimentská 46, Praha 1, 110 00 na základě Smlouvy o sdružených službách dodávky elektřiny/plynu č. ______ uzavřené mezi naší společností a Zůstavitelem (dále jen <b>„Smlouva“</b>) je dodavatelem této energie do odběrného místa EAN/EIC _____ na adrese [ulice, PSČ, město] (dále jen <b>„Odběrné místo“</b>).</p>
 
@@ -1355,7 +1361,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Dědické řízení"]
         },
 "Přijetí Usnesení ještě před ukončením smlouvy, přejí si vyplatit na BÚ v usnesení uveden jeden dědic (neznáme tedy zda FA bude přeplatek/nedoplatek)": {
-  text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+  text: `${OSLOVENI_BLOCK}
 <p>potvrzujeme přijetí Vašich podkladů, které jsme předali ke zpracování. Po ukončení smlouvy a dodávky do odběrného místa vystavíme konečnou fakturu. Případný přeplatek či nedoplatek bude vypořádán s osobou oprávněnou dle usnesení o dědictví.</p>
 <p>V usnesení je jako dědic/dědička uveden/a <b>XXXXXX</b>. Pro vyplacení případného přeplatku na bankovní účet přikládáme k vyplnění čestné prohlášení (v příloze). Prosíme o dodržení těchto náležitostí:</p>
 <ul>
@@ -1369,7 +1375,7 @@ ${PORTAL_BLOCK}`,
   tags: ["Dědické řízení"]
 },
 "Přijetí Usnesení ještě před ukončením smlouvy, přejí si vyplatit na BÚ v usnesení uvedeno více dědiců (neznáme tedy zda FA bude přeplatek/nedoplatek)": {
-  text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+  text: `${OSLOVENI_BLOCK}
 <p>potvrzujeme přijetí Vašich podkladů, které jsme předali ke zpracování. Po ukončení smlouvy a dodávky do odběrného místa vystavíme konečnou fakturu. Případný přeplatek či nedoplatek bude vypořádán s osobou oprávněnou dle usnesení o dědictví.</p>
 <p>V usnesení je uvedeno více dědiců (<b>XXXXXX</b>). Pro vyplacení případného přeplatku na bankovní účet přikládáme k vyplnění čestné prohlášení (v příloze). Prosíme o dodržení těchto náležitostí:</p>
 <ul>
@@ -1393,7 +1399,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Platby"]
         },
         "Upomínka - před předáním na Agenturu": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>dnes jsme se Vás pokusili telefonicky kontaktovat, ale nebyli jsme úspěšní, proto volíme tuto formu kontaktu.</p>
 <p>I přes opakované výzvy evidujeme ke dni <strong>xxxxx</strong> pohledávky v celkové výši <strong>xxxx,-Kč</strong>, tato částka zahrnuje:</p>
 <li>Zálohové platby za měsíce: <strong>xxxx</strong>,<strong>xxxx</strong>,<strong>xxxxx</strong> </li>
@@ -1411,7 +1417,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Platby"]
         },
         "Prosba o doložení platby": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>Vámi uvedenou platbu ve výši XXX Kč v systému neevidujeme.</p>
 <p>Prosíme Vás tedy o zaslání potvrzení provedení platby na e-mail info@epet.cz. Následně potvrzení předáme na naše finanční oddělení k dohledání.</p>
 <p>Děkujeme Vám za spolupráci. </p>
@@ -1420,14 +1426,15 @@ ${PORTAL_BLOCK}`,
                 tags: ["Platby"]
         },
         "Potvrzení zk - že na základě potvrení o platbě je na jeho ZÚ vše v pořádku uhrazeno": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme za zaslané potvrzení o platbě. Rádi bychom Vás informovali, že se nám na základě tohoto potvrzení podařilo platbu dohledat. Na Vašem zákaznickém účtu nyní evidujeme vše v pořádku uhrazeno.</p>
 ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Platby"]
         },
         "Hrazení plateb pod špatným variabilním symbolem": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,<p>
+                text: `${OSLOVENI_BLOCK}
+<p>
 <p>při kontrole Vašeho zákaznického účtu jsme zjistili, že nám pravidelné zálohové platby hradíte pod špatným variabilním symbolem. Při následujících platbách uvádějte prosím tento symbol: XXXXXX.</p>
 <p>Pro jistotu Vám v příloze zasíláme i aktuální rozpis záloh, kde tento variabilní symbol máte také uvedený.</p>
 <p>Vaši platbu tak budeme moct rychleji identifikovat a poté správně zaevidovat na Váš zákaznický účet.</p>
@@ -1436,7 +1443,8 @@ ${PORTAL_BLOCK}`,
                 tags: ["Platby"]
         },
         "Hrazení plateb bez variabilního symbolu": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,<p>
+                text: `${OSLOVENI_BLOCK}
+<p>
 <p>při kontrole Vašeho zákaznického účtu jsme zjistili, že nám pravidelné zálohové platby hradíte bez variabilního symbolu. Při následujících platbách uvádějte prosím tento symbol: XXXXXX.</p>
 <p>Pro jistotu Vám v příloze zasíláme i aktuální rozpis záloh, kde tento variabilní symbol máte také uvedený.</p>
 <p>Vaši platbu tak budeme moct rychleji identifikovat a poté správně zaevidovat na Váš zákaznický účet.</p>
@@ -1455,7 +1463,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Platby"]
         },
         "Ověření nastavení způsobu úhrady záloh přes INKASO": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>při kontrole Vašeho zákaznického účtu jsme zjistili, že se nám nedaří provádět inkasování plateb z bankovního účtu, který byl uveden. Rádi bychom Vás požádali o kontrolu správnosti čísla účtu anebo nastavení podmínek inkasování u Vaší banky.</p>
 <p>V současnosti u Vás evidujeme toto číslo účtu: <strong>XXXXXXXXXXX</strong>.</p>
 <p>Jelikož se nám nepodařilo inkasovat aktuálně splatnou zálohovou platbu, učiňte tak jednorázově převodem na číslo účtu <strong>9960227/0100</strong> pod variabilním symbolem <strong>XXXXXX</strong>. </p>
@@ -1464,7 +1472,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Platby"]
         },
         "SIPO – ověření spojovacího čísla": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>při kontrole Vašeho zákaznického účtu jsme zjistili, že se nám nedaří provádět inkasování plateb prostřednictvím SIPO. Rádi bychom Vás požádali o kontrolu spojovacího čísla, které naleznete na SIPO složence v pravém horním rohu, na druhém řádku.</p>
 <p>V současnosti u Vás evidujeme toto spojovací číslo: <strong>XXXXXXXXXXX</strong>.</p>
 <p>Jelikož se nám nepodařilo inkasovat aktuálně splatnou zálohovou platbu, učiňte tak jednorázově převodem na <strong>číslo účtu 9960227/0100</strong> pod variabilním symbolem <strong>XXXXXX</strong>.</p>
@@ -1473,7 +1481,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Platby"]
         },
         "Nesrovnalosti ve způsobu úhrady zálohových plateb": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>při kontrole Vašeho zákaznického účtu jsme zjistili, že využíváte jiný způsob hrazení zálohových plateb, než byl sjednán ve smlouvě nebo dohodnutý v minulosti.</p>
 <p>Rádi bychom Vás požádali o potvrzení, jakým způsobem máme tedy trvale nastavit způsob plateb na Vašem zákaznickém účtu. Vaše platby tak budeme moci přehledně a rychle evidovat.</p>
 ${PORTAL_BLOCK}`,
@@ -1481,7 +1489,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Platby"]
         },
         "Potvrzení závazků - KONFIRMACE (Vzájemné započtení pohledávek)": {
-                text: `<p>Dobrý den,pane XXX, / paní XXX, </p>
+                text: `${OSLOVENI_BLOCK}
 <p>je nám líto, ale naše společnost konfirmace nepotvrzuje.</p>
 <p>Děkujeme za pochopení. </p>
 ${PORTAL_BLOCK}`,
@@ -1489,7 +1497,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Platby"]
         },
         "Žádost o doložení čísla bankovního účtu": {
-                text: `<p>Dobrý den,pane XXX, / paní XXX, </p>
+                text: `${OSLOVENI_BLOCK}
 <p>v rámci kontroly doložené smlouvy jsme zjistili, že byla označena možnost vyplácení přeplatků na bankovní účet. Nicméně ve smlouvě není uvedeno číslo účtu, na který by měly být případné přeplatky zasílány.</p>
 <p>Dovolujeme si Vás proto požádat o jeho doplnění. Číslo účtu můžete zaslat odpovědí na tento e-mail nebo prostřednictvím telefonického hovoru na naší zákaznickou linku. </p>
 <p>Děkujeme za spolupráci a v případě dotazů jsme Vám k dispozici. </p>
@@ -1507,7 +1515,8 @@ ${PORTAL_BLOCK}`,
                 tags: ["Platby"]
         },
         "Otevřené platby - Zákazníkovi vracíme platbu, kterou uhradil pod chybným VS": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,<p>
+                text: `${OSLOVENI_BLOCK}
+<p>
 <p>dovolujeme si Vás informovat, že částka ve výši <strong> XXXX Kč</strong>, kterou jste uhradil(a) pod chybným variabilním symbolem, Vám bude vrácena na bankovní účet číslo <strong> XXXXX </strong></p>
 <p>Upozorňujeme, že platby je nutné hradit výhradně pod správným variabilním symbolem uvedeným v <strong>platebním kalendáři</strong>, který naleznete v příloze tohoto e-mailu.</p>
 <p>Zároveň Vám v příloze zasíláme <strong>daňový doklad</strong> k vrácené platbě.</p>
@@ -1516,7 +1525,8 @@ ${PORTAL_BLOCK}`,
                 tags: ["Platby"]
         },
         "Otevřené platby - Zákazníkovi vracíme platbu, kterou uhradil mimo PK (nadrámec)": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,<p>
+                text: `${OSLOVENI_BLOCK}
+<p>
 <p>dovolujeme si Vás informovat, že částka ve výši <strong>XXXX Kč</strong>, kterou jste uhradil(a) nad rámec předepsaných záloh, Vám bude vrácena na bankovní účet číslo <strong>XXXXX</strong>.</p>
 <p>Zároveň si Vás dovolujeme upozornit, že platby byly hrazeny ve vyšší výši, než stanovuje aktuální rozpis záloh. Doporučujeme proto upravit trvalý příkaz dle <strong>platného platebního kalendáře</strong>, který Vám zasíláme v příloze tohoto e-mailu.</p>
 <p>Zároveň Vám v příloze zasíláme <strong>daňový doklad</strong> k vrácené platbě.</p>
@@ -1526,7 +1536,8 @@ ${PORTAL_BLOCK}`,
         },
 "Otevřené platby - Zákazníkovi vracíme platbu, kterou uhradil mimo PK (nadrámec)": {
     "text": `
-<p>Dobrý den, pane XXX, / paní XXX,<p>
+${OSLOVENI_BLOCK}
+<p>
 <p>děkujeme Vám za Váš e-mail.</p>
 <p>Rádi bychom Vás informovali, že částka <strong>{{castka_vracena}} Kč</strong>, kterou jste obdržel/a dne <strong>{{datum_vratky}}</strong>, byla vrácena z naší strany na základě Vámi provedené platby ve výši <strong>{{castka_uhrazena}} Kč</strong>.</p>
 <p>Po posledním vyúčtování ze dne <strong>{{datum_vyuctovani}}</strong> došlo k úpravě platebního kalendáře, ve kterém je aktuální výše měsíční zálohy stanovena na <strong>{{aktualni_zaloha}} Kč</strong>. Z Vaší strany nám však nadále chodí platby ve výši <strong>{{vase_trvala_platba}} Kč</strong>, tedy vyšší částky, než odpovídá aktuálnímu platebnímu kalendáři.</p>
@@ -1543,7 +1554,7 @@ ${PORTAL_BLOCK}`,
 
         /* Zálohy */
         "Úprava výše záloh - Navýšení s informací dle § 11 odst. 6": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>potvrzujeme Vám změnu zálohových plateb na částku <strong>XXXXX Kč</strong>. Tato změna bude provedena od <strong>MM.RRRR.</strong></p>
 <p>Nový platební kalendář Vám bude zaslán v samostatném e-mailu. / poštou.</p>
 <p><i>Informujeme Vás, že v důsledku navýšení záloh může při vyúčtování vzniknout vyšší přeplatek. Vzhledem k této úpravě již rozpis záloh neodpovídá postupu dle § 11 odst. 6 energetického zákona.</i></p>
@@ -1553,7 +1564,7 @@ ${PORTAL_BLOCK}`,
         },
 
         "Prosba o zaslání fotografie měřidla - stávající zákazník": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>pro změnu zálohy na Vámi požadovanou výši Vás prosíme o zaslání aktuální fotografie měřidla.</p>
 <p>Na základě fotografie bude Váš požadavek předán na příslušné oddělení k posouzení. O výsledku budete následně co nejdříve informováni.</p>
 ${PORTAL_BLOCK}`,
@@ -1561,7 +1572,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Zálohy"]
         },
         "Prosba o zaslání fotografie měřidla - Nový zákazník": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>pro změnu zálohy na Vámi požadovanou výši Vás prosíme o zaslání aktuální fotografie měřidla, včetně konečného vyúčtování od původního dodavatele</p>
 <p>Na základě těchto dokumentů bude Váš požadavek předán na příslušné oddělení k posouzení. O výsledku budete následně co nejdříve informováni.</p>
 ${PORTAL_BLOCK}`,
@@ -1569,7 +1580,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Zálohy"]
         },
         "Snížení zálohových plateb - zamítnutí": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>je nám líto, ale Vašemu požadavku nemůžeme v tuto chvíli vyhovět.</p>
 <p>Výše záloh, kterou jsme Vám stanovili v platebním kalendáři, se odvíjí od smluvní ceny a očekávaného množství dodané energie.</p>
 <p>V případě, že disponujete informacemi, které prokazují důvodné snížení plateb na daném odběrném místě - instalace fotovoltaické elektrárny, přechod na jiný způsob vytápění (instalace plynového kotle, instalace tepelného čerpadla), případně konečné vyúčtování od původního dodavatele, rádi bychom Vás požádali o jejich doložení <b>(protokol o instalaci, konečné vyúčtování + aktuální foto měřidla s datumovkou)</b>. Následně posoudíme požadavek na výši zálohy.</p>
@@ -1579,14 +1590,14 @@ ${PORTAL_BLOCK}`,
                 tags: ["Zálohy"]
         },
         "Kopie rozpisu záloh": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>na základě Vašeho požadavku Vám zasíláme kopii platebního kalendáře k dodávkám energií.</p>
 ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Zálohy"]
         },
         "Platební kalendář – daňový doklad": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>rádi bychom Vás informovali, že platební kalendář, který jsme Vám zaslali, splňuje všechny zákonné náležitosti a slouží jako daňový doklad.</p>
 <p>Daňový doklad navíc Vám vystavíme pouze na přijaté platby, které nám zašlete nad rámec částek stanovených platebním kalendářem.</p>
 ${PORTAL_BLOCK}`,
@@ -1594,7 +1605,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Zálohy"]
         },
         "Potvrzení změny záloh": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>potvrzujeme Vám změnu zálohových plateb na částku <strong>XXXXX Kč</strong>. Tato změna bude provedena od <strong>MM.RRRR.</strong></p>
 <p>Nový platební kalendář Vám bude zaslán v samostatném e-mailu. / poštou.</p>
 ${PORTAL_BLOCK}`,
@@ -1602,7 +1613,8 @@ ${PORTAL_BLOCK}`,
                 tags: ["Zálohy"]
         },
         "Snížení zálohových plateb - zamítnutí na minumum": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,<p>
+                text: `${OSLOVENI_BLOCK}
+<p>
 <p>je nám líto, ale měsíční zálohy nelze snížit na Vámi požadovanou částku.</p>
 <p>Součástí plateb za dodávku energií jsou i položky, které je nutné hradit (např. distribuční poplatky). Pokud by tedy byly zálohy sníženy na Vámi požadovanou částku, nedocházelo by k pokrytí těchto poplatků.</p>
 <p>Děkujeme Vám za pochopení.</p> 
@@ -1611,7 +1623,8 @@ ${PORTAL_BLOCK}`,
                 tags: ["Zálohy"]
         },
           "Rozpis záloh – Nový zákazník": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,<p>
+                text: `${OSLOVENI_BLOCK}
+<p>
 <p>děkujeme, že jste si vybral/a naši společnost pro dodávky energií.</p>
 <p>Rádi bychom Vás informovali, že k vystavení a odeslání platebního kalendáře (rozpisu záloh) dochází standardně <b>do 14 dnů od data zahájení dodávek.</b></p>
 <p>Ve Vašem případě začínají dodávky u naší společnosti od <b>{{datum_zahajeni}} </b>, proto Vás prosíme o krátké strpení.</b></p>
@@ -1623,7 +1636,7 @@ ${PORTAL_BLOCK}`,
         },
         /* SPK */
         "Žádost o vystavení SPK": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX, </p>
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme za Vaši žádost o vystavení splátkového kalendáře (SPK). Rádi bychom Vás informovali o podmínkách, které je nutné splnit, aby mohla být Vaše žádost posouzena a schválena:</p>
 <ul>
 <li><b>Stav záloh:</b></li> Je nezbytné, aby byly uhrazeny všechny zálohy po splatnosti. Pokud máte aktuálně neuhrazené zálohy, prosíme o jejich doplacení před podáním žádosti o SPK. [<strong>případně zákazníkovi vypíšeme zda u něj evidujeme zálohy po splatnosti)</strong>]
@@ -1650,7 +1663,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["SPK"]
         },
         "Výzva k úhradě SPK - Zákazník SPK nehradí ": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX, </p>
+                text: `${OSLOVENI_BLOCK}
 <p>rádi bychom Vás informovali, že k datu <strong>XXXXXXXX</strong> Vám byl schválen splátkový kalendář na nedoplatkovou fakturu ve výši <strong>XXXXXX Kč</strong>. O této skutečnosti jsme Vás informovali e-mailem/telefonicky dne <strong>XXXXXXX</strong>,ve kterém byl uveden rozpis jednotlivých měsíčních splátek.</p>
 <p>Do dnešního dne však evidujeme, že splátky nebyly uhrazeny. Žádáme Vás proto o nápravu této situace. V opačném případě dojde ke zrušení splátkového kalendáře a bude nutné celý dluh ve výši <strong>XXXXXXX Kč</strong> uhradit neprodleně v plné výši.</p> 
 <p>Pokud platba nebude provedena, může být pohledávka předána k inkasnímu vymáhání.</p>
@@ -1661,14 +1674,14 @@ ${PORTAL_BLOCK}`,
         },
         /* Změny platebního způsobu */
         "ZMĚNA ÚČTU PRO ZASÍLÁNÍ PŘEPLATKŮ": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>na základě Vašeho požadavku potvrzujeme, že jsme změnili číslo bankovního účtu pro zasílání přeplatků za odběr energií. Nové číslo bankovního účtu je <strong>XXXX</strong>.</p> 
 ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Změny platebního způsobu"]
         },
         "ZMĚNA HRAZENÍ ZÁLOH PŘES INKASO": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>na základě Vašeho požadavku potvrzujeme nastavení nového čísla bankovního účtu pro hrazení plateb přes inkaso.</p>
 <p>Nové číslo bankovního účtu je <strong>XXXX</strong>. </p>
 ${PORTAL_BLOCK}`,
@@ -1676,14 +1689,14 @@ ${PORTAL_BLOCK}`,
                 tags: ["Změny platebního způsobu"]
         },
         "ZMĚNA HRAZENÍ ZÁLOH PŘES SIPO - PŘED 24. DNEM MĚSÍCE": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>na základě Vašeho požadavku jsme upravili způsob hrazení záloh. Nyní jsou Vaše platby tedy hrazeny prostřednictvím SIPO a Vaše spojovací číslo je <strong>XXXX</strong>.</p>
 ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Změny platebního způsobu"]
         },
         "ZMĚNA HRAZENÍ ZÁLOH PŘES SIPO - PO 24. DNI MĚSÍCE": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>na základě Vašeho požadavku jsme upravili způsob hrazení záloh. Nyní jsou Vaše platby tedy hrazeny prostřednictvím SIPO a Vaše spojovací číslo je <strong>XXXX</strong>.</p>
 <p>Jelikož však Česká pošta již v tomto měsíci nepřijímá požadavky na zálohy, je nutné, abyste v následujícím měsíci uhradili zálohu ještě stávajícím způsobem. Další měsíce budou již hrazeny dle nově nastaveného SIPO.</p>
 ${PORTAL_BLOCK}`,
@@ -1691,7 +1704,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Změny platebního způsobu"]
         },
         "ZMĚNA ZASÍLÁNÍ PŘEPLATKU ZE SLOŽENKY NA BANKOVNÍ ÚČET": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>na základě Vašeho požadavku Vám potvrzujeme, že jsme nastavili změnu zasílání případných přeplatků za odběr energií na bankovní účet s číslem <strong>XXXX</strong>.</p>
 ${PORTAL_BLOCK}`,
                 files: [],
@@ -1699,7 +1712,7 @@ ${PORTAL_BLOCK}`,
         },
         /* Kontaktní osoby */
         "JAK PŘIDAT KONTAKTNÍ OSOBU": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>je nám líto, ale bohužel Vás neevidujeme jako kontaktní osobu pro vyřizování požadavků a sdělování informací. Proto bychom Vás rádi požádali o doložení plné moci nebo zaslání žádosti o přidání Vašeho kontaktu, a to od kontaktní osoby využívající e-mailovou adresu, kterou v našem systému evidujeme.</p>
 <p>V plné moci či zaslaném požadavku kontaktní osoby prosím vždy uveďte celé jméno, e-mailovou adresu a telefonní číslo.</p>
 <p>Poté bude možné Vám sdělovat podrobnější informace týkající se odběru energií.</p>
@@ -1709,7 +1722,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Kontaktní osoby"]
         },
         "NENÍ KONTAKTNÍ E-MAIL": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX, </p>
+                text: `${OSLOVENI_BLOCK}
 <p>je nám líto, ale Váš požadavek nemůžeme zpracovat, jelikož Váš e-mail, ze kterého nám píšete neevidujeme jako kontaktní.</p>
 <p>Prosíme Vás o zaslání požadavku z e-mailu, který jste uvedli do smlouvy jako kontaktní, případně nás <b>telefonicky</b> kontaktujte.</p>
 <p>Na základě tel. hovoru provedeme Vaši identifikaci a aktualizujeme kontaktní údaje.</p>
@@ -1719,7 +1732,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Kontaktní osoby"]
         },
         "NENÍ KONTAKTNÍ E-MAIL - OZ PÍŠE POŽADAVEK, ALE NEMÁME DOLOŽENOU PM PRO ZASTUPOVÁNÍ": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX, </p>
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme za Váš e-mail. </p><br>
 <p>Bohužel neevidujeme podepsanou plnou moc opravňující k zastupování zákazníka, a z tohoto důvodu nemůžeme Váš požadavek v tuto chvíli zpracovat. </p>
 <p>Prosíme Vás proto o doložení platné plné mocí. Po jejím obdržení se Vaším požadavkem budeme ihned dále zabývat.</p>
@@ -1731,7 +1744,7 @@ ${PORTAL_BLOCK}`,
 
         /* Výkup */
         "FVE - Dle nové legislativy - Nepoužíváme od 10.04.2025": {
-                text: `<p>Dobrý den, pane XXX / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme za Vaši zprávu. Vámi uvedený výrobní EAN jsme zaevidovali a počítáme také s převzetím
 odpovědnosti za odchylku.</p>
 <p><i> Rádi bychom Vás požádali o doplnění následujících informací:</i></p>
@@ -1748,7 +1761,7 @@ ${PORTAL_BLOCK}
                 tags: ["Výkup"]
         },
         "FVE - Dle nové legislativy - Odpověď zákazníkovi po doložení informací, které jsme po něm chtěli - Nepoužíváme od 10.04.2025": {
-                text: `<p>Dobrý den, pane XXX / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme za zaslání požadovaných informací. Vaše údaje jsme zaevidovali a zahrneme je do dalšího postupu.</p>
 <p>Jak jsme již avizovali, o dalším průběhu Vás budeme informovat.</p>
 <p>Děkujeme za spolupráci, trpělivost a přejeme hezký den.</p>
@@ -1878,7 +1891,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Přepisy"]
         },
         "Přepis odběrného místa - Zaslání Odkazu (kdy např. zákazník reaguje v hovoru, že tedy zkusí formulář, nebo že neví jak ho vyplnit)": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>na základě naší telefonické dohody Vám zasíláme odkaz na elektronický formulář pro přepis odběrného místa. Tento formulář můžete vyplnit a odeslat prostřednictvím následujícího odkazu: <a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank">Formulář k přepisu odběrného místa</a>.</p>
 <p><b>Máte potíže s online formulářem?</b> V tom případě nám můžete potřebné údaje zaslat přímo v odpovědi na tento e-mail. Uveďte prosím následující doplňující údaje k novému odběrateli:</p>
 <ul>
@@ -1898,7 +1911,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Přepisy"]
         },
         "Přepis odběrného místa - Reakce na potíže s online formulářem": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme za Váš e-mail a omlouváme se za komplikace s online formulářem. Rozumíme, že ne každému tento způsob vyhovuje. Přepis odběrného místa můžeme vyřídit i <b>bez vyplnění formuláře</b> – stačí, když nám v odpovědi na tento e-mail zašlete následující údaje k novému odběrateli:</p>
 <ul>
   <li><b>Jméno a příjmení / Název společnosti</b></li>
@@ -1920,7 +1933,7 @@ ${PORTAL_BLOCK}`,
 
         /* Zranitelný zákazník */
         "Upozornění na blížící se konec platnosti potvrzení pro přiznání práv zranitelného zákazníka": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>dovolujeme si Vás kontaktovat ohledně blížícího se konce platnosti Vašeho potvrzení o splnění podmínek pro přiznání zvláštních práv zranitelného zákazníka.</p>
 <p>Po datu <strong>XX.XX.XXXX</strong> Vám bude status zranitelného zákazníka ukončen. Abychom Vám mohli práva zranitelného zákazníka přiznávat i po tomto termínu, prosíme Vás o doložení nového lékařského potvrzení vydaného Vaším ošetřujícím lékařem na následující období. Vzor dokumentu naleznete ke stažení také na našich webových stránkách na adrese <a href="https://www.epet.cz/zranitelny-zakaznik/" target="_blank">Zranitelný zákazník</a>.</p>
 <p>Nové potvrzení pošlete prosím nejpozději do výše uvedeného data. V případě, že nám nebude dokument doložen, přejde Vaše odběrné místo <strong>EAN XXXXXXXXXX</strong>, na adrese <strong>XXXXXXXXXXXXXXXXX</strong> do standardního režimu, na který se nevztahují práva spojená se statusem zranitelného zákazníka.</p>
@@ -1930,7 +1943,7 @@ ${PORTAL_BLOCK}`,
         },
         /* Zákaznický portál */
         "Zákaznický portál - Registrace": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme za Váš e-mail a rádi bychom Vás informovali, že jsme úspěšně provedli registraci Vašeho účtu.
 Registrační e-mail s přístupovými údaji a pokyny k aktivaci Vám bude doručen v samostatné zprávě. Pokud byste e-mail neobdržel(a) do několika minut, prosíme o kontrolu složky se spamem nebo hromadnou poštou.</p>
 ${PORTAL_BLOCK}`,
@@ -1938,7 +1951,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Zákaznický portál"]
         },
         "Zákaznický portál - Sloučení účtů": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>rádi bychom Vás informovali, že jsme na základě Vašeho požadavku úspěšně provedli sloučení Vašich zákaznických účtů v rámci "Zákaznického portálu".
 Veškeré sloučené účty nyní naleznete v portálu pod svým jménem, umístěné vpravo nahoře. Nově budete mít možnost:
 <li>změnit výchozí účet dle Vašich preferencí,</li>
@@ -1949,7 +1962,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Zákaznický portál"]
         },
         "Zákaznický portál - Deaktivace": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>na základě Vašeho požadavku jsme úspěšně deaktivovali Váš přístup do Zákaznického portálu.
 Pokud byste si svou volbu v budoucnu rozmyslel(a) a přál(a) si přístup do portálu znovu aktivovat, neváhejte se na nás obrátit. Rádi Vám jej kdykoliv obnovíme.
 Děkujeme, že jste využíval(a) náš Zákaznický portál.</p>
@@ -1958,14 +1971,14 @@ ${PORTAL_BLOCK}`,
                 tags: ["Zákaznický portál"]
         },
         "Zákaznický portál - Odpověď na úkol - Všebecné dotazy z webu ": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme za váš dotaz, týkající se <strong> stručný popis požadavku</strong>, který jste zadal/a prostřednictvím našeho zákaznického portálu.Rádi bychom vám poskytli odpověď:</p>
 <p>Sem uveďte konkrétní odpověď na dotaz</p>`,
                 files: [],
                 tags: ["Zákaznický portál"]
         },
         "Zákaznický portál - Odpověď na zapomenuté heslo ": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>pokud se Vám nedaří přihlásit do zákaznického portálu s heslem, které jste si nastavil/a, případně jste zapomněl/a heslo z automaticky vygenerovaného e-mailu, je nutné provést <b>reset hesla.</b></p>
 <p>Prosíme, klikněte na následující odkaz: <a href="https://zakaznici.epet.cz/forgotten-password" target="_blank">Reset hesla</a></p>
 <p>Na zadanou e-mailovou adresu Vám bude doručeno nové heslo, se kterým se přihlásíte do portálu.</p>
@@ -1975,7 +1988,7 @@ ${PORTAL_BLOCK}`,
         },
         /* Přeplatky */
         "Žádost o potvrzení údajů pro vrácení přeplatku - Vrácená složenka": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>rádi bychom Vás informovali, že se nám vrátila složenka s přeplatkem, který jsme Vám zasílali. Abychom mohli přeplatek co nejdříve vyřídit, prosíme Vás o následující:</p>
 <ul>
 <li><strong>Potvrzení správnosti Vaší korespondenční adresy</strong> – zda je stále aktuální adresa: <strong> uvést aktuální kam přeplatek odcházel </strong> správná, případně o sdělení nové adresy.</li>
@@ -1987,7 +2000,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Přeplatky"]
         },
         "Žádost o sdělení nového bankovního účtu - Vrácená platba z důvodu neexistujícího bankovního účtu": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>dovolujeme si Vás informovat, že se nám vrátil přeplatek ve výši <strong> částka Kč</strong>, který jsme zasílali na bankovní účet<strong> číslo účtu kam platba odcházela</strong>, jenž je bohužel neexistující.</p>
 <p>Pro úspěšné zpracování vrácení této částky Vás tímto zdvořile žádáme o sdělení nového bankovního účtu, na který můžeme přeplatek odeslat. Prosíme o zaslání těchto údajů co nejdříve, abychom mohli platbu bez odkladu uskutečnit.</p>
 <p>Vaše údaje můžete zaslat odpovědí na tento e-mail nebo nás kontaktovat na níže uvedeném telefonním čísle</p>
@@ -1996,14 +2009,14 @@ ${PORTAL_BLOCK}`,
                 tags: ["Přeplatky"]
         },
         "Informace pro ZK - přeplatek bude vyplacen na BÚ k nejbližšímu termínu": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>dovolujeme si Vás informovat, že přeplatek ve výši <strong> částka Kč</strong>, bude vyplacen na Váš bankovní účet:<strong> číslo účtu kam přeplatek bude odcházet</strong> v nejbližším možném termínu.</p>
 ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Přeplatky"]
         },
         "Vrácená složenka – potvrzení adresy / převod na účet  (nejedená se o přeplatky, ale o platby nad rámec PK)": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>rádi bychom Vás informovali, že se nám vrátila poštovní poukázka (složenka) na částku <strong>XXX Kč</strong>, kterou jsme Vám zasílali z důvodu platby nad rámec platebního kalendáře za <strong>XXXXX</strong>.</p>
 <p>Podle předpisu byla záloha <strong>XXX Kč</strong>, od Vás jsme obdrželi <strong>XXX Kč</strong> – rozdíl <strong>XXX Kč</strong> jsme odeslali složenkou na adresu <strong>XXX</strong>, složenka se však vrátila jako nedoručená.</p>
 <p>Abychom mohli přeplatek vyřídit co nejdříve, prosíme o:</p>
@@ -2019,7 +2032,7 @@ ${PORTAL_BLOCK}`,
 
 
         "Vrácená platba – z důvodu neexistujícího bankovního účtu (nejedená se o přeplatky, ale o platby nad rámec PK)": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>rádi bychom Vás informovali, že se nám vrátila platba na částku <strong>XXX Kč</strong>, kterou jsme Vám zasílali na bankovní účet <b>číslo účtu kam platba odcházela </b>, z důvodu platby nad rámec platebního kalendáře za <strong>XXXXX</strong>.</p>
 <p>Podle předpisu byla záloha <strong>XXX Kč</strong>, od Vás jsme obdrželi <strong>XXX Kč</strong> – rozdíl <strong>XXX Kč</strong>. Platba se bohužel vrátila z důvodu, že výše uvedený bankovní účet je bohužel neexistující.</p> <br>
 <p>Pro úspěšné zpracování vrácení této částky Vás tímto zdvořile žádáme o sdělení nového bankovního účtu, na který můžeme přeplatek odeslat. Prosíme o zaslání těchto údajů co nejdříve, abychom mohli platbu bez odkladu uskutečnit.</p>
@@ -2029,7 +2042,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Přeplatky"]
         },
         "Informace pro ZK - nutné vrátit přeplatek, který mu byl chybně vyplacen": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>rádi bychom Vás informovali, že v rámci naší interní kontroly jsme zjistili administrativní chybu ve vystavení přeplatku ve výši  <strong> částka Kč</strong>,který Vám byl omylem připsán. Tento přeplatek Vám bohužel nenáleží, a proto bychom Vás chtěli požádat o jeho vrácení.</p>
 <p>Prosíme Vás o provedení úhrady na níže uvedený bankovní účet:</p>
 <li><strong>Číslo účtu:</strong> [bankovní údaje]</li>
@@ -2041,7 +2054,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Přeplatky"]
         },
         "Informace pro ZK - přeplatek odešel složenkou i přes nastavené BÚ": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>rádi bychom Vás informovali o stavu Vašeho přeplatku. Přestože jste v našem systému nastavili bankovní účet pro vyplacení přeplatku, bohužel se tento požadavek nepodařilo zpracovat v původně plánovaném termínu. Z tohoto důvodu byl přeplatek odeslán dle původního nastavení prostřednictvím poštovní poukázky.</p>
 <p>V současné situaci máte dvě možnosti:</p>
 <ol>
@@ -2054,7 +2067,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Přeplatky"]
         },
         "Potvrzení zk. že nové BÚ bylo nastaveno a požadavek na vyplacení předán na finance": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme za zaslání správného čísla bankovního účtu <strong>nové BÚ</strong>, které jsme zaevidovali k Vašemu zákaznickému účtu.</p>
 <p>Informace jsme předali k dalšímu zpracování. Jakmile dojde k vyplacení přeplatku, budeme Vás o této skutečnosti neprodleně informovat</p>
 
@@ -2064,7 +2077,7 @@ ${PORTAL_BLOCK}`,
         },
         /* Bezzálohový režim */
         "Žádost o Bezzálohový režim": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p> 
+                text: `${OSLOVENI_BLOCK} 
 <p>děkujeme za Vaši dosavadní spolupráci. Na základě Vašeho zájmu o přechod na <strong> bezzálohový režim </strong> Vám tímto zasíláme podmínky, které je nutné splnit:</p>
 <li>Nemít po splatnosti žádné zálohy ani vyúčtování. (V případě, že u zákazníka evidujeme částky po splatnosti musíme upozornit na jejich úhradu)</li>
 <li>Mít měření typu B.</li>
@@ -2079,7 +2092,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Bezzálohový režim"]
         },
         "Žádost o Bezzálohový režim - Schváleno": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>rádi bychom Vás informovali, že na základě splnění všech podmínek Vám byl schválen <strong>bezzálohový režim</strong>. To znamená, že od nynějška již není nutné <strong>hradit měsíční zálohy</strong>.</p>
 <p>Namísto záloh Vám budeme vystavovat faktury odpovídající skutečné spotřebě, a to každý měsíc dle standardních fakturačních podmínek.</p>
 ${PORTAL_BLOCK}`,
@@ -2087,7 +2100,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Bezzálohový režim"]
         },
         "Žádost o Bezzálohový režim - Zamítnuno": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme za Vaši žádost o zařazení do bezzálohového režimu.</p>
 <p>Po pečlivém posouzení Vaší žádosti Vám bohužel musíme sdělit, že aktuálně nesplňujete podmínky pro zařazení do tohoto režimu. Bezzálohový režim je v současné době umožněn pouze <strong>firemním zákazníkům</strong> s typem měření <strong>B</strong>.</p>
 <p>Pokud se v budoucnu změní podmínky Vašeho odběru a budete splňovat uvedené požadavky, rádi Vaši žádost znovu posoudíme.</p>
@@ -2098,7 +2111,7 @@ ${PORTAL_BLOCK}`,
 
         /* Smluvní pokuty */
         "Výpočet smluvní pokuty": {
-                text: `<p>Dobrý den, pane XXX / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>na základě našeho dnešního telefonického hovoru Vám níže zasíláme informaci k orientační výši smluvní pokuty vztahující se ke smlouvě elektřiny/plynu č. <strong>XXXXX</strong>.</p>
 <p>Částka činí <strong>XXXXX Kč</strong> a je vypočtena na základě předpokladu, že ukončení odběrného místa jiným dodavatelem proběhne nejpozději k <strong>D+10 PD</strong>.</p>
 <p>Upozorňujeme, že v případě, že by k ukončení odběrného místa došlo k jinému datu, může se skutečná výše smluvní pokuty lišit.
@@ -2107,7 +2120,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Smluvní pokuty"]
         },
         "Výzva k úhradě smluvní pokuty": {
-                text: `<p>Dobrý den, pane XXX / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>informujeme Vás, že u Vašeho odběrného místa <b>EAN/EIC XXXXXXXXX</b> došlo k porušení smluvních podmínek z důvodu <b>nezahájení dodávky energií</b> nebo <b>předčasného ukončení dodávky energií</b>.</p>
 <p>Na základě toho uplatňujeme naše právo na vystavení smluvní pokuty. Informace o výši této pokuty a způsobu její úhrady naleznete v přiložené faktuře.</p>
 ${PORTAL_BLOCK}`,
@@ -2116,7 +2129,7 @@ ${PORTAL_BLOCK}`,
         },
 
         "Přezkoumání smluvní pokuty - je oprávněná": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>informujeme Vás, že jsme znovu a důkladně prozkoumali důvody udělení smluvní pokuty týkající se odběrného místa <strong>EAN/EIC XXXXXXXXX</strong>.</p>
 <p>I po opětovném přezkoumání však uplatňujeme náš nárok na vystavení smluvní pokuty. Důvodem je <strong>XXXXX</strong> (důvod vypsat z úkolu).</p>
 ${PORTAL_BLOCK}`,
@@ -2125,7 +2138,7 @@ ${PORTAL_BLOCK}`,
         },
 
         "Smluvní pokutu nepožadujeme - storno": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>přehodnotili jsme náš požadavek na úhradu smluvní pokuty pro odběrné místo <strong>EAN/EIC XXXXXXXXX</strong>.</p>
 <p>Na úhradě této pokuty již netrváme.</p>
 ${PORTAL_BLOCK}`,
@@ -2134,7 +2147,7 @@ ${PORTAL_BLOCK}`,
         },
         /* Změna typu měření */
         "Změna typu měření z B na C": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>informujeme Vás, že u odběrného místa EAN <b>[EAN kód]</b> na adrese <b>[Adresa]</b> distributor provedl změnu typu měření z <i> B </i> na <i>C</i>. Od této chvíle tedy bude odečet na Vašem měřidle vykonáván pouze jednou ročně.</p>
 <p>Pokud byste si přáli nadále využívat možnost měsíční fakturace, je to možné na základě zasílání samoodečtů. Tato možnost je zpoplatněná <i> 41,32 Kč/odběrné místo bez DPH</i>. </p>
 <p>Pro využití této možnosti nám zasílejte stavy Vašeho měřidla zaznamenané v tabulce, kterou naleznete v příloze a to nejpozději dle níže uvedených termínů. Využít můžete i <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a>. </p>
@@ -2150,7 +2163,7 @@ ${PORTAL_BLOCK}`,
         },
 
         "Změna typu měření z C na B - Domácnost": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>informujeme Vás, že u odběrného místa EAN <b>xxxxx </b> na adrese <b>xxxxxx</b> distributor provedl změnu typu měření z <b>C</b> na <b>B</b>. Od této chvíle se tedy bude odečet na Vašem měřidle vykonávat za každý kalendářní měsíc.</p>
 <p>Každý měsíc Vám budeme zasílat i fakturu. Rádi bychom Vás také upozornili, že fakturace jednou ročně již není možná. Platební kalendář a placení záloh zůstává nezměněn.</p>
 ${PORTAL_BLOCK}`,
@@ -2159,7 +2172,7 @@ ${PORTAL_BLOCK}`,
         },
 
         "Změna typu měření z C na B - Firma -  nabídka bezzálohového režimu": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>informujeme Vás, že u odběrného místa EAN <b>xxxxx</b> na adrese <b>xxxxxx</b> distributor provedl změnu typu měření z <b>C</b> na <b>B</b>. Od této chvíle se tedy bude odečet na Vašem měřidle vykonávat za každý kalendářní měsíc.</p>
 <p>Každý měsíc Vám budeme zasílat i fakturu. Rádi bychom Vás také upozornili, že fakturace jednou ročně již není možná.</p>
 <p>V návaznosti na tuto změnu Vám rovněž zasíláme podmínky pro případný přechod na bezzálohový režim:</p>
@@ -2177,7 +2190,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Změna typu měření"]
         },
         "Změna typu měření z C na B - Firma - bez nabídky bezzálohového režimu": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>informujeme Vás, že u odběrného místa EAN <b>xxxxx </b> na adrese <b>xxxxxx</b> distributor provedl změnu typu měření z <b>C</b> na <b>B</b>. Od této chvíle se tedy bude odečet na Vašem měřidle vykonávat za každý kalendářní měsíc.</p>
 <p>Každý měsíc Vám budeme zasílat i fakturu. Rádi bychom Vás také upozornili, že fakturace jednou ročně již není možná. Platební kalendář a placení záloh zůstává nezměněn.</p>
 ${PORTAL_BLOCK}`,
@@ -2186,7 +2199,7 @@ ${PORTAL_BLOCK}`,
         },
         /* Odstávka */
         "Plánovaná odstávka dodávek energií": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>kontaktoval nás Váš distributor s informací týkající se přerušení dodávek do odběrného místa s <strong>EAN/EIC XXX</strong> na adrese <strong>XXX</strong>.</p>
 <p>Dodávka bude přerušena v rozmezí <strong>DD.MM.RRRR – DD.MM.RRRR</strong> z důvodu plánované stavební úpravy.</p>
 <p>Distributor však předpokládá, že dodávky nebudou přerušeny po celou uvedenou dobu, ale jen na dobu nezbytně nutnou. O přesném termínu Vás distributor bude informovat prostřednictvím informační vývěsky.</p>
@@ -2196,7 +2209,7 @@ ${PORTAL_BLOCK}`,
         },
         /* Sdílená elektřina */
         "ODPOVĚĎ ZÁKAZNÍKOVI DO MAILU, KDE NAJDE MNOŽSTVÍ NASDÍLENÉ ENERGIE:": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>množství energie, které jste fyzicky sdílel/a, si můžete vypočítat následovně:</p>
 <ol>
   <li><b>Zjistěte svou celkovou spotřebu</b> – Ve svém vyúčtování se podívejte na konečný a počáteční stav
@@ -2210,7 +2223,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Sdílená elektřina"]
         },
         "ODPOVĚĎ ZÁKAZNÍKOVI DO MAILU - INFORMACE,KE SDÍLENÍ": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme za Váš dotaz ke sdílené elektřině.</p>
 <p>Sdílení elektřiny není nabízeno jako samostatný produkt dodavatele, jedná se o proces, který je plně v rukou zákazníka. My, jako dodavatel, do tohoto procesu zákazníkovi nezasahujeme.</p>
 <p>Pro registraci a správu sdílení prosím využijte oficiální portál  <a href="http://edc-cr.cz/"target="_blank">EDC-ČR </a>, kde si založíte účet a nastavíte potřebné údaje. Jakmile EDC-ČR zveřejní a potvrdí Vaše alokace, promítneme sdílené množství do Vašeho vyúčtování.</p>
@@ -2224,7 +2237,7 @@ ${PORTAL_BLOCK}`,
         },
         /* FVE - MIKROZDROJE */
         "Šablona č.1 s Předmětem:Zamítnutý výrobní EAN": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>rádi bychom Vás informovali, že jsme se pokusili převzít za Vás odchylku u Operátora trhu. Bohužel nám bylo přihlášení zamítnuto z důvodu, že nemáte aktivovaný druhý EAN, který Vám přidělil distributor.</p>
     <p>Prosíme Vás proto o co nejrychlejší aktivaci tohoto EAN, nejpozději do 3 pracovních dnů. Po provedení registrace Vám distributor zašle potvrzovací e-mail, ve kterém uvede, že byl EAN aktivován a od jakého data. Jakmile tento e-mail obdržíte, přepošlete nám jej prosím jako potvrzení.</p>
     <p>Vzhledem k vysokému zájmu o převzetí odchylek v tomto období a nutnosti zajištění technických kroků předem, nemůžeme v případě Vaší nesoučinnosti zaručit včasné převzetí odchylky. To může vést k neoprávněnému odběru, za který nese odpovědnost zákazník.</p>
@@ -2234,7 +2247,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Převzetí odchylky"]
         },
         "Šablona č.2 s Předmětem:Žádost o doplnění údajů k připojení Vaší výrobny elektřiny z FVE ": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
  <p>děkujeme Vám za zájem o připojení Vaší výrobny elektřiny z fotovoltaické elektrárny (FVE).</p>
     <p>Abychom mohli zahájit proces připojení, prosíme Vás o zaslání následujících údajů:</p>
     <p><strong>Povinné údaje:</strong><br>
@@ -2260,7 +2273,7 @@ ${PORTAL_BLOCK}`,
         },
         /* Jednotková cena */
         "Zamítnutí reklamace: Jednotková cena (Případně pokud chceme zákazníkovi vysvětlit co to jednotková cena je a jak se počítá - ELE": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>Po pečlivém přezkoumání Vaší žádosti a zaslaných podkladů jsme dospěli k závěru, že průměrná jednotková cena za energie, která je uvedena ve vyúčtování, odpovídá podmínkám smlouvy a aktuálním cenám na trhu. Z tohoto důvodu nemůžeme Vaši reklamaci uznat. Pro lepší porozumění si dovolujeme uvést vysvětlení jednotkové ceny:</p>
 <p>Jednotková cena za energie je stanovena jako celková částka za spotřebu energií (včetně pevných poplatků a daní) vydělená celkovým množstvím odebraných energií. Tato cena zahrnuje náklady na:</p>
 <li>Ceny za dodávku</li>
@@ -2478,7 +2491,7 @@ ${PORTAL_BLOCK}`,
                 category: "Jednotková cena"
         },
         "Zamítnutí reklamace: Jednotková cena (Případně pokud chceme zákazníkovi vysvětlit co to jednotková cena je a jak se počítá - PLYN": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>Po pečlivém přezkoumání Vaší žádosti a zaslaných podkladů jsme dospěli k závěru, že průměrná jednotková cena za energie, která je uvedena ve vyúčtování, odpovídá podmínkám smlouvy a aktuálním cenám na trhu. Z tohoto důvodu nemůžeme Vaši reklamaci uznat. Pro lepší porozumění si dovolujeme uvést vysvětlení jednotkové ceny:</p>
 <p>Jednotková cena za energie je stanovena jako celková částka za spotřebu energií (včetně pevných poplatků a daní) vydělená celkovým množstvím odebraných energií. Tato cena zahrnuje náklady na:</p>
 <li>Ceny za dodávku</li>
@@ -2612,7 +2625,7 @@ ${PORTAL_BLOCK}`,
         /* Spínání NT a VT */
         "Dotaz na časy spínání NT/VT (HDO)": {
                 text: `
-<p>Dobrý den, pane XXX, / paní XXX,</p>
+${OSLOVENI_BLOCK}
 
 <p>děkujeme za Váš dotaz týkající se časů spínání vysokého (VT) a nízkého tarifu (NT).</p>
 <p>Abychom Vám mohli poskytnout přesnou informaci, je potřeba znát <strong>kód povelu HDO</strong>, který naleznete na přijímači HDO v rozvodné skříni u elektroměru (např. A1B5, E2, Q3).</p>
@@ -2633,7 +2646,7 @@ ${PORTAL_BLOCK}`,
            /* Zastavení odpojení - Dluhy*/
         "Odpojení - Dotaz na znovupřipojovací poplatek, případně dotaz zda není možné zastavit, případně posunout proces odpojení(a pořád dluží)": {
                 text: `
-<p>Dobrý den, pane XXX, / paní XXX,</p>
+${OSLOVENI_BLOCK}
 <p>děkujeme Vám za Váš e-mail.</p>
 <p>Bohužel musíme uvést, že požadavek na odpojení je plně v kompetenci <strong>distributora</strong>, který provádí technické úkony na odběrném místě. Jako dodavatel nemáme možnost proces odpojení posunout, oddálit ani jinak ovlivnit.</p>
 <p>Stejně tak případné <strong>poplatky za znovupřipojení</strong> stanovuje a účtuje přímo distributor dle svých platných ceníků a pravidel.</p>
@@ -2645,7 +2658,7 @@ ${PORTAL_BLOCK}`,
         },
            "Odpojení - Odpojení - Výzva k okamžité úhradě pro zastavení procesu": {
                 text: `
-<p>Dobrý den, pane XXX, / paní XXX,</p>
+${OSLOVENI_BLOCK}
 <p>děkujeme Vám za Váš e-mail.</p>
 <p>Abychom mohli zabránit pokračování procesu odpojení elektřiny, je nezbytné <strong>obratem uhradit všechny částky po splatnosti</strong>. Teprve po <strong>připsání plateb v našem systému</strong> bude možné zastavit další kroky týkající se odpojení.</p>
 <p>Doporučujeme provést úhradu co nejdříve, ideálně okamžitou platbou. Pokud budete chtít, můžete nám po provedení úhrady zaslat potvrzení o platbě – ověření můžeme urychlit, nicméně rozhodující je její skutečné připsání.</p>
@@ -2656,7 +2669,6 @@ ${PORTAL_BLOCK}`,
         }
 };
 window.SABLONY = data;
-
 
 
 
