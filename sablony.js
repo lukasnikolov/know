@@ -2077,16 +2077,20 @@ ${PORTAL_BLOCK}`,
         },
         /* Bezzálohový režim */
 "Žádost o Bezzálohový režim": {
-  text: `
-    <p>Dobrý den, pane XXX, / paní XXX,</p>
+  text:`${OSLOVENI_BLOCK}
     <p>děkujeme za Vaši dosavadní spolupráci. Na základě Vašeho zájmu o přechod na <strong>bezzálohový režim</strong> Vám tímto zasíláme podmínky, které je nutné splnit:</p>
 
-    <ul>
-      <li>Nemít po splatnosti žádné zálohy ani vyúčtování. (V případě, že u zákazníka evidujeme částky po splatnosti musíme upozornit na jejich úhradu)</li>
-      <li>Mít měření typu B.</li>
-      <li>Uhradit kauci ve výši jedné měsíční zálohy - tedy částku <strong>vypsat akt. výši zálohy</strong> – kauce musí být uhrazena nejpozději <b>do 3 dnů</b> od doručení tohoto e-mailu.</li>
-      <li>Podepsat přiložený formulář a zaslat jej zpět.</li>
-    </ul>
+   <ul>
+  <li>Nemít po splatnosti žádné zálohy ani vyúčtování. 
+      {{upozorneni_castky_po_splatnosti}} </li>
+  <li>Mít měření typu B.</li>
+  <li>
+      Uhradit kauci ve výši jedné měsíční zálohy, tedy částku 
+      <strong>{{vyse_mesicni_zalohy}} Kč</strong>. 
+      Kauce musí být uhrazena nejpozději <strong>do 3 dnů </strong> od doručení tohoto e-mailu.
+  </li>
+  <li>Podepsat přiložený formulář a zaslat jej zpět.</li>
+</ul>
 
     <p>V příloze naleznete příslušný formulář, který Vás prosíme vyplnit, podepsat a vrátit zpět na tuto e-mailovou adresu. Jakmile obdržíme podepsaný dokument a ověříme splnění výše uvedených podmínek, budeme Vás informovat o dalším postupu.</p>
 
@@ -2685,7 +2689,6 @@ ${PORTAL_BLOCK}`,
         }
 };
 window.SABLONY = data;
-
 
 
 
