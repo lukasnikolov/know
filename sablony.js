@@ -410,7 +410,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Distribuční změny", "Reklamace", "Fakturace"]
         },
         "ZMĚNA DISTRIBUČNÍ SAZBY Z C NA D U SVJ - ZASLÁNÍ PODKLADŮ": {
-                text: `<p>DDobrý den, pane XXX, / paní XXX,,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>abychom mohli zažádat o změnu typu sazby u distributora, prosíme o vyplnění a zaslání potřebných dokumentů:</p>
 <ul><strong>1) Čestné prohlášení</strong></ul>
 <p>Rádi bychom Vás upozornili, že v důsledku změny distribuční sazby dojde ke změně ceny za regulované a neregulované položky související s provedenou změnou.</p>
@@ -610,7 +610,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Samoodečty"]
         },
         "Zamítnutí konečného samoodečtu": {
-                text: `<p>Dobrý den, pane/ paní XXXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>je nám líto, ale Vámi zaslané odečtové hodnoty měřidla jsme již nebyli schopni zpracovat, jelikož nám byly doručeny po termínu. Fakturu Vám vystavíme na základě odečtových hodnot dle odhadu, který nám zašle distributor.</p>
 ${PORTAL_BLOCK}`,
                 files: [],
@@ -728,7 +728,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Samoodečty - Kontrolní + Mimořádné vyúčtování + Konečné"]
         },
         "Přijetí samoodečtu - Mimořádná faktura - bez poslání tabulek pro samoodečty": {
-                text: `<p>Dobrý den,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet jsme zpracovali. Nyní čekáme na schválení dat, abychom mohli následně vystavit fakturu.</p>
 <p>Tento schvalovací proces může trvat 2-3 týdny. Z tohoto důvodu Vás prosíme o trpělivost s vystavením faktury, případně Vás žádáme, abyste si odečty měřidel nově hlásili prostřednictvím <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznického portálu</a></p>  
 <p><u>Termíny pro nahlášení odečtů pro mimořádné vyúčtování:</u></p>
@@ -741,7 +741,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Samoodečty - Kontrolní + Mimořádné vyúčtování + Konečné"]
         },
         "Přijetí samoodečtu - Mimořádná faktura - k 31.12 (ale posílá dříve)": {
-                text: `<p>Dobrý den, paní YYYY/ Pane XXXXX, </p>
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme za Váš e-mail, co se týče Vašeho dotazu ohledně mimořádného vyúčtování k 31.12.20XX, nabízíme dvě možnosti:</p>
 <ol> 
 <li><b>Vyplnění evidenční tabulky</b>, kterou naleznete v příloze tohoto e-mailu. Po vyplnění nám ji prosím zašlete zpět e-mailem. A to nejpozději do termínů uvedených níže.</li>
@@ -771,7 +771,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Samoodečty - Kontrolní + Mimořádné vyúčtování + Konečné"]
         },
         "Přijetí samoodečtu - Mimořádná faktura - Zákazník zadal již do portálu (duplicitní odečet)": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet jsme zpracovali. Nyní čekáme na schválení dat, abychom mohli následně vystavit fakturu.</p>
 <p>Tento schvalovací proces může trvat 2-3 týdny. Z tohoto důvodu Vás prosíme o trpělivost s vystavením faktury.</p>
 <p>Abychom příště mohli Váš požadavek zpracovat ještě dříve, zasíláme Vám v příloze evidenční tabulku, do které můžete tyto hodnoty vepsat, a následně nám ji zaslat e-mailem případně Vás žádáme, abyste si odečty měřidel nově hlásili prostřednictvím <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznického portálu</a>. 
@@ -1134,7 +1134,6 @@ ${PORTAL_BLOCK}`,
         },
         "Urgence přepisu (šablona číslo 2)": {
                 text: `${OSLOVENI_BLOCK}
-<p><strong>Dobrý den, pane XXX, / paní XXX,,</strong></p>
 <p>rádi bychom Vás znovu upozornili na nutnost přepsání smlouvy na odběr energií na nového odběratele. Původní smlouva č. byla uzavřena na zemřelého <b>xxxxx</b>, a je nezbytné uzavřít novou smlouvu, aby byla zajištěna kontinuální dodávka energií na odběrném místě <b>[Adresa odběrného místa]</b>.</p>
 <p>Dosud jsme neobdrželi žádnou odpověď na naši předchozí výzvu. Prosíme Vás, abyste co nejdříve kontaktovali naši zákaznickou podporu na telefonním čísle <b>255 70 70 99 </b> nebo e-mailem na <b>info@epet.cz </b>, kde Vám poskytneme veškeré potřebné formuláře a informace k přepisu smlouvy. Přepis je možné také dořešit pomocí online formuláře na tomto <a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank"> Odkazu</a></p>
 
@@ -1390,7 +1389,7 @@ ${PORTAL_BLOCK}`,
 },
         /* Platby */
         "Ukončené odběrné místo - Platby": {
-                text: `<p>Dobrý den, pane XXX / paní XXX,,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>rádi bychom Vás informovali, že jsme obdrželi platbu ve výši <strong>XXXX Kč</strong> pro <strong>zákaznický účet XXXX</strong>, pod <strong>variabilním symbolem XXXXXX.</strong></p> 
 <p>Nicméně se jedná o odběrné místo, které bylo u naší společnosti již ukončeno. Z tohoto důvodu vracíme platbu zpět na bankovní účet <strong>pod variabilním symbolem XXXXX.</strong></p>
 <p>Žádáme Vás, abyste tuto platbu již na tento smluvní účet <strong>nezasílali</strong> a <strong>zrušili</strong> si trvalý příkaz.</p>
@@ -1453,7 +1452,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Platby"]
         },
         "Zpětné hrazení plateb": {
-                text: `<p>Dobrý den, pane/paní XXX,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>při kontrole Vašeho zákaznického účtu jsme zjistili, že v měsíci MM.RRRR neevidujeme z Vaší strany platbu. Z tohoto důvodu jsou Vaše současné platby přiřazeny k měsícům, ve kterých úhrada nebyla provedena.</p>
 <p>Pokud jste chybějící platbu již uhradil/a, prosíme Vás o zaslání potvrzení o provedení této platby.</p>
 <p>Pokud k úhradě skutečně nedošlo, zašlete prosím platbu ve výši <strong>XXX Kč</strong> na účet <strong>9960227/0100</strong> pod variabilním symbolem <strong>XXX</strong>.</p>
@@ -1506,7 +1505,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Platby"]
         },
         "Potvrzení o zápočtu! Předmět e-mailu: Potvrzení dohody o zápočtu faktur č. XXXX a č. XXXX": {
-                text: `<p>Dobrý den,pane XXXX, Dobrý den, paní YYYYY,  </p>
+                text: `${OSLOVENI_BLOCK}
 <p>v návaznosti na náš telefonický hovor si Vám dovolujeme potvrdit, že jsme se dohodli na provedení zápočtu vzájemných pohledávek, a to konkrétně faktur č. XXXX a č. XXXX. (vypsat všechny čísla FA které se dají započíst)</p>
 <p>Příslušný zápočet Vám bude zaslán k potvrzení v průběhu několika následujících pracovních dnů. </p>
 <p>Děkujeme za součinnost a v případě jakýchkoliv dotazů se na nás neváhejte obrátit. </p>
@@ -1648,7 +1647,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["SPK"]
         },
         "SPLÁTKOVÝ KALENDÁŘ - Vystavení": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,X, </p>
+                text: `${OSLOVENI_BLOCK}
 <p>chtěli bychom Vás informovat, že jsme schválili Vaši žádost o poskytnutí splátkového kalendáře. Splátkový kalendář se vztahuje k faktuře s variabilním symbolem <b>XXXXXXXX</b>, která byla vystavena na dodávku elektřiny/plynu.</p>
 <p>Jednotlivé splátky dlužné částky za dodávky elektřiny/plynu plaťte dle níže uvedeného rozpisu a platebních údajů:</p>
 <li><b>VS:</b> XXXXXXXX</li>
@@ -1845,7 +1844,7 @@ ${PORTAL_BLOCK}
         },
         /* Montáže */
         "Montáž měřidla - potvrzení termínu": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme Vám za Váš zájem o odběr energií od společnosti epet.</p>
 <p>Rádi bychom Vás informovali, že jsme zpracovali Váš požadavek na montáž u odběrného místa <strong>EIC/EAN XXXX</strong> na adrese <strong>Ulice č.p./č.o., XXX XX Město.</strong></p>
 <p>Montáž Vašeho měřidla provede distributor dne <strong>DD.MM.RRRR v HH</strong>.</p>
@@ -1856,14 +1855,14 @@ ${PORTAL_BLOCK}`,
         },
         /* Přepisy */
         "Přepis odběrného místa - Zaslání Odkazu": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,,</p>
+                text: `${OSLOVENI_BLOCK}
 <p>na základě naší telefonické dohody Vám zasíláme odkaz na elektronický formulář pro přepis odběrného místa. Tento formulář můžete vyplnit a odeslat prostřednictvím následujícího odkazu: <a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank"> Formulář k přepisu odběrného místa.</a></p>
 ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Přepisy"]
         },
         "Přepis odběrného místa - Bez zaslání odkazů (V rámci DINHE NAPŘÍKLAD)": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,,</p>
+                text: `${OSLOVENI_BLOCK}
 
 <p>stále evidujeme nevyřešený požadavek týkající se přepisu smlouvy na odběr energií po zemřelém <b>XXXXXX</b>. Rádi bychom Vás informovali o nutnosti provést tento přepis na nového odběratele. Tento krok je nezbytný pro zajištění kontinuity dodávky energií na odběrném místě <b>[Adresa odběrného místa]</b>.</p>
 
@@ -1875,7 +1874,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Přepisy"]
         },
         "Přepis urgence  - Bez zaslání odkazů (V rámci DINHE NAPŘÍKLAD)": {
-                text: `<p>Dobrý den, pane XXX, / paní XXX,,</p>
+                text: `${OSLOVENI_BLOCK}
 
 <p>rádi bychom Vás znovu upozornili na nutnost přepsání smlouvy na odběr energií na nového odběratele. Původní smlouva č. byla uzavřena na zemřelého <b>XXXXX</b> a je nezbytné uzavřít novou smlouvu, aby byla zajištěna kontinuální dodávka energií na odběrném místě <b>[Adresa odběrného místa]</b>.</p>
 
@@ -2689,6 +2688,7 @@ ${PORTAL_BLOCK}`,
         }
 };
 window.SABLONY = data;
+
 
 
 
