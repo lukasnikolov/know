@@ -1550,7 +1550,20 @@ ${PORTAL_BLOCK}`,
     "files": [],
     "tags": ["Platby"]
 },
-
+"Zákazník zasílá potvrzení o provedení platby, ale platba není propsaná v ZIS": {
+    "text": `
+${OSLOVENI_BLOCK}
+<p>
+<p>děkujeme Vám za Váš e-mail a informaci o provedené úhradě {{dlužné faktury/zálohy}}.</p>
+<p>V tuto chvíli však <strong> přijatou platbu v systému zatím neevidujeme. </strong></p>
+<p>Rádi bychom Vás informovali, že připsání platby na náš účet může standardně trvat <strong> 2–3 pracovní dny </strong>, a to v závislosti na mezibankovním zpracování. Jakmile bude platba zaevidována v našem systému, ihned se projeví u Vašeho zákaznického účtu.
+</p>
+<p>Stav úhrady můžete kdykoliv ověřit také v <strong> Zákaznickém portále </strong> v sekci <i> Platby a zálohy </i>.
+</p>
+${PORTAL_BLOCK}`,
+    "files": [],
+    "tags": ["Platby"]
+},
         /* Zálohy */
         "Úprava výše záloh - Navýšení s informací dle § 11 odst. 6": {
                 text: `${OSLOVENI_BLOCK}
@@ -2688,6 +2701,7 @@ ${PORTAL_BLOCK}`,
         }
 };
 window.SABLONY = data;
+
 
 
 
