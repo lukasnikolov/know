@@ -2303,6 +2303,17 @@ ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Převzetí odchylky"]
         },
+ "Zajištění odchylky – předáno k dalšímu zpracování": {
+  text: `${OSLOVENI_BLOCK}
+  <p>děkujeme za zaslání požadovaných podkladů a informací k zajištění odchylky.</p>
+  <p>Váš požadavek jsme zaevidovali a v tuto chvíli jej předáváme k dalšímu zpracování kolegům z oddělení nabídek. Jakmile budou mít kolegové připravené podklady/smlouvu, zašleme Vám ji na Váš e-mail k podpisu.</p>
+  <p>V případě jakýchkoliv dotazů se na nás neváhejte obrátit.</p>
+
+  ${PORTAL_BLOCK}`,
+  files: [],
+  tags: ["Převzetí odchylky"]
+},
+
         /* Jednotková cena */
         "Zamítnutí reklamace: Jednotková cena (Případně pokud chceme zákazníkovi vysvětlit co to jednotková cena je a jak se počítá - ELE": {
                 text: `${OSLOVENI_BLOCK}
@@ -2701,6 +2712,7 @@ ${PORTAL_BLOCK}`,
         }
 };
 window.SABLONY = data;
+
 
 
 
