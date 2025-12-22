@@ -11,7 +11,7 @@ const updates = [
   "color": "purple",
   "author": "Lukáš",
   "isNew": true,
-  "content": "<p>zkouška</p>"
+  "content": `zkouška`
 },
 	
 	{
