@@ -219,6 +219,345 @@ SPLÁTKOVÝ KALENDÁŘ – ROZPIS SPLÁTEK
   <b>📅 Termín pro nahlášení odběrného místa, aby se stihlo přihlásit k 1.7.2025, je <u>24.6.2025</u>.</b><br><br>
   ...
   Stránku naleznete přímo <a href="https://sites.google.com/view/znalostn-bze/smlouvy-kontaktn%C3%AD-%C3%BAdaje/fve-mikrozdroje?authuser=0" target="_blank" rel="noopener">Zde</a><br>`
-}
+},
+{
+  id: 11,
+  title: "Nové stránky – Generátory smluv (elektřina a plyn)",
+  date: "2025-04-20",
+  category: ["sablony"],
+  icon: "bi bi-file-earmark-word",
+  color: "primary",
+  author: "Lukáš",
+  isNew: false,
+  content: `Byly publikovány <b>čtyři nové stránky s interaktivními formuláři</b>, které umožňují <b>automaticky vygenerovat rekapitulaci smlouvy</b> ve formátu <code>.docx</code> pro zákazníky z řad domácností i firem – a to jak pro <b>elektřinu</b>, tak pro <b>plyn</b>.<br><br>
 
+  ✅ Co tím získáte:<br>
+  🔹 Už žádné ruční přepisování údajů – stačí vyplnit jednoduchý formulář<br>
+  🔹 Automatické vyplnění rekapitulace smlouvy podle zadaných údajů<br>
+  🔹 Podpora jak pro <b>domácnosti</b>, tak <b>firemní zákazníky</b><br><br><br>
+  🔗 <b>Přímé odkazy na nové generátory:</b><br>
+  🏠 <a href="https://sites.google.com/view/znalostn-bze/%C5%A1ablony/rekapitulace-smlouvy-ele-dom?authuser=0" target="_blank">ELEKTŘINA – Domácnost</a><br>
+  🏢 <a href="https://sites.google.com/view/znalostn-bze/%C5%A1ablony/rekapitulace-smlouvy-ele-fir?authuser=0" target="_blank">ELEKTŘINA – Firma</a><br>
+  🏠 <a href="https://sites.google.com/view/znalostn-bze/%C5%A1ablony/rekapitulace-smlouvy-plyn-dom?authuser=0" target="_blank">PLYN – Domácnost</a><br>
+  🏢 <a href="https://sites.google.com/view/znalostn-bze/%C5%A1ablony/rekapitulace-smlouvy-plyn-firma?authuser=0" target="_blank">PLYN – Firma</a><br><br>
+
+  ⚙️ <b>Jak to funguje:</b><br>
+  1️⃣ Vyplňte požadované údaje (zákazník, adresa, odběrné místo, typ platby aj.)<br>
+  2️⃣ Klikněte na tlačítko <b>„Vytvořit PDF“</b><br>
+  3️⃣ <b>Vyčkejte několik vteřin</b> občas i <i> minut</i> – systém připravuje dokument<br>
+  4️⃣ Zobrazí se Vám hláška, že je soubor připraven ke stažení - stačí kliknout na <B>„Stáhnout v PDF“</B><br><br>
+
+  ⚠️ <b>Před odesláním zákazníkovi:</b><br>
+  ✅ Rekapitulaci si vždy <b>zkontrolujte</b> (hlavně jméno, adresy, EAN/EIC, termíny)<br>
+  ✅ Následně můžete rovnou zaslat zákazníkovi</b><br><br>
+Stránku naleznete přímo v <a href="https://sites.google.com/view/znalostn-bze/%C5%A1ablony" target="_blank">Šablonách</a> - > <a href="https://sites.google.com/view/znalostn-bze/%C5%A1ablony/rekapitulace-smluv?authuser=0" target="_blank">Rekapitulace smluv</a> `
+},
+{
+  id: 12,
+  title: "Nová stránka – Zranitelný zákazník",
+  date: "2025-04-18",
+  category: ["smlouvy"],
+  icon: "bi bi-person-exclamation",
+  color: "danger",
+  author: "Lukáš",
+  isNew: false,
+  content: `Byla publikována <b>nová stránka s pracovním postupem</b> pro řešení případů tzv. <b>zranitelného zákazníka</b>.<br><br>
+					🔹 Kompletní definice <b>zranitelné osoby</b> a <b>zranitelného zákazníka</b><br>
+					🔹 Vysvětlení podmínek a příloh – <i>lékařské potvrzení</i>, <i>dohoda o zastoupení</i>, <i>EAN, OM, odběr</i><br>
+					🔹 Postupy pro <b>Front Office</b> i <b>Komunikaci s OTE</b><br>
+					🔹 Nastavení na zákaznickém účtu + termínování<br>
+					🔹 Doplněny <b>vzorové textace</b> do úkolů a <b>šablony komunikace</b><br><br>
+					🧩 Odkaz na novou stránku: <a href="https://sites.google.com/view/znalostn-bze/smlouvy-kontaktn%C3%AD-%C3%BAdaje/zraniteln%C3%BD-z%C3%A1kazn%C3%ADk?authuser=0" target="_blank">Zranitelný zákazník</a>`
+},
+{
+  id: 13,
+  title: "Vizuální úprava stránky Rozdělení / Sloučení ZÚ",
+  date: "2025-04-18",
+  category: ["smlouvy"],
+  icon: "bi bi-aspect-ratio",
+  color: "secondary",
+  author: "Lukáš",
+  isNew: false,
+  content: `Proběhla <b>vizuální modernizace</b> stránky <u>Rozdělení / Sloučení ZÚ</u> 🎨<br><br>
+					  🔹 Zůstává <b>plně zachována textace</b> – úprava je čistě vizuální.<br>
+					  🔹 Přidány barevné <b>hlavičky, ikony</b> a výraznější odrážky.<br>
+					  🔹 Lepší <b>čitelnost</b> na mobilech i počítači – větší mezery, vzdušnější design.<br>
+					  🔹 Důležitá místa jako <i>AF 180 – samoodečet</i> nebo <i>BO_CC</i> jsou nově zvýrazněna.<br><br>
+					  🧩 Pokud chcete přímo použít novou verzi, najdete ji <a href="https://sites.google.com/view/znalostn-bze/smlouvy-kontaktn%C3%AD-%C3%BAdaje/rozd%C4%9Blen%C3%AD-slou%C4%8Den%C3%AD-om?authuser=0">zde</a>.`
+},
+{
+  id: 14,
+  title: "Aktualizace sekce -> PRAVIDLA ZIS",
+  date: "2025-04-18",
+  category: ["manualy"],
+  icon: "bi bi-journal-code",
+  color: "secondary",
+  author: "Lukáš",
+  isNew: false,
+  content: `Proběhla aktualizace <b>sekce<i>PRAVIDLA ZIS</i></b>, která slouží jako centrální rozcestník pro práci se systémem ZIS.<br><br>
+					🔹 Stránka obsahuje <b>pravidla</b> a <b>video manuály</b> pro práci s e-maily, úkoly, hovory, obecnými pravidly a samoodečty (elektřina/plyn). Hlavně je zaměřená na správné propojování<br>
+					🔹 Je rozdělena do přehledných záložek s ikonami a barevným odlišením.<br>
+					🔹 U sekce e-mailů je navíc interaktivní tabulka kódů a návod, jak správně zařadit e-mail do systému.<br><br>
+					🎥 Každá sekce obsahuje <b>instruktážní videa</b>, která ukazují konkrétní postupy.<br><br>
+					📎 Odkaz na stránku: <a href="https://sites.google.com/view/znalostn-bze/e-maily-a-%C3%BAkoly/z%C3%A1vazn%C3%A1-pravidla-zis?authuser=0" target="_blank"><b>PRAVIDLA ZIS</b></a><br><br>
+					Doporučuji uložit si stránku mezi záložky – jedná se totiž o závazná pravidla, které musíme dodržovat všichni.`
+},
+{
+  id: 15,
+  title: "Velká aktualizace několika sekcí",
+  date: "2025-04-12",
+  category: ["finance", "sablony", "smlouvy"],
+  icon: "bi bi-card-list",
+  color: "info",
+  author: "Lukáš",
+  isNew: false,
+  content: `Proběhla aktualizace několika sekcí:<br><br>
+					  🔹 V sekci <b><a href="https://sites.google.com/view/znalostn-bze/%C5%A1ablony/%C5%A1ablona-e-mail-korespondence-ur%C4%8Den%C3%A1-k-tisku?authuser=0"> Šablona na korespondenci </a></b> proběhla menší úprava vizuálu, ale zároveň přibyla možnost nejen vložit adresu ze ZIS, která se po kliknutí na tlačítko <i> rozdělit adresu </i> rozdělí do příslušných políček, ale nově zde přibyla možnost rozdělit i <i> jméno a příjmení zákazníka </i> celé jméno si můžete vzít se stručného přehledu, a díky tlačítku výše zmíněnému Vám to rovnou rozdělí i jméno a příjmení, takže to máte zcela bez práce. Zároveň v této sekci proběhla aktualizace - <u>Šablony ke stažení </u>, která je aktuálně roztříděná dle jednotlivých dopisů - je to přehlednější, úhlednější. Stačí na danou sekci kliknout a rovnou se Vám zobrazí seznam dokumentů. Pokud chcete, aby Vám daná sekce zmizela, stačí na ní kliknout ještě <b>jednou</b>.<br><br>
+					  🔹 V sekci <b><a href="https://sites.google.com/view/znalostn-bze/%C5%A1ablony/propo%C4%8Det-v%C3%BD%C5%A1e-z%C3%A1loh-30-v%C3%BDpo%C4%8Det-spk?authuser=0">"Přepočet záloh a výpočet 1/3 dlužné faktury"</b></a> proběhla asi nejzásadnější úprava, která Vám urychlí práci primárně hlavně u žádostí o <b>SPK</b> nejen, že tato sekce proběhla vizuální úpravou, kde nově můžete buď částku napsat ručně, ale můžete použít i případný posuvník, ale nejzásadnější úprava je u výpočtu 1/3 dlužné faktury,pokud si sekci pozorně prohlédnete zjistíte, že je tam novinka <u>Generátor šablony e-mailu pro žádost o SPK </u> šablona Vám na základě zadané dlužné faktury rovnou danou 1/3 dluhu hodí přímo do šablony na e-mail, a pokud tam rovnou uvedete, že zákazník <b>dluží</b> na záloze tak dlužno zálohu máte možnost rovnou uvést do kolonky dlužná záloha a i tato záloha se automaticky doplňí do e-mailu. To ale není ještě vše 😅, nově si můžete rovnou navolit, zda píšete chlapovi nebo ženě a vyplnit příjmení, na základě toho se Vám rovnou připraví celková šablona pro e-mail, kterou stačí zkopírovat a rovnou hodit do e-mailu a poslat zákazníkovi prakticky za několik sekund 😅. Usnadní Vám to práci a spoustu času. U <i> přijmení prosím pozor </i> - v 70% funguje správně - nicméně doporučuji zkontrolovat, zda oslovení zákazníka dává smysl než e-mail pošlete. Zas tak geniální 🤣, abych to zvládnul nakódovat úplně nejsem 🤣. <br><br>
+					  🔹 V sekci <b><a href="https://sites.google.com/view/znalostn-bze/smlouvy-kontaktn%C3%AD-%C3%BAdaje/obchodn%C3%AD-z%C3%A1stupci?authuser=0">"Obchodní zástupci"</b></a>došlo k vizuální úpravě seznamu obchoďáku, takhle si myslím, že je daleko pohodlnější a příjemnější pro orientaci. Rovnou vám to vyhazuje i hlášku, zda je to kontakt, který můžete předat <b>zákazníkovi</b>, nebo zda se musíte přepnout do správné sekce. Takže bychom v tomto neměli také chybovat.<br><br>
+					  🔹 V sekci <b><a href="https://sites.google.com/view/znalostn-bze/smlouvy-kontaktn%C3%AD-%C3%BAdaje/sazby?authuser=0"> "Distribuční sazby"</b></a> i zde došlo k vizuální úpravě, tak aby se v tom lépe orientovalo. Rovnou můžete i vyhledávat takže i to Vám může pomoci k lepší orientaci v rámci distribučních sazeb.<br><br>
+					  🔹 V sekci <b><a href="https://sites.google.com/view/znalostn-bze/smlouvy-kontaktn%C3%AD-%C3%BAdaje/v%C3%BDpov%C4%9Bdi?authuser=0">"VÝPOVĚDI"</b></a> i zde došlo k vizuální úpravě, tak aby se v tom lépe orientovalo.
+					  Všechny zmíněné aktualizace najdete ve znalostní bázi v příslušných sekcích. V <b>neposlední</b> řadě můžu s radostí oznámit, že všechny šablony e-mailů už se 🙏 <b>100% </b> kopírujou bez bíleho pozadí. Třikrát sláva bohům.🤣🤣🤣 `
+},
+{
+  id: 16,
+  title: "Aktualizace sekce 'Šablona na úkoly', 'Šablona na e-maily', 'Bezzálohový režim'",
+  date: "2025-01-31",
+  category: ["sablony"],
+  icon: "bi bi-envelope-paper-heart",
+  color: "primary",
+  author: "Lukáš",
+  isNew: false,
+  content: `Proběhla úprava sekce <b>"Šablona na úkoly"</b> – přidány dvě nové šablony pro <em>Dědické řízení</em>. Nově je nutné úkol s odpovědnou osobou <b>Dinhe</b> zakládat ze šablony. Druhou novou šablonou je šablona pro nový postup na <em>bezzálohový režim</em> (nezakládá se ze šablony). Aktualizaci naleznete <a href="https://sites.google.com/view/znalostn-bze/%C5%A1ablony/%C5%A1ablona-%C3%BAkoly">zde</a>.<br><br>
+						Dále byla aktualizována sekce <b>"Šablona na e-maily"</b> – všechny šablony byly lehce upraveny a nově přibyla kategorie <u>Přeplatky</u>. Obsahuje šablony na různé typy přeplatkových e-mailů – neexistující účty, vrácené složenky, chybně vyplacené přeplatky apod. Přibyly také nové šablony pro odpovědi na úkoly <b>"Všeobecné dotazy z webu"</b> a šablony pro <em>bezzálohový režim</em>. Aktualizaci najdete <a href="https://sites.google.com/view/znalostn-bze/%C5%A1ablony/%C5%A1ablona-na-e-maily?authuser=0">zde</a>.<br><br>
+						Nově byla vytvořena stránka <b><a href="https://sites.google.com/view/znalostn-bze/smlouvy-kontaktn%C3%AD-%C3%BAdaje/bezz%C3%A1lohov%C3%BD-re%C5%BEim?authuser=0">Bezzálohový režim</a></b>, kde najdete návod, jak postupovat při žádosti zákazníka o tento režim. Platnost od <b>01. 02. 2025</b>. PDF manuál k dispozici také <a href="https://sites.google.com/view/znalostn-bze/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat/bezz%C3%A1lohov%C3%BD-re%C5%BEim-manu%C3%A1l?authuser=0">zde</a>.<br><br>
+						Přidána také sekce <a href="https://sites.google.com/view/znalostn-bze/%C5%A1ablony/%C5%A1ablona-dokumenty-k-p%C5%99episu?authuser=0"><b>ŠABLONA – DOKUMENTY K PŘEPISU</b></a> s přehledem dokumentů potřebných k přepisu u jednotlivých distributorů. <b>Pozor</b>: Neslouží k zahájení přepisů – pouze ke kontrole, co má zákazník doložit.<br><br>
+						Nakonec byla rozšířena sekce <a href="https://sites.google.com/view/znalostn-bze/formul%C3%A1%C5%99e?authuser=0"><b>Formuláře</b></a> – nově obsahuje formuláře k bezzálohovému režimu, které musí zákazník podepsat.`
+},
+{
+  id: 17,
+  title: "Aktualizace sekce 'Ceníky'",
+  date: "2024-12-14",
+  category: ["ceniky"],
+  icon: "bi bi-tags-fill",
+  color: "primary",
+  author: "Lukáš",
+  isNew: false,
+  content: `Aktuálně jsem do znalostky přidal seznam všech aktivních i neaktivních ceníků 🫡. Pomůže Vám to například při hledání <i>spotových ceníků</i> 😊 – abyste věděli, na jaký ceník se prolonguje, nebo například i <b>historické ceníky</b> 🤢☠️ a kam se prolongovaly.<br><br>
+						Pro vyhledání stačí zkopírovat název z faktury nebo přímo označení CRM ID ze smlouvy – např. <u>99960</u> – a v seznamu se Vám zobrazí, o jaký ceník se jedná. Přepínejte mezi jednotlivými sekcemi – pokud se tam ceník nachází, zobrazí se výsledek 😜.<br><br>
+						Je to taková náhrada za dřívější sdílenou stránku <b>SA_PRAHA (ceníky)</b> 🥳.<br>
+						Seznam najdete <a href="https://sites.google.com/view/znalostn-bze/smlouvy-kontaktn%C3%AD-%C3%BAdaje/cen%C3%ADky">zde</a> a pod 🔍 hledejte slovo <b>Ceníky</b>.`
+},
+{
+  id: 18,
+  title: "Aktualizace sekce \"Umělá inteligence\"",
+  date: "2024-12-13",
+  category: ["video"],
+  icon: "bi bi-camera-reels",
+  color: "primary",
+  author: "Lukáš",
+  isNew: false,
+  content: `Laduš nahrála video a manuál na <b>Umělou inteligenci</b> ☺️. Doporučuji si video i manuál projít! 😌<br><br>
+					  Najdete ho <a href="https://sites.google.com/view/znalostn-bze/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat/um%C4%9Bl%C3%A1-inteligence-ai?authuser=0">zde</a>.`
+},
+{
+  id: 19,
+  title: "Aktualizace sekce \"Úkoly\"",
+  date: "2024-12-10",
+  category: ["video"],
+  icon: "bi bi-camera-reels",
+  color: "primary",
+  author: "Lukáš",
+  isNew: false,
+  content: `Laduš nahrála videa na nejčastější chyby v rámci <b>"ÚKOLŮ"</b>, takže doporučuju mrknout! 🎥 Doporučuji projít si jak video, tak i prezentaci.<br><br>
+					  Najdete je <a href="https://sites.google.com/view/znalostn-bze/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat/%C3%BAkoly?authuser=0">zde</a>.`
+},
+{
+  id: 20,
+  title: "Aktualizace sekce \"FAKTURACE - WORKSHOP\"",
+  date: "2024-12-07",
+  category: ["fakturace"],
+  icon: "bi bi-receipt-cutoff",
+  color: "primary",
+  author: "Lukáš",
+  isNew: false,
+  content: `Aktuálně byla přepracovaná stránka <b>"FAKTURACE - WORKSHOP"</b>. V novém vzhledu je podle mě daleko uživatelsky přívětivější 💡.<br><br>
+					  Najdete ji <a href="https://sites.google.com/view/znalostn-bze/fakturace-a-saldo/fakturace-workshop?authuser=0">zde</a>.`
+},
+{
+  id: 21,
+  title: "Video na Jednotkovou cenu",
+  date: "2024-12-05",
+  category: ["video"],
+  icon: "bi bi-camera-reels",
+  color: "primary",
+  author: "Lukáš",
+  isNew: false,
+  content: `Aktuálně bylo přidané video na vysvětlení a výpočet <b>jednotkové ceny</b> 🎬.<br><br>
+					  Najdete ho <a href="https://sites.google.com/view/znalostn-bze/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat/jednotkov%C3%A1-cena?authuser=0">zde</a>.`
+},
+{
+  id: 22,
+  title: "Aktualizace sekce 'Šablona na úkoly', 'Formuláře' a 'Úkoly'",
+  date: "2024-12-03",
+  category: ["sablony", "smlouvy", "finance"],
+  icon: "bi bi-motherboard-fill",
+  color: "primary",
+  author: "Lukáš",
+  isNew: false,
+  content: `Aktuálně přibyla nová stránka pro ověření, zda se OM nachází u standardního distributora nebo na LDS – najdete <a href="https://sites.google.com/view/znalostn-bze/%C5%A1ablony/distributor-vs-lds?authuser=0">zde</a>.<br><br>
+					  Zároveň přibyla stránka pro přepočet výše <b>záloh</b> (snížení o 30 %) a výpočet <b>1/3 dlužné faktury</b> – najdete <a href="https://sites.google.com/view/znalostn-bze/%C5%A1ablony/propo%C4%8Det-v%C3%BD%C5%A1e-z%C3%A1loh-30-v%C3%BDpo%C4%8Det-spk?authuser=0">zde</a>.<br><br>
+					  Proběhla také aktualizace sekce <b>"Obchodní zástupci"</b>, kde došlo k úpravě vyhledávání – najdete <a href="https://sites.google.com/view/znalostn-bze/smlouvy-kontaktn%C3%AD-%C3%BAdaje/obchodn%C3%AD-z%C3%A1stupci?authuser=0">zde</a>.<br><br>
+					  Dále byla upravena sekce <b>"Kontakty"</b> – úprava vzhledu dostupná <a href="https://sites.google.com/view/znalostn-bze/smlouvy-kontaktn%C3%AD-%C3%BAdaje/kontakty-ban-spojen%C3%AD?authuser=0">zde</a> a stejně tak sekce <b>"KONTAKTNÍ ÚDAJE – DISTRIBUCE"</b> <a href="https://sites.google.com/view/znalostn-bze/smlouvy-kontaktn%C3%AD-%C3%BAdaje/distribuce?authuser=0">zde</a>.<br><br>
+					  Nakonec byla aktualizována sekce <b>"VÝPOVĚDI"</b> – přibyla možnost výpočtu, do kdy může zákazník podat výpověď. Tento nástroj slouží pouze k orientačnímu výpočtu! <b>Nic zákazníkovi neslibujte ani negarantujte</b>. Konkrétní termín určuje vždy oddělení BO_CC. Najdete <a href="https://sites.google.com/view/znalostn-bze/smlouvy-kontaktn%C3%AD-%C3%BAdaje/v%C3%BDpov%C4%9Bdi?authuser=0">zde</a>.`
+},
+{
+  id: 23,
+  title: "Výpočet jednotkové ceny",
+  date: "2024-12-03",
+  category: ["sablony", "finance"],
+  icon: "bi bi-calculator",
+  color: "primary",
+  author: "Lukáš",
+  isNew: false,
+  content: `Přidána nová sekce <b>"Výpočet jednotkové ceny"</b> – nově je k dispozici možnost výpočtu jednotkové ceny (dle faktury) pro případy, kdy se během fakturace neměnily ceny.<br><br>
+					  Pro <b>elektřinu</b> výpočet najdete <a href="https://sites.google.com/view/znalostn-bze/%C5%A1ablony/v%C3%BDpo%C4%8Det-jednotkov%C3%A9-ceny-ele-nem%C4%9Bn%C3%AD-se-cen%C3%ADk?authuser=0">zde</a>.<br>
+					  Pro <i>plyn</i> obdobný výpočet najdete <a href="https://sites.google.com/view/znalostn-bze/%C5%A1ablony/v%C3%BDpo%C4%8Det-jednotkov%C3%A9-ceny-plyn-nem%C4%9Bn%C3%AD-se-cen%C3%ADk?authuser=0">zde</a>.`
+},
+{
+  id: 24,
+  title: "Výpočty cen – Ceník",
+  date: "2024-12-03",
+  category: ["sablony", "finance", "ceniky"],
+  icon: "bi bi-graph-up-arrow",
+  color: "warning",
+  author: "Lukáš",
+  isNew: false,
+  content: `Přidána nová sekce <b>"Výpočet cen"</b> – nově je k dispozici možnost výpočtu ceny podle platného ceníku.<br><br>
+					  Pro <b>elektřinu</b> najdete výpočet <a href="https://sites.google.com/view/znalostn-bze/%C5%A1ablony/v%C3%BDpo%C4%8Det-ceny-za-elekt%C5%99inu?authuser=0">zde</a>.<br>
+					  Pro <i>plyn</i> najdete výpočet <a href="https://sites.google.com/view/znalostn-bze/%C5%A1ablony/v%C3%BDpo%C4%8Det-ceny-za-plyn?authuser=0">zde</a>.`
+},
+{
+  id: 25,
+  title: "Tarifomat",
+  date: "2024-12-03",
+  category: ["sablony", "smlouvy"],
+  icon: "bi bi-sliders2",
+  color: "warning",
+  author: "Lukáš",
+  isNew: false,
+  content: `Přidána nová sekce <b>"Tarifomat"</b> – slouží pro kontrolu dokumentů, které musí zákazník doložit při změně <b>distribuční sazby</b> nebo <b>hlavního jističe</b>.<br><br>
+					  Sekci najdete <a href="https://sites.google.com/view/znalostn-bze/%C5%A1ablony/tarifomat?authuser=0">zde</a>.<br>
+					  Zároveň přikládáme i návod na provedení změn v ZIS – dostupný <a href="https://sites.google.com/view/znalostn-bze/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat/distribu%C4%8Dn%C3%AD-zm%C4%9Bny-zm%C4%9Bna-distribu%C4%8Dn%C3%AD-sazby">zde</a>.`
+},
+{
+  id: 26,
+  title: "Úprava výše záloh",
+  date: "2024-12-03",
+  category: ["sablony", "smlouvy"],
+  icon: "bi bi-arrow-up-right-circle",
+  color: "success",
+  author: "Lukáš",
+  isNew: false,
+  content: `Aktualizovaná sekce <b>"Úprava výše záloh"</b> – detailní <b>manuál</b> k tomuto postupu najdete <a href="https://sites.google.com/view/znalostn-bze/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat/%C3%BAprava-v%C3%BD%C5%A1e-z%C3%A1loh">zde</a>.`
+},
+{
+  id: 27,
+  title: "Samoodečty",
+  date: "2024-12-03",
+  category: ["fakturace"],
+  icon: "bi bi-pencil-square",
+  color: "info",
+  author: "Lukáš",
+  isNew: false,
+  content: `V rámci refreshe byly dalším tématem <b>SAMOODEČTY</b> – najdete <a href="https://sites.google.com/view/znalostn-bze/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat/zad%C3%A1n%C3%AD-samoode%C4%8Dtu-p%C5%99idru%C5%BEen%C3%BD-elekrom%C4%9Brplynom%C4%9Br">zde</a>.`
+},
+ {
+  id: 28,
+  title: "Úkoly",
+  date: "2024-12-03",
+  category: ["manualy"],
+  icon: "bi bi-list-check",
+  color: "secondary",
+  author: "Lukáš",
+  isNew: false,
+  content: `Aktualizovaná sekce <b>Úkoly</b> – jak správně postupovat, najdete <a href="https://sites.google.com/view/znalostn-bze/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat/%C3%BAkoly">zde</a>.`
+},
+{
+  id: 29,
+  title: "Zranitelný zákazník",
+  date: "2024-12-03",
+  category: ["manualy", "smlouvy"],
+  icon: "bi bi-person-exclamation",
+  color: "danger",
+  author: "Lukáš",
+  isNew: false,
+  content: `Prosím o nastudování nového minimanuálu <b>Zranitelný zákazník</b> – video + prezentace + postup jak správně reagovat.<br>Vše najdete <a href="https://sites.google.com/search/znalostn-bze?query=zraniteln%C3%BD&scope=site&showCloudSearchTab=false">zde</a>.`
+},
+{
+  id: 30,
+  title: "Postup pro nabídky/retence",
+  date: "2024-06-01",
+  category: ["nabidky", "manualy"],
+  icon: "bi bi-box-arrow-in-right",
+  color: "primary",
+  author: "Lukáš",
+  isNew: false,
+  content: `Došlo k aktualizaci postupu pro zakládání/předávání požadavků na oddělení <b>Nabídek a Retencí</b> – najdete <a href="https://sites.google.com/view/znalostn-bze/nab%C3%ADdky-a-retence?authuser=0">zde</a>.`
+},
+{
+  id: 31,
+  title: "Materiály ZIS",
+  date: "2024-05-14",
+  category: ["manualy", "video"],
+  icon: "bi bi-journal-richtext",
+  color: "info",
+  author: "Lukáš",
+  isNew: false,
+  content: `Přidané materiály ke školení systému <b>ZIS</b> – vše najdete <a href="https://sites.google.com/view/znalostn-bze/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat?authuser=0">zde</a>.`
+},
+{
+  id: 32,
+  title: "SPOT+BASE",
+  date: "2024-02-02",
+  category: ["smlouvy", "ceniky", "manualy"],
+  icon: "bi bi-lightning-charge",
+  color: "warning",
+  author: "Lukáš",
+  isNew: false,
+  content: `Postup u změny zákazníků s produktem <b>SPOT+BASE</b> najdete <a href="https://sites.google.com/view/znalostn-bze/smlouvy-kontaktn%C3%AD-%C3%BAdaje/base-spot-a-rom?authuser=0">zde</a>.`
+},
+{
+  id: 33,
+  title: "Aktualizace sekce \"Nabídky\"",
+  date: "2024-01-15",
+  category: ["nabidky"],
+  icon: "bi bi-briefcase",
+  color: "primary",
+  author: "Lukáš",
+  isNew: false,
+  content: `Aktualizace záložky <b>Nabídky</b> – najdete <a href="https://sites.google.com/view/znalostn-bze/nab%C3%ADdky-a-retence?authuser=0">zde</a>.`
+},
+{
+  id: 34,
+  title: "Nová stránka – Zkratky",
+  date: "2024-01-14",
+  category: ["smlouvy"],
+  icon: "bi bi-type",
+  color: "secondary",
+  author: "Lukáš",
+  isNew: false,
+  content: `Přidána nová stránka s přehledem <b>zkratek</b> – dostupná <a href="https://sites.google.com/view/znalostn-bze/smlouvy-kontaktn%C3%AD-%C3%BAdaje/zkratky">zde</a>.`
+},
+{
+  id: 35,
+  title: "Informativní SMS",
+  date: "2023-04-14",
+  category: ["smlouvy"],
+  icon: "bi bi-chat-left-text",
+  color: "info",
+  author: "Lukáš",
+  isNew: false,
+  content: `SMS o platbě zálohy slouží pouze k <b>potvrzení přijetí</b> – <b>nejsou zpoplatněny</b>.`
+}  
 ];
