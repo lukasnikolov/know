@@ -12,16 +12,35 @@ const updates = [
 },
 
     {
-        id: 2,
-        title: "Aktualizace: Splátkový kalendář – rozpis splátek",
-        date: "21.11.2025",
-        category: ["sablony", "finance"],
-        icon: "bi bi-envelope-paper-heart",
-        color: "warning",
-        author: "Lukáš",
-        isNew: true,
-        content: `<p data-start="135" data-end="351">Do znalostní báze byl přidán nový formulář pro vytváření splátkových kalendářů. Slouží k rychlému vyplnění údajů zákazníka, rozpisu tří splátek a automatickému vytvoření PDF dokumentu i textu e-mailu pro zákazníka.</p><p data-start="353" data-end="673">Formulář je rozdělen do tří částí – osobní údaje, adresa / identifikace a rozpis splátek. Uživatel zároveň vidí stav vyplnění jednotlivých sekcí, takže má neustále přehled o tom, co je hotové a co je ještě potřeba doplnit. Oslovení zákazníka se generuje automaticky podle pohlaví nebo typu subjektu a podle příjmení.&nbsp;<span style="font-size: 0.88rem;">U splátek se pracuje se třemi splátkami. Datum splatnosti se vždy automaticky nastavuje na 15. den v měsíci.&nbsp;</span><span style="font-size: 0.88rem;">Jakmile je vyplněna první splátka, systém sám doplní druhou a třetí jako následující měsíce.&nbsp;</span><span style="font-size: 0.88rem;">Částky splátek se formátují na dvě desetinná místa (např. 1 500,00 Kč) a celková částka se vypočítává automaticky.</span></p><p data-start="997" data-end="1074">Pro <b>rychlejší nastavení </b>splátek jsou k dispozici <b>pomocná tlačítka</b>, například:</p><ul data-start="1075" data-end="1236"><li data-start="1075" data-end="1131"><p data-start="1077" data-end="1131">nastavení 2. a 3. splátky na stejnou částku jako u 1.splátky,</p></li><li data-start="1132" data-end="1166"><p data-start="1134" data-end="1166">odečtení 1 Kč u 2. a 3. splátky,</p></li><li data-start="1167" data-end="1236"><p data-start="1169" data-end="1236">ponechání 1. a 2. splátky ve stejné výši a odečtení 1 Kč pouze u 3. splátky</p></li></ul><p data-start="1238" data-end="1407">Po odeslání formuláře je vytvořeno <b>PDF.&nbsp;</b>Odkaz na hotový dokument se zobrazí přímo ve formuláři a zároveň se otevře v novém okně pro stažení.&nbsp;<span style="font-size: 0.88rem;">Součástí řešení je také <b>náhled e-mailu,</b> který se zobrazuje v pravé části obrazovky.&nbsp;</span><span style="font-size: 0.88rem;">Text e-mailu <b>se automaticky skládá z údajů vyplněných ve formuláři</b> – <i>oslovení, variabilního symbolu faktury, komodity, výše první splátky</i>, dat splatnosti a dalších údajů.&nbsp;&nbsp;</span><span style="font-size: 0.88rem;">Pomocí tlačítka „<b>Kopírovat e-mail</b>“ se celý text zkopíruje do schránky v podobě vhodné pro vložení do ZIS - díky této možnosti, už není nutné si danou textaci e-mailu shánět v sekci <b><a href="https://sites.google.com/view/znalostn-bze/%C5%A1ablony/%C5%A1ablona-na-e-maily">Šablony na e-maily</a>, </b>ale rovnou si daný e-mail můžete <b>zkopírovat z této sekce</b>, tudíž máte vše při jednom!&nbsp;&nbsp;I přesto, že se Vám po kliknutí na tlačítko Kopírovat e-mail nezobrazuje, žádná hláška - tak se Vám textace e-mailu kopíruje a pak v ZIS stačí dát CTRL+V a textace se Vám do e-mailu vloží.&nbsp;<br></span></p><p data-start="1238" data-end="1407"><span style="font-size: 14px; text-align: justify;">📂&nbsp;<span style="font-weight: bolder;">Stránku naleznete zde</span></span><span style="font-size: 14px; text-align: justify;"><span style="font-weight: bolder;">:</span></span><br style="font-size: 14px; text-align: justify;"><span style="font-size: 14px; text-align: justify;">🔗</span><span style="font-size: 0.88rem;"></span><a href="https://sites.google.com/view/znalostn-bze/%C5%A1ablony/spl%C3%A1tkov%C3%BD-kalend%C3%A1%C5%99-rozpis-spl%C3%A1tek"><span class="cf0" style="font-size: 0.88rem;">SPLÁTKOVÝ KALENDÁ</span><span class="cf1" style="font-size: 0.88rem;">Ř</span><span class="cf0" style="font-size: 0.88rem;"> - ROZPIS SPLÁTEK</span></a></p>`
-    },
+  id: 2,
+  title: "Aktualizace: Splátkový kalendář – rozpis splátek",
+  date: "2025-11-21",
+  category: ["sablony", "finance"],
+  icon: "bi bi-envelope-paper-heart",
+  color: "warning",
+  author: "Lukáš",
+  isNew: true,
+  content: `<p data-start="135" data-end="351">Do znalostní báze byl přidán nový formulář pro vytváření splátkových kalendářů. Slouží k rychlému vyplnění údajů zákazníka, rozpisu tří splátek a automatickému vytvoření PDF dokumentu i textu e-mailu pro zákazníka.</p>
+<p data-start="353" data-end="673">Formulář je rozdělen do tří částí – osobní údaje, adresa / identifikace a rozpis splátek. Uživatel zároveň vidí stav vyplnění jednotlivých sekcí, takže má neustále přehled o tom, co je hotové a co je ještě potřeba doplnit. Oslovení zákazníka se generuje automaticky podle pohlaví nebo typu subjektu a podle příjmení.&nbsp;<span style="font-size: 0.88rem;">U splátek se pracuje se třemi splátkami. Datum splatnosti se vždy automaticky nastavuje na 15. den v měsíci.&nbsp;</span><span style="font-size: 0.88rem;">Jakmile je vyplněna první splátka, systém sám doplní druhou a třetí jako následující měsíce.&nbsp;</span><span style="font-size: 0.88rem;">Částky splátek se formátují na dvě desetinná místa (např. 1 500,00 Kč) a celková částka se vypočítává automaticky.</span></p>
+<p data-start="997" data-end="1074">Pro <b>rychlejší nastavení</b> splátek jsou k dispozici <b>pomocná tlačítka</b>, například:</p>
+<ul data-start="1075" data-end="1236">
+  <li><p>nastavení 2. a 3. splátky na stejnou částku jako u 1. splátky,</p></li>
+  <li><p>odečtení 1 Kč u 2. a 3. splátky,</p></li>
+  <li><p>ponechání 1. a 2. splátky ve stejné výši a odečtení 1 Kč pouze u 3. splátky</p></li>
+</ul>
+<p data-start="1238" data-end="1407">Po odeslání formuláře je vytvořeno <b>PDF</b>. Odkaz na hotový dokument se zobrazí přímo ve formuláři a zároveň se otevře v novém okně pro stažení.&nbsp;
+<span style="font-size: 0.88rem;">Součástí řešení je také <b>náhled e-mailu</b>, který se zobrazuje v pravé části obrazovky.&nbsp;</span>
+<span style="font-size: 0.88rem;">Text e-mailu <b>se automaticky skládá z údajů vyplněných ve formuláři</b> – <i>oslovení, variabilního symbolu faktury, komodity, výše první splátky</i>, dat splatnosti a dalších údajů.&nbsp;</span>
+<span style="font-size: 0.88rem;">Pomocí tlačítka „<b>Kopírovat e-mail</b>“ se celý text zkopíruje do schránky v podobě vhodné pro vložení do ZIS.</span>
+</p>
+<p>
+<span style="font-size: 14px;">📂 <b>Stránku naleznete zde:</b></span><br>
+🔗 <a href="https://sites.google.com/view/znalostn-bze/%C5%A1ablony/spl%C3%A1tkov%C3%BD-kalend%C3%A1%C5%99-rozpis-spl%C3%A1tek">
+SPLÁTKOVÝ KALENDÁŘ – ROZPIS SPLÁTEK
+</a>
+</p>`
+},
+
     {
         id: 3,
         title: "Přidání nové stránky - Dokumenty pro změnu sazby v rámci ČEZ",
