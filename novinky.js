@@ -1,15 +1,16 @@
 const updates = [
-    {
-        id: 1,
-        title: "Aktualizace: Jak zjistit časy spínání HDO",
-        date: "22.11.2025",
-        category: ["manualy"],
-        icon: "bi bi-tv",
-        color: "light",
-        author: "Lukáš",
-        isNew: true,
-        content: `Vážení kolegové, rádi bychom Vás informovali o nové aktualizaci v sekci <em data-start="265" data-end="278">Minimanuály</em> – téma <strong data-start="286" data-end="308">„Časy spínání HDO“</strong> nyní obsahuje přehledný návod, jak jednoduše zjistit časy nízkého tarifu pro odběrné místo. Zjistíte v něm, <strong data-start="424" data-end="464" data-is-only-node="">kde najít povel či kód přijímače HDO</strong>, jak vybrat distribuční území a zadat požadované údaje na stránce distributora. Tento nový manuál Vám ulehčí komunikaci se zákazníkem a umožní rychle ověřit, v jakých hodinách platí nízký tarif. Doporučujeme jej mít připravený při telefonické nebo e-mailové podpoře.<br><br><span style="font-size: 14px; text-align: justify;">📂&nbsp;<span style="font-weight: bolder;">Stránku naleznete zde</span></span><span style="font-size: 14px; text-align: justify;"><span style="font-weight: bolder;">:</span></span><div><span style="font-size: 14px; text-align: justify;">🔗&nbsp;</span><a href="https://sites.google.com/view/znalostn-bze/" style="background-color: rgba(0, 0, 0, 0); font-size: 14.08px; transition: color 0.3s;">Znalostní báze</a>&nbsp;⏩<a href="https://sites.google.com/view/znalostn-bze/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat" style="background-color: rgba(0, 0, 0, 0); font-size: 14.08px; transition: color 0.3s;">Školení - ZIS - podle témat</a><span style="font-size: 14.08px;">⏩</span><span style="color: rgba(33, 37, 41, 0.75); background-color: rgba(0, 0, 0, 0); font-size: 14.08px;"><a href="https://sites.google.com/view/znalostn-bze/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat/minimanu%C3%A1ly">Minimanuály</a></span><span style="font-size: 14.08px;">⏩</span><span style="color: rgba(33, 37, 41, 0.75); background-color: rgba(0, 0, 0, 0); font-size: 14.08px;"><a href="https://sites.google.com/view/znalostn-bze/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat/minimanu%C3%A1ly/%C4%8Dasy-sp%C3%ADn%C3%A1n%C3%AD-hdo">Časy spínání HDO</a></span></div>`
-    },
+   {
+  id: 1,
+  title: "Aktualizace: Jak zjistit časy spínání HDO",
+  date: "2025-11-22",
+  category: ["manualy"],
+  icon: "bi bi-tv",
+  color: "light",
+  author: "Lukáš",
+  isNew: true,
+  content: `Vážení kolegové, rádi bychom Vás informovali o nové aktualizaci v sekci <em data-start="265" data-end="278">Minimanuály</em> – téma <strong data-start="286" data-end="308">„Časy spínání HDO“</strong> nyní obsahuje přehledný návod, jak jednoduše zjistit časy nízkého tarifu pro odběrné místo. Zjistíte v něm, <strong data-start="424" data-end="464" data-is-only-node="">kde najít povel či kód přijímače HDO</strong>, jak vybrat distribuční území a zadat požadované údaje na stránce distributora. Tento nový manuál Vám ulehčí komunikaci se zákazníkem a umožní rychle ověřit, v jakých hodinách platí nízký tarif. Doporučujeme jej mít připravený při telefonické nebo e-mailové podpoře.<br><br><span style="font-size: 14px; text-align: justify;">📂&nbsp;<span style="font-weight: bolder;">Stránku naleznete zde</span></span><span style="font-size: 14px; text-align: justify;"><span style="font-weight: bolder;">:</span></span><div><span style="font-size: 14px; text-align: justify;">🔗&nbsp;</span><a href="https://sites.google.com/view/znalostn-bze/" style="background-color: rgba(0, 0, 0, 0); font-size: 14.08px; transition: color 0.3s;">Znalostní báze</a>&nbsp;⏩<a href="https://sites.google.com/view/znalostn-bze/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat" style="background-color: rgba(0, 0, 0, 0); font-size: 14.08px; transition: color 0.3s;">Školení - ZIS - podle témat</a><span style="font-size: 14.08px;">⏩</span><span style="color: rgba(33, 37, 41, 0.75); background-color: rgba(0, 0, 0, 0); font-size: 14.08px;"><a href="https://sites.google.com/view/znalostn-bze/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat/minimanu%C3%A1ly">Minimanuály</a></span><span style="font-size: 14.08px;">⏩</span><span style="color: rgba(33, 37, 41, 0.75); background-color: rgba(0, 0, 0, 0); font-size: 14.08px;"><a href="https://sites.google.com/view/znalostn-bze/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat/minimanu%C3%A1ly/%C4%8Dasy-sp%C3%ADn%C3%A1n%C3%AD-hdo">Časy spínání HDO</a></span></div>`
+},
+
     {
         id: 2,
         title: "Aktualizace: Splátkový kalendář – rozpis splátek",
