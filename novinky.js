@@ -1,20 +1,5 @@
 const updates = [
-   {
-  "id": 1766423166400,
-  "title": "Zkouška",
-  "date": "2025-12-22",
-  "category": [
-    "sablony",
-    "smlouvy"
-  ],
-  "icon": "bi bi-plug",
-  "color": "purple",
-  "author": "Lukáš",
-  "isNew": true,
-  "content": `zkouška`
-},
-	
-	{
+{
   id: 1,
   title: "Aktualizace: Jak zjistit časy spínání HDO",
   date: "2025-11-22",
