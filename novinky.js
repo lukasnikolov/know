@@ -1,4 +1,96 @@
 const updates = [
+	{
+  id: "2025-12-fakturace-konec-roku",
+  title: "Provoz fakturace & pohledávek – konec roku",
+  date: "2025-12-22",
+  category: ["fakturace", "finance", "smlouvy"],
+  icon: "bi bi-calendar-check",
+  color: "warning",
+  author: "Lukáš",
+  isNew: true,
+  content: `
+    <p><strong>Přehled důležitých termínů a upozornění pro závěr roku</strong> – fakturace, samoodečty, pohledávky, přerušení dodávek, párování plateb a generování záloh.</p>
+
+    <p class="text-danger"><strong>Připrav se dopředu – níže najdeš všechny termíny na jednom místě.</strong></p>
+
+    <hr>
+
+    <h3>📄 Fakturace</h3>
+    <ul>
+      <li>Fakturace v ZIS běží <strong>plně automaticky</strong>, nedochází k jejímu zastavení.</li>
+      <li>Automat vynechává <strong>víkendy a svátky</strong>, ostatní dny fakturace probíhá standardně.</li>
+      <li>Výjimkou jsou pouze <strong>samoodečty</strong> – viz níže.</li>
+    </ul>
+
+    <hr>
+
+    <h3>⚡ Elektřina – samoodečty (31. 12.)</h3>
+    <ul>
+      <li><strong>Kontrolní odečet:</strong> 7 KD před / 30 KD po 31. 12.</li>
+      <li><strong>K datu ukončení smlouvy:</strong> 30 PD před / 5 PD po 31. 12.</li>
+      <li><strong>K datu aktivace:</strong> nejdříve 31. 12., nejpozději 3 PD po</li>
+      <li><strong>Mimořádné vyúčtování:</strong> 10 KD před / 30 KD po (do 30. 01.)</li>
+    </ul>
+    <p class="text-warning"><strong>U ELE nutné zajistit evidenci v AF nejpozději do 20. 01.</strong></p>
+
+    <h3>🔥 Plyn – samoodečty (31. 12.)</h3>
+    <ul>
+      <li><strong>Kontrolní odečet:</strong> 7 KD před / 14 KD po 31. 12.</li>
+      <li><strong>K datu ukončení smlouvy:</strong> 30 PD před / 5 PD po 31. 12.</li>
+      <li><strong>K datu aktivace:</strong> nejdříve 31. 12., nejpozději 3 PD po</li>
+      <li><strong>Mimořádné vyúčtování:</strong> 10 KD před / 15 KD po (do 15. 01.)</li>
+    </ul>
+    <p class="text-warning"><strong>U plynu nutné zajistit evidenci v AF nejpozději do 07. 01.</strong></p>
+
+    <div class="alert alert-danger">
+      <strong>POZOR:</strong>
+      <ul>
+        <li>Důsledně rozlišujeme kontrolní × mimořádné odečty.</li>
+        <li>Odečty pro mimořádné vyúčtování musí být v AF180 s důvodem <strong>„Mimořádné vyúčtování s DUF“</strong>.</li>
+        <li><strong>NEZADÁVÁME samoodečty k měření B a LDS!</strong></li>
+      </ul>
+    </div>
+
+    <p><strong>Přesmluvnění k 31. 12.</strong>: letos lze zadat odečty jako mimořádné, pokud OM pokračuje od 01. 01. 2026 na nové smlouvě u stejného partnera.</p>
+
+    <hr>
+
+    <h3>⚠️ Povinná pravidla</h3>
+    <ul>
+      <li>Pokud nejde zadat odečty k přesmluvnění jako mimořádné, <strong>je nutné to nahlásit</strong>.</li>
+      <li><strong>Zákaz obcházení postupů</strong> – nehledat alternativní řešení.</li>
+      <li>Validace ZIS umožňuje více než 10 odečtů ročně – schválení řeší distribuce.</li>
+      <li>Zamítnuté kontrolní odečty z důvodu limitu <strong>dále neřešíme</strong>.</li>
+      <li>U mimořádných vyúčtování fakturujeme pouze navazující odečty k <strong>30. 11. 2025</strong>.</li>
+      <li>Překročení limitu odečtů je <strong>odpovědnost zákazníka</strong>.</li>
+    </ul>
+
+    <hr>
+
+    <h3>💸 Pohledávky & přerušení dodávek</h3>
+    <ul>
+      <li>Upomínky běží <strong>automaticky</strong>, bez přerušení.</li>
+      <li>Poslední zadání úkolu na EK: <strong>5. 12. 2025</strong> (realizace 12. 12.).</li>
+      <li>Call centrum vymáhání funguje do <strong>19. 12. 2025</strong>, poté od <strong>5. 1. 2026</strong>.</li>
+    </ul>
+
+    <hr>
+
+    <h3>🏦 Párování plateb, SIPO & zálohy</h3>
+    <ul>
+      <li>Párování plateb: <strong>23. 12., 30. 12. 2025 a 2. 1. 2026</strong>.</li>
+      <li>SIPO – žádosti: <strong>22. 12. 2025</strong>.</li>
+      <li>Vratky: poslední <strong>22. 12. 2025</strong>, další až <strong>5. 1. 2026</strong>.</li>
+      <li>Generování záloh 2026:
+        <ul>
+          <li><strong>19. 12. 2025</strong> – sipaři (zálohy od ledna)</li>
+          <li><strong>2.–4. 1. 2026</strong> – zbytek kmene (od února)</li>
+        </ul>
+      </li>
+    </ul>
+    <p><em>Očekává se součinnost BO, SA a PMO dle potřeby.</em></p>
+  `
+},
 {
   id: 1,
   title: "Aktualizace: Jak zjistit časy spínání HDO",
