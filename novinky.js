@@ -1,95 +1,18 @@
 const updates = [
 	{
-  id: "2025-12-fakturace-konec-roku",
-  title: "Provoz fakturace & pohledávek – konec roku",
-  date: "2025-12-22",
-  category: ["fakturace", "finance", "smlouvy"],
-  icon: "bi bi-calendar-check",
-  color: "warning",
-  author: "Lukáš",
-  isNew: true,
-  content: `
-    <p><strong>Přehled důležitých termínů a upozornění pro závěr roku</strong> – fakturace, samoodečty, pohledávky, přerušení dodávek, párování plateb a generování záloh.</p>
-
-    <p class="text-danger"><strong>Připrav se dopředu – níže najdeš všechny termíny na jednom místě.</strong></p>
-
-    <hr>
-
-    <h3>📄 Fakturace</h3>
-    <ul>
-      <li>Fakturace v ZIS běží <strong>plně automaticky</strong>, nedochází k jejímu zastavení.</li>
-      <li>Automat vynechává <strong>víkendy a svátky</strong>, ostatní dny fakturace probíhá standardně.</li>
-      <li>Výjimkou jsou pouze <strong>samoodečty</strong> – viz níže.</li>
-    </ul>
-
-    <hr>
-
-    <h3>⚡ Elektřina – samoodečty (31. 12.)</h3>
-    <ul>
-      <li><strong>Kontrolní odečet:</strong> 7 KD před / 30 KD po 31. 12.</li>
-      <li><strong>K datu ukončení smlouvy:</strong> 30 PD před / 5 PD po 31. 12.</li>
-      <li><strong>K datu aktivace:</strong> nejdříve 31. 12., nejpozději 3 PD po</li>
-      <li><strong>Mimořádné vyúčtování:</strong> 10 KD před / 30 KD po (do 30. 01.)</li>
-    </ul>
-    <p class="text-warning"><strong>U ELE nutné zajistit evidenci v AF nejpozději do 20. 01.</strong></p>
-
-    <h3>🔥 Plyn – samoodečty (31. 12.)</h3>
-    <ul>
-      <li><strong>Kontrolní odečet:</strong> 7 KD před / 14 KD po 31. 12.</li>
-      <li><strong>K datu ukončení smlouvy:</strong> 30 PD před / 5 PD po 31. 12.</li>
-      <li><strong>K datu aktivace:</strong> nejdříve 31. 12., nejpozději 3 PD po</li>
-      <li><strong>Mimořádné vyúčtování:</strong> 10 KD před / 15 KD po (do 15. 01.)</li>
-    </ul>
-    <p class="text-warning"><strong>U plynu nutné zajistit evidenci v AF nejpozději do 07. 01.</strong></p>
-
-    <div class="alert alert-danger">
-      <strong>POZOR:</strong>
-      <ul>
-        <li>Důsledně rozlišujeme kontrolní × mimořádné odečty.</li>
-        <li>Odečty pro mimořádné vyúčtování musí být v AF180 s důvodem <strong>„Mimořádné vyúčtování s DUF“</strong>.</li>
-        <li><strong>NEZADÁVÁME samoodečty k měření B a LDS!</strong></li>
-      </ul>
-    </div>
-
-    <p><strong>Přesmluvnění k 31. 12.</strong>: letos lze zadat odečty jako mimořádné, pokud OM pokračuje od 01. 01. 2026 na nové smlouvě u stejného partnera.</p>
-
-    <hr>
-
-    <h3>⚠️ Povinná pravidla</h3>
-    <ul>
-      <li>Pokud nejde zadat odečty k přesmluvnění jako mimořádné, <strong>je nutné to nahlásit</strong>.</li>
-      <li><strong>Zákaz obcházení postupů</strong> – nehledat alternativní řešení.</li>
-      <li>Validace ZIS umožňuje více než 10 odečtů ročně – schválení řeší distribuce.</li>
-      <li>Zamítnuté kontrolní odečty z důvodu limitu <strong>dále neřešíme</strong>.</li>
-      <li>U mimořádných vyúčtování fakturujeme pouze navazující odečty k <strong>30. 11. 2025</strong>.</li>
-      <li>Překročení limitu odečtů je <strong>odpovědnost zákazníka</strong>.</li>
-    </ul>
-
-    <hr>
-
-    <h3>💸 Pohledávky & přerušení dodávek</h3>
-    <ul>
-      <li>Upomínky běží <strong>automaticky</strong>, bez přerušení.</li>
-      <li>Poslední zadání úkolu na EK: <strong>5. 12. 2025</strong> (realizace 12. 12.).</li>
-      <li>Call centrum vymáhání funguje do <strong>19. 12. 2025</strong>, poté od <strong>5. 1. 2026</strong>.</li>
-    </ul>
-
-    <hr>
-
-    <h3>🏦 Párování plateb, SIPO & zálohy</h3>
-    <ul>
-      <li>Párování plateb: <strong>23. 12., 30. 12. 2025 a 2. 1. 2026</strong>.</li>
-      <li>SIPO – žádosti: <strong>22. 12. 2025</strong>.</li>
-      <li>Vratky: poslední <strong>22. 12. 2025</strong>, další až <strong>5. 1. 2026</strong>.</li>
-      <li>Generování záloh 2026:
-        <ul>
-          <li><strong>19. 12. 2025</strong> – sipaři (zálohy od ledna)</li>
-          <li><strong>2.–4. 1. 2026</strong> – zbytek kmene (od února)</li>
-        </ul>
-      </li>
-    </ul>
-    <p><em>Očekává se součinnost BO, SA a PMO dle potřeby.</em></p>
-  `
+  "id": 1766480419334,
+  "title": "Provoz fakturace & pohledávek (konec roku)",
+  "date": "2025-12-23",
+  "category": [
+    "manualy",
+    "finance",
+    "fakturace"
+  ],
+  "icon": "bi bi-info-circle",
+  "color": "purple",
+  "author": "Lukáš",
+  "isNew": true,
+  "content": "`Sdílíme shrnutí klíčových informací a termínů k závěru roku v oblasti fakturace, samoodečtů, pohledávek, plateb a generování záloh. Prosíme o pozornost, většina procesů letos běží automaticky a je nutné dodržovat nastavené postupy.</p><p><strong>Fakturace</strong></p><p> Fakturace v ZIS běží po celý konec roku plně automaticky a není zastavována. Automat vynechává víkendy a svátky, jinak fakturace probíhá standardně. Výjimkou jsou pouze případy navázané na samoodečty.</p><p><strong>Samoodečty – závěr roku</strong></p><p> Byly aktualizovány termíny pro hlášení samoodečtů k 31. 12. 2025. Je nutné důsledně rozlišovat mezi kontrolními odečty, odečty k ukončení smlouvy, k datu aktivace a odečty pro mimořádné vyúčtování.</p><p>U elektřiny je nutné zajistit, aby kontrolní i mimořádné odečty byly v AF zaevidovány nejpozději do 20. 1. 2026.</p><p> U plynu je tento termín nejpozději do 7. 1. 2026.</p><p>Všechny odečty pro mimořádné vyúčtování musí být v AF180 vedeny s důvodem „Mimořádné vyúčtování s DUF“. Samoodečty k měření B a LDS se nezadávají.</p><p>Nově ZIS umožní v případě přesmluvnění k 31. 12. zadat odečty jako mimořádné, pokud odběrné místo od 1. 1. 2026 pokračuje na nové smlouvě u stejného partnera. Pokud nebude možné tyto odečty zadat jako mimořádné, je nutné tuto skutečnost neprodleně nahlásit. Není přípustné obcházet nastavené postupy.</p><p><strong>Pravidla a odpovědnosti</strong></p><p> Validace v ZIS byla upravena tak, aby bylo možné zadat více než 10 odečtů ročně. Případné zamítnutí ponecháváme na distribuci. Zamítnuté kontrolní odečty z důvodu překročení limitu dále neřešíme.</p><p> U mimořádných vyúčtování budeme automaticky fakturovat pouze navazující odečty k 30. 11. 2025. Pokud zákazník vyčerpal limit odečtů ještě před tímto datem, jedná se o situaci na jeho straně a další odečty nebudeme akceptovat.</p><p><strong>Pohledávky a přerušení dodávek</strong></p><p> Upomínky i vymáhání běží nadále automaticky bez přerušení. Poslední možnost zadat úkol na EK je 5. 12. 2025 (realizace 12. 12. 2025). Call centrum vymáhání funguje do 19. 12. 2025, následně znovu od 5. 1. 2026.</p><p><strong>Platby, SIPO a zálohy</strong></p><p> Párování plateb proběhne v termínech 23. 12., 30. 12. 2025 a 2. 1. 2026.</p><p> Žádosti o SIPO budou zpracovány 22. 12. 2025. Poslední vratky budou generovány 22. 12. 2025, další až od 5. 1. 2026.</p><p> Generování záloh pro rok 2026 proběhne 19. 12. 2025 u sipařů (zálohy již od ledna) a následně v období 2.–4. 1. 2026 u zbytku kmene (zálohy od února). V případě potřeby se počítá se součinností BO, SA a PMO.</p><p><br></p><p>📂&nbsp;<strong>Stránku naleznete zde:</strong></p><p>🔗&nbsp;<a href=\"https://sites.google.com/view/znalostn-bze/\" target=\"_blank\" style=\"background-color: rgba(0, 0, 0, 0); color: rgb(106, 139, 22);\">Znalostní báze</a>&nbsp;⏩<a href=\"https://sites.google.com/view/znalostn-bze/prosinec-2025-leden-2026\" target=\"_blank\">Prosinec 2025 / Leden 2026</a>`
 },
 {
   id: 1,
