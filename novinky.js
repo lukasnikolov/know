@@ -1,5 +1,18 @@
 const updates = [
 	{
+  "id": 1766855450087,
+  "title": "Novinka – Update vizuálu a struktury (Šablony e-mailů)",
+  "date": "2025-12-27",
+  "category": [
+    "sablony"
+  ],
+  "icon": "bi bi-envelope-paper",
+  "color": "purple",
+  "author": "Lukáš",
+  "isNew": true,
+  "content": `Stránka <a href=\"https://sites.google.com/view/znalostn-bze/%C5%A1ablony/%C5%A1ablona-na-e-maily\" target=\"_blank\"><strong>Šablona na e-maily</strong></a> ve Znalostní bázi prošla <strong>kompletní vizuální a strukturální aktualizací</strong>, která ji sladila s moderním a profesionálním stylem Google Sites (bílé pozadí, přehlednější panely a lepší rozhraní pro práci se šablonami).</p><p><strong>Hlavní sekce a co dělají:</strong></p><ul><li><strong>📂 Kategorie (levý panel):</strong> Přepínání mezi typy šablon (např. Všechny, podle měření, montáže, finance, DINHE, apod.) s počítadlem položek. <em>Nový design přidává lepší čitelnost.</em></li><li><strong>🔍 Vyhledávání (panel seznamu):</strong> Full-text search  v názvech, obsahu i kategoriích. </li><li><strong>👤 Filtr oslovení:</strong> Volba „Pan / Paní“ + zadání příjmení, které se <strong>automaticky skloňuje</strong> v náhledu e-mailu. </li><li><strong>📄 Náhled šablony:</strong> Zobrazení formátovaného e-mailu s aplikovaným oslovením, který lze <strong>editovat přímo v okně</strong>.(To znamená, <strong>že ještě před kopírováním</strong>, můžete textaci <strong>e-mailu upravit</strong>, dopsat co potřebuje, upravit ztučněné části a pak zkopírovat a rovnou vložit do ZIS.)</li><li><strong>📋 Kopírování:</strong> Kopíruje obsah<strong> bez pozadí</strong>, přes Ctrl+Enter nebo klik, s notifikací „Zkopírováno“. <em>Tlačítko má nově výraznější stín a mikro-animaci při kliku.</em></li></ul><p><strong>Co se změnilo:</strong></p><p> ✔ Nové rozložení 3 panelů (kategorie → seznam → náhled) pro lepší orientaci</p><p> ✔ Jednotný styl karet a náhledu „e-mailu“</p><p> ✔ Vylepšené oslovení a skloňování příjmení</p><p> ✔ Čistší vizuál bez rušivých prvků, připravený pro interní používání</p><p>🔗 <strong>Stránku naleznete zde:</strong></p><p> 📂 Znalostní báze </p><p> 🔗 <a href=\"https://sites.google.com/view/znalostn-bze/%C5%A1ablony/%C5%A1ablona-na-e-maily\" target=\"_blank\"><strong>Šablona na e-maily</strong></a>`
+},
+	{
   "id": 1766854783210,
   "title": "Novinka – Školení ZIS podle témat má nový vizuál",
   "date": "2025-12-27",
