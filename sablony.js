@@ -897,7 +897,6 @@ text: `${OSLOVENI_BLOCK}
 <ul class="ps-3 mb-2" style="line-height:1.6;">
   <li class="mb-2"><b>Proč:</b> Řádný odečet distributora je pro vyúčtování nadřazený a nahradí samoodečet; nahlášení stavu ve stejném měsíci Vám tak nepřinese výhodu a může být zamítnuto jako duplicitní. A tím dojde k vyčerpání jeho limitu.</li>
   <li class="mb-2"><b>Příklad:</b> Pokud víte, že distributor provádí řádný odečet v <i>dubnu</i>, samoodečet v dubnu neposílejte. Stav případně nahlaste v <i>březnu</i> nebo <i>květnu</i>.</li>
-  <li class="mb-0">Tento princip platí jak u elektřiny, tak u plynu.</li>
 </ul>
 <p class="mb-2">Tento princip platí jak u elektřiny, tak u plynu.</p>
 <p class="mb-2">Děkujeme za pochopení a spolupráci.</p>
@@ -2730,6 +2729,7 @@ ${PORTAL_BLOCK}`,
         }
 };
 window.SABLONY = data;
+
 
 
 
