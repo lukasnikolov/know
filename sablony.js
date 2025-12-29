@@ -747,47 +747,39 @@ ${PORTAL_BLOCK}`,
                 tags: ["Samoodečty"]
         },
         "Potvrzení přijetí samoodečtu pro vystavení mimořádné faktury - k 31.12 (ale posílá dříve)": {
-                text: `${OSLOVENI_BLOCK}
+text: `${OSLOVENI_BLOCK}
+
 <p class="mb-3">děkujeme za Váš e-mail. K Vašemu dotazu ohledně <b>mimořádného vyúčtování k 31.12.20XX</b> nabízíme dvě možnosti:</p>
+
 <ol class="mb-4 ps-3" style="line-height:1.7;">
   <li class="mb-2"><b>Vyplnění evidenční tabulky</b> – naleznete ji v příloze tohoto e-mailu. Po vyplnění nám ji prosím zašlete zpět e-mailem, <b>nejpozději do níže uvedených termínů</b>.</li>
   <li class="mb-0"><b>Zadání odečtů</b> prostřednictvím našeho <b>Zákaznického portálu</b>.</li>
 </ol>
-<p class="mb-3">Níže uvádíme termíny pro nahlášení odečtů pro mimořádné vyúčtování:</p>
-<div class="row g-3 mb-4">
-  <div class="col-md-6">
-    <p class="mb-2 text-primary text-decoration-underline"><b>Elektřina</b></p>
-    <ul class="ps-3 mb-0" style="line-height:1.7;">
-      <li class="mb-2">Odečet lze provést k libovolnému datu, musí být však nahlášen <b>do 20 kalendářních dnů</b> od provedení odečtu.</li>
-      <li class="mb-0">Pokud bude odečet proveden k 31.12.20XX, je nutné jej nahlásit <b>do 20.01.20XX</b>.</li>
-    </ul>
-  </div>
-  <div class="col-md-6">
-    <p class="mb-2 text-warning text-decoration-underline"><b>Plyn</b></p>
-    <ul class="ps-3 mb-0" style="line-height:1.7;">
-      <li class="mb-2">Odečet je třeba provést <b>k poslednímu dni v měsíci</b>.</li>
-      <li class="mb-0">Nahlášení musí proběhnout <b>do 5 kalendářních dnů</b> – tedy <b>do 05.01.20XX</b>.</li>
-    </ul>
-  </div>
+
+<p class="mb-3"><u>Termíny pro nahlášení odečtů pro mimořádné vyúčtování:</u></p>
+
+<ul class="ps-3 mb-4" style="line-height:1.7;">
+  <li class="mb-2"><strong>Elektřina:</strong> odečet lze provést k libovolnému datu, musí být však nahlášen <b>do 20 kalendářních dnů</b> od provedení odečtu. Pokud je odečet proveden k 31.12.20XX, nahlášení musí proběhnout <b>nejpozději do 20.01.20XX</b>.</li>
+  <li class="mb-0"><strong>Plyn:</strong> odečet musí být proveden <b>k poslednímu dni v měsíci</b> a nahlášen <b>do 5 kalendářních dnů</b> od provedení, tedy <b>nejpozději do 05.01.20XX</b>.</li>
+</ul>
+
+<p class="mb-2"><u>Pro správné zpracování odečtu v evidenční tabulce doporučujeme vyplnit:</u></p>
+
+<div class="mb-4">
+  <p class="mb-2"><strong>Při mimořádném vyúčtování elektřiny:</strong></p>
+  <ul class="ps-3 mb-3" style="line-height:1.7;">
+    <li class="mb-2"><i>Typ odečtu:</i> Mimořádné vyúčtování</li>
+    <li class="mb-0"><i>Důvod odečtu:</i> Mimořádné vyúčtování</li>
+  </ul>
+
+  <p class="mb-2"><strong>Při mimořádném vyúčtování plynu:</strong></p>
+  <ul class="ps-3 mb-0" style="line-height:1.7;">
+    <li class="mb-2"><i>Typ odečtu:</i> Mimořádné vyúčtování</li>
+    <li class="mb-0"><i>Důvod odečtu:</i> Mimořádné vyúčtování s DUF</li>
+  </ul>
 </div>
-<p class="mt-3 mb-2"><u>Pro správné zpracování odečtů v tabulce doporučujeme vyplnit:</u></p>
-<div class="row g-3 mb-4">
-  <div class="col-md-6">
-    <p class="mb-2 text-primary text-decoration-underline"><b>Mimořádné vyúčtování – Elektřina</b></p>
-    <ul class="ps-3 mb-0" style="line-height:1.7;">
-      <li class="mb-2"><i>Typ odečtu:</i> Mimořádné vyúčtování</li>
-      <li class="mb-0"><i>Důvod odečtu:</i> Mimořádné vyúčtování s DUF</li>
-    </ul>
-  </div>
-  <div class="col-md-6">
-    <p class="mb-2 text-warning text-decoration-underline"><b>Mimořádné vyúčtování – Plyn</b></p>
-    <ul class="ps-3 mb-0" style="line-height:1.7;">
-      <li class="mb-2"><i>Typ odečtu:</i> Mimořádné vyúčtování</li>
-      <li class="mb-0"><i>Důvod odečtu:</i> Mimořádné vyúčtování s DUF</li>
-    </ul>
-  </div>
-</div>
-${PORTAL_BLOCK}`,
+
+${PORTAL_BLOCK}`,  
                 files: [
                         { url: 'https://docs.google.com/spreadsheets/d/13wHIPy047lL1JOVuEX1phxT_JqE22cHPscAZj9iF1cQ/edit?gid=197074618#gid=197074618', name: "ŠABLONA PRO E-MAIL", type: "xls" },
                         { url: 'https://docs.google.com/spreadsheets/d/1sIB4lRLeYM4HlgxTEkPjxNKA5B3ruKweGZDDM-MMh7s/edit?gid=1283439519#gid=1283439519', name: "ŠABLONA PRO PORTÁL", type: "xls" },
@@ -795,38 +787,26 @@ ${PORTAL_BLOCK}`,
                 tags: ["Samoodečty"]
         },
         "Potvrzení přijetí samoodečtu pro vystavení mimořádné faktury - Zákazník zadal již do portálu (duplicitní odečet)": {
-            text: `${OSLOVENI_BLOCK}
+text: `${OSLOVENI_BLOCK}
 <p class="mb-3">děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet jsme zpracovali.  
 Nyní čekáme na schválení dat, abychom mohli následně vystavit fakturu.</p>
-<p class="mb-3">Tento schvalovací proces může trvat <b>2–3 týdny</b>. Z tohoto důvodu Vás prosíme o trpělivost s vystavením faktury.</p>
+<p class="mb-3">Schvalovací proces může trvat <b>2–3 týdny</b>. Z tohoto důvodu Vás prosíme o trpělivost s vystavením faktury.</p>
 <p class="mb-4">Abychom příště mohli Váš požadavek zpracovat ještě dříve, zasíláme Vám v příloze evidenční tabulku, do které můžete tyto hodnoty vepsat a následně nám ji zaslat e-mailem.  
-Nově také doporučujeme hlásit odečty měřidel přímo prostřednictvím <a href="https://zakaznici.epet.cz/login" target="_blank"><b>Zákaznického portálu</b></a>.</p>
-<p class="mb-4">Pokud odečty zadáte přímo do portálu a zobrazí se <span class="badge bg-success">zelená zpráva o úspěšném přijetí</span>, není nutné nás dále kontaktovat ani zasílat údaje e-mailem.  
+Odečty je také možné nahlásit přímo prostřednictvím <a href="https://zakaznici.epet.cz/login" target="_blank"><b>Zákaznického portálu</b></a>.</p>
+<p class="mb-4">Pokud odečty zadáte přímo do portálu a zobrazí se <b>zelená zpráva o úspěšném přijetí</b>, není nutné nás dále kontaktovat ani zasílat údaje e-mailem.  
 Tento stav můžete považovat za potvrzení, že samoodečet byl úspěšně zpracován.</p>
-<p class="mt-2 mb-2"><u>Termíny pro nahlášení odečtů pro mimořádné vyúčtování:</u></p>
+<p class="mt-3 mb-2"><u>Termíny pro nahlášení odečtů pro mimořádné vyúčtování:</u></p>
 <ul class="ps-3 mb-4" style="line-height:1.7;">
-  <li class="mb-2"><b>Elektřina:</b> odečet lze provést k libovolnému datu, musí být však nahlášen <b>do 20 kalendářních dní</b> od jeho provedení.</li>
-  <li class="mb-0"><b>Plyn:</b> odečet musí být proveden <b>k poslednímu dni v měsíci</b> a nahlášen <b>do 5 kalendářních dní</b>.</li>
+  <li class="mb-2"><b>Elektřina:</b> odečet lze provést k libovolnému datu, musí být však nahlášen <b>do 20 kalendářních dnů</b> od jeho provedení.</li>
+  <li class="mb-0"><b>Plyn:</b> odečet musí být proveden <b>k poslednímu dni v měsíci</b> a nahlášen <b>do 5 kalendářních dnů</b>.</li>
 </ul>
-<p class="mt-3 mb-2"><u>Pro správné zpracování v tabulce doporučujeme vyplnit:</u></p>
+<p class="mt-4 mb-2"><u>Pro správné zpracování v evidenční tabulce doporučujeme vyplnit:</u></p>
 <p class="mb-2"><strong>Při mimořádném vyúčtování (elektřina i plyn):</strong></p>
-<div class="row g-3 mb-4">
-  <div class="col-md-6">
-    <p class="mb-2 text-decoration-underline text-primary"><b>Mimořádné vyúčtování – Elektřina</b></p>
-    <ul class="ps-3" style="line-height:1.7;">
-      <li class="mb-2"><i>Typ odečtu:</i> Mimořádné vyúčtování</li>
-      <li class="mb-0"><i>Důvod odečtu:</i> Mimořádné vyúčtování</li>
-    </ul>
-  </div>
-  <div class="col-md-6">
-    <p class="mb-2 text-decoration-underline text-warning"><b>Mimořádné vyúčtování – Plyn</b></p>
-    <ul class="ps-3" style="line-height:1.7;">
-      <li class="mb-2"><i>Typ odečtu:</i> Mimořádné vyúčtování</li>
-      <li class="mb-0"><i>Důvod odečtu:</i> Mimořádné vyúčtování s DUF</li>
-    </ul>
-  </div>
-</div>
-
+<ul class="ps-3 mb-4" style="line-height:1.7;">
+  <li class="mb-2"><i>Typ odečtu:</i> Mimořádné vyúčtování</li>
+  <li class="mb-2"><i>Důvod odečtu (elektřina):</i> Mimořádné vyúčtování</li>
+  <li class="mb-0"><i>Důvod odečtu (plyn):</i> Mimořádné vyúčtování s DUF</li>
+</ul>
 ${PORTAL_BLOCK}`,
                 files: [
                         { url: 'https://docs.google.com/spreadsheets/d/13wHIPy047lL1JOVuEX1phxT_JqE22cHPscAZj9iF1cQ/edit?gid=197074618#gid=197074618', name: "ŠABLONA PRO E-MAIL", type: "xls" },
@@ -836,25 +816,25 @@ ${PORTAL_BLOCK}`,
 
         },
         "Potvrzení přijetí samoodečtu - Kontrolní - Zákazník zadal již do portálu (duplicitní odečet)": {
-                text: `${OSLOVENI_BLOCK}
-<p>děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet jsme zpracovali jako <b>kontrolní odečet</b>, bez vystavení mimořádné faktury.  
+text: `${OSLOVENI_BLOCK}
+<p class="mb-3">děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet jsme zpracovali jako <b>kontrolní odečet</b>, bez vystavení mimořádné faktury.  
 Odečet bude zohledněn při příští periodické fakturaci.</p>
-<p>Abychom příště mohli Váš požadavek zpracovat ještě dříve, zasíláme Vám v příloze evidenční tabulku, do které můžete tyto hodnoty vepsat, a následně nám ji zaslat e-mailem.  
-Nově také doporučujeme hlásit odečty měřidel přímo prostřednictvím <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznického portálu</a>.</p>
-<p>Pokud odečty zadáte přímo do portálu a zobrazí se <span class="badge bg-success">zelená zpráva o úspěšném přijetí</span>, není nutné nás dále kontaktovat ani zasílat údaje e-mailem.  
+<p class="mb-3">Abychom příště mohli Váš požadavek zpracovat ještě dříve, zasíláme Vám v příloze evidenční tabulku, do které můžete tyto hodnoty vepsat a následně nám ji zaslat e-mailem.  
+Odečty měřidel můžete také nahlásit přímo prostřednictvím <a href="https://zakaznici.epet.cz/login" target="_blank"><b>Zákaznického portálu</b></a>.</p>
+<p class="mb-3">Pokud odečty zadáte přímo do portálu a zobrazí se <b>zelená zpráva o úspěšném přijetí</b>, není nutné nás dále kontaktovat ani zasílat údaje e-mailem.  
 Tento stav můžete považovat za potvrzení, že samoodečet byl úspěšně zpracován.</p>
-<p class="mt-3"><u>Termíny pro nahlášení kontrolních odečtů:</u></p>
-<ul class="ps-3" style="line-height:1.7;">
-  <li class="mb-2"><b>Elektřina:</b> odečet lze provést k libovolnému datu, musí být však nahlášen <b>do 20 kalendářních dní</b> od jeho provedení.</li>
-  <li class="mb-0"><b>Plyn:</b> odečet lze provést k libovolnému datu, musí být však nahlášen <b>do 14 kalendářních dní</b>.</li>
-</ul>
-<p class="mt-4"><u>Pro správné zpracování odečtu v tabulce doporučujeme vyplnit:</u></p>
-<p class="mb-2"><strong>Při hlášení kontrolního odečtu (pro elektřinu i plyn):</strong></p>
+<p class="mt-3 mb-2"><u>Termíny pro nahlášení kontrolních odečtů:</u></p>
 <ul class="ps-3 mb-3" style="line-height:1.7;">
+  <li class="mb-2"><b>Elektřina:</b> odečet lze provést k libovolnému datu, musí být však nahlášen <b>do 20 kalendářních dnů</b> od jeho provedení.</li>
+  <li class="mb-0"><b>Plyn:</b> odečet lze provést k libovolnému datu, musí být však nahlášen <b>do 14 kalendářních dnů</b>.</li>
+</ul>
+<p class="mt-4 mb-2"><u>Pro správné zpracování odečtu v tabulce doporučujeme vyplnit:</u></p>
+<p class="mb-2"><strong>Při hlášení kontrolního odečtu (pro elektřinu i plyn):</strong></p>
+<ul class="ps-3 mb-4" style="line-height:1.7;">
   <li class="mb-2"><i>Typ odečtu:</i> Samoodečet</li>
   <li class="mb-0"><i>Důvod odečtu:</i> Kontrolní</li>
 </ul>
-${PORTAL_BLOCK}`,  
+${PORTAL_BLOCK}`, 
                 files: [
                         { url: 'https://docs.google.com/spreadsheets/d/13wHIPy047lL1JOVuEX1phxT_JqE22cHPscAZj9iF1cQ/edit?gid=197074618#gid=197074618', name: "ŠABLONA PRO E-MAIL", type: "xls" },
                         { url: 'https://docs.google.com/spreadsheets/d/1sIB4lRLeYM4HlgxTEkPjxNKA5B3ruKweGZDDM-MMh7s/edit?gid=1283439519#gid=1283439519', name: "ŠABLONA PRO PORTÁL", type: "xls" },
@@ -908,17 +888,19 @@ ${PORTAL_BLOCK}`,
                 tags: ["Samoodečty"]
         },
         "Zamítnutí samoodečtů - Z důvodu překročení limitu 10 samoodečtů v rámci roku": {
-                text: `${OSLOVENI_BLOCK}
-<p>děkujeme za Váš požadavek na zadání samoodečtu.</p>
-<p>U daného odběrného místa již v tomto kalendářním roce nelze přijmout další běžný samoodečet, protože byl vyčerpán roční limit <b>10 samoodečtů.</b></p>
-<p>Současně připomínáme, že v rámci roku lze zadat ještě jeden mimořádný samoodečet k <b>31. 12. – tedy k 31. 12. 20XX.</b>. Ten můžete zadat standardním způsobem (stejným kanálem, jako obvykle), a bude použit pro uzavření roku.</p>
-<b>Praktické doporučení</b>
-<p>Aby nedocházelo k duplicitám a zbytečnému „vyčerpání“ limitu, <b>nedoporučujeme hlásit samoodečet v měsíci, kdy má distributor plánovaný řádný odečet</b>.</p>
-<ul>
-<li><b>Proč:</b> Řádný odečet distributora je pro vyúčtování nadřazený a nahradí samoodečet; nahlášení stavu ve stejném měsíci Vám tak nepřinese výhodu a může být zamítnuto jako duplicitní. A tím dojde k vyčerpání jeho limitu.</li><br>
-<li><b>Příklad:</b> Pokud víte, že distributor provádí řádný odečet v <i>dubnu</i>, samoodečet v dubnu neposílejte. Stav případně nahlaste v <i>březnu</i> nebo <i>květnu</i>.</li><br></ul>
-<p>Tento princip platí jak u elektřiny, tak u plynu.</p>
-<p>Děkujeme za pochopení a spolupráci.</p>
+text: `${OSLOVENI_BLOCK}
+<p class="mb-2">děkujeme za Váš požadavek na zadání samoodečtu.</p>
+<p class="mb-2">U daného odběrného místa již v tomto kalendářním roce nelze přijmout další běžný samoodečet, protože byl vyčerpán roční limit <b>10 samoodečtů.</b></p>
+<p class="mb-2">Současně připomínáme, že v rámci roku lze zadat ještě jeden mimořádný samoodečet k <b>31. 12. – tedy k 31. 12. 20XX.</b> Ten můžete zadat standardním způsobem (stejným kanálem, jako obvykle), a bude použit pro uzavření roku.</p>
+<p class="mb-1"><b>Praktické doporučení</b></p>
+<p class="mb-2">Aby nedocházelo k duplicitám a zbytečnému „vyčerpání“ limitu, <b>nedoporučujeme hlásit samoodečet v měsíci, kdy má distributor plánovaný řádný odečet</b>.</p>
+<ul class="ps-3 mb-2" style="line-height:1.6;">
+  <li class="mb-2"><b>Proč:</b> Řádný odečet distributora je pro vyúčtování nadřazený a nahradí samoodečet; nahlášení stavu ve stejném měsíci Vám tak nepřinese výhodu a může být zamítnuto jako duplicitní. A tím dojde k vyčerpání jeho limitu.</li>
+  <li class="mb-2"><b>Příklad:</b> Pokud víte, že distributor provádí řádný odečet v <i>dubnu</i>, samoodečet v dubnu neposílejte. Stav případně nahlaste v <i>březnu</i> nebo <i>květnu</i>.</li>
+  <li class="mb-0">Tento princip platí jak u elektřiny, tak u plynu.</li>
+</ul>
+<p class="mb-2">Tento princip platí jak u elektřiny, tak u plynu.</p>
+<p class="mb-2">Děkujeme za pochopení a spolupráci.</p>
 ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Samoodečty"]
@@ -2748,6 +2730,7 @@ ${PORTAL_BLOCK}`,
         }
 };
 window.SABLONY = data;
+
 
 
 
