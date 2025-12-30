@@ -2052,12 +2052,19 @@ ${PORTAL_BLOCK}`,
 <ul>
   <li><strong>Potvrzení korespondenční adresy</strong> (případně sdělte <strong>novou doručovací adresu</strong> pro opětovné zaslání složenkou), nebo</li>
   <li>informaci, zda si přejete přeplatek <strong>poukázat na bankovní účet</strong> – v tom případě nám, prosím, zašlete <strong>číslo účtu</strong> (formát: předčíslí–číslo/kód banky).</li>
+ </ul> <br>
+<ul>
+    <strong>Aby nedocházelo k dalším vratkám plateb, dovolujeme si doporučit jednu z následujících možností:</strong><br>
+    <li> upravit trvalý příkaz na částku odpovídající aktuální výši záloh – tedy <strong>{{aktualni_zaloha}} Kč</strong>,<br>
+    <strong>nebo</strong><br>
+    <li> informovat nás, zda si přejete, abychom výši záloh navýšili na Vámi preferovanou částku <strong>{{vase_trvala_platba}} Kč</strong>, a podle toho upravíme platební kalendář.
+  </li>
 </ul>
 <p>Údaje nám můžete zaslat odpovědí na tento e-mail, případně nás kontaktovat na níže uvedeném telefonním čísle.</p>
-${PORTAL_BLOCK}`,
-                files: [],
-                tags: ["Přeplatky"]
-        },
+${PORTAL_BLOCK}`, 
+files: [], 
+tags: ["Přeplatky"] 
+},
 
 
         "Vrácená platba – z důvodu neexistujícího bankovního účtu (nejedená se o přeplatky, ale o platby nad rámec PK)": {
@@ -2065,6 +2072,14 @@ ${PORTAL_BLOCK}`,
 <p>rádi bychom Vás informovali, že se nám vrátila platba na částku <strong>XXX Kč</strong>, kterou jsme Vám zasílali na bankovní účet <b>číslo účtu kam platba odcházela </b>, z důvodu platby nad rámec platebního kalendáře za <strong>XXXXX</strong>.</p>
 <p>Podle předpisu byla záloha <strong>XXX Kč</strong>, od Vás jsme obdrželi <strong>XXX Kč</strong> – rozdíl <strong>XXX Kč</strong>. Platba se bohužel vrátila z důvodu, že výše uvedený bankovní účet je bohužel neexistující.</p> <br>
 <p>Pro úspěšné zpracování vrácení této částky Vás tímto zdvořile žádáme o sdělení nového bankovního účtu, na který můžeme přeplatek odeslat. Prosíme o zaslání těchto údajů co nejdříve, abychom mohli platbu bez odkladu uskutečnit.</p>
+ </ul> <br>
+<ul>
+    <strong>Aby nedocházelo k dalším vratkám plateb, dovolujeme si doporučit jednu z následujících možností:</strong><br>
+    <li> upravit trvalý příkaz na částku odpovídající aktuální výši záloh – tedy <strong>{{aktualni_zaloha}} Kč</strong>,<br>
+    <strong>nebo</strong><br>
+    <li> informovat nás, zda si přejete, abychom výši záloh navýšili na Vámi preferovanou částku <strong>{{vase_trvala_platba}} Kč</strong>, a podle toho upravíme platební kalendář.
+  </li>
+</ul>
 Vaše údaje můžete zaslat odpovědí na tento e-mail nebo nás kontaktovat na níže uvedeném telefonním čísle.</p>
 ${PORTAL_BLOCK}`,
                 files: [],
@@ -2729,6 +2744,7 @@ ${PORTAL_BLOCK}`,
         }
 };
 window.SABLONY = data;
+
 
 
 
