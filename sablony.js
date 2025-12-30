@@ -258,7 +258,7 @@ ${PORTAL_BLOCK}`,
 ${PORTAL_BLOCK}`,
                 files: [
                         { url: "https://drive.google.com/file/d/10n9Q9gq-XKLzw_c6YF8ovBdmNW-iXExL/view", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/10l9Dju24uPl1k2uf4JQrKRT8BfUhJmMD/view", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf" }],
+                        { url: "https://1684053905.rsc.cdn77.org/files/2025/06/04/12-11-09/EPET_ZADOST_ZMENA_SMLOUVY_PROFIT%20(1).pdf", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf" }],
                 tags: ["Distribuční změny"]
         },
         "PŘIPOJENÍ MIKROZDROJE": {
@@ -283,8 +283,8 @@ ${PORTAL_BLOCK}`,
 <p>Následně změnu zaevidujeme na Vašem zákaznickém účtu.</p>
 ${PORTAL_BLOCK}`,
                 files: [
-                        { url: "https://drive.google.com/file/d/17g2ZuWmzZlnlWW_-6I-eZ224ct_DClco/view?usp=drive_link", name: "EPET_ZADOST_ZMENA_SMLOUVY_Domácnost", type: "pdf" },
-                        { url: "https://www.epet.cz/data/folders/epet-zadost-zmena-smlouvy-profit-f2696.pdf", name: "EPET_ZADOST_ZMENA_SMLOUVY_Firma", type: "pdf" },
+                        { url: "https://1684053905.rsc.cdn77.org/files/2025/06/04/12-07-50/EPET_ZADOST_ZMENA_SMLOUVY_HOME%20(1).pdf", name: "EPET_ZADOST_ZMENA_SMLOUVY_Domácnost", type: "pdf" },
+                        { url: "https://1684053905.rsc.cdn77.org/files/2025/06/04/12-11-09/EPET_ZADOST_ZMENA_SMLOUVY_PROFIT%20(1).pdf", name: "EPET_ZADOST_ZMENA_SMLOUVY_Firma", type: "pdf" },
                         { url: "https://drive.google.com/file/d/11lbuZv6IW4UO4Jmejzy__ZxKf9v1Ispz/view?usp=drive_link", name: "ZMĚNA SAZBY A JISTIČE - EGD - DOM+PODN", type: "pdf" },
                         { url: "https://drive.google.com/open?id=1jEHuxEKF7kiW2dCL2ejMCV-hd6NrOJeh", name: "ŽÁDOST O PŘIPOJENÍ ČEZ", type: "pdf" }
                 ],
@@ -302,8 +302,8 @@ ${PORTAL_BLOCK}`,
 <p>Následně změnu zaevidujeme na Vašem zákaznickém účtu.</p>
 ${PORTAL_BLOCK}`,
                 files: [
-                        { url: "https://drive.google.com/file/d/17g2ZuWmzZlnlWW_-6I-eZ224ct_DClco/view?usp=drive_link", name: "EPET_ZADOST_ZMENA_SMLOUVY_Domácnost", type: "pdf" },
-                        { url: "https://www.epet.cz/data/folders/epet-zadost-zmena-smlouvy-profit-f2696.pdf", name: "EPET_ZADOST_ZMENA_SMLOUVY_Firma", type: "pdf" },
+                        { url: "https://1684053905.rsc.cdn77.org/files/2025/06/04/12-07-50/EPET_ZADOST_ZMENA_SMLOUVY_HOME%20(1).pdf", name: "EPET_ZADOST_ZMENA_SMLOUVY_Domácnost", type: "pdf" },
+                        { url: "https://1684053905.rsc.cdn77.org/files/2025/06/04/12-11-09/EPET_ZADOST_ZMENA_SMLOUVY_PROFIT%20(1).pdf", name: "EPET_ZADOST_ZMENA_SMLOUVY_Firma", type: "pdf" },
                         { url: "https://drive.google.com/file/d/11lbuZv6IW4UO4Jmejzy__ZxKf9v1Ispz/view?usp=drive_link", name: "ZMĚNA SAZBY A JISTIČE - EGD - DOM+PODN", type: "pdf" },
                         { url: "https://drive.google.com/open?id=1jEHuxEKF7kiW2dCL2ejMCV-hd6NrOJeh", name: "ŽÁDOST O PŘIPOJENÍ ČEZ", type: "pdf" }
                 ],
@@ -321,8 +321,8 @@ ${PORTAL_BLOCK}`,
 <p>Následně změnu zaevidujeme na Vašem zákaznickém účtu. </p>
 ${PORTAL_BLOCK}`,
                 files: [
-                        { url: "https://drive.google.com/file/d/17g2ZuWmzZlnlWW_-6I-eZ224ct_DClco/view?usp=drive_link", name: "EPET_ZADOST_ZMENA_SMLOUVY_Domácnost", type: "pdf" },
-                        { url: "https://www.epet.cz/data/folders/epet-zadost-zmena-smlouvy-profit-f2696.pdf", name: "EPET_ZADOST_ZMENA_SMLOUVY_Firma", type: "pdf" },
+                        { url: "https://1684053905.rsc.cdn77.org/files/2025/06/04/12-07-50/EPET_ZADOST_ZMENA_SMLOUVY_HOME%20(1).pdf", name: "EPET_ZADOST_ZMENA_SMLOUVY_Domácnost", type: "pdf" },
+                        { url: "https://1684053905.rsc.cdn77.org/files/2025/06/04/12-11-09/EPET_ZADOST_ZMENA_SMLOUVY_PROFIT%20(1).pdf", name: "EPET_ZADOST_ZMENA_SMLOUVY_Firma", type: "pdf" },
                         { url: "https://drive.google.com/open?id=11unN2RyEHVpvPrIy57bLQVpsy0OldIbw", name: "Žádost o smlouvu o připojení PRE.pdf", type: "pdf" }
                 ],
                 tags: ["Distribuční změny"]
@@ -340,8 +340,8 @@ ${PORTAL_BLOCK}`,
 <p>Následně změnu zaevidujeme na Vašem zákaznickém účtu. </p>
 ${PORTAL_BLOCK}`,
                 files: [
-                        { url: "https://drive.google.com/file/d/17g2ZuWmzZlnlWW_-6I-eZ224ct_DClco/view?usp=drive_link", name: "EPET_ZADOST_ZMENA_SMLOUVY_Domácnost", type: "pdf" },
-                        { url: "https://www.epet.cz/data/folders/epet-zadost-zmena-smlouvy-profit-f2696.pdf", name: "EPET_ZADOST_ZMENA_SMLOUVY_Firma", type: "pdf" },
+                        { url: "https://1684053905.rsc.cdn77.org/files/2025/06/04/12-07-50/EPET_ZADOST_ZMENA_SMLOUVY_HOME%20(1).pdf", name: "EPET_ZADOST_ZMENA_SMLOUVY_Domácnost", type: "pdf" },
+                        { url: "https://1684053905.rsc.cdn77.org/files/2025/06/04/12-11-09/EPET_ZADOST_ZMENA_SMLOUVY_PROFIT%20(1).pdf", name: "EPET_ZADOST_ZMENA_SMLOUVY_Firma", type: "pdf" },
                         { url: "https://drive.google.com/open?id=11unN2RyEHVpvPrIy57bLQVpsy0OldIbw", name: "Žádost o smlouvu o připojení PRE.pdf", type: "pdf" }
                 ],
                 tags: ["Distribuční změny"]
@@ -2729,6 +2729,7 @@ ${PORTAL_BLOCK}`,
         }
 };
 window.SABLONY = data;
+
 
 
 
