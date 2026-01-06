@@ -2150,6 +2150,11 @@ ${PORTAL_BLOCK}`,
       url: "https://drive.google.com/file/d/1vUBov6r4JO_0g9Mn86irAAjcVkHhZXyv/view?usp=drive_link",
       name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2024",
       type: "pdf"
+    },
+          {
+      url: "https://drive.google.com/file/d/1YsGBG28zBYV4jpnxVqfKKOv-pOHs4qE1/view?usp=drive_link",
+      name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2025",
+      type: "pdf"
     }
   ],
   tags: ["Bezzálohový režim"]
@@ -2744,6 +2749,7 @@ ${PORTAL_BLOCK}`,
         }
 };
 window.SABLONY = data;
+
 
 
 
