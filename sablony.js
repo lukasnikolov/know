@@ -98,6 +98,17 @@ ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Fakturace"]
         },
+"DUZP u mimořádné fakturace (nelze upravit zpětně)" : {
+  text : `${OSLOVENI_BLOCK}
+<p>děkujeme Vám za Váš e-mail a požadavek na úpravu <strong>data uskutečnění zdanitelného plnění (DUZP)</strong> u mimořádné fakturace.</p>
+<p>Rádi bychom Vás informovali, že <strong>DUZP nelze u mimořádné fakturace stanovit ani upravit zpětně dle přání zákazníka</strong>. DUZP je stanoveno <strong>dnem skutečného zjištění a potvrzení odečtových dat distributorem</strong>.</p>
+<p>V souladu se <strong>zákonem č. 235/2004 Sb., o dani z přidané hodnoty</strong>, a <strong>zákonem č. 458/2000 Sb., energetický zákon</strong>, je dodavatel povinen vycházet z <strong>potvrzených údajů o spotřebě od distributora</strong> jako provozovatele měření. Samoodečet nahlášený zákazníkem (včetně fotodokumentace) slouží jako podklad k ověření, <strong>není však závazným fakturačním údajem</strong>.</p>
+<p>Upozorňujeme, že nahlášení odečtových hodnot zákazníkem <strong>nezaručuje jejich automatickou akceptaci distributorem</strong> – může dojít k jejich zamítnutí nebo úpravě (např. z důvodu nesouladu s historií spotřeby).</p>
+<p>Z výše uvedených důvodů tedy <strong>není možné vystavit mimořádnou fakturu k Vámi požadovanému datu ani k tomuto datu stanovit DUZP</strong>. Jakmile od distributora obdržíme potvrzená fakturační data, bude faktura vystavena automaticky.</p>
+${PORTAL_BLOCK}`,
+  files: [],
+                tags: ["Fakturace"]
+        },
         /* Smlouvy */
         "ZMĚNA - ADRESA KORESPONDEČNÍ": {
                 text: `${OSLOVENI_BLOCK}
@@ -2759,6 +2770,7 @@ ${PORTAL_BLOCK}`,
         }
 };
 window.SABLONY = data;
+
 
 
 
