@@ -1,7 +1,7 @@
 const updates = [
 {
   "id": 1768551243955,
-  "title": "",
+  "title": "Zamítnutné samoodečty - Klikačka",
   "date": "2026-01-16",
   "category": [
     "manualy",
