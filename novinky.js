@@ -1,5 +1,20 @@
 const updates = [
 {
+  "id": 1768551243955,
+  "title": "",
+  "date": "2026-01-16",
+  "category": [
+    "manualy",
+    "sablony",
+    "fakturace"
+  ],
+  "icon": "bi bi-speedometer",
+  "color": "success",
+  "author": "Lukáš",
+  "isNew": true,
+  "content": `Ahoj všichni, rád bych vám představil nový nástroj, který jsme připravili pro zjednodušení procesu <strong>Zamítnutých samoodečtů</strong>. Místo složitého hledání ve schématech (pdf pavouk) nyní můžete využít jednoduchou <strong>interaktivní \"klikačku\"</strong>.</p><p><strong>Co tento nástroj umí?</strong></p><ul><li>🚀 <strong>Rychlá navigace:</strong> Stačí vybrat problém (např. Nenavazující stavy) a specifikovat situaci.</li><li>✅ <strong>Jasný výsledek:</strong> Ihned vidíte, zda <strong>založit nové AF</strong> (fialová barva), nebo <strong>nezakládat</strong> (zelená barva).</li><li>📝 <strong>Přesné instrukce:</strong> Nástroj vám vypíše přesný postup a texty, které je potřeba doplnit do poznámky nebo úkolu.</li></ul><p>📂&nbsp;<strong>Stránku naleznete zde:</strong></p><p>🔗&nbsp;<a href=\"https://sites.google.com/view/znalostn-bze/\" target=\"_blank\" style=\"background-color: rgba(0, 0, 0, 0); color: rgb(106, 139, 22);\">Znalostní báze</a>&nbsp;⏩&nbsp;<a href=\"https://sites.google.com/view/znalostn-bze/fakturace-a-saldo/samoode%C4%8Dty/zam%C3%ADtnut%C3%A9-samoode%C4%8Dty\" target=\"_blank\">Zamítnuté samoodečty</a></p>`
+},
+	{
   "id": 1766944501814,
   "title": "AKTUALIZACE DESIGNU: \"Šablona na Úkoly\"",
   "date": "2025-12-28",
