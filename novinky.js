@@ -1,5 +1,19 @@
 const updates = [
 {
+  "id": 1768659237093,
+  "title": "Nové instruktážní video k online formuláři \"Přepis odběrného místa\" ",
+  "date": "2026-01-17",
+  "category": [
+    "manualy",
+    "video"
+  ],
+  "icon": "bi bi-camera-video",
+  "color": "info",
+  "author": "Lukáš",
+  "isNew": true,
+  "content":  `Do znalostní báze bylo přidáno <strong>krátké instruktážní video</strong>, které vysvětluje <strong>logiku a větvení online formuláře</strong>.</p><p>Video pomůže pochopit:</p><ul><li>jak funguje výběr ceníku,</li><li>rozdíl mezi předvyplněním údajů, ručním zadáním a zpětným zavoláním,</li><li>kdy jde o změnu dodavatele a kdy o přepis,</li><li>proč se zákazníkovi zobrazují jednotlivé kroky.</li></ul><p><strong>Určeno pro operátory</strong> – vhodné zejména pro rychlé zaškolení a sjednocení výkladu postupu.</p><p>📂&nbsp;<strong>Stránku naleznete zde:</strong></p><p>🔗&nbsp;<a href=\"https://sites.google.com/view/znalostn-bze/\" target=\"_blank\" style=\"background-color: rgba(0, 0, 0, 0); color: rgb(106, 139, 22);\">Znalostní báze</a>&nbsp;⏩<a href=\"https://sites.google.com/view/znalostn-bze/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat\" target=\"_blank\">&nbsp;</a><a href=\"https://sites.google.com/view/znalostn-bze/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat\" target=\"_blank\" style=\"background-color: rgba(148, 193, 31, 0.1); color: rgb(106, 139, 22);\">Š</a><a href=\"https://sites.google.com/view/znalostn-bze/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat\" target=\"_blank\">kolení - ZIS podle témat</a> ⏩ <a href=\"https://sites.google.com/view/znalostn-bze/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat/minimanu%C3%A1ly\" target=\"_blank\">Minimanuály</a> ⏩ <a href=\"https://sites.google.com/view/znalostn-bze/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat/minimanu%C3%A1ly/jak-na-online-p%C5%99epis\" target=\"_blank\">Jak na online přepis</a></p>`
+},
+	{
   "id": 1768551243955,
   "title": "Zamítnutné samoodečty - Klikačka",
   "date": "2026-01-16",
