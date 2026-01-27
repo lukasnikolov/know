@@ -664,7 +664,7 @@ ${PORTAL_BLOCK}`,
         },
         "Prosba o zaslání fotografie měřidla": {
                 text: `${OSLOVENI_BLOCK}
-<p>informujeme Vás, že odečty, které jste nám nahlásili, byly distributorem zamítnuty. Proto Vás prosíme o zaslání fotografie s aktuálním stavem měřidla.</p>
+<p>informujeme Vás, že odečty, které jste nám nahlásili, byly distributorem zamítnuty. Prosíme o ověření a poslání správného stavu, popřípadě o zaslání fotografie přístroje s datumovkou tedy viditelné datum zobrazené přímo na fotografii, které ukazuje, kdy byla fotografie pořízena. Případně na lístečku přiloženém k měřidlu a aktuálním stavem.</p>
 <p>Děkujeme Vám za spolupráci.</p> 
 ${PORTAL_BLOCK}`,
                 files: [],
@@ -2770,6 +2770,7 @@ ${PORTAL_BLOCK}`,
         }
 };
 window.SABLONY = data;
+
 
 
 
