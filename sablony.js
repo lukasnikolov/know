@@ -2768,10 +2768,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Zastavení odpojení - Dluhy"],
                 category: "Zastavení odpojení - Dluhy"
         },
-        /* Daňové doklady */
-/* Daňové doklady – šablony e-mailů */
-{
-  /* 1) Vystavení DDPP */
+/* Daňové doklady */
   "Vystavení daňového dokladu k přijaté platbě (DDPP - (platba v jiném měsíci než splatnost / převod platby / mimo PK)": {
     text: `${OSLOVENI_BLOCK}
 <p>
@@ -2797,9 +2794,7 @@ ${PORTAL_BLOCK}`,
     files: [],
     tags: ["Daňové doklady"]
   },
-
-  /* 2) DDPP se nevystavuje – daňový doklad = platební kalendář */
-  "Daňový doklad k platbě – platební kalendář (platba na PK, ve stejném měsíci splatnosti)": {
+"Daňový doklad k platbě – platební kalendář (platba na PK, ve stejném měsíci splatnosti)": {
     text: `${OSLOVENI_BLOCK}
 <p>
 k Vámi uhrazené platbě ve výši <strong>{{castka}} Kč</strong>
@@ -2819,8 +2814,6 @@ ${PORTAL_BLOCK}`,
     files: [],
     tags: ["Daňové doklady"]
   },
-
-  /* 3) Platba nad rámec zálohy */
   "Platba nad rámec zálohy – daňový doklad (částka nad rámec předepsané zálohy)": {
     text: `${OSLOVENI_BLOCK}
 <p>
@@ -2847,9 +2840,7 @@ ${PORTAL_BLOCK}`,
     files: [],
     tags: ["Daňové doklady"]
   },
-
-  /* 4) DDPP nelze vystavit – zákazník není plátcem DPH */
-  "Daňový doklad k platbě – zákazník není plátcem DPH": {
+"Daňový doklad k platbě – zákazník není plátcem DPH": {
     text: `${OSLOVENI_BLOCK}
 <p>
 na základě kontroly Vašich údajů Vás informujeme, že
@@ -2870,13 +2861,9 @@ ${PORTAL_BLOCK}`,
     files: [],
     tags: ["Daňové doklady"]
   }
-}
-
-
-
-
 };
 window.SABLONY = data;
+
 
 
 
