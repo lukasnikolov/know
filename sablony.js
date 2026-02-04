@@ -2767,9 +2767,117 @@ ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Zastavení odpojení - Dluhy"],
                 category: "Zastavení odpojení - Dluhy"
-        }
+        },
+        /* Daňové doklady */
+/* Daňové doklady – šablony e-mailů */
+{
+  /* 1) Vystavení DDPP */
+  "Vystavení daňového dokladu k přijaté platbě (DDPP - (platba v jiném měsíci než splatnost / převod platby / mimo PK)": {
+    text: `${OSLOVENI_BLOCK}
+<p>
+na základě Vámi uhrazené platby ve výši <strong>{{castka}} Kč</strong> dne <strong>{{datum_platby}}</strong>
+byl vystaven <strong>daňový doklad k přijaté platbě (DDPP)</strong>.
+</p>
+
+<p>
+Důvodem je skutečnost, že platba byla <strong>{{duvod_ddpp}}</strong>
+(např. uhrazena v jiném měsíci než splatnost zálohy, použita na jiné období
+nebo nebyla přiřazena k platebnímu kalendáři).
+</p>
+
+<p>
+V takovém případě nelze jako daňový doklad použít platební kalendář
+a je nutné vystavit samostatný DDPP.
+</p>
+
+<p>
+Daňový doklad Vám byl zaslán <strong>{{zpusob_zaslani}}</strong>.
+</p>
+${PORTAL_BLOCK}`,
+    files: [],
+    tags: ["Daňové doklady"]
+  },
+
+  /* 2) DDPP se nevystavuje – daňový doklad = platební kalendář */
+  "Daňový doklad k platbě – platební kalendář (platba na PK, ve stejném měsíci splatnosti)": {
+    text: `${OSLOVENI_BLOCK}
+<p>
+k Vámi uhrazené platbě ve výši <strong>{{castka}} Kč</strong>
+nebude vystaven samostatný <strong>daňový doklad k přijaté platbě (DDPP)</strong>.
+</p>
+
+<p>
+Platba byla uhrazena <strong>ve stejném měsíci, ve kterém byla záloha splatná
+({{mesic_splatnosti}})</strong> a byla správně přiřazena k platebnímu kalendáři.
+</p>
+
+<p>
+V tomto případě slouží <strong>platební kalendář jako daňový doklad</strong>
+a další daňový doklad se již nevystavuje.
+</p>
+${PORTAL_BLOCK}`,
+    files: [],
+    tags: ["Daňové doklady"]
+  },
+
+  /* 3) Platba nad rámec zálohy */
+  "Platba nad rámec zálohy – daňový doklad (částka nad rámec předepsané zálohy)": {
+    text: `${OSLOVENI_BLOCK}
+<p>
+k části platby, která <strong>přesahuje předepsanou výši zálohy</strong>,
+se <strong>nevystavuje daňový doklad k přijaté platbě (DDPP)</strong>.
+</p>
+
+<ul>
+  <li>Předepsaná záloha: <strong>{{vyse_zalohy}} Kč</strong></li>
+  <li>Uhrazena částka: <strong>{{uhrazena_castka}} Kč</strong></li>
+</ul>
+
+<p>
+Platební kalendář slouží jako daňový doklad pouze do výše předepsané zálohy.
+Částka <strong>{{castka_navic}} Kč</strong> je evidována jako platba navíc a bude
+<strong>{{zpusob_nalozeni_s_preplatkem}}</strong>.
+</p>
+
+<p>
+K této části platby se daňový doklad nevystavuje, jelikož se nejedná
+o zdanitelné plnění.
+</p>
+${PORTAL_BLOCK}`,
+    files: [],
+    tags: ["Daňové doklady"]
+  },
+
+  /* 4) DDPP nelze vystavit – zákazník není plátcem DPH */
+  "Daňový doklad k platbě – zákazník není plátcem DPH": {
+    text: `${OSLOVENI_BLOCK}
+<p>
+na základě kontroly Vašich údajů Vás informujeme, že
+<strong>nelze vystavit daňový doklad k přijaté platbě (DDPP)</strong>,
+jelikož <strong>nejste veden(a) jako plátce DPH</strong>.
+</p>
+
+<p>
+DDPP je možné vystavit pouze zákazníkům, kteří jsou plátci DPH
+a mají tuto skutečnost řádně evidovanou v systému (DIČ).
+</p>
+
+<p>
+V ostatních případech slouží jako doklad k úhradám
+<strong>platební kalendář nebo faktura</strong>.
+</p>
+${PORTAL_BLOCK}`,
+    files: [],
+    tags: ["Daňové doklady"]
+  }
+}
+
+
+
+
 };
 window.SABLONY = data;
+
 
 
 
