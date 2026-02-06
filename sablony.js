@@ -295,7 +295,7 @@ ${PORTAL_BLOCK}`,
 ${PORTAL_BLOCK}`,
                 files: [
                         { url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf" }],
+                        { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf" },
                         { url: "https://drive.google.com/file/d/11lbuZv6IW4UO4Jmejzy__ZxKf9v1Ispz/view?usp=drive_link", name: "ZMĚNA SAZBY A JISTIČE - EGD - DOM+PODN", type: "pdf" },
                         { url: "https://drive.google.com/open?id=1jEHuxEKF7kiW2dCL2ejMCV-hd6NrOJeh", name: "ŽÁDOST O PŘIPOJENÍ ČEZ", type: "pdf" }
                 ],
@@ -314,7 +314,7 @@ ${PORTAL_BLOCK}`,
 ${PORTAL_BLOCK}`,
                 files: [
                         { url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf" }],
+                        { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf" },
                         { url: "https://drive.google.com/file/d/11lbuZv6IW4UO4Jmejzy__ZxKf9v1Ispz/view?usp=drive_link", name: "ZMĚNA SAZBY A JISTIČE - EGD - DOM+PODN", type: "pdf" },
                         { url: "https://drive.google.com/open?id=1jEHuxEKF7kiW2dCL2ejMCV-hd6NrOJeh", name: "ŽÁDOST O PŘIPOJENÍ ČEZ", type: "pdf" }
                 ],
@@ -333,7 +333,7 @@ ${PORTAL_BLOCK}`,
 ${PORTAL_BLOCK}`,
                 files: [
                        { url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf" }],
+                        { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf" },
                         { url: "https://drive.google.com/open?id=11unN2RyEHVpvPrIy57bLQVpsy0OldIbw", name: "Žádost o smlouvu o připojení PRE.pdf", type: "pdf" }
                 ],
                 tags: ["Distribuční změny"]
@@ -352,7 +352,7 @@ ${PORTAL_BLOCK}`,
 ${PORTAL_BLOCK}`,
                 files: [
                        { url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf" }],
+                        { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf" },
                         { url: "https://drive.google.com/open?id=11unN2RyEHVpvPrIy57bLQVpsy0OldIbw", name: "Žádost o smlouvu o připojení PRE.pdf", type: "pdf" }
                 ],
                 tags: ["Distribuční změny"]
@@ -2863,6 +2863,7 @@ ${PORTAL_BLOCK}`,
   }
 };
 window.SABLONY = data;
+
 
 
 
