@@ -109,6 +109,22 @@ ${PORTAL_BLOCK}`,
   files: [],
                 tags: ["Fakturace"]
         },
+"Potvrzení přijetí formuláře a zahájení měsíční fakturace výkupu z naší strany" : {
+  text : `${OSLOVENI_BLOCK}
+<p>potvrzujeme, že jsme z naší strany obdrželi Vámi řádně vyplněný formulář týkající se fakturace výkupu elektřiny.</p>
+<p>Na základě tohoto nesouhlasu Vás informujeme, že z naší strany nebude docházet k vystavování faktur za výrobu (výkup) elektřiny. Fakturace tak nebude realizována z naší strany, a vše zůstává jak jste byly zvyklý.</p>
+${PORTAL_BLOCK}`,
+  files: [],
+                tags: ["Fakturace"]
+        },
+"Potvrzení nesouhlasu s fakturací výkupu z naší strany" : {
+  text : `${OSLOVENI_BLOCK}
+<p>tímto potvrzujeme, že jsme obdrželi Vaše vyjádření nesouhlasu s tím, aby fakturace výkupu elektřiny byla zajišťována z naší strany.</p>
+<p>Na základě tohoto potvrzení Vás informujeme, že od této chvíle bude fakturace za výkup elektřiny probíhat z naší strany. Faktury za výkup budou vystavovány pravidelně v měsíčním intervalu, a to dle platných smluvních podmínek a dostupných měřených dat.</p>
+${PORTAL_BLOCK}`,
+  files: [],
+                tags: ["Fakturace"]
+        },         
         /* Smlouvy */
         "ZMĚNA - ADRESA KORESPONDEČNÍ": {
                 text: `${OSLOVENI_BLOCK}
@@ -2863,6 +2879,7 @@ ${PORTAL_BLOCK}`,
   }
 };
 window.SABLONY = data;
+
 
 
 
