@@ -110,7 +110,8 @@ ${PORTAL_BLOCK}`,
                 tags: ["Fakturace"]
         },
 "Potvrzení přijetí formuláře a zahájení měsíční fakturace výkupu z naší strany" : {
-  text : `${OSLOVENI_BLOCK}
+        date: "2026-02-10",
+        text : `${OSLOVENI_BLOCK}
 <p>potvrzujeme, že jsme z naší strany obdrželi Vámi řádně vyplněný formulář týkající se fakturace výkupu elektřiny.</p>
 <p>Na základě tohoto potvrzení Vás informujeme, že od této chvíle bude fakturace za výkup elektřiny probíhat z naší strany. Faktury za výkup budou vystavovány pravidelně v měsíčním intervalu, a to dle platných smluvních podmínek a dostupných měřených dat.</p>
 <p>Děkujeme za Vaši součinnost.</p>
@@ -119,7 +120,8 @@ ${PORTAL_BLOCK}`,
                 tags: ["Fakturace"]
         },
 "Potvrzení nesouhlasu s fakturací výkupu z naší strany" : {
-  text : `${OSLOVENI_BLOCK}
+        date: "2026-02-10",  
+        text : `${OSLOVENI_BLOCK}
 <p>tímto potvrzujeme, že jsme obdrželi Vaše vyjádření nesouhlasu s tím, aby fakturace výkupu elektřiny byla zajišťována z naší strany.</p>
 <p>Na základě tohoto nesouhlasu Vás informujeme, že z naší strany nebude docházet k vystavování faktur za výrobu (výkup) elektřiny. Fakturace tak nebude realizována z naší strany, a vše zůstává tak jak doposud, i nadále je nutné zasílat Vámi vystavenou fakturu na e-mailovou adresu <b>faktury@epet.cz</b>.</p>
 <p>Děkujeme za Vaši součinnost.</p>
@@ -2788,7 +2790,8 @@ ${PORTAL_BLOCK}`,
         },
 /* Daňové doklady */
   "Vystavení daňového dokladu k přijaté platbě (DDPP - (platba v jiném měsíci než splatnost / převod platby / mimo PK)": {
-    text: `${OSLOVENI_BLOCK}
+          date: "2026-02-06",  
+          text: `${OSLOVENI_BLOCK}
 <p>
 na základě Vámi uhrazené platby ve výši <strong>{{castka}} Kč</strong> dne <strong>{{datum_platby}}</strong>
 byl vystaven <strong>daňový doklad k přijaté platbě (DDPP)</strong>.
@@ -2813,7 +2816,8 @@ ${PORTAL_BLOCK}`,
     tags: ["Daňové doklady"]
   },
 "Daňový doklad k platbě – platební kalendář (platba na PK, ve stejném měsíci splatnosti)": {
-    text: `${OSLOVENI_BLOCK}
+        date: "2026-02-06", 
+        text: `${OSLOVENI_BLOCK}
 <p>
 k Vámi uhrazené platbě ve výši <strong>{{castka}} Kč</strong>
 nebude vystaven samostatný <strong>daňový doklad k přijaté platbě (DDPP)</strong>.
@@ -2833,7 +2837,8 @@ ${PORTAL_BLOCK}`,
     tags: ["Daňové doklady"]
   },
   "Platba nad rámec zálohy – daňový doklad (částka nad rámec předepsané zálohy)": {
-    text: `${OSLOVENI_BLOCK}
+    date: "2026-02-06", 
+          text: `${OSLOVENI_BLOCK}
 <p>
 k části platby, která <strong>přesahuje předepsanou výši zálohy</strong>,
 se <strong>nevystavuje daňový doklad k přijaté platbě (DDPP)</strong>.
@@ -2859,7 +2864,8 @@ ${PORTAL_BLOCK}`,
     tags: ["Daňové doklady"]
   },
 "Daňový doklad k platbě – zákazník není plátcem DPH": {
-    text: `${OSLOVENI_BLOCK}
+date: "2026-02-06",     
+        text: `${OSLOVENI_BLOCK}
 <p>
 na základě kontroly Vašich údajů Vás informujeme, že
 <strong>nelze vystavit daňový doklad k přijaté platbě (DDPP)</strong>,
@@ -2881,6 +2887,7 @@ ${PORTAL_BLOCK}`,
   }
 };
 window.SABLONY = data;
+
 
 
 
