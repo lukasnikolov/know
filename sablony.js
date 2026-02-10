@@ -112,7 +112,7 @@ ${PORTAL_BLOCK}`,
 "Potvrzení přijetí formuláře a zahájení měsíční fakturace výkupu z naší strany" : {
         date: "2026-02-10",
         text : `${OSLOVENI_BLOCK}
-<p>potvrzujeme, že jsme z naší strany obdrželi Vámi řádně vyplněný formulář týkající se fakturace výkupu elektřiny.</p>
+<p>potvrzujeme, že jsme z Vaší strany obdrželi <b> řádný</b> souhlas týkající se fakturace výkupu elektřiny.</p>
 <p>Na základě tohoto potvrzení Vás informujeme, že od této chvíle bude fakturace za výkup elektřiny probíhat z naší strany. Faktury za výkup budou vystavovány pravidelně v měsíčním intervalu, a to dle platných smluvních podmínek a dostupných měřených dat.</p>
 <p>Děkujeme za Vaši součinnost.</p>
 ${PORTAL_BLOCK}`,
@@ -2887,6 +2887,7 @@ ${PORTAL_BLOCK}`,
   }
 };
 window.SABLONY = data;
+
 
 
 
