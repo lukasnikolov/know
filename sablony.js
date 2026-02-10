@@ -121,7 +121,7 @@ ${PORTAL_BLOCK}`,
 "Potvrzení nesouhlasu s fakturací výkupu z naší strany" : {
   text : `${OSLOVENI_BLOCK}
 <p>tímto potvrzujeme, že jsme obdrželi Vaše vyjádření nesouhlasu s tím, aby fakturace výkupu elektřiny byla zajišťována z naší strany.</p>
-<p>Na základě tohoto nesouhlasu Vás informujeme, že z naší strany nebude docházet k vystavování faktur za výrobu (výkup) elektřiny. Fakturace tak nebude realizována z naší strany, a vše zůstává tak jak doposud, i nadále je je nutné zasílat Vámi vystavenou fakturu na e-mailovou adresu <b>faktury@epet.cz</b>.</p>
+<p>Na základě tohoto nesouhlasu Vás informujeme, že z naší strany nebude docházet k vystavování faktur za výrobu (výkup) elektřiny. Fakturace tak nebude realizována z naší strany, a vše zůstává tak jak doposud, i nadále je nutné zasílat Vámi vystavenou fakturu na e-mailovou adresu <b>faktury@epet.cz</b>.</p>
 <p>Děkujeme za Vaši součinnost.</p>
 ${PORTAL_BLOCK}`,
   files: [],
@@ -2881,6 +2881,7 @@ ${PORTAL_BLOCK}`,
   }
 };
 window.SABLONY = data;
+
 
 
 
