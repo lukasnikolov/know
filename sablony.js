@@ -1007,7 +1007,26 @@ ${PORTAL_BLOCK}`,
 <p>je nám líto, že řešíte tuto smutnou událost. Abychom mohli provést potřebné změny na zákaznickém účtu, budeme potřebovat jistou součinnost.</p>
 <p>Zejména je důležité nám doručit <strong>kopii úmrtního listu</strong> a <strong>usnesení z dědického řízení.</strong></p>
 <p>Je také potřebné, abyste nám sdělili, na koho bude odběrné místo přepsáno, nebo zda budete odběrné místo ukončovat s demontáží měřidla.</p>
-<p>V případě <em>přepisu odběrného místa</em> můžete využít tento  <a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank">odkaz</a></p> 
+<p>V případě <em>přepisu odběrného místa</em> můžete využít tento  <a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank">odkaz</a></p>
+<p>V případě, že se Vám nedaří formulář vyplnit, poprosíme Vás o sdělení níže uvedených doplňujících údajů – na jejich základě pro Vás připravíme a zašleme návrhy smluv:</p>
+<p><strong>Doplňující údaje k novému odběrateli:</strong></p>
+<ul>
+    <li>Jméno a příjmení</li>
+    <li>Datum narození</li>
+    <li>Adresa trvalého bydliště / sídlo firmy</li>
+    <li>E-mail</li>
+    <li>Telefonní číslo</li>
+    <li>Počáteční výše a četnost záloh</li>
+    <li>Platnost smlouvy: 12 / 24 / 36 měsíců</li>
+    <li>Způsob úhrady záloh:
+        <ul>
+            <li>SIPO – uveďte spojovací číslo</li>
+            <li>Převodní / inkasní příkaz – uveďte číslo bankovního účtu</li>
+        </ul>
+    </li>
+    <li>Způsob vrácení přeplatků (složenka / převodní příkaz)</li>
+</ul>
+<p>Děkujeme za Vaší součinnost.</p>
 ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Dědické řízení"]
@@ -1026,7 +1045,26 @@ ${PORTAL_BLOCK}`,
   <li>přepsání odběrného místa na nového odběratele, nebo</li>
   <li>ukončení odběrného místa s demontáží měřidla.</li>
 </ul>
-<p>V případě <em>přepisu odběrného místa</em> můžete využít tento  <a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank">odkaz</a></p> 
+<p>V případě <em>přepisu odběrného místa</em> můžete využít tento  <a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank">odkaz</a></p>
+<p>V případě, že se Vám nedaří formulář vyplnit, poprosíme Vás o sdělení níže uvedených doplňujících údajů – na jejich základě pro Vás připravíme a zašleme návrhy smluv:</p>
+<p><strong>Doplňující údaje k novému odběrateli:</strong></p>
+<ul>
+    <li>Jméno a příjmení</li>
+    <li>Datum narození</li>
+    <li>Adresa trvalého bydliště / sídlo firmy</li>
+    <li>E-mail</li>
+    <li>Telefonní číslo</li>
+    <li>Počáteční výše a četnost záloh</li>
+    <li>Platnost smlouvy: 12 / 24 / 36 měsíců</li>
+    <li>Způsob úhrady záloh:
+        <ul>
+            <li>SIPO – uveďte spojovací číslo</li>
+            <li>Převodní / inkasní příkaz – uveďte číslo bankovního účtu</li>
+        </ul>
+    </li>
+    <li>Způsob vrácení přeplatků (složenka / převodní příkaz)</li>
+</ul>
+<p>Děkujeme za Vaší součinnost.</p>
 ${PORTAL_BLOCK}`,
   files: [],
   tags: ["Dědické řízení"]
@@ -1175,7 +1213,25 @@ ${PORTAL_BLOCK}`,
                 text: `${OSLOVENI_BLOCK}
 <p>stále evidujeme nevyřešený požadavek týkající se přepisu smlouvy na odběr energií po zemřelém <b>xxxxxx</b>. Rádi bychom Vás informovali o nutnosti provést tento přepis na nového odběratele. Tento krok je nezbytný pro zajištění kontinuity dodávky energií na odběrném místě <b>[Adresa odběrného místa]</B>.</p>
 <p>Prosíme Vás, abyste co nejdříve kontaktovali naši zákaznickou podporu na telefonním čísle <b>255 70 70 99 </b> nebo e-mailem na <b>info@epet.cz </b>, kde Vám poskytneme veškeré potřebné formuláře a informace k přepisu smlouvy. Přepis je možné také dořešit pomocí online formuláře na tomto  <a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank"> Odkazu</a></p>
-<p>Děkujeme za Vaši spolupráci a jsme Vám k dispozici pro jakékoliv dotazy či další informace.</p>
+<p>V případě, že se Vám nedaří formulář vyplnit, poprosíme Vás o sdělení níže uvedených doplňujících údajů – na jejich základě pro Vás připravíme a zašleme návrhy smluv:</p>
+<p><strong>Doplňující údaje k novému odběrateli:</strong></p>
+<ul>
+    <li>Jméno a příjmení</li>
+    <li>Datum narození</li>
+    <li>Adresa trvalého bydliště / sídlo firmy</li>
+    <li>E-mail</li>
+    <li>Telefonní číslo</li>
+    <li>Počáteční výše a četnost záloh</li>
+    <li>Platnost smlouvy: 12 / 24 / 36 měsíců</li>
+    <li>Způsob úhrady záloh:
+        <ul>
+            <li>SIPO – uveďte spojovací číslo</li>
+            <li>Převodní / inkasní příkaz – uveďte číslo bankovního účtu</li>
+        </ul>
+    </li>
+    <li>Způsob vrácení přeplatků (složenka / převodní příkaz)</li>
+</ul>
+<p>Děkujeme za Vaší součinnost.</p>
 ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Dědické řízení"]
@@ -1184,7 +1240,24 @@ ${PORTAL_BLOCK}`,
                 text: `${OSLOVENI_BLOCK}
 <p>rádi bychom Vás znovu upozornili na nutnost přepsání smlouvy na odběr energií na nového odběratele. Původní smlouva č. byla uzavřena na zemřelého <b>xxxxx</b>, a je nezbytné uzavřít novou smlouvu, aby byla zajištěna kontinuální dodávka energií na odběrném místě <b>[Adresa odběrného místa]</b>.</p>
 <p>Dosud jsme neobdrželi žádnou odpověď na naši předchozí výzvu. Prosíme Vás, abyste co nejdříve kontaktovali naši zákaznickou podporu na telefonním čísle <b>255 70 70 99 </b> nebo e-mailem na <b>info@epet.cz </b>, kde Vám poskytneme veškeré potřebné formuláře a informace k přepisu smlouvy. Přepis je možné také dořešit pomocí online formuláře na tomto <a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank"> Odkazu</a></p>
-
+<p>V případě, že se Vám nedaří formulář vyplnit, poprosíme Vás o sdělení níže uvedených doplňujících údajů – na jejich základě pro Vás připravíme a zašleme návrhy smluv:</p>
+<p><strong>Doplňující údaje k novému odběrateli:</strong></p>
+<ul>
+    <li>Jméno a příjmení</li>
+    <li>Datum narození</li>
+    <li>Adresa trvalého bydliště / sídlo firmy</li>
+    <li>E-mail</li>
+    <li>Telefonní číslo</li>
+    <li>Počáteční výše a četnost záloh</li>
+    <li>Platnost smlouvy: 12 / 24 / 36 měsíců</li>
+    <li>Způsob úhrady záloh:
+        <ul>
+            <li>SIPO – uveďte spojovací číslo</li>
+            <li>Převodní / inkasní příkaz – uveďte číslo bankovního účtu</li>
+        </ul>
+    </li>
+    <li>Způsob vrácení přeplatků (složenka / převodní příkaz)</li>
+</ul>
 <p>Pokud nebude přepis smlouvy proveden do <b>[Datum – D+30 dní]</b>, budeme nuceni přistoupit k přerušení dodávky energií na uvedeném odběrném místě. Tento krok je nezbytný pro zajištění správné evidence a správy odběrného místa.</p>
 
 ${PORTAL_BLOCK}`,
@@ -2887,6 +2960,7 @@ ${PORTAL_BLOCK}`,
   }
 };
 window.SABLONY = data;
+
 
 
 
