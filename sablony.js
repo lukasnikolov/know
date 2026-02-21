@@ -639,7 +639,7 @@ ${PORTAL_BLOCK}`,
 ${PORTAL_BLOCK}`,
         files: [],
         tags: ["Ostatní"]
-    }
+    },
         /* Samoodečty */
         "Prosba o doložení protokolu o výměně měřidla": {
                 text: `${OSLOVENI_BLOCK}
@@ -2976,6 +2976,7 @@ ${PORTAL_BLOCK}`,
   }
 };
 window.SABLONY = data;
+
 
 
 
