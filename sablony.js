@@ -631,6 +631,15 @@ ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Ostatní"]
         },
+"OZ - zasílá požadavek, ale nemáme PM pro zastupování": {
+        text: `${OSLOVENI_BLOCK}
+<p>dovolujeme si Vás informovat, že jsme obdrželi Váš požadavek. Abychom jej však mohli vyřídit, je nutné doložit platnou plnou moc k zastupování zákazníka, kterou v našem systému aktuálně neevidujeme.</p>
+<p>Prosíme Vás o její zaslání (ideálně v odpovědi na tento e-mail). Do doby doložení platné plné moci bohužel nemůžeme Váš požadavek přijmout k řešení ani zpracovat.</p>
+<p>Děkujeme za pochopení a součinnost.</p>
+${PORTAL_BLOCK}`,
+        files: [],
+        tags: ["Ostatní"]
+    }
         /* Samoodečty */
         "Prosba o doložení protokolu o výměně měřidla": {
                 text: `${OSLOVENI_BLOCK}
@@ -2063,7 +2072,14 @@ ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Přepisy"]
         },
-
+        "Přepis odběrného místa - Zákazník doložil potřebné informace k sepsání smlouvy (předáváme úkolem na Bo_CC)": {
+                text: `${OSLOVENI_BLOCK}
+<p>děkujeme Vám za zaslání informací.</p>
+<p>Vaše podklady jsme předali <b>kolegům ke zpracování</b> a na jejich základě Vám bude/budou na <b>e-mailovou adresu</b> zaslán/zaslány návrh/návrhy smlouvy/smluv k podpisu, a to včetně aktuální cenové nabídky /aktuálních cenových nabídek.</p>
+${PORTAL_BLOCK}`,
+                files: [],
+                tags: ["Přepisy"]
+        },
         /* Zranitelný zákazník */
         "Upozornění na blížící se konec platnosti potvrzení pro přiznání práv zranitelného zákazníka": {
                 text: `${OSLOVENI_BLOCK}
@@ -2960,6 +2976,7 @@ ${PORTAL_BLOCK}`,
   }
 };
 window.SABLONY = data;
+
 
 
 
