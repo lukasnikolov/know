@@ -1433,7 +1433,7 @@ ${PORTAL_BLOCK}`,
                 text: `
 ${OSLOVENI_BLOCK}
 
-<p>obracíme se na Vás jakožto na potenciálního dědice pana/paní [jméno, příjmení, datum narození, trvalý pobyt] (dále jako <b>„Zůstavitel“</b>) s informací, že naše společnost <b>EP ENERGY TRADING, a.s.</b>, <b>IČO 27386643</b>, se sídlem Klimentská 46, Praha 1, 110 00 na základě Smlouvy o sdružených službách dodávky elektřiny/plynu č. ______ uzavřené mezi naší společností a Zůstavitelem (dále jen <b>„Smlouva“</b>) je dodavatelem této energie do odběrného místa EAN/EIC _____ na adrese [ulice, PSČ, město] (dále jen <b>„Odběrné místo“</b>).</p>
+<p>obracíme se na Vás jakožto na potenciálního dědice pana/paní [jméno, příjmení, datum narození, trvalý pobyt] (dále jako <b>„Zůstavitel“</b>) s informací, že naše společnost <b>EP ENERGY TRADING, a.s.</b>, <b>IČO 27386643</b>, se sídlem Klimentská 46, Praha 1, 110 00 na základě Smlouvy o sdružených službách dodávky elektřiny/plynu č. ______ uzavřené mezi naší společností a Zůstavitelem (dále jen <b>„Smlouva“</b>) byla dodavatelem této energie do odběrného místa EAN/EIC _____ na adrese [ulice, PSČ, město] (dále jen <b>„Odběrné místo“</b>).</p>
 
 <p>Aktuálně naše společnost u <b>Odběrného místa </b> eviduje následující pohledávku (dále jako  (dále jako <b>„Pohledávka“</b>):
 </p>
@@ -2976,6 +2976,7 @@ ${PORTAL_BLOCK}`,
   }
 };
 window.SABLONY = data;
+
 
 
 
