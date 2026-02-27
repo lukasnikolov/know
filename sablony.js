@@ -1476,7 +1476,7 @@ ${OSLOVENI_BLOCK}
 </table>
 <br>
 
-<p>V této souvislosti Vás žádáme o sdělení identifikačních a kontaktních údajů v rozsahu jméno, příjmení, adresy trvalého pobytu, telefonního čísla a e-mailu osoby, která spravuje pozůstalost. Pozůstalost může ve smyslu § 1877 zákona č. 89/2012 Sb., občanský zákoník, spravovat vykonavatel závěti, nebo pověřený či příslušným soudem jmenovaný správce pozůstalosti. Poté co dědické řízení ve smyslu § 1703 občanského zákoníku bude rozhodnuto pravomocně, Pohledávka může být uspokojena jen z majetku náležejícího do pozůstalosti. Není-li správa pozůstalosti vykonávána správcem pozůstalosti nebo ustanovením závěti, pakliže správu pozůstalosti dědici přejímají, je ze dědiců více a neujednají-li si jinak, spraví pozůstalost většinou dědiců v odpovídající výši k uspokojení Pohledávky společnosti. V takovém případě naše společnost zasílá obdobný dopis též těmto dalším dědicům.</p>
+<p> <b>V této souvislosti Vás žádáme o sdělení identifikačních a kontaktních údajů v rozsahu jméno, příjmení, adresy trvalého pobytu, telefonního čísla a e-mailu osoby, která spravuje pozůstalost.</b> Pozůstalost může ve smyslu § 1677 zákona č. 89/2012 Sb., občanský zákoník, spravovat vykonavatel závěti, nebo povolaný či příslušným soudem jmenovaný správce pozůstalosti. Po této osobě následně ve smyslu § 1703 občanského zákoníku budeme požadovat uspokojení Pohledávky. Pohledávka pak může být uspokojena jen z majetku náležejícího do pozůstalosti. Není-li správa pozůstalosti vykonávána správcem pozůstalosti ani vykonavatelem závěti, pak je správcem pozůstalosti dědic. V případě, že je dědiců více a neujednají-li si jinak, spravují pozůstalost všichni dědicové a odpovídají za uspokojení Pohledávky společně a nerozdílně. V takvém případě naše společnost zasílá obodobný dopis též těmto dalším dědicům.</p>
 
 <p><strong>Upozorňujeme Vás, že z důvodu neuhrazené Pohledávky nemusíme přistoupit k vymáhání její úhrady dostupnými právními prostředky (např. soudní cestou, v rámci které může dojít k navýšení částky zejména o náklady soudního řízení), žádáme Vás tedy:</p></strong>
 
@@ -2976,6 +2976,7 @@ ${PORTAL_BLOCK}`,
   }
 };
 window.SABLONY = data;
+
 
 
 
