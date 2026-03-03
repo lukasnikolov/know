@@ -1325,7 +1325,7 @@ ${PORTAL_BLOCK}`,
   </tfoot>
 </table>
 <br>
-<p>Na základě výše uvedeného Vás vyzýváme k úhradě Pohledávky na účet č. xxxxxxxxxx/xxxx s variabilním symbolem ______, a to do 10 dnů od data doručení této upomínky.</p>
+<p>Na základě výše uvedeného Vás vyzýváme k úhradě Pohledávky na účet <b>č. 9960227/0100</b> s variabilním symbolem ______, a to do 10 dnů od data doručení této upomínky.</p>
 
 <p>Upozorňujeme Vás, že dodávky energií do Odběrného místa ze strany naší společnosti na základě Smlouvy v současné době nadále probíhají a nebude-li Pohledávka uhrazena, budeme nuceni přistoupit k procesu přerušení dodávky energií do Odběrného místa. Zároveň přistoupíme k vymáhání Pohledávky všemi dostupnými právními prostředky, např. soudní cestou, v rámci které může dojít k navýšení dlužné částky zejména o náklady soudního řízení.</p></strong>
 
@@ -1422,7 +1422,7 @@ ${OSLOVENI_BLOCK}
 <p>Vyzýváme Vás tímto:</p>
 <ul>
   <li>o sdělení identifikačních a kontaktních údajů osoby spravující pozůstalost (viz výše)</li>
-  <li>k úhradě výše uvedené Pohledávky na účet č. xxxxxxxxxx/xxxx s variabilním symbolem ______</li>
+  <li>k úhradě výše uvedené Pohledávky na účet <b>č. 9960227/0100</b> s variabilním symbolem ______</li>
 </ul>
 
 ${PORTAL_BLOCK}`,
@@ -1482,7 +1482,7 @@ ${OSLOVENI_BLOCK}
 
 <ul>
   <li>o sdělení identifikačních a kontaktních údajů osoby spravující pozůstalost (viz výše), a to do 10 dnů od doručení této upomínky, nebo</li>
-  <li>o úhradu Pohledávky na účet č. xxxxxxxxxx/xxxx s variabilním symbolem ______ a to do 10 dnů od doručení této upomínky.</li>
+  <li>o úhradu Pohledávky na účet <b>č. 9960227/0100</b> s variabilním symbolem ______ a to do 10 dnů od doručení této upomínky.</li>
 </ul>
 
 ${PORTAL_BLOCK}`,
@@ -2976,6 +2976,7 @@ ${PORTAL_BLOCK}`,
   }
 };
 window.SABLONY = data;
+
 
 
 
