@@ -1,5 +1,22 @@
 const updates = [
 {
+  "id": 1772540531697,
+  "title": "Novinka v databázi: Jak správně řešit/rozpoznat krátkodobou demontáž",
+  "date": "2026-03-03",
+  "category": [
+    "manualy"
+  ],
+  "icon": "bi bi-pencil-square",
+  "color": "warning",
+  "author": "Lukáš",
+  "isNew": true,
+  "content": `Setkali jste se už s požadavkem na krátkodobou demontáž elektroměru nebo plynoměru kvůli rekonstrukci či sezónnímu využití objektu? Proto je důležité vědět, co to znamená pro nás a jak se to propíše do systému. Do naší znalostní báze jsme proto přidali <strong>nový článek</strong>, který vám celý proces jednoduše a přehledně vysvětlí z pohledu ZIS.</p><h2>💡 Co se v novém manuálu dozvíte?</h2><ul><li><strong>Elektřina vs. Plyn:</strong> Zatímco u elektřiny se odběrné místo standardně ukončuje (včetně OTE a naší smlouvy), <strong>u plynu smlouva zůstává aktivní!</strong></li><li><strong>Pozor na fakturaci a zálohy u plynu:</strong> Protože u plynu smlouva běží dál, zákazník stále hradí měsíční poplatky. Zálohy mu můžeme snížit na minimum, ale <strong>nesmíme je zrušit</strong>.</li><li><strong>Jak to poznat v ZIS:</strong> Připravili jsme pro vás vizuální ukázku toho, jak vypadá záložka <em>Ukončení</em>. Jasně uvidíte, jaký <em>Typ storna</em> a <em>Důvod storna</em> FO pro tyto případy nastavuje, abyste je na první pohled rozeznali.</li></ul><p>Nenechte se zaskočit a podívejte se, jak s těmito specifiky pracovat, abychom zákazníkům podávali vždy 100% přesné informace.</p><p><br></p><p>📂&nbsp;<strong>Stránky naleznete zde:</strong></p><p>🔗&nbsp;<a href=\"https://sites.google.com/view/znalostn-bze/\" target=\"_blank\" style=\"background-color: rgba(0, 0, 0, 0); color: rgb(106, 139, 22);\">Znalostní báze</a>&nbsp;⏩SMLOUVY+KONTAKTNÍ ÚDAJE ⏩<a href=\"https://sites.google.com/view/znalostn-bze/smlouvy-kontaktn%C3%AD-%C3%BAdaje/kr%C3%A1tkodob%C3%A1-demont%C3%A1%C5%BE\" target=\"_blank\">Krátkodobá demontáž</a></p>`
+},
+	
+	
+	
+	
+	{
   "id": 1770365756524,
   "title": "Fakturace – FVE (Přetoky)",
   "date": "2026-02-06",
