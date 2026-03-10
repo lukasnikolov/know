@@ -1098,10 +1098,15 @@ ${PORTAL_BLOCK}`,
     </ul>
     <p>Jakmile obdržíme kompletní dokumentaci, zajistíme vyplacení přeplatku na uvedený účet.</p>
   ${PORTAL_BLOCK}`,
-  "files": [
+        "files": [
     {
       "url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
       "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+      "type": "pdf"
+    },
+    {
+      "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
+      "name": "ČP - Souhlas s nevyplacením přeplatku",
       "type": "pdf"
     }
   ],
@@ -1135,7 +1140,18 @@ ${PORTAL_BLOCK}`,
 </ul>
 <p>Jakmile obdržíme všechny potřebné dokumenty, přeplatek bude vyplacen na uvedený účet v souladu s platnými právními předpisy.</p>
 ${PORTAL_BLOCK}`,
-  files: [{ url: 'https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
+ "files": [
+    {
+      "url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
+      "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+      "type": "pdf"
+    },
+    {
+      "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
+      "name": "ČP - Souhlas s nevyplacením přeplatku",
+      "type": "pdf"
+    }
+  ],
   tags: ["Dědické řízení"]
 },
 
@@ -1150,7 +1166,18 @@ ${PORTAL_BLOCK}`,
 </ul>
 <p>Jakmile obdržíme všechny potřebné dokumenty, přeplatek bude vyplacen na uvedený účet v souladu s platnými právními předpisy.</p>
 ${PORTAL_BLOCK}`,
-  files: [{ url: 'https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
+ "files": [
+    {
+      "url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
+      "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+      "type": "pdf"
+    },
+    {
+      "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
+      "name": "ČP - Souhlas s nevyplacením přeplatku",
+      "type": "pdf"
+    }
+  ],
   tags: ["Dědické řízení"]
 },
 
@@ -1166,7 +1193,18 @@ ${PORTAL_BLOCK}`,
 </ul>
 <p>Z tohoto důvodu je nutné, aby čestné prohlášení podepsali všichni dědicové uvedení v usnesení o dědictví. Pokud je dědiců více, je třeba doložit příslušný počet vyhotovení.</p>
 ${PORTAL_BLOCK}`,
-  files: [{ url: 'https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
+  "files": [
+    {
+      "url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
+      "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+      "type": "pdf"
+    },
+    {
+      "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
+      "name": "ČP - Souhlas s nevyplacením přeplatku",
+      "type": "pdf"
+    }
+  ],
   tags: ["Dědické řízení"]
 },
 
@@ -1181,7 +1219,18 @@ ${PORTAL_BLOCK}`,
 <p>Oba výše uvedené údaje jsou nezbytné k provedení platby. Formulář čestného prohlášení Vám zasíláme v příloze tohoto e-mailu. </p>
 <p>Prosíme o jeho vyplnění, vlastnoruční podepsání a zaslání zpět – poštou na adresu <b>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</b> nebo e-mailem na <b>info@epet.cz.</b> </p>
 ${PORTAL_BLOCK}`,
-  files: [{ url: 'https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
+ "files": [
+    {
+      "url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
+      "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+      "type": "pdf"
+    },
+    {
+      "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
+      "name": "ČP - Souhlas s nevyplacením přeplatku",
+      "type": "pdf"
+    }
+  ],
   tags: ["Dědické řízení"]
 },
 
@@ -1215,7 +1264,18 @@ Toto prohlášení musí být vyplněno a podepsáno všemi dědici / přísluš
 </p>
 <p>Děkujeme za pochopení. V případě jakýchkoli dotazů jsme Vám rádi k dispozici.</p>
 ${PORTAL_BLOCK}`,
-  files: [{ url: 'https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
+  "files": [
+    {
+      "url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
+      "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+      "type": "pdf"
+    },
+    {
+      "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
+      "name": "ČP - Souhlas s nevyplacením přeplatku",
+      "type": "pdf"
+    }
+  ],
   tags: ["Dědické řízení"]
 },
         "Přepis (šablona číslo 1)": {
@@ -1500,7 +1560,18 @@ ${PORTAL_BLOCK}`,
 </ul>
 <p>Jakmile obdržíme všechny potřebné dokumenty a dojde k ukončení smlouvy, bude případný přeplatek vyplacen na uvedený účet bez zbytečného odkladu v souladu s platnými právními předpisy.</p>
 ${PORTAL_BLOCK}`,
-  files: [{ url: '/mnt/data/SOUHLAS PRO VYPLACENÍ PŘEPLATKU.pdf', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
+  "files": [
+    {
+      "url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
+      "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+      "type": "pdf"
+    },
+    {
+      "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
+      "name": "ČP - Souhlas s nevyplacením přeplatku",
+      "type": "pdf"
+    }
+  ],
   tags: ["Dědické řízení"]
 },
 "Přijetí Usnesení ještě před ukončením smlouvy, přejí si vyplatit na BÚ v usnesení uvedeno více dědiců (neznáme tedy zda FA bude přeplatek/nedoplatek)": {
@@ -1514,7 +1585,18 @@ ${PORTAL_BLOCK}`,
 </ul>
 <p>Jakmile obdržíme všechny potřebné dokumenty a dojde k ukončení smlouvy, bude případný přeplatek vyplacen na uvedený účet bez zbytečného odkladu v souladu s platnými právními předpisy.</p>
 ${PORTAL_BLOCK}`,
-  files: [{ url: '/mnt/data/SOUHLAS PRO VYPLACENÍ PŘEPLATKU.pdf', name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU", type: "pdf" }],
+"files": [
+    {
+      "url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
+      "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+      "type": "pdf"
+    },
+    {
+      "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
+      "name": "ČP - Souhlas s nevyplacením přeplatku",
+      "type": "pdf"
+    }
+  ],
   tags: ["Dědické řízení"]
 },
         /* Platby */
@@ -2976,6 +3058,7 @@ ${PORTAL_BLOCK}`,
   }
 };
 window.SABLONY = data;
+
 
 
 
