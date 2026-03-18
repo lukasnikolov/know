@@ -9,7 +9,7 @@ const OSLOVENI_BLOCK = `<p>Dobrý den, pane XXX,</p>`;
 
 // ===== Společný blok: Údaje odběrného místa (EAN/EIC a Adresa) =====
 // Hodnoty zadané zde se automaticky propíší do všech textů šablon
-const EAN_BLOCK = "[]";
+const EAN_BLOCK = "[EAN/EIC KÓD]";
 const ADRESA_BLOCK = "[ADRESA ODBĚRNÉHO MÍSTA]";
 // ===============================================
 // =====================================================================
