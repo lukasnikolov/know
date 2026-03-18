@@ -2387,7 +2387,7 @@ ${PORTAL_BLOCK}`,
                 text: `${OSLOVENI_BLOCK}
 <p>děkujeme za Váš dotaz k vrácení kauce v rámci bezzálohového režimu.</p>
 <p>V případě bezzálohového režimu je kauce standardně držena jako zajištění plateb. Po <b>12 měsících řádného a včasného hrazení faktur</b> má zákazník možnost požádat o její vrácení.</p>
-<p>Vrácení kauce tedy neprobíhá automaticky – je realizováno <b>na základě písemné žádosti zákazníka</b>, kterou nám zašlete po uplynutí uvedené 6měsíční lhůty.</p>
+<p>Vrácení kauce tedy neprobíhá automaticky – je realizováno <b>na základě písemné žádosti zákazníka</b>, kterou nám zašlete po uplynutí uvedené 12 měsíční lhůty.</p>
 <p>Jakmile Vaši žádost obdržíme a ověříme splnění podmínek řádných úhrad, zajistíme zpracování a následné vyplacení kauce na Vámi uvedený bankovní účet.</p>
 ${PORTAL_BLOCK}`,
                 files: [],
