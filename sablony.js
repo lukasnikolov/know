@@ -2545,7 +2545,8 @@ ${PORTAL_BLOCK}`,
     • Dále poprosíme o doložení <b>Smlouvy o připojení</b>, kterou Vám vystavil Váš distributor nebo je možné doložit <b>Protokol o připojení k distribuční síti</b></p>
     <p><strong>Nepovinný údaj (doporučeno):</strong><br>
     • EAN kód odběrného (spotřebního) místa:</p>
-    <p>Aktuálně Vám můžeme nabídnout dvě varianty. První možností je převzetí odpovědnosti za odchylku s nulovou výkupní cenou, bez dalších poplatků. Druhou možností je uzavření smlouvy na výkup za spotovou výkupní cenu, která se odvíjí od cen na burze a je snížena o poplatek 350 Kč/MWh bez DPH.</p>
+    <p>Aktuálně Vám můžeme nabídnout dvě varianty. První možností je převzetí odpovědnosti za odchylku s nulovou výkupní cenou, bez dalších poplatků. Druhou možností je uzavření smlouvy na výkup za spotovou         výkupní cenu, která se odvíjí od cen na burze a je snížena o poplatek 350 Kč/MWh bez DPH.</p>
+    <p>Prosíme Vás o informaci, o kterou z uvedených variant byste měl/a zájem, tedy zda preferujete převzetí odpovědnosti za odchylku s nulovou výkupní cenou, nebo výkup za spotovou cenu.</p>
     <p>Díky změně legislativy začne od 1. 7. 2025 příslušný distributor ukládat pokuty výrobnám, které nemají sjednaného obchodníka.<br>
     Společnosti epet za Vás převezmou odpovědnost za odchylku, aby k těmto pokutám nedocházelo.</p>
     <hr>
