@@ -2545,7 +2545,7 @@ ${PORTAL_BLOCK}`,
     • Dále poprosíme o doložení <b>Smlouvy o připojení</b>, kterou Vám vystavil Váš distributor nebo je možné doložit <b>Protokol o připojení k distribuční síti</b></p>
     <p><strong>Nepovinný údaj (doporučeno):</strong><br>
     • EAN kód odběrného (spotřebního) místa:</p>
-    <p>Dovolujeme si Vás také informovat, že aktuální výkupní cena elektřiny činí 0,- Kč/MWh. Případně máte možnost uzavřít produkt SPOT, u něhož je výkupní cena stanovena na 350 Kč/MWh.</p>
+    <p>Aktuálně Vám můžeme nabídnout dvě varianty. První možností je převzetí odpovědnosti za odchylku s nulovou výkupní cenou, bez dalších poplatků. Druhou možností je uzavření smlouvy na výkup za spotovou výkupní cenu, která se odvíjí od cen na burze a je snížena o poplatek 350 Kč/MWh bez DPH.</p>
     <p>Díky změně legislativy začne od 1. 7. 2025 příslušný distributor ukládat pokuty výrobnám, které nemají sjednaného obchodníka.<br>
     Společnosti epet za Vás převezmou odpovědnost za odchylku, aby k těmto pokutám nedocházelo.</p>
     <hr>
