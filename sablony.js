@@ -1263,7 +1263,7 @@ ${PORTAL_BLOCK}`,
   <li>kopii usnesení z dědického řízení</li>
 </ul>
 <p>Do doby doložení usnesení bude případný přeplatek  blokován proti vyplacení. Vyplacení bude možné až po sdělení výsledku dědického řízení.</p>
-<p>V případě, že v doloženém usnesení bude uvedeno více dědiců nebo pokud bude přeplatek vyplácen na bankovní účet i v případě jediného dědice, bude nutné doložit také čestné prohlášení.
+<p>V případě, že v doloženém usnesení bude uvedeno více dědiců, bude nutné doložit také čestné prohlášení.
 Toto prohlášení musí být vyplněno a podepsáno všemi dědici / příslušným dědicem. U všech podpisů je nutné úřední ověření – lze provést na Czech POINTu (pošta/obecní úřad), u notáře nebo na matrice.
 </p>
 <p>Děkujeme za pochopení. V případě jakýchkoli dotazů jsme Vám rádi k dispozici.</p>
