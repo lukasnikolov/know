@@ -11,6 +11,15 @@ const OSLOVENI_BLOCK = `<p>Dobrý den, pane XXX,</p>`;
 // Hodnoty zadané zde se automaticky propíší do všech textů šablon
 const EAN_BLOCK = "[EAN/EIC KÓD]";
 const ADRESA_BLOCK = "[ADRESA ODBĚRNÉHO MÍSTA]";
+// ===== Společný blok: Platební údaje (kompaktní verze) =====
+const PLATBA_BLOCK = `
+<p>
+  <b>Platební údaje:</b><br>
+  Číslo účtu: <b>9960227/0100</b><br>
+  Variabilní symbol: <b>[VARIABILNÍ SYMBOL]</b><br>
+  Částka k úhradě: <b>[ČÁSTKA] Kč</b><br>
+  Splatnost: <b>[DATUM SPLATNOSTI]</b> vždy k 15. dni v měsíci
+</p>`;
 // ===============================================
 // =====================================================================
 
@@ -1531,6 +1540,19 @@ ${PORTAL_BLOCK}`,
   tags: ["Dědické řízení"]
 },
         /* Platby */
+    "Zaslání platebních údajů pro úhradu záloh": {
+        date: "2026-04-01",
+        text: `${OSLOVENI_BLOCK}
+<p>děkujeme Vám za e-mail. Na základě Vašeho požadavku Vám níže zasíláme potřebné údaje pro úspěšnou úhradu Vašich zálohových plateb:</p>
+
+${PLATBA_BLOCK}
+
+<p>Pro úplnost Vám v příloze tohoto e-mailu zasíláme také aktuální <strong>Platební kalendář</strong> (rozpis záloh), ve kterém najdete přehledný rozpis všech plateb pro následující období.</p>
+
+${PORTAL_BLOCK}`,
+        files: [],
+        tags: ["Platby"]
+},    
         "Ukončené odběrné místo - Platby": {
                 text: `${OSLOVENI_BLOCK}
 <p>rádi bychom Vás informovali, že jsme obdrželi platbu ve výši <strong>XXXX Kč</strong> pro <strong>zákaznický účet XXXX</strong>, pod <strong>variabilním symbolem XXXXXX.</strong></p> 
