@@ -84,7 +84,7 @@ ${PORTAL_BLOCK}`,
 <p>v příloze tohoto e-mailu naleznete výpočetní tabulku a návod, jak si můžete odkontrolovat cenu SPOT. </p>
 ${PORTAL_BLOCK}`,
                 files: [
-                        { name: "NÁVOD NA VÝPOČET SPOT", url: "https://drive.google.com/file/d/1Mf1XabKRmCZM2kqQNztQvnMKsuip-_Tq/view?usp=drive_link", type: "pdf" },
+                        { name: "NÁVOD NA VÝPOČET SPOT", url: "https://drive.google.com/file/d/1Mf1XabKRmCZM2kqQNztQvnMKsuip-_Tq/view?usp=drive_link", type: "pdf", brand: "epet"},
                         { name: "SPOT VYPOČTOVÁ TABULKA", url: "https://docs.google.com/spreadsheets/d/1zmjmJaIwwL7bH5X9yyuL_2qP9G4UKhoo6dGtyKXyBaY/edit?usp=drive_link", type: "xls" }
                 ],
                 tags: ["Fakturace"]
@@ -177,21 +177,21 @@ ${PORTAL_BLOCK}`,
 <p>Děkujeme Vám za spolupráci. </p> 
 ${PORTAL_BLOCK}`,
                 files: [
-                        { url: "https://drive.google.com/file/d/10vEwfyGojwqZ81yvP6xSLI-krF7sD0c0/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ČEZ - FIRMA", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/1DKM958grbFkRFuy4MrqYtXJjd4ZK0Uun/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ČEZ - DOM", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/1Zz5Gx_UHY3hgHAAOl66xqs0hzI5p-o25/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - EGD", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/1n7kXH_5h0Utb8yZDkr2V-HK9rPysV-BN/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - FIRMA", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/1XAoZ_xy-4IOmwAHATnHSjbi9j7yw0Sd0/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - DOM", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/1t-FFOcEzZWbmqzf-EL40m1hJ78dimmJE/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - původní zákazník neznámý", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/1UhAkyEzAaPizqFZrPhB9BbNiRCB8YnUW/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRAŽ-PLYN.", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/1g_qi7NC8ncY2YW10r0aPD2JYIvCPXMyG/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRE", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/1tUTwgDiU9L4dTsoa_DfHvDrIJi4IDTuQ/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - z C na D", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/1HKsGDY14VD8bREp744I2ze7EXC29j7J6/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ZMD", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/14JwJ2-7d3FtTbm8Q6xGzQ0PU4yu39-et/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ z PO – změna sazby Firma → Dom", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/1Xra9Xs7KsPb-Tua_2V_8NE1F1__uCoo2/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRAŽ-PLYN - FIRMA", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/1BjeKuD2NOpyYjJCMO2TnU2tTrST3musN/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - EGD - FIRMA", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/18CENh1sJWOtFSE7yiU8yNE1MopDxRhbi/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRE - FIRMA", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/1RSfEY2py1TVAD-PNSK6F0IaWZtH_msub/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ZMD - FIRMA", type: "pdf" }
+                        { url: "https://drive.google.com/file/d/10vEwfyGojwqZ81yvP6xSLI-krF7sD0c0/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ČEZ - FIRMA", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1DKM958grbFkRFuy4MrqYtXJjd4ZK0Uun/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ČEZ - DOM", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1Zz5Gx_UHY3hgHAAOl66xqs0hzI5p-o25/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - EGD", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1n7kXH_5h0Utb8yZDkr2V-HK9rPysV-BN/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - FIRMA", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1XAoZ_xy-4IOmwAHATnHSjbi9j7yw0Sd0/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - DOM", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1t-FFOcEzZWbmqzf-EL40m1hJ78dimmJE/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - původní zákazník neznámý", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1UhAkyEzAaPizqFZrPhB9BbNiRCB8YnUW/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRAŽ-PLYN.", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1g_qi7NC8ncY2YW10r0aPD2JYIvCPXMyG/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRE", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1tUTwgDiU9L4dTsoa_DfHvDrIJi4IDTuQ/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - z C na D", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1HKsGDY14VD8bREp744I2ze7EXC29j7J6/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ZMD", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/14JwJ2-7d3FtTbm8Q6xGzQ0PU4yu39-et/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ z PO – změna sazby Firma → Dom", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1Xra9Xs7KsPb-Tua_2V_8NE1F1__uCoo2/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRAŽ-PLYN - FIRMA", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1BjeKuD2NOpyYjJCMO2TnU2tTrST3musN/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - EGD - FIRMA", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/18CENh1sJWOtFSE7yiU8yNE1MopDxRhbi/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRE - FIRMA", type: "pdf" , brand: "epet"},
+                        { url: "https://drive.google.com/file/d/1RSfEY2py1TVAD-PNSK6F0IaWZtH_msub/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ZMD - FIRMA", type: "pdf", brand: "epet" }
                 ],
                 tags: ["Smlouvy"]
         },
@@ -259,21 +259,21 @@ Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasí
 <p>Děkujeme za spolupráci.</p>
 ${PORTAL_BLOCK}`,
                 files: [
-                        { url: "https://drive.google.com/file/d/10vEwfyGojwqZ81yvP6xSLI-krF7sD0c0/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ČEZ - FIRMA", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/1DKM958grbFkRFuy4MrqYtXJjd4ZK0Uun/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ČEZ - DOM", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/1Zz5Gx_UHY3hgHAAOl66xqs0hzI5p-o25/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - EGD", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/1n7kXH_5h0Utb8yZDkr2V-HK9rPysV-BN/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - FIRMA", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/1XAoZ_xy-4IOmwAHATnHSjbi9j7yw0Sd0/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - DOM", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/1t-FFOcEzZWbmqzf-EL40m1hJ78dimmJE/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - původní zákazník neznámý", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/1UhAkyEzAaPizqFZrPhB9BbNiRCB8YnUW/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRAŽ-PLYN.", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/1g_qi7NC8ncY2YW10r0aPD2JYIvCPXMyG/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRE", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/1tUTwgDiU9L4dTsoa_DfHvDrIJi4IDTuQ/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - z C na D", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/1HKsGDY14VD8bREp744I2ze7EXC29j7J6/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ZMD", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/14JwJ2-7d3FtTbm8Q6xGzQ0PU4yu39-et/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ z PO – změna sazby Firma → Dom", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/1Xra9Xs7KsPb-Tua_2V_8NE1F1__uCoo2/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRAŽ-PLYN - FIRMA", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/1BjeKuD2NOpyYjJCMO2TnU2tTrST3musN/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - EGD - FIRMA", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/18CENh1sJWOtFSE7yiU8yNE1MopDxRhbi/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRE - FIRMA", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/1RSfEY2py1TVAD-PNSK6F0IaWZtH_msub/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ZMD - FIRMA", type: "pdf" }
+                        { url: "https://drive.google.com/file/d/10vEwfyGojwqZ81yvP6xSLI-krF7sD0c0/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ČEZ - FIRMA", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1DKM958grbFkRFuy4MrqYtXJjd4ZK0Uun/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ČEZ - DOM", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1Zz5Gx_UHY3hgHAAOl66xqs0hzI5p-o25/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - EGD", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1n7kXH_5h0Utb8yZDkr2V-HK9rPysV-BN/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - FIRMA", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1XAoZ_xy-4IOmwAHATnHSjbi9j7yw0Sd0/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - DOM", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1t-FFOcEzZWbmqzf-EL40m1hJ78dimmJE/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - původní zákazník neznámý", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1UhAkyEzAaPizqFZrPhB9BbNiRCB8YnUW/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRAŽ-PLYN.", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1g_qi7NC8ncY2YW10r0aPD2JYIvCPXMyG/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRE", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1tUTwgDiU9L4dTsoa_DfHvDrIJi4IDTuQ/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - z C na D", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1HKsGDY14VD8bREp744I2ze7EXC29j7J6/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ZMD", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/14JwJ2-7d3FtTbm8Q6xGzQ0PU4yu39-et/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ z PO – změna sazby Firma → Dom", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1Xra9Xs7KsPb-Tua_2V_8NE1F1__uCoo2/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRAŽ-PLYN - FIRMA", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1BjeKuD2NOpyYjJCMO2TnU2tTrST3musN/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - EGD - FIRMA", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/18CENh1sJWOtFSE7yiU8yNE1MopDxRhbi/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRE - FIRMA", type: "pdf" , brand: "epet"},
+                        { url: "https://drive.google.com/file/d/1RSfEY2py1TVAD-PNSK6F0IaWZtH_msub/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ZMD - FIRMA", type: "pdf", brand: "epet" }
                 ],
                 tags: ["Smlouvy"]
         },
@@ -302,8 +302,8 @@ ${PORTAL_BLOCK}`,
        <ul>3) Vyplněný formulář "Žádost o změnu smlouvy - Domácnost/Firma", který naleznete v příloze tohoto e-mailu.</ul>
 ${PORTAL_BLOCK}`,
                 files: [
-                        { url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf" }],
+                        { url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "epet" }],
                 tags: ["Distribuční změny"]
         },
         "PŘIPOJENÍ MIKROZDROJE": {
@@ -328,8 +328,8 @@ ${PORTAL_BLOCK}`,
 <p>Následně změnu zaevidujeme na Vašem zákaznickém účtu.</p>
 ${PORTAL_BLOCK}`,
                 files: [
-                        { url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "epet" },
                         { url: "https://drive.google.com/file/d/11lbuZv6IW4UO4Jmejzy__ZxKf9v1Ispz/view?usp=drive_link", name: "ZMĚNA SAZBY A JISTIČE - EGD - DOM+PODN", type: "pdf" },
                         { url: "https://drive.google.com/open?id=1jEHuxEKF7kiW2dCL2ejMCV-hd6NrOJeh", name: "ŽÁDOST O PŘIPOJENÍ ČEZ", type: "pdf" }
                 ],
@@ -347,8 +347,8 @@ ${PORTAL_BLOCK}`,
 <p>Následně změnu zaevidujeme na Vašem zákaznickém účtu.</p>
 ${PORTAL_BLOCK}`,
                 files: [
-                        { url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "epet" },
                         { url: "https://drive.google.com/file/d/11lbuZv6IW4UO4Jmejzy__ZxKf9v1Ispz/view?usp=drive_link", name: "ZMĚNA SAZBY A JISTIČE - EGD - DOM+PODN", type: "pdf" },
                         { url: "https://drive.google.com/open?id=1jEHuxEKF7kiW2dCL2ejMCV-hd6NrOJeh", name: "ŽÁDOST O PŘIPOJENÍ ČEZ", type: "pdf" }
                 ],
@@ -366,8 +366,8 @@ ${PORTAL_BLOCK}`,
 <p>Následně změnu zaevidujeme na Vašem zákaznickém účtu. </p>
 ${PORTAL_BLOCK}`,
                 files: [
-                       { url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf" },
+                       { url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "epet" },
                         { url: "https://drive.google.com/open?id=11unN2RyEHVpvPrIy57bLQVpsy0OldIbw", name: "Žádost o smlouvu o připojení PRE.pdf", type: "pdf" }
                 ],
                 tags: ["Distribuční změny"]
@@ -385,8 +385,8 @@ ${PORTAL_BLOCK}`,
 <p>Následně změnu zaevidujeme na Vašem zákaznickém účtu. </p>
 ${PORTAL_BLOCK}`,
                 files: [
-                       { url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf" },
+                       { url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "epet" },
                         { url: "https://drive.google.com/open?id=11unN2RyEHVpvPrIy57bLQVpsy0OldIbw", name: "Žádost o smlouvu o připojení PRE.pdf", type: "pdf" }
                 ],
                 tags: ["Distribuční změny"]
@@ -450,7 +450,7 @@ ${PORTAL_BLOCK}`,
 <p>Děkujeme Vám za spolupráci.</p>
 ${PORTAL_BLOCK}`,
                 files: [
-                        { url: "https://drive.google.com/open?id=1RRcnxT7Qik3mExjXMhERqRSNCKbHIWGn", name: "PŘEDÁVACÍ PROTOKOL", type: "pdf" }
+                        { url: "https://drive.google.com/open?id=1RRcnxT7Qik3mExjXMhERqRSNCKbHIWGn", name: "PŘEDÁVACÍ PROTOKOL", type: "pdf", brand: "epet" }
                 ],
                 tags: ["Distribuční změny", "Reklamace", "Fakturace"]
         },
@@ -462,7 +462,7 @@ ${PORTAL_BLOCK}`,
 <p>Zároveň bychom Vás chtěli informovat, že technik distributora si na místě ověří, že se skutečně jedná o společné prostory domu. V opačném případě nebude změna provedena.</p>
 <p>Všechny potřebné dokumenty k vyplnění zasíláme v příloze tohoto e-mailu.</p>
 ${PORTAL_BLOCK}`,
-                files: [{ url: "https://drive.google.com/file/d/14JwJ2-7d3FtTbm8Q6xGzQ0PU4yu39-et/view?usp=drive_link", name: "ČP z PO - Pro změnu sazby z Firmy na DOM", type: "pdf" }],
+                files: [{ url: "https://drive.google.com/file/d/14JwJ2-7d3FtTbm8Q6xGzQ0PU4yu39-et/view?usp=drive_link", name: "ČP z PO - Pro změnu sazby z Firmy na DOM", type: "pdf", brand: "epet" }],
                 tags: ["Distribuční změny"]
         },
         "Potvrzení o provedené změně distribuční sazby z C na D u SVJ": {
@@ -505,9 +505,9 @@ ${PORTAL_BLOCK}`,
 <p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokumenty můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong></p>
 ${PORTAL_BLOCK}`,
                 files: [
-                        { url: "https://drive.google.com/file/d/1IxIb56DEjGqZal6L73uQtnGlgVFg2eDQ/view?usp=drive_link", name: "PLNÁ MOC", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/1IxIb56DEjGqZal6L73uQtnGlgVFg2eDQ/view?usp=drive_link", name: "PLNÁ MOC", type: "pdf", brand: "epet" },
                         { url: "https://drive.google.com/file/d/1coOnCqNHkVovGnPAdDy1HrhN4ZpKxFW0/view?usp=drive_web", name: " ČEZ žádost o ukončení - Dočasná demontáž", type: "pdf" },
-                        { url: "https://drive.google.com/open?id=1U-3hFZF25hXpdj9-8XrYpbI6w_rQH5S7", name: "Žádost o ukončení", type: "pdf" }
+                        { url: "https://drive.google.com/open?id=1U-3hFZF25hXpdj9-8XrYpbI6w_rQH5S7", name: "Žádost o ukončení", type: "pdf", brand: "epet" }
                 ],
                 tags: ["Demontáže"]
         },
@@ -517,7 +517,7 @@ ${PORTAL_BLOCK}`,
 <p>Prosíme o jejich vyplnění a zaslání zpět na naši e-mailovou adresu. Dokumenty můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong> </p>
 ${PORTAL_BLOCK}`,
                 files: [
-                        { url: "https://drive.google.com/file/d/10OtoVJApxNBiA_L8C0G2qjxaK22VNczx/view?usp=drive_web", name: "Žádost o ukončení_DOM", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/10OtoVJApxNBiA_L8C0G2qjxaK22VNczx/view?usp=drive_web", name: "Žádost o ukončení_DOM", type: "pdf", brand: "epet" },
                         { url: "https://drive.google.com/file/d/17jVzJYN7fq_zsdPM3SSoU4upzVz8AK3p/view?usp=drive_web", name: "ČEZ žádost o ukončení - Trvalá demontáž", type: "pdf" },
                         { url: "https://drive.google.com/file/d/1coOnCqNHkVovGnPAdDy1HrhN4ZpKxFW0/view?usp=drive_web", name: "ČEZ žádost o ukončení - Dočasná demontáž", type: "pdf" }
                 ],
@@ -529,7 +529,7 @@ ${PORTAL_BLOCK}`,
 <p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokument můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong></p>
 ${PORTAL_BLOCK}`,
                 files: [
-                        { url: "https://drive.google.com/file/d/10OtoVJApxNBiA_L8C0G2qjxaK22VNczx/view?usp=drive_web", name: "Žádost o ukončení", type: "pdf" }
+                        { url: "https://drive.google.com/file/d/10OtoVJApxNBiA_L8C0G2qjxaK22VNczx/view?usp=drive_web", name: "Žádost o ukončení", type: "pdf", brand: "epet" }
                 ],
                 tags: ["Demontáže"]
         },
@@ -540,8 +540,8 @@ ${PORTAL_BLOCK}`,
 <p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokumenty můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</p>
 ${PORTAL_BLOCK}`,
                 files: [
-                        { url: "https://drive.google.com/file/d/1IxIb56DEjGqZal6L73uQtnGlgVFg2eDQ/view?usp=drive_link", name: "PLNÁ MOC", type: "pdf" },
-                        { url: "https://drive.google.com/open?id=1U-3hFZF25hXpdj9-8XrYpbI6w_rQH5S7", name: "Žádost o ukončení", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/1IxIb56DEjGqZal6L73uQtnGlgVFg2eDQ/view?usp=drive_link", name: "PLNÁ MOC", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/open?id=1U-3hFZF25hXpdj9-8XrYpbI6w_rQH5S7", name: "Žádost o ukončení", type: "pdf", brand: "epet" },
                         { url: "https://drive.google.com/file/d/17jVzJYN7fq_zsdPM3SSoU4upzVz8AK3p/view?usp=drive_web", name: "ČEZ žádost o ukončení - Trvalá demontáž", type: "pdf" },
                         { url: "https://drive.google.com/file/d/1coOnCqNHkVovGnPAdDy1HrhN4ZpKxFW0/view?usp=drive_web", name: "ČEZ žádost o ukončení - Dočasná demontáž", type: "pdf" }
                 ],
@@ -554,9 +554,9 @@ ${PORTAL_BLOCK}`,
 <p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokumenty můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong></p>
 ${PORTAL_BLOCK}`,
                 files: [
-                        { url: "https://drive.google.com/open?id=1U-3hFZF25hXpdj9-8XrYpbI6w_rQH5S7", name: "Žádost o ukončení", type: "pdf" },
-                        { url: "https://drive.google.com/open?id=1U-3hFZF25hXpdj9-8XrYpbI6w_rQH5S7", name: "Žádost o ukončení", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/1IxIb56DEjGqZal6L73uQtnGlgVFg2eDQ/view?usp=drive_link", name: "PLNÁ MOC", type: "pdf" }
+                        { url: "https://drive.google.com/open?id=1U-3hFZF25hXpdj9-8XrYpbI6w_rQH5S7", name: "Žádost o ukončení", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/open?id=1U-3hFZF25hXpdj9-8XrYpbI6w_rQH5S7", name: "Žádost o ukončení", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1IxIb56DEjGqZal6L73uQtnGlgVFg2eDQ/view?usp=drive_link", name: "PLNÁ MOC", type: "pdf", brand: "epet" }
                 ],
                 tags: ["Demontáže"]
         },
@@ -566,7 +566,7 @@ ${PORTAL_BLOCK}`,
 <p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokument můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong></p>
 ${PORTAL_BLOCK}`,
                 files: [
-                        { url: "https://drive.google.com/file/d/10DdFgk1KL9NBIYUv3tpcMvVjEFurYSJV/view?usp=drive_web", name: "Žádost o ukončení", type: "pdf" }
+                        { url: "https://drive.google.com/file/d/10DdFgk1KL9NBIYUv3tpcMvVjEFurYSJV/view?usp=drive_web", name: "Žádost o ukončení", type: "pdf", brand: "epet" }
                 ],
                 tags: ["Demontáže"]
         },
@@ -577,8 +577,8 @@ ${PORTAL_BLOCK}`,
 <p>Prosíme o jejich vyplnění a zaslání zpět na naši e-mailovou adresu. Dokument můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong></p>
 ${PORTAL_BLOCK}`,
                 files: [
-                        { url: "https://drive.google.com/file/d/1IxIb56DEjGqZal6L73uQtnGlgVFg2eDQ/view?usp=drive_link", name: "PLNÁ MOC", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/107d2e5AsO-8YueDmW5V4ia1tNLKF8V9k/view?usp=drive_web", name: " Žádost o ukončení", type: "pdf" }
+                        { url: "https://drive.google.com/file/d/1IxIb56DEjGqZal6L73uQtnGlgVFg2eDQ/view?usp=drive_link", name: "PLNÁ MOC", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/107d2e5AsO-8YueDmW5V4ia1tNLKF8V9k/view?usp=drive_web", name: " Žádost o ukončení", type: "pdf", brand: "epet" }
                 ],
                 tags: ["Demontáže"]
         },
@@ -1078,12 +1078,12 @@ ${PORTAL_BLOCK}`,
     {
       "url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
       "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
-      "type": "pdf"
+      "type": "pdf", brand: "epet"
     },
     {
       "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
-      "type": "pdf"
+      "type": "pdf", brand: "epet"
     }
   ],
   "tags": ["Dědické řízení"]
@@ -1120,12 +1120,12 @@ ${PORTAL_BLOCK}`,
     {
       "url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
       "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
-      "type": "pdf"
+      "type": "pdf", brand: "epet"
     },
     {
       "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
-      "type": "pdf"
+      "type": "pdf", brand: "epet"
     }
   ],
   tags: ["Dědické řízení"]
@@ -1146,12 +1146,12 @@ ${PORTAL_BLOCK}`,
     {
       "url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
       "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
-      "type": "pdf"
+      "type": "pdf", brand: "epet"
     },
     {
       "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
-      "type": "pdf"
+      "type": "pdf", brand: "epet"
     }
   ],
   tags: ["Dědické řízení"]
@@ -1173,12 +1173,12 @@ ${PORTAL_BLOCK}`,
     {
       "url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
       "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
-      "type": "pdf"
+      "type": "pdf", brand: "epet"
     },
     {
       "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
-      "type": "pdf"
+      "type": "pdf", brand: "epet"
     }
   ],
   tags: ["Dědické řízení"]
@@ -1199,12 +1199,12 @@ ${PORTAL_BLOCK}`,
     {
       "url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
       "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
-      "type": "pdf"
+      "type": "pdf", brand: "epet"
     },
     {
       "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
-      "type": "pdf"
+      "type": "pdf", brand: "epet"
     }
   ],
   tags: ["Dědické řízení"]
@@ -1244,12 +1244,12 @@ ${PORTAL_BLOCK}`,
     {
       "url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
       "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
-      "type": "pdf"
+      "type": "pdf", brand: "epet"
     },
     {
       "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
-      "type": "pdf"
+      "type": "pdf", brand: "epet"
     }
   ],
   tags: ["Dědické řízení"]
@@ -1504,12 +1504,12 @@ ${PORTAL_BLOCK}`,
     {
       "url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
       "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
-      "type": "pdf"
+      "type": "pdf", brand: "epet"
     },
     {
       "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
-      "type": "pdf"
+      "type": "pdf", brand: "epet"
     }
   ],
   tags: ["Dědické řízení"]
@@ -1529,12 +1529,12 @@ ${PORTAL_BLOCK}`,
     {
       "url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
       "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
-      "type": "pdf"
+      "type": "pdf", brand: "epet"
     },
     {
       "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
-      "type": "pdf"
+      "type": "pdf", brand: "epet"
     }
   ],
   tags: ["Dědické řízení"]
@@ -1835,7 +1835,7 @@ ${PORTAL_BLOCK}`,
 <p>Detailní rozpis splátek najdete v dokumentu přiloženém v příloze tohoto e-mailu.</p>
 ${PORTAL_BLOCK}`,
                 files: [
-                        { url: "https://docs.google.com/document/d/13fDHRHzFAzN79kNSr-ECLBv4lUedUvLNxvxAJ7KeIO4/edit?usp=drive_link", name: " Splátkový kalendář - rozpis splátek", type: "doc" },
+                        { url: "https://docs.google.com/document/d/13fDHRHzFAzN79kNSr-ECLBv4lUedUvLNxvxAJ7KeIO4/edit?usp=drive_link", name: " Splátkový kalendář - rozpis splátek", type: "doc", brand: "epet" },
                 ],
                 tags: ["SPK"]
         },
@@ -1992,13 +1992,13 @@ ${PORTAL_BLOCK}
       znalostní báze</a> je také dostupná <strong>možnost automatického vygenerování e-mailu</strong> pro zaslání na zodpovědnou osobu – tedy na <strong>tisk@epet.cz</strong>.</li>
   </ul>`,
                 files: [
-                        { url: "https://drive.google.com/file/d/1DKM958grbFkRFuy4MrqYtXJjd4ZK0Uun/view?usp=drive_web", name: "ČESTNÉ PROHLÁŠENÍ ČEZ", type: "pdf" },
-                        { url: "https://drive.google.com/open?id=1g_qi7NC8ncY2YW10r0aPD2JYIvCPXMyG", name: "ČESTNÉ PROHLÁŠENÍ - PRE", type: "pdf" },
-                        { url: "https://drive.google.com/open?id=1Zz5Gx_UHY3hgHAAOl66xqs0hzI5p-o25", name: "ČESTNÉ PROHLÁŠENÍ - EGD", type: "pdf" },
-                        { url: "https://drive.google.com/open?id=1HKsGDY14VD8bREp744I2ze7EXC29j7J6", name: "ČESTNÉ PROHLÁŠENÍ - ZMD", type: "pdf" },
-                        { url: "https://drive.google.com/open?id=1UhAkyEzAaPizqFZrPhB9BbNiRCB8YnUW", name: "ČESTNÉ PROHLÁŠENÍ - PPL", type: "pdf" },
-                        { url: "https://drive.google.com/open?id=1XAoZ_xy-4IOmwAHATnHSjbi9j7yw0Sd0", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - DOM", type: "pdf" },
-                        { url: "https://drive.google.com/open?id=1n7kXH_5h0Utb8yZDkr2V-HK9rPysV-BN", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - FIRMA", type: "pdf" },],
+                        { url: "https://drive.google.com/file/d/1DKM958grbFkRFuy4MrqYtXJjd4ZK0Uun/view?usp=drive_web", name: "ČESTNÉ PROHLÁŠENÍ ČEZ", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/open?id=1g_qi7NC8ncY2YW10r0aPD2JYIvCPXMyG", name: "ČESTNÉ PROHLÁŠENÍ - PRE", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/open?id=1Zz5Gx_UHY3hgHAAOl66xqs0hzI5p-o25", name: "ČESTNÉ PROHLÁŠENÍ - EGD", type: "pdf" , brand: "epet"},
+                        { url: "https://drive.google.com/open?id=1HKsGDY14VD8bREp744I2ze7EXC29j7J6", name: "ČESTNÉ PROHLÁŠENÍ - ZMD", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/open?id=1UhAkyEzAaPizqFZrPhB9BbNiRCB8YnUW", name: "ČESTNÉ PROHLÁŠENÍ - PPL", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/open?id=1XAoZ_xy-4IOmwAHATnHSjbi9j7yw0Sd0", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - DOM", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/open?id=1n7kXH_5h0Utb8yZDkr2V-HK9rPysV-BN", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - FIRMA", type: "pdf", brand: "epet" },],
                 generators: [
                         { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-aktualizace-kontaktních-údajů", name: "Aktualizace kontaktních údajů – generátor" },
                         { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-kopie-faktury", name: "Kopie faktury – generátor" },
@@ -2266,17 +2266,17 @@ ${PORTAL_BLOCK}`,
     {
       url: "https://drive.google.com/file/d/1EhfSImShMh7soopf2KBDLK05C3Q7_6c1/view?usp=drive_link",
       name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2022",
-      type: "pdf"
+      type: "pdf", brand: "epet"
     },
     {
       url: "https://drive.google.com/file/d/1vUBov6r4JO_0g9Mn86irAAjcVkHhZXyv/view?usp=drive_link",
       name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2024",
-      type: "pdf"
+      type: "pdf", brand: "epet"
     },
           {
       url: "https://drive.google.com/file/d/1YsGBG28zBYV4jpnxVqfKKOv-pOHs4qE1/view?usp=drive_link",
       name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2025",
-      type: "pdf"
+      type: "pdf", brand: "epet"
     }
   ],
   tags: ["Bezzálohový režim"]
@@ -2355,10 +2355,25 @@ ${PORTAL_BLOCK}`,
 <li><b>Plyn:</b> Odečet musí být nahlášen k poslednímu dni v měsíci, musí být však nahlášen do 5 kalendářních dní.</li><br>
 <p>Dále Vás informujeme, že pokud jste doposud využívali bezzálohový režim, tento režim Vám bude automaticky zrušen. Nově bude nutné hradit zálohy dle předepsaného platebního kalendáře, který Vám v nejbližších dnech dorazí na Vaši e-mailovou adresu / korespondenční adresu.</p> 
 ${PORTAL_BLOCK}`,
-                files: [
-                        { url: 'https://docs.google.com/spreadsheets/d/13wHIPy047lL1JOVuEX1phxT_JqE22cHPscAZj9iF1cQ/edit?gid=197074618#gid=197074618', name: "ŠABLONA PRO E-MAIL", type: "xls" },
-                        { url: 'https://docs.google.com/spreadsheets/d/1sIB4lRLeYM4HlgxTEkPjxNKA5B3ruKweGZDDM-MMh7s/edit?gid=1283439519#gid=1283439519', name: "ŠABLONA PRO PORTÁL", type: "xls" },
-                ],
+                 files: [
+    {
+      url: "https://drive.google.com/file/d/1EhfSImShMh7soopf2KBDLK05C3Q7_6c1/view?usp=drive_link",
+      name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2022",
+      type: "pdf", brand: "epet"
+    },
+    {
+      url: "https://drive.google.com/file/d/1vUBov6r4JO_0g9Mn86irAAjcVkHhZXyv/view?usp=drive_link",
+      name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2024",
+      type: "pdf", brand: "epet"
+    },
+          {
+      url: "https://drive.google.com/file/d/1YsGBG28zBYV4jpnxVqfKKOv-pOHs4qE1/view?usp=drive_link",
+      name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2025",
+      type: "pdf", brand: "epet"
+    }
+  ],
+  tags: ["Bezzálohový režim"]
+},
                 tags: ["Změna typu měření"]
         },
 
@@ -2383,10 +2398,24 @@ ${PORTAL_BLOCK}`,
 <p>V příloze naleznete formulář, který Vás žádáme vyplnit, podepsat a odeslat na tuto e-mailovou adresu. Jakmile obdržíme podepsaný dokument a ověříme splnění uvedených podmínek, budeme Vás informovat o dalším postupu.</p>
 <p>Děkujeme za spolupráci.</p>
 ${PORTAL_BLOCK}`,
-                files: [
-                        { url: 'https://drive.google.com/file/d/1EhfSImShMh7soopf2KBDLK05C3Q7_6c1/view?usp=drive_link%27', name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2022", type: "pdf" },
-                        { url: 'https://drive.google.com/file/d/1vUBov6r4JO_0g9Mn86irAAjcVkHhZXyv/view?usp=drive_link%27', name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2024", type: "pdf" },
-                ],
+                 files: [
+    {
+      url: "https://drive.google.com/file/d/1EhfSImShMh7soopf2KBDLK05C3Q7_6c1/view?usp=drive_link",
+      name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2022",
+      type: "pdf", brand: "epet"
+    },
+    {
+      url: "https://drive.google.com/file/d/1vUBov6r4JO_0g9Mn86irAAjcVkHhZXyv/view?usp=drive_link",
+      name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2024",
+      type: "pdf", brand: "epet"
+    },
+          {
+      url: "https://drive.google.com/file/d/1YsGBG28zBYV4jpnxVqfKKOv-pOHs4qE1/view?usp=drive_link",
+      name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2025",
+      type: "pdf", brand: "epet"
+    }
+  ],
+ 
                 tags: ["Změna typu měření"]
         },
         "Změna typu měření z C na B - Firma - bez nabídky bezzálohového režimu": {
