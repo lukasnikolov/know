@@ -1127,11 +1127,12 @@ ${PORTAL_BLOCK}`,
       "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
       "type": "pdf", brand: "epet"
     },
-     {
-      "url": "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link,
-      "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
-      "type": "pdf", brand: "de"
-    },
+{
+  url: "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link",
+  name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+  type: "pdf",
+  brand: "de"
+},
     {
       "url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
@@ -1179,11 +1180,12 @@ ${PORTAL_BLOCK}`,
       "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
       "type": "pdf", brand: "epet"
     },
-     {
-      "url": "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link,
-      "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
-      "type": "pdf", brand: "de"
-    },
+    {
+  url: "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link",
+  name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+  type: "pdf",
+  brand: "de"
+},
     {
       "url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
@@ -1216,10 +1218,11 @@ ${PORTAL_BLOCK}`,
       "type": "pdf", brand: "epet"
     },
      {
-      "url": "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link,
-      "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
-      "type": "pdf", brand: "de"
-    },
+  url: "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link",
+  name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+  type: "pdf",
+  brand: "de"
+},
     {
       "url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
@@ -1252,11 +1255,12 @@ ${PORTAL_BLOCK}`,
       "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
       "type": "pdf", brand: "epet"
     },
-     {
-      "url": "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link,
-      "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
-      "type": "pdf", brand: "de"
-    },
+  {
+  url: "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link",
+  name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+  type: "pdf",
+  brand: "de"
+},
     {
       "url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
@@ -1289,10 +1293,11 @@ ${PORTAL_BLOCK}`,
       "type": "pdf", brand: "epet"
     },
      {
-      "url": "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link,
-      "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
-      "type": "pdf", brand: "de"
-    },
+  url: "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link",
+  name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+  type: "pdf",
+  brand: "de"
+},
     {
       "url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
@@ -1343,11 +1348,12 @@ ${PORTAL_BLOCK}`,
       "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
       "type": "pdf", brand: "epet"
     },
-     {
-      "url": "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link,
-      "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
-      "type": "pdf", brand: "de"
-    },
+    {
+  url: "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link",
+  name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+  type: "pdf",
+  brand: "de"
+},
     {
       "url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
@@ -1613,11 +1619,12 @@ ${PORTAL_BLOCK}`,
       "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
       "type": "pdf", brand: "epet"
     },
-     {
-      "url": "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link,
-      "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
-      "type": "pdf", brand: "de"
-    },
+   {
+  url: "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link",
+  name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+  type: "pdf",
+  brand: "de"
+},
     {
       "url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
@@ -1648,11 +1655,12 @@ ${PORTAL_BLOCK}`,
       "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
       "type": "pdf", brand: "epet"
     },
-     {
-      "url": "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link,
-      "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
-      "type": "pdf", brand: "de"
-    },
+   {
+  url: "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link",
+  name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+  type: "pdf",
+  brand: "de"
+},
     {
       "url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
@@ -3200,4 +3208,3 @@ ${PORTAL_BLOCK}`,
 }
 };
 window.SABLONY = Object.assign(window.SABLONY || {}, data);
-// Případně můžete konec upravit dle toho, jak plníte `data` do `window.SABLONY` u sebe.
