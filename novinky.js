@@ -1,5 +1,19 @@
 const updates = [
 {
+  "id": 1775806363049,
+  "title": "Reklamace a kompenzace – Nesoulad DI sazeb (ZIS vs. skutečnost)",
+  "date": "2026-04-10",
+  "category": [
+    "manualy",
+    "smlouvy"
+  ],
+  "icon": "bi bi-lightning-charge",
+  "color": "purple",
+  "author": "Lukáš",
+  "isNew": true,
+  "content": `Reagujeme na zvýšený počet případů (a kontrol ze strany EK), kdy se u zákazníků liší sjednaná distribuční sazba v našem systému (ZIS) od skutečné sazby u distributora (DI). Zákazníci se následně dožadují kompenzací s tím, že jim naši operátoři sazbu \"přece potvrdili\".</p><p>Připravili jsme proto nový manuál, který vám s těmito případy pomůže.</p><p><strong>🎯 K čemu manuál slouží?</strong></p><ul><li><strong>Sjednocuje postup:</strong> Zajišťuje, aby oddělení reklamací i zákaznická péče postupovaly jednotně a tahaly za jeden provaz.</li><li><strong>Dává jistotu v rozhodování:</strong> Rychle z něj zjistíte, kdy nese odpovědnost zákazník a kdy my.</li><li><strong>Chrání společnost:</strong> Poskytuje silnou a sjednocenou argumentaci pro zamítání neoprávněných kompenzací (zákazník odpovídá za to, co uvedl do smlouvy).</li></ul><p><strong>📖 Co přesně v manuálu najdete?</strong></p><ol><li><strong>Kontext situace:</strong> Jasné vysvětlení, proč k tomuto problému vůbec dochází (např. omezené informace při procesu Změny dodavatele).</li><li><strong>Rozhodovací matici (Kdy ZAMÍTNOUT / Kdy UZNAT):</strong> Jednoduchý přehled konkrétních situací z praxe, podle kterého okamžitě poznáte, zda reklamaci zamítnout (chyba zákazníka), nebo posunout k řešení (chyba na naší straně).</li><li><strong>Citace z VOPD pro vaši argumentaci:</strong> Přesně vytažené body z VOPD (od roku 2022 až po 2025), které můžete snadno zkopírovat přímo do odpovědi zákazníkovi jako nezpochybnitelnou právní oporu.</li></ol><p>📂&nbsp;<strong>Stránky naleznete zde:</strong></p><p>🔗&nbsp;<a href=\"https://sites.google.com/view/znalostn-bze/\" target=\"_blank\" style=\"background-color: rgba(0, 0, 0, 0); color: rgb(106, 139, 22);\">Znalostní báze</a>&nbsp;⏩SMLOUVY+KONTAKTNÍ ÚDAJE ⏩<a href=\"https://sites.google.com/view/znalostka/smlouvy-kontaktn%C3%AD-%C3%BAdaje/reklamace-a-kompenzace-nesoulad-di-sazeb-zis-vs-skute%C4%8Dnost\" target=\"_blank\">Manuál: Reklamace a kompenzace – Nesoulad DI sazeb (ZIS vs. skutečnost)</a>`
+},
+	{
   "id": 1772540531697,
   "title": "Novinka v databázi: Jak správně řešit/rozpoznat krátkodobou demontáž",
   "date": "2026-03-03",
