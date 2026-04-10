@@ -2355,7 +2355,7 @@ ${PORTAL_BLOCK}`,
 <li><b>Plyn:</b> Odečet musí být nahlášen k poslednímu dni v měsíci, musí být však nahlášen do 5 kalendářních dní.</li><br>
 <p>Dále Vás informujeme, že pokud jste doposud využívali bezzálohový režim, tento režim Vám bude automaticky zrušen. Nově bude nutné hradit zálohy dle předepsaného platebního kalendáře, který Vám v nejbližších dnech dorazí na Vaši e-mailovou adresu / korespondenční adresu.</p> 
 ${PORTAL_BLOCK}`,
-                 files: [
+               files: [
     {
       url: "https://drive.google.com/file/d/1EhfSImShMh7soopf2KBDLK05C3Q7_6c1/view?usp=drive_link",
       name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2022",
@@ -2372,8 +2372,6 @@ ${PORTAL_BLOCK}`,
       type: "pdf", brand: "epet"
     }
   ],
-  tags: ["Bezzálohový režim"]
-},
                 tags: ["Změna typu měření"]
         },
 
