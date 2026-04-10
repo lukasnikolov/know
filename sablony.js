@@ -2962,7 +2962,19 @@ V ostatních případech slouží jako doklad k úhradám
 ${PORTAL_BLOCK}`,
     files: [],
     tags: ["Daňové doklady"]
-  }
+  },
+  "Změna fakturačního cyklu - Z měsíční na Roční": {
+  date: "2026-04-10",
+  text: `${OSLOVENI_BLOCK}
+<p>
+informujeme Vás, že u odběrného místa <strong>${EAN_BLOCK}</strong>
+došlo ke změně fakturačního cyklu z <strong>měsíční fakturace na roční</strong>.
+Vyúčtovací faktury Vám budou nově vystavovány k <strong>XXXXX</strong>.
+</p>
+${PORTAL_BLOCK}`,
+  files: [],
+  tags: ["Fakturace"]
+}
 };
 window.SABLONY = Object.assign(window.SABLONY || {}, data);
 // Případně můžete konec upravit dle toho, jak plníte `data` do `window.SABLONY` u sebe.
