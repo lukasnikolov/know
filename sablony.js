@@ -2045,7 +2045,9 @@ ${PORTAL_BLOCK}
                         { url: "https://drive.google.com/file/d/1SecyeJ5rUUHr1bZTw4jDwLa6imC1RXLO/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRE - DOMÁCNOST", type: "pdf", brand: "de" },
                         { url: "https://drive.google.com/file/d/15-HQqHUBlD-AuKxwl9lcTf2sm-ldW8_4/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - EGD -DOMÁCNOST", type: "pdf", brand: "de" },
                         { url: "https://drive.google.com/file/d/1KTVPgMxS2QOKx4P38gyfYfgGAHvybg6n/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - DOMÁCNOST", type: "pdf", brand: "de" },
-                        { url: "https://drive.google.com/file/d/1X_9l-Wolx3jGoA_vKBLc50qfAX5FCQ3j/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ČEZ - DOMÁCNOST", type: "pdf", brand: "de" },],
+                        { url: "https://drive.google.com/file/d/1X_9l-Wolx3jGoA_vKBLc50qfAX5FCQ3j/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ČEZ - DOMÁCNOST", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/14JwJ2-7d3FtTbm8Q6xGzQ0PU4yu39-et/view?usp=drive_link", name: "ČP z PO - Pro změnu sazby z Firmy na DOM", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/13tl9M1pc5K7KoAzQ66RQFrlw7Pt4Qe-X/view?usp=drive_link", name: "ČP - Z PO NA FO", type: "pdf", brand: "de" },],
                 generators: [
                         { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-aktualizace-kontaktních-údajů", name: "Aktualizace kontaktních údajů – generátor" },
                         { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-kopie-faktury", name: "Kopie faktury – generátor" },
