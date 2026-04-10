@@ -329,7 +329,9 @@ ${PORTAL_BLOCK}`,
 ${PORTAL_BLOCK}`,
                 files: [
                         { url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "epet" },
-                        { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "epet" }],
+                        { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/11yiwMdyFSYdMhLsMcs2m4J7SnBINalP5/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1c8dHbNdew3iNov6il1s1MCJQJ7t039aL/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "de" }],
                 tags: ["Distribuční změny"]
         },
         "PŘIPOJENÍ MIKROZDROJE": {
@@ -356,6 +358,8 @@ ${PORTAL_BLOCK}`,
                 files: [
                         { url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "epet" },
                         { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/11yiwMdyFSYdMhLsMcs2m4J7SnBINalP5/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1c8dHbNdew3iNov6il1s1MCJQJ7t039aL/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "de" },
                         { url: "https://drive.google.com/file/d/11lbuZv6IW4UO4Jmejzy__ZxKf9v1Ispz/view?usp=drive_link", name: "ZMĚNA SAZBY A JISTIČE - EGD - DOM+PODN", type: "pdf" },
                         { url: "https://drive.google.com/open?id=1jEHuxEKF7kiW2dCL2ejMCV-hd6NrOJeh", name: "ŽÁDOST O PŘIPOJENÍ ČEZ", type: "pdf" }
                 ],
@@ -375,6 +379,8 @@ ${PORTAL_BLOCK}`,
                 files: [
                         { url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "epet" },
                         { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/11yiwMdyFSYdMhLsMcs2m4J7SnBINalP5/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1c8dHbNdew3iNov6il1s1MCJQJ7t039aL/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "de" },
                         { url: "https://drive.google.com/file/d/11lbuZv6IW4UO4Jmejzy__ZxKf9v1Ispz/view?usp=drive_link", name: "ZMĚNA SAZBY A JISTIČE - EGD - DOM+PODN", type: "pdf" },
                         { url: "https://drive.google.com/open?id=1jEHuxEKF7kiW2dCL2ejMCV-hd6NrOJeh", name: "ŽÁDOST O PŘIPOJENÍ ČEZ", type: "pdf" }
                 ],
@@ -394,6 +400,8 @@ ${PORTAL_BLOCK}`,
                 files: [
                        { url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "epet" },
                         { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/11yiwMdyFSYdMhLsMcs2m4J7SnBINalP5/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1c8dHbNdew3iNov6il1s1MCJQJ7t039aL/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "de" },
                         { url: "https://drive.google.com/open?id=11unN2RyEHVpvPrIy57bLQVpsy0OldIbw", name: "Žádost o smlouvu o připojení PRE.pdf", type: "pdf" }
                 ],
                 tags: ["Distribuční změny"]
@@ -413,6 +421,8 @@ ${PORTAL_BLOCK}`,
                 files: [
                        { url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "epet" },
                         { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/11yiwMdyFSYdMhLsMcs2m4J7SnBINalP5/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1c8dHbNdew3iNov6il1s1MCJQJ7t039aL/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "de" },
                         { url: "https://drive.google.com/open?id=11unN2RyEHVpvPrIy57bLQVpsy0OldIbw", name: "Žádost o smlouvu o připojení PRE.pdf", type: "pdf" }
                 ],
                 tags: ["Distribuční změny"]
@@ -534,7 +544,9 @@ ${PORTAL_BLOCK}`,
                 files: [
                         { url: "https://drive.google.com/file/d/1IxIb56DEjGqZal6L73uQtnGlgVFg2eDQ/view?usp=drive_link", name: "PLNÁ MOC", type: "pdf", brand: "epet" },
                         { url: "https://drive.google.com/file/d/1coOnCqNHkVovGnPAdDy1HrhN4ZpKxFW0/view?usp=drive_web", name: " ČEZ žádost o ukončení - Dočasná demontáž", type: "pdf" },
-                        { url: "https://drive.google.com/open?id=1U-3hFZF25hXpdj9-8XrYpbI6w_rQH5S7", name: "Žádost o ukončení", type: "pdf", brand: "epet" }
+                        { url: "https://drive.google.com/open?id=1U-3hFZF25hXpdj9-8XrYpbI6w_rQH5S7", name: "Žádost o ukončení", type: "pdf", brand: "epet"},
+                        { url: "https://drive.google.com/file/d/10t69I9lbEjebbTMXSxaSaImxW7oX1WYr/view?usp=drive_link", name: "PLNÁ MOC", type: "pdf", brand: "de"},
+                        { url: "https://drive.google.com/file/d/13HAJSD1s13kpkpwDMRy3ZNCXNCIKJj8X/view?usp=drive_link", name: "Žádost o ukončení", type: "pdf", brand: "de"}
                 ],
                 tags: ["Demontáže"]
         },
@@ -545,6 +557,7 @@ ${PORTAL_BLOCK}`,
 ${PORTAL_BLOCK}`,
                 files: [
                         { url: "https://drive.google.com/file/d/10OtoVJApxNBiA_L8C0G2qjxaK22VNczx/view?usp=drive_web", name: "Žádost o ukončení_DOM", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/13HAJSD1s13kpkpwDMRy3ZNCXNCIKJj8X/view?usp=drive_link", name: "Žádost o ukončení", type: "pdf", brand: "de"},
                         { url: "https://drive.google.com/file/d/17jVzJYN7fq_zsdPM3SSoU4upzVz8AK3p/view?usp=drive_web", name: "ČEZ žádost o ukončení - Trvalá demontáž", type: "pdf" },
                         { url: "https://drive.google.com/file/d/1coOnCqNHkVovGnPAdDy1HrhN4ZpKxFW0/view?usp=drive_web", name: "ČEZ žádost o ukončení - Dočasná demontáž", type: "pdf" }
                 ],
@@ -556,7 +569,8 @@ ${PORTAL_BLOCK}`,
 <p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokument můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong></p>
 ${PORTAL_BLOCK}`,
                 files: [
-                        { url: "https://drive.google.com/file/d/10OtoVJApxNBiA_L8C0G2qjxaK22VNczx/view?usp=drive_web", name: "Žádost o ukončení", type: "pdf", brand: "epet" }
+                        { url: "https://drive.google.com/file/d/10OtoVJApxNBiA_L8C0G2qjxaK22VNczx/view?usp=drive_web", name: "Žádost o ukončení", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/13HAJSD1s13kpkpwDMRy3ZNCXNCIKJj8X/view?usp=drive_link", name: "Žádost o ukončení", type: "pdf", brand: "de"}
                 ],
                 tags: ["Demontáže"]
         },
@@ -569,6 +583,8 @@ ${PORTAL_BLOCK}`,
                 files: [
                         { url: "https://drive.google.com/file/d/1IxIb56DEjGqZal6L73uQtnGlgVFg2eDQ/view?usp=drive_link", name: "PLNÁ MOC", type: "pdf", brand: "epet" },
                         { url: "https://drive.google.com/open?id=1U-3hFZF25hXpdj9-8XrYpbI6w_rQH5S7", name: "Žádost o ukončení", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/13HAJSD1s13kpkpwDMRy3ZNCXNCIKJj8X/view?usp=drive_link", name: "Žádost o ukončení", type: "pdf", brand: "de"},
+                        { url: "https://drive.google.com/file/d/10t69I9lbEjebbTMXSxaSaImxW7oX1WYr/view?usp=drive_link", name: "PLNÁ MOC", type: "pdf", brand: "de"},
                         { url: "https://drive.google.com/file/d/17jVzJYN7fq_zsdPM3SSoU4upzVz8AK3p/view?usp=drive_web", name: "ČEZ žádost o ukončení - Trvalá demontáž", type: "pdf" },
                         { url: "https://drive.google.com/file/d/1coOnCqNHkVovGnPAdDy1HrhN4ZpKxFW0/view?usp=drive_web", name: "ČEZ žádost o ukončení - Dočasná demontáž", type: "pdf" }
                 ],
@@ -581,9 +597,10 @@ ${PORTAL_BLOCK}`,
 <p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokumenty můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong></p>
 ${PORTAL_BLOCK}`,
                 files: [
+                        { url: "https://drive.google.com/file/d/1IxIb56DEjGqZal6L73uQtnGlgVFg2eDQ/view?usp=drive_link", name: "PLNÁ MOC", type: "pdf", brand: "epet" },
                         { url: "https://drive.google.com/open?id=1U-3hFZF25hXpdj9-8XrYpbI6w_rQH5S7", name: "Žádost o ukončení", type: "pdf", brand: "epet" },
-                        { url: "https://drive.google.com/open?id=1U-3hFZF25hXpdj9-8XrYpbI6w_rQH5S7", name: "Žádost o ukončení", type: "pdf", brand: "epet" },
-                        { url: "https://drive.google.com/file/d/1IxIb56DEjGqZal6L73uQtnGlgVFg2eDQ/view?usp=drive_link", name: "PLNÁ MOC", type: "pdf", brand: "epet" }
+                        { url: "https://drive.google.com/file/d/13HAJSD1s13kpkpwDMRy3ZNCXNCIKJj8X/view?usp=drive_link", name: "Žádost o ukončení", type: "pdf", brand: "de"},
+                        { url: "https://drive.google.com/file/d/10t69I9lbEjebbTMXSxaSaImxW7oX1WYr/view?usp=drive_link", name: "PLNÁ MOC", type: "pdf", brand: "de"}
                 ],
                 tags: ["Demontáže"]
         },
@@ -593,7 +610,8 @@ ${PORTAL_BLOCK}`,
 <p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokument můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong></p>
 ${PORTAL_BLOCK}`,
                 files: [
-                        { url: "https://drive.google.com/file/d/10DdFgk1KL9NBIYUv3tpcMvVjEFurYSJV/view?usp=drive_web", name: "Žádost o ukončení", type: "pdf", brand: "epet" }
+                        { url: "https://drive.google.com/file/d/10DdFgk1KL9NBIYUv3tpcMvVjEFurYSJV/view?usp=drive_web", name: "Žádost o ukončení", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/13HAJSD1s13kpkpwDMRy3ZNCXNCIKJj8X/view?usp=drive_link", name: "Žádost o ukončení", type: "pdf", brand: "de"}
                 ],
                 tags: ["Demontáže"]
         },
@@ -605,7 +623,9 @@ ${PORTAL_BLOCK}`,
 ${PORTAL_BLOCK}`,
                 files: [
                         { url: "https://drive.google.com/file/d/1IxIb56DEjGqZal6L73uQtnGlgVFg2eDQ/view?usp=drive_link", name: "PLNÁ MOC", type: "pdf", brand: "epet" },
-                        { url: "https://drive.google.com/file/d/107d2e5AsO-8YueDmW5V4ia1tNLKF8V9k/view?usp=drive_web", name: " Žádost o ukončení", type: "pdf", brand: "epet" }
+                        { url: "https://drive.google.com/file/d/107d2e5AsO-8YueDmW5V4ia1tNLKF8V9k/view?usp=drive_web", name: " Žádost o ukončení", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/13HAJSD1s13kpkpwDMRy3ZNCXNCIKJj8X/view?usp=drive_link", name: "Žádost o ukončení", type: "pdf", brand: "de"},
+                        { url: "https://drive.google.com/file/d/10t69I9lbEjebbTMXSxaSaImxW7oX1WYr/view?usp=drive_link", name: "PLNÁ MOC", type: "pdf", brand: "de"}
                 ],
                 tags: ["Demontáže"]
         },
@@ -1107,6 +1127,16 @@ ${PORTAL_BLOCK}`,
       "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
       "type": "pdf", brand: "epet"
     },
+     {
+      "url": "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link,
+      "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+      "type": "pdf", brand: "de"
+    },
+    {
+      "url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
+      "name": "ČP - Souhlas s nevyplacením přeplatku",
+      "type": "pdf", brand: "de"
+    }
     {
       "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
@@ -1143,12 +1173,22 @@ ${PORTAL_BLOCK}`,
 </ul>
 <p>Jakmile obdržíme všechny potřebné dokumenty, přeplatek bude vyplacen na uvedený účet v souladu s platnými právními předpisy.</p>
 ${PORTAL_BLOCK}`,
- "files": [
+       "files": [
     {
       "url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
       "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
       "type": "pdf", brand: "epet"
     },
+     {
+      "url": "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link,
+      "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+      "type": "pdf", brand: "de"
+    },
+    {
+      "url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
+      "name": "ČP - Souhlas s nevyplacením přeplatku",
+      "type": "pdf", brand: "de"
+    }
     {
       "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
@@ -1169,12 +1209,22 @@ ${PORTAL_BLOCK}`,
 </ul>
 <p>Jakmile obdržíme všechny potřebné dokumenty, přeplatek bude vyplacen na uvedený účet v souladu s platnými právními předpisy.</p>
 ${PORTAL_BLOCK}`,
- "files": [
+      "files": [
     {
       "url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
       "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
       "type": "pdf", brand: "epet"
     },
+     {
+      "url": "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link,
+      "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+      "type": "pdf", brand: "de"
+    },
+    {
+      "url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
+      "name": "ČP - Souhlas s nevyplacením přeplatku",
+      "type": "pdf", brand: "de"
+    }
     {
       "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
@@ -1196,12 +1246,22 @@ ${PORTAL_BLOCK}`,
 </ul>
 <p>Z tohoto důvodu je nutné, aby čestné prohlášení podepsali všichni dědicové uvedení v usnesení o dědictví. Pokud je dědiců více, je třeba doložit příslušný počet vyhotovení.</p>
 ${PORTAL_BLOCK}`,
-  "files": [
+      "files": [
     {
       "url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
       "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
       "type": "pdf", brand: "epet"
     },
+     {
+      "url": "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link,
+      "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+      "type": "pdf", brand: "de"
+    },
+    {
+      "url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
+      "name": "ČP - Souhlas s nevyplacením přeplatku",
+      "type": "pdf", brand: "de"
+    }
     {
       "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
@@ -1222,12 +1282,22 @@ ${PORTAL_BLOCK}`,
 <p>Oba výše uvedené údaje jsou nezbytné k provedení platby. Formulář čestného prohlášení Vám zasíláme v příloze tohoto e-mailu. </p>
 <p>Prosíme o jeho vyplnění, vlastnoruční podepsání a zaslání zpět – poštou na adresu <b>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</b> nebo e-mailem na <b>info@epet.cz.</b> </p>
 ${PORTAL_BLOCK}`,
- "files": [
+       "files": [
     {
       "url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
       "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
       "type": "pdf", brand: "epet"
     },
+     {
+      "url": "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link,
+      "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+      "type": "pdf", brand: "de"
+    },
+    {
+      "url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
+      "name": "ČP - Souhlas s nevyplacením přeplatku",
+      "type": "pdf", brand: "de"
+    }
     {
       "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
@@ -1267,12 +1337,22 @@ Toto prohlášení musí být vyplněno a podepsáno všemi dědici / přísluš
 </p>
 <p>Děkujeme za pochopení. V případě jakýchkoli dotazů jsme Vám rádi k dispozici.</p>
 ${PORTAL_BLOCK}`,
-  "files": [
+       "files": [
     {
       "url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
       "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
       "type": "pdf", brand: "epet"
     },
+     {
+      "url": "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link,
+      "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+      "type": "pdf", brand: "de"
+    },
+    {
+      "url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
+      "name": "ČP - Souhlas s nevyplacením přeplatku",
+      "type": "pdf", brand: "de"
+    }
     {
       "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
@@ -1527,12 +1607,22 @@ ${PORTAL_BLOCK}`,
 </ul>
 <p>Jakmile obdržíme všechny potřebné dokumenty a dojde k ukončení smlouvy, bude případný přeplatek vyplacen na uvedený účet bez zbytečného odkladu v souladu s platnými právními předpisy.</p>
 ${PORTAL_BLOCK}`,
-  "files": [
+      "files": [
     {
       "url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
       "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
       "type": "pdf", brand: "epet"
     },
+     {
+      "url": "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link,
+      "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+      "type": "pdf", brand: "de"
+    },
+    {
+      "url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
+      "name": "ČP - Souhlas s nevyplacením přeplatku",
+      "type": "pdf", brand: "de"
+    }
     {
       "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
@@ -1552,12 +1642,22 @@ ${PORTAL_BLOCK}`,
 </ul>
 <p>Jakmile obdržíme všechny potřebné dokumenty a dojde k ukončení smlouvy, bude případný přeplatek vyplacen na uvedený účet bez zbytečného odkladu v souladu s platnými právními předpisy.</p>
 ${PORTAL_BLOCK}`,
-"files": [
+      "files": [
     {
       "url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
       "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
       "type": "pdf", brand: "epet"
     },
+     {
+      "url": "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link,
+      "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+      "type": "pdf", brand: "de"
+    },
+    {
+      "url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
+      "name": "ČP - Souhlas s nevyplacením přeplatku",
+      "type": "pdf", brand: "de"
+    }
     {
       "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
@@ -1863,6 +1963,7 @@ ${PORTAL_BLOCK}`,
 ${PORTAL_BLOCK}`,
                 files: [
                         { url: "https://docs.google.com/document/d/13fDHRHzFAzN79kNSr-ECLBv4lUedUvLNxvxAJ7KeIO4/edit?usp=drive_link", name: " Splátkový kalendář - rozpis splátek", type: "doc", brand: "epet" },
+                        { url: "https://docs.google.com/document/d/1xdJaEgbORi0v3vWVu-P_X1Y0glCwx32j1gn48m_TbUs/edit?usp=drive_link", name: " Splátkový kalendář - rozpis splátek", type: "doc", brand: "de" }
                 ],
                 tags: ["SPK"]
         },
@@ -2327,6 +2428,21 @@ ${PORTAL_BLOCK}`,
       url: "https://drive.google.com/file/d/1YsGBG28zBYV4jpnxVqfKKOv-pOHs4qE1/view?usp=drive_link",
       name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2025",
       type: "pdf", brand: "epet"
+    },
+    {
+      url: "https://drive.google.com/file/d/1Ra71idB4LDOBGFBkPCqEGeEllg-xzrxE/view?usp=drive_link",
+      name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2022",
+      type: "pdf", brand: "de"
+    },
+    {
+      url: "https://drive.google.com/file/d/1UVYglvcpd8IynJFot1amG9IEIs1m1Xix/view?usp=drive_link",
+      name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2024",
+      type: "pdf", brand: "de"
+    },
+          {
+      url: "https://drive.google.com/file/d/1S_b479xrvkw25Cy5tabYq_AYaX87LStE/view?usp=drive_link",
+      name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2025",
+      type: "pdf", brand: "de"
     }
   ],
   tags: ["Bezzálohový režim"]
@@ -2420,6 +2536,21 @@ ${PORTAL_BLOCK}`,
       url: "https://drive.google.com/file/d/1YsGBG28zBYV4jpnxVqfKKOv-pOHs4qE1/view?usp=drive_link",
       name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2025",
       type: "pdf", brand: "epet"
+    },
+    {
+      url: "https://drive.google.com/file/d/1Ra71idB4LDOBGFBkPCqEGeEllg-xzrxE/view?usp=drive_link",
+      name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2022",
+      type: "pdf", brand: "de"
+    },
+    {
+      url: "https://drive.google.com/file/d/1UVYglvcpd8IynJFot1amG9IEIs1m1Xix/view?usp=drive_link",
+      name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2024",
+      type: "pdf", brand: "de"
+    },
+          {
+      url: "https://drive.google.com/file/d/1S_b479xrvkw25Cy5tabYq_AYaX87LStE/view?usp=drive_link",
+      name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2025",
+      type: "pdf", brand: "de"
     }
   ],
                 tags: ["Změna typu měření"]
@@ -2447,7 +2578,7 @@ ${PORTAL_BLOCK}`,
 <p>Děkujeme za spolupráci.</p>
 ${PORTAL_BLOCK}`,
                  files: [
-    {
+     {
       url: "https://drive.google.com/file/d/1EhfSImShMh7soopf2KBDLK05C3Q7_6c1/view?usp=drive_link",
       name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2022",
       type: "pdf", brand: "epet"
@@ -2461,6 +2592,21 @@ ${PORTAL_BLOCK}`,
       url: "https://drive.google.com/file/d/1YsGBG28zBYV4jpnxVqfKKOv-pOHs4qE1/view?usp=drive_link",
       name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2025",
       type: "pdf", brand: "epet"
+    },
+    {
+      url: "https://drive.google.com/file/d/1Ra71idB4LDOBGFBkPCqEGeEllg-xzrxE/view?usp=drive_link",
+      name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2022",
+      type: "pdf", brand: "de"
+    },
+    {
+      url: "https://drive.google.com/file/d/1UVYglvcpd8IynJFot1amG9IEIs1m1Xix/view?usp=drive_link",
+      name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2024",
+      type: "pdf", brand: "de"
+    },
+          {
+      url: "https://drive.google.com/file/d/1S_b479xrvkw25Cy5tabYq_AYaX87LStE/view?usp=drive_link",
+      name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2025",
+      type: "pdf", brand: "de"
     }
   ],
  
