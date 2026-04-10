@@ -1136,7 +1136,7 @@ ${PORTAL_BLOCK}`,
       "url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
       "type": "pdf", brand: "de"
-    }
+    },
     {
       "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
@@ -1188,7 +1188,7 @@ ${PORTAL_BLOCK}`,
       "url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
       "type": "pdf", brand: "de"
-    }
+    },
     {
       "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
@@ -1224,7 +1224,7 @@ ${PORTAL_BLOCK}`,
       "url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
       "type": "pdf", brand: "de"
-    }
+    },
     {
       "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
@@ -1261,7 +1261,7 @@ ${PORTAL_BLOCK}`,
       "url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
       "type": "pdf", brand: "de"
-    }
+    },
     {
       "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
@@ -1297,7 +1297,7 @@ ${PORTAL_BLOCK}`,
       "url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
       "type": "pdf", brand: "de"
-    }
+    },
     {
       "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
@@ -1352,7 +1352,7 @@ ${PORTAL_BLOCK}`,
       "url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
       "type": "pdf", brand: "de"
-    }
+    },
     {
       "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
@@ -1622,7 +1622,7 @@ ${PORTAL_BLOCK}`,
       "url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
       "type": "pdf", brand: "de"
-    }
+    },
     {
       "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
@@ -1657,7 +1657,7 @@ ${PORTAL_BLOCK}`,
       "url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
       "type": "pdf", brand: "de"
-    }
+    },
     {
       "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
       "name": "ČP - Souhlas s nevyplacením přeplatku",
