@@ -55,6 +55,25 @@ ${PORTAL_BLOCK}`,
                 tags: ["Nedoručenky"]
         },
         /* Fakturace */
+"INFORMACE K VYSTAVENÍ OPRAVNÉ FAKTURY - ": {
+  date: "2026-04-21",   
+  text: `${OSLOVENI_BLOCK}
+<p>rádi bychom Vás informovali, že v rámci interní kontroly jsme zjistili, že u Vaší smlouvy došlo v minulosti k nesprávnému nastavení fakturačních údajů, které nebylo v plném souladu s uzavřenou smlouvou.</p>
+<p>Z tohoto důvodu byla nyní provedena oprava vyúčtování tak, aby odpovídalo podmínkám sjednaným ve smlouvě, kterou jste s námi uzavřel/a. Oprava se týká minulého období a je zohledněna formou opravné faktury.</p>
+<p>Rádi bychom Vás ujistili, že:</p>
+<ul>
+  <li>nejde o změnu smluvních podmínek,</li>
+  <li>nejde o nové poplatky,</li>
+  <li>jedná se výhradně o narovnání fakturace dle původní smlouvy.</li>
+</ul>
+<p>Chápeme, že tato situace může vzbuzovat otázky. Pokud budete potřebovat podrobnější vysvětlení nebo si přejete projít konkrétní položky opravné faktury, je Vám naše zákaznická linka plně k dispozici.</p>
+<p>Děkujeme za pochopení a omlouváme se za komplikace spojené s touto administrativní chybou.</p>
+${PORTAL_BLOCK}`,
+    files: [],
+    tags: ["Fakturace"]
+},
+
+  
         "OPRAVNÁ DATA": {
                 text: `${OSLOVENI_BLOCK} 
 rádi bychom Vás informovali, že jsme obdrželi opravná data pro fakturaci ze strany distributora za období <strong>XXXXXX - XXXXXXXXX.</strong></p>
