@@ -3077,16 +3077,14 @@ ${PORTAL_BLOCK}`,
 ${OSLOVENI_BLOCK}
 
 <p>děkujeme za Váš dotaz týkající se časů spínání vysokého (VT) a nízkého tarifu (NT).</p>
-<p>Abychom Vám mohli poskytnout přesnou informaci, je potřeba znát <strong>kód povelu HDO</strong>, který naleznete na přijímači HDO v rozvodné skříni u elektroměru (např. A1B5, E2, Q3).</p>
-<p><strong>Pokud již máte kód povelu k dispozici</strong>, prosím zašlete nám jej zpět v odpovědi na tento e-mail. Poté Vám přesné časy spínání NT/VT obratem zjistíme.</p>
+<p>Časy spínání nízkého tarifu naleznete na internetových stránkách příslušného provozovatele distribuční soustavy, případně také na jeho telefonické informační lince nebo v zákaznickém centru společnosti <b>ČEZ Distribuce, EG.D nebo PREdistribuce.</b></p>
+<p>Dovolujeme si zároveň upozornit, že distributoři mohou časy spínání měnit, přičemž případnou změnu jsou povinni zveřejnit minimálně s týdenním předstihem.</p>
 <p><strong>Pro rychlé ověření můžete využít i oficiální stránky Vašeho distributora:</strong><br>
 <ul>
   <li>ČEZ Distribuce – <a href="https://www.cezdistribuce.cz/pro-zakazniky/potrebuji-vyresit/stavajici-pripojeni/casy-spinani-nizkeho-tarifu" target="_blank">zde</a></li>
   <li>PREdistribuce – <a href="https://www.predistribuce.cz/cs/potrebuji-zaridit/zakaznici/stav-hdo/" target="_blank">zde</a></li>
   <li>EG.D (E.ON) – <a href="https://www.eon.cz/domacnosti/zakaznicka-pece/technicke-dotazy/casy-nizkeho-tarifu-hdo/" target="_blank">zde</a></li>
 </ul>
-<p><strong>Pokud kód povelu zatím neznáte</strong>, doporučujeme jej opsat nebo vyfotit přímo z HDO u elektroměru. Jakmile nám jej sdělíte, časy spínání NT/VT Vám následně doplníme.</p>
-
 ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Spínání NT a VT"],
