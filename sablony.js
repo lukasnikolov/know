@@ -555,8 +555,8 @@ ${PORTAL_BLOCK}`,
         },
         /* Demontáže */
 "Sloučení odběrných míst (OM)": {
-  date: "2026-04-23",              
-  text: `${OSLOVENI_BLOCK}
+                date: "2026-04-23",              
+                text: `${OSLOVENI_BLOCK}
 <p>v příloze tohoto e-mailu Vám zasíláme formuláře potřebné pro sloučení Vašich odběrných míst.</p>
 <p>Pro úspěšné vyřízení prosíme o vyplnění přiložené <strong>Žádosti o ukončení smlouvy</strong> k odběrnému místu, které bude zrušeno (demontováno). Do důvodu demontáže prosím výslovně uveďte <strong>„Sloučení jednoho OM do druhého“</strong> a doplňte informaci, ze kterého EAN/EIC kódu do kterého ke sloučení dochází.</p>
 <p><em>Upozornění (pouze pro elektřinu):</em> Pokud bude v souvislosti se sloučením docházet k navýšení kapacity hlavního jističe u Vašeho aktivního (zůstávajícího) odběrného místa, je nutné nám doložit také <strong>Žádost o změnu smlouvy</strong> a platnou <strong>Revizní zprávu</strong>.</p>
@@ -566,10 +566,10 @@ ${PORTAL_BLOCK}`,
                         { url: "https://drive.google.com/open?id=1U-3hFZF25hXpdj9-8XrYpbI6w_rQH5S7", name: "Žádost o ukončení smlouvy", type: "pdf", brand: "epet" },
                         { url: "https://drive.google.com/file/d/13HAJSD1s13kpkpwDMRy3ZNCXNCIKJj8X/view?usp=drive_link", name: "Žádost o ukončení smlouvy", type: "pdf", brand: "de" },
                         { url: "https://drive.google.com/file/d/17jVzJYN7fq_zsdPM3SSoU4upzVz8AK3p/view?usp=drive_web", name: "ČEZ žádost o ukončení - Trvalá demontáž", type: "pdf" },
-                        { url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "epet" },
                         { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "epet" },
-                        { url: "https://drive.google.com/file/d/11yiwMdyFSYdMhLsMcs2m4J7SnBINalP5/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "de" },
-                        { url: "https://drive.google.com/file/d/1c8dHbNdew3iNov6il1s1MCJQJ7t039aL/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "de" }]
+                        { url: "https://drive.google.com/file/d/11yiwMdyFSYdMhLsMcs2m4J7SnBINalP5/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1c8dHbNdew3iNov6il1s1MCJQJ7t039aL/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "de" }
                 ],
                 tags: ["Demontáže", "Sloučení OM"]
         },
