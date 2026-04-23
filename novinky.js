@@ -1,5 +1,25 @@
 const updates = [
 {
+  "id": 1776941440900,
+  "title": "Opravné faktury a metodika Kaucí + Sloučení odběrných míst",
+  "date": "2026-04-23",
+  "category": [
+    "manualy",
+    "sablony",
+    "finance",
+    "fakturace"
+  ],
+  "icon": "bi bi-lightning-charge",
+  "color": "warning",
+  "author": "Lukáš",
+  "isNew": true,
+  "content": `Do znalostní báze byly přidány dvě klíčové aktualizace, které mají přímý dopad na komunikaci se zákazníky a procesy na ZK.</p><ul><li><strong>Opravné faktury – Chybně navedené ceníky (epet &amp; DE)</strong></li></ul><p>U celkem <strong>145 odběrných míst</strong> napříč oběma značkami dochází k vystavování opravných faktur z důvodu administrativní chyby v historickém nastavení ceníků.</p><ul><li><strong>Identifikace:</strong> Ve znalostce je integrován vyhledávací seznam. <strong>Pozor:</strong> Seznam obsahuje <strong>číslo partnera</strong>, nikoliv číslo zákaznického účtu (ZÚ).</li><li><strong>Komunikace na ZK:</strong> Při odesílání úkolu na ZK je nutné použít <strong>výhradně novou šablonu e-mailu</strong> (v databázi označena jako „Nová“).</li><li><strong>Podpora hovoru:</strong> K dispozici je nový <strong>Call skript</strong>, který vám pomůže argumentačně zvládnout dotazy typu:</li><li class=\"ql-indent-1\"><em>„Proč mi fakturu opravujete až teď?“</em></li><li class=\"ql-indent-1\"><em>„Změnili jste mi zpětně cenu nebo podmínky?“</em></li><li class=\"ql-indent-1\"><em>Zvládnutí emočnějších reakcí zákazníka.</em></li><li><strong>Metodika: Kauce (jistoty) a DPH</strong></li></ul><p>Byl vypracován jasný manuál pro vysvětlování (ne)vystavování daňových dokladů u finančních jistot.</p><ul><li><strong>Základní pravidlo:</strong> Na přijatou kauci se <strong>nevystavuje daňový doklad</strong>, protože se nejedná o zdanitelné plnění.</li><li><strong>Proč ne?</strong> Kauce je dočasná vratná pojistka, nikoliv platba za dodanou energii či službu. DPH se řeší až u skutečného plnění.</li><li><strong>Kdy se doklad vystaví?</strong> Pouze v momentě, kdy se kauce <strong>započte</strong> na úhradu nedoplatku nebo škody. V tu chvíli se stává zdanitelným plněním a doklad musí být vystaven.</li></ul><p>Také byl přidán nový, přehledný postup, jak správně řešit požadavky zákazníků na sloučení dvou odběrných míst (z jednoho elektroměru/plynoměru do druhého).</p><p>Abyste předešli chybným demontážím u distributora a protahování požadavků, věnujte prosím pozornost těmto hlavním pravidlům:</p><h3>1. Správně vyplněný ŽOUK a přesná identifikace</h3><p>Základem je vždy dodání <strong>Žádosti o ukončení odběru (ŽOUK)</strong>.</p><ul><li>Jako důvod demontáže musí zákazník jasně uvést: <strong>„Sloučení jednoho OM do druhého“</strong>.</li><li>Zákazník musí (ideálně v žádosti) přesně specifikovat dotčené EAN/EIC kódy ve formátu: <em>„Z EAN [zanikající OM] do EAN [zůstávající aktivní OM]“</em>. <strong>Vždy si tuto informaci od zákazníka nechte potvrdit!</strong></li></ul><h3>2. Pozor u elektřiny: Změna jističe (HJ)</h3><p>U elektřiny musíte vždy se zákazníkem ověřit, zda bude v souvislosti se sloučením docházet k <strong>navýšení hlavního jističe</strong>:</p><ul><li>❌ <strong>Bez navýšení:</strong> Pokračujeme standardně pouze s ŽOUK.</li><li>✅ <strong>S navýšením HJ:</strong> Zákazník musí doložit navíc i <strong>Žádost o změnu smlouvy</strong> a případně <strong>Revizní zprávu (RZ)</strong> dle specifik dané situace.</li></ul><h3>3. Specifikum pro ČEZ Distribuci</h3><p>Pokud spadá dotčené OM pod ČEZ Distribuci, je vždy nezbytné doložit vyplněný <strong>ŽOUK přímo na formuláři pro ČEZ</strong>.</p><p>📂&nbsp;<strong>Stránky naleznete zde:</strong></p><p>🔗&nbsp;<a href=\"https://sites.google.com/view/znalostn-bze/\" target=\"_blank\">Znalostní báze</a>&nbsp;⏩FAKTURACE A SALDO ⏩<a href=\"https://sites.google.com/view/znalostka/fakturace-a-saldo/opravn%C3%A9-faktury-chybn%C4%9B-naveden%C3%A9-cen%C3%ADky\" target=\"_blank\">Opravné faktury – Chybně navedené ceníky</a></p><p>🔗&nbsp;<a href=\"https://sites.google.com/view/znalostn-bze/\" target=\"_blank\">Znalostní báze</a>&nbsp;⏩FAKTURACE A SALDO ⏩<a href=\"https://sites.google.com/view/znalostka/fakturace-a-saldo/kauce-da%C5%88ov%C3%BD-doklad\" target=\"_blank\">Metodika: Kauce a DPH</a></p><p>🔗&nbsp;<a href=\"https://sites.google.com/view/znalostn-bze/\" target=\"_blank\">Znalostní báze</a>&nbsp;⏩SMLOUVY+KONTAKTNÍ ÚDAJE ⏩ <a href=\"https://sites.google.com/view/znalostka/smlouvy-kontaktn%C3%AD-%C3%BAdaje/slou%C4%8Den%C3%AD-odb%C4%9Brn%C3%BDch-m%C3%ADst\" target=\"_blank\">Sloučení odběrných míst (OM)</a></p><p><br></p><p><br></p>`
+},
+	
+	
+	
+	
+	{
   "id": 1775806363049,
   "title": "Reklamace a kompenzace – Nesoulad DI sazeb (ZIS vs. skutečnost)",
   "date": "2026-04-10",
