@@ -2755,13 +2755,13 @@ ${PORTAL_BLOCK}`,
 
 /* Jednotková cena */
         "Zamítnutí reklamace: Jednotková cena (Případně pokud chceme zákazníkovi vysvětlit co to jednotková cena je a jak se počítá) - ELE": {
-                text: 'Pro výpočet jednotkové ceny a vysvětlení zákazníkovi, jak jsme k částkám v rámci vyúčtování za jednotkovou cenu došli, je potřeba nově využít <a href="https://sites.google.com/view/znalostka/%C5%A1ablony/v%C3%BDpo%C4%8Det-jednotkov%C3%A9-ceny-ele-nem%C4%9Bn%C3%AD-se-cen%C3%ADk" target="_blank">tento odkaz</a>.',
+                text: 'Pro výpočet jednotkové ceny a vysvětlení zákazníkovi, jak jsme k částkám v rámci vyúčtování za jednotkovou cenu došli, je potřeba nově využít <a href="https://sites.google.com/view/znalostka/%C5%A1ablony/v%C3%BDpo%C4%8Det-jednotkov%C3%A9-ceny-ele-nem%C4%9Bn%C3%AD-se-cen%C3%ADk" target="_blank">https://sites.google.com/view/znalostka/%C5%A1ablony/v%C3%BDpo%C4%8Det-jednotkov%C3%A9-ceny-ele-nem%C4%9Bn%C3%AD-se-cen%C3%ADk</a>.',
                 files: [],
                 tags: ["Jednotková cena"],
                 category: "Jednotková cena"
         },
         "Zamítnutí reklamace: Jednotková cena (Případně pokud chceme zákazníkovi vysvětlit co to jednotková cena je a jak se počítá) - PLYN": {
-                text: 'Pro výpočet jednotkové ceny a vysvětlení zákazníkovi, jak jsme k částkám v rámci vyúčtování za jednotkovou cenu došli, je potřeba nově využít <a href="https://sites.google.com/view/znalostka/%C5%A1ablony/v%C3%BDpo%C4%8Det-jednotkov%C3%A9-ceny-ele-nem%C4%9Bn%C3%AD-se-cen%C3%ADk" target="_blank">tento odkaz</a>.',
+                text: 'Pro výpočet jednotkové ceny a vysvětlení zákazníkovi, jak jsme k částkám v rámci vyúčtování za jednotkovou cenu došli, je potřeba nově využít <a href="https://sites.google.com/view/znalostka/%C5%A1ablony/v%C3%BDpo%C4%8Det-jednotkov%C3%A9-ceny-ele-nem%C4%9Bn%C3%AD-se-cen%C3%ADk" target="_blank">https://sites.google.com/view/znalostka/%C5%A1ablony/v%C3%BDpo%C4%8Det-jednotkov%C3%A9-ceny-ele-nem%C4%9Bn%C3%AD-se-cen%C3%ADk</a>.',
                 files: [],
                 tags: ["Jednotková cena"],
                 category: "Jednotková cena"
