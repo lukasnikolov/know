@@ -1066,7 +1066,7 @@ ${PORTAL_BLOCK}`,
 <p>Důvod reklamace: <strong>{zde doplnit důvod reklamace}</strong></p>
 <p>Abychom se mohli Vaší reklamací zabývat, potřebujeme z Vaší strany doložit následující podklady:</p>
 <p><strong>{zde uvést, co je potřeba od zákazníka doložit pro kompletní reklamaci}</strong></p>
-<p>V této souvislosti bychom Vás rádi upozornili, že dokud neobdržíme chybějící podklady potřebné ke kompletnímu posouzení reklamace, nebude reklamace z naší strany dále řešena a zároveň neběží lhůta pro její vyřízení.</p>
+<p>V této souvislosti bychom Vás rádi upozornili, <strong>že dokud neobdržíme chybějící podklady potřebné ke kompletnímu posouzení reklamace, nebude reklamace z naší strany dále řešena a zároveň neběží lhůta pro její vyřízení.</strong></p>
 <p>Lhůta pro vyřízení reklamace začne běžet až po doložení výše požadovaných dokumentů či informací.</p>
 ${PORTAL_BLOCK}`,
     files: [],
@@ -1123,7 +1123,7 @@ ${PORTAL_BLOCK}`,
 "Pozastavení reklamace – předání na distribuci": {
     text: `${OSLOVENI_BLOCK}
 <p>obdrželi jsme od Vás dne <strong>{DD. MM. RRRR}</strong> požadavek na reklamaci týkající se <strong>{zde doplnit důvod reklamace}</strong>.</p>
-<p>Rádi bychom Vás touto cestou informovali, že jsme reklamaci předali příslušnému distributorovi, který má nyní <strong>{60 dní}</strong> na její posouzení.</p>
+<p>Rádi bychom Vás touto cestou informovali, že jsme reklamaci předali příslušnému distributorovi, který má nyní 60 dní na její posouzení.</p>
 <p>Naše lhůta pro vyřízení reklamace se během této doby pozastavuje a začne znovu běžet až po obdržení vyjádření od distributora.</p>
 <p>Děkujeme Vám za pochopení.</p>
 ${PORTAL_BLOCK}`,
