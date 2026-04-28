@@ -1043,72 +1043,93 @@ ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Samoodečty"]
         },
-        /* Reklamace */
-        "Přijetí reklamace  – není potřeba od ZK nic doložit": {
-                text: `${OSLOVENI_BLOCK}
-<p>potvrzujeme Vám přijetí reklamace, jejíž obsah je blíže specifikován níže v popisu reklamace. U této reklamace evidujeme následující údaje:</p>
-<p>Datum přijetí/uplatnění reklamace: <strong>DD. MM. RRRR</strong> </p>
-<p>Důvod reklamace:</p>
-<p>Reklamaci předáme kompetentnímu oddělení. Jakmile budeme mít vyjádření, budeme Vás informovat o výsledku. <p>
-<strong><p>Dále bychom Vás rádi upozornili, že reklamace nemá odkladný účinek na splatnost vyúčtovaných plateb nebo záloh dle smlouvy. Stávající vyúčtování je tedy třeba i přesto uhradit.<p></strong>
+ /* Reklamace */
+"Potvrzení přijetí reklamace": {
+    text: `${OSLOVENI_BLOCK}
+<p>potvrzujeme Vám tímto přijetí Vaší reklamace, jejíž obsah je blíže specifikován níže.</p>
+<p>U Vaší reklamace evidujeme následující údaje:</p>
+<p>Datum přijetí reklamace: <strong>{DD. MM. RRRR}</strong></p>
+<p>Důvod reklamace: <strong>{zde doplnit, co zákazník reklamuje a z jakého důvodu}</strong></p>
+<p>Dovolujeme si Vás informovat, že reklamaci nyní řešíme. Jakmile budeme mít k dispozici vyjádření o výsledku šetření, budeme Vás informovat, nejpozději však do 15 dnů od potvrzeného data přijetí veškerých potřebných informací.</p>
+<p>V případě, že bude reklamace předána provozovateli distribuční soustavy k posouzení, lhůta pro její vyřízení se pozastavuje po dobu řešení na straně provozovatele.</p>
+<p><strong>Dále si Vás dovolujeme upozornit, že reklamace nemá odkladný účinek na splatnost vyúčtovaných plateb ani záloh dle smlouvy. Stávající vyúčtované platby či zálohy je tedy nutné i přes podanou reklamaci uhradit.</strong></p>
 ${PORTAL_BLOCK}`,
-                files: [],
-                tags: ["Reklamace"]
-        },
-        "Přijetí reklamace s požadavkem o doložení chybějících podkladů": {
-                text: `${OSLOVENI_BLOCK}
-<p>potvrzujeme Vám přijetí reklamace, jejíž obsah je blíže specifikován níže v popisu reklamace. U této reklamace evidujeme následující údaje: </p> 
-<p>Datum přijetí/uplatnění reklamace: <strong>DD. MM. RRRR</strong></p>
-<p>Důvod reklamace:</p>
-<p>Abychom se mohli reklamací zabývat, potřebujeme z Vaší strany doložit následující podklady:</p>
-<p>UVEDEME, CO POTŘEBUJEME OD ZÁKAZNÍKA DOLOŽIT PRO KOMPLETNÍ REKLAMACI. </p>
-<p>V této souvislosti bychom Vás rádi upozornili, že dokud neobdržíme chybějící podklady pro kompletní reklamaci, nebude z naší strany řešena a zároveň neběží lhůta pro vyřízení reklamace. Ta začne běžet až po doložení výše požadovaných dokumentů či informací.</p>
-<strong><p>Dále bychom Vás rádi upozornili, že reklamace nemá odkladný účinek na splatnost vyúčtovaných plateb nebo záloh dle smlouvy. Stávající vyúčtování je tedy třeba i přesto uhradit.</p></strong>
+    files: [],
+    tags: ["Reklamace"]
+},
+
+"Potvrzení přijetí reklamace – nekompletní podklady": {
+    text: `${OSLOVENI_BLOCK}
+<p>potvrzujeme Vám tímto přijetí Vaší reklamace, jejíž obsah je blíže specifikován níže.</p>
+<p>U Vaší reklamace evidujeme následující údaje:</p>
+<p>Datum přijetí/uplatnění reklamace: <strong>{DD. MM. RRRR}</strong></p>
+<p>Důvod reklamace: <strong>{zde doplnit důvod reklamace}</strong></p>
+<p>Abychom se mohli Vaší reklamací zabývat, potřebujeme z Vaší strany doložit následující podklady:</p>
+<p><strong>{zde uvést, co je potřeba od zákazníka doložit pro kompletní reklamaci}</strong></p>
+<p>V této souvislosti bychom Vás rádi upozornili, <strong>že dokud neobdržíme chybějící podklady potřebné ke kompletnímu posouzení reklamace, nebude reklamace z naší strany dále řešena a zároveň neběží lhůta pro její vyřízení.</strong></p>
+<p>Lhůta pro vyřízení reklamace začne běžet až po doložení výše požadovaných dokumentů či informací.</p>
 ${PORTAL_BLOCK}`,
-                files: [],
-                tags: ["Reklamace"]
-        },
-        "Vyřízení reklamace - oprávněná": {
-                text: `${OSLOVENI_BLOCK}
-<p>reagujeme na Vaši reklamaci podanou dne DD. MM. RRRR, která se týká UVÉST DŮVOD.</p>
-<p>Vámi podaná reklamace byla z naší strany důkladně posouzena a následně vyhodnocena jako <strong>oprávněná.</p></strong>
-<p>UVEDEME, JAK BUDE REKLAMACE VYŘEŠENA - NAPŘ. VYSTAVENÍ OPRAVNÉ FAKTURY APOD. – uvedeno v ÚKOLU</p>
-<p>Dále bychom Vás rádi informovali, že opravná faktura bude vystavena a zaslána v nejbližších dnech a to na Váš email / na Vaši doručovací adresu. </p>
-<p>Zákazníci, kteří jsou spotřebiteli ve smyslu § 419 zákona č. 89/2012 Sb., občanský zákoník, se můžou v souladu s § 17 odst. 7 písm. e) zákona č. 458/2000 Sb., energetický zákon, ve znění pozdějších předpisů, v případě vzniklého sporu obracet na Energetický regulační úřad (www.eru.cz), jakožto orgán mimosoudního řešení sporů v oblasti energetiky. Energetický regulační úřad může rozhodnout spor mezi zákazníkem a společností EP ENERGY TRADING, a.s., o splnění povinností z uzavřené smlouvy, jejíž předmětem je dodávka nebo distribuce elektřiny nebo plynu a spor o určení, zda taková smlouva vznikla, trvá, nebo zanikla, a kdy se tak stalo.</p>
+    files: [],
+    tags: ["Reklamace"]
+},
+
+"Uzavření reklamace – oprávněná": {
+    text: `${OSLOVENI_BLOCK}
+<p>reagujeme tímto na Vaši reklamaci, kterou jsme přijali dne <strong>{DD. MM. RRRR}</strong>, týkající se <strong>{zde doplnit důvod reklamace}</strong>.</p>
+<p>Vaši reklamaci jsme z naší strany důkladně prošetřili, vyhodnotili a k dnešnímu dni ji uzavíráme jako oprávněnou.</p>
+<p>Dovolujeme si Vás informovat, že opravnou fakturu Vám vystavíme a zašleme v nejbližších dnech, a to na <strong>{Váš e-mail / Vaši doručovací adresu}</strong>.</p>
+<p>Omlouváme se za případné komplikace a děkujeme za pochopení.</p>
 ${PORTAL_BLOCK}`,
-                files: [],
-                tags: ["Reklamace"]
-        },
-        "Vyřízení reklamace - neoprávněná": {
-                text: `${OSLOVENI_BLOCK}
-<p>reagujeme na Vaši reklamaci podanou dne <strong>DD. MM. RRRR</strong>, která se týká <strong>UVÉST DŮVOD</strong>.</p>
-<p>Vámi podaná reklamace byla důkladně posouzena a následně vyhodnocena jako <strong>neoprávněná.</strong></p>
-<p>Důvodem zamítnutí reklamace je:</p>
-<p>UVEDEME DŮVOD ZAMÍTNUTÍ</p>
-<p>Zákazníci, kteří jsou spotřebiteli ve smyslu § 419 zákona č. 89/2012 Sb., občanský zákoník, se můžou v souladu s § 17 odst. 7 písm. e) zákona č. 458/2000 Sb., energetický zákon, ve znění pozdějších předpisů, v případě vzniklého sporu obracet na Energetický regulační úřad (www.eru.cz), jakožto orgán mimosoudního řešení sporů v oblasti energetiky. Energetický regulační úřad může rozhodnout spor mezi zákazníkem a společností EP ENERGY TRADING, a.s., o splnění povinností z uzavřené smlouvy, jejíž předmětem je dodávka nebo distribuce elektřiny nebo plynu a spor o určení, zda taková smlouva vznikla, trvá, nebo zanikla, a kdy se tak stalo.</p>
+    files: [],
+    tags: ["Reklamace"]
+},
+
+"Uzavření reklamace – neoprávněná": {
+    text: `${OSLOVENI_BLOCK}
+<p>reagujeme tímto na Vaši reklamaci, kterou jsme přijali dne <strong>{DD. MM. RRRR}</strong>, týkající se <strong>{zde doplnit důvod reklamace}</strong>.</p>
+<p>Vaši reklamaci jsme z naší strany důkladně prošetřili, vyhodnotili a k dnešnímu dni ji uzavíráme jako neoprávněnou.</p>
+<p>Důvodem zamítnutí reklamace je: <strong>{zde uvést důvod zamítnutí reklamace}</strong>.</p>
+<p>Zákazníci, kteří jsou spotřebiteli ve smyslu § 419 zákona č. 89/2012 Sb., občanský zákoník, se mohou v souladu s § 17 odst. 7 písm. e) zákona č. 458/2000 Sb., energetický zákon, ve znění pozdějších předpisů, v případě vzniklého sporu obracet na Energetický regulační úřad (<a href="https://eru.gov.cz/" target="_blank" rel="noopener noreferrer">www.eru.cz</a>), jakožto orgán mimosoudního řešení sporů v oblasti energetiky.</p>
+<p>Energetický regulační úřad může rozhodnout spor mezi zákazníkem a společností EP ENERGY TRADING, a.s., o splnění povinností z uzavřené smlouvy, jejímž předmětem je dodávka nebo distribuce elektřiny nebo plynu, a dále spor o určení, zda taková smlouva vznikla, trvá, nebo zanikla, a kdy se tak stalo.</p>
+<p>Děkujeme za pochopení a omlouváme se za případné komplikace, které Vám tato situace mohla způsobit.</p>
 ${PORTAL_BLOCK}`,
-                files: [],
-                tags: ["Reklamace"]
-        },
-        "Zamítnutí požadavku na uplatnění náhrady - Elektřina": {
-                text: `${OSLOVENI_BLOCK}
-<p>reagujeme na Vaši žádost týkající se uplatnění náhrady škody za nedodržení standardu kvality dodávek/distribuce elektřiny dle vyhlášky č. 540/2005 Sb., o kvalitě dodávek elektřiny a souvisejících služeb v elektroenergetice.</p>
-<p>Je nám líto, ale Vaši žádost jsme nuceni zamítnout. Důvodem našeho zamítavého stanoviska je marné uplynutí lhůty pro uplatnění náhrady škody v souladu s § 4 odst. 4 písm. a) uvedené vyhlášky, tj. 60 kalendářních dnů ode dne následujícího po dni, ve kterém uplynula lhůta podle standardů.</p>
-<p>Zákazníci, kteří jsou spotřebiteli ve smyslu § 419 zákona č. 89/2012 Sb., občanský zákoník, se můžou v souladu s § 17 odst. 7 písm. e) zákona č. 458/2000 Sb., energetický zákon, ve znění pozdějších předpisů, v případě vzniklého sporu obracet na Energetický regulační úřad (www.eru.cz), jakožto orgán mimosoudního řešení sporů v oblasti energetiky. Energetický regulační úřad může rozhodnout spor mezi zákazníkem a společností EP ENERGY TRADING, a.s., o splnění povinností z uzavřené smlouvy, jejíž předmětem je dodávka nebo distribuce elektřiny nebo plynu a spor o určení, zda taková smlouva vznikla, trvá, nebo zanikla, a kdy se tak stalo. </p>
+    files: [],
+    tags: ["Reklamace"]
+},
+
+"Výzva k doložení podkladů pro zpracování reklamace": {
+    text: `${OSLOVENI_BLOCK}
+<p>obdrželi jsme od Vás dne <strong>{DD. MM. RRRR}</strong> požadavek na reklamaci vyúčtování. Následně jsme Vás požádali o doplnění podkladů, aby bylo možné reklamaci řádně posoudit a vyřídit.</p>
+<p>Konkrétně Vás prosíme o doložení: <strong>{zde uvést požadované podklady}</strong>, a to z důvodu: <strong>{zde uvést důvod požadavku na doložení}</strong>.</p>
+<p>Vše potřebné nám prosím zašlete nejpozději do <strong>{DD. MM. RRRR}</strong>.</p>
+<p>V případě, že požadovanou dokumentaci do výše uvedeného termínu neobdržíme, nebude možné Váš požadavek dále vyřídit a situace bude z naší strany považována za uzavřenou.</p>
+<p>Děkujeme za pochopení.</p>
 ${PORTAL_BLOCK}`,
-                files: [],
-                tags: ["Reklamace"]
-        },
-        "Zamítnutí požadavku na uplatnění náhrady - Plyn": {
-                text: `${OSLOVENI_BLOCK}
-<p>reagujeme na Vaši žádost týkající se uplatnění náhrady za nedodržení standardu kvality dodávek/distribuce plynu dle vyhlášky č. 545/2006 Sb., o kvalitě dodávek plynu a souvisejících služeb v plynárenství.</p>
-<p>Je nám líto, ale Vaši žádost jsme nuceni zamítnout. Důvodem našeho zamítavého stanoviska je marné uplynutí lhůty pro uplatnění náhrady v souladu s § 3 odst. 1 písm. b) uvedené vyhlášky, tj. 60 kalendářních dnů ode dne následujícího po dni, ve kterém uplynula lhůta podle standardů.
-</p>
-<p>Zákazníci, kteří jsou spotřebiteli ve smyslu § 419 zákona č. 89/2012 Sb., občanský zákoník, se můžou v souladu s § 17 odst. 7 písm. e) zákona č. 458/2000 Sb., energetický zákon, ve znění pozdějších předpisů, v případě vzniklého sporu obracet na Energetický regulační úřad (www.eru.cz), jakožto orgán mimosoudního řešení sporů v oblasti energetiky. Energetický regulační úřad může rozhodnout spor mezi zákazníkem a společností EP ENERGY TRADING, a.s., o splnění povinností z uzavřené smlouvy, jejíž předmětem je dodávka nebo distribuce elektřiny nebo plynu a spor o určení, zda taková smlouva vznikla, trvá nebo zanikla, a kdy se tak stalo.<p>
+    files: [],
+    tags: ["Reklamace"]
+},
+
+"Uzavření požadavku pro nedoplnění požadovaných podkladů": {
+    text: `${OSLOVENI_BLOCK}
+<p>obdrželi jsme od Vás dne <strong>{DD. MM. RRRR}</strong> požadavek na reklamaci vyúčtování. Následně jsme Vás požádali o doplnění podkladů, aby bylo možné reklamaci řádně posoudit a vyřídit.</p>
+<p>Tímto Vás informujeme, že Váš požadavek na reklamaci uzavíráme jako neoprávněný, jelikož jsme k němu neobdrželi všechny potřebné podklady a informace, a to i přes opakované urgence.</p>
+<p>Pokud budete mít zájem reklamaci znovu uplatnit, prosíme o zaslání nového požadavku, včetně všech potřebných podkladů.</p>
+<p>Děkujeme Vám za pochopení.</p>
 ${PORTAL_BLOCK}`,
-                files: [],
-                tags: ["Reklamace"]
-        },
+    files: [],
+    tags: ["Reklamace"]
+},
+
+"Pozastavení reklamace – předání na distribuci": {
+    text: `${OSLOVENI_BLOCK}
+<p>obdrželi jsme od Vás dne <strong>{DD. MM. RRRR}</strong> požadavek na reklamaci týkající se <strong>{zde doplnit důvod reklamace}</strong>.</p>
+<p>Rádi bychom Vás touto cestou informovali, že jsme reklamaci předali příslušnému distributorovi, který má nyní 60 dní na její posouzení.</p>
+<p>Naše lhůta pro vyřízení reklamace se během této doby pozastavuje a začne znovu běžet až po obdržení vyjádření od distributora.</p>
+<p>Děkujeme Vám za pochopení.</p>
+${PORTAL_BLOCK}`,
+    files: [],
+    tags: ["Reklamace"]
+},
         /* Dědické řízení */
         "Informace k doložení dokladů po úmrtí odběratele": {
                 text: `${OSLOVENI_BLOCK}
