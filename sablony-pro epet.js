@@ -74,7 +74,7 @@ ${PORTAL_BLOCK}`,
 },
 
   
-        "OPRAVNÁ DATA": {
+        "Opravná fakturace – opravná data distributora": {
                 text: `${OSLOVENI_BLOCK} 
 rádi bychom Vás informovali, že jsme obdrželi opravná data pro fakturaci ze strany distributora za období <strong>XXXXXX - XXXXXXXXX.</strong></p>
 <p>Na základě této skutečnosti Vám byla vystavena opravná faktura, která Vám dorazí v samostatném e-mailu nebo poštou. </p> 
@@ -82,7 +82,7 @@ ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Fakturace"]
         },
-        "Zpětná fakturace (backbilling)": {
+        "Backbilling – vysvětlení navazující periodické faktury": {
                 text: `${OSLOVENI_BLOCK}
 <p>tato záležitost souvisí fakturou vystavenou <strong>DD.MM.RRRR</strong>, kterou jsme Vám zaslali na základě Vámi hlášeného samoodečtu. Následně Vám byla zaslána i standardní periodická faktura vystavená na základě odečtů od distributora. Ta má číslo <strong>Číslo tiskového dokladu</strong>. V této faktuře je zaznamenáno i období, které bylo zahrnuto v předchozí faktuře vystavené právě na základě zaslaného samoodečtu. Tuto fakturu jsme na základě požadavků distributora povinni každoročně vystavit.</p>
 <p>V detailním rozpisu periodické faktury od distributora si však můžete všimnout, že položky, které byl zahrnuty do faktury vystavené na základě samoodečtu, jsou v něm odečteny (<em>a uvedeny tedy se znaménkem minus</em>).</p>
@@ -117,7 +117,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Fakturace"]
         },
 
-        "Vysvětlení zúčtování záloh na vyúčtovací faktuře - Odečet záloh na vyúčtovací faktuře": {
+        "Započítání záloh podle zúčtovacího období": {
                 text: `${OSLOVENI_BLOCK}
 <p>rádi bychom Vám poskytli stručné vysvětlení, jak dochází k započítávání zaplacených záloh ve Vašich vyúčtovacích fakturách, aby bylo vše co nejjasnější:</p>
 <p><li><b>Zálohy jsou zúčtovány pouze tehdy, pokud byly uhrazeny</b> na náš účet <b> nejpozději k datu vystavení (DUZP) </b>vyúčtovací faktury.</p></li>
@@ -131,7 +131,7 @@ ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Fakturace"]
         },
-"DUZP u mimořádné fakturace (nelze upravit zpětně)" : {
+"Mimořádná fakturace – DUZP nelze upravit zpětně" : {
   text : `${OSLOVENI_BLOCK}
 <p>děkujeme Vám za Váš e-mail a požadavek na úpravu <strong>data uskutečnění zdanitelného plnění (DUZP)</strong> u mimořádné fakturace.</p>
 <p>Rádi bychom Vás informovali, že <strong>DUZP nelze u mimořádné fakturace stanovit ani upravit zpětně dle přání zákazníka</strong>. DUZP je stanoveno <strong>dnem skutečného zjištění a potvrzení odečtových dat distributorem</strong>.</p>
@@ -163,7 +163,7 @@ ${PORTAL_BLOCK}`,
                 tags: ["Fakturace"]
         },         
         /* Smlouvy */
-        "ZMĚNA - ADRESA KORESPONDEČNÍ": {
+        "Potvrzení změny doručovací adresy": {
                 text: `${OSLOVENI_BLOCK}
 <p>na základě Vašeho požadavku Vás informujeme, že pro odběrné místo <b>EAN/EIC ${EAN_BLOCK}</b> jsme upravili doručovací adresu na <b>XXXX.</b></p>
 <p>Děkujeme Vám za aktualizaci kontaktních údajů.</p>
@@ -171,7 +171,7 @@ ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Smlouvy"]
         },
-        "ZMĚNA - ADRESA ODBĚRNÉHO MÍSTA - DOLOŽENÍ DOKUMENTŮ": {
+        "Změna adresy odběrného místa – doložení dokumentů": {
                 text: `${OSLOVENI_BLOCK}
 <p>abychom mohli adresu odběrného místa u Vašeho zákaznického účtu změnit, budeme potřebovat doložit výpis z katastru nemovitostí, popřípadě doklad o změně adresy, který Vám vydá obecní nebo městský úřad.</p>
 <p>Jakmile potřebný dokument obdržíme, změnu adresy Vám potvrdíme.</p>
@@ -180,7 +180,7 @@ ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Smlouvy"]
         },
-        "ZMĚNA - ADRESA ODBĚRNÉHO MÍSTA - POTVRZENÍ ZMĚNY": {
+        "Změna adresy odběrného místa – potvrzení": {
                 text: `${OSLOVENI_BLOCK}
 <p>na základě Vašeho požadavku Vás informujeme, že jsme v našem systému upravili adresu odběrného místa na <strong>XXXX.</strong></p>
 <p>Děkujeme Vám za sdělení informace.</p>
@@ -188,7 +188,7 @@ ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Smlouvy"]
         },
-        "ZMĚNA ADRESA TRVALÉHO BYDLIŠTĚ - DOLOŽENÍ DOKUMENTŮ": {
+        "Změna trvalého bydliště – doložení dokumentů": {
                 text: `${OSLOVENI_BLOCK}
 <p>abychom mohli adresu trvalého bydliště u Vašeho zákaznického účtu změnit, budeme potřebovat doložit čestné prohlášení, jehož vzor zasíláme v příloze. Podepsaný sken tohoto prohlášení nám prosím zašlete na e-mail info@epet.cz.</p>
 <p>Pokud byste změnu adresu raději doložili prostřednictvím kopie občanského průkazu, je na této kopii z důvodu ochrany osobních údajů nutno vymazat všechny <strong>osobní údaje</strong> kromě <em>jména a příjmení</em>, <em>data narození</em> a <em>adresy</em>.</p>
@@ -227,7 +227,7 @@ ${PORTAL_BLOCK}`,
                 ],
                 tags: ["Smlouvy"]
         },
-        "ZMĚNA ADRESA TRVALÉHO BYDLIŠTĚ - Potvrzení změny adresy": {
+        "Změna trvalého bydliště – Potvrzení změny adresy": {
                 text: `${OSLOVENI_BLOCK}
 <p>na základě Vašeho požadavku Vás informujeme, že jsme v našem systému upravili Vaši trvalou adresu na <strong>XXXX</strong>.</p>
 <p>Děkujeme Vám za sdělení informace.</p> 
@@ -235,7 +235,7 @@ ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Smlouvy"]
         },
-        "ZMĚNA NOVÉ SÍDLO FIRMY - DOLOŽENÍ DOKUMENTŮ": {
+        "Změna sídla společnosti – doložení dokumentů": {
                 text: `${OSLOVENI_BLOCK}
 <p>abychom mohli adresu sídla společnosti u Vašeho zákaznického účtu změnit, budeme potřebovat doložit výpis z obchodního rejstříku. Pokud v něm provedená změna ještě není zapsána, můžete změnu doložit i zasláním notářského zápisu.</p>
 <p>Jakmile potřebný dokument obdržíme, změnu adresy Vám potvrdíme.</p>
@@ -244,7 +244,7 @@ ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Smlouvy"]
         },
-        "ZMĚNA NOVÉ SÍDLO FIRMY - POTVRZENÍ ZMĚNY": {
+        "Změna sídla společnosti – Potvrzení změny": {
                 text: `${OSLOVENI_BLOCK}
 <p>na základě Vašeho požadavku Vás informujeme, že jsme v našem systému upravili adresu sídla společnosti na <strong>XXXX</strong>.</p>
 <p>Děkujeme Vám za sdělení informace.</p>
@@ -266,14 +266,14 @@ ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Smlouvy"]
         },
-        "ZMĚNA ZPŮSOBU ZASÍLÁNÍ DOKUMENTŮ": {
+        "Potvrzení změny způsobu zasílání dokumentů": {
                 text: `${OSLOVENI_BLOCK}
 <p>na základě Vašeho požadavku potvrzujeme, že jsme pro smluvní účet s číslem <strong>XXXX</strong> nastavili zasílání korespondence prostřednictvím České pošty na příslušnou doručovací adresu / e-mailu / e-mailu i České pošty s příslušnou doručovací adresou.</p> 
 ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Smlouvy"]
         },
-        "VYSVĚTLENÍ PŘETRŽKY": {
+        "Vysvětlení přetržky a zpětného přihlášení OM": {
                 text: `${OSLOVENI_BLOCK}
 <p>informujeme Vás, že o odběrné místo <strong>EAN/EIC ${EAN_BLOCK}</strong> s adresou <strong>${ADRESA_BLOCK}</strong> bylo z naší strany požádáno k nejbližšímu legislativně možnému termínu, tedy k datu <strong>xx.yy.2023</strong></p>
 <p>Aktuálně registrace odběrného místa k naší společnosti probíhá v pořádku.</p>
@@ -283,7 +283,7 @@ ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Smlouvy"]
         },
-        "ZMĚNA PŘÍJEMNÍ - ZASLÁNÍ ČP": {
+        "Změna příjmení – doložení dokumentů": {
                 text: `${OSLOVENI_BLOCK}
 <p>pro změnu příjmení budeme potřebovat Vaši součinnost. Prosíme o doložení kopie občanského průkazu, kde na průkazu bude začerněna Vaše fotografie, číslo občanského průkazu, rodné číslo a Váš podpis. Bez začerněných údajů nemůžeme doklad přijmout.
 Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasíláme v příloze tohoto e-mailu.</p>
@@ -322,7 +322,7 @@ ${PORTAL_BLOCK}`,
                 ],
                 tags: ["Smlouvy"]
         },
-        "ZMĚNA PŘÍJEMNÍ - POTVRZENÍ ZMĚNY": {
+        "Změna příjmení – Potvrzení změny": {
                 text: `${OSLOVENI_BLOCK}
 <p>děkujeme Vám za doložení podkladu pro změnu.Potvrzujeme Vám změnu příjmení.</p>
 <p>Děkujeme za spolupráci.</p>
@@ -337,223 +337,406 @@ ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Smlouvy"]
         },
-        /* Distribuční změny */
-        "ZMĚNA REZERVOVANÉHO PŘÍKONU": {
-                text: `${OSLOVENI_BLOCK}
-<p>kontaktujeme Vás na základě informace od distributora, že u Vašeho odběrného místa <strong>EAN/EIC ${EAN_BLOCK}</strong> došlo ke snížení/navýšení rezervovaného příkonu.</p> 
+/* =========================Distribuční změny========================= */
+
+"Změna rezervovaného příkonu – doložení dokumentů": {
+text: `${OSLOVENI_BLOCK}
+<p>kontaktujeme Vás na základě informace od distributora, že u Vašeho odběrného místa <strong>EAN/EIC
+    ${EAN_BLOCK}</strong> došlo ke snížení/navýšení rezervovaného příkonu.</p>
+
 <p>Abychom mohli tuto změnu zpracovat i v našem systému, prosíme Vás o doložení následujících dokumentů:</p>
-       <ul>1) Kopie smlouvy o připojení,</B> kterou Vám distributor vystavil.</ul>
-       <ul>2) Revizní zpráva.</ul>
-       <ul>3) Vyplněný formulář "Žádost o změnu smlouvy - Domácnost/Firma", který naleznete v příloze tohoto e-mailu.</ul>
+
+<ul>
+  <li>Kopie smlouvy o připojení, kterou Vám distributor vystavil.</li>
+  <li>Revizní zpráva.</li>
+  <li>Vyplněný formulář „Žádost o změnu smlouvy – Domácnost/Firma“, který naleznete v příloze tohoto e-mailu.</li>
+</ul>
 ${PORTAL_BLOCK}`,
-                files: [
-                        { url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "epet" },
-                        { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "epet" },
-                        { url: "https://drive.google.com/file/d/11yiwMdyFSYdMhLsMcs2m4J7SnBINalP5/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "de" },
-                        { url: "https://drive.google.com/file/d/1c8dHbNdew3iNov6il1s1MCJQJ7t039aL/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "de" }],
-                tags: ["Distribuční změny"]
-        },
-        "PŘIPOJENÍ MIKROZDROJE": {
-                text: `${OSLOVENI_BLOCK}
-<p>dovolujeme si Vás informovat, že distributor nás aktuálně informoval o plánované montáži nového 4Q elektroměru u odběrného místa <strong>EAN/EIC ${EAN_BLOCK}</strong> na adrese <strong>${ADRESA_BLOCK}</strong>.</p>
+files: [
+{ url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU
+SMLOUVY - DOMÁCNOST", type: "pdf", brand: "epet" },
+{ url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU
+SMLOUVY - FIRMA", type: "pdf", brand: "epet" },
+{ url: "https://drive.google.com/file/d/11yiwMdyFSYdMhLsMcs2m4J7SnBINalP5/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU
+SMLOUVY - DOMÁCNOST", type: "pdf", brand: "de" },
+{ url: "https://drive.google.com/file/d/1c8dHbNdew3iNov6il1s1MCJQJ7t039aL/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU
+SMLOUVY - FIRMA", type: "pdf", brand: "de" }],
+tags: ["Distribuční změny"]
+},
+"Připojení mikrozdroje – montáž 4Q elektroměru": {
+text: `${OSLOVENI_BLOCK}
+<p>dovolujeme si Vás informovat, že distributor nás aktuálně informoval o plánované montáži nového 4Q elektroměru u
+  odběrného místa <strong>EAN/EIC ${EAN_BLOCK}</strong> na adrese <strong>${ADRESA_BLOCK}</strong>.</p>
 <p>Montáž Vašeho měřidla provede distributor <strong>DD.MM.RRRR</strong>.</p>
-<p>Prosíme Vás o zajištění přístupu technikovi do prostor, kde bude montáž měřidla probíhat. Také si připravte prosím svou <strong>revizní zprávu</strong>.</p>
+<p>Prosíme Vás o zajištění přístupu technikovi do prostor, kde bude montáž měřidla probíhat. Také si připravte prosím
+  svou <strong>revizní zprávu</strong>.</p>
 ${PORTAL_BLOCK}`,
-                files: [],
-                tags: ["Distribuční změny"]
-        },
-        "Změna výše hodnoty jističe / Změna distribuční sazby PRO: ČEZ A EGD - TEPELNÉ ČERPADLO": {
-                text: `${OSLOVENI_BLOCK}
-<p>přijali jsme Váš požadavek na změnu výše hodnoty jističe / distribuční sazby. Abychom mohli tento požadavek vyřídit u distributora, je nutné, abyste nám zaslali vyplněné a podepsané dokumenty, které naleznete v příloze tohoto e-mailu.</p>
+files: [],
+tags: ["Distribuční změny"]
+},
+"Změna jističe nebo sazby – tepelné čerpadlo ČEZ/EG.D": {
+text: `${OSLOVENI_BLOCK}
+<p>přijali jsme Váš požadavek na změnu výše hodnoty jističe / distribuční sazby. Abychom mohli tento požadavek vyřídit u
+  distributora, je nutné, abyste nám zaslali vyplněné a podepsané dokumenty, které naleznete v příloze tohoto e-mailu.
+</p>
 <p>Jedná se o:</p>
 <ul> <strong>1) Žádost o změnu smlouvy</strong></ul>
-<ul> <strong>2) Žádost o připojení</strong> – dokument provozovatele distribuční soustavy, ve kterém je nutné vyplnit všechny využívané spotřebiče a jejich příkon v kW.</ul>
-<p>Doručit nám je můžete prostřednictvím e-mailu nebo poštou. Žádáme vás o jeho kompletní vyplnění ve spolupráci s revizním technikem, jedině tak bude distributorem přijat. Na vyřízení požadavku má distributor 30 kalendářních dní.</p>
-<p>Po uplynutí této lhůty Vám distributor zašle Smlouvu o připojení. V ní bude uvedeno, jaké změny je nutné realizovat na odběrném místě. Pokud ve Smlouvě o připojení naleznete, že je třeba hradit podíl, prosíme o doložení potvrzení o platbě či datum, kdy byl podíl uhrazen.</p>
-<p>Podepsaný originál <b>Smlouvy o připojení</b> a <b>revizní zprávu</b>, kterou Vám vystaví po úpravách na odběrném místě revizní technik, zašlete zpět distributorovi. Před odesláním dokumenty prosím oscanujte a pošlete na e-mail info@epet.cz nebo okopírujte a zašlete poštou na adresu <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong></p>
-<p>Dále nám prosím zašlete <b>protokol o instalaci tepelného čerpadla</b> a <b>výpočet tepelných ztrát</b>. Dokumenty předáme distributorovi, který jej vyžaduje pro změnu sazby.</p>
+<ul> <strong>2) Žádost o připojení</strong> – dokument provozovatele distribuční soustavy, ve kterém je nutné vyplnit
+  všechny využívané spotřebiče a jejich příkon v kW.</ul>
+<p>Doručit nám je můžete prostřednictvím e-mailu nebo poštou. Žádáme vás o jeho kompletní vyplnění ve spolupráci s
+  revizním technikem, jedině tak bude distributorem přijat. Na vyřízení požadavku má distributor 30 kalendářních dní.
+</p>
+<p>Po uplynutí této lhůty Vám distributor zašle Smlouvu o připojení. V ní bude uvedeno, jaké změny je nutné realizovat
+  na odběrném místě. Pokud ve Smlouvě o připojení naleznete, že je třeba hradit podíl, prosíme o doložení potvrzení o
+  platbě či datum, kdy byl podíl uhrazen.</p>
+<p>Podepsaný originál <b>Smlouvy o připojení</b> a <b>revizní zprávu</b>, kterou Vám vystaví po úpravách na odběrném
+  místě revizní technik, zašlete zpět distributorovi. Před odesláním dokumenty prosím oscanujte a pošlete na e-mail
+  info@epet.cz nebo okopírujte a zašlete poštou na adresu <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha
+    1.</strong></p>
+<p>Dále nám prosím zašlete <b>protokol o instalaci tepelného čerpadla</b> a <b>výpočet tepelných ztrát</b>. Dokumenty
+  předáme distributorovi, který jej vyžaduje pro změnu sazby.</p>
 <p>Následně změnu zaevidujeme na Vašem zákaznickém účtu.</p>
 ${PORTAL_BLOCK}`,
-                files: [
-                        { url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "epet" },
-                        { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "epet" },
-                        { url: "https://drive.google.com/file/d/11yiwMdyFSYdMhLsMcs2m4J7SnBINalP5/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "de" },
-                        { url: "https://drive.google.com/file/d/1c8dHbNdew3iNov6il1s1MCJQJ7t039aL/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "de" },
-                        { url: "https://drive.google.com/file/d/11lbuZv6IW4UO4Jmejzy__ZxKf9v1Ispz/view?usp=drive_link", name: "ZMĚNA SAZBY A JISTIČE - EGD - DOM+PODN", type: "pdf" },
-                        { url: "https://drive.google.com/open?id=1jEHuxEKF7kiW2dCL2ejMCV-hd6NrOJeh", name: "ŽÁDOST O PŘIPOJENÍ ČEZ", type: "pdf" }
-                ],
-                tags: ["Distribuční změny"]
-        },
-        "Změna výše hodnoty jističe / Změna distribuční sazby PRO: ČEZ A EGD": {
-                text: `${OSLOVENI_BLOCK}
-<p>přijali jsme Váš požadavek na změnu výše hodnoty jističe / distribuční sazby. Abychom mohli tento požadavek vyřídit u distributora, je nutné, abyste nám zaslali vyplněné a podepsané dokumenty, které naleznete v příloze tohoto e-mailu.</p>
+files: [
+{ url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU
+SMLOUVY - DOMÁCNOST", type: "pdf", brand: "epet" },
+{ url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU
+SMLOUVY - FIRMA", type: "pdf", brand: "epet" },
+{ url: "https://drive.google.com/file/d/11yiwMdyFSYdMhLsMcs2m4J7SnBINalP5/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU
+SMLOUVY - DOMÁCNOST", type: "pdf", brand: "de" },
+{ url: "https://drive.google.com/file/d/1c8dHbNdew3iNov6il1s1MCJQJ7t039aL/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU
+SMLOUVY - FIRMA", type: "pdf", brand: "de" },
+{ url: "https://drive.google.com/file/d/11lbuZv6IW4UO4Jmejzy__ZxKf9v1Ispz/view?usp=drive_link", name: "ZMĚNA SAZBY A
+JISTIČE - EGD - DOM+PODN", type: "pdf" },
+{ url: "https://drive.google.com/open?id=1jEHuxEKF7kiW2dCL2ejMCV-hd6NrOJeh", name: "ŽÁDOST O PŘIPOJENÍ ČEZ", type: "pdf"
+}
+],
+tags: ["Distribuční změny"]
+},
+"Změna jističe nebo distribuční sazby – ČEZ/EG.D": {
+text: `${OSLOVENI_BLOCK}
+<p>přijali jsme Váš požadavek na změnu výše hodnoty jističe / distribuční sazby. Abychom mohli tento požadavek vyřídit u
+  distributora, je nutné, abyste nám zaslali vyplněné a podepsané dokumenty, které naleznete v příloze tohoto e-mailu.
+</p>
+
 <p>Jedná se o:</p>
-<ul><strong>1) Žádost o změnu smlouvy</strong></ul>
-<ul><strong>2) Žádost o připojení </strong>– dokument provozovatele distribuční soustavy, ve kterém je nutné vyplnit všechny využívané spotřebiče a jejich příkon v kW.</ul>
-<p>Doručit nám je můžete prostřednictvím e-mailu nebo poštou. Žádáme vás o jeho kompletní vyplnění ve spolupráci s revizním technikem, jedině tak bude distributorem přijat. Na vyřízení požadavku má distributor 30 kalendářních dní.</p>
-<p>Po uplynutí této lhůty Vám distributor zašle Smlouvu o připojení. V ní bude uvedeno, jaké změny je nutné realizovat na odběrném místě. Pokud ve Smlouvě o připojení naleznete, že je třeba hradit podíl, prosíme o doložení potvrzení o platbě či datum, kdy byl podíl uhrazen.</p>
-<p>Podepsaný originál <b>Smlouvy o připojení</b> a <b>revizní zprávu</b>, kterou Vám vystaví po úpravách na odběrném místě revizní technik, zašlete zpět distributorovi. Před odesláním dokumenty prosím oscanujte a pošlete na e-mail info@epet.cz nebo okopírujte a zašlete poštou na adresu EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</p>
+<ul>
+  <li><strong>Žádost o změnu smlouvy</strong></li>
+  <li><strong>Žádost o připojení</strong> – dokument provozovatele distribuční soustavy, ve kterém je nutné vyplnit
+    všechny využívané spotřebiče a jejich příkon v kW.</li>
+</ul>
+
+<p>Doručit nám je můžete prostřednictvím e-mailu nebo poštou. Žádáme Vás o kompletní vyplnění ve spolupráci s revizním
+  technikem, jedině tak bude požadavek distributorem přijat. Na vyřízení požadavku má distributor 30 kalendářních dní.
+</p>
+
+<p>Po uplynutí této lhůty Vám distributor zašle Smlouvu o připojení. V ní bude uvedeno, jaké změny je nutné realizovat
+  na odběrném místě. Pokud ve Smlouvě o připojení naleznete, že je třeba hradit podíl, prosíme o doložení potvrzení o
+  platbě či data, kdy byl podíl uhrazen.</p>
+
+<p>Podepsaný originál <strong>Smlouvy o připojení</strong> a <strong>revizní zprávu</strong>, kterou Vám vystaví po
+  úpravách na odběrném místě revizní technik, zašlete zpět distributorovi. Před odesláním nám prosím dokumenty
+  naskenujte a zašlete na e-mail info@epet.cz, případně je okopírujte a zašlete poštou na adresu <strong>EP ENERGY
+    TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</p>
+
 <p>Následně změnu zaevidujeme na Vašem zákaznickém účtu.</p>
 ${PORTAL_BLOCK}`,
-                files: [
-                        { url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "epet" },
-                        { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "epet" },
-                        { url: "https://drive.google.com/file/d/11yiwMdyFSYdMhLsMcs2m4J7SnBINalP5/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "de" },
-                        { url: "https://drive.google.com/file/d/1c8dHbNdew3iNov6il1s1MCJQJ7t039aL/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "de" },
-                        { url: "https://drive.google.com/file/d/11lbuZv6IW4UO4Jmejzy__ZxKf9v1Ispz/view?usp=drive_link", name: "ZMĚNA SAZBY A JISTIČE - EGD - DOM+PODN", type: "pdf" },
-                        { url: "https://drive.google.com/open?id=1jEHuxEKF7kiW2dCL2ejMCV-hd6NrOJeh", name: "ŽÁDOST O PŘIPOJENÍ ČEZ", type: "pdf" }
-                ],
-                tags: ["Distribuční změny"]
-        },
-        "Změna výše hodnoty jističe / Změna distribuční sazby PRO: PRE": {
-                text: `${OSLOVENI_BLOCK}
-<p>přijali jsme Váš požadavek na změnu výše hodnoty jističe/distribuční sazby. Abychom mohli tento požadavek vyřídit u distributora, je nutné, abyste nám zaslali vyplněné a podepsané dokumenty, které naleznete v příloze tohoto e-mailu.</p>
+files: [
+{ url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU
+SMLOUVY - DOMÁCNOST", type: "pdf", brand: "epet" },
+{ url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU
+SMLOUVY - FIRMA", type: "pdf", brand: "epet" },
+{ url: "https://drive.google.com/file/d/11yiwMdyFSYdMhLsMcs2m4J7SnBINalP5/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU
+SMLOUVY - DOMÁCNOST", type: "pdf", brand: "de" },
+{ url: "https://drive.google.com/file/d/1c8dHbNdew3iNov6il1s1MCJQJ7t039aL/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU
+SMLOUVY - FIRMA", type: "pdf", brand: "de" },
+{ url: "https://drive.google.com/file/d/11lbuZv6IW4UO4Jmejzy__ZxKf9v1Ispz/view?usp=drive_link", name: "ZMĚNA SAZBY A
+JISTIČE - EGD - DOM+PODN", type: "pdf" },
+{ url: "https://drive.google.com/open?id=1jEHuxEKF7kiW2dCL2ejMCV-hd6NrOJeh", name: "ŽÁDOST O PŘIPOJENÍ ČEZ", type: "pdf"
+}
+],
+tags: ["Distribuční změny"]
+},
+"Změna jističe / distribuční sazby – PRE": {
+text: `${OSLOVENI_BLOCK}
+<p>přijali jsme Váš požadavek na změnu výše hodnoty jističe / distribuční sazby. Abychom mohli tento požadavek vyřídit u
+  distributora, je nutné, abyste nám zaslali vyplněné a podepsané dokumenty, které naleznete v příloze tohoto e-mailu.
+</p>
+
 <p>Jedná se o:</p>
-<ul><strong>1) Žádost o změnu smlouvy:</strong> Tento dokument zašlete prostřednictvím e-mailu info@epet.cz nebo na adresu naší společnosti.</ul>
-<ul><strong>2) Žádost o připojení:</strong> Jedná se o dokument provozovatele distribuční soustavy, ve kterém je nutné vyplnit všechny využívané spotřebiče a jejich příkon v kW.</ul>
-<p>Originál žádosti zašlete na adresu <strong>PREdistribuce, a.s., Svornosti 3199/19 a, 150 00 Praha 5.</strong></p>
-<p>Na vyřízení požadavku má distributor 30 kalendářních dní. Po uplynutí této lhůty Vám distributor zašle <b> Smlouvu o připojení.</b> V ní bude uvedeno, jaké změny je nutné realizovat na odběrném místě. Pokud ve Smlouvě o připojení naleznete, že je třeba hradit podíl, prosíme o doložení potvrzení o platbě či datum, kdy byl podíl uhrazen.</p>
-<p>Podepsaný originál Smlouvy o připojení a revizní zprávu, kterou Vám vystaví po úpravách na odběrném místě revizní technik, zašlete zpět distributorovi. Před odesláním dokumenty prosím oscanujte a pošlete na e-mail info@epet.cz nebo okopírujte a zašlete poštou na adresu <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</p>
-<p>Následně změnu zaevidujeme na Vašem zákaznickém účtu. </p>
+<ul>
+  <li><strong>Žádost o změnu smlouvy</strong> – tento dokument nám zašlete prostřednictvím e-mailu na adresu
+    info@epet.cz nebo poštou na adresu naší společnosti.</li>
+  <li><strong>Žádost o připojení</strong> – jedná se o dokument provozovatele distribuční soustavy, ve kterém je nutné
+    vyplnit všechny využívané spotřebiče a jejich příkon v kW.</li>
+</ul>
+
+<p>Originál žádosti o připojení zašlete na adresu <strong>PREdistribuce, a.s., Svornosti 3199/19a, 150 00 Praha
+    5</strong>.</p>
+
+<p>Na vyřízení požadavku má distributor 30 kalendářních dní. Po uplynutí této lhůty Vám distributor zašle
+  <strong>Smlouvu o připojení</strong>. V ní bude uvedeno, jaké změny je nutné realizovat na odběrném místě. Pokud ve
+  Smlouvě o připojení naleznete, že je třeba hradit podíl, prosíme o doložení potvrzení o platbě či data, kdy byl podíl
+  uhrazen.</p>
+
+<p>Podepsaný originál <strong>Smlouvy o připojení</strong> a <strong>revizní zprávu</strong>, kterou Vám vystaví po
+  úpravách na odběrném místě revizní technik, zašlete zpět distributorovi. Před odesláním nám prosím dokumenty
+  naskenujte a zašlete na e-mail info@epet.cz, případně je okopírujte a zašlete poštou na adresu <strong>EP ENERGY
+    TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</p>
+
+<p>Následně změnu zaevidujeme na Vašem zákaznickém účtu.</p>
 ${PORTAL_BLOCK}`,
-                files: [
-                       { url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "epet" },
-                        { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "epet" },
-                        { url: "https://drive.google.com/file/d/11yiwMdyFSYdMhLsMcs2m4J7SnBINalP5/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "de" },
-                        { url: "https://drive.google.com/file/d/1c8dHbNdew3iNov6il1s1MCJQJ7t039aL/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "de" },
-                        { url: "https://drive.google.com/open?id=11unN2RyEHVpvPrIy57bLQVpsy0OldIbw", name: "Žádost o smlouvu o připojení PRE.pdf", type: "pdf" }
-                ],
-                tags: ["Distribuční změny"]
-        },
-        "Změna výše hodnoty jističe / Změna distribuční sazby PRO: PRE – TEPELNÉ ČERPADLO": {
-                text: `${OSLOVENI_BLOCK}
-<p>přijali jsme Váš požadavek na změnu výše hodnoty jističe/distribuční sazby. Abychom mohli tento požadavek vyřídit u distributora, je nutné, abyste nám zaslali vyplněné a podepsané dokumenty, které naleznete v příloze tohoto e-mailu.</p>
+files: [
+{ url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU
+SMLOUVY - DOMÁCNOST", type: "pdf", brand: "epet" },
+{ url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU
+SMLOUVY - FIRMA", type: "pdf", brand: "epet" },
+{ url: "https://drive.google.com/file/d/11yiwMdyFSYdMhLsMcs2m4J7SnBINalP5/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU
+SMLOUVY - DOMÁCNOST", type: "pdf", brand: "de" },
+{ url: "https://drive.google.com/file/d/1c8dHbNdew3iNov6il1s1MCJQJ7t039aL/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU
+SMLOUVY - FIRMA", type: "pdf", brand: "de" },
+{ url: "https://drive.google.com/open?id=11unN2RyEHVpvPrIy57bLQVpsy0OldIbw", name: "Žádost o smlouvu o připojení
+PRE.pdf", type: "pdf" }
+],
+tags: ["Distribuční změny"]
+},
+"Změna jističe / distribuční sazby – tepelné čerpadlo PRE": {
+text: `${OSLOVENI_BLOCK}
+<p>přijali jsme Váš požadavek na změnu výše hodnoty jističe / distribuční sazby v souvislosti s tepelným čerpadlem.
+  Abychom mohli tento požadavek vyřídit u distributora, je nutné, abyste nám zaslali vyplněné a podepsané dokumenty,
+  které naleznete v příloze tohoto e-mailu.</p>
+
 <p>Jedná se o:</p>
-<ul><strong>1) Žádost o změnu smlouvy:</strong> Tento dokument zašlete prostřednictvím e-mailu info@epet.cz nebo na adresu naší společnosti.</ul>
-<ul><strong>2) Žádost o připojení:</strong> Jedná se o dokument provozovatele distribuční soustavy, ve kterém je nutné vyplnit všechny využívané spotřebiče a jejich příkon v kW.</ul>
-<p>Originál žádosti zašlete na adresu <strong>PREdistribuce, a.s., Svornosti 3199/19 a, 150 00 Praha 5.</strong></p>
-<p>Na vyřízení požadavku má distributor 30 kalendářních dní. Po uplynutí této lhůty Vám distributor zašle <b> Smlouvu o připojení.</b> V ní bude uvedeno, jaké změny je nutné realizovat na odběrném místě. Pokud ve Smlouvě o připojení naleznete, že je třeba hradit podíl, prosíme o doložení potvrzení o platbě či datum, kdy byl podíl uhrazen.</p>
-<p>Podepsaný originál Smlouvy o připojení a revizní zprávu, kterou Vám vystaví po úpravách na odběrném místě revizní technik, zašlete zpět distributorovi. Před odesláním dokumenty prosím oscanujte a pošlete na e-mail info@epet.cz nebo okopírujte a zašlete poštou na adresu <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</p>
-<p>Dále nám prosím zašlete <b>protokol o instalaci tepelného čerpadla</b> a <b>výpočet tepelných ztrát</b>. Dokumenty předáme distributorovi, který jej vyžaduje pro změnu sazby.</p>
-<p>Následně změnu zaevidujeme na Vašem zákaznickém účtu. </p>
+<ul>
+  <li><strong>Žádost o změnu smlouvy</strong> – tento dokument nám zašlete prostřednictvím e-mailu na adresu
+    info@epet.cz nebo poštou na adresu naší společnosti.</li>
+  <li><strong>Žádost o připojení</strong> – jedná se o dokument provozovatele distribuční soustavy, ve kterém je nutné
+    vyplnit všechny využívané spotřebiče a jejich příkon v kW.</li>
+</ul>
+
+<p>Originál žádosti o připojení zašlete na adresu <strong>PREdistribuce, a.s., Svornosti 3199/19a, 150 00 Praha
+    5</strong>.</p>
+
+<p>Na vyřízení požadavku má distributor 30 kalendářních dní. Po uplynutí této lhůty Vám distributor zašle
+  <strong>Smlouvu o připojení</strong>. V ní bude uvedeno, jaké změny je nutné realizovat na odběrném místě. Pokud ve
+  Smlouvě o připojení naleznete, že je třeba hradit podíl, prosíme o doložení potvrzení o platbě či data, kdy byl podíl
+  uhrazen.</p>
+
+<p>Podepsaný originál <strong>Smlouvy o připojení</strong> a <strong>revizní zprávu</strong>, kterou Vám vystaví po
+  úpravách na odběrném místě revizní technik, zašlete zpět distributorovi. Před odesláním nám prosím dokumenty
+  naskenujte a zašlete na e-mail info@epet.cz, případně je okopírujte a zašlete poštou na adresu <strong>EP ENERGY
+    TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</p>
+
+<p>Dále nám prosím zašlete <strong>protokol o instalaci tepelného čerpadla</strong> a <strong>výpočet tepelných
+    ztrát</strong>. Dokumenty předáme distributorovi, který je vyžaduje pro změnu distribuční sazby.</p>
+
+<p>Následně změnu zaevidujeme na Vašem zákaznickém účtu.</p>
 ${PORTAL_BLOCK}`,
-                files: [
-                       { url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "epet" },
-                        { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "epet" },
-                        { url: "https://drive.google.com/file/d/11yiwMdyFSYdMhLsMcs2m4J7SnBINalP5/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "de" },
-                        { url: "https://drive.google.com/file/d/1c8dHbNdew3iNov6il1s1MCJQJ7t039aL/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "de" },
-                        { url: "https://drive.google.com/open?id=11unN2RyEHVpvPrIy57bLQVpsy0OldIbw", name: "Žádost o smlouvu o připojení PRE.pdf", type: "pdf" }
-                ],
-                tags: ["Distribuční změny"]
-        },
-        "Ověření výše hodnoty jističe - nesoulad s DI": {
-                text: `${OSLOVENI_BLOCK}
-<p>Váš distributor nás upozornil, že hodnota jističe, kterou eviduje, se liší od hodnoty, kterou máme uvedenou na Vašem zákaznickém účtu. Rádi bychom Vás proto požádali o sdělení informace o skutečné hodnotě jističe.</p>
-<p>Jedná se o odběrné místo <strong>EAN/EIC ${EAN_BLOCK}</strong></p>
+files: [
+{ url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU
+SMLOUVY - DOMÁCNOST", type: "pdf", brand: "epet" },
+{ url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU
+SMLOUVY - FIRMA", type: "pdf", brand: "epet" },
+{ url: "https://drive.google.com/file/d/11yiwMdyFSYdMhLsMcs2m4J7SnBINalP5/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU
+SMLOUVY - DOMÁCNOST", type: "pdf", brand: "de" },
+{ url: "https://drive.google.com/file/d/1c8dHbNdew3iNov6il1s1MCJQJ7t039aL/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU
+SMLOUVY - FIRMA", type: "pdf", brand: "de" },
+{ url: "https://drive.google.com/open?id=11unN2RyEHVpvPrIy57bLQVpsy0OldIbw", name: "Žádost o smlouvu o připojení
+PRE.pdf", type: "pdf" }
+],
+tags: ["Distribuční změny"]
+},
+"Ověření hodnoty jističe – nesoulad s distributorem": {
+text: `${OSLOVENI_BLOCK}
+<p>Váš distributor nás upozornil, že hodnota hlavního jističe, kterou eviduje, se liší od hodnoty uvedené na Vašem
+  zákaznickém účtu.</p>
+
+<p>Rádi bychom Vás proto požádali o sdělení skutečné hodnoty hlavního jističe u níže uvedeného odběrného místa.</p>
+
+<p>Jedná se o odběrné místo <strong>EAN/EIC ${EAN_BLOCK}</strong>.</p>
 ${PORTAL_BLOCK}`,
-                files: [],
-                tags: ["Distribuční změny"]
-        },
-        "Doložení dokladu – změna hodnoty hlavního jističe - ČEZ A EG.D": {
-                text: `${OSLOVENI_BLOCK}
-<p>Váš distributor nám sdělil informaci, že u odběrného místa <strong>EAN/EIC ${EAN_BLOCK}</strong> byla sjednána nová hodnota jističe, která je <strong>XXX A.</strong></p>
-<p>Rádi bychom Vás požádali o potvrzení této informace, doložení <b>Smlouvy o připojení</b> a <b>revizní zprávy</b> od elektrikáře. Tyto dokumenty můžete zaslat oscanované na e-mail info@epet.cz nebo poštou na adresu EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</p>
-<p>Následně potřebné informace zaevidujeme na Vašem zákaznickém účtu. </p>
+files: [],
+tags: ["Distribuční změny"]
+},
+"Doložení podkladů ke změně hlavního jističe – ČEZ/EG.D": {
+text: `${OSLOVENI_BLOCK}
+<p>Váš distributor nám sdělil, že u odběrného místa <strong>EAN/EIC ${EAN_BLOCK}</strong> byla sjednána nová hodnota
+  hlavního jističe, a to <strong>{XXX A}</strong>.</p>
+
+<p>Rádi bychom Vás požádali o potvrzení této informace a doložení následujících dokumentů:</p>
+
+<ul>
+  <li><strong>Smlouva o připojení</strong></li>
+  <li><strong>Revizní zpráva</strong> od elektrikáře</li>
+</ul>
+
+<p>Dokumenty nám můžete zaslat naskenované na e-mail <strong>info@epet.cz</strong>, případně poštou na adresu <strong>EP
+    ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</p>
+
+<p>Po obdržení potřebných podkladů změnu zaevidujeme na Vašem zákaznickém účtu.</p>
+
 ${PORTAL_BLOCK}`,
-                files: [],
-                tags: ["Distribuční změny"]
-        },
-        "Změna jističe / Sazby – informovat zk o termínu provedení změny": {
-                text: `${OSLOVENI_BLOCK}
-<p>potvrzujeme vyřízení Vašeho požadavku na změnu distribuční sazby na XXXX / změnu jističe na XXXX A u odběrného místa <strong>EAN/EIC ${EAN_BLOCK}</strong>.</p>
-<p>Distributor tuto změnu provede k DD. MM. RRRR. Prosíme Vás o zajištění přístupu technikovi do prostor, kde bude servisní zakázka  probíhat. Připravte si také svoji revizní zprávu.</p>
+files: [],
+tags: ["Distribuční změny"]
+},
+"Změna jističe / distribuční sazby – oznámení termínu": {
+text: `${OSLOVENI_BLOCK}
+<p>potvrzujeme vyřízení Vašeho požadavku na změnu distribuční sazby na <strong>{XXXX}</strong> / změnu hodnoty hlavního
+  jističe na <strong>{XXXX A}</strong> u odběrného místa <strong>EAN/EIC ${EAN_BLOCK}</strong>.</p>
+
+<p>Distributor tuto změnu provede k datu <strong>{DD. MM. RRRR}</strong>.</p>
+
+<p>Prosíme Vás o zajištění přístupu technikovi do prostor, kde bude servisní zakázka probíhat. Připravte si také revizní
+  zprávu.</p>
+
 ${PORTAL_BLOCK}`,
-                files: [],
-                tags: ["Distribuční změny"]
-        },
-        "Změna jističe / Sazby – potvrzení provedené změny": {
-                text: `${OSLOVENI_BLOCK}
-<p>potvrzujeme vyřízení Vašeho požadavku na změnu distribuční sazby na XXXX / změnu jističe na XXXX A u odběrného místa <strong>EAN/EIC ${EAN_BLOCK}</strong>.</p>
-<p>Distributor tuto změnu provedl k DD. MM. RRRR. </p>
+files: [],
+tags: ["Distribuční změny"]
+},
+"Změna jističe / distribuční sazby – potvrzení provedení": {
+text: `${OSLOVENI_BLOCK}
+<p>potvrzujeme vyřízení Vašeho požadavku na změnu distribuční sazby na <strong>{XXXX}</strong> / změnu hodnoty hlavního
+  jističe na <strong>{XXXX A}</strong> u odběrného místa <strong>EAN/EIC ${EAN_BLOCK}</strong>.</p>
+
+<p>Distributor tuto změnu provedl k datu <strong>{DD. MM. RRRR}</strong>.</p>
+
 ${PORTAL_BLOCK}`,
-                files: [],
-                tags: ["Distribuční změny"]
-        },
-        "Změna jističe / Sazby – Info ZK o změně termínu provedení změny z důvodu závad na OM": {
-                text: `${OSLOVENI_BLOCK}
-<p>potvrzujeme vyřízení Vašeho požadavku na změnu jističe / sazby na hodnotu XXXX u odběrného místa <strong>EAN/EIC ${EAN_BLOCK}</strong>.</p>
-<p>Distributor nás však informoval, že z důvodu závady na odběrném místě nebylo možné plánovanou změnu uskutečnit v původním termínu. Byl stanoven nový termín pro realizaci změny, a to v rozmezí <strong>DD.MM.RRRR - DD.MM.RRRR  </strong>.</p>
-<p>Prosíme Vás o zajištění přístupu technikovi do prostor, kde bude servisní zásah probíhat, a o přípravu Vaší aktuální revizní zprávy.</p>
+files: [],
+tags: ["Distribuční změny"]
+},
+"Změna jističe / distribuční sazby – nový termín z důvodu závad": {
+text: `${OSLOVENI_BLOCK}
+<p>potvrzujeme přijetí Vašeho požadavku na změnu hodnoty hlavního jističe / distribuční sazby na <strong>{XXXX}</strong>
+  u odběrného místa <strong>EAN/EIC ${EAN_BLOCK}</strong>.</p>
+
+<p>Distributor nás však informoval, že z důvodu zjištěné závady na odběrném místě nebylo možné plánovanou změnu
+  uskutečnit v původním termínu.</p>
+
+<p>Byl stanoven nový termín realizace změny, a to v rozmezí <strong>{DD. MM. RRRR – DD. MM. RRRR}</strong>.</p>
+
+<p>Prosíme Vás o zajištění přístupu technikovi do prostor, kde bude servisní zásah probíhat, a o přípravu aktuální
+  revizní zprávy.</p>
+
 ${PORTAL_BLOCK}`,
-                files: [],
-                tags: ["Distribuční změny"]
-        },
-        "Prosba o doplnění údajů - chybějící na ŽOP": {
-                text: `${OSLOVENI_BLOCK}
-<p>při kontrole pokladů pro XXX jsme zjistili, že na žádosti chybějí následující údaje: XXX.</p>
-<p>Prosíme Vás tedy o jejich doplnění/podpis. Opravené podklady následně prosím zašlete zpět na náš e-mail info@epet.cz.</p>
+files: [],
+tags: ["Distribuční změny"]
+},
+"Žádost o připojení (ŽOP) – doplnění údajů": {
+text: `${OSLOVENI_BLOCK}
+<p>při kontrole podkladů pro <strong>{zde doplnit účel požadavku}</strong> jsme zjistili, že v žádosti chybějí
+  následující údaje: <strong>{zde doplnit chybějící údaje}</strong>.</p>
+
+<p>Prosíme Vás tedy o jejich doplnění, případně o doplnění podpisu. Opravené podklady nám následně zašlete zpět na
+  e-mail <strong>info@epet.cz</strong>.</p>
+
 <p>Děkujeme Vám za spolupráci.</p>
+
 ${PORTAL_BLOCK}`,
-                files: [],
-                tags: ["Distribuční změny"]
-        },
-        "Prosba o doložení předávacího protokolu": {
-                text: `${OSLOVENI_BLOCK}
-<p>kontaktoval nás Váš distributor ohledně nenavazujících stavů na Vašem měřidle. Pro opravu stavů distributor vyžaduje předávací protokol k datu fyzického přepisu smlouvy. Pokud je Váš předávací protokol podepsán k jinému datu než k <strong>DD.MM.RRRR</strong>, prosíme Vás o opravu tohoto protokolu.</p>
-<p>Fyzický přepis smlouvy proběhl <strong>DD.MM.RRRR</strong>, a tak Vás prosíme o doplnění právě tohoto data.</p>
-<p>Následně opravený protokol předáme distributorovi, který stavy měřidla upraví.</p>
+files: [],
+tags: ["Distribuční změny"]
+},
+"Doložení předávacího protokolu – nenavazující stavy": {
+text: `${OSLOVENI_BLOCK}
+<p>kontaktoval nás Váš distributor ohledně nenavazujících stavů na Vašem měřidle.</p>
+
+<p>Pro opravu stavů distributor vyžaduje předávací protokol k datu fyzického přepisu smlouvy. Pokud je Váš předávací
+  protokol podepsán k jinému datu než k <strong>{DD. MM. RRRR}</strong>, prosíme Vás o jeho opravu.</p>
+
+<p>Fyzický přepis smlouvy proběhl dne <strong>{DD. MM. RRRR}</strong>, proto Vás prosíme o doplnění právě tohoto data do
+  předávacího protokolu.</p>
+
+<p>Jakmile nám opravený protokol zašlete, předáme jej distributorovi, který následně provede úpravu stavů měřidla.</p>
+
 <p>Děkujeme Vám za spolupráci.</p>
+
 ${PORTAL_BLOCK}`,
-                files: [
-                        { url: "https://drive.google.com/open?id=1RRcnxT7Qik3mExjXMhERqRSNCKbHIWGn", name: "PŘEDÁVACÍ PROTOKOL", type: "pdf", brand: "epet" }
-                ],
-                tags: ["Distribuční změny", "Reklamace", "Fakturace"]
-        },
-        "ZMĚNA DISTRIBUČNÍ SAZBY Z C NA D U SVJ - ZASLÁNÍ PODKLADŮ": {
-                text: `${OSLOVENI_BLOCK}
-<p>abychom mohli zažádat o změnu typu sazby u distributora, prosíme o vyplnění a zaslání potřebných dokumentů:</p>
-<ul><strong>1) Čestné prohlášení</strong></ul>
-<p>Rádi bychom Vás upozornili, že v důsledku změny distribuční sazby dojde ke změně ceny za regulované a neregulované položky související s provedenou změnou.</p>
-<p>Zároveň bychom Vás chtěli informovat, že technik distributora si na místě ověří, že se skutečně jedná o společné prostory domu. V opačném případě nebude změna provedena.</p>
+files: [
+{ url: "https://drive.google.com/open?id=1RRcnxT7Qik3mExjXMhERqRSNCKbHIWGn", name: "PŘEDÁVACÍ PROTOKOL", type: "pdf",
+brand: "epet" }
+],
+tags: ["Distribuční změny", "Reklamace", "Fakturace"]
+},
+"Změna distribuční sazby z C na D u SVJ – doložení podkladů": {
+text: `${OSLOVENI_BLOCK}
+<p>abychom mohli u distributora zažádat o změnu typu distribuční sazby z kategorie C na kategorii D, prosíme Vás o
+  vyplnění a zaslání potřebných dokumentů.</p>
+
+<p>Jedná se o:</p>
+<ul>
+  <li><strong>Čestné prohlášení</strong></li>
+</ul>
+
+<p>Rádi bychom Vás upozornili, že v důsledku změny distribuční sazby může dojít ke změně ceny regulovaných i
+  neregulovaných položek souvisejících s provedenou změnou.</p>
+
+<p>Zároveň bychom Vás chtěli informovat, že technik distributora si na místě ověří, zda se skutečně jedná o společné
+  prostory domu. V opačném případě nebude změna provedena.</p>
+
 <p>Všechny potřebné dokumenty k vyplnění zasíláme v příloze tohoto e-mailu.</p>
+
 ${PORTAL_BLOCK}`,
-                files: [{ url: "https://drive.google.com/file/d/14JwJ2-7d3FtTbm8Q6xGzQ0PU4yu39-et/view?usp=drive_link", name: "ČP z PO - Pro změnu sazby z Firmy na DOM", type: "pdf", brand: "epet" },
-                        { url: "https://drive.google.com/file/d/12D_dEsRwYzt-bvlM47ABI3NMkejBW5ub/view?usp=drive_link", name: "ČP z PO - Pro změnu sazby z Firmy na DOM", type: "pdf", brand: "de" }],
-                tags: ["Distribuční změny"]
-        },
-        "Potvrzení o provedené změně distribuční sazby z C na D u SVJ": {
-                text: `${OSLOVENI_BLOCK}
-<p>informujeme Vás, že na základě Vaší žádosti došlo dne …… ke změně typu sazby z C..d na  D…d u odběrného místa EAN/EIC: <strong>${EAN_BLOCK}</strong>, na adrese <strong>${ADRESA_BLOCK}</strong>.</p>
-<p>V příloze tohoto e-mailu Vám zasíláme nový Ceník, který obsahuje ceny pro sazby v kategorii D. (větu použijeme jen pokud již nebyl Ceník zaslán s dodatkem ze strany BO)</p>
+files: [
+{ url: "https://drive.google.com/file/d/14JwJ2-7d3FtTbm8Q6xGzQ0PU4yu39-et/view?usp=drive_link", name: "ČP z PO - Pro
+změnu sazby z Firmy na DOM", type: "pdf", brand: "epet" },
+{ url: "https://drive.google.com/file/d/12D_dEsRwYzt-bvlM47ABI3NMkejBW5ub/view?usp=drive_link", name: "ČP z PO - Pro
+změnu sazby z Firmy na DOM", type: "pdf", brand: "de" }
+],
+tags: ["Distribuční změny"]
+},
+"Změna distribuční sazby z C na D u SVJ – potvrzení": {
+text: `${OSLOVENI_BLOCK}
+<p>informujeme Vás, že na základě Vaší žádosti došlo dne <strong>{DD. MM. RRRR}</strong> ke změně distribuční sazby z
+  <strong>{C..d}</strong> na <strong>{D..d}</strong> u odběrného místa <strong>EAN/EIC ${EAN_BLOCK}</strong> na adrese
+  <strong>${ADRESA_BLOCK}</strong>.</p>
+
+<p>V příloze tohoto e-mailu Vám zasíláme nový ceník, který obsahuje ceny pro sazby v kategorii D.</p>
+
 ${PORTAL_BLOCK}`,
-                files: [],
-                tags: ["Distribuční změny"]
-        },
-        "Potvrzení zk, že na základě dokumentů (ŽOP) došlo k podání žádosti o SOP na distribuci": {
-                text: `${OSLOVENI_BLOCK}
+files: [],
+tags: ["Distribuční změny"]
+},
+"Potvrzení zk, že na základě dokumentů (ŽOP) došlo k podání žádosti o SOP na distribuci": {
+text: `${OSLOVENI_BLOCK}
 <p>děkujeme Vám za zaslání vyplněných dokumentů.</p>
-<p>Potvrzujeme, že jsme na základě těchto podkladů podali žádost u příslušného distributora o vystavení nové Smlouvy o připojení. Distributor má na vyřízení požadavku lhůtu 30 kalendářních dní. Po jejím uplynutí Vám zašle Smlouvu o připojení.</p>
-<p>Ve smlouvě bude uvedeno, jaké změny je třeba realizovat na odběrném místě. Pokud v ní naleznete informaci o nutnosti úhrady podílu, prosíme o doložení potvrzení o platbě či uvedení data, kdy byl podíl uhrazen.</p>
+<p>Potvrzujeme, že jsme na základě těchto podkladů podali žádost u příslušného distributora o vystavení nové Smlouvy o
+  připojení. Distributor má na vyřízení požadavku lhůtu 30 kalendářních dní. Po jejím uplynutí Vám zašle Smlouvu o
+  připojení.</p>
+<p>Ve smlouvě bude uvedeno, jaké změny je třeba realizovat na odběrném místě. Pokud v ní naleznete informaci o nutnosti
+  úhrady podílu, prosíme o doložení potvrzení o platbě či uvedení data, kdy byl podíl uhrazen.</p>
 <p>Po podpisu smlouvy prosíme o její zaslání:</p>
 <ul>
   <li><b>originálu podepsané Smlouvy o připojení zpět distributorovi,</b></li>
-  <li><b>kopie podepsané smlouvy také na naši adresu – ideálně elektronicky na e-mail</b> <a href="mailto:info@epet.cz">info@epet.cz</a>, případně poštou na <b>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</b>.</li>
+  <li><b>kopie podepsané smlouvy také na naši adresu – ideálně elektronicky na e-mail</b> <a
+      href="mailto:info@epet.cz">info@epet.cz</a>, případně poštou na <b>EP ENERGY TRADING, a.s., Klimentská 46, 110 00
+      Praha 1</b>.</li>
 </ul>
 ${PORTAL_BLOCK}`,
-                files: [],
-                tags: ["Distribuční změny"]
-        },
-        "Potvrzení zk, že na základě doložených dokumentů,  byl požadavek předán na distribuci pro sdělení termínu (ÚKol předán na EK - pro sdělení termínu)": {
-                text: `${OSLOVENI_BLOCK}
-<p>děkujeme za zaslání požadovaných dokumentů k Vaší žádosti o změnu distribuční sazby / změny výše hlavního jističe</p>
-<p>Tímto potvrzujeme, že jsme na základě Vámi doložených podkladů požadavek předali k posouzení a zpracování příslušnému distributorovi. Distributor Nám následně sdělí konkrétní termín realizace změny. Jakmile od něj obdržíme potvrzení o plánovaném termínu, budeme Vás neprodleně informovat.</p>
-<p>V případě doplnění dalších údajů nebo potřeby upřesnění Vás budeme kontaktovat.</p>
-<p>Děkujeme Vám za spolupráci.</p>
+files: [],
+tags: ["Distribuční změny"]
+},
+"Zákazník dokládá ŽOP – požádáno o SOP na DIP": {
+text: `${OSLOVENI_BLOCK}
+<p>děkujeme Vám za zaslání vyplněných dokumentů.</p>
+<p>Potvrzujeme, že jsme na základě doložených podkladů podali u příslušného distributora žádost o vystavení nové
+  <strong>Smlouvy o připojení</strong>.</p>
+<p>Distributor má na vyřízení požadavku lhůtu <strong>30 kalendářních dní</strong>. Po jejím uplynutí Vám zašle Smlouvu
+  o připojení.</p>
+<p>Ve Smlouvě o připojení bude uvedeno, jaké změny je třeba realizovat na odběrném místě. Pokud v ní naleznete informaci
+  o nutnosti úhrady podílu, prosíme o doložení potvrzení o platbě, případně o uvedení data, kdy byl podíl uhrazen.</p>
+<p>Po podpisu smlouvy prosíme o její zaslání následovně:</p>
+<ul>
+  <li><strong>originál podepsané Smlouvy o připojení</strong> zašlete zpět distributorovi,</li>
+  <li><strong>kopii podepsané smlouvy</strong> zašlete také nám, ideálně elektronicky na e-mail <a
+      href="mailto:info@epet.cz">info@epet.cz</a>, případně poštou na adresu <strong>EP ENERGY TRADING, a.s., Klimentská
+      46, 110 00 Praha 1</strong>.</li>
+</ul>
 ${PORTAL_BLOCK}`,
-                files: [],
-                tags: ["Distribuční změny"]
-        },
-        /* Demontáže */
+files: [],
+tags: ["Distribuční změny"]
+},
+
+
+        /* =========================Demontáže========================= */
 "Sloučení odběrných míst (OM)": {
                 date: "2026-04-23",              
                 text: `${OSLOVENI_BLOCK}
