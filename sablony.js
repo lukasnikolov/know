@@ -1,9 +1,7 @@
 // ===== Společný blok: Zákaznický portál (upravíš na jednom místě) =====
 const PORTAL_URL = "https://zakaznici.epet.cz/login";
 const PORTAL_BLOCK = `
-<p>Rádi bychom Vás také informovali, že požadavky můžete řešit i přes náš Zákaznický portál. Na něm můžete najít
-  faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete
-  prostřednictvím následujícího odkazu <a href="${PORTAL_URL}" target="_blank">Zákaznický portál</a></p>`;
+<p>Rádi bychom Vás také informovali, že požadavky můžete řešit i přes náš Zákaznický portál. Na něm můžete najít faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete prostřednictvím následujícího odkazu <a href="${PORTAL_URL}" target="_blank">Zákaznický portál</a></p>`;
 
 // ===== Společný blok: Oslovení (sjednocené) =====
 // Pozn.: Výchozí je "pane". V UI se automaticky přepíná na "paní" dle volby pohlaví.
@@ -26,1108 +24,792 @@ const PLATBA_BLOCK = `
 // =====================================================================
 
 const data = {
-"DATOVÁ SCHRÁNKA": {
-text: "Tiket přijde od kolegyň z recepce EPET. Obsahuje dokument, který aby šel otevřít, přejmenujte a dejte příponu
-pdf. Tiket uložte a vytvořte KO, kde popište co třeba, hlavně poznačte č. datovky a č. tiketu. Až bude třeba odpovědět:
-dokumenty, které budete chtít datovkou poslat musí být v PDF!. Pokud bude příloha z jiného odd. je třeba ji zaslat s
-průvodním dopisem, který vytvoříte v šabloně EPET. Až bude připraveno, najdete podle Úkolu - případně došlé pošty, ID
-datové schránky, kam chcete dopis zaslat. Posíláte ho na recepce@epet.cz a že prosíte o odeslání dokumentů datovkou a
-její číslo ID.",
-files: [],
-tags: ["Dopisy", "Recepce", "Datová zpráva"]
-},
-/* Nedoručenky */
-"NEDORUČENKA - PK": {
-text: ` ${OSLOVENI_BLOCK}
+        "DATOVÁ SCHRÁNKA": {
+                text: "Tiket přijde od kolegyň z recepce EPET. Obsahuje dokument, který aby šel otevřít, přejmenujte a dejte příponu pdf. Tiket uložte a vytvořte KO, kde popište co třeba, hlavně poznačte č. datovky a č. tiketu. Až bude třeba odpovědět: dokumenty, které budete chtít datovkou poslat musí být v PDF!. Pokud bude příloha z jiného odd. je třeba ji zaslat s průvodním dopisem, který vytvoříte v šabloně EPET. Až bude připraveno, najdete podle Úkolu - případně došlé pošty, ID datové schránky, kam chcete dopis zaslat. Posíláte ho na recepce@epet.cz a že prosíte o odeslání dokumentů datovkou a její číslo ID.",
+                files: [],
+                tags: ["Dopisy", "Recepce", "Datová zpráva"]
+        },
+        /* Nedoručenky */
+        "NEDORUČENKA - PK": {
+                text: ` ${OSLOVENI_BLOCK}
 <p>v příloze tohoto e-mailu Vám zasíláme platební kalendář k dodávce elektřiny/plynu pro následující období.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Nedoručenky"]
-},
-"NEDORUČENKA - ÚVODNÍ DOPIS": {
-text: ` ${OSLOVENI_BLOCK}
-<p>děkujeme Vám, že jste si za dodavatele energií vybral právě společnost epet. Věříme, že s našimi službami budete
-  spokojeni.V příloze tohoto e-mailu Vám zasíláme <strong>Uvítací dopis</strong>, <strong>Rekapitulaci smlouvy</strong>
-  a případně i rozpis zálohových plateb pro následující období dodávky, tedy <strong>Platební kalendář</strong>, který
-  je v souladu s Vaší smlouvou.</p>
+                files: [],
+                tags: ["Nedoručenky"]
+        },
+        "NEDORUČENKA - ÚVODNÍ DOPIS": {
+                text: ` ${OSLOVENI_BLOCK}
+<p>děkujeme Vám, že jste si za dodavatele energií vybral právě společnost epet. Věříme, že s našimi službami budete spokojeni.V příloze tohoto e-mailu Vám zasíláme <strong>Uvítací dopis</strong>, <strong>Rekapitulaci smlouvy</strong> a případně i rozpis zálohových plateb pro následující období dodávky, tedy <strong>Platební kalendář</strong>, který je v souladu s Vaší smlouvou.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Nedoručenky"]
-},
-"NEDORUČENKA - NEDORUČENKA - UPOMÍNKA": {
-text: ` ${OSLOVENI_BLOCK}
-<p>dovolujeme si Vás upozornit, že u Vaší smlouvy evidujeme neuhrazenou platbu/y. V příloze tohoto e-mailu naleznete
-  detailní informace. Prosíme Vás o kontrolu plateb a v případě prodlení žádáme o urychlené zaplacení neuhrazené částky.
-</p>
-<p>Nedojde-li k uhrazení pohledávky do 5 pracovních dnů od data odeslání této upomínky, budeme nuceni vystavit
-  penalizační fakturu a účtovat Vám úroky z prodlení a smluvní pokutu dle <em>Všeobecných obchodních podmínek.</em></p>
-<p>Jedná-li se o neuhrazenou zálohu, vězte, že přijaté platby jsou použity na úhradu nejstarších neuhrazených předpisů
-  záloh. Dodržováním předpisu záloh předejdete nesprávnému přiřazování plateb.</p>
+                files: [],
+                tags: ["Nedoručenky"]
+        },
+        "NEDORUČENKA - NEDORUČENKA - UPOMÍNKA": {
+                text: ` ${OSLOVENI_BLOCK}
+<p>dovolujeme si Vás upozornit, že u Vaší smlouvy evidujeme neuhrazenou platbu/y. V příloze tohoto e-mailu naleznete detailní informace. Prosíme Vás o kontrolu plateb a v případě prodlení žádáme o urychlené zaplacení neuhrazené částky.</p>
+<p>Nedojde-li k uhrazení pohledávky do 5 pracovních dnů od data odeslání této upomínky, budeme nuceni vystavit penalizační fakturu a účtovat Vám úroky z prodlení a smluvní pokutu dle <em>Všeobecných obchodních podmínek.</em></p>
+<p>Jedná-li se o neuhrazenou zálohu, vězte, že přijaté platby jsou použity na úhradu nejstarších neuhrazených předpisů záloh. Dodržováním předpisu záloh předejdete nesprávnému přiřazování plateb.</p>
 V případě nejasností nás kontaktujte na zákaznické lince nebo e-mailem uvedeným na dokladu.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Nedoručenky"]
-},
-/* Fakturace */
+                files: [],
+                tags: ["Nedoručenky"]
+        },
+        /* Fakturace */
 "INFORMACE K VYSTAVENÍ OPRAVNÉ FAKTURY - ": {
-date: "2026-04-21",
-text: `${OSLOVENI_BLOCK}
-<p>rádi bychom Vás informovali, že v rámci interní kontroly jsme zjistili, že u Vaší smlouvy došlo v minulosti k
-  nesprávnému nastavení fakturačních údajů, které nebylo v plném souladu s uzavřenou smlouvou.</p>
-<p>Z tohoto důvodu byla nyní provedena oprava vyúčtování tak, aby odpovídalo podmínkám sjednaným ve smlouvě, kterou jste
-  s námi uzavřel/a. Oprava se týká minulého období a je zohledněna formou opravné faktury.</p>
+  date: "2026-04-21",   
+  text: `${OSLOVENI_BLOCK}
+<p>rádi bychom Vás informovali, že v rámci interní kontroly jsme zjistili, že u Vaší smlouvy došlo v minulosti k nesprávnému nastavení fakturačních údajů, které nebylo v plném souladu s uzavřenou smlouvou.</p>
+<p>Z tohoto důvodu byla nyní provedena oprava vyúčtování tak, aby odpovídalo podmínkám sjednaným ve smlouvě, kterou jste s námi uzavřel/a. Oprava se týká minulého období a je zohledněna formou opravné faktury.</p>
 <p>Rádi bychom Vás ujistili, že:</p>
 <ul>
   <li>nejde o změnu smluvních podmínek,</li>
   <li>nejde o nové poplatky,</li>
   <li>jedná se výhradně o narovnání fakturace dle původní smlouvy.</li>
 </ul>
-<p>Chápeme, že tato situace může vzbuzovat otázky. Pokud budete potřebovat podrobnější vysvětlení nebo si přejete projít
-  konkrétní položky opravné faktury, je Vám naše zákaznická linka plně k dispozici.</p>
+<p>Chápeme, že tato situace může vzbuzovat otázky. Pokud budete potřebovat podrobnější vysvětlení nebo si přejete projít konkrétní položky opravné faktury, je Vám naše zákaznická linka plně k dispozici.</p>
 <p>Děkujeme za pochopení a omlouváme se za komplikace spojené s touto administrativní chybou.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Fakturace"]
+    files: [],
+    tags: ["Fakturace"]
 },
 
-
-"OPRAVNÁ DATA": {
-text: `${OSLOVENI_BLOCK}
-rádi bychom Vás informovali, že jsme obdrželi opravná data pro fakturaci ze strany distributora za období <strong>XXXXXX
-  - XXXXXXXXX.</strong></p>
-<p>Na základě této skutečnosti Vám byla vystavena opravná faktura, která Vám dorazí v samostatném e-mailu nebo poštou.
-</p>
+  
+        "OPRAVNÁ DATA": {
+                text: `${OSLOVENI_BLOCK} 
+rádi bychom Vás informovali, že jsme obdrželi opravná data pro fakturaci ze strany distributora za období <strong>XXXXXX - XXXXXXXXX.</strong></p>
+<p>Na základě této skutečnosti Vám byla vystavena opravná faktura, která Vám dorazí v samostatném e-mailu nebo poštou. </p> 
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Fakturace"]
-},
-"Zpětná fakturace (backbilling)": {
-text: `${OSLOVENI_BLOCK}
-<p>tato záležitost souvisí fakturou vystavenou <strong>DD.MM.RRRR</strong>, kterou jsme Vám zaslali na základě Vámi
-  hlášeného samoodečtu. Následně Vám byla zaslána i standardní periodická faktura vystavená na základě odečtů od
-  distributora. Ta má číslo <strong>Číslo tiskového dokladu</strong>. V této faktuře je zaznamenáno i období, které bylo
-  zahrnuto v předchozí faktuře vystavené právě na základě zaslaného samoodečtu. Tuto fakturu jsme na základě požadavků
-  distributora povinni každoročně vystavit.</p>
-<p>V detailním rozpisu periodické faktury od distributora si však můžete všimnout, že položky, které byl zahrnuty do
-  faktury vystavené na základě samoodečtu, jsou v něm odečteny (<em>a uvedeny tedy se znaménkem minus</em>).</p>
-<p>Nemusíte se tedy obávat, jelikož vyúčtována je pouze skutečná spotřeba, která doposud fakturována nebyla.</p>
+                files: [],
+                tags: ["Fakturace"]
+        },
+        "Zpětná fakturace (backbilling)": {
+                text: `${OSLOVENI_BLOCK}
+<p>tato záležitost souvisí fakturou vystavenou <strong>DD.MM.RRRR</strong>, kterou jsme Vám zaslali na základě Vámi hlášeného samoodečtu. Následně Vám byla zaslána i standardní periodická faktura vystavená na základě odečtů od distributora. Ta má číslo <strong>Číslo tiskového dokladu</strong>. V této faktuře je zaznamenáno i období, které bylo zahrnuto v předchozí faktuře vystavené právě na základě zaslaného samoodečtu. Tuto fakturu jsme na základě požadavků distributora povinni každoročně vystavit.</p>
+<p>V detailním rozpisu periodické faktury od distributora si však můžete všimnout, že položky, které byl zahrnuty do faktury vystavené na základě samoodečtu, jsou v něm odečteny (<em>a uvedeny tedy se znaménkem minus</em>).</p>
+<p>Nemusíte se tedy obávat, jelikož vyúčtována je pouze skutečná spotřeba, která doposud fakturována nebyla.</p>  
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Fakturace"]
-},
-"Kopie faktury": {
-text: `${OSLOVENI_BLOCK}
+                files: [],
+                tags: ["Fakturace"]
+        },
+        "Kopie faktury": {
+                text: `${OSLOVENI_BLOCK}
 <p>na základě Vašeho požadavku Vám zasíláme kopii faktury za dodávky energií.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Fakturace"]
-},
-"Výpočet SPOT cen": {
-text: `${OSLOVENI_BLOCK}
+                files: [],
+                tags: ["Fakturace"]
+        },
+        "Výpočet SPOT cen": {
+                text: `${OSLOVENI_BLOCK}
 <p>v příloze tohoto e-mailu naleznete výpočetní tabulku a návod, jak si můžete odkontrolovat cenu SPOT. </p>
 ${PORTAL_BLOCK}`,
-files: [
-{ name: "NÁVOD NA VÝPOČET SPOT", url:
-"https://drive.google.com/file/d/1Mf1XabKRmCZM2kqQNztQvnMKsuip-_Tq/view?usp=drive_link", type: "pdf", brand: "epet"},
-{ name: "SPOT VYPOČTOVÁ TABULKA", url:
-"https://docs.google.com/spreadsheets/d/1zmjmJaIwwL7bH5X9yyuL_2qP9G4UKhoo6dGtyKXyBaY/edit?usp=drive_link", type: "xls" }
-],
-tags: ["Fakturace"]
-},
-"Vystavení FA za krátký úsek - (zpravidla z důvodu zahájení dodávek k termínům odečtů": {
-text: `${OSLOVENI_BLOCK}
-<p>Faktura byla vystavena na základě zahájení vaší smlouvy, která začala platit dne <b>DD.MM.RRRR </b> Váš distributor
-  má však pro odběrné místo nastaven odečtový měsíc <b>Název měsíce </b>. Z tohoto důvodu byla první faktura vystavena
-  za období od <b>DD. MM. RRRR do DD. MM. RRRR </b>, aby byl zajištěn soulad s pravidelnými odečty a zúčtovacím obdobím
-  stanoveným distributorem.</p>
+                files: [
+                        { name: "NÁVOD NA VÝPOČET SPOT", url: "https://drive.google.com/file/d/1Mf1XabKRmCZM2kqQNztQvnMKsuip-_Tq/view?usp=drive_link", type: "pdf", brand: "epet"},
+                        { name: "SPOT VYPOČTOVÁ TABULKA", url: "https://docs.google.com/spreadsheets/d/1zmjmJaIwwL7bH5X9yyuL_2qP9G4UKhoo6dGtyKXyBaY/edit?usp=drive_link", type: "xls" }
+                ],
+                tags: ["Fakturace"]
+        },
+        "Vystavení FA za krátký úsek - (zpravidla z důvodu zahájení dodávek k termínům odečtů": {
+                text: `${OSLOVENI_BLOCK}
+<p>Faktura byla vystavena na základě zahájení vaší smlouvy, která začala platit dne <b>DD.MM.RRRR </b> Váš distributor má však pro odběrné místo nastaven odečtový měsíc <b>Název měsíce </b>. Z tohoto důvodu byla první faktura vystavena za období od <b>DD. MM. RRRR do DD. MM. RRRR </b>, aby byl zajištěn soulad s pravidelnými odečty a zúčtovacím obdobím stanoveným distributorem.</p>
 <p>Další faktury budou již standardně vystavovány na základě dohodnutého cyklu. </p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Fakturace"]
-},
+                files: [],
+                tags: ["Fakturace"]
+        },
 
-"Vysvětlení zúčtování záloh na vyúčtovací faktuře - Odečet záloh na vyúčtovací faktuře": {
-text: `${OSLOVENI_BLOCK}
-<p>rádi bychom Vám poskytli stručné vysvětlení, jak dochází k započítávání zaplacených záloh ve Vašich vyúčtovacích
-  fakturách, aby bylo vše co nejjasnější:</p>
-<p>
-  <li><b>Zálohy jsou zúčtovány pouze tehdy, pokud byly uhrazeny</b> na náš účet <b> nejpozději k datu vystavení (DUZP)
-    </b>vyúčtovací faktury.
-</p>
-</li>
-<p>
-  <li>Rozhodujícím faktorem pro zúčtování zálohy je zúčtovací období, nikoliv datum vystavení faktury.
-</p>
-</li>
-<p>
-  <li>Pokud faktura pokrývá více než polovinu daného zúčtovacího období (např. období končí <b>po 15. dni v měsíci),
-      záloha za daný měsíc se zúčtuje v plné výši.</b>
-</p>
-</li>
-<p>
-  <li>Pokud období končí <b>do 15. dne v měsíci,</b>záloha za daný měsíc <b>se přesune do následující vyúčtovací
-      faktury.</b>
-</p>
-</li><br>
+        "Vysvětlení zúčtování záloh na vyúčtovací faktuře - Odečet záloh na vyúčtovací faktuře": {
+                text: `${OSLOVENI_BLOCK}
+<p>rádi bychom Vám poskytli stručné vysvětlení, jak dochází k započítávání zaplacených záloh ve Vašich vyúčtovacích fakturách, aby bylo vše co nejjasnější:</p>
+<p><li><b>Zálohy jsou zúčtovány pouze tehdy, pokud byly uhrazeny</b> na náš účet <b> nejpozději k datu vystavení (DUZP) </b>vyúčtovací faktury.</p></li>
+<p><li>Rozhodujícím faktorem pro zúčtování zálohy je zúčtovací období, nikoliv datum vystavení faktury.</p></li>
+<p><li>Pokud faktura pokrývá více než polovinu daného zúčtovacího období (např. období končí <b>po 15. dni v měsíci), záloha za daný měsíc se zúčtuje v plné výši.</b></p></li>
+<p><li>Pokud období končí <b>do 15. dne v měsíci,</b>záloha za daný měsíc <b>se přesune do následující vyúčtovací faktury.</b></p></li><br>
 <p><b>Shrnutí:</b></p>
-<p>
-  <li>Záloha se započítá pouze tehdy, když byla uhrazena do data vystavení faktury.</li>
-</p>
-<p>
-  <li>Klíčové je zúčtovací období – nikoliv datum vystavení faktury.</li>
-</p>
+<p><li>Záloha se započítá pouze tehdy, když byla uhrazena do data vystavení faktury.</li></p>
+<p><li>Klíčové je zúčtovací období – nikoliv datum vystavení faktury.</li></p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Fakturace"]
-},
+                files: [],
+                tags: ["Fakturace"]
+        },
 "DUZP u mimořádné fakturace (nelze upravit zpětně)" : {
-text : `${OSLOVENI_BLOCK}
-<p>děkujeme Vám za Váš e-mail a požadavek na úpravu <strong>data uskutečnění zdanitelného plnění (DUZP)</strong> u
-  mimořádné fakturace.</p>
-<p>Rádi bychom Vás informovali, že <strong>DUZP nelze u mimořádné fakturace stanovit ani upravit zpětně dle přání
-    zákazníka</strong>. DUZP je stanoveno <strong>dnem skutečného zjištění a potvrzení odečtových dat
-    distributorem</strong>.</p>
-<p>V souladu se <strong>zákonem č. 235/2004 Sb., o dani z přidané hodnoty</strong>, a <strong>zákonem č. 458/2000 Sb.,
-    energetický zákon</strong>, je dodavatel povinen vycházet z <strong>potvrzených údajů o spotřebě od
-    distributora</strong> jako provozovatele měření. Samoodečet nahlášený zákazníkem (včetně fotodokumentace) slouží
-  jako podklad k ověření, <strong>není však závazným fakturačním údajem</strong>.</p>
-<p>Upozorňujeme, že nahlášení odečtových hodnot zákazníkem <strong>nezaručuje jejich automatickou akceptaci
-    distributorem</strong> – může dojít k jejich zamítnutí nebo úpravě (např. z důvodu nesouladu s historií spotřeby).
-</p>
-<p>Z výše uvedených důvodů tedy <strong>není možné vystavit mimořádnou fakturu k Vámi požadovanému datu ani k tomuto
-    datu stanovit DUZP</strong>. Jakmile od distributora obdržíme potvrzená fakturační data, bude faktura vystavena
-  automaticky.</p>
+  text : `${OSLOVENI_BLOCK}
+<p>děkujeme Vám za Váš e-mail a požadavek na úpravu <strong>data uskutečnění zdanitelného plnění (DUZP)</strong> u mimořádné fakturace.</p>
+<p>Rádi bychom Vás informovali, že <strong>DUZP nelze u mimořádné fakturace stanovit ani upravit zpětně dle přání zákazníka</strong>. DUZP je stanoveno <strong>dnem skutečného zjištění a potvrzení odečtových dat distributorem</strong>.</p>
+<p>V souladu se <strong>zákonem č. 235/2004 Sb., o dani z přidané hodnoty</strong>, a <strong>zákonem č. 458/2000 Sb., energetický zákon</strong>, je dodavatel povinen vycházet z <strong>potvrzených údajů o spotřebě od distributora</strong> jako provozovatele měření. Samoodečet nahlášený zákazníkem (včetně fotodokumentace) slouží jako podklad k ověření, <strong>není však závazným fakturačním údajem</strong>.</p>
+<p>Upozorňujeme, že nahlášení odečtových hodnot zákazníkem <strong>nezaručuje jejich automatickou akceptaci distributorem</strong> – může dojít k jejich zamítnutí nebo úpravě (např. z důvodu nesouladu s historií spotřeby).</p>
+<p>Z výše uvedených důvodů tedy <strong>není možné vystavit mimořádnou fakturu k Vámi požadovanému datu ani k tomuto datu stanovit DUZP</strong>. Jakmile od distributora obdržíme potvrzená fakturační data, bude faktura vystavena automaticky.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Fakturace"]
-},
+  files: [],
+                tags: ["Fakturace"]
+        },
 "Potvrzení přijetí formuláře a zahájení měsíční fakturace výkupu z naší strany" : {
-date: "2026-02-10",
-text : `${OSLOVENI_BLOCK}
+        date: "2026-02-10",
+        text : `${OSLOVENI_BLOCK}
 <p>potvrzujeme, že jsme z Vaší strany obdrželi <b> řádný</b> souhlas týkající se fakturace výkupu elektřiny.</p>
-<p>Na základě tohoto potvrzení Vás informujeme, že od této chvíle bude fakturace za výkup elektřiny probíhat z naší
-  strany. Faktury za výkup budou vystavovány pravidelně v měsíčním intervalu, a to dle platných smluvních podmínek a
-  dostupných měřených dat.</p>
+<p>Na základě tohoto potvrzení Vás informujeme, že od této chvíle bude fakturace za výkup elektřiny probíhat z naší strany. Faktury za výkup budou vystavovány pravidelně v měsíčním intervalu, a to dle platných smluvních podmínek a dostupných měřených dat.</p>
 <p>Děkujeme za Vaši součinnost.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Fakturace"]
-},
+  files: [],
+                tags: ["Fakturace"]
+        },
 "Potvrzení nesouhlasu s fakturací výkupu z naší strany" : {
-date: "2026-02-10",
-text : `${OSLOVENI_BLOCK}
-<p>tímto potvrzujeme, že jsme obdrželi Vaše vyjádření nesouhlasu s tím, aby fakturace výkupu elektřiny byla zajišťována
-  z naší strany.</p>
-<p>Na základě tohoto nesouhlasu Vás informujeme, že z naší strany nebude docházet k vystavování faktur za výrobu (výkup)
-  elektřiny.</p>
+        date: "2026-02-10",  
+        text : `${OSLOVENI_BLOCK}
+<p>tímto potvrzujeme, že jsme obdrželi Vaše vyjádření nesouhlasu s tím, aby fakturace výkupu elektřiny byla zajišťována z naší strany.</p>
+<p>Na základě tohoto nesouhlasu Vás informujeme, že z naší strany nebude docházet k vystavování faktur za výrobu (výkup) elektřiny.</p>
 <p>Děkujeme za Vaši součinnost.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Fakturace"]
-},
-/* Smlouvy */
-"ZMĚNA - ADRESA KORESPONDEČNÍ": {
-text: `${OSLOVENI_BLOCK}
-<p>na základě Vašeho požadavku Vás informujeme, že pro odběrné místo <b>EAN/EIC ${EAN_BLOCK}</b> jsme upravili
-  doručovací adresu na <b>XXXX.</b></p>
+  files: [],
+                tags: ["Fakturace"]
+        },         
+        /* Smlouvy */
+        "ZMĚNA - ADRESA KORESPONDEČNÍ": {
+                text: `${OSLOVENI_BLOCK}
+<p>na základě Vašeho požadavku Vás informujeme, že pro odběrné místo <b>EAN/EIC ${EAN_BLOCK}</b> jsme upravili doručovací adresu na <b>XXXX.</b></p>
 <p>Děkujeme Vám za aktualizaci kontaktních údajů.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Smlouvy"]
-},
-"ZMĚNA - ADRESA ODBĚRNÉHO MÍSTA - DOLOŽENÍ DOKUMENTŮ": {
-text: `${OSLOVENI_BLOCK}
-<p>abychom mohli adresu odběrného místa u Vašeho zákaznického účtu změnit, budeme potřebovat doložit výpis z katastru
-  nemovitostí, popřípadě doklad o změně adresy, který Vám vydá obecní nebo městský úřad.</p>
+                files: [],
+                tags: ["Smlouvy"]
+        },
+        "ZMĚNA - ADRESA ODBĚRNÉHO MÍSTA - DOLOŽENÍ DOKUMENTŮ": {
+                text: `${OSLOVENI_BLOCK}
+<p>abychom mohli adresu odběrného místa u Vašeho zákaznického účtu změnit, budeme potřebovat doložit výpis z katastru nemovitostí, popřípadě doklad o změně adresy, který Vám vydá obecní nebo městský úřad.</p>
 <p>Jakmile potřebný dokument obdržíme, změnu adresy Vám potvrdíme.</p>
 <p>Děkujeme Vám za spolupráci.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Smlouvy"]
-},
-"ZMĚNA - ADRESA ODBĚRNÉHO MÍSTA - POTVRZENÍ ZMĚNY": {
-text: `${OSLOVENI_BLOCK}
-<p>na základě Vašeho požadavku Vás informujeme, že jsme v našem systému upravili adresu odběrného místa na
-  <strong>XXXX.</strong></p>
+                files: [],
+                tags: ["Smlouvy"]
+        },
+        "ZMĚNA - ADRESA ODBĚRNÉHO MÍSTA - POTVRZENÍ ZMĚNY": {
+                text: `${OSLOVENI_BLOCK}
+<p>na základě Vašeho požadavku Vás informujeme, že jsme v našem systému upravili adresu odběrného místa na <strong>XXXX.</strong></p>
 <p>Děkujeme Vám za sdělení informace.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Smlouvy"]
-},
-"ZMĚNA ADRESA TRVALÉHO BYDLIŠTĚ - DOLOŽENÍ DOKUMENTŮ": {
-text: `${OSLOVENI_BLOCK}
-<p>abychom mohli adresu trvalého bydliště u Vašeho zákaznického účtu změnit, budeme potřebovat doložit čestné
-  prohlášení, jehož vzor zasíláme v příloze. Podepsaný sken tohoto prohlášení nám prosím zašlete na e-mail info@epet.cz.
-</p>
-<p>Pokud byste změnu adresu raději doložili prostřednictvím kopie občanského průkazu, je na této kopii z důvodu ochrany
-  osobních údajů nutno vymazat všechny <strong>osobní údaje</strong> kromě <em>jména a příjmení</em>, <em>data
-    narození</em> a <em>adresy</em>.</p>
+                files: [],
+                tags: ["Smlouvy"]
+        },
+        "ZMĚNA ADRESA TRVALÉHO BYDLIŠTĚ - DOLOŽENÍ DOKUMENTŮ": {
+                text: `${OSLOVENI_BLOCK}
+<p>abychom mohli adresu trvalého bydliště u Vašeho zákaznického účtu změnit, budeme potřebovat doložit čestné prohlášení, jehož vzor zasíláme v příloze. Podepsaný sken tohoto prohlášení nám prosím zašlete na e-mail info@epet.cz.</p>
+<p>Pokud byste změnu adresu raději doložili prostřednictvím kopie občanského průkazu, je na této kopii z důvodu ochrany osobních údajů nutno vymazat všechny <strong>osobní údaje</strong> kromě <em>jména a příjmení</em>, <em>data narození</em> a <em>adresy</em>.</p>
+<p>Jakmile potřebný dokument obdržíme, změnu adresy Vám potvrdíme.</p>
+<p>Děkujeme Vám za spolupráci. </p> 
+${PORTAL_BLOCK}`,
+                files: [
+                        { url: "https://drive.google.com/file/d/10vEwfyGojwqZ81yvP6xSLI-krF7sD0c0/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ČEZ - FIRMA", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1DKM958grbFkRFuy4MrqYtXJjd4ZK0Uun/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ČEZ - DOM", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1Zz5Gx_UHY3hgHAAOl66xqs0hzI5p-o25/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - EGD", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1n7kXH_5h0Utb8yZDkr2V-HK9rPysV-BN/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - FIRMA", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1XAoZ_xy-4IOmwAHATnHSjbi9j7yw0Sd0/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - DOM", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1t-FFOcEzZWbmqzf-EL40m1hJ78dimmJE/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - původní zákazník neznámý", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1UhAkyEzAaPizqFZrPhB9BbNiRCB8YnUW/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRAŽ-PLYN.", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1g_qi7NC8ncY2YW10r0aPD2JYIvCPXMyG/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRE", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1tUTwgDiU9L4dTsoa_DfHvDrIJi4IDTuQ/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - z C na D", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1HKsGDY14VD8bREp744I2ze7EXC29j7J6/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ZMD", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/14JwJ2-7d3FtTbm8Q6xGzQ0PU4yu39-et/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ z PO – změna sazby Firma → Dom", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1Xra9Xs7KsPb-Tua_2V_8NE1F1__uCoo2/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRAŽ-PLYN - FIRMA", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1BjeKuD2NOpyYjJCMO2TnU2tTrST3musN/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - EGD - FIRMA", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/18CENh1sJWOtFSE7yiU8yNE1MopDxRhbi/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRE - FIRMA", type: "pdf" , brand: "epet"},
+                        { url: "https://drive.google.com/file/d/1RSfEY2py1TVAD-PNSK6F0IaWZtH_msub/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ZMD - FIRMA", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1VGTUSlS0NyAxG40XNawIsEsC73eLJ8vT/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - původní zákazník neznámý", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1U-7HjEN_2Otc_Nqyc0SEEAVh-4-TbXh0/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ZMD -DOMÁCNOST", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1e4hYb1RV5JyLxw9z3r3AibD29KA8cW5C/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ZMD -FIRMA", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1Ttt9kAPVvlk4_CvrkuLfz87KFFOT59W2/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRAŽ-PLYN - FIRMA", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/19EgEqT3RMRUXJ7keWbJAcrwDZmp0zFPJ/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRE - FIRMA", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1teyOWAV6mLki32XdqwKdzbdEmYMs-EL_/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - EGD - FIRMA", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1LrIXIU7SsdgKDCHOgxjk0WakJhKKAvps/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ČEZ - FIRMA", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/18XD0We0JIohhqFO6h-a4DC5zHbnPq1VI/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - FIRMA", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1G6jgmnroL1sMOkjuCCz7N5MdYiryCvYr/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRAŽ-PLYN.-DOMÁCNOST", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1SecyeJ5rUUHr1bZTw4jDwLa6imC1RXLO/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRE - DOMÁCNOST", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/15-HQqHUBlD-AuKxwl9lcTf2sm-ldW8_4/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - EGD -DOMÁCNOST", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1KTVPgMxS2QOKx4P38gyfYfgGAHvybg6n/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - DOMÁCNOST", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1X_9l-Wolx3jGoA_vKBLc50qfAX5FCQ3j/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ČEZ - DOMÁCNOST", type: "pdf", brand: "de" }
+                ],
+                tags: ["Smlouvy"]
+        },
+        "ZMĚNA ADRESA TRVALÉHO BYDLIŠTĚ - Potvrzení změny adresy": {
+                text: `${OSLOVENI_BLOCK}
+<p>na základě Vašeho požadavku Vás informujeme, že jsme v našem systému upravili Vaši trvalou adresu na <strong>XXXX</strong>.</p>
+<p>Děkujeme Vám za sdělení informace.</p> 
+${PORTAL_BLOCK}`,
+                files: [],
+                tags: ["Smlouvy"]
+        },
+        "ZMĚNA NOVÉ SÍDLO FIRMY - DOLOŽENÍ DOKUMENTŮ": {
+                text: `${OSLOVENI_BLOCK}
+<p>abychom mohli adresu sídla společnosti u Vašeho zákaznického účtu změnit, budeme potřebovat doložit výpis z obchodního rejstříku. Pokud v něm provedená změna ještě není zapsána, můžete změnu doložit i zasláním notářského zápisu.</p>
 <p>Jakmile potřebný dokument obdržíme, změnu adresy Vám potvrdíme.</p>
 <p>Děkujeme Vám za spolupráci. </p>
 ${PORTAL_BLOCK}`,
-files: [
-{ url: "https://drive.google.com/file/d/10vEwfyGojwqZ81yvP6xSLI-krF7sD0c0/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- ČEZ - FIRMA", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1DKM958grbFkRFuy4MrqYtXJjd4ZK0Uun/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- ČEZ - DOM", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1Zz5Gx_UHY3hgHAAOl66xqs0hzI5p-o25/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- EGD", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1n7kXH_5h0Utb8yZDkr2V-HK9rPysV-BN/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- GASNET - FIRMA", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1XAoZ_xy-4IOmwAHATnHSjbi9j7yw0Sd0/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- GASNET - DOM", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1t-FFOcEzZWbmqzf-EL40m1hJ78dimmJE/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- původní zákazník neznámý", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1UhAkyEzAaPizqFZrPhB9BbNiRCB8YnUW/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- PRAŽ-PLYN.", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1g_qi7NC8ncY2YW10r0aPD2JYIvCPXMyG/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- PRE", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1tUTwgDiU9L4dTsoa_DfHvDrIJi4IDTuQ/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- z C na D", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1HKsGDY14VD8bREp744I2ze7EXC29j7J6/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- ZMD", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/14JwJ2-7d3FtTbm8Q6xGzQ0PU4yu39-et/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-z PO – změna sazby Firma → Dom", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1Xra9Xs7KsPb-Tua_2V_8NE1F1__uCoo2/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- PRAŽ-PLYN - FIRMA", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1BjeKuD2NOpyYjJCMO2TnU2tTrST3musN/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- EGD - FIRMA", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/18CENh1sJWOtFSE7yiU8yNE1MopDxRhbi/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- PRE - FIRMA", type: "pdf" , brand: "epet"},
-{ url: "https://drive.google.com/file/d/1RSfEY2py1TVAD-PNSK6F0IaWZtH_msub/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- ZMD - FIRMA", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1VGTUSlS0NyAxG40XNawIsEsC73eLJ8vT/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- původní zákazník neznámý", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/1U-7HjEN_2Otc_Nqyc0SEEAVh-4-TbXh0/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- ZMD -DOMÁCNOST", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/1e4hYb1RV5JyLxw9z3r3AibD29KA8cW5C/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- ZMD -FIRMA", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/1Ttt9kAPVvlk4_CvrkuLfz87KFFOT59W2/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- PRAŽ-PLYN - FIRMA", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/19EgEqT3RMRUXJ7keWbJAcrwDZmp0zFPJ/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- PRE - FIRMA", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/1teyOWAV6mLki32XdqwKdzbdEmYMs-EL_/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- EGD - FIRMA", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/1LrIXIU7SsdgKDCHOgxjk0WakJhKKAvps/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- ČEZ - FIRMA", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/18XD0We0JIohhqFO6h-a4DC5zHbnPq1VI/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- GASNET - FIRMA", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/1G6jgmnroL1sMOkjuCCz7N5MdYiryCvYr/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- PRAŽ-PLYN.-DOMÁCNOST", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/1SecyeJ5rUUHr1bZTw4jDwLa6imC1RXLO/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- PRE - DOMÁCNOST", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/15-HQqHUBlD-AuKxwl9lcTf2sm-ldW8_4/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- EGD -DOMÁCNOST", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/1KTVPgMxS2QOKx4P38gyfYfgGAHvybg6n/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- GASNET - DOMÁCNOST", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/1X_9l-Wolx3jGoA_vKBLc50qfAX5FCQ3j/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- ČEZ - DOMÁCNOST", type: "pdf", brand: "de" }
-],
-tags: ["Smlouvy"]
-},
-"ZMĚNA ADRESA TRVALÉHO BYDLIŠTĚ - Potvrzení změny adresy": {
-text: `${OSLOVENI_BLOCK}
-<p>na základě Vašeho požadavku Vás informujeme, že jsme v našem systému upravili Vaši trvalou adresu na
-  <strong>XXXX</strong>.</p>
+                files: [],
+                tags: ["Smlouvy"]
+        },
+        "ZMĚNA NOVÉ SÍDLO FIRMY - POTVRZENÍ ZMĚNY": {
+                text: `${OSLOVENI_BLOCK}
+<p>na základě Vašeho požadavku Vás informujeme, že jsme v našem systému upravili adresu sídla společnosti na <strong>XXXX</strong>.</p>
 <p>Děkujeme Vám za sdělení informace.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Smlouvy"]
-},
-"ZMĚNA NOVÉ SÍDLO FIRMY - DOLOŽENÍ DOKUMENTŮ": {
-text: `${OSLOVENI_BLOCK}
-<p>abychom mohli adresu sídla společnosti u Vašeho zákaznického účtu změnit, budeme potřebovat doložit výpis z
-  obchodního rejstříku. Pokud v něm provedená změna ještě není zapsána, můžete změnu doložit i zasláním notářského
-  zápisu.</p>
-<p>Jakmile potřebný dokument obdržíme, změnu adresy Vám potvrdíme.</p>
-<p>Děkujeme Vám za spolupráci. </p>
+                files: [],
+                tags: ["Smlouvy"]
+        },
+        "Zrušení zasílání SMS": {
+                text: `${OSLOVENI_BLOCK}
+<p>na základě Vašeho požadavku potvrzujeme, že jsme zrušili zasílání informativních SMS zpráv o přijaté platbě na telefonní číslo <strong>XXX.</strong></p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Smlouvy"]
-},
-"ZMĚNA NOVÉ SÍDLO FIRMY - POTVRZENÍ ZMĚNY": {
-text: `${OSLOVENI_BLOCK}
-<p>na základě Vašeho požadavku Vás informujeme, že jsme v našem systému upravili adresu sídla společnosti na
-  <strong>XXXX</strong>.</p>
-<p>Děkujeme Vám za sdělení informace.</p>
+                files: [],
+                tags: ["Smlouvy"]
+        },
+        "KOPIE SMLOUVY": {
+                text: `${OSLOVENI_BLOCK}
+<p>na základě Vašeho požadavku Vám zasíláme kopii Smlouvy o sdružených službách dodávky elektřiny/plynu č. <strong>XXXXXXXXX</strong>.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Smlouvy"]
-},
-"Zrušení zasílání SMS": {
-text: `${OSLOVENI_BLOCK}
-<p>na základě Vašeho požadavku potvrzujeme, že jsme zrušili zasílání informativních SMS zpráv o přijaté platbě na
-  telefonní číslo <strong>XXX.</strong></p>
+                files: [],
+                tags: ["Smlouvy"]
+        },
+        "ZMĚNA ZPŮSOBU ZASÍLÁNÍ DOKUMENTŮ": {
+                text: `${OSLOVENI_BLOCK}
+<p>na základě Vašeho požadavku potvrzujeme, že jsme pro smluvní účet s číslem <strong>XXXX</strong> nastavili zasílání korespondence prostřednictvím České pošty na příslušnou doručovací adresu / e-mailu / e-mailu i České pošty s příslušnou doručovací adresou.</p> 
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Smlouvy"]
-},
-"KOPIE SMLOUVY": {
-text: `${OSLOVENI_BLOCK}
-<p>na základě Vašeho požadavku Vám zasíláme kopii Smlouvy o sdružených službách dodávky elektřiny/plynu č.
-  <strong>XXXXXXXXX</strong>.</p>
-${PORTAL_BLOCK}`,
-files: [],
-tags: ["Smlouvy"]
-},
-"ZMĚNA ZPŮSOBU ZASÍLÁNÍ DOKUMENTŮ": {
-text: `${OSLOVENI_BLOCK}
-<p>na základě Vašeho požadavku potvrzujeme, že jsme pro smluvní účet s číslem <strong>XXXX</strong> nastavili zasílání
-  korespondence prostřednictvím České pošty na příslušnou doručovací adresu / e-mailu / e-mailu i České pošty s
-  příslušnou doručovací adresou.</p>
-${PORTAL_BLOCK}`,
-files: [],
-tags: ["Smlouvy"]
-},
-"VYSVĚTLENÍ PŘETRŽKY": {
-text: `${OSLOVENI_BLOCK}
-<p>informujeme Vás, že o odběrné místo <strong>EAN/EIC ${EAN_BLOCK}</strong> s adresou <strong>${ADRESA_BLOCK}</strong>
-  bylo z naší strany požádáno k nejbližšímu legislativně možnému termínu, tedy k datu <strong>xx.yy.2023</strong></p>
+                files: [],
+                tags: ["Smlouvy"]
+        },
+        "VYSVĚTLENÍ PŘETRŽKY": {
+                text: `${OSLOVENI_BLOCK}
+<p>informujeme Vás, že o odběrné místo <strong>EAN/EIC ${EAN_BLOCK}</strong> s adresou <strong>${ADRESA_BLOCK}</strong> bylo z naší strany požádáno k nejbližšímu legislativně možnému termínu, tedy k datu <strong>xx.yy.2023</strong></p>
 <p>Aktuálně registrace odběrného místa k naší společnosti probíhá v pořádku.</p>
-<p>Odběrné místo se od <strong>DD.MM.RRRR</strong> nachází v ochranné lhůtě 10 pracovních dní, kdy zákazníkovi
-  neoprávněný odběr nehrozí.
-  Jakmile bude odběrné místo u naší společnosti aktivní, na pokyn distributora dojde k posunu data přihlášení zpět do
-  minulosti tak, aby navazovalo na termín ukončení smlouvy u původního dodavatele.</p>
+<p>Odběrné místo se od <strong>DD.MM.RRRR</strong> nachází v ochranné lhůtě 10 pracovních dní, kdy zákazníkovi neoprávněný odběr nehrozí.
+Jakmile bude odběrné místo u naší společnosti aktivní, na pokyn distributora dojde k posunu data přihlášení zpět do minulosti tak, aby navazovalo na termín ukončení smlouvy u původního dodavatele.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Smlouvy"]
-},
-"ZMĚNA PŘÍJEMNÍ - ZASLÁNÍ ČP": {
-text: `${OSLOVENI_BLOCK}
-<p>pro změnu příjmení budeme potřebovat Vaši součinnost. Prosíme o doložení kopie občanského průkazu, kde na průkazu
-  bude začerněna Vaše fotografie, číslo občanského průkazu, rodné číslo a Váš podpis. Bez začerněných údajů nemůžeme
-  doklad přijmout.
-  Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasíláme v příloze tohoto e-mailu.</p>
+                files: [],
+                tags: ["Smlouvy"]
+        },
+        "ZMĚNA PŘÍJEMNÍ - ZASLÁNÍ ČP": {
+                text: `${OSLOVENI_BLOCK}
+<p>pro změnu příjmení budeme potřebovat Vaši součinnost. Prosíme o doložení kopie občanského průkazu, kde na průkazu bude začerněna Vaše fotografie, číslo občanského průkazu, rodné číslo a Váš podpis. Bez začerněných údajů nemůžeme doklad přijmout.
+Občanský průkaz můžete nahradit čestným prohlášením, které Vám zasíláme v příloze tohoto e-mailu.</p>
 <p>Čestné prohlášení prosím vyplňte, podepište a naskenované zašlete zpět na náš e-mail.</p>
 <p>Děkujeme za spolupráci.</p>
 ${PORTAL_BLOCK}`,
-files: [
-{ url: "https://drive.google.com/file/d/10vEwfyGojwqZ81yvP6xSLI-krF7sD0c0/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- ČEZ - FIRMA", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1DKM958grbFkRFuy4MrqYtXJjd4ZK0Uun/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- ČEZ - DOM", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1Zz5Gx_UHY3hgHAAOl66xqs0hzI5p-o25/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- EGD", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1n7kXH_5h0Utb8yZDkr2V-HK9rPysV-BN/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- GASNET - FIRMA", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1XAoZ_xy-4IOmwAHATnHSjbi9j7yw0Sd0/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- GASNET - DOM", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1t-FFOcEzZWbmqzf-EL40m1hJ78dimmJE/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- původní zákazník neznámý", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1UhAkyEzAaPizqFZrPhB9BbNiRCB8YnUW/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- PRAŽ-PLYN.", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1g_qi7NC8ncY2YW10r0aPD2JYIvCPXMyG/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- PRE", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1tUTwgDiU9L4dTsoa_DfHvDrIJi4IDTuQ/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- z C na D", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1HKsGDY14VD8bREp744I2ze7EXC29j7J6/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- ZMD", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/14JwJ2-7d3FtTbm8Q6xGzQ0PU4yu39-et/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-z PO – změna sazby Firma → Dom", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1Xra9Xs7KsPb-Tua_2V_8NE1F1__uCoo2/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- PRAŽ-PLYN - FIRMA", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1BjeKuD2NOpyYjJCMO2TnU2tTrST3musN/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- EGD - FIRMA", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/18CENh1sJWOtFSE7yiU8yNE1MopDxRhbi/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- PRE - FIRMA", type: "pdf" , brand: "epet"},
-{ url: "https://drive.google.com/file/d/1RSfEY2py1TVAD-PNSK6F0IaWZtH_msub/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- ZMD - FIRMA", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1VGTUSlS0NyAxG40XNawIsEsC73eLJ8vT/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- původní zákazník neznámý", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/1U-7HjEN_2Otc_Nqyc0SEEAVh-4-TbXh0/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- ZMD -DOMÁCNOST", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/1e4hYb1RV5JyLxw9z3r3AibD29KA8cW5C/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- ZMD -FIRMA", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/1Ttt9kAPVvlk4_CvrkuLfz87KFFOT59W2/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- PRAŽ-PLYN - FIRMA", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/19EgEqT3RMRUXJ7keWbJAcrwDZmp0zFPJ/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- PRE - FIRMA", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/1teyOWAV6mLki32XdqwKdzbdEmYMs-EL_/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- EGD - FIRMA", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/1LrIXIU7SsdgKDCHOgxjk0WakJhKKAvps/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- ČEZ - FIRMA", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/18XD0We0JIohhqFO6h-a4DC5zHbnPq1VI/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- GASNET - FIRMA", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/1G6jgmnroL1sMOkjuCCz7N5MdYiryCvYr/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- PRAŽ-PLYN.-DOMÁCNOST", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/1SecyeJ5rUUHr1bZTw4jDwLa6imC1RXLO/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- PRE - DOMÁCNOST", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/15-HQqHUBlD-AuKxwl9lcTf2sm-ldW8_4/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- EGD -DOMÁCNOST", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/1KTVPgMxS2QOKx4P38gyfYfgGAHvybg6n/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- GASNET - DOMÁCNOST", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/1X_9l-Wolx3jGoA_vKBLc50qfAX5FCQ3j/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- ČEZ - DOMÁCNOST", type: "pdf", brand: "de" }
-],
-tags: ["Smlouvy"]
-},
-"ZMĚNA PŘÍJEMNÍ - POTVRZENÍ ZMĚNY": {
-text: `${OSLOVENI_BLOCK}
+                files: [
+                        { url: "https://drive.google.com/file/d/10vEwfyGojwqZ81yvP6xSLI-krF7sD0c0/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ČEZ - FIRMA", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1DKM958grbFkRFuy4MrqYtXJjd4ZK0Uun/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ČEZ - DOM", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1Zz5Gx_UHY3hgHAAOl66xqs0hzI5p-o25/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - EGD", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1n7kXH_5h0Utb8yZDkr2V-HK9rPysV-BN/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - FIRMA", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1XAoZ_xy-4IOmwAHATnHSjbi9j7yw0Sd0/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - DOM", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1t-FFOcEzZWbmqzf-EL40m1hJ78dimmJE/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - původní zákazník neznámý", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1UhAkyEzAaPizqFZrPhB9BbNiRCB8YnUW/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRAŽ-PLYN.", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1g_qi7NC8ncY2YW10r0aPD2JYIvCPXMyG/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRE", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1tUTwgDiU9L4dTsoa_DfHvDrIJi4IDTuQ/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - z C na D", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1HKsGDY14VD8bREp744I2ze7EXC29j7J6/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ZMD", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/14JwJ2-7d3FtTbm8Q6xGzQ0PU4yu39-et/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ z PO – změna sazby Firma → Dom", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1Xra9Xs7KsPb-Tua_2V_8NE1F1__uCoo2/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRAŽ-PLYN - FIRMA", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1BjeKuD2NOpyYjJCMO2TnU2tTrST3musN/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - EGD - FIRMA", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/18CENh1sJWOtFSE7yiU8yNE1MopDxRhbi/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRE - FIRMA", type: "pdf" , brand: "epet"},
+                        { url: "https://drive.google.com/file/d/1RSfEY2py1TVAD-PNSK6F0IaWZtH_msub/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ZMD - FIRMA", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1VGTUSlS0NyAxG40XNawIsEsC73eLJ8vT/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - původní zákazník neznámý", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1U-7HjEN_2Otc_Nqyc0SEEAVh-4-TbXh0/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ZMD -DOMÁCNOST", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1e4hYb1RV5JyLxw9z3r3AibD29KA8cW5C/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ZMD -FIRMA", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1Ttt9kAPVvlk4_CvrkuLfz87KFFOT59W2/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRAŽ-PLYN - FIRMA", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/19EgEqT3RMRUXJ7keWbJAcrwDZmp0zFPJ/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRE - FIRMA", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1teyOWAV6mLki32XdqwKdzbdEmYMs-EL_/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - EGD - FIRMA", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1LrIXIU7SsdgKDCHOgxjk0WakJhKKAvps/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ČEZ - FIRMA", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/18XD0We0JIohhqFO6h-a4DC5zHbnPq1VI/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - FIRMA", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1G6jgmnroL1sMOkjuCCz7N5MdYiryCvYr/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRAŽ-PLYN.-DOMÁCNOST", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1SecyeJ5rUUHr1bZTw4jDwLa6imC1RXLO/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRE - DOMÁCNOST", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/15-HQqHUBlD-AuKxwl9lcTf2sm-ldW8_4/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - EGD -DOMÁCNOST", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1KTVPgMxS2QOKx4P38gyfYfgGAHvybg6n/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - DOMÁCNOST", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1X_9l-Wolx3jGoA_vKBLc50qfAX5FCQ3j/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ČEZ - DOMÁCNOST", type: "pdf", brand: "de" }
+                ],
+                tags: ["Smlouvy"]
+        },
+        "ZMĚNA PŘÍJEMNÍ - POTVRZENÍ ZMĚNY": {
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme Vám za doložení podkladu pro změnu.Potvrzujeme Vám změnu příjmení.</p>
 <p>Děkujeme za spolupráci.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Smlouvy"]
-},
-"Změna kontaktních údajů - Potvrzení (při změně @, telefonu)": {
-text: `${OSLOVENI_BLOCK}
+                files: [],
+                tags: ["Smlouvy"]
+        },
+        "Změna kontaktních údajů - Potvrzení (při změně @, telefonu)": {
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme Vám za zaslání aktuálních kontaktních údajů a potvrzujeme Vám jejich zaevidování k zákaznickému účtu.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Smlouvy"]
-},
-/* Distribuční změny */
-"ZMĚNA REZERVOVANÉHO PŘÍKONU": {
-text: `${OSLOVENI_BLOCK}
-<p>kontaktujeme Vás na základě informace od distributora, že u Vašeho odběrného místa <strong>EAN/EIC
-    ${EAN_BLOCK}</strong> došlo ke snížení/navýšení rezervovaného příkonu.</p>
+                files: [],
+                tags: ["Smlouvy"]
+        },
+        /* Distribuční změny */
+        "ZMĚNA REZERVOVANÉHO PŘÍKONU": {
+                text: `${OSLOVENI_BLOCK}
+<p>kontaktujeme Vás na základě informace od distributora, že u Vašeho odběrného místa <strong>EAN/EIC ${EAN_BLOCK}</strong> došlo ke snížení/navýšení rezervovaného příkonu.</p> 
 <p>Abychom mohli tuto změnu zpracovat i v našem systému, prosíme Vás o doložení následujících dokumentů:</p>
-<ul>1) Kopie smlouvy o připojení,</B> kterou Vám distributor vystavil.</ul>
-<ul>2) Revizní zpráva.</ul>
-<ul>3) Vyplněný formulář "Žádost o změnu smlouvy - Domácnost/Firma", který naleznete v příloze tohoto e-mailu.</ul>
+       <ul>1) Kopie smlouvy o připojení,</B> kterou Vám distributor vystavil.</ul>
+       <ul>2) Revizní zpráva.</ul>
+       <ul>3) Vyplněný formulář "Žádost o změnu smlouvy - Domácnost/Firma", který naleznete v příloze tohoto e-mailu.</ul>
 ${PORTAL_BLOCK}`,
-files: [
-{ url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU
-SMLOUVY - DOMÁCNOST", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU
-SMLOUVY - FIRMA", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/11yiwMdyFSYdMhLsMcs2m4J7SnBINalP5/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU
-SMLOUVY - DOMÁCNOST", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/1c8dHbNdew3iNov6il1s1MCJQJ7t039aL/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU
-SMLOUVY - FIRMA", type: "pdf", brand: "de" }],
-tags: ["Distribuční změny"]
-},
-"PŘIPOJENÍ MIKROZDROJE": {
-text: `${OSLOVENI_BLOCK}
-<p>dovolujeme si Vás informovat, že distributor nás aktuálně informoval o plánované montáži nového 4Q elektroměru u
-  odběrného místa <strong>EAN/EIC ${EAN_BLOCK}</strong> na adrese <strong>${ADRESA_BLOCK}</strong>.</p>
+                files: [
+                        { url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/11yiwMdyFSYdMhLsMcs2m4J7SnBINalP5/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1c8dHbNdew3iNov6il1s1MCJQJ7t039aL/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "de" }],
+                tags: ["Distribuční změny"]
+        },
+        "PŘIPOJENÍ MIKROZDROJE": {
+                text: `${OSLOVENI_BLOCK}
+<p>dovolujeme si Vás informovat, že distributor nás aktuálně informoval o plánované montáži nového 4Q elektroměru u odběrného místa <strong>EAN/EIC ${EAN_BLOCK}</strong> na adrese <strong>${ADRESA_BLOCK}</strong>.</p>
 <p>Montáž Vašeho měřidla provede distributor <strong>DD.MM.RRRR</strong>.</p>
-<p>Prosíme Vás o zajištění přístupu technikovi do prostor, kde bude montáž měřidla probíhat. Také si připravte prosím
-  svou <strong>revizní zprávu</strong>.</p>
+<p>Prosíme Vás o zajištění přístupu technikovi do prostor, kde bude montáž měřidla probíhat. Také si připravte prosím svou <strong>revizní zprávu</strong>.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Distribuční změny"]
-},
-"Změna výše hodnoty jističe / Změna distribuční sazby PRO: ČEZ A EGD - TEPELNÉ ČERPADLO": {
-text: `${OSLOVENI_BLOCK}
-<p>přijali jsme Váš požadavek na změnu výše hodnoty jističe / distribuční sazby. Abychom mohli tento požadavek vyřídit u
-  distributora, je nutné, abyste nám zaslali vyplněné a podepsané dokumenty, které naleznete v příloze tohoto e-mailu.
-</p>
+                files: [],
+                tags: ["Distribuční změny"]
+        },
+        "Změna výše hodnoty jističe / Změna distribuční sazby PRO: ČEZ A EGD - TEPELNÉ ČERPADLO": {
+                text: `${OSLOVENI_BLOCK}
+<p>přijali jsme Váš požadavek na změnu výše hodnoty jističe / distribuční sazby. Abychom mohli tento požadavek vyřídit u distributora, je nutné, abyste nám zaslali vyplněné a podepsané dokumenty, které naleznete v příloze tohoto e-mailu.</p>
 <p>Jedná se o:</p>
 <ul> <strong>1) Žádost o změnu smlouvy</strong></ul>
-<ul> <strong>2) Žádost o připojení</strong> – dokument provozovatele distribuční soustavy, ve kterém je nutné vyplnit
-  všechny využívané spotřebiče a jejich příkon v kW.</ul>
-<p>Doručit nám je můžete prostřednictvím e-mailu nebo poštou. Žádáme vás o jeho kompletní vyplnění ve spolupráci s
-  revizním technikem, jedině tak bude distributorem přijat. Na vyřízení požadavku má distributor 30 kalendářních dní.
-</p>
-<p>Po uplynutí této lhůty Vám distributor zašle Smlouvu o připojení. V ní bude uvedeno, jaké změny je nutné realizovat
-  na odběrném místě. Pokud ve Smlouvě o připojení naleznete, že je třeba hradit podíl, prosíme o doložení potvrzení o
-  platbě či datum, kdy byl podíl uhrazen.</p>
-<p>Podepsaný originál <b>Smlouvy o připojení</b> a <b>revizní zprávu</b>, kterou Vám vystaví po úpravách na odběrném
-  místě revizní technik, zašlete zpět distributorovi. Před odesláním dokumenty prosím oscanujte a pošlete na e-mail
-  info@epet.cz nebo okopírujte a zašlete poštou na adresu <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha
-    1.</strong></p>
-<p>Dále nám prosím zašlete <b>protokol o instalaci tepelného čerpadla</b> a <b>výpočet tepelných ztrát</b>. Dokumenty
-  předáme distributorovi, který jej vyžaduje pro změnu sazby.</p>
+<ul> <strong>2) Žádost o připojení</strong> – dokument provozovatele distribuční soustavy, ve kterém je nutné vyplnit všechny využívané spotřebiče a jejich příkon v kW.</ul>
+<p>Doručit nám je můžete prostřednictvím e-mailu nebo poštou. Žádáme vás o jeho kompletní vyplnění ve spolupráci s revizním technikem, jedině tak bude distributorem přijat. Na vyřízení požadavku má distributor 30 kalendářních dní.</p>
+<p>Po uplynutí této lhůty Vám distributor zašle Smlouvu o připojení. V ní bude uvedeno, jaké změny je nutné realizovat na odběrném místě. Pokud ve Smlouvě o připojení naleznete, že je třeba hradit podíl, prosíme o doložení potvrzení o platbě či datum, kdy byl podíl uhrazen.</p>
+<p>Podepsaný originál <b>Smlouvy o připojení</b> a <b>revizní zprávu</b>, kterou Vám vystaví po úpravách na odběrném místě revizní technik, zašlete zpět distributorovi. Před odesláním dokumenty prosím oscanujte a pošlete na e-mail info@epet.cz nebo okopírujte a zašlete poštou na adresu <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong></p>
+<p>Dále nám prosím zašlete <b>protokol o instalaci tepelného čerpadla</b> a <b>výpočet tepelných ztrát</b>. Dokumenty předáme distributorovi, který jej vyžaduje pro změnu sazby.</p>
 <p>Následně změnu zaevidujeme na Vašem zákaznickém účtu.</p>
 ${PORTAL_BLOCK}`,
-files: [
-{ url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU
-SMLOUVY - DOMÁCNOST", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU
-SMLOUVY - FIRMA", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/11yiwMdyFSYdMhLsMcs2m4J7SnBINalP5/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU
-SMLOUVY - DOMÁCNOST", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/1c8dHbNdew3iNov6il1s1MCJQJ7t039aL/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU
-SMLOUVY - FIRMA", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/11lbuZv6IW4UO4Jmejzy__ZxKf9v1Ispz/view?usp=drive_link", name: "ZMĚNA SAZBY A
-JISTIČE - EGD - DOM+PODN", type: "pdf" },
-{ url: "https://drive.google.com/open?id=1jEHuxEKF7kiW2dCL2ejMCV-hd6NrOJeh", name: "ŽÁDOST O PŘIPOJENÍ ČEZ", type: "pdf"
-}
-],
-tags: ["Distribuční změny"]
-},
-"Změna výše hodnoty jističe / Změna distribuční sazby PRO: ČEZ A EGD": {
-text: `${OSLOVENI_BLOCK}
-<p>přijali jsme Váš požadavek na změnu výše hodnoty jističe / distribuční sazby. Abychom mohli tento požadavek vyřídit u
-  distributora, je nutné, abyste nám zaslali vyplněné a podepsané dokumenty, které naleznete v příloze tohoto e-mailu.
-</p>
+                files: [
+                        { url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/11yiwMdyFSYdMhLsMcs2m4J7SnBINalP5/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1c8dHbNdew3iNov6il1s1MCJQJ7t039aL/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/11lbuZv6IW4UO4Jmejzy__ZxKf9v1Ispz/view?usp=drive_link", name: "ZMĚNA SAZBY A JISTIČE - EGD - DOM+PODN", type: "pdf" },
+                        { url: "https://drive.google.com/open?id=1jEHuxEKF7kiW2dCL2ejMCV-hd6NrOJeh", name: "ŽÁDOST O PŘIPOJENÍ ČEZ", type: "pdf" }
+                ],
+                tags: ["Distribuční změny"]
+        },
+        "Změna výše hodnoty jističe / Změna distribuční sazby PRO: ČEZ A EGD": {
+                text: `${OSLOVENI_BLOCK}
+<p>přijali jsme Váš požadavek na změnu výše hodnoty jističe / distribuční sazby. Abychom mohli tento požadavek vyřídit u distributora, je nutné, abyste nám zaslali vyplněné a podepsané dokumenty, které naleznete v příloze tohoto e-mailu.</p>
 <p>Jedná se o:</p>
 <ul><strong>1) Žádost o změnu smlouvy</strong></ul>
-<ul><strong>2) Žádost o připojení </strong>– dokument provozovatele distribuční soustavy, ve kterém je nutné vyplnit
-  všechny využívané spotřebiče a jejich příkon v kW.</ul>
-<p>Doručit nám je můžete prostřednictvím e-mailu nebo poštou. Žádáme vás o jeho kompletní vyplnění ve spolupráci s
-  revizním technikem, jedině tak bude distributorem přijat. Na vyřízení požadavku má distributor 30 kalendářních dní.
-</p>
-<p>Po uplynutí této lhůty Vám distributor zašle Smlouvu o připojení. V ní bude uvedeno, jaké změny je nutné realizovat
-  na odběrném místě. Pokud ve Smlouvě o připojení naleznete, že je třeba hradit podíl, prosíme o doložení potvrzení o
-  platbě či datum, kdy byl podíl uhrazen.</p>
-<p>Podepsaný originál <b>Smlouvy o připojení</b> a <b>revizní zprávu</b>, kterou Vám vystaví po úpravách na odběrném
-  místě revizní technik, zašlete zpět distributorovi. Před odesláním dokumenty prosím oscanujte a pošlete na e-mail
-  info@epet.cz nebo okopírujte a zašlete poštou na adresu EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</p>
+<ul><strong>2) Žádost o připojení </strong>– dokument provozovatele distribuční soustavy, ve kterém je nutné vyplnit všechny využívané spotřebiče a jejich příkon v kW.</ul>
+<p>Doručit nám je můžete prostřednictvím e-mailu nebo poštou. Žádáme vás o jeho kompletní vyplnění ve spolupráci s revizním technikem, jedině tak bude distributorem přijat. Na vyřízení požadavku má distributor 30 kalendářních dní.</p>
+<p>Po uplynutí této lhůty Vám distributor zašle Smlouvu o připojení. V ní bude uvedeno, jaké změny je nutné realizovat na odběrném místě. Pokud ve Smlouvě o připojení naleznete, že je třeba hradit podíl, prosíme o doložení potvrzení o platbě či datum, kdy byl podíl uhrazen.</p>
+<p>Podepsaný originál <b>Smlouvy o připojení</b> a <b>revizní zprávu</b>, kterou Vám vystaví po úpravách na odběrném místě revizní technik, zašlete zpět distributorovi. Před odesláním dokumenty prosím oscanujte a pošlete na e-mail info@epet.cz nebo okopírujte a zašlete poštou na adresu EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</p>
 <p>Následně změnu zaevidujeme na Vašem zákaznickém účtu.</p>
 ${PORTAL_BLOCK}`,
-files: [
-{ url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU
-SMLOUVY - DOMÁCNOST", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU
-SMLOUVY - FIRMA", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/11yiwMdyFSYdMhLsMcs2m4J7SnBINalP5/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU
-SMLOUVY - DOMÁCNOST", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/1c8dHbNdew3iNov6il1s1MCJQJ7t039aL/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU
-SMLOUVY - FIRMA", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/11lbuZv6IW4UO4Jmejzy__ZxKf9v1Ispz/view?usp=drive_link", name: "ZMĚNA SAZBY A
-JISTIČE - EGD - DOM+PODN", type: "pdf" },
-{ url: "https://drive.google.com/open?id=1jEHuxEKF7kiW2dCL2ejMCV-hd6NrOJeh", name: "ŽÁDOST O PŘIPOJENÍ ČEZ", type: "pdf"
-}
-],
-tags: ["Distribuční změny"]
-},
-"Změna výše hodnoty jističe / Změna distribuční sazby PRO: PRE": {
-text: `${OSLOVENI_BLOCK}
-<p>přijali jsme Váš požadavek na změnu výše hodnoty jističe/distribuční sazby. Abychom mohli tento požadavek vyřídit u
-  distributora, je nutné, abyste nám zaslali vyplněné a podepsané dokumenty, které naleznete v příloze tohoto e-mailu.
-</p>
+                files: [
+                        { url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/11yiwMdyFSYdMhLsMcs2m4J7SnBINalP5/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1c8dHbNdew3iNov6il1s1MCJQJ7t039aL/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/11lbuZv6IW4UO4Jmejzy__ZxKf9v1Ispz/view?usp=drive_link", name: "ZMĚNA SAZBY A JISTIČE - EGD - DOM+PODN", type: "pdf" },
+                        { url: "https://drive.google.com/open?id=1jEHuxEKF7kiW2dCL2ejMCV-hd6NrOJeh", name: "ŽÁDOST O PŘIPOJENÍ ČEZ", type: "pdf" }
+                ],
+                tags: ["Distribuční změny"]
+        },
+        "Změna výše hodnoty jističe / Změna distribuční sazby PRO: PRE": {
+                text: `${OSLOVENI_BLOCK}
+<p>přijali jsme Váš požadavek na změnu výše hodnoty jističe/distribuční sazby. Abychom mohli tento požadavek vyřídit u distributora, je nutné, abyste nám zaslali vyplněné a podepsané dokumenty, které naleznete v příloze tohoto e-mailu.</p>
 <p>Jedná se o:</p>
-<ul><strong>1) Žádost o změnu smlouvy:</strong> Tento dokument zašlete prostřednictvím e-mailu info@epet.cz nebo na
-  adresu naší společnosti.</ul>
-<ul><strong>2) Žádost o připojení:</strong> Jedná se o dokument provozovatele distribuční soustavy, ve kterém je nutné
-  vyplnit všechny využívané spotřebiče a jejich příkon v kW.</ul>
+<ul><strong>1) Žádost o změnu smlouvy:</strong> Tento dokument zašlete prostřednictvím e-mailu info@epet.cz nebo na adresu naší společnosti.</ul>
+<ul><strong>2) Žádost o připojení:</strong> Jedná se o dokument provozovatele distribuční soustavy, ve kterém je nutné vyplnit všechny využívané spotřebiče a jejich příkon v kW.</ul>
 <p>Originál žádosti zašlete na adresu <strong>PREdistribuce, a.s., Svornosti 3199/19 a, 150 00 Praha 5.</strong></p>
-<p>Na vyřízení požadavku má distributor 30 kalendářních dní. Po uplynutí této lhůty Vám distributor zašle <b> Smlouvu o
-    připojení.</b> V ní bude uvedeno, jaké změny je nutné realizovat na odběrném místě. Pokud ve Smlouvě o připojení
-  naleznete, že je třeba hradit podíl, prosíme o doložení potvrzení o platbě či datum, kdy byl podíl uhrazen.</p>
-<p>Podepsaný originál Smlouvy o připojení a revizní zprávu, kterou Vám vystaví po úpravách na odběrném místě revizní
-  technik, zašlete zpět distributorovi. Před odesláním dokumenty prosím oscanujte a pošlete na e-mail info@epet.cz nebo
-  okopírujte a zašlete poštou na adresu <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</p>
+<p>Na vyřízení požadavku má distributor 30 kalendářních dní. Po uplynutí této lhůty Vám distributor zašle <b> Smlouvu o připojení.</b> V ní bude uvedeno, jaké změny je nutné realizovat na odběrném místě. Pokud ve Smlouvě o připojení naleznete, že je třeba hradit podíl, prosíme o doložení potvrzení o platbě či datum, kdy byl podíl uhrazen.</p>
+<p>Podepsaný originál Smlouvy o připojení a revizní zprávu, kterou Vám vystaví po úpravách na odběrném místě revizní technik, zašlete zpět distributorovi. Před odesláním dokumenty prosím oscanujte a pošlete na e-mail info@epet.cz nebo okopírujte a zašlete poštou na adresu <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</p>
 <p>Následně změnu zaevidujeme na Vašem zákaznickém účtu. </p>
 ${PORTAL_BLOCK}`,
-files: [
-{ url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU
-SMLOUVY - DOMÁCNOST", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU
-SMLOUVY - FIRMA", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/11yiwMdyFSYdMhLsMcs2m4J7SnBINalP5/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU
-SMLOUVY - DOMÁCNOST", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/1c8dHbNdew3iNov6il1s1MCJQJ7t039aL/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU
-SMLOUVY - FIRMA", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/open?id=11unN2RyEHVpvPrIy57bLQVpsy0OldIbw", name: "Žádost o smlouvu o připojení
-PRE.pdf", type: "pdf" }
-],
-tags: ["Distribuční změny"]
-},
-"Změna výše hodnoty jističe / Změna distribuční sazby PRO: PRE – TEPELNÉ ČERPADLO": {
-text: `${OSLOVENI_BLOCK}
-<p>přijali jsme Váš požadavek na změnu výše hodnoty jističe/distribuční sazby. Abychom mohli tento požadavek vyřídit u
-  distributora, je nutné, abyste nám zaslali vyplněné a podepsané dokumenty, které naleznete v příloze tohoto e-mailu.
-</p>
+                files: [
+                       { url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/11yiwMdyFSYdMhLsMcs2m4J7SnBINalP5/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1c8dHbNdew3iNov6il1s1MCJQJ7t039aL/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/open?id=11unN2RyEHVpvPrIy57bLQVpsy0OldIbw", name: "Žádost o smlouvu o připojení PRE.pdf", type: "pdf" }
+                ],
+                tags: ["Distribuční změny"]
+        },
+        "Změna výše hodnoty jističe / Změna distribuční sazby PRO: PRE – TEPELNÉ ČERPADLO": {
+                text: `${OSLOVENI_BLOCK}
+<p>přijali jsme Váš požadavek na změnu výše hodnoty jističe/distribuční sazby. Abychom mohli tento požadavek vyřídit u distributora, je nutné, abyste nám zaslali vyplněné a podepsané dokumenty, které naleznete v příloze tohoto e-mailu.</p>
 <p>Jedná se o:</p>
-<ul><strong>1) Žádost o změnu smlouvy:</strong> Tento dokument zašlete prostřednictvím e-mailu info@epet.cz nebo na
-  adresu naší společnosti.</ul>
-<ul><strong>2) Žádost o připojení:</strong> Jedná se o dokument provozovatele distribuční soustavy, ve kterém je nutné
-  vyplnit všechny využívané spotřebiče a jejich příkon v kW.</ul>
+<ul><strong>1) Žádost o změnu smlouvy:</strong> Tento dokument zašlete prostřednictvím e-mailu info@epet.cz nebo na adresu naší společnosti.</ul>
+<ul><strong>2) Žádost o připojení:</strong> Jedná se o dokument provozovatele distribuční soustavy, ve kterém je nutné vyplnit všechny využívané spotřebiče a jejich příkon v kW.</ul>
 <p>Originál žádosti zašlete na adresu <strong>PREdistribuce, a.s., Svornosti 3199/19 a, 150 00 Praha 5.</strong></p>
-<p>Na vyřízení požadavku má distributor 30 kalendářních dní. Po uplynutí této lhůty Vám distributor zašle <b> Smlouvu o
-    připojení.</b> V ní bude uvedeno, jaké změny je nutné realizovat na odběrném místě. Pokud ve Smlouvě o připojení
-  naleznete, že je třeba hradit podíl, prosíme o doložení potvrzení o platbě či datum, kdy byl podíl uhrazen.</p>
-<p>Podepsaný originál Smlouvy o připojení a revizní zprávu, kterou Vám vystaví po úpravách na odběrném místě revizní
-  technik, zašlete zpět distributorovi. Před odesláním dokumenty prosím oscanujte a pošlete na e-mail info@epet.cz nebo
-  okopírujte a zašlete poštou na adresu <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</p>
-<p>Dále nám prosím zašlete <b>protokol o instalaci tepelného čerpadla</b> a <b>výpočet tepelných ztrát</b>. Dokumenty
-  předáme distributorovi, který jej vyžaduje pro změnu sazby.</p>
+<p>Na vyřízení požadavku má distributor 30 kalendářních dní. Po uplynutí této lhůty Vám distributor zašle <b> Smlouvu o připojení.</b> V ní bude uvedeno, jaké změny je nutné realizovat na odběrném místě. Pokud ve Smlouvě o připojení naleznete, že je třeba hradit podíl, prosíme o doložení potvrzení o platbě či datum, kdy byl podíl uhrazen.</p>
+<p>Podepsaný originál Smlouvy o připojení a revizní zprávu, kterou Vám vystaví po úpravách na odběrném místě revizní technik, zašlete zpět distributorovi. Před odesláním dokumenty prosím oscanujte a pošlete na e-mail info@epet.cz nebo okopírujte a zašlete poštou na adresu <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</p>
+<p>Dále nám prosím zašlete <b>protokol o instalaci tepelného čerpadla</b> a <b>výpočet tepelných ztrát</b>. Dokumenty předáme distributorovi, který jej vyžaduje pro změnu sazby.</p>
 <p>Následně změnu zaevidujeme na Vašem zákaznickém účtu. </p>
 ${PORTAL_BLOCK}`,
-files: [
-{ url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU
-SMLOUVY - DOMÁCNOST", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU
-SMLOUVY - FIRMA", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/11yiwMdyFSYdMhLsMcs2m4J7SnBINalP5/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU
-SMLOUVY - DOMÁCNOST", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/1c8dHbNdew3iNov6il1s1MCJQJ7t039aL/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU
-SMLOUVY - FIRMA", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/open?id=11unN2RyEHVpvPrIy57bLQVpsy0OldIbw", name: "Žádost o smlouvu o připojení
-PRE.pdf", type: "pdf" }
-],
-tags: ["Distribuční změny"]
-},
-"Ověření výše hodnoty jističe - nesoulad s DI": {
-text: `${OSLOVENI_BLOCK}
-<p>Váš distributor nás upozornil, že hodnota jističe, kterou eviduje, se liší od hodnoty, kterou máme uvedenou na Vašem
-  zákaznickém účtu. Rádi bychom Vás proto požádali o sdělení informace o skutečné hodnotě jističe.</p>
+                files: [
+                       { url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/11yiwMdyFSYdMhLsMcs2m4J7SnBINalP5/view?usp=drive_link", name: " ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1c8dHbNdew3iNov6il1s1MCJQJ7t039aL/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/open?id=11unN2RyEHVpvPrIy57bLQVpsy0OldIbw", name: "Žádost o smlouvu o připojení PRE.pdf", type: "pdf" }
+                ],
+                tags: ["Distribuční změny"]
+        },
+        "Ověření výše hodnoty jističe - nesoulad s DI": {
+                text: `${OSLOVENI_BLOCK}
+<p>Váš distributor nás upozornil, že hodnota jističe, kterou eviduje, se liší od hodnoty, kterou máme uvedenou na Vašem zákaznickém účtu. Rádi bychom Vás proto požádali o sdělení informace o skutečné hodnotě jističe.</p>
 <p>Jedná se o odběrné místo <strong>EAN/EIC ${EAN_BLOCK}</strong></p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Distribuční změny"]
-},
-"Doložení dokladu – změna hodnoty hlavního jističe - ČEZ A EG.D": {
-text: `${OSLOVENI_BLOCK}
-<p>Váš distributor nám sdělil informaci, že u odběrného místa <strong>EAN/EIC ${EAN_BLOCK}</strong> byla sjednána nová
-  hodnota jističe, která je <strong>XXX A.</strong></p>
-<p>Rádi bychom Vás požádali o potvrzení této informace, doložení <b>Smlouvy o připojení</b> a <b>revizní zprávy</b> od
-  elektrikáře. Tyto dokumenty můžete zaslat oscanované na e-mail info@epet.cz nebo poštou na adresu EP ENERGY TRADING,
-  a.s., Klimentská 46, 110 00 Praha 1.</p>
+                files: [],
+                tags: ["Distribuční změny"]
+        },
+        "Doložení dokladu – změna hodnoty hlavního jističe - ČEZ A EG.D": {
+                text: `${OSLOVENI_BLOCK}
+<p>Váš distributor nám sdělil informaci, že u odběrného místa <strong>EAN/EIC ${EAN_BLOCK}</strong> byla sjednána nová hodnota jističe, která je <strong>XXX A.</strong></p>
+<p>Rádi bychom Vás požádali o potvrzení této informace, doložení <b>Smlouvy o připojení</b> a <b>revizní zprávy</b> od elektrikáře. Tyto dokumenty můžete zaslat oscanované na e-mail info@epet.cz nebo poštou na adresu EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</p>
 <p>Následně potřebné informace zaevidujeme na Vašem zákaznickém účtu. </p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Distribuční změny"]
-},
-"Změna jističe / Sazby – informovat zk o termínu provedení změny": {
-text: `${OSLOVENI_BLOCK}
-<p>potvrzujeme vyřízení Vašeho požadavku na změnu distribuční sazby na XXXX / změnu jističe na XXXX A u odběrného místa
-  <strong>EAN/EIC ${EAN_BLOCK}</strong>.</p>
-<p>Distributor tuto změnu provede k DD. MM. RRRR. Prosíme Vás o zajištění přístupu technikovi do prostor, kde bude
-  servisní zakázka probíhat. Připravte si také svoji revizní zprávu.</p>
+                files: [],
+                tags: ["Distribuční změny"]
+        },
+        "Změna jističe / Sazby – informovat zk o termínu provedení změny": {
+                text: `${OSLOVENI_BLOCK}
+<p>potvrzujeme vyřízení Vašeho požadavku na změnu distribuční sazby na XXXX / změnu jističe na XXXX A u odběrného místa <strong>EAN/EIC ${EAN_BLOCK}</strong>.</p>
+<p>Distributor tuto změnu provede k DD. MM. RRRR. Prosíme Vás o zajištění přístupu technikovi do prostor, kde bude servisní zakázka  probíhat. Připravte si také svoji revizní zprávu.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Distribuční změny"]
-},
-"Změna jističe / Sazby – potvrzení provedené změny": {
-text: `${OSLOVENI_BLOCK}
-<p>potvrzujeme vyřízení Vašeho požadavku na změnu distribuční sazby na XXXX / změnu jističe na XXXX A u odběrného místa
-  <strong>EAN/EIC ${EAN_BLOCK}</strong>.</p>
+                files: [],
+                tags: ["Distribuční změny"]
+        },
+        "Změna jističe / Sazby – potvrzení provedené změny": {
+                text: `${OSLOVENI_BLOCK}
+<p>potvrzujeme vyřízení Vašeho požadavku na změnu distribuční sazby na XXXX / změnu jističe na XXXX A u odběrného místa <strong>EAN/EIC ${EAN_BLOCK}</strong>.</p>
 <p>Distributor tuto změnu provedl k DD. MM. RRRR. </p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Distribuční změny"]
-},
-"Změna jističe / Sazby – Info ZK o změně termínu provedení změny z důvodu závad na OM": {
-text: `${OSLOVENI_BLOCK}
-<p>potvrzujeme vyřízení Vašeho požadavku na změnu jističe / sazby na hodnotu XXXX u odběrného místa <strong>EAN/EIC
-    ${EAN_BLOCK}</strong>.</p>
-<p>Distributor nás však informoval, že z důvodu závady na odběrném místě nebylo možné plánovanou změnu uskutečnit v
-  původním termínu. Byl stanoven nový termín pro realizaci změny, a to v rozmezí <strong>DD.MM.RRRR - DD.MM.RRRR
-  </strong>.</p>
-<p>Prosíme Vás o zajištění přístupu technikovi do prostor, kde bude servisní zásah probíhat, a o přípravu Vaší aktuální
-  revizní zprávy.</p>
+                files: [],
+                tags: ["Distribuční změny"]
+        },
+        "Změna jističe / Sazby – Info ZK o změně termínu provedení změny z důvodu závad na OM": {
+                text: `${OSLOVENI_BLOCK}
+<p>potvrzujeme vyřízení Vašeho požadavku na změnu jističe / sazby na hodnotu XXXX u odběrného místa <strong>EAN/EIC ${EAN_BLOCK}</strong>.</p>
+<p>Distributor nás však informoval, že z důvodu závady na odběrném místě nebylo možné plánovanou změnu uskutečnit v původním termínu. Byl stanoven nový termín pro realizaci změny, a to v rozmezí <strong>DD.MM.RRRR - DD.MM.RRRR  </strong>.</p>
+<p>Prosíme Vás o zajištění přístupu technikovi do prostor, kde bude servisní zásah probíhat, a o přípravu Vaší aktuální revizní zprávy.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Distribuční změny"]
-},
-"Prosba o doplnění údajů - chybějící na ŽOP": {
-text: `${OSLOVENI_BLOCK}
+                files: [],
+                tags: ["Distribuční změny"]
+        },
+        "Prosba o doplnění údajů - chybějící na ŽOP": {
+                text: `${OSLOVENI_BLOCK}
 <p>při kontrole pokladů pro XXX jsme zjistili, že na žádosti chybějí následující údaje: XXX.</p>
-<p>Prosíme Vás tedy o jejich doplnění/podpis. Opravené podklady následně prosím zašlete zpět na náš e-mail info@epet.cz.
-</p>
+<p>Prosíme Vás tedy o jejich doplnění/podpis. Opravené podklady následně prosím zašlete zpět na náš e-mail info@epet.cz.</p>
 <p>Děkujeme Vám za spolupráci.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Distribuční změny"]
-},
-"Prosba o doložení předávacího protokolu": {
-text: `${OSLOVENI_BLOCK}
-<p>kontaktoval nás Váš distributor ohledně nenavazujících stavů na Vašem měřidle. Pro opravu stavů distributor vyžaduje
-  předávací protokol k datu fyzického přepisu smlouvy. Pokud je Váš předávací protokol podepsán k jinému datu než k
-  <strong>DD.MM.RRRR</strong>, prosíme Vás o opravu tohoto protokolu.</p>
+                files: [],
+                tags: ["Distribuční změny"]
+        },
+        "Prosba o doložení předávacího protokolu": {
+                text: `${OSLOVENI_BLOCK}
+<p>kontaktoval nás Váš distributor ohledně nenavazujících stavů na Vašem měřidle. Pro opravu stavů distributor vyžaduje předávací protokol k datu fyzického přepisu smlouvy. Pokud je Váš předávací protokol podepsán k jinému datu než k <strong>DD.MM.RRRR</strong>, prosíme Vás o opravu tohoto protokolu.</p>
 <p>Fyzický přepis smlouvy proběhl <strong>DD.MM.RRRR</strong>, a tak Vás prosíme o doplnění právě tohoto data.</p>
 <p>Následně opravený protokol předáme distributorovi, který stavy měřidla upraví.</p>
 <p>Děkujeme Vám za spolupráci.</p>
 ${PORTAL_BLOCK}`,
-files: [
-{ url: "https://drive.google.com/open?id=1RRcnxT7Qik3mExjXMhERqRSNCKbHIWGn", name: "PŘEDÁVACÍ PROTOKOL", type: "pdf",
-brand: "epet" }
-],
-tags: ["Distribuční změny", "Reklamace", "Fakturace"]
-},
-"ZMĚNA DISTRIBUČNÍ SAZBY Z C NA D U SVJ - ZASLÁNÍ PODKLADŮ": {
-text: `${OSLOVENI_BLOCK}
+                files: [
+                        { url: "https://drive.google.com/open?id=1RRcnxT7Qik3mExjXMhERqRSNCKbHIWGn", name: "PŘEDÁVACÍ PROTOKOL", type: "pdf", brand: "epet" }
+                ],
+                tags: ["Distribuční změny", "Reklamace", "Fakturace"]
+        },
+        "ZMĚNA DISTRIBUČNÍ SAZBY Z C NA D U SVJ - ZASLÁNÍ PODKLADŮ": {
+                text: `${OSLOVENI_BLOCK}
 <p>abychom mohli zažádat o změnu typu sazby u distributora, prosíme o vyplnění a zaslání potřebných dokumentů:</p>
 <ul><strong>1) Čestné prohlášení</strong></ul>
-<p>Rádi bychom Vás upozornili, že v důsledku změny distribuční sazby dojde ke změně ceny za regulované a neregulované
-  položky související s provedenou změnou.</p>
-<p>Zároveň bychom Vás chtěli informovat, že technik distributora si na místě ověří, že se skutečně jedná o společné
-  prostory domu. V opačném případě nebude změna provedena.</p>
+<p>Rádi bychom Vás upozornili, že v důsledku změny distribuční sazby dojde ke změně ceny za regulované a neregulované položky související s provedenou změnou.</p>
+<p>Zároveň bychom Vás chtěli informovat, že technik distributora si na místě ověří, že se skutečně jedná o společné prostory domu. V opačném případě nebude změna provedena.</p>
 <p>Všechny potřebné dokumenty k vyplnění zasíláme v příloze tohoto e-mailu.</p>
 ${PORTAL_BLOCK}`,
-files: [{ url: "https://drive.google.com/file/d/14JwJ2-7d3FtTbm8Q6xGzQ0PU4yu39-et/view?usp=drive_link", name: "ČP z PO -
-Pro změnu sazby z Firmy na DOM", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/12D_dEsRwYzt-bvlM47ABI3NMkejBW5ub/view?usp=drive_link", name: "ČP z PO - Pro
-změnu sazby z Firmy na DOM", type: "pdf", brand: "de" }],
-tags: ["Distribuční změny"]
-},
-"Potvrzení o provedené změně distribuční sazby z C na D u SVJ": {
-text: `${OSLOVENI_BLOCK}
-<p>informujeme Vás, že na základě Vaší žádosti došlo dne …… ke změně typu sazby z C..d na D…d u odběrného místa EAN/EIC:
-  <strong>${EAN_BLOCK}</strong>, na adrese <strong>${ADRESA_BLOCK}</strong>.</p>
-<p>V příloze tohoto e-mailu Vám zasíláme nový Ceník, který obsahuje ceny pro sazby v kategorii D. (větu použijeme jen
-  pokud již nebyl Ceník zaslán s dodatkem ze strany BO)</p>
+                files: [{ url: "https://drive.google.com/file/d/14JwJ2-7d3FtTbm8Q6xGzQ0PU4yu39-et/view?usp=drive_link", name: "ČP z PO - Pro změnu sazby z Firmy na DOM", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/12D_dEsRwYzt-bvlM47ABI3NMkejBW5ub/view?usp=drive_link", name: "ČP z PO - Pro změnu sazby z Firmy na DOM", type: "pdf", brand: "de" }],
+                tags: ["Distribuční změny"]
+        },
+        "Potvrzení o provedené změně distribuční sazby z C na D u SVJ": {
+                text: `${OSLOVENI_BLOCK}
+<p>informujeme Vás, že na základě Vaší žádosti došlo dne …… ke změně typu sazby z C..d na  D…d u odběrného místa EAN/EIC: <strong>${EAN_BLOCK}</strong>, na adrese <strong>${ADRESA_BLOCK}</strong>.</p>
+<p>V příloze tohoto e-mailu Vám zasíláme nový Ceník, který obsahuje ceny pro sazby v kategorii D. (větu použijeme jen pokud již nebyl Ceník zaslán s dodatkem ze strany BO)</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Distribuční změny"]
-},
-"Potvrzení zk, že na základě dokumentů (ŽOP) došlo k podání žádosti o SOP na distribuci": {
-text: `${OSLOVENI_BLOCK}
+                files: [],
+                tags: ["Distribuční změny"]
+        },
+        "Potvrzení zk, že na základě dokumentů (ŽOP) došlo k podání žádosti o SOP na distribuci": {
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme Vám za zaslání vyplněných dokumentů.</p>
-<p>Potvrzujeme, že jsme na základě těchto podkladů podali žádost u příslušného distributora o vystavení nové Smlouvy o
-  připojení. Distributor má na vyřízení požadavku lhůtu 30 kalendářních dní. Po jejím uplynutí Vám zašle Smlouvu o
-  připojení.</p>
-<p>Ve smlouvě bude uvedeno, jaké změny je třeba realizovat na odběrném místě. Pokud v ní naleznete informaci o nutnosti
-  úhrady podílu, prosíme o doložení potvrzení o platbě či uvedení data, kdy byl podíl uhrazen.</p>
+<p>Potvrzujeme, že jsme na základě těchto podkladů podali žádost u příslušného distributora o vystavení nové Smlouvy o připojení. Distributor má na vyřízení požadavku lhůtu 30 kalendářních dní. Po jejím uplynutí Vám zašle Smlouvu o připojení.</p>
+<p>Ve smlouvě bude uvedeno, jaké změny je třeba realizovat na odběrném místě. Pokud v ní naleznete informaci o nutnosti úhrady podílu, prosíme o doložení potvrzení o platbě či uvedení data, kdy byl podíl uhrazen.</p>
 <p>Po podpisu smlouvy prosíme o její zaslání:</p>
 <ul>
   <li><b>originálu podepsané Smlouvy o připojení zpět distributorovi,</b></li>
-  <li><b>kopie podepsané smlouvy také na naši adresu – ideálně elektronicky na e-mail</b> <a
-      href="mailto:info@epet.cz">info@epet.cz</a>, případně poštou na <b>EP ENERGY TRADING, a.s., Klimentská 46, 110 00
-      Praha 1</b>.</li>
+  <li><b>kopie podepsané smlouvy také na naši adresu – ideálně elektronicky na e-mail</b> <a href="mailto:info@epet.cz">info@epet.cz</a>, případně poštou na <b>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</b>.</li>
 </ul>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Distribuční změny"]
-},
-"Potvrzení zk, že na základě doložených dokumentů, byl požadavek předán na distribuci pro sdělení termínu (ÚKol předán
-na EK - pro sdělení termínu)": {
-text: `${OSLOVENI_BLOCK}
+                files: [],
+                tags: ["Distribuční změny"]
+        },
+        "Potvrzení zk, že na základě doložených dokumentů,  byl požadavek předán na distribuci pro sdělení termínu (ÚKol předán na EK - pro sdělení termínu)": {
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme za zaslání požadovaných dokumentů k Vaší žádosti o změnu distribuční sazby / změny výše hlavního jističe</p>
-<p>Tímto potvrzujeme, že jsme na základě Vámi doložených podkladů požadavek předali k posouzení a zpracování příslušnému
-  distributorovi. Distributor Nám následně sdělí konkrétní termín realizace změny. Jakmile od něj obdržíme potvrzení o
-  plánovaném termínu, budeme Vás neprodleně informovat.</p>
+<p>Tímto potvrzujeme, že jsme na základě Vámi doložených podkladů požadavek předali k posouzení a zpracování příslušnému distributorovi. Distributor Nám následně sdělí konkrétní termín realizace změny. Jakmile od něj obdržíme potvrzení o plánovaném termínu, budeme Vás neprodleně informovat.</p>
 <p>V případě doplnění dalších údajů nebo potřeby upřesnění Vás budeme kontaktovat.</p>
 <p>Děkujeme Vám za spolupráci.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Distribuční změny"]
-},
-/* Demontáže */
+                files: [],
+                tags: ["Distribuční změny"]
+        },
+        /* Demontáže */
 "Sloučení odběrných míst (OM)": {
-date: "2026-04-23",
-text: `${OSLOVENI_BLOCK}
+                date: "2026-04-23",              
+                text: `${OSLOVENI_BLOCK}
 <p>v příloze tohoto e-mailu Vám zasíláme formuláře potřebné pro sloučení Vašich odběrných míst.</p>
-<p>Pro úspěšné vyřízení prosíme o vyplnění přiložené <strong>Žádosti o ukončení smlouvy</strong> k odběrnému místu,
-  které bude zrušeno (demontováno). Do důvodu demontáže prosím výslovně uveďte <strong>„Sloučení jednoho OM do
-    druhého“</strong> a doplňte informaci, ze kterého EAN/EIC kódu do kterého ke sloučení dochází.</p>
-<p><em>Upozornění (pouze pro elektřinu):</em> Pokud bude v souvislosti se sloučením docházet k navýšení kapacity
-  hlavního jističe u Vašeho aktivního (zůstávajícího) odběrného místa, je nutné nám doložit také <strong>Žádost o změnu
-    smlouvy</strong> a platnou <strong>Revizní zprávu</strong>.</p>
-<p>Vyplněné a podepsané dokumenty nám prosím zašlete zpět jako odpověď na tento e-mail. Dokumenty můžete také zaslat
-  poštou na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong></p>
+<p>Pro úspěšné vyřízení prosíme o vyplnění přiložené <strong>Žádosti o ukončení smlouvy</strong> k odběrnému místu, které bude zrušeno (demontováno). Do důvodu demontáže prosím výslovně uveďte <strong>„Sloučení jednoho OM do druhého“</strong> a doplňte informaci, ze kterého EAN/EIC kódu do kterého ke sloučení dochází.</p>
+<p><em>Upozornění (pouze pro elektřinu):</em> Pokud bude v souvislosti se sloučením docházet k navýšení kapacity hlavního jističe u Vašeho aktivního (zůstávajícího) odběrného místa, je nutné nám doložit také <strong>Žádost o změnu smlouvy</strong> a platnou <strong>Revizní zprávu</strong>.</p>
+<p>Vyplněné a podepsané dokumenty nám prosím zašlete zpět jako odpověď na tento e-mail. Dokumenty můžete také zaslat poštou na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong></p>
 ${PORTAL_BLOCK}`,
-files: [
-{ url: "https://drive.google.com/open?id=1U-3hFZF25hXpdj9-8XrYpbI6w_rQH5S7", name: "Žádost o ukončení smlouvy", type:
-"pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/13HAJSD1s13kpkpwDMRy3ZNCXNCIKJj8X/view?usp=drive_link", name: "Žádost o ukončení
-smlouvy", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/17jVzJYN7fq_zsdPM3SSoU4upzVz8AK3p/view?usp=drive_web", name: "ČEZ žádost o
-ukončení - Trvalá demontáž", type: "pdf" },
-{ url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU
-SMLOUVY - DOMÁCNOST", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU
-SMLOUVY - FIRMA", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/11yiwMdyFSYdMhLsMcs2m4J7SnBINalP5/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU
-SMLOUVY - DOMÁCNOST", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/1c8dHbNdew3iNov6il1s1MCJQJ7t039aL/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU
-SMLOUVY - FIRMA", type: "pdf", brand: "de" }
-],
-tags: ["Demontáže", "Sloučení OM"]
-},
-
-"Ukončení smlouvy s demontáží elektroměru – sezónní odběr FIRMA – ČEZ": {
-text: `${OSLOVENI_BLOCK}
-<p>v příloze tohoto e-mailu naleznete podklady k ukončení smlouvy s demontáží měřidla. Jedná se o Žádost o ukončení
-  smlouvy / dodávky elektřiny do odběrného místa – Firma a Žádost o demontáž měřícího zařízení.</p>
-<p>Podklady musí podepsat osoba, která je oprávněna jednat za společnost. Případně lze k Žádosti doložit plnou moc,
-  opravňující k podpisu žádosti, kterou Vám zasíláme v příloze.</p>
-<p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokumenty můžete také zaslat na adresu naší
-  společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong></p>
+                files: [
+                        { url: "https://drive.google.com/open?id=1U-3hFZF25hXpdj9-8XrYpbI6w_rQH5S7", name: "Žádost o ukončení smlouvy", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/13HAJSD1s13kpkpwDMRy3ZNCXNCIKJj8X/view?usp=drive_link", name: "Žádost o ukončení smlouvy", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/17jVzJYN7fq_zsdPM3SSoU4upzVz8AK3p/view?usp=drive_web", name: "ČEZ žádost o ukončení - Trvalá demontáž", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/11yiwMdyFSYdMhLsMcs2m4J7SnBINalP5/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - DOMÁCNOST", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1c8dHbNdew3iNov6il1s1MCJQJ7t039aL/view?usp=drive_link", name: "ŽÁDOST O ZMĚNU SMLOUVY - FIRMA", type: "pdf", brand: "de" }
+                ],
+                tags: ["Demontáže", "Sloučení OM"]
+        },
+  
+        "Ukončení smlouvy s demontáží elektroměru – sezónní odběr FIRMA – ČEZ": {
+                text: `${OSLOVENI_BLOCK}
+<p>v příloze tohoto e-mailu naleznete podklady k ukončení smlouvy s demontáží měřidla. Jedná se o Žádost o ukončení smlouvy / dodávky elektřiny do odběrného místa – Firma a Žádost o demontáž měřícího zařízení.</p>
+<p>Podklady musí podepsat osoba, která je oprávněna jednat za společnost. Případně lze k Žádosti doložit plnou moc, opravňující k podpisu žádosti, kterou Vám zasíláme v příloze.</p>
+<p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokumenty můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong></p>
 ${PORTAL_BLOCK}`,
-files: [
-{ url: "https://drive.google.com/file/d/1IxIb56DEjGqZal6L73uQtnGlgVFg2eDQ/view?usp=drive_link", name: "PLNÁ MOC", type:
-"pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1coOnCqNHkVovGnPAdDy1HrhN4ZpKxFW0/view?usp=drive_web", name: " ČEZ žádost o
-ukončení - Dočasná demontáž", type: "pdf" },
-{ url: "https://drive.google.com/open?id=1U-3hFZF25hXpdj9-8XrYpbI6w_rQH5S7", name: "Žádost o ukončení", type: "pdf",
-brand: "epet"},
-{ url: "https://drive.google.com/file/d/10t69I9lbEjebbTMXSxaSaImxW7oX1WYr/view?usp=drive_link", name: "PLNÁ MOC", type:
-"pdf", brand: "de"},
-{ url: "https://drive.google.com/file/d/13HAJSD1s13kpkpwDMRy3ZNCXNCIKJj8X/view?usp=drive_link", name: "Žádost o
-ukončení", type: "pdf", brand: "de"}
-],
-tags: ["Demontáže"]
-},
-"Ukončení smlouvy s demontáží elektroměru DOMÁCNOST - ČEZ": {
-text: `${OSLOVENI_BLOCK}
-<p>v příloze tohoto e-mailu naleznete podklady k ukončení smlouvy s demontáží měřidla. Jedná se o Žádost o ukončení
-  smlouvy / dodávky elektřiny do odběrného místa – Domácnost a Žádost o ukončení smlouvy. </p>
-<p>Prosíme o jejich vyplnění a zaslání zpět na naši e-mailovou adresu. Dokumenty můžete také zaslat na adresu naší
-  společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong> </p>
+                files: [
+                        { url: "https://drive.google.com/file/d/1IxIb56DEjGqZal6L73uQtnGlgVFg2eDQ/view?usp=drive_link", name: "PLNÁ MOC", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1coOnCqNHkVovGnPAdDy1HrhN4ZpKxFW0/view?usp=drive_web", name: " ČEZ žádost o ukončení - Dočasná demontáž", type: "pdf" },
+                        { url: "https://drive.google.com/open?id=1U-3hFZF25hXpdj9-8XrYpbI6w_rQH5S7", name: "Žádost o ukončení", type: "pdf", brand: "epet"},
+                        { url: "https://drive.google.com/file/d/10t69I9lbEjebbTMXSxaSaImxW7oX1WYr/view?usp=drive_link", name: "PLNÁ MOC", type: "pdf", brand: "de"},
+                        { url: "https://drive.google.com/file/d/13HAJSD1s13kpkpwDMRy3ZNCXNCIKJj8X/view?usp=drive_link", name: "Žádost o ukončení", type: "pdf", brand: "de"}
+                ],
+                tags: ["Demontáže"]
+        },
+        "Ukončení smlouvy s demontáží elektroměru DOMÁCNOST - ČEZ": {
+                text: `${OSLOVENI_BLOCK}
+<p>v příloze tohoto e-mailu naleznete podklady k ukončení smlouvy s demontáží měřidla. Jedná se o Žádost o ukončení smlouvy / dodávky elektřiny do odběrného místa – Domácnost a Žádost o ukončení smlouvy. </p>
+<p>Prosíme o jejich vyplnění a zaslání zpět na naši e-mailovou adresu. Dokumenty můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong> </p>
 ${PORTAL_BLOCK}`,
-files: [
-{ url: "https://drive.google.com/file/d/10OtoVJApxNBiA_L8C0G2qjxaK22VNczx/view?usp=drive_web", name: "Žádost o
-ukončení_DOM", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/13HAJSD1s13kpkpwDMRy3ZNCXNCIKJj8X/view?usp=drive_link", name: "Žádost o
-ukončení", type: "pdf", brand: "de"},
-{ url: "https://drive.google.com/file/d/17jVzJYN7fq_zsdPM3SSoU4upzVz8AK3p/view?usp=drive_web", name: "ČEZ žádost o
-ukončení - Trvalá demontáž", type: "pdf" },
-{ url: "https://drive.google.com/file/d/1coOnCqNHkVovGnPAdDy1HrhN4ZpKxFW0/view?usp=drive_web", name: "ČEZ žádost o
-ukončení - Dočasná demontáž", type: "pdf" }
-],
-tags: ["Demontáže"]
-},
-"Ukončení smlouvy s demontáží Elektroměru – DOMÁCNOST - EGD/PRE": {
-text: `${OSLOVENI_BLOCK}
-<p>v příloze tohoto e-mailu naleznete podklad k ukončení smlouvy s demontáží měřidla. Jedná se o Žádost o ukončení
-  smlouvy / dodávky elektřiny do odběrného místa – Domácnost.</p>
-<p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokument můžete také zaslat na adresu naší
-  společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong></p>
+                files: [
+                        { url: "https://drive.google.com/file/d/10OtoVJApxNBiA_L8C0G2qjxaK22VNczx/view?usp=drive_web", name: "Žádost o ukončení_DOM", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/13HAJSD1s13kpkpwDMRy3ZNCXNCIKJj8X/view?usp=drive_link", name: "Žádost o ukončení", type: "pdf", brand: "de"},
+                        { url: "https://drive.google.com/file/d/17jVzJYN7fq_zsdPM3SSoU4upzVz8AK3p/view?usp=drive_web", name: "ČEZ žádost o ukončení - Trvalá demontáž", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/1coOnCqNHkVovGnPAdDy1HrhN4ZpKxFW0/view?usp=drive_web", name: "ČEZ žádost o ukončení - Dočasná demontáž", type: "pdf" }
+                ],
+                tags: ["Demontáže"]
+        },
+        "Ukončení smlouvy s demontáží Elektroměru – DOMÁCNOST - EGD/PRE": {
+                text: `${OSLOVENI_BLOCK}
+<p>v příloze tohoto e-mailu naleznete podklad k ukončení smlouvy s demontáží měřidla. Jedná se o Žádost o ukončení smlouvy / dodávky elektřiny do odběrného místa – Domácnost.</p>
+<p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokument můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong></p>
 ${PORTAL_BLOCK}`,
-files: [
-{ url: "https://drive.google.com/file/d/10OtoVJApxNBiA_L8C0G2qjxaK22VNczx/view?usp=drive_web", name: "Žádost o
-ukončení", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/13HAJSD1s13kpkpwDMRy3ZNCXNCIKJj8X/view?usp=drive_link", name: "Žádost o
-ukončení", type: "pdf", brand: "de"}
-],
-tags: ["Demontáže"]
-},
-"Demontáž elektroměru FIRMA - ČEZ": {
-text: `${OSLOVENI_BLOCK}
-<p>v příloze tohoto e-mailu naleznete podklady k ukončení smlouvy s demontáží měřidla. Jedná se o Žádost o ukončení
-  smlouvy / dodávky elektřiny do odběrného místa – Firma a Žádost o ukončení smlouvy.</p>
-<p>Podklady musí podepsat osoba, která je oprávněna jednat za společnost. Případně lze k Žádosti doložit plnou moc,
-  opravňující k podpisu žádosti, kterou Vám zasíláme v příloze.</p>
-<p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokumenty můžete také zaslat na adresu naší
-  společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</p>
+                files: [
+                        { url: "https://drive.google.com/file/d/10OtoVJApxNBiA_L8C0G2qjxaK22VNczx/view?usp=drive_web", name: "Žádost o ukončení", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/13HAJSD1s13kpkpwDMRy3ZNCXNCIKJj8X/view?usp=drive_link", name: "Žádost o ukončení", type: "pdf", brand: "de"}
+                ],
+                tags: ["Demontáže"]
+        },
+        "Demontáž elektroměru FIRMA - ČEZ": {
+                text: `${OSLOVENI_BLOCK}
+<p>v příloze tohoto e-mailu naleznete podklady k ukončení smlouvy s demontáží měřidla. Jedná se o Žádost o ukončení smlouvy / dodávky elektřiny do odběrného místa – Firma a Žádost o ukončení smlouvy.</p>
+<p>Podklady musí podepsat osoba, která je oprávněna jednat za společnost. Případně lze k Žádosti doložit plnou moc, opravňující k podpisu žádosti, kterou Vám zasíláme v příloze.</p>
+<p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokumenty můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</p>
 ${PORTAL_BLOCK}`,
-files: [
-{ url: "https://drive.google.com/file/d/1IxIb56DEjGqZal6L73uQtnGlgVFg2eDQ/view?usp=drive_link", name: "PLNÁ MOC", type:
-"pdf", brand: "epet" },
-{ url: "https://drive.google.com/open?id=1U-3hFZF25hXpdj9-8XrYpbI6w_rQH5S7", name: "Žádost o ukončení", type: "pdf",
-brand: "epet" },
-{ url: "https://drive.google.com/file/d/13HAJSD1s13kpkpwDMRy3ZNCXNCIKJj8X/view?usp=drive_link", name: "Žádost o
-ukončení", type: "pdf", brand: "de"},
-{ url: "https://drive.google.com/file/d/10t69I9lbEjebbTMXSxaSaImxW7oX1WYr/view?usp=drive_link", name: "PLNÁ MOC", type:
-"pdf", brand: "de"},
-{ url: "https://drive.google.com/file/d/17jVzJYN7fq_zsdPM3SSoU4upzVz8AK3p/view?usp=drive_web", name: "ČEZ žádost o
-ukončení - Trvalá demontáž", type: "pdf" },
-{ url: "https://drive.google.com/file/d/1coOnCqNHkVovGnPAdDy1HrhN4ZpKxFW0/view?usp=drive_web", name: "ČEZ žádost o
-ukončení - Dočasná demontáž", type: "pdf" }
-],
-tags: ["Demontáže"]
-},
-"Demontáž elektroměru FIRMA - EG.D_PRE": {
-text: `${OSLOVENI_BLOCK}
-<p>v příloze tohoto e-mailu naleznete podklad k ukončení smlouvy s demontáží měřidla. Jedná se o Žádost o ukončení
-  smlouvy / dodávky elektřiny do odběrného místa – Firma</p>
-<p>Podklady musí podepsat osoba, která je oprávněna jednat za společnost. Případně lze k Žádosti doložit plnou moc,
-  opravňující k podpisu žádosti, kterou Vám zasíláme v příloze.</p>
-<p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokumenty můžete také zaslat na adresu naší
-  společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong></p>
+                files: [
+                        { url: "https://drive.google.com/file/d/1IxIb56DEjGqZal6L73uQtnGlgVFg2eDQ/view?usp=drive_link", name: "PLNÁ MOC", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/open?id=1U-3hFZF25hXpdj9-8XrYpbI6w_rQH5S7", name: "Žádost o ukončení", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/13HAJSD1s13kpkpwDMRy3ZNCXNCIKJj8X/view?usp=drive_link", name: "Žádost o ukončení", type: "pdf", brand: "de"},
+                        { url: "https://drive.google.com/file/d/10t69I9lbEjebbTMXSxaSaImxW7oX1WYr/view?usp=drive_link", name: "PLNÁ MOC", type: "pdf", brand: "de"},
+                        { url: "https://drive.google.com/file/d/17jVzJYN7fq_zsdPM3SSoU4upzVz8AK3p/view?usp=drive_web", name: "ČEZ žádost o ukončení - Trvalá demontáž", type: "pdf" },
+                        { url: "https://drive.google.com/file/d/1coOnCqNHkVovGnPAdDy1HrhN4ZpKxFW0/view?usp=drive_web", name: "ČEZ žádost o ukončení - Dočasná demontáž", type: "pdf" }
+                ],
+                tags: ["Demontáže"]
+        },
+        "Demontáž elektroměru FIRMA - EG.D_PRE": {
+                text: `${OSLOVENI_BLOCK}
+<p>v příloze tohoto e-mailu naleznete podklad k ukončení smlouvy s demontáží měřidla. Jedná se o Žádost o ukončení smlouvy / dodávky elektřiny do odběrného místa – Firma</p>
+<p>Podklady musí podepsat osoba, která je oprávněna jednat za společnost. Případně lze k Žádosti doložit plnou moc, opravňující k podpisu žádosti, kterou Vám zasíláme v příloze.</p>
+<p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokumenty můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong></p>
 ${PORTAL_BLOCK}`,
-files: [
-{ url: "https://drive.google.com/file/d/1IxIb56DEjGqZal6L73uQtnGlgVFg2eDQ/view?usp=drive_link", name: "PLNÁ MOC", type:
-"pdf", brand: "epet" },
-{ url: "https://drive.google.com/open?id=1U-3hFZF25hXpdj9-8XrYpbI6w_rQH5S7", name: "Žádost o ukončení", type: "pdf",
-brand: "epet" },
-{ url: "https://drive.google.com/file/d/13HAJSD1s13kpkpwDMRy3ZNCXNCIKJj8X/view?usp=drive_link", name: "Žádost o
-ukončení", type: "pdf", brand: "de"},
-{ url: "https://drive.google.com/file/d/10t69I9lbEjebbTMXSxaSaImxW7oX1WYr/view?usp=drive_link", name: "PLNÁ MOC", type:
-"pdf", brand: "de"}
-],
-tags: ["Demontáže"]
-},
-"Ukončení smlouvy s demontáží plynoměru DOMÁCNOST - EG.D_PPD_GASNET_RWE": {
-text: `${OSLOVENI_BLOCK}
-<p>v příloze tohoto e-mailu naleznete podklad k ukončení smlouvy s demontáží měřidla. Jedná se o Žádost o ukončení
-  smlouvy / dodávky plynu do odběrného místa – Domácnost.</p>
-<p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokument můžete také zaslat na adresu naší
-  společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong></p>
+                files: [
+                        { url: "https://drive.google.com/file/d/1IxIb56DEjGqZal6L73uQtnGlgVFg2eDQ/view?usp=drive_link", name: "PLNÁ MOC", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/open?id=1U-3hFZF25hXpdj9-8XrYpbI6w_rQH5S7", name: "Žádost o ukončení", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/13HAJSD1s13kpkpwDMRy3ZNCXNCIKJj8X/view?usp=drive_link", name: "Žádost o ukončení", type: "pdf", brand: "de"},
+                        { url: "https://drive.google.com/file/d/10t69I9lbEjebbTMXSxaSaImxW7oX1WYr/view?usp=drive_link", name: "PLNÁ MOC", type: "pdf", brand: "de"}
+                ],
+                tags: ["Demontáže"]
+        },
+        "Ukončení smlouvy s demontáží plynoměru DOMÁCNOST - EG.D_PPD_GASNET_RWE": {
+                text: `${OSLOVENI_BLOCK}
+<p>v příloze tohoto e-mailu naleznete podklad k ukončení smlouvy s demontáží měřidla. Jedná se o Žádost o ukončení smlouvy / dodávky plynu do odběrného místa – Domácnost.</p>
+<p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokument můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong></p>
 ${PORTAL_BLOCK}`,
-files: [
-{ url: "https://drive.google.com/file/d/10DdFgk1KL9NBIYUv3tpcMvVjEFurYSJV/view?usp=drive_web", name: "Žádost o
-ukončení", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/13HAJSD1s13kpkpwDMRy3ZNCXNCIKJj8X/view?usp=drive_link", name: "Žádost o
-ukončení", type: "pdf", brand: "de"}
-],
-tags: ["Demontáže"]
-},
-"Ukončení smlouvy s demontáží plynoměru FIRMA - EG.D_PPD_GASNET_RWE": {
-text: `${OSLOVENI_BLOCK}
-<p>v příloze tohoto e-mailu naleznete podklad k ukončení smlouvy s demontáží měřidla. Jedná se o Žádost o ukončení
-  smlouvy / dodávky plynu do odběrného místa – Maloodběratel.</p>
-<p>Podklady musí podepsat osoba, která je oprávněna jednat za společnost. Případně lze k Žádosti doložit plnou moc,
-  opravňující k podpisu žádosti, kterou Vám zasíláme v příloze.</p>
-<p>Prosíme o jejich vyplnění a zaslání zpět na naši e-mailovou adresu. Dokument můžete také zaslat na adresu naší
-  společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong></p>
+                files: [
+                        { url: "https://drive.google.com/file/d/10DdFgk1KL9NBIYUv3tpcMvVjEFurYSJV/view?usp=drive_web", name: "Žádost o ukončení", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/13HAJSD1s13kpkpwDMRy3ZNCXNCIKJj8X/view?usp=drive_link", name: "Žádost o ukončení", type: "pdf", brand: "de"}
+                ],
+                tags: ["Demontáže"]
+        },
+        "Ukončení smlouvy s demontáží plynoměru FIRMA - EG.D_PPD_GASNET_RWE": {
+                text: `${OSLOVENI_BLOCK}
+<p>v příloze tohoto e-mailu naleznete podklad k ukončení smlouvy s demontáží měřidla. Jedná se o Žádost o ukončení smlouvy / dodávky plynu do odběrného místa – Maloodběratel.</p>
+<p>Podklady musí podepsat osoba, která je oprávněna jednat za společnost. Případně lze k Žádosti doložit plnou moc, opravňující k podpisu žádosti, kterou Vám zasíláme v příloze.</p>
+<p>Prosíme o jejich vyplnění a zaslání zpět na naši e-mailovou adresu. Dokument můžete také zaslat na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1.</strong></p>
 ${PORTAL_BLOCK}`,
-files: [
-{ url: "https://drive.google.com/file/d/1IxIb56DEjGqZal6L73uQtnGlgVFg2eDQ/view?usp=drive_link", name: "PLNÁ MOC", type:
-"pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/107d2e5AsO-8YueDmW5V4ia1tNLKF8V9k/view?usp=drive_web", name: " Žádost o
-ukončení", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/13HAJSD1s13kpkpwDMRy3ZNCXNCIKJj8X/view?usp=drive_link", name: "Žádost o
-ukončení", type: "pdf", brand: "de"},
-{ url: "https://drive.google.com/file/d/10t69I9lbEjebbTMXSxaSaImxW7oX1WYr/view?usp=drive_link", name: "PLNÁ MOC", type:
-"pdf", brand: "de"}
-],
-tags: ["Demontáže"]
-},
-"Přijetí žádosti k demontáži měřidla": {
-text: `${OSLOVENI_BLOCK}
-<p>potvrzujeme přijetí Vaší žádosti k demontáži měřidla na odběrném místě <strong>EAN/EIC ${EAN_BLOCK}</strong> s
-  adresou <strong>${ADRESA_BLOCK}</strong>.</p>
+                files: [
+                        { url: "https://drive.google.com/file/d/1IxIb56DEjGqZal6L73uQtnGlgVFg2eDQ/view?usp=drive_link", name: "PLNÁ MOC", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/107d2e5AsO-8YueDmW5V4ia1tNLKF8V9k/view?usp=drive_web", name: " Žádost o ukončení", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/13HAJSD1s13kpkpwDMRy3ZNCXNCIKJj8X/view?usp=drive_link", name: "Žádost o ukončení", type: "pdf", brand: "de"},
+                        { url: "https://drive.google.com/file/d/10t69I9lbEjebbTMXSxaSaImxW7oX1WYr/view?usp=drive_link", name: "PLNÁ MOC", type: "pdf", brand: "de"}
+                ],
+                tags: ["Demontáže"]
+        },
+        "Přijetí žádosti k demontáži měřidla": {
+                text: `${OSLOVENI_BLOCK}
+<p>potvrzujeme přijetí Vaší žádosti k demontáži měřidla na odběrném místě <strong>EAN/EIC ${EAN_BLOCK}</strong> s adresou <strong>${ADRESA_BLOCK}</strong>.</p>
 <p>Podklady jsme předali na distribuci a jakmile nám žádost potvrdí, sdělíme Vám termín návštěvy technika.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Demontáže"]
-},
-"Termín demontáže měřidla": {
-text: `${OSLOVENI_BLOCK}
-<p>informujeme Vás, že nás nyní kontaktoval distributor s termínem demontáže měřidla pro odběrné místo <strong>EAN/EIC
-    ${EAN_BLOCK}</strong> na adrese <strong>${ADRESA_BLOCK}</strong>.</p>
+                files: [],
+                tags: ["Demontáže"]
+        },
+        "Termín demontáže měřidla": {
+                text: `${OSLOVENI_BLOCK}
+<p>informujeme Vás, že nás nyní kontaktoval distributor s termínem demontáže měřidla pro odběrné místo <strong>EAN/EIC ${EAN_BLOCK}</strong> na adrese <strong>${ADRESA_BLOCK}</strong>.</p>
 <p>Demontáž proběhne <strong>DD.MM.RRRR</strong>.</p>
 <p>Přesný čas demontáže nám distributor nesdělil. V případě potřeby Vás však bude s předstihem informovat.</p>
-<p>Pokud odběrné místo není přístupné, prosíme Vás o umožnění přístupu k měřidlu, aby demontáž mohla bez problému
-  proběhnout.</p>
+<p>Pokud odběrné místo není přístupné, prosíme Vás o umožnění přístupu k měřidlu, aby demontáž mohla bez problému proběhnout.</p>
 <p>Konečné vyúčtování Vám bude zasláno přibližně do 14 dnů od data demontáže.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Demontáže"]
-},
-"Neprovedená demontáž": {
-text: `${OSLOVENI_BLOCK}
-<p>informujeme Vás, že demontáž měřidla na odběrném místě pro <strong>EAN/EIC ${EAN_BLOCK}</strong> na adrese
-  <strong>${ADRESA_BLOCK}</strong> naplánovaná na den <strong>DD.MM.RRRR</strong> nebyla provedena, jelikož odběrné
-  místo nebylo zpřístupněno.</p>
+                files: [],
+                tags: ["Demontáže"]
+        },
+        "Neprovedená demontáž": {
+                text: `${OSLOVENI_BLOCK}
+<p>informujeme Vás, že demontáž měřidla na odběrném místě pro <strong>EAN/EIC ${EAN_BLOCK}</strong> na adrese <strong>${ADRESA_BLOCK}</strong> naplánovaná na den <strong>DD.MM.RRRR</strong> nebyla provedena, jelikož odběrné místo nebylo zpřístupněno.</p>
 <p>S novým termínem demontáže měřidla Vás bude kontaktovat přímo distributor.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Demontáže"]
-},
-/* Ostatní */
-"Potvrzení přijetí požadavku": {
-text: `${OSLOVENI_BLOCK}
-<p>děkujeme za zaslání Vašeho požadavku. Rádi bychom Vás informovali, že jsme jej zaevidovali a v tuto chvíli je v
-  řešení. Budeme Vás informovat nejpozději do <b>xx.xx.XXXX</b> o dalším postupu nebo vyřešení požadavku.
-  V případě jakýchkoliv dotazů se na nás neváhejte obrátit.</p>
+                files: [],
+                tags: ["Demontáže"]
+        },
+        /* Ostatní */
+        "Potvrzení přijetí požadavku": {
+                text: `${OSLOVENI_BLOCK}
+<p>děkujeme za zaslání Vašeho požadavku. Rádi bychom Vás informovali, že jsme jej zaevidovali a v tuto chvíli je v řešení. Budeme Vás informovat nejpozději do <b>xx.xx.XXXX</b> o dalším postupu nebo vyřešení požadavku.
+V případě jakýchkoliv dotazů se na nás neváhejte obrátit.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Ostatní"]
-},
-"Žádost o přiřazení zk. pod konkrétního OZ": {
-text: `${OSLOVENI_BLOCK}
+                files: [],
+                tags: ["Ostatní"]
+        },
+        "Žádost o přiřazení zk. pod konkrétního OZ": {
+                text: `${OSLOVENI_BLOCK}
 <p>Žádost o přiřazení si zašlete na email <b>poptavky@epet.cz</b></p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Ostatní"]
-},
-"Žádost o doložení podkladů pro vyřízení požadavku": {
-text: `${OSLOVENI_BLOCK}
+                files: [],
+                tags: ["Ostatní"]
+        },
+        "Žádost o doložení podkladů pro vyřízení požadavku": {
+                text: `${OSLOVENI_BLOCK}
 <p>aby bylo možné vyřídit Váš požadavek, potřebujeme Vaši součinnost.</p>
 <p>Konkrétně prosíme o doložení XXXXX, a to z důvodu XXXXX.</p>
 <p>Vše potřebné nám prosím zašlete do data XX.XX.XXXX.</p>
-<p>V případě, že uvedenou dokumentaci neobdržíme do výše uvedeného termínu, nebude možné Váš požadavek vyřídit a situace
-  bude z naší strany považována za uzavřenou.</p>
+<p>V případě, že uvedenou dokumentaci neobdržíme do výše uvedeného termínu, nebude možné Váš požadavek vyřídit a situace bude z naší strany považována za uzavřenou.</p>
 <p>Děkujeme za pochopení.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Ostatní"]
-},
-"Zpětná Vazba - zaslání hodnotícího formuláře zákazníkovi": {
-text: `${OSLOVENI_BLOCK}
+                files: [],
+                tags: ["Ostatní"]
+        },
+        "Zpětná Vazba - zaslání hodnotícího formuláře zákazníkovi": {
+                text: `${OSLOVENI_BLOCK}
 <p>na základě tel. hovoru Vám zasíláme odkaz pro zanechání své pozitivní zpětné vazby, na které nám velmi záleží.</p>
 <p>Dotazník můžete vyplnit pod tímto <a href="https://g.page/r/CXbczwzq5JZ8EB0/review" target="_blank">odkazem</a>.</p>
 <p>Děkujeme za Váš čas.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Ostatní"]
-},
+                files: [],
+                tags: ["Ostatní"]
+        },
 "OZ - zasílá požadavek, ale nemáme PM pro zastupování": {
-text: `${OSLOVENI_BLOCK}
-<p>dovolujeme si Vás informovat, že jsme obdrželi Váš požadavek. Abychom jej však mohli vyřídit, je nutné doložit
-  platnou plnou moc k zastupování zákazníka, kterou v našem systému aktuálně neevidujeme.</p>
-<p>Prosíme Vás o její zaslání (ideálně v odpovědi na tento e-mail). Do doby doložení platné plné moci bohužel nemůžeme
-  Váš požadavek přijmout k řešení ani zpracovat.</p>
+        text: `${OSLOVENI_BLOCK}
+<p>dovolujeme si Vás informovat, že jsme obdrželi Váš požadavek. Abychom jej však mohli vyřídit, je nutné doložit platnou plnou moc k zastupování zákazníka, kterou v našem systému aktuálně neevidujeme.</p>
+<p>Prosíme Vás o její zaslání (ideálně v odpovědi na tento e-mail). Do doby doložení platné plné moci bohužel nemůžeme Váš požadavek přijmout k řešení ani zpracovat.</p>
 <p>Děkujeme za pochopení a součinnost.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Ostatní"]
-},
-/* Samoodečty */
-"Prosba o doložení protokolu o výměně měřidla": {
-text: `${OSLOVENI_BLOCK}
-<p>je nám líto, ale Váš požadavek na vystavení faktury na základě doručených podkladů se nám nepodařilo vyřešit.
-  Odečtové hodnoty měřidla na sebe nenavazují. Důvodem bude zřejmě výměna měřidla, která proběhla na odběrném místě.</p>
-<p>V případě, že opravdu došlo k výměně měřidla, Vás prosíme o urychlené dodání protokolu o výměně. Ten naleznete
-  přiložený přímo u měřidla. Pokud protokol nenaleznete, kontaktujte prosím svého distributora, který Vám vystaví jeho
-  opis.</p>
+        files: [],
+        tags: ["Ostatní"]
+    },
+        /* Samoodečty */
+        "Prosba o doložení protokolu o výměně měřidla": {
+                text: `${OSLOVENI_BLOCK}
+<p>je nám líto, ale Váš požadavek na vystavení faktury na základě doručených podkladů se nám nepodařilo vyřešit. Odečtové hodnoty měřidla na sebe nenavazují. Důvodem bude zřejmě výměna měřidla, která proběhla na odběrném místě.</p> 
+<p>V případě, že opravdu došlo k výměně měřidla, Vás prosíme o urychlené dodání protokolu o výměně. Ten naleznete přiložený přímo u měřidla. Pokud protokol nenaleznete, kontaktujte prosím svého distributora, který Vám vystaví jeho opis.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Samoodečty"]
-},
-"Zamítnutí konečného samoodečtu": {
-text: `${OSLOVENI_BLOCK}
-<p>je nám líto, ale Vámi zaslané odečtové hodnoty měřidla jsme již nebyli schopni zpracovat, jelikož nám byly doručeny
-  po termínu. Fakturu Vám vystavíme na základě odečtových hodnot dle odhadu, který nám zašle distributor.</p>
+                files: [],
+                tags: ["Samoodečty"]
+        },
+        "Zamítnutí konečného samoodečtu": {
+                text: `${OSLOVENI_BLOCK}
+<p>je nám líto, ale Vámi zaslané odečtové hodnoty měřidla jsme již nebyli schopni zpracovat, jelikož nám byly doručeny po termínu. Fakturu Vám vystavíme na základě odečtových hodnot dle odhadu, který nám zašle distributor.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Samoodečty"]
-},
-"Kontrola stavů měřidla": {
-text: `${OSLOVENI_BLOCK}
-<p>informujeme Vás, že odečty, které jste nám nahlásili, byly distributorem zamítnuty. Důvodem zamítnutí je, že stavy
-  nenavazují na poslední hlášený odečet</p>
+                files: [],
+                tags: ["Samoodečty"]
+        },
+        "Kontrola stavů měřidla": {
+                text: `${OSLOVENI_BLOCK}
+<p>informujeme Vás, že odečty, které jste nám nahlásili, byly distributorem zamítnuty. Důvodem zamítnutí je, že stavy nenavazují na poslední hlášený odečet</p>
 <p>Prosíme o ověření a poslání správného stavu, popřípadě o zaslání fotografie přístroje s aktuálním stavem.</p>
 <p>Děkujeme Vám za spolupráci.</p>
-${PORTAL_BLOCK}`,
-files: [],
-tags: ["Samoodečty"]
-},
-"Zamítnutí odečtů": {
-text: `${OSLOVENI_BLOCK}
-<p>informujeme Vás, že odečty, které jste nám nahlásil/a pro odběrné místo <b>EAN/EIC ${EAN_BLOCK}</b> , byly
-  distributorem zamítnuty. Důvodem zamítnutí je, že stavy nenavazují na poslední hlášený odečet.</p>
-<p>Prosíme o ověření a poslání správného stavu, popřípadě o zaslání fotografie přístroje s datumovkou tedy viditelné
-  datum zobrazené přímo na fotografii, které ukazuje, kdy byla fotografie pořízena. Případně na lístečku přiloženém k
-  měřidlu a aktuálním stavem.</p>
+ ${PORTAL_BLOCK}`,
+                files: [],
+                tags: ["Samoodečty"]
+        },
+        "Zamítnutí odečtů": {
+                text: `${OSLOVENI_BLOCK}
+<p>informujeme Vás, že odečty, které jste nám nahlásil/a pro odběrné místo <b>EAN/EIC ${EAN_BLOCK}</b> , byly distributorem zamítnuty. Důvodem zamítnutí je, že stavy nenavazují na poslední hlášený odečet.</p>
+<p>Prosíme o ověření a poslání správného stavu, popřípadě o zaslání fotografie přístroje s datumovkou tedy viditelné datum zobrazené přímo na fotografii, které ukazuje, kdy byla fotografie pořízena. Případně na lístečku přiloženém k měřidlu a aktuálním stavem.</p>
 <p>Děkujeme Vám za spolupráci.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Samoodečty"]
-},
-"Nezpracovaný odečet - omluva ZK": {
-text: `${OSLOVENI_BLOCK}
-<p>omlouváme se, ale Váš požadavek na vystavení faktury na základě nahlášených odečtových hodnot Vašeho měřidla se nám
-  nepodařilo zpracovat v termínu. Faktura Vám bude vystavena na základě dat, která nám doručí distributor.</p>
+                files: [],
+                tags: ["Samoodečty"]
+        },
+        "Nezpracovaný odečet - omluva ZK": {
+                text: `${OSLOVENI_BLOCK}
+<p>omlouváme se, ale Váš požadavek na vystavení faktury na základě nahlášených odečtových hodnot Vašeho měřidla se nám nepodařilo zpracovat v termínu. Faktura Vám bude vystavena na základě dat, která nám doručí distributor.</p>
 <p>Velice se za tuto skutečnost omlouváme a děkujeme za pochopení.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Samoodečty"]
-},
-"Počáteční stav elektroměru": {
-text: `${OSLOVENI_BLOCK}
+                files: [],
+                tags: ["Samoodečty"]
+        },
+        "Počáteční stav elektroměru": {
+                text: `${OSLOVENI_BLOCK}
 <p>je nám líto, ale Váš požadavek na evidenci počátečního odečtového stavu Vašeho měřidla není možné zpracovat.</p>
-<p>Tento údaj je třeba sdělit Vašemu původnímu dodavateli, který na základě těchto hodnot vystaví konečnou fakturu. Při
-  nejbližší fakturaci na tento stav měřidla navážeme.</p>
+<p>Tento údaj je třeba sdělit Vašemu původnímu dodavateli, který na základě těchto hodnot vystaví konečnou fakturu. Při nejbližší fakturaci na tento stav měřidla navážeme.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Samoodečty"]
-},
-"Prosba o zaslání fotografie měřidla": {
-text: `${OSLOVENI_BLOCK}
-<p>informujeme Vás, že odečty, které jste nám nahlásil/a pro odběrné místo <b>EAN/EIC ${EAN_BLOCK}</b>, byly
-  distributorem zamítnuty. Prosíme o ověření a poslání správného stavu, popřípadě o zaslání fotografie přístroje s
-  datumovkou tedy viditelné datum zobrazené přímo na fotografii, které ukazuje, kdy byla fotografie pořízena. Případně
-  na lístečku přiloženém k měřidlu a aktuálním stavem.</p>
-<p>Děkujeme Vám za spolupráci.</p>
+                files: [],
+                tags: ["Samoodečty"]
+        },
+        "Prosba o zaslání fotografie měřidla": {
+                text: `${OSLOVENI_BLOCK}
+<p>informujeme Vás, že odečty, které jste nám nahlásil/a pro odběrné místo <b>EAN/EIC ${EAN_BLOCK}</b>, byly distributorem zamítnuty. Prosíme o ověření a poslání správného stavu, popřípadě o zaslání fotografie přístroje s datumovkou tedy viditelné datum zobrazené přímo na fotografii, které ukazuje, kdy byla fotografie pořízena. Případně na lístečku přiloženém k měřidlu a aktuálním stavem.</p>
+<p>Děkujeme Vám za spolupráci.</p> 
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Samoodečty"]
-},
-/* Samoodečty */
-"Potvrzení přijetí samoodečtu pro vystavení mimořádné faktury": {
+                files: [],
+                tags: ["Samoodečty"]
+        },
+        /* Samoodečty */
+        "Potvrzení přijetí samoodečtu pro vystavení mimořádné faktury": {
 text: `${OSLOVENI_BLOCK}
-<p class="mb-3">děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet jsme zpracovali.
-  Nyní čekáme na schválení dat, abychom mohli následně vystavit fakturu.</p>
-<p class="mb-3">Tento schvalovací proces může trvat <strong>2–3 týdny</strong>. Z tohoto důvodu Vás prosíme o trpělivost
-  s vystavením faktury.</p>
-<p class="mb-4">Abychom Vám do budoucna mohli vyúčtování připravit ještě rychleji, přikládáme evidenční tabulku, která
-  může celý proces usnadnit a zrychlit.
-  Jedná se o doporučený nástroj – alternativně můžete odečty nahlásit také přímo prostřednictvím <a
-    href="https://zakaznici.epet.cz/login" target="_blank"><b>Zákaznického portálu</b></a>.</p>
+<p class="mb-3">děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet jsme zpracovali.  
+Nyní čekáme na schválení dat, abychom mohli následně vystavit fakturu.</p>
+<p class="mb-3">Tento schvalovací proces může trvat <strong>2–3 týdny</strong>. Z tohoto důvodu Vás prosíme o trpělivost s vystavením faktury.</p>
+<p class="mb-4">Abychom Vám do budoucna mohli vyúčtování připravit ještě rychleji, přikládáme evidenční tabulku, která může celý proces usnadnit a zrychlit.  
+Jedná se o doporučený nástroj – alternativně můžete odečty nahlásit také přímo prostřednictvím <a href="https://zakaznici.epet.cz/login" target="_blank"><b>Zákaznického portálu</b></a>.</p>
 <p class="mt-3 mb-2"><u>Termíny pro nahlášení odečtů pro mimořádné vyúčtování:</u></p>
 <ul class="ps-3 mb-4" style="line-height:1.7;">
-  <li class="mb-2"><strong>Elektřina:</strong> odečet lze nahlásit k libovolnému datu, musí být však nahlášen <b>do 20
-      kalendářních dnů</b> od jeho provedení.</li>
-  <li class="mb-0"><strong>Plyn:</strong> odečet musí být proveden <b>k poslednímu dni v měsíci</b> a nahlášen <b>do 5
-      kalendářních dnů</b>.</li>
+  <li class="mb-2"><strong>Elektřina:</strong> odečet lze nahlásit k libovolnému datu, musí být však nahlášen <b>do 20 kalendářních dnů</b> od jeho provedení.</li>
+  <li class="mb-0"><strong>Plyn:</strong> odečet musí být proveden <b>k poslednímu dni v měsíci</b> a nahlášen <b>do 5 kalendářních dnů</b>.</li>
 </ul>
 <p class="mt-4 mb-2"><u>Pro správné zpracování v evidenční tabulce doporučujeme vyplnit:</u></p>
 <div class="mb-4">
@@ -1143,31 +825,22 @@ text: `${OSLOVENI_BLOCK}
   </ul>
 </div>
 ${PORTAL_BLOCK}`,
-files: [
-{ url:
-'https://docs.google.com/spreadsheets/d/13wHIPy047lL1JOVuEX1phxT_JqE22cHPscAZj9iF1cQ/edit?gid=197074618#gid=197074618',
-name: "ŠABLONA PRO E-MAIL", type: "xls" },
-{ url:
-'https://docs.google.com/spreadsheets/d/1sIB4lRLeYM4HlgxTEkPjxNKA5B3ruKweGZDDM-MMh7s/edit?gid=1283439519#gid=1283439519',
-name: "ŠABLONA PRO PORTÁL", type: "xls" },
-],
-tags: ["Samoodečty"]
-},
-"Potvrzení přijetí samoodečtu - Kontrolní": {
+                files: [
+                        { url: 'https://docs.google.com/spreadsheets/d/13wHIPy047lL1JOVuEX1phxT_JqE22cHPscAZj9iF1cQ/edit?gid=197074618#gid=197074618', name: "ŠABLONA PRO E-MAIL", type: "xls" },
+                        { url: 'https://docs.google.com/spreadsheets/d/1sIB4lRLeYM4HlgxTEkPjxNKA5B3ruKweGZDDM-MMh7s/edit?gid=1283439519#gid=1283439519', name: "ŠABLONA PRO PORTÁL", type: "xls" },
+                ],
+                tags: ["Samoodečty"]
+        },
+        "Potvrzení přijetí samoodečtu - Kontrolní": {
 text: `${OSLOVENI_BLOCK}
-<p class="mb-3">děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet jsme zpracovali
-  jako <b>kontrolní odečet</b>, bez vystavení mimořádné faktury.
-  Odečet bude zohledněn při příští periodické fakturaci.</p>
-<p class="mb-4">Abychom příště mohli Váš požadavek zpracovat ještě rychleji, přikládáme evidenční tabulku, která může
-  celý proces usnadnit a zrychlit.
-  Jedná se o <b>doporučený nástroj</b> – alternativně můžete odečty jednoduše nahlásit i přímo prostřednictvím <a
-    href="https://zakaznici.epet.cz/login" target="_blank"><b>Zákaznického portálu</b></a>.</p>
+<p class="mb-3">děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet jsme zpracovali jako <b>kontrolní odečet</b>, bez vystavení mimořádné faktury.  
+Odečet bude zohledněn při příští periodické fakturaci.</p>
+<p class="mb-4">Abychom příště mohli Váš požadavek zpracovat ještě rychleji, přikládáme evidenční tabulku, která může celý proces usnadnit a zrychlit.  
+Jedná se o <b>doporučený nástroj</b> – alternativně můžete odečty jednoduše nahlásit i přímo prostřednictvím <a href="https://zakaznici.epet.cz/login" target="_blank"><b>Zákaznického portálu</b></a>.</p>
 <p class="mt-3 mb-2"><u>Termíny pro nahlášení kontrolních odečtů:</u></p>
 <ul class="ps-3 mb-4" style="line-height:1.7;">
-  <li class="mb-2"><b>Elektřina:</b> odečet lze nahlásit k libovolnému datu, musí být však nahlášen <b>do 20
-      kalendářních dnů</b> od provedení odečtu.</li>
-  <li class="mb-0"><b>Plyn:</b> odečet lze nahlásit k libovolnému datu, musí být však nahlášen <b>do 14 kalendářních
-      dnů</b>.</li>
+  <li class="mb-2"><b>Elektřina:</b> odečet lze nahlásit k libovolnému datu, musí být však nahlášen <b>do 20 kalendářních dnů</b> od provedení odečtu.</li>
+  <li class="mb-0"><b>Plyn:</b> odečet lze nahlásit k libovolnému datu, musí být však nahlášen <b>do 14 kalendářních dnů</b>.</li>
 </ul>
 <p class="mt-4 mb-2"><u>Pro správné zpracování odečtu v tabulce doporučujeme vyplnit:</u></p>
 <p class="mb-2"><strong>Při hlášení kontrolního odečtu (pro elektřinu i plyn):</strong></p>
@@ -1176,74 +849,57 @@ text: `${OSLOVENI_BLOCK}
   <li class="mb-0"><i>Důvod odečtu:</i> Kontrolní</li>
 </ul>
 ${PORTAL_BLOCK}`,
-files: [
-{ url:
-'https://docs.google.com/spreadsheets/d/13wHIPy047lL1JOVuEX1phxT_JqE22cHPscAZj9iF1cQ/edit?gid=197074618#gid=197074618',
-name: "ŠABLONA PRO E-MAIL", type: "xls" },
-{ url:
-'https://docs.google.com/spreadsheets/d/1sIB4lRLeYM4HlgxTEkPjxNKA5B3ruKweGZDDM-MMh7s/edit?gid=1283439519#gid=1283439519',
-name: "ŠABLONA PRO PORTÁL", type: "xls" },
-],
-tags: ["Samoodečty"]
-},
-"Potvrzení přijetí samoodečtu - Kontrolní - bez poslání tabulek pro samoodečty": {
+                files: [
+                        { url: 'https://docs.google.com/spreadsheets/d/13wHIPy047lL1JOVuEX1phxT_JqE22cHPscAZj9iF1cQ/edit?gid=197074618#gid=197074618', name: "ŠABLONA PRO E-MAIL", type: "xls" },
+                        { url: 'https://docs.google.com/spreadsheets/d/1sIB4lRLeYM4HlgxTEkPjxNKA5B3ruKweGZDDM-MMh7s/edit?gid=1283439519#gid=1283439519', name: "ŠABLONA PRO PORTÁL", type: "xls" },
+                ],
+                tags: ["Samoodečty"]
+        },
+        "Potvrzení přijetí samoodečtu - Kontrolní - bez poslání tabulek pro samoodečty": {
 text: `${OSLOVENI_BLOCK}
-<p class="mb-3">děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet jsme zpracovali
-  jako <b>kontrolní odečet</b>, bez vystavení mimořádné faktury.
-  Odečet bude zohledněn při příští periodické fakturaci.</p>
-<p class="mb-4">Pro rychlejší zpracování budoucích odečtů Vás žádáme, abyste je nově hlásili přímo prostřednictvím <a
-    href="https://zakaznici.epet.cz/login" target="_blank"><b>Zákaznického portálu</b></a>.</p>
+<p class="mb-3">děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet jsme zpracovali jako <b>kontrolní odečet</b>, bez vystavení mimořádné faktury.  
+Odečet bude zohledněn při příští periodické fakturaci.</p>
+<p class="mb-4">Pro rychlejší zpracování budoucích odečtů Vás žádáme, abyste je nově hlásili přímo prostřednictvím <a href="https://zakaznici.epet.cz/login" target="_blank"><b>Zákaznického portálu</b></a>.</p>
 <p class="mt-3 mb-2"><u>Termíny pro nahlášení kontrolních odečtů:</u></p>
 <ul class="ps-3 mb-4" style="line-height:1.7;">
-  <li class="mb-2"><b>Elektřina:</b> odečet lze nahlásit k libovolnému datu, musí být však nahlášen <b>do 20
-      kalendářních dnů</b> od provedení odečtu.</li>
-  <li class="mb-0"><b>Plyn:</b> odečet lze nahlásit k libovolnému datu, musí být však nahlášen <b>do 14 kalendářních
-      dnů</b>.</li>
+  <li class="mb-2"><b>Elektřina:</b> odečet lze nahlásit k libovolnému datu, musí být však nahlášen <b>do 20 kalendářních dnů</b> od provedení odečtu.</li>
+  <li class="mb-0"><b>Plyn:</b> odečet lze nahlásit k libovolnému datu, musí být však nahlášen <b>do 14 kalendářních dnů</b>.</li>
 </ul>
-${PORTAL_BLOCK}`,
-files: [
-],
-tags: ["Samoodečty"]
-},
-"Potvrzení přijetí samoodečtu pro vystavení mimořádné faktury - bez poslání tabulek pro samoodečty": {
+${PORTAL_BLOCK}`,  
+                files: [
+                ],
+                tags: ["Samoodečty"]
+        },
+        "Potvrzení přijetí samoodečtu pro vystavení mimořádné faktury - bez poslání tabulek pro samoodečty": {
 text: `${OSLOVENI_BLOCK}
-<p class="mb-3">děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet jsme zpracovali.
-  Nyní čekáme na schválení dat, abychom mohli následně vystavit fakturu.</p>
-<p class="mb-4">Schvalovací proces může trvat <b>2–3 týdny</b>. Z tohoto důvodu Vás prosíme o trpělivost s vystavením
-  faktury.
-  Pro rychlejší zpracování budoucích odečtů doporučujeme využít <a href="https://zakaznici.epet.cz/login"
-    target="_blank"><b>Zákaznického portálu</b></a>.</p>
+<p class="mb-3">děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet jsme zpracovali.  
+Nyní čekáme na schválení dat, abychom mohli následně vystavit fakturu.</p>
+<p class="mb-4">Schvalovací proces může trvat <b>2–3 týdny</b>. Z tohoto důvodu Vás prosíme o trpělivost s vystavením faktury.  
+Pro rychlejší zpracování budoucích odečtů doporučujeme využít <a href="https://zakaznici.epet.cz/login" target="_blank"><b>Zákaznického portálu</b></a>.</p>
 <p class="mt-3 mb-2"><u>Termíny pro nahlášení odečtů pro mimořádné vyúčtování:</u></p>
 <ul class="ps-3 mb-4" style="line-height:1.7;">
-  <li class="mb-2"><b>Elektřina:</b> odečet lze nahlásit k libovolnému datu, musí být však nahlášen <b>do 20
-      kalendářních dnů</b> od provedení odečtu.</li>
-  <li class="mb-0"><b>Plyn:</b> odečet musí být proveden <b>k poslednímu dni v měsíci</b> a nahlášen <b>do 5
-      kalendářních dnů</b>.</li>
+  <li class="mb-2"><b>Elektřina:</b> odečet lze nahlásit k libovolnému datu, musí být však nahlášen <b>do 20 kalendářních dnů</b> od provedení odečtu.</li>
+  <li class="mb-0"><b>Plyn:</b> odečet musí být proveden <b>k poslednímu dni v měsíci</b> a nahlášen <b>do 5 kalendářních dnů</b>.</li>
 </ul>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Samoodečty"]
-},
-"Potvrzení přijetí samoodečtu pro vystavení mimořádné faktury - k 31.12 (ale posílá dříve)": {
+                files: [],
+                tags: ["Samoodečty"]
+        },
+        "Potvrzení přijetí samoodečtu pro vystavení mimořádné faktury - k 31.12 (ale posílá dříve)": {
 text: `${OSLOVENI_BLOCK}
 
-<p class="mb-3">děkujeme za Váš e-mail. K Vašemu dotazu ohledně <b>mimořádného vyúčtování k 31.12.20XX</b> nabízíme dvě
-  možnosti:</p>
+<p class="mb-3">děkujeme za Váš e-mail. K Vašemu dotazu ohledně <b>mimořádného vyúčtování k 31.12.20XX</b> nabízíme dvě možnosti:</p>
 
 <ol class="mb-4 ps-3" style="line-height:1.7;">
-  <li class="mb-2"><b>Vyplnění evidenční tabulky</b> – naleznete ji v příloze tohoto e-mailu. Po vyplnění nám ji prosím
-    zašlete zpět e-mailem, <b>nejpozději do níže uvedených termínů</b>.</li>
+  <li class="mb-2"><b>Vyplnění evidenční tabulky</b> – naleznete ji v příloze tohoto e-mailu. Po vyplnění nám ji prosím zašlete zpět e-mailem, <b>nejpozději do níže uvedených termínů</b>.</li>
   <li class="mb-0"><b>Zadání odečtů</b> prostřednictvím našeho <b>Zákaznického portálu</b>.</li>
 </ol>
 
 <p class="mb-3"><u>Termíny pro nahlášení odečtů pro mimořádné vyúčtování:</u></p>
 
 <ul class="ps-3 mb-4" style="line-height:1.7;">
-  <li class="mb-2"><strong>Elektřina:</strong> odečet lze provést k libovolnému datu, musí být však nahlášen <b>do 20
-      kalendářních dnů</b> od provedení odečtu. Pokud je odečet proveden k 31.12.20XX, nahlášení musí proběhnout
-    <b>nejpozději do 20.01.20XX</b>.</li>
-  <li class="mb-0"><strong>Plyn:</strong> odečet musí být proveden <b>k poslednímu dni v měsíci</b> a nahlášen <b>do 5
-      kalendářních dnů</b> od provedení, tedy <b>nejpozději do 05.01.20XX</b>.</li>
+  <li class="mb-2"><strong>Elektřina:</strong> odečet lze provést k libovolnému datu, musí být však nahlášen <b>do 20 kalendářních dnů</b> od provedení odečtu. Pokud je odečet proveden k 31.12.20XX, nahlášení musí proběhnout <b>nejpozději do 20.01.20XX</b>.</li>
+  <li class="mb-0"><strong>Plyn:</strong> odečet musí být proveden <b>k poslednímu dni v měsíci</b> a nahlášen <b>do 5 kalendářních dnů</b> od provedení, tedy <b>nejpozději do 05.01.20XX</b>.</li>
 </ul>
 
 <p class="mb-2"><u>Pro správné zpracování odečtu v evidenční tabulce doporučujeme vyplnit:</u></p>
@@ -1262,36 +918,26 @@ text: `${OSLOVENI_BLOCK}
   </ul>
 </div>
 
-${PORTAL_BLOCK}`,
-files: [
-{ url:
-'https://docs.google.com/spreadsheets/d/13wHIPy047lL1JOVuEX1phxT_JqE22cHPscAZj9iF1cQ/edit?gid=197074618#gid=197074618',
-name: "ŠABLONA PRO E-MAIL", type: "xls" },
-{ url:
-'https://docs.google.com/spreadsheets/d/1sIB4lRLeYM4HlgxTEkPjxNKA5B3ruKweGZDDM-MMh7s/edit?gid=1283439519#gid=1283439519',
-name: "ŠABLONA PRO PORTÁL", type: "xls" },
-],
-tags: ["Samoodečty"]
-},
-"Potvrzení přijetí samoodečtu pro vystavení mimořádné faktury - Zákazník zadal již do portálu (duplicitní odečet)": {
+${PORTAL_BLOCK}`,  
+                files: [
+                        { url: 'https://docs.google.com/spreadsheets/d/13wHIPy047lL1JOVuEX1phxT_JqE22cHPscAZj9iF1cQ/edit?gid=197074618#gid=197074618', name: "ŠABLONA PRO E-MAIL", type: "xls" },
+                        { url: 'https://docs.google.com/spreadsheets/d/1sIB4lRLeYM4HlgxTEkPjxNKA5B3ruKweGZDDM-MMh7s/edit?gid=1283439519#gid=1283439519', name: "ŠABLONA PRO PORTÁL", type: "xls" },
+                ],
+                tags: ["Samoodečty"]
+        },
+        "Potvrzení přijetí samoodečtu pro vystavení mimořádné faktury - Zákazník zadal již do portálu (duplicitní odečet)": {
 text: `${OSLOVENI_BLOCK}
-<p class="mb-3">děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet jsme zpracovali.
-  Nyní čekáme na schválení dat, abychom mohli následně vystavit fakturu.</p>
-<p class="mb-3">Schvalovací proces může trvat <b>2–3 týdny</b>. Z tohoto důvodu Vás prosíme o trpělivost s vystavením
-  faktury.</p>
-<p class="mb-4">Abychom příště mohli Váš požadavek zpracovat ještě dříve, zasíláme Vám v příloze evidenční tabulku, do
-  které můžete tyto hodnoty vepsat a následně nám ji zaslat e-mailem.
-  Odečty je také možné nahlásit přímo prostřednictvím <a href="https://zakaznici.epet.cz/login"
-    target="_blank"><b>Zákaznického portálu</b></a>.</p>
-<p class="mb-4">Pokud odečty zadáte přímo do portálu a zobrazí se <b>zelená zpráva o úspěšném přijetí</b>, není nutné
-  nás dále kontaktovat ani zasílat údaje e-mailem.
-  Tento stav můžete považovat za potvrzení, že samoodečet byl úspěšně zpracován.</p>
+<p class="mb-3">děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet jsme zpracovali.  
+Nyní čekáme na schválení dat, abychom mohli následně vystavit fakturu.</p>
+<p class="mb-3">Schvalovací proces může trvat <b>2–3 týdny</b>. Z tohoto důvodu Vás prosíme o trpělivost s vystavením faktury.</p>
+<p class="mb-4">Abychom příště mohli Váš požadavek zpracovat ještě dříve, zasíláme Vám v příloze evidenční tabulku, do které můžete tyto hodnoty vepsat a následně nám ji zaslat e-mailem.  
+Odečty je také možné nahlásit přímo prostřednictvím <a href="https://zakaznici.epet.cz/login" target="_blank"><b>Zákaznického portálu</b></a>.</p>
+<p class="mb-4">Pokud odečty zadáte přímo do portálu a zobrazí se <b>zelená zpráva o úspěšném přijetí</b>, není nutné nás dále kontaktovat ani zasílat údaje e-mailem.  
+Tento stav můžete považovat za potvrzení, že samoodečet byl úspěšně zpracován.</p>
 <p class="mt-3 mb-2"><u>Termíny pro nahlášení odečtů pro mimořádné vyúčtování:</u></p>
 <ul class="ps-3 mb-4" style="line-height:1.7;">
-  <li class="mb-2"><b>Elektřina:</b> odečet lze provést k libovolnému datu, musí být však nahlášen <b>do 20 kalendářních
-      dnů</b> od jeho provedení.</li>
-  <li class="mb-0"><b>Plyn:</b> odečet musí být proveden <b>k poslednímu dni v měsíci</b> a nahlášen <b>do 5
-      kalendářních dnů</b>.</li>
+  <li class="mb-2"><b>Elektřina:</b> odečet lze provést k libovolnému datu, musí být však nahlášen <b>do 20 kalendářních dnů</b> od jeho provedení.</li>
+  <li class="mb-0"><b>Plyn:</b> odečet musí být proveden <b>k poslednímu dni v měsíci</b> a nahlášen <b>do 5 kalendářních dnů</b>.</li>
 </ul>
 <p class="mt-4 mb-2"><u>Pro správné zpracování v evidenční tabulce doporučujeme vyplnit:</u></p>
 <p class="mb-2"><strong>Při mimořádném vyúčtování (elektřina i plyn):</strong></p>
@@ -1301,35 +947,25 @@ text: `${OSLOVENI_BLOCK}
   <li class="mb-0"><i>Důvod odečtu (plyn):</i> Mimořádné vyúčtování s DUF</li>
 </ul>
 ${PORTAL_BLOCK}`,
-files: [
-{ url:
-'https://docs.google.com/spreadsheets/d/13wHIPy047lL1JOVuEX1phxT_JqE22cHPscAZj9iF1cQ/edit?gid=197074618#gid=197074618',
-name: "ŠABLONA PRO E-MAIL", type: "xls" },
-{ url:
-'https://docs.google.com/spreadsheets/d/1sIB4lRLeYM4HlgxTEkPjxNKA5B3ruKweGZDDM-MMh7s/edit?gid=1283439519#gid=1283439519',
-name: "ŠABLONA PRO PORTÁL", type: "xls" },
-],
-tags: ["Samoodečty"]
+                files: [
+                        { url: 'https://docs.google.com/spreadsheets/d/13wHIPy047lL1JOVuEX1phxT_JqE22cHPscAZj9iF1cQ/edit?gid=197074618#gid=197074618', name: "ŠABLONA PRO E-MAIL", type: "xls" },
+                        { url: 'https://docs.google.com/spreadsheets/d/1sIB4lRLeYM4HlgxTEkPjxNKA5B3ruKweGZDDM-MMh7s/edit?gid=1283439519#gid=1283439519', name: "ŠABLONA PRO PORTÁL", type: "xls" },
+                ],
+                tags: ["Samoodečty"]
 
-},
-"Potvrzení přijetí samoodečtu - Kontrolní - Zákazník zadal již do portálu (duplicitní odečet)": {
+        },
+        "Potvrzení přijetí samoodečtu - Kontrolní - Zákazník zadal již do portálu (duplicitní odečet)": {
 text: `${OSLOVENI_BLOCK}
-<p class="mb-3">děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet jsme zpracovali
-  jako <b>kontrolní odečet</b>, bez vystavení mimořádné faktury.
-  Odečet bude zohledněn při příští periodické fakturaci.</p>
-<p class="mb-3">Abychom příště mohli Váš požadavek zpracovat ještě dříve, zasíláme Vám v příloze evidenční tabulku, do
-  které můžete tyto hodnoty vepsat a následně nám ji zaslat e-mailem.
-  Odečty měřidel můžete také nahlásit přímo prostřednictvím <a href="https://zakaznici.epet.cz/login"
-    target="_blank"><b>Zákaznického portálu</b></a>.</p>
-<p class="mb-3">Pokud odečty zadáte přímo do portálu a zobrazí se <b>zelená zpráva o úspěšném přijetí</b>, není nutné
-  nás dále kontaktovat ani zasílat údaje e-mailem.
-  Tento stav můžete považovat za potvrzení, že samoodečet byl úspěšně zpracován.</p>
+<p class="mb-3">děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet jsme zpracovali jako <b>kontrolní odečet</b>, bez vystavení mimořádné faktury.  
+Odečet bude zohledněn při příští periodické fakturaci.</p>
+<p class="mb-3">Abychom příště mohli Váš požadavek zpracovat ještě dříve, zasíláme Vám v příloze evidenční tabulku, do které můžete tyto hodnoty vepsat a následně nám ji zaslat e-mailem.  
+Odečty měřidel můžete také nahlásit přímo prostřednictvím <a href="https://zakaznici.epet.cz/login" target="_blank"><b>Zákaznického portálu</b></a>.</p>
+<p class="mb-3">Pokud odečty zadáte přímo do portálu a zobrazí se <b>zelená zpráva o úspěšném přijetí</b>, není nutné nás dále kontaktovat ani zasílat údaje e-mailem.  
+Tento stav můžete považovat za potvrzení, že samoodečet byl úspěšně zpracován.</p>
 <p class="mt-3 mb-2"><u>Termíny pro nahlášení kontrolních odečtů:</u></p>
 <ul class="ps-3 mb-3" style="line-height:1.7;">
-  <li class="mb-2"><b>Elektřina:</b> odečet lze provést k libovolnému datu, musí být však nahlášen <b>do 20 kalendářních
-      dnů</b> od jeho provedení.</li>
-  <li class="mb-0"><b>Plyn:</b> odečet lze provést k libovolnému datu, musí být však nahlášen <b>do 14 kalendářních
-      dnů</b>.</li>
+  <li class="mb-2"><b>Elektřina:</b> odečet lze provést k libovolnému datu, musí být však nahlášen <b>do 20 kalendářních dnů</b> od jeho provedení.</li>
+  <li class="mb-0"><b>Plyn:</b> odečet lze provést k libovolnému datu, musí být však nahlášen <b>do 14 kalendářních dnů</b>.</li>
 </ul>
 <p class="mt-4 mb-2"><u>Pro správné zpracování odečtu v tabulce doporučujeme vyplnit:</u></p>
 <p class="mb-2"><strong>Při hlášení kontrolního odečtu (pro elektřinu i plyn):</strong></p>
@@ -1337,229 +973,177 @@ text: `${OSLOVENI_BLOCK}
   <li class="mb-2"><i>Typ odečtu:</i> Samoodečet</li>
   <li class="mb-0"><i>Důvod odečtu:</i> Kontrolní</li>
 </ul>
-${PORTAL_BLOCK}`,
-files: [
-{ url:
-'https://docs.google.com/spreadsheets/d/13wHIPy047lL1JOVuEX1phxT_JqE22cHPscAZj9iF1cQ/edit?gid=197074618#gid=197074618',
-name: "ŠABLONA PRO E-MAIL", type: "xls" },
-{ url:
-'https://docs.google.com/spreadsheets/d/1sIB4lRLeYM4HlgxTEkPjxNKA5B3ruKweGZDDM-MMh7s/edit?gid=1283439519#gid=1283439519',
-name: "ŠABLONA PRO PORTÁL", type: "xls" },
-],
-tags: ["Samoodečty"]
-},
-"Potvrzení přijetí samoodečtu pro vystavení konečného vyúčtování (po ukončení smlouvy)": {
-text: `${OSLOVENI_BLOCK}
-<p>děkujeme Vám za zaslání konečného samoodečtu. Tímto potvrzujeme jeho přijetí a nyní čekáme na schválení dat ze strany
-  distributora.</p>
+${PORTAL_BLOCK}`, 
+                files: [
+                        { url: 'https://docs.google.com/spreadsheets/d/13wHIPy047lL1JOVuEX1phxT_JqE22cHPscAZj9iF1cQ/edit?gid=197074618#gid=197074618', name: "ŠABLONA PRO E-MAIL", type: "xls" },
+                        { url: 'https://docs.google.com/spreadsheets/d/1sIB4lRLeYM4HlgxTEkPjxNKA5B3ruKweGZDDM-MMh7s/edit?gid=1283439519#gid=1283439519', name: "ŠABLONA PRO PORTÁL", type: "xls" },
+                ],
+                tags: ["Samoodečty"]
+        },
+        "Potvrzení přijetí samoodečtu pro vystavení konečného vyúčtování (po ukončení smlouvy)": {
+                text: `${OSLOVENI_BLOCK}
+<p>děkujeme Vám za zaslání konečného samoodečtu. Tímto potvrzujeme jeho přijetí a nyní čekáme na schválení dat ze strany distributora.</p>
 <p>Tento schvalovací proces může trvat 2-3 týdny. Z tohoto důvodu Vás prosíme o trpělivost s vystavením faktury. </p>
 ${PORTAL_BLOCK}`,
-files: []
-,
-tags: ["Samoodečty"]
-},
-"Potvrzení přijetí samoodečtu pro vystavení konečného vyúčtování -(zákazník stavy hlásí ještě před termínem ukončení
-smlouvy)": {
-text: `${OSLOVENI_BLOCK}
+                files: []
+                ,
+                tags: ["Samoodečty"]
+        },
+        "Potvrzení přijetí samoodečtu pro vystavení konečného vyúčtování -(zákazník stavy hlásí ještě před termínem ukončení smlouvy)": {
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme Vám za nahlášení samoodečtu ke konečné faktuře.</p>
-<p>Dovolujeme si Vás informovat, že Vaše smlouva bude ukončena k <b> termín ukončení </b>. Z tohoto důvodu je možné
-  zadat stav samoodečtu až po tomto datu, a to nejpozději do <b> uvedeme termín do kdy stav může nahlásit (5 dní od
-    ukončení smlouvy) </b> </p>
-<p>Prosíme Vás tedy o nahlášení samoodečtu v uvedeném termínu, aby mohla být konečná faktura vystavena s odpovídající
-  spotřebou. Případně Vás žádáme, abyste si odečty měřidel nově hlásili prostřednictvím <a
-    href="https://zakaznici.epet.cz/login" target="_blank">Zákaznického portálu</a></p>
-</p>
+<p>Dovolujeme si Vás informovat, že Vaše smlouva bude ukončena k <b> termín ukončení </b>. Z tohoto důvodu je možné zadat stav samoodečtu až po tomto datu, a to nejpozději do <b> uvedeme termín do kdy stav může nahlásit (5 dní od ukončení smlouvy) </b> </p>
+<p>Prosíme Vás tedy o nahlášení samoodečtu v uvedeném termínu, aby mohla být konečná faktura vystavena s odpovídající spotřebou. Případně Vás žádáme, abyste si odečty měřidel nově hlásili prostřednictvím <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznického portálu</a></p> </p>
 ${PORTAL_BLOCK}`,
-files: []
-,
-tags: ["Samoodečty"]
-},
-"Potvrzení přijetí samoodečtu pro vystavení konečného vyúčtování - Zákazník zadal již do portálu (duplicitní odečet)": {
-text: `${OSLOVENI_BLOCK}
-<p>děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet jsme zpracovali. Nyní čekáme na
-  schválení dat, abychom mohli následně vystavit fakturu.</p>
-<p>Tento schvalovací proces může trvat 2-3 týdny. Z tohoto důvodu Vás prosíme o trpělivost s vystavením faktury.
-<p>Pokud odečty zadáte přímo prostřednictvím tohoto portálu a zobrazí se zelená zpráva o úspěšném přijetí, není nutné
-  nás dále informovat ani zasílat údaje e-mailem. Tento stav můžete považovat za potvrzení, že samoodečet byl úspěšně
-  zpracován.</p>
+                files: []
+                ,
+                tags: ["Samoodečty"]
+        },
+        "Potvrzení přijetí samoodečtu pro vystavení konečného vyúčtování - Zákazník zadal již do portálu (duplicitní odečet)": {
+                text: `${OSLOVENI_BLOCK}
+<p>děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet jsme zpracovali. Nyní čekáme na schválení dat, abychom mohli následně vystavit fakturu.</p>
+<p>Tento schvalovací proces může trvat 2-3 týdny. Z tohoto důvodu Vás prosíme o trpělivost s vystavením faktury. 
+<p>Pokud odečty zadáte přímo prostřednictvím tohoto portálu a zobrazí se zelená zpráva o úspěšném přijetí, není nutné nás dále informovat ani zasílat údaje e-mailem. Tento stav můžete považovat za potvrzení, že samoodečet byl úspěšně zpracován.</p>
 ${PORTAL_BLOCK}`,
-files: [
-{ url:
-'https://docs.google.com/spreadsheets/d/13wHIPy047lL1JOVuEX1phxT_JqE22cHPscAZj9iF1cQ/edit?gid=197074618#gid=197074618',
-name: "ŠABLONA PRO E-MAIL", type: "xls" },
-{ url:
-'https://docs.google.com/spreadsheets/d/1sIB4lRLeYM4HlgxTEkPjxNKA5B3ruKweGZDDM-MMh7s/edit?gid=1283439519#gid=1283439519',
-name: "ŠABLONA PRO PORTÁL", type: "xls" },
-],
-tags: ["Samoodečty"]
-},
-"Potvrzení přijetí samoodečtu k aktivaci smlouvy": {
-text: `${OSLOVENI_BLOCK}
-<p>děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet k aktivaci smlouvy jsme
-  zpracovali.Tímto potvrzujeme jeho přijetí a zaevidování jako počáteční stav. Upozorňujeme, že na základě tohoto
-  samoodečtu nedochází k vystavení faktury. Tento stav však bude zohledněn při řádné periodické fakturaci.</p>
+                files: [
+                        { url: 'https://docs.google.com/spreadsheets/d/13wHIPy047lL1JOVuEX1phxT_JqE22cHPscAZj9iF1cQ/edit?gid=197074618#gid=197074618', name: "ŠABLONA PRO E-MAIL", type: "xls" },
+                        { url: 'https://docs.google.com/spreadsheets/d/1sIB4lRLeYM4HlgxTEkPjxNKA5B3ruKweGZDDM-MMh7s/edit?gid=1283439519#gid=1283439519', name: "ŠABLONA PRO PORTÁL", type: "xls" },
+                ],
+                tags: ["Samoodečty"]
+        },
+        "Potvrzení přijetí samoodečtu k aktivaci smlouvy": {
+                text: `${OSLOVENI_BLOCK}
+<p>děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet k aktivaci smlouvy jsme zpracovali.Tímto potvrzujeme jeho přijetí a zaevidování jako počáteční stav. Upozorňujeme, že na základě tohoto samoodečtu nedochází  k vystavení faktury. Tento stav však bude zohledněn při řádné periodické fakturaci.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Samoodečty"]
-},
-"Potvrzení přijetí samoodečtu k aktivaci smlouvy - Zákazník zadal již do portálu (duplicitní odečet)": {
-text: `${OSLOVENI_BLOCK}
-<p>děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet k aktivaci smlouvy jsme
-  zpracovali.Tímto potvrzujeme jeho přijetí a zaevidování jako počáteční stav. Upozorňujeme, že na základě tohoto
-  samoodečtu nedochází k vystavení faktury. Tento stav však bude zohledněn při řádné periodické fakturaci.</p>
-<p>Pokud odečty zadáte přímo prostřednictvím zákaznického portálu a zobrazí se zelená zpráva o úspěšném přijetí, není
-  nutné nás dále informovat ani zasílat údaje e-mailem. Tento stav můžete považovat za potvrzení, že samoodečet byl
-  úspěšně zpracován.</p>
+                files: [],
+                tags: ["Samoodečty"]
+        },
+        "Potvrzení přijetí samoodečtu k aktivaci smlouvy - Zákazník zadal již do portálu (duplicitní odečet)": {
+                text: `${OSLOVENI_BLOCK}
+<p>děkujeme Vám za sdělení odečtových hodnot Vašeho měřidla. Váš požadavek na samoodečet k aktivaci smlouvy jsme zpracovali.Tímto potvrzujeme jeho přijetí a zaevidování jako počáteční stav. Upozorňujeme, že na základě tohoto samoodečtu nedochází  k vystavení faktury. Tento stav však bude zohledněn při řádné periodické fakturaci.</p>
+<p>Pokud odečty zadáte přímo prostřednictvím zákaznického portálu a zobrazí se zelená zpráva o úspěšném přijetí, není nutné nás dále informovat ani zasílat údaje e-mailem. Tento stav můžete považovat za potvrzení, že samoodečet byl úspěšně zpracován.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Samoodečty"]
-},
-"Zamítnutí samoodečtů - Z důvodu překročení limitu 10 samoodečtů v rámci roku": {
+                files: [],
+                tags: ["Samoodečty"]
+        },
+        "Zamítnutí samoodečtů - Z důvodu překročení limitu 10 samoodečtů v rámci roku": {
 text: `${OSLOVENI_BLOCK}
 <p class="mb-2">děkujeme za Váš požadavek na zadání samoodečtu.</p>
-<p class="mb-2">U daného odběrného místa již v tomto kalendářním roce nelze přijmout další běžný samoodečet, protože byl
-  vyčerpán roční limit <b>10 samoodečtů.</b></p>
-<p class="mb-2">Současně připomínáme, že v rámci roku lze zadat ještě jeden mimořádný samoodečet k <b>31. 12. – tedy k
-    31. 12. 20XX.</b> Ten můžete zadat standardním způsobem (stejným kanálem, jako obvykle), a bude použit pro uzavření
-  roku.</p>
+<p class="mb-2">U daného odběrného místa již v tomto kalendářním roce nelze přijmout další běžný samoodečet, protože byl vyčerpán roční limit <b>10 samoodečtů.</b></p>
+<p class="mb-2">Současně připomínáme, že v rámci roku lze zadat ještě jeden mimořádný samoodečet k <b>31. 12. – tedy k 31. 12. 20XX.</b> Ten můžete zadat standardním způsobem (stejným kanálem, jako obvykle), a bude použit pro uzavření roku.</p>
 <p class="mb-1"><b>Praktické doporučení</b></p>
-<p class="mb-2">Aby nedocházelo k duplicitám a zbytečnému „vyčerpání“ limitu, <b>nedoporučujeme hlásit samoodečet v
-    měsíci, kdy má distributor plánovaný řádný odečet</b>.</p>
+<p class="mb-2">Aby nedocházelo k duplicitám a zbytečnému „vyčerpání“ limitu, <b>nedoporučujeme hlásit samoodečet v měsíci, kdy má distributor plánovaný řádný odečet</b>.</p>
 <ul class="ps-3 mb-2" style="line-height:1.6;">
-  <li class="mb-2"><b>Proč:</b> Řádný odečet distributora je pro vyúčtování nadřazený a nahradí samoodečet; nahlášení
-    stavu ve stejném měsíci Vám tak nepřinese výhodu a může být zamítnuto jako duplicitní. A tím dojde k vyčerpání jeho
-    limitu.</li>
-  <li class="mb-2"><b>Příklad:</b> Pokud víte, že distributor provádí řádný odečet v <i>dubnu</i>, samoodečet v dubnu
-    neposílejte. Stav případně nahlaste v <i>březnu</i> nebo <i>květnu</i>.</li>
+  <li class="mb-2"><b>Proč:</b> Řádný odečet distributora je pro vyúčtování nadřazený a nahradí samoodečet; nahlášení stavu ve stejném měsíci Vám tak nepřinese výhodu a může být zamítnuto jako duplicitní. A tím dojde k vyčerpání jeho limitu.</li>
+  <li class="mb-2"><b>Příklad:</b> Pokud víte, že distributor provádí řádný odečet v <i>dubnu</i>, samoodečet v dubnu neposílejte. Stav případně nahlaste v <i>březnu</i> nebo <i>květnu</i>.</li>
 </ul>
 <p class="mb-2">Tento princip platí jak u elektřiny, tak u plynu.</p>
 <p class="mb-2">Děkujeme za pochopení a spolupráci.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Samoodečty"]
-},
+                files: [],
+                tags: ["Samoodečty"]
+        },
 /* Reklamace */
 "Potvrzení přijetí reklamace": {
-text: `${OSLOVENI_BLOCK}
+    text: `${OSLOVENI_BLOCK}
 <p>potvrzujeme Vám tímto přijetí Vaší reklamace, jejíž obsah je blíže specifikován níže.</p>
 <p>U Vaší reklamace evidujeme následující údaje:</p>
-<p>Datum přijetí reklamace: <strong>DD. MM. RRRR</strong></p>
+<p>Datum přijetí reklamace: <strong>{DD. MM. RRRR}</strong></p>
 <p>Důvod reklamace: <strong>{zde doplnit, co zákazník reklamuje a z jakého důvodu}</strong></p>
-<p>Dovolujeme si Vás informovat, že reklamaci nyní řešíme. Jakmile budeme mít k dispozici vyjádření o výsledku šetření,
-  budeme Vás informovat, nejpozději však do 15 dnů od potvrzeného data přijetí veškerých potřebných informací.</p>
-<p>V případě, že bude reklamace předána provozovateli distribuční soustavy k posouzení, lhůta pro její vyřízení se
-  pozastavuje po dobu řešení na straně provozovatele.</p>
-<p><strong>Dále si Vás dovolujeme upozornit, že reklamace nemá odkladný účinek na splatnost vyúčtovaných plateb ani
-    záloh dle smlouvy. Stávající vyúčtované platby či zálohy je tedy nutné i přes podanou reklamaci uhradit.</strong>
-</p>
+<p>Dovolujeme si Vás informovat, že reklamaci nyní řešíme. Jakmile budeme mít k dispozici vyjádření o výsledku šetření, budeme Vás informovat, nejpozději však do 15 dnů od potvrzeného data přijetí veškerých potřebných informací.</p>
+<p>V případě, že bude reklamace předána provozovateli distribuční soustavy k posouzení, lhůta pro její vyřízení se pozastavuje po dobu řešení na straně provozovatele.</p>
+<p><strong>Dále si Vás dovolujeme upozornit, že reklamace nemá odkladný účinek na splatnost vyúčtovaných plateb ani záloh dle smlouvy. Stávající vyúčtované platby či zálohy je tedy nutné i přes podanou reklamaci uhradit.</strong></p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Reklamace"]
+    files: [],
+    tags: ["Reklamace"]
 },
+
 "Potvrzení přijetí reklamace – nekompletní podklady": {
-text: `${OSLOVENI_BLOCK}
+    text: `${OSLOVENI_BLOCK}
 <p>potvrzujeme Vám tímto přijetí Vaší reklamace, jejíž obsah je blíže specifikován níže.</p>
 <p>U Vaší reklamace evidujeme následující údaje:</p>
-<p>Datum přijetí/uplatnění reklamace: <strong>DD. MM. RRRR</strong></p>
+<p>Datum přijetí/uplatnění reklamace: <strong>{DD. MM. RRRR}</strong></p>
 <p>Důvod reklamace: <strong>{zde doplnit důvod reklamace}</strong></p>
 <p>Abychom se mohli Vaší reklamací zabývat, potřebujeme z Vaší strany doložit následující podklady:</p>
-<p><strong>{ zde uvést, co je potřeba od zákazníka doložit pro kompletní reklamaci}</strong></p>
-<p>V této souvislosti bychom Vás rádi upozornili, že dokud neobdržíme chybějící podklady potřebné ke kompletnímu
-  posouzení reklamace, nebude reklamace z naší strany dále řešena a zároveň neběží lhůta pro její vyřízení.</p>
+<p><strong>{zde uvést, co je potřeba od zákazníka doložit pro kompletní reklamaci}</strong></p>
+<p>V této souvislosti bychom Vás rádi upozornili, že dokud neobdržíme chybějící podklady potřebné ke kompletnímu posouzení reklamace, nebude reklamace z naší strany dále řešena a zároveň neběží lhůta pro její vyřízení.</p>
 <p>Lhůta pro vyřízení reklamace začne běžet až po doložení výše požadovaných dokumentů či informací.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Reklamace"]
+    files: [],
+    tags: ["Reklamace"]
 },
+
 "Uzavření reklamace – oprávněná": {
-text: `${OSLOVENI_BLOCK}
-<p>reagujeme tímto na Vaši reklamaci, kterou jsme přijali dne <strong>DD. MM. RRRR</strong>, týkající se <strong>{zde
-    doplnit důvod reklamace}</strong>.</p>
+    text: `${OSLOVENI_BLOCK}
+<p>reagujeme tímto na Vaši reklamaci, kterou jsme přijali dne <strong>{DD. MM. RRRR}</strong>, týkající se <strong>{zde doplnit důvod reklamace}</strong>.</p>
 <p>Vaši reklamaci jsme z naší strany důkladně prošetřili, vyhodnotili a k dnešnímu dni ji uzavíráme jako oprávněnou.</p>
-<p>Dovolujeme si Vás informovat, že opravnou fakturu Vám vystavíme a zašleme v nejbližších dnech, a to na {Váš e-mail /
-  na Vaši doručovací adresu}.</p>
+<p>Dovolujeme si Vás informovat, že opravnou fakturu Vám vystavíme a zašleme v nejbližších dnech, a to na <strong>{Váš e-mail / Vaši doručovací adresu}</strong>.</p>
 <p>Omlouváme se za případné komplikace a děkujeme za pochopení.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Reklamace"]
+    files: [],
+    tags: ["Reklamace"]
 },
+
 "Uzavření reklamace – neoprávněná": {
-text: `${OSLOVENI_BLOCK}
-<p>reagujeme tímto na Vaši reklamaci, kterou jsme přijali dne <strong>DD. MM. RRRR</strong>, týkající se <strong>zde
-    doplnit důvod reklamace</strong>.</p>
-<p>Vaši reklamaci jsme z naší strany důkladně prošetřili, vyhodnotili a k dnešnímu dni ji uzavíráme jako neoprávněnou.
-</p>
+    text: `${OSLOVENI_BLOCK}
+<p>reagujeme tímto na Vaši reklamaci, kterou jsme přijali dne <strong>{DD. MM. RRRR}</strong>, týkající se <strong>{zde doplnit důvod reklamace}</strong>.</p>
+<p>Vaši reklamaci jsme z naší strany důkladně prošetřili, vyhodnotili a k dnešnímu dni ji uzavíráme jako neoprávněnou.</p>
 <p>Důvodem zamítnutí reklamace je: <strong>{zde uvést důvod zamítnutí reklamace}</strong>.</p>
-<p>Zákazníci, kteří jsou spotřebiteli ve smyslu § 419 zákona č. 89/2012 Sb., občanský zákoník, se mohou v souladu s § 17
-  odst. 7 písm. e) zákona č. 458/2000 Sb., energetický zákon, ve znění pozdějších předpisů, v případě vzniklého sporu
-  obracet na Energetický regulační úřad (<a href="https://eru.gov.cz/" target="_blank"
-    rel="noopener noreferrer">www.eru.cz</a>), jakožto orgán mimosoudního řešení sporů v oblasti energetiky.</p>
-<p>Energetický regulační úřad může rozhodnout spor mezi zákazníkem a společností EP ENERGY TRADING, a.s., o splnění
-  povinností z uzavřené smlouvy, jejímž předmětem je dodávka nebo distribuce elektřiny nebo plynu, a dále spor o určení,
-  zda taková smlouva vznikla, trvá, nebo zanikla, a kdy se tak stalo.</p>
+<p>Zákazníci, kteří jsou spotřebiteli ve smyslu § 419 zákona č. 89/2012 Sb., občanský zákoník, se mohou v souladu s § 17 odst. 7 písm. e) zákona č. 458/2000 Sb., energetický zákon, ve znění pozdějších předpisů, v případě vzniklého sporu obracet na Energetický regulační úřad (<a href="https://eru.gov.cz/" target="_blank" rel="noopener noreferrer">www.eru.cz</a>), jakožto orgán mimosoudního řešení sporů v oblasti energetiky.</p>
+<p>Energetický regulační úřad může rozhodnout spor mezi zákazníkem a společností EP ENERGY TRADING, a.s., o splnění povinností z uzavřené smlouvy, jejímž předmětem je dodávka nebo distribuce elektřiny nebo plynu, a dále spor o určení, zda taková smlouva vznikla, trvá, nebo zanikla, a kdy se tak stalo.</p>
 <p>Děkujeme za pochopení a omlouváme se za případné komplikace, které Vám tato situace mohla způsobit.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Reklamace"]
+    files: [],
+    tags: ["Reklamace"]
 },
+
 "Výzva k doložení podkladů pro zpracování reklamace": {
-text: `${OSLOVENI_BLOCK}
-<p>obdrželi jsme od Vás dne <strong>{DD. MM. RRRR}</strong> požadavek na reklamaci vyúčtování. Následně jsme Vás
-  požádali o doplnění podkladů, aby bylo možné reklamaci řádně posoudit a vyřídit.</p>
-<p>Konkrétně Vás prosíme o doložení: <strong>{zde uvést požadované podklady}</strong>, a to z důvodu: <strong>{zde uvést
-    důvod požadavku na doložení}</strong>.</p>
+    text: `${OSLOVENI_BLOCK}
+<p>obdrželi jsme od Vás dne <strong>{DD. MM. RRRR}</strong> požadavek na reklamaci vyúčtování. Následně jsme Vás požádali o doplnění podkladů, aby bylo možné reklamaci řádně posoudit a vyřídit.</p>
+<p>Konkrétně Vás prosíme o doložení: <strong>{zde uvést požadované podklady}</strong>, a to z důvodu: <strong>{zde uvést důvod požadavku na doložení}</strong>.</p>
 <p>Vše potřebné nám prosím zašlete nejpozději do <strong>{DD. MM. RRRR}</strong>.</p>
-<p>V případě, že požadovanou dokumentaci do výše uvedeného termínu neobdržíme, nebude možné Váš požadavek dále vyřídit a
-  situace bude z naší strany považována za uzavřenou.</p>
+<p>V případě, že požadovanou dokumentaci do výše uvedeného termínu neobdržíme, nebude možné Váš požadavek dále vyřídit a situace bude z naší strany považována za uzavřenou.</p>
 <p>Děkujeme za pochopení.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Reklamace"]
+    files: [],
+    tags: ["Reklamace"]
 },
+
 "Uzavření požadavku pro nedoplnění požadovaných podkladů": {
-text: `${OSLOVENI_BLOCK}
-<p>obdrželi jsme od Vás dne <strong>{DD. MM. RRRR}</strong> požadavek na reklamaci vyúčtování. Následně jsme Vás
-  požádali o doplnění podkladů, aby bylo možné reklamaci řádně posoudit a vyřídit.</p>
-<p>Tímto Vás informujeme, že Váš požadavek na reklamaci uzavíráme jako neoprávněný, jelikož jsme k němu neobdrželi
-  všechny potřebné podklady a informace, a to i přes opakované urgence.</p>
-<p>Pokud budete mít zájem reklamaci znovu uplatnit, prosíme o zaslání nového požadavku, včetně všech potřebných
-  podkladů.</p>
+    text: `${OSLOVENI_BLOCK}
+<p>obdrželi jsme od Vás dne <strong>{DD. MM. RRRR}</strong> požadavek na reklamaci vyúčtování. Následně jsme Vás požádali o doplnění podkladů, aby bylo možné reklamaci řádně posoudit a vyřídit.</p>
+<p>Tímto Vás informujeme, že Váš požadavek na reklamaci uzavíráme jako neoprávněný, jelikož jsme k němu neobdrželi všechny potřebné podklady a informace, a to i přes opakované urgence.</p>
+<p>Pokud budete mít zájem reklamaci znovu uplatnit, prosíme o zaslání nového požadavku, včetně všech potřebných podkladů.</p>
 <p>Děkujeme Vám za pochopení.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Reklamace"]
+    files: [],
+    tags: ["Reklamace"]
 },
+
 "Pozastavení reklamace – předání na distribuci": {
-text: `${OSLOVENI_BLOCK}
-<p>obdrželi jsme od Vás dne <strong>{DD. MM. RRRR}</strong> požadavek na reklamaci týkající se <strong>{zde doplnit
-    důvod reklamace}</strong>.</p>
-<p>Rádi bychom Vás touto cestou informovali, že jsme reklamaci předali příslušnému distributorovi, který má nyní
-  <strong>{60 dní}</strong> na její posouzení.</p>
-<p>Naše lhůta pro vyřízení reklamace se během této doby pozastavuje a začne znovu běžet až po obdržení vyjádření od
-  distributora.</p>
+    text: `${OSLOVENI_BLOCK}
+<p>obdrželi jsme od Vás dne <strong>{DD. MM. RRRR}</strong> požadavek na reklamaci týkající se <strong>{zde doplnit důvod reklamace}</strong>.</p>
+<p>Rádi bychom Vás touto cestou informovali, že jsme reklamaci předali příslušnému distributorovi, který má nyní <strong>{60 dní}</strong> na její posouzení.</p>
+<p>Naše lhůta pro vyřízení reklamace se během této doby pozastavuje a začne znovu běžet až po obdržení vyjádření od distributora.</p>
 <p>Děkujeme Vám za pochopení.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Reklamace"]
+    files: [],
+    tags: ["Reklamace"]
 },
-/* Dědické řízení */
-"Informace k doložení dokladů po úmrtí odběratele": {
-text: `${OSLOVENI_BLOCK}
-<p>je nám líto, že řešíte tuto smutnou událost. Abychom mohli provést potřebné změny na zákaznickém účtu, budeme
-  potřebovat jistou součinnost.</p>
-<p>Zejména je důležité nám doručit <strong>kopii úmrtního listu</strong> a <strong>usnesení z dědického řízení.</strong>
-</p>
-<p>Je také potřebné, abyste nám sdělili, na koho bude odběrné místo přepsáno, nebo zda budete odběrné místo ukončovat s
-  demontáží měřidla.</p>
+        /* Dědické řízení */
+        "Informace k doložení dokladů po úmrtí odběratele": {
+                text: `${OSLOVENI_BLOCK}
+<p>je nám líto, že řešíte tuto smutnou událost. Abychom mohli provést potřebné změny na zákaznickém účtu, budeme potřebovat jistou součinnost.</p>
+<p>Zejména je důležité nám doručit <strong>kopii úmrtního listu</strong> a <strong>usnesení z dědického řízení.</strong></p>
+<p>Je také potřebné, abyste nám sdělili, na koho bude odběrné místo přepsáno, nebo zda budete odběrné místo ukončovat s demontáží měřidla.</p>
 <p>Děkujeme za Vaší součinnost.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Dědické řízení"]
-},
-"Dědické řízení - urgence (pro doložení usnesení)": {
-text: `${OSLOVENI_BLOCK}
-<p>je nám líto, že jste musel/a řešit tuto smutnou událost. Abychom mohli provést potřebné změny na zákaznickém účtu,
-  budeme potřebovat Vaši součinnost.</p>
+                files: [],
+                tags: ["Dědické řízení"]
+        },
+ "Dědické řízení - urgence (pro doložení usnesení)": { 
+  text: `${OSLOVENI_BLOCK}
+<p>je nám líto, že jste musel/a řešit tuto smutnou událost. Abychom mohli provést potřebné změny na zákaznickém účtu, budeme potřebovat Vaši součinnost.</p>
 <p>Zejména je důležité, abyste nám doručil/a:</p>
 <ul>
   <li>kopii <strong>úmrtního listu</strong></li>
@@ -1571,264 +1155,229 @@ text: `${OSLOVENI_BLOCK}
   <li>přepsání odběrného místa na nového odběratele, nebo</li>
   <li>ukončení odběrného místa s demontáží měřidla.</li>
 </ul>
-<p>V případě <em>přepisu odběrného místa</em> můžete využít tento <a
-    href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank"
-    title="On-line formulář pro přepis odběrného místa" rel="noopener noreferrer">odkaz</a></p>
+<p>V případě <em>přepisu odběrného místa</em> můžete využít tento  <a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank" title="On-line formulář pro přepis odběrného místa" rel="noopener noreferrer">odkaz</a></p>
 <p>Děkujeme za Vaší součinnost.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Dědické řízení"]
+  files: [],
+  tags: ["Dědické řízení"]
 },
-"Dědické řízení – Vyplacení přeplatku na bankovní účet – žádost o doplnění dokumentu (pot. dědic/dědic žádá o přeplatek
-na BÚ)": {
-"text": `
-${OSLOVENI_BLOCK}
-<p>děkujeme Vám za zaslané dokumenty týkající se úmrtí pana/paní <strong>{{jmeno_zemreleho}}</strong>.
-  Na základě doloženého usnesení z dědického řízení evidujeme, že oprávněným dědicem je
-  <strong>{{jmeno_dedice}}</strong>.
-</p>
-<p>Na zákaznickém účtu zesnulého evidujeme přeplatek ve výši <strong>{{vyse_preplatku}} Kč</strong>,
-  který je možné vyplatit.</p>
-<p>Protože si přejete, aby byl přeplatek vyplacen na bankovní účet
-  <strong>{{cislo_uctu}}</strong>, je nutné doložit <strong>čestné prohlášení</strong>.
-  Tento dokument slouží jako potvrzení a souhlas dědice s vyplacením přeplatku na uvedený účet.
-</p>
-<p>U podpisu na čestném prohlášení je nutné <strong>úřední ověření podpisu</strong> – lze provést
-  na Czech POINTu (pošta, obecní úřad, matrika) nebo u notáře.</p>
-<p>Vyplněné a ověřené čestné prohlášení nám prosím zašlete:</p>
-<ul>
-  <li>e-mailem na adresu <strong>info@epet.cz</strong>, nebo</li>
-  <li>poštou na adresu: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong></li>
-</ul>
-<p>Jakmile obdržíme kompletní dokumentaci, zajistíme vyplacení přeplatku na uvedený účet.</p>
-${PORTAL_BLOCK}`,
-"files": [
+"Dědické řízení – Vyplacení přeplatku na bankovní účet – žádost o doplnění dokumentu (pot. dědic/dědic žádá o přeplatek na BÚ)": {
+  "text": `
+    ${OSLOVENI_BLOCK}
+    <p>děkujeme Vám za zaslané dokumenty týkající se úmrtí pana/paní <strong>{{jmeno_zemreleho}}</strong>. 
+    Na základě doloženého usnesení z dědického řízení evidujeme, že oprávněným dědicem je 
+    <strong>{{jmeno_dedice}}</strong>.</p>
+    <p>Na zákaznickém účtu zesnulého evidujeme přeplatek ve výši <strong>{{vyse_preplatku}} Kč</strong>, 
+    který je možné vyplatit.</p>
+    <p>Protože si přejete, aby byl přeplatek vyplacen na bankovní účet 
+    <strong>{{cislo_uctu}}</strong>, je nutné doložit <strong>čestné prohlášení</strong>. 
+    Tento dokument slouží jako potvrzení a souhlas dědice s vyplacením přeplatku na uvedený účet.</p>
+    <p>U podpisu na čestném prohlášení je nutné <strong>úřední ověření podpisu</strong> – lze provést 
+    na Czech POINTu (pošta, obecní úřad, matrika) nebo u notáře.</p>
+    <p>Vyplněné a ověřené čestné prohlášení nám prosím zašlete:</p>
+    <ul>
+      <li>e-mailem na adresu <strong>info@epet.cz</strong>, nebo</li>
+      <li>poštou na adresu: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong></li>
+    </ul>
+    <p>Jakmile obdržíme kompletní dokumentaci, zajistíme vyplacení přeplatku na uvedený účet.</p>
+  ${PORTAL_BLOCK}`,
+        "files": [
+    {
+      "url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
+      "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+      "type": "pdf", brand: "epet"
+    },
 {
-"url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
-"name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
-"type": "pdf", brand: "epet"
+  url: "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link",
+  name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+  type: "pdf",
+  brand: "de"
 },
-{
-url: "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link",
-name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
-type: "pdf",
-brand: "de"
-},
-{
-"url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
-"name": "ČP - Souhlas s nevyplacením přeplatku",
-"type": "pdf", brand: "de"
-},
-{
-"url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
-"name": "ČP - Souhlas s nevyplacením přeplatku",
-"type": "pdf", brand: "epet"
-}
-],
-"tags": ["Dědické řízení"]
+    {
+      "url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
+      "name": "ČP - Souhlas s nevyplacením přeplatku",
+      "type": "pdf", brand: "de"
+    },
+    {
+      "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
+      "name": "ČP - Souhlas s nevyplacením přeplatku",
+      "type": "pdf", brand: "epet"
+    }
+  ],
+  "tags": ["Dědické řízení"]
 },
 "Potvrzení přijetí dokumentů": {
-text: `${OSLOVENI_BLOCK}
-<p>potvrzujeme přijetí Vašich podkladů, které jsme předali ke zpracování. Po ukončení smlouvy a dodávek do odběrného
-  místa Vám bude vystavena konečná faktura. Přeplatky nebo nedoplatky budou řešeny s osobou oprávněnou dle rozhodnutí o
-  dědickém řízení.</p>
+  text: `${OSLOVENI_BLOCK}
+<p>potvrzujeme přijetí Vašich podkladů, které jsme předali ke zpracování. Po ukončení smlouvy a dodávek do odběrného místa Vám bude vystavena konečná faktura. Přeplatky nebo nedoplatky budou řešeny s osobou oprávněnou dle rozhodnutí o dědickém řízení.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Dědické řízení", "Přepisy"]
+  files: [],
+  tags: ["Dědické řízení", "Přepisy"]
 },
 
 "Zákazník doložil veškeré dokumenty k vyplacení přeplatku - úkol předán na finance": {
-text: `${OSLOVENI_BLOCK}
+  text: `${OSLOVENI_BLOCK}
 <p>děkujeme za zaslání požadovaných dokumentů. Vaše podklady jsme předali příslušnému oddělení k dalšímu zpracování.</p>
 <p>Jakmile dojde k vyplacení přeplatku, budeme Vás o této skutečnosti bezodkladně informovat.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Dědické řízení"]
+  files: [],
+  tags: ["Dědické řízení"]
 },
 
 "Zákazník doložil usnesení, ale je v něm uvedeno více dědiců a zk. si přeje vyplatit přeplatek na jednotnÝ BÚ": {
-text: `${OSLOVENI_BLOCK}
+  text: `${OSLOVENI_BLOCK}
 <p>děkujeme za zaslání usnesení o dědictví. Vážíme si Vaší spolupráce.</p>
-<p>V e-mailu uvádíte, že si přejete přeplatek vyplatit na konkrétní bankovní účet. Abychom mohli tento krok uskutečnit,
-  je nutné vyplnit a podepsat čestné prohlášení, které přikládáme v příloze tohoto e-mailu.</p>
+<p>V e-mailu uvádíte, že si přejete přeplatek vyplatit na konkrétní bankovní účet. Abychom mohli tento krok uskutečnit, je nutné vyplnit a podepsat čestné prohlášení, které přikládáme v příloze tohoto e-mailu.</p>
 <ul>
   <li>Toto prohlášení musí podepsat všichni dědicové uvedení v usnesení.</li>
-  <li>Jelikož jsou v usnesení [<b>uvést počet dědiců </b>] dědiců/dědicové, je nutné zaslat toto čestné prohlášení ve
-    [<b> počet kopii čp</b>] vyhotoveních – každé podepsané příslušnou osobou. U všech podpisů je nutné úřední ověření –
-    lze provést na Czech POINTu (pošta/obecní úřad), u notáře nebo na matrice.</li>
+  <li>Jelikož jsou v usnesení [<b>uvést počet dědiců </b>] dědiců/dědicové, je nutné zaslat toto čestné prohlášení ve [<b> počet kopii čp</b>] vyhotoveních – každé podepsané příslušnou osobou. U všech podpisů je nutné úřední ověření – lze provést na Czech POINTu (pošta/obecní úřad), u notáře nebo na matrice.</li>
   <li>Vyplněné a podepsané dokumenty nám, prosím, zašlete zpět v odpovědi na tento e-mail.</li>
 </ul>
-<p>Jakmile obdržíme všechny potřebné dokumenty, přeplatek bude vyplacen na uvedený účet v souladu s platnými právními
-  předpisy.</p>
+<p>Jakmile obdržíme všechny potřebné dokumenty, přeplatek bude vyplacen na uvedený účet v souladu s platnými právními předpisy.</p>
 ${PORTAL_BLOCK}`,
-"files": [
-{
-"url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
-"name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
-"type": "pdf", brand: "epet"
+       "files": [
+    {
+      "url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
+      "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+      "type": "pdf", brand: "epet"
+    },
+    {
+  url: "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link",
+  name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+  type: "pdf",
+  brand: "de"
 },
-{
-url: "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link",
-name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
-type: "pdf",
-brand: "de"
-},
-{
-"url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
-"name": "ČP - Souhlas s nevyplacením přeplatku",
-"type": "pdf", brand: "de"
-},
-{
-"url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
-"name": "ČP - Souhlas s nevyplacením přeplatku",
-"type": "pdf", brand: "epet"
-}
-],
-tags: ["Dědické řízení"]
+    {
+      "url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
+      "name": "ČP - Souhlas s nevyplacením přeplatku",
+      "type": "pdf", brand: "de"
+    },
+    {
+      "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
+      "name": "ČP - Souhlas s nevyplacením přeplatku",
+      "type": "pdf", brand: "epet"
+    }
+  ],
+  tags: ["Dědické řízení"]
 },
 
-"Zákazník doložil usnesení, ale je v něm uvedeno více dědiců - bez toho aniž by uvedl, že si ho přeje vyplatit na
-jednotný BÚ": {
-text: `${OSLOVENI_BLOCK}
+"Zákazník doložil usnesení, ale je v něm uvedeno více dědiců - bez toho aniž by uvedl, že si ho přeje vyplatit na jednotný BÚ": {
+  text: `${OSLOVENI_BLOCK}
 <p>děkujeme za zaslání usnesení o dědictví. Vážíme si Vaší spolupráce.</p>
-<p>Po prozkoumání přiloženého usnesení jsme zjistili, že je v něm uvedeno více dědiců. Abychom mohli pokračovat ve
-  vyplacení přeplatku na bankovní účet, je nutné, aby všichni dědicové podepsali čestné prohlášení, které přikládáme v
-  příloze tohoto e-mailu.</p>
+<p>Po prozkoumání přiloženého usnesení jsme zjistili, že je v něm uvedeno více dědiců. Abychom mohli pokračovat ve vyplacení přeplatku na bankovní účet, je nutné, aby všichni dědicové podepsali čestné prohlášení, které přikládáme v příloze tohoto e-mailu.</p>
 <ul>
   <li>Toto prohlášení musí podepsat všichni dědicové uvedení v usnesení.</li>
-  <li>Jelikož jsou v usnesení [<b>uvést počet dědiců </b>] dědiců/dědicové, je nutné zaslat toto čestné prohlášení ve
-    [<b> počet kopii čp</b>] vyhotoveních – každé podepsané příslušnou osobou. U všech podpisů je nutné úřední ověření –
-    lze provést na Czech POINTu (pošta/obecní úřad), u notáře nebo na matrice.</li>
+  <li>Jelikož jsou v usnesení [<b>uvést počet dědiců </b>] dědiců/dědicové, je nutné zaslat toto čestné prohlášení ve [<b> počet kopii čp</b>] vyhotoveních – každé podepsané příslušnou osobou. U všech podpisů je nutné úřední ověření – lze provést na Czech POINTu (pošta/obecní úřad), u notáře nebo na matrice.</li>
   <li>Vyplněné a podepsané dokumenty nám, prosím, zašlete zpět v odpovědi na tento e-mail.</li>
 </ul>
-<p>Jakmile obdržíme všechny potřebné dokumenty, přeplatek bude vyplacen na uvedený účet v souladu s platnými právními
-  předpisy.</p>
+<p>Jakmile obdržíme všechny potřebné dokumenty, přeplatek bude vyplacen na uvedený účet v souladu s platnými právními předpisy.</p>
 ${PORTAL_BLOCK}`,
-"files": [
-{
-"url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
-"name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
-"type": "pdf", brand: "epet"
+      "files": [
+    {
+      "url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
+      "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+      "type": "pdf", brand: "epet"
+    },
+     {
+  url: "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link",
+  name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+  type: "pdf",
+  brand: "de"
 },
-{
-url: "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link",
-name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
-type: "pdf",
-brand: "de"
-},
-{
-"url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
-"name": "ČP - Souhlas s nevyplacením přeplatku",
-"type": "pdf", brand: "de"
-},
-{
-"url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
-"name": "ČP - Souhlas s nevyplacením přeplatku",
-"type": "pdf", brand: "epet"
-}
-],
-tags: ["Dědické řízení"]
+    {
+      "url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
+      "name": "ČP - Souhlas s nevyplacením přeplatku",
+      "type": "pdf", brand: "de"
+    },
+    {
+      "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
+      "name": "ČP - Souhlas s nevyplacením přeplatku",
+      "type": "pdf", brand: "epet"
+    }
+  ],
+  tags: ["Dědické řízení"]
 },
 
-"Zákazník se rozčiluje, že nevidí důvod proč zasílat ČP NA ZÁKLADĚ ČEHO TO PO NĚM CHCEME - KDYŽ CHCE VYPLATIT PŘEPLATEK
-NA JEDNOTNÉ BÚ": {
-text: `${OSLOVENI_BLOCK}
-<p>děkujeme za Váš dotaz ohledně požadavku na vyplnění čestného prohlášení pro vyplacení přeplatku po úmrtí zákazníka.
-</p>
-<p>Tento krok vychází z legislativních požadavků na správné vypořádání finančních závazků v rámci dědického řízení.
-  Přestože bylo vydáno usnesení o dědictví, je nutné doložit, že se dědicové shodli na způsobu vyplacení přeplatku,
-  zejména pokud se má celá částka poukázat na konkrétní bankovní účet jednoho z dědiců.</p>
+"Zákazník se rozčiluje, že nevidí důvod proč zasílat ČP NA ZÁKLADĚ ČEHO TO PO NĚM CHCEME - KDYŽ CHCE VYPLATIT PŘEPLATEK NA JEDNOTNÉ BÚ": {
+  text: `${OSLOVENI_BLOCK}
+<p>děkujeme za Váš dotaz ohledně požadavku na vyplnění čestného prohlášení pro vyplacení přeplatku po úmrtí zákazníka.</p>
+<p>Tento krok vychází z legislativních požadavků na správné vypořádání finančních závazků v rámci dědického řízení. Přestože bylo vydáno usnesení o dědictví, je nutné doložit, že se dědicové shodli na způsobu vyplacení přeplatku, zejména pokud se má celá částka poukázat na konkrétní bankovní účet jednoho z dědiců.</p>
 <p><b>Požadavek na čestné prohlášení vychází z následujících principů:</b></p>
 <ul>
-  <li><b>Ochrana oprávněných osob</b> – Čestné prohlášení slouží jako potvrzení, že všichni uvedení dědicové souhlasí s
-    vyplacením částky na konkrétní účet.</li>
+  <li><b>Ochrana oprávněných osob</b> – Čestné prohlášení slouží jako potvrzení, že všichni uvedení dědicové souhlasí s vyplacením částky na konkrétní účet.</li>
   <li><b>Právní jistota</b> – Tímto dokumentem se předchází případným sporům mezi dědici o rozdělení přeplatku.</li>
-  <li><b>Soulad s interními postupy a právními předpisy</b> – Tento postup zajišťuje, že platba bude provedena v souladu
-    s rozhodnutím o dědictví a v rámci našich povinností jako poskytovatele služby.</li>
+  <li><b>Soulad s interními postupy a právními předpisy</b> – Tento postup zajišťuje, že platba bude provedena v souladu s rozhodnutím o dědictví a v rámci našich povinností jako poskytovatele služby.</li>
 </ul>
-<p>Z tohoto důvodu je nutné, aby čestné prohlášení podepsali všichni dědicové uvedení v usnesení o dědictví. Pokud je
-  dědiců více, je třeba doložit příslušný počet vyhotovení.</p>
+<p>Z tohoto důvodu je nutné, aby čestné prohlášení podepsali všichni dědicové uvedení v usnesení o dědictví. Pokud je dědiců více, je třeba doložit příslušný počet vyhotovení.</p>
 ${PORTAL_BLOCK}`,
-"files": [
-{
-"url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
-"name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
-"type": "pdf", brand: "epet"
+      "files": [
+    {
+      "url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
+      "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+      "type": "pdf", brand: "epet"
+    },
+  {
+  url: "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link",
+  name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+  type: "pdf",
+  brand: "de"
 },
-{
-url: "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link",
-name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
-type: "pdf",
-brand: "de"
-},
-{
-"url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
-"name": "ČP - Souhlas s nevyplacením přeplatku",
-"type": "pdf", brand: "de"
-},
-{
-"url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
-"name": "ČP - Souhlas s nevyplacením přeplatku",
-"type": "pdf", brand: "epet"
-}
-],
-tags: ["Dědické řízení"]
+    {
+      "url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
+      "name": "ČP - Souhlas s nevyplacením přeplatku",
+      "type": "pdf", brand: "de"
+    },
+    {
+      "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
+      "name": "ČP - Souhlas s nevyplacením přeplatku",
+      "type": "pdf", brand: "epet"
+    }
+  ],
+  tags: ["Dědické řízení"]
 },
 
 "Žádost o doložení BÚ pro vyplacení přeplatku na základě dědického řízení(žádost o doložení ČP)": {
-text: `${OSLOVENI_BLOCK}
-<p>na základě doručeného usnesení o dědickém řízení nám byl notářem sdělen Váš status jednoho z dědiců po
-  zemřelém/zemřelé zákaznici/zákazníkovi <b>XXXXXXX</b>. V souvislosti s touto skutečností bychom Vás rádi informovali,
-  že na zákaznickém účtu zesnulého evidujeme přeplatek, který je možné vyplatit.</p>
+  text: `${OSLOVENI_BLOCK}
+<p>na základě doručeného usnesení o dědickém řízení nám byl notářem sdělen Váš status jednoho z dědiců po zemřelém/zemřelé zákaznici/zákazníkovi <b>XXXXXXX</b>. V souvislosti s touto skutečností bychom Vás rádi informovali, že na zákaznickém účtu zesnulého evidujeme přeplatek, který je možné vyplatit.</p>
 <p>Abychom mohli přistoupit k jeho výplatě, je třeba z Vaší strany doložit:</p>
 <ul>
-  <li><b>Čestné prohlášení o souhlasu s vyplacením přeplatku</b> – slouží jako potvrzení, že souhlasíte s vyplacením
-    příslušné částky na základě dědictví. U všech podpisů je nutné úřední ověření – lze provést na Czech POINTu
-    (pošta/obecní úřad), u notáře nebo na matrice.</li>
+  <li><b>Čestné prohlášení o souhlasu s vyplacením přeplatku</b> – slouží jako potvrzení, že souhlasíte s vyplacením příslušné částky na základě dědictví. U všech podpisů je nutné úřední ověření – lze provést na Czech POINTu (pošta/obecní úřad), u notáře nebo na matrice.</li>
   <li>Číslo bankovního účtu, na který si přejete přeplatek poukázat.</li>
 </ul>
-<p>Oba výše uvedené údaje jsou nezbytné k provedení platby. Formulář čestného prohlášení Vám zasíláme v příloze tohoto
-  e-mailu. </p>
-<p>Prosíme o jeho vyplnění, vlastnoruční podepsání a zaslání zpět – poštou na adresu <b>EP ENERGY TRADING, a.s.,
-    Klimentská 46, 110 00 Praha 1</b> nebo e-mailem na <b>info@epet.cz.</b> </p>
+<p>Oba výše uvedené údaje jsou nezbytné k provedení platby. Formulář čestného prohlášení Vám zasíláme v příloze tohoto e-mailu. </p>
+<p>Prosíme o jeho vyplnění, vlastnoruční podepsání a zaslání zpět – poštou na adresu <b>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</b> nebo e-mailem na <b>info@epet.cz.</b> </p>
 ${PORTAL_BLOCK}`,
-"files": [
-{
-"url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
-"name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
-"type": "pdf", brand: "epet"
+       "files": [
+    {
+      "url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
+      "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+      "type": "pdf", brand: "epet"
+    },
+     {
+  url: "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link",
+  name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+  type: "pdf",
+  brand: "de"
 },
-{
-url: "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link",
-name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
-type: "pdf",
-brand: "de"
-},
-{
-"url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
-"name": "ČP - Souhlas s nevyplacením přeplatku",
-"type": "pdf", brand: "de"
-},
-{
-"url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
-"name": "ČP - Souhlas s nevyplacením přeplatku",
-"type": "pdf", brand: "epet"
-}
-],
-tags: ["Dědické řízení"]
+    {
+      "url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
+      "name": "ČP - Souhlas s nevyplacením přeplatku",
+      "type": "pdf", brand: "de"
+    },
+    {
+      "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
+      "name": "ČP - Souhlas s nevyplacením přeplatku",
+      "type": "pdf", brand: "epet"
+    }
+  ],
+  tags: ["Dědické řízení"]
 },
 
-"Žádost o doložení dodatku k usnesení převážně z důvodu zastaveného dědického řízení z důvodu majetku nepatrné hodnoty v
-němž není uvedeno kdo je dědicem, jen vystavitel pohřbu": {
-text: `${OSLOVENI_BLOCK}
-<p>děkujeme za doložené usnesení o pozůstalosti po panu/paní <strong> XXXXXX.</strong> Dovolujeme si Vás informovat, že
-  z předloženého usnesení vyplývá, že dědické řízení bylo soudem zastaveno z důvodu majetku nepatrné hodnoty, a že nebyl
-  určen žádný dědic.</p>
-<p>Vzhledem k tomu, že nedošlo k právnímu přechodu majetku (včetně případného přeplatku) na žádnou osobu, nemůžeme Vám
-  bez dalšího právního podkladu (např. dodatečné dohody dědiců nebo nového rozhodnutí soudu) případný přeplatek
-  vyplatit.</p>
+"Žádost o doložení dodatku k usnesení převážně z důvodu zastaveného dědického řízení z důvodu majetku nepatrné hodnoty v němž není uvedeno kdo je dědicem, jen vystavitel pohřbu": {
+  text: `${OSLOVENI_BLOCK}
+<p>děkujeme za doložené usnesení o pozůstalosti po panu/paní <strong> XXXXXX.</strong> Dovolujeme si Vás informovat, že z předloženého usnesení vyplývá, že dědické řízení bylo soudem zastaveno z důvodu majetku nepatrné hodnoty, a že nebyl určen žádný dědic.</p>
+<p>Vzhledem k tomu, že nedošlo k právnímu přechodu majetku (včetně případného přeplatku) na žádnou osobu, nemůžeme Vám bez dalšího právního podkladu (např. dodatečné dohody dědiců nebo nového rozhodnutí soudu) případný přeplatek vyplatit.</p>
 <p><strong>Jak můžete dále postupovat:</strong><br>
-  Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc projednával) a požádat o:</p>
+Doporučujeme obrátit se na příslušný soud (nebo notáře, který věc projednával) a požádat o:</p>
 <ul>
   <li>doplnění usnesení o určení dědice přeplatku, nebo</li>
   <li>uzavření dodatečné dohody mezi případnými dědici, která bude schválena soudem.</li>
@@ -1836,107 +1385,80 @@ text: `${OSLOVENI_BLOCK}
 <p>Jakmile obdržíme doplňující právní dokument, budeme schopni vyplacení přeplatku posoudit a případně provést.</p>
 <p>Děkujeme za pochopení. V případě jakýchkoli dotazů jsme Vám rádi k dispozici.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Dědické řízení"]
+  files: [],
+  tags: ["Dědické řízení"]
 },
 
 "Žádost o doložení usnesení + informaci, že pokud v usnesení je více dědiců, aby poslali i ČP": {
-text: `${OSLOVENI_BLOCK}
-<p>je nám líto, že jste musel/a řešit tuto smutnou událost. Abychom mohli provést potřebné změny na zákaznickém účtu,
-  budeme potřebovat Vaši součinnost. Zejména je důležité, abyste nám doručil/a:</p>
+  text: `${OSLOVENI_BLOCK}
+<p>je nám líto, že jste musel/a řešit tuto smutnou událost. Abychom mohli provést potřebné změny na zákaznickém účtu, budeme potřebovat Vaši součinnost. Zejména je důležité, abyste nám doručil/a:</p>
 <ul>
   <li>kopii úmrtního listu</li>
   <li>kopii usnesení z dědického řízení</li>
 </ul>
-<p>Do doby doložení usnesení bude případný přeplatek blokován proti vyplacení. Vyplacení bude možné až po sdělení
-  výsledku dědického řízení.</p>
+<p>Do doby doložení usnesení bude případný přeplatek  blokován proti vyplacení. Vyplacení bude možné až po sdělení výsledku dědického řízení.</p>
 <p>V případě, že v doloženém usnesení bude uvedeno více dědiců, bude nutné doložit také čestné prohlášení.
-  Toto prohlášení musí být vyplněno a podepsáno všemi dědici / příslušným dědicem. U všech podpisů je nutné úřední
-  ověření – lze provést na Czech POINTu (pošta/obecní úřad), u notáře nebo na matrice.
+Toto prohlášení musí být vyplněno a podepsáno všemi dědici / příslušným dědicem. U všech podpisů je nutné úřední ověření – lze provést na Czech POINTu (pošta/obecní úřad), u notáře nebo na matrice.
 </p>
 <p>Děkujeme za pochopení. V případě jakýchkoli dotazů jsme Vám rádi k dispozici.</p>
 ${PORTAL_BLOCK}`,
-"files": [
-{
-"url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
-"name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
-"type": "pdf", brand: "epet"
+       "files": [
+    {
+      "url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
+      "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+      "type": "pdf", brand: "epet"
+    },
+    {
+  url: "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link",
+  name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+  type: "pdf",
+  brand: "de"
 },
-{
-url: "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link",
-name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
-type: "pdf",
-brand: "de"
+    {
+      "url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
+      "name": "ČP - Souhlas s nevyplacením přeplatku",
+      "type": "pdf", brand: "de"
+    },
+    {
+      "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
+      "name": "ČP - Souhlas s nevyplacením přeplatku",
+      "type": "pdf", brand: "epet"
+    }
+  ],
+  tags: ["Dědické řízení"]
 },
-{
-"url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
-"name": "ČP - Souhlas s nevyplacením přeplatku",
-"type": "pdf", brand: "de"
-},
-{
-"url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
-"name": "ČP - Souhlas s nevyplacením přeplatku",
-"type": "pdf", brand: "epet"
-}
-],
-tags: ["Dědické řízení"]
-},
-"Přepis (šablona číslo 1)": {
-text: `${OSLOVENI_BLOCK}
-<p>stále evidujeme nevyřešený požadavek týkající se přepisu smlouvy na odběr energií po zemřelém <b>xxxxxx</b>. Rádi
-  bychom Vás informovali o nutnosti provést tento přepis na nového odběratele. Tento krok je nezbytný pro zajištění
-  kontinuity dodávky energií na odběrném místě <b>${ADRESA_BLOCK}</B>.</p>
-<p>Prosíme Vás, abyste co nejdříve kontaktovali naši zákaznickou podporu na telefonním čísle <b>255 70 70 99 </b> nebo
-  e-mailem na <b>info@epet.cz </b>, kde Vám poskytneme veškeré potřebné formuláře a informace k přepisu smlouvy. Přepis
-  je možné také dořešit pomocí online formuláře na tomto <a
-    href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank"
-    title="On-line formulář pro přepis odběrného místa" rel="noopener noreferrer"> Odkazu</a></p>
+        "Přepis (šablona číslo 1)": {
+                text: `${OSLOVENI_BLOCK}
+<p>stále evidujeme nevyřešený požadavek týkající se přepisu smlouvy na odběr energií po zemřelém <b>xxxxxx</b>. Rádi bychom Vás informovali o nutnosti provést tento přepis na nového odběratele. Tento krok je nezbytný pro zajištění kontinuity dodávky energií na odběrném místě <b>${ADRESA_BLOCK}</B>.</p>
+<p>Prosíme Vás, abyste co nejdříve kontaktovali naši zákaznickou podporu na telefonním čísle <b>255 70 70 99 </b> nebo e-mailem na <b>info@epet.cz </b>, kde Vám poskytneme veškeré potřebné formuláře a informace k přepisu smlouvy. Přepis je možné také dořešit pomocí online formuláře na tomto  <a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank" title="On-line formulář pro přepis odběrného místa" rel="noopener noreferrer"> Odkazu</a></p>
 <p>Děkujeme za Vaší součinnost.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Dědické řízení"]
-},
-"Urgence přepisu (šablona číslo 2)": {
-text: `${OSLOVENI_BLOCK}
-<p>rádi bychom Vás znovu upozornili na nutnost přepsání smlouvy na odběr energií na nového odběratele. Původní smlouva
-  č. byla uzavřena na zemřelého <b>xxxxx</b>, a je nezbytné uzavřít novou smlouvu, aby byla zajištěna kontinuální
-  dodávka energií na odběrném místě <b>${ADRESA_BLOCK}</b>.</p>
-<p>Dosud jsme neobdrželi žádnou odpověď na naši předchozí výzvu. Prosíme Vás, abyste co nejdříve kontaktovali naši
-  zákaznickou podporu na telefonním čísle <b>255 70 70 99 </b> nebo e-mailem na <b>info@epet.cz </b>, kde Vám poskytneme
-  veškeré potřebné formuláře a informace k přepisu smlouvy. Přepis je možné také dořešit pomocí online formuláře na
-  tomto <a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank"
-    title="On-line formulář pro přepis odběrného místa" rel="noopener noreferrer"> Odkazu</a></p>
-<p>Pokud nebude přepis smlouvy proveden do <b>[Datum – D+30 dní]</b>, budeme nuceni přistoupit k přerušení dodávky
-  energií na uvedeném odběrném místě. Tento krok je nezbytný pro zajištění správné evidence a správy odběrného místa.
-</p>
+                files: [],
+                tags: ["Dědické řízení"]
+        },
+        "Urgence přepisu (šablona číslo 2)": {
+                text: `${OSLOVENI_BLOCK}
+<p>rádi bychom Vás znovu upozornili na nutnost přepsání smlouvy na odběr energií na nového odběratele. Původní smlouva č. byla uzavřena na zemřelého <b>xxxxx</b>, a je nezbytné uzavřít novou smlouvu, aby byla zajištěna kontinuální dodávka energií na odběrném místě <b>${ADRESA_BLOCK}</b>.</p>
+<p>Dosud jsme neobdrželi žádnou odpověď na naši předchozí výzvu. Prosíme Vás, abyste co nejdříve kontaktovali naši zákaznickou podporu na telefonním čísle <b>255 70 70 99 </b> nebo e-mailem na <b>info@epet.cz </b>, kde Vám poskytneme veškeré potřebné formuláře a informace k přepisu smlouvy. Přepis je možné také dořešit pomocí online formuláře na tomto <a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank" title="On-line formulář pro přepis odběrného místa" rel="noopener noreferrer"> Odkazu</a></p>
+<p>Pokud nebude přepis smlouvy proveden do <b>[Datum – D+30 dní]</b>, budeme nuceni přistoupit k přerušení dodávky energií na uvedeném odběrném místě. Tento krok je nezbytný pro zajištění správné evidence a správy odběrného místa.</p>
 
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Dědické řízení"]
-},
-"Výzva k úhradě dlužných plateb, zákaznické číslo: xxxx (šablona číslo 3)": {
-text: `${OSLOVENI_BLOCK}
+                files: [],
+                tags: ["Dědické řízení"]
+        },
+        "Výzva k úhradě dlužných plateb, zákaznické číslo: xxxx (šablona číslo 3)": {
+                text: `${OSLOVENI_BLOCK}
 
-<p>dovolujeme si Vás informovat, že naše společnost <strong>EP ENERGY TRADING, a.s.</strong>, IČO
-  <strong>27386643</strong>, se sídlem Klimentská 46, Praha 1, 110 00 obdržela od Obvodního soudu pro Prahu 6 informaci
-  o skončení řízení o pozůstalosti (resp. dědického řízení), kterou bylo naší společnosti sděleno, že právním nástupcem
-  zákazníka [jméno, příjmení, datum narození, trvalý pobyt] (dále jen <b>„Zůstavitel“</b>) se na základě pravomocného
-  rozhodnutí o dědictví (kterým dědické řízení skončilo) uvedeným soudem v oblasti dodávky energií v odběrném místě
-  EAN/EIC <strong>${EAN_BLOCK}</strong> na adrese <strong>${ADRESA_BLOCK}</strong> (dále jen <b>„Odběrné místo“</b>)
-  zajišťované naší společností na základě Smlouvy o sdružených službách dodávky elektřiny/plynu a uzavřené mezi naší
-  společností a Zůstavitelem (dále jako <b>„Smlouva“</b>) stala tato osoba:</p>
+<p>dovolujeme si Vás informovat, že naše společnost <strong>EP ENERGY TRADING, a.s.</strong>, IČO <strong>27386643</strong>, se sídlem Klimentská 46, Praha 1, 110 00 obdržela od Obvodního soudu pro Prahu 6 informaci o skončení řízení o pozůstalosti (resp. dědického řízení), kterou bylo naší společnosti sděleno, že právním nástupcem zákazníka [jméno, příjmení, datum narození, trvalý pobyt] (dále jen <b>„Zůstavitel“</b>) se na základě pravomocného rozhodnutí o dědictví (kterým dědické řízení skončilo) uvedeným soudem v oblasti dodávky energií v odběrném místě EAN/EIC <strong>${EAN_BLOCK}</strong> na adrese <strong>${ADRESA_BLOCK}</strong> (dále jen <b>„Odběrné místo“</b>) zajišťované naší společností na základě Smlouvy o sdružených službách dodávky elektřiny/plynu a uzavřené mezi naší společností a Zůstavitelem (dále jako <b>„Smlouva“</b>) stala tato osoba:</p>
 
 <ul>
   <li>[jméno, příjmení, datum narození, trvalý pobyt]</li>
   <li>[jméno, příjmení, datum narození, trvalý pobyt]</li>
 </ul>
 
-<p>V tomto ohledu je třeba zdůraznit, že dnem, kdy rozhodnutí o dědictví nabylo právní moci, přechází práva a povinnosti
-  vyplývající ze Smlouvy na Vás, jakožto právního nástupce Zůstavitele. To znamená, že od tohoto okamžiku je právní
-  nástupce Zůstavitele zákazníkem naší společnosti a je povinen plnit mimo jiné též ve Smlouvě sjednané platební
-  povinnosti, spojené zejména s úhradou zálohových plateb a ročního vyúčtování.</p>
+<p>V tomto ohledu je třeba zdůraznit, že dnem, kdy rozhodnutí o dědictví nabylo právní moci, přechází práva a povinnosti vyplývající ze Smlouvy na Vás, jakožto právního nástupce Zůstavitele. To znamená, že od tohoto okamžiku je právní nástupce Zůstavitele zákazníkem naší společnosti a je povinen plnit mimo jiné též ve Smlouvě sjednané platební povinnosti, spojené zejména s úhradou zálohových plateb a ročního vyúčtování.</p>
 
-<p>Aktuálně naše společnost u <b>Odběrného místa </b> eviduje následující pohledávku (dále jako <b>„Pohledávka“</b>):
+<p>Aktuálně naše společnost u <b>Odběrného místa </b> eviduje následující pohledávku (dále jako  <b>„Pohledávka“</b>):
 </p>
 <table class="table-upominka">
   <thead>
@@ -1976,29 +1498,22 @@ text: `${OSLOVENI_BLOCK}
   </tfoot>
 </table>
 <br>
-<p>Na základě výše uvedeného Vás vyzýváme k úhradě Pohledávky na účet <b>č. 9960227/0100</b> s variabilním symbolem
-  ______, a to do 10 dnů od data doručení této upomínky.</p>
+<p>Na základě výše uvedeného Vás vyzýváme k úhradě Pohledávky na účet <b>č. 9960227/0100</b> s variabilním symbolem ______, a to do 10 dnů od data doručení této upomínky.</p>
 
-<p>Upozorňujeme Vás, že dodávky energií do Odběrného místa ze strany naší společnosti na základě Smlouvy v současné době
-  nadále probíhají a nebude-li Pohledávka uhrazena, budeme nuceni přistoupit k procesu přerušení dodávky energií do
-  Odběrného místa. Zároveň přistoupíme k vymáhání Pohledávky všemi dostupnými právními prostředky, např. soudní cestou,
-  v rámci které může dojít k navýšení dlužné částky zejména o náklady soudního řízení.</p></strong>
+<p>Upozorňujeme Vás, že dodávky energií do Odběrného místa ze strany naší společnosti na základě Smlouvy v současné době nadále probíhají a nebude-li Pohledávka uhrazena, budeme nuceni přistoupit k procesu přerušení dodávky energií do Odběrného místa. Zároveň přistoupíme k vymáhání Pohledávky všemi dostupnými právními prostředky, např. soudní cestou, v rámci které může dojít k navýšení dlužné částky zejména o náklady soudního řízení.</p></strong>
 
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Dědické řízení"]
-},
-"Oslovení notáře (šablona číslo 4)": {
-text: `<p>Vážený/Vážená pane/paní magistře/magistro/doktore/doktorko,</p>
+                files: [],
+                tags: ["Dědické řízení"]
+        },
+        "Oslovení notáře (šablona číslo 4)": {
+                text: `<p>Vážený/Vážená pane/paní magistře/magistro/doktore/doktorko,</p>
 
-<p>tímto Vás zdvořile žádáme o sdělení informací týkajících se probíhajícího dědického řízení u zákazníka (zůstavitele)
-  naší společnosti:</p>
+<p>tímto Vás zdvořile žádáme o sdělení informací týkajících se probíhajícího dědického řízení u zákazníka (zůstavitele) naší společnosti:</p>
 
 <p><b>JMÉNO/PŘÍJMENÍ, DATUM NAROZENÍ, ADRESA ZÁKAZNÍKA</b></p>
 
-<p>Na výše uvedeného zůstavitele evidujeme následující Smlouvu o sdružených službách dodávky <b>elektřiny /plynu (dále
-    jako “Smlouva”)</b>, ze které vyplývají, resp. vyplynou nároky naší společnosti ve smyslu úhrady zálohových plateb
-  sjednaných v této Smlouvě a úhrady přeplatku/nedoplatku plynoucího z vystavení konečné faktury:</p>
+<p>Na výše uvedeného zůstavitele evidujeme následující Smlouvu o sdružených službách dodávky <b>elektřiny /plynu (dále jako “Smlouva”)</b>, ze které vyplývají, resp. vyplynou nároky naší společnosti ve smyslu úhrady zálohových plateb sjednaných v této Smlouvě a úhrady přeplatku/nedoplatku plynoucího z vystavení konečné faktury:</p>
 
 <ul style="list-style-type: none; padding-left: 0;">
   <li>– Číslo Smlouvy:   XXXXXXX</li>
@@ -2007,8 +1522,7 @@ text: `<p>Vážený/Vážená pane/paní magistře/magistro/doktore/doktorko,</p
   <li>– Doba trvání Smlouvy: XX měsíců</li>
 </ul>
 
-<p>V souvislosti s výše uvedenými nároky naší společnosti a v rámci prevence před vznikem či zvýšením pohledávek naší
-  společnosti vyplývajících ze Smlouvy, Vás dále žádáme o sdělení těchto informací:</p>
+<p>V souvislosti s výše uvedenými nároky naší společnosti a v rámci prevence před vznikem či zvýšením pohledávek naší společnosti vyplývajících ze Smlouvy, Vás dále žádáme o sdělení těchto informací:</p>
 
 <ul>
   <li>– Kdo je správcem pozůstalosti</li>
@@ -2019,25 +1533,19 @@ text: `<p>Vážený/Vážená pane/paní magistře/magistro/doktore/doktorko,</p
 <p><b>Prosíme o zaslání informací do datové schránky <b>E5KGTT5</b> na e-mail <b>info@epet.cz</b></b></p>
 
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Dědické řízení"]
-},
+                files: [],
+                tags: ["Dědické řízení"]
+        },
 
 
 
-"Výzva k úhradě dluhu – potencionální dědic – aktivní odběr (šablona číslo 5)": {
-text: `
+        "Výzva k úhradě dluhu – potencionální dědic – aktivní odběr (šablona číslo 5)": {
+                text: `
 ${OSLOVENI_BLOCK}
 
-<p>obracíme se na Vás jakožto na potenciálního dědice pana/paní [jméno, příjmení, datum narození, trvalý pobyt] (dále
-  jako „Zůstavitel“) s informací, že naše společnost <b>EP ENERGY TRADING, a.s.</b>, <b>IČO 27386643</b>, se sídlem
-  Klimentská 46, Praha 1, 110 00 na základě Smlouvy o sdružených službách dodávky elektřiny/plynu č. ______ uzavřené
-  mezi naší společností a Zůstavitelem (dále jen <b>„Smlouva“</b>) je dodavatelem elektřiny/plynu do odběrného místa
-  EAN/EIC <strong>${EAN_BLOCK}</strong> na adrese <strong>${ADRESA_BLOCK}</strong> (dále jen <b>„Odběrné místo“</b>).
-</p>
+<p>obracíme se na Vás jakožto na potenciálního dědice pana/paní [jméno, příjmení, datum narození, trvalý pobyt] (dále jako „Zůstavitel“) s informací, že naše společnost <b>EP ENERGY TRADING, a.s.</b>, <b>IČO 27386643</b>, se sídlem Klimentská 46, Praha 1, 110 00 na základě Smlouvy o sdružených službách dodávky elektřiny/plynu č. ______ uzavřené mezi naší společností a Zůstavitelem (dále jen <b>„Smlouva“</b>) je dodavatelem elektřiny/plynu do odběrného místa EAN/EIC <strong>${EAN_BLOCK}</strong> na adrese <strong>${ADRESA_BLOCK}</strong> (dále jen <b>„Odběrné místo“</b>).</p>
 
-<p>Aktuálně naše společnost u <b>Odběrného místa </b> eviduje následující pohledávku (dále jako (dále jako
-  <b>„Pohledávka“</b>):
+<p>Aktuálně naše společnost u <b>Odběrného místa </b> eviduje následující pohledávku (dále jako  (dále jako <b>„Pohledávka“</b>):
 </p>
 <table class="table-upominka">
   <thead>
@@ -2078,23 +1586,11 @@ ${OSLOVENI_BLOCK}
 </table>
 <br>
 
-<p>V této souvislosti Vás žádáme o sdělení identifikačních a kontaktních údajů v rozsahu jméno, příjmení, adresy
-  trvalého pobytu, telefonního čísla a e-mailu osoby, která spravuje pozůstalost. Pozůstalost může ve smyslu § 1877
-  zákona č. 89/2012 Sb., občanský zákoník, spravovat vykonavatel závěti, nebo pověřený či příslušným soudem jmenovaný
-  správce pozůstalosti. Poté co dědické řízení ve smyslu § 1703 občanského zákoníku bude rozhodnuto pravomocně,
-  pohledávky naší společnosti bude zajišťovat ten z dědiců nebo zmíněných osob.</p>
+<p>V této souvislosti Vás žádáme o sdělení identifikačních a kontaktních údajů v rozsahu jméno, příjmení, adresy trvalého pobytu, telefonního čísla a e-mailu osoby, která spravuje pozůstalost. Pozůstalost může ve smyslu § 1877 zákona č. 89/2012 Sb., občanský zákoník, spravovat vykonavatel závěti, nebo pověřený či příslušným soudem jmenovaný správce pozůstalosti. Poté co dědické řízení ve smyslu § 1703 občanského zákoníku bude rozhodnuto pravomocně, pohledávky naší společnosti bude zajišťovat ten z dědiců nebo zmíněných osob.</p>
 
-<p>Nežli správa pozůstalosti přejde na dědice, je nutné naléhavě vyřešit úhradu evidovaných pohledávek. Pohledávku může
-  být úspěšně uhrazena i z majetku náležejícího do pozůstalosti. Není-li správa pozůstalosti ještě určena, lze
-  pohledávku uhradit zůstavitelem sepsanou závětí, pakliže správce pozůstalosti ještě nebyl přidělen, je zde ideálně
-  osoba nejblíže dědického řízení. Každý případ se posléze řeší samostatně s oddělením Pohledávek společnosti a nevrací
-  se.</p>
+<p>Nežli správa pozůstalosti přejde na dědice, je nutné naléhavě vyřešit úhradu evidovaných pohledávek. Pohledávku může být úspěšně uhrazena i z majetku náležejícího do pozůstalosti. Není-li správa pozůstalosti ještě určena, lze pohledávku uhradit zůstavitelem sepsanou závětí, pakliže správce pozůstalosti ještě nebyl přidělen, je zde ideálně osoba nejblíže dědického řízení. Každý případ se posléze řeší samostatně s oddělením Pohledávek společnosti a nevrací se.</p>
 
-<p><strong>Upozorňujeme Vás, že dodávky energií od Odběrného místa ze strany naší společnosti na základě Smlouvy v
-    současné době nadále probíhají. Abychom z důvodu neuhrazené Pohledávky nemuseli přistoupit k přerušení dodávky
-    energií do Odběrného místa, žádáme o její úhradu, a to včetně dalších případných nákladů, které by mohly být
-    účtovány v rámci řízení o vymáhání dlužných částek (např. soudních nákladů, právního zastoupení a podobně).</strong>
-</p>
+<p><strong>Upozorňujeme Vás, že dodávky energií od Odběrného místa ze strany naší společnosti na základě Smlouvy v současné době nadále probíhají. Abychom z důvodu neuhrazené Pohledávky nemuseli přistoupit k přerušení dodávky energií do Odběrného místa, žádáme o její úhradu, a to včetně dalších případných nákladů, které by mohly být účtovány v rámci řízení o vymáhání dlužných částek (např. soudních nákladů, právního zastoupení a podobně).</strong></p>
 
 <p>Vyzýváme Vás tímto:</p>
 <ul>
@@ -2103,22 +1599,16 @@ ${OSLOVENI_BLOCK}
 </ul>
 
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Dědické řízení"]
-},
-"Výzva k úhradě dluhu – potencionální dědic – neaktivní odběr (šablona číslo 6)": {
-text: `
+                files: [],
+                tags: ["Dědické řízení"]
+        },
+        "Výzva k úhradě dluhu – potencionální dědic – neaktivní odběr (šablona číslo 6)": {
+                text: `
 ${OSLOVENI_BLOCK}
 
-<p>obracíme se na Vás jakožto na potenciálního dědice pana/paní [jméno, příjmení, datum narození, trvalý pobyt] (dále
-  jako <b>„Zůstavitel“</b>) s informací, že naše společnost <b>EP ENERGY TRADING, a.s.</b>, <b>IČO 27386643</b>, se
-  sídlem Klimentská 46, Praha 1, 110 00 na základě Smlouvy o sdružených službách dodávky elektřiny/plynu č. ______
-  uzavřené mezi naší společností a Zůstavitelem (dále jen <b>„Smlouva“</b>) byla dodavatelem této energie do odběrného
-  místa EAN/EIC <strong>${EAN_BLOCK}</strong> na adrese <strong>${ADRESA_BLOCK}</strong> (dále jen <b>„Odběrné
-    místo“</b>).</p>
+<p>obracíme se na Vás jakožto na potenciálního dědice pana/paní [jméno, příjmení, datum narození, trvalý pobyt] (dále jako <b>„Zůstavitel“</b>) s informací, že naše společnost <b>EP ENERGY TRADING, a.s.</b>, <b>IČO 27386643</b>, se sídlem Klimentská 46, Praha 1, 110 00 na základě Smlouvy o sdružených službách dodávky elektřiny/plynu č. ______ uzavřené mezi naší společností a Zůstavitelem (dále jen <b>„Smlouva“</b>) byla dodavatelem této energie do odběrného místa EAN/EIC <strong>${EAN_BLOCK}</strong> na adrese <strong>${ADRESA_BLOCK}</strong> (dále jen <b>„Odběrné místo“</b>).</p>
 
-<p>Aktuálně naše společnost u <b>Odběrného místa </b> eviduje následující pohledávku (dále jako (dále jako
-  <b>„Pohledávka“</b>):
+<p>Aktuálně naše společnost u <b>Odběrného místa </b> eviduje následující pohledávku (dále jako  (dále jako <b>„Pohledávka“</b>):
 </p>
 <table class="table-upominka">
   <thead>
@@ -2159,478 +1649,379 @@ ${OSLOVENI_BLOCK}
 </table>
 <br>
 
-<p> <b>V této souvislosti Vás žádáme o sdělení identifikačních a kontaktních údajů v rozsahu jméno, příjmení, adresy
-    trvalého pobytu, telefonního čísla a e-mailu osoby, která spravuje pozůstalost.</b> Pozůstalost může ve smyslu §
-  1677 zákona č. 89/2012 Sb., občanský zákoník, spravovat vykonavatel závěti, nebo povolaný či příslušným soudem
-  jmenovaný správce pozůstalosti. Po této osobě následně ve smyslu § 1703 občanského zákoníku budeme požadovat
-  uspokojení Pohledávky. Pohledávka pak může být uspokojena jen z majetku náležejícího do pozůstalosti. Není-li správa
-  pozůstalosti vykonávána správcem pozůstalosti ani vykonavatelem závěti, pak je správcem pozůstalosti dědic. V případě,
-  že je dědiců více a neujednají-li si jinak, spravují pozůstalost všichni dědicové a odpovídají za uspokojení
-  Pohledávky společně a nerozdílně. V takvém případě naše společnost zasílá obodobný dopis též těmto dalším dědicům.</p>
+<p> <b>V této souvislosti Vás žádáme o sdělení identifikačních a kontaktních údajů v rozsahu jméno, příjmení, adresy trvalého pobytu, telefonního čísla a e-mailu osoby, která spravuje pozůstalost.</b> Pozůstalost může ve smyslu § 1677 zákona č. 89/2012 Sb., občanský zákoník, spravovat vykonavatel závěti, nebo povolaný či příslušným soudem jmenovaný správce pozůstalosti. Po této osobě následně ve smyslu § 1703 občanského zákoníku budeme požadovat uspokojení Pohledávky. Pohledávka pak může být uspokojena jen z majetku náležejícího do pozůstalosti. Není-li správa pozůstalosti vykonávána správcem pozůstalosti ani vykonavatelem závěti, pak je správcem pozůstalosti dědic. V případě, že je dědiců více a neujednají-li si jinak, spravují pozůstalost všichni dědicové a odpovídají za uspokojení Pohledávky společně a nerozdílně. V takvém případě naše společnost zasílá obodobný dopis též těmto dalším dědicům.</p>
 
-<p><strong>Upozorňujeme Vás, že z důvodu neuhrazené Pohledávky nemusíme přistoupit k vymáhání její úhrady dostupnými
-    právními prostředky (např. soudní cestou, v rámci které může dojít k navýšení částky zejména o náklady soudního
-    řízení), žádáme Vás tedy:</p></strong>
+<p><strong>Upozorňujeme Vás, že z důvodu neuhrazené Pohledávky nemusíme přistoupit k vymáhání její úhrady dostupnými právními prostředky (např. soudní cestou, v rámci které může dojít k navýšení částky zejména o náklady soudního řízení), žádáme Vás tedy:</p></strong>
 
 <ul>
-  <li>o sdělení identifikačních a kontaktních údajů osoby spravující pozůstalost (viz výše), a to do 10 dnů od doručení
-    této upomínky, nebo</li>
-  <li>o úhradu Pohledávky na účet <b>č. 9960227/0100</b> s variabilním symbolem ______ a to do 10 dnů od doručení této
-    upomínky.</li>
+  <li>o sdělení identifikačních a kontaktních údajů osoby spravující pozůstalost (viz výše), a to do 10 dnů od doručení této upomínky, nebo</li>
+  <li>o úhradu Pohledávky na účet <b>č. 9960227/0100</b> s variabilním symbolem ______ a to do 10 dnů od doručení této upomínky.</li>
 </ul>
 
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Dědické řízení"]
-},
-"Přijetí Usnesení ještě před ukončením smlouvy, přejí si vyplatit na BÚ v usnesení uveden jeden dědic (neznáme tedy zda
-FA bude přeplatek/nedoplatek)": {
-text: `${OSLOVENI_BLOCK}
-<p>potvrzujeme přijetí Vašich podkladů, které jsme předali ke zpracování. Po ukončení smlouvy a dodávky do odběrného
-  místa vystavíme konečnou fakturu. Případný přeplatek či nedoplatek bude vypořádán s osobou oprávněnou dle usnesení o
-  dědictví.</p>
-<p>V usnesení je jako dědic/dědička uveden/a <b>XXXXXX</b>. Pro vyplacení případného přeplatku na bankovní účet
-  přikládáme k vyplnění čestné prohlášení (v příloze). Prosíme o dodržení těchto náležitostí:</p>
+                files: [],
+                tags: ["Dědické řízení"]
+        },
+"Přijetí Usnesení ještě před ukončením smlouvy, přejí si vyplatit na BÚ v usnesení uveden jeden dědic (neznáme tedy zda FA bude přeplatek/nedoplatek)": {
+  text: `${OSLOVENI_BLOCK}
+<p>potvrzujeme přijetí Vašich podkladů, které jsme předali ke zpracování. Po ukončení smlouvy a dodávky do odběrného místa vystavíme konečnou fakturu. Případný přeplatek či nedoplatek bude vypořádán s osobou oprávněnou dle usnesení o dědictví.</p>
+<p>V usnesení je jako dědic/dědička uveden/a <b>XXXXXX</b>. Pro vyplacení případného přeplatku na bankovní účet přikládáme k vyplnění čestné prohlášení (v příloze). Prosíme o dodržení těchto náležitostí:</p>
 <ul>
   <li>Prohlášení musí podepsat dědic uvedený v usnesení.</li>
-  <li>Podpis musí být úředně ověřen – ověření je možné na Czech POINTu (pošta/obecní úřad), u notáře nebo na matrice.
-  </li>
+  <li>Podpis musí být úředně ověřen – ověření je možné na Czech POINTu (pošta/obecní úřad), u notáře nebo na matrice.</li>
   <li>Vyplněný a podepsaný dokument nám, prosím, zašlete zpět v odpovědi na tento e-mail.</li>
 </ul>
-<p>Jakmile obdržíme všechny potřebné dokumenty a dojde k ukončení smlouvy, bude případný přeplatek vyplacen na uvedený
-  účet bez zbytečného odkladu v souladu s platnými právními předpisy.</p>
+<p>Jakmile obdržíme všechny potřebné dokumenty a dojde k ukončení smlouvy, bude případný přeplatek vyplacen na uvedený účet bez zbytečného odkladu v souladu s platnými právními předpisy.</p>
 ${PORTAL_BLOCK}`,
-"files": [
-{
-"url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
-"name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
-"type": "pdf", brand: "epet"
+      "files": [
+    {
+      "url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
+      "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+      "type": "pdf", brand: "epet"
+    },
+   {
+  url: "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link",
+  name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+  type: "pdf",
+  brand: "de"
 },
-{
-url: "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link",
-name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
-type: "pdf",
-brand: "de"
+    {
+      "url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
+      "name": "ČP - Souhlas s nevyplacením přeplatku",
+      "type": "pdf", brand: "de"
+    },
+    {
+      "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
+      "name": "ČP - Souhlas s nevyplacením přeplatku",
+      "type": "pdf", brand: "epet"
+    }
+  ],
+  tags: ["Dědické řízení"]
 },
-{
-"url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
-"name": "ČP - Souhlas s nevyplacením přeplatku",
-"type": "pdf", brand: "de"
-},
-{
-"url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
-"name": "ČP - Souhlas s nevyplacením přeplatku",
-"type": "pdf", brand: "epet"
-}
-],
-tags: ["Dědické řízení"]
-},
-"Přijetí Usnesení ještě před ukončením smlouvy, přejí si vyplatit na BÚ v usnesení uvedeno více dědiců (neznáme tedy zda
-FA bude přeplatek/nedoplatek)": {
-text: `${OSLOVENI_BLOCK}
-<p>potvrzujeme přijetí Vašich podkladů, které jsme předali ke zpracování. Po ukončení smlouvy a dodávky do odběrného
-  místa vystavíme konečnou fakturu. Případný přeplatek či nedoplatek bude vypořádán s osobou oprávněnou dle usnesení o
-  dědictví.</p>
-<p>V usnesení je uvedeno více dědiců (<b>XXXXXX</b>). Pro vyplacení případného přeplatku na bankovní účet přikládáme k
-  vyplnění čestné prohlášení (v příloze). Prosíme o dodržení těchto náležitostí:</p>
+"Přijetí Usnesení ještě před ukončením smlouvy, přejí si vyplatit na BÚ v usnesení uvedeno více dědiců (neznáme tedy zda FA bude přeplatek/nedoplatek)": {
+  text: `${OSLOVENI_BLOCK}
+<p>potvrzujeme přijetí Vašich podkladů, které jsme předali ke zpracování. Po ukončení smlouvy a dodávky do odběrného místa vystavíme konečnou fakturu. Případný přeplatek či nedoplatek bude vypořádán s osobou oprávněnou dle usnesení o dědictví.</p>
+<p>V usnesení je uvedeno více dědiců (<b>XXXXXX</b>). Pro vyplacení případného přeplatku na bankovní účet přikládáme k vyplnění čestné prohlášení (v příloze). Prosíme o dodržení těchto náležitostí:</p>
 <ul>
-  <li>Čestné prohlášení musí doložit <b>všichni</b> dědicové uvedení v usnesení. Každý dědic vyplní a podepíše
-    <b>vlastní</b> formulář (počet prohlášení = počet dědiců).</li>
-  <li>U <b>všech podpisů</b> je nutné úřední ověření – ověření je možné na Czech POINTu (pošta/obecní úřad), u notáře
-    nebo na matrice.</li>
+  <li>Čestné prohlášení musí doložit <b>všichni</b> dědicové uvedení v usnesení. Každý dědic vyplní a podepíše <b>vlastní</b> formulář (počet prohlášení = počet dědiců).</li>
+  <li>U <b>všech podpisů</b> je nutné úřední ověření – ověření je možné na Czech POINTu (pošta/obecní úřad), u notáře nebo na matrice.</li>
   <li>Vyplněná a podepsaná prohlášení <b>od všech dědiců</b> nám, prosím, zašlete zpět v odpovědi na tento e-mail.</li>
 </ul>
-<p>Jakmile obdržíme všechny potřebné dokumenty a dojde k ukončení smlouvy, bude případný přeplatek vyplacen na uvedený
-  účet bez zbytečného odkladu v souladu s platnými právními předpisy.</p>
+<p>Jakmile obdržíme všechny potřebné dokumenty a dojde k ukončení smlouvy, bude případný přeplatek vyplacen na uvedený účet bez zbytečného odkladu v souladu s platnými právními předpisy.</p>
 ${PORTAL_BLOCK}`,
-"files": [
-{
-"url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
-"name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
-"type": "pdf", brand: "epet"
+      "files": [
+    {
+      "url": "https://drive.google.com/file/d/1kafS3H-mr8pQvmb5F5w6Ze4UUiKNRFbB/view?usp=drive_link",
+      "name": "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+      "type": "pdf", brand: "epet"
+    },
+   {
+  url: "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link",
+  name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
+  type: "pdf",
+  brand: "de"
 },
-{
-url: "https://drive.google.com/file/d/1m3O0pkyRUfeZnSs25g2MSAJ04NL1Izaf/view?usp=drive_link",
-name: "SOUHLAS PRO VYPLACENÍ PŘEPLATKU",
-type: "pdf",
-brand: "de"
+    {
+      "url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
+      "name": "ČP - Souhlas s nevyplacením přeplatku",
+      "type": "pdf", brand: "de"
+    },
+    {
+      "url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
+      "name": "ČP - Souhlas s nevyplacením přeplatku",
+      "type": "pdf", brand: "epet"
+    }
+  ],
+  tags: ["Dědické řízení"]
 },
-{
-"url": "https://drive.google.com/file/d/114oUZ3oe18YtppLhYOfTFLDu4JN-BkEp/view?usp=drive_link",
-"name": "ČP - Souhlas s nevyplacením přeplatku",
-"type": "pdf", brand: "de"
-},
-{
-"url": "https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link",
-"name": "ČP - Souhlas s nevyplacením přeplatku",
-"type": "pdf", brand: "epet"
-}
-],
-tags: ["Dědické řízení"]
-},
-/* Platby */
-"Zaslání platebních údajů pro úhradu záloh": {
-date: "2026-04-01",
-text: `${OSLOVENI_BLOCK}
-<p>děkujeme Vám za e-mail. Na základě Vašeho požadavku Vám níže zasíláme potřebné údaje pro úspěšnou úhradu Vašich
-  zálohových plateb:</p>
+        /* Platby */
+    "Zaslání platebních údajů pro úhradu záloh": {
+        date: "2026-04-01",
+        text: `${OSLOVENI_BLOCK}
+<p>děkujeme Vám za e-mail. Na základě Vašeho požadavku Vám níže zasíláme potřebné údaje pro úspěšnou úhradu Vašich zálohových plateb:</p>
 
 ${PLATBA_BLOCK}
 
-<p>Pro úplnost Vám v příloze tohoto e-mailu zasíláme také aktuální <strong>Platební kalendář</strong> (rozpis záloh), ve
-  kterém najdete přehledný rozpis všech plateb pro následující období.</p>
+<p>Pro úplnost Vám v příloze tohoto e-mailu zasíláme také aktuální <strong>Platební kalendář</strong> (rozpis záloh), ve kterém najdete přehledný rozpis všech plateb pro následující období.</p>
 
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Platby"]
-},
-"Ukončené odběrné místo - Platby": {
-text: `${OSLOVENI_BLOCK}
-<p>rádi bychom Vás informovali, že jsme obdrželi platbu ve výši <strong>XXXX Kč</strong> pro <strong>zákaznický účet
-    XXXX</strong>, pod <strong>variabilním symbolem XXXXXX.</strong></p>
-<p>Nicméně se jedná o odběrné místo, které bylo u naší společnosti již ukončeno. Z tohoto důvodu vracíme platbu zpět na
-  bankovní účet <strong>pod variabilním symbolem XXXXX.</strong></p>
-<p>Žádáme Vás, abyste tuto platbu již na tento smluvní účet <strong>nezasílali</strong> a <strong>zrušili</strong> si
-  trvalý příkaz.</p>
+        files: [],
+        tags: ["Platby"]
+},    
+        "Ukončené odběrné místo - Platby": {
+                text: `${OSLOVENI_BLOCK}
+<p>rádi bychom Vás informovali, že jsme obdrželi platbu ve výši <strong>XXXX Kč</strong> pro <strong>zákaznický účet XXXX</strong>, pod <strong>variabilním symbolem XXXXXX.</strong></p> 
+<p>Nicméně se jedná o odběrné místo, které bylo u naší společnosti již ukončeno. Z tohoto důvodu vracíme platbu zpět na bankovní účet <strong>pod variabilním symbolem XXXXX.</strong></p>
+<p>Žádáme Vás, abyste tuto platbu již na tento smluvní účet <strong>nezasílali</strong> a <strong>zrušili</strong> si trvalý příkaz.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Platby"]
-},
-"Upomínka - před předáním na Agenturu": {
-text: `${OSLOVENI_BLOCK}
+                files: [],
+                tags: ["Platby"]
+        },
+        "Upomínka - před předáním na Agenturu": {
+                text: `${OSLOVENI_BLOCK}
 <p>dnes jsme se Vás pokusili telefonicky kontaktovat, ale nebyli jsme úspěšní, proto volíme tuto formu kontaktu.</p>
-<p>I přes opakované výzvy evidujeme ke dni <strong>xxxxx</strong> pohledávky v celkové výši <strong>xxxx,-Kč</strong>,
-  tato částka zahrnuje:</p>
+<p>I přes opakované výzvy evidujeme ke dni <strong>xxxxx</strong> pohledávky v celkové výši <strong>xxxx,-Kč</strong>, tato částka zahrnuje:</p>
 <li>Zálohové platby za měsíce: <strong>xxxx</strong>,<strong>xxxx</strong>,<strong>xxxxx</strong> </li>
 <li>Nedoplatek z faktury vystavené dne xxxxxx splatné ke dni <strong>xxxxx</strong>. </li>
 <p>Kopii této faktury Vám zasíláme v příloze.</p>
-<p>Vyzýváme Vás k úhradě obratem. Platbu v CZK měně proveďte na <li>bankovní účet číslo <strong>9960227/0100</strong>
-  </li>
-  <li>pod variabilním symbolem <strong>xxxxxxxx</strong>,</li>
-  <li> a to nejpozději do <strong>xxxxxxxx.</strong>
-</p>
-</li>
+<p>Vyzýváme Vás k úhradě obratem. Platbu v CZK měně proveďte na <li>bankovní účet číslo <strong>9960227/0100</strong></li> <li>pod variabilním symbolem <strong>xxxxxxxx</strong>,</li><li> a to nejpozději do <strong>xxxxxxxx.</strong> </p></li>
 <p>V případě úhrady v EUR proveďte platbu na bankovní účet číslo:
-  <li><strong>2108721845/2700</strong></li> pod <strong>stejným variabilním symbolem</strong>.</li>
-</p>
-<p>Pokud jste platbu již uskutečnili, žádáme Vás o zaslání dokladu o úhradě na e-mail <em>info@epet.cz</em>,abychom ji
-  mohli ve spolupráci s naším finančním oddělením dohledat.
-<p>
-<p>Nedojde-li však k úhradě ve výše uvedené lhůtě, přistoupíme k procesu přerušení dodávky energií do Vašich odběrných
-  míst, ke kterým se neuhrazené platby vztahují.</p>
-<p>Platby po splatnosti budeme řešit soudní cestou. V tomto případě může dojít k navýšení dlužné částky i o náklady
-  soudního řízení.</p>
-<p>V případě, že ve výše uvedené lhůtě neobdržíme na e-mail <em>info@epet.cz</em> doklad o provedení platby, distributor
-  <strong>negarantuje zastavení</strong> procesu přerušení dodávky energií.</p>
+<li><strong>2108721845/2700</strong></li> pod <strong>stejným variabilním symbolem</strong>.</li></p> 
+<p>Pokud jste platbu již uskutečnili, žádáme Vás o zaslání dokladu o úhradě na e-mail <em>info@epet.cz</em>,abychom ji mohli ve spolupráci s naším finančním oddělením dohledat.<p> 
+<p>Nedojde-li však k úhradě ve výše uvedené lhůtě, přistoupíme k procesu přerušení dodávky energií do Vašich odběrných míst, ke kterým se neuhrazené platby vztahují.</p>
+<p>Platby po splatnosti budeme řešit soudní cestou. V tomto případě může dojít k navýšení dlužné částky i o náklady soudního řízení.</p>
+<p>V případě, že ve výše uvedené lhůtě neobdržíme na e-mail <em>info@epet.cz</em> doklad o provedení platby, distributor <strong>negarantuje zastavení</strong> procesu přerušení dodávky energií.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Platby"]
-},
-"Prosba o doložení platby": {
-text: `${OSLOVENI_BLOCK}
+                files: [],
+                tags: ["Platby"]
+        },
+        "Prosba o doložení platby": {
+                text: `${OSLOVENI_BLOCK}
 <p>Vámi uvedenou platbu ve výši XXX Kč v systému neevidujeme.</p>
-<p>Prosíme Vás tedy o zaslání potvrzení provedení platby na e-mail info@epet.cz. Následně potvrzení předáme na naše
-  finanční oddělení k dohledání.</p>
+<p>Prosíme Vás tedy o zaslání potvrzení provedení platby na e-mail info@epet.cz. Následně potvrzení předáme na naše finanční oddělení k dohledání.</p>
 <p>Děkujeme Vám za spolupráci. </p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Platby"]
-},
-"Potvrzení zk - že na základě potvrení o platbě je na jeho ZÚ vše v pořádku uhrazeno": {
-text: `${OSLOVENI_BLOCK}
-<p>děkujeme za zaslané potvrzení o platbě. Rádi bychom Vás informovali, že se nám na základě tohoto potvrzení podařilo
-  platbu dohledat. Na Vašem zákaznickém účtu nyní evidujeme vše v pořádku uhrazeno.</p>
+                files: [],
+                tags: ["Platby"]
+        },
+        "Potvrzení zk - že na základě potvrení o platbě je na jeho ZÚ vše v pořádku uhrazeno": {
+                text: `${OSLOVENI_BLOCK}
+<p>děkujeme za zaslané potvrzení o platbě. Rádi bychom Vás informovali, že se nám na základě tohoto potvrzení podařilo platbu dohledat. Na Vašem zákaznickém účtu nyní evidujeme vše v pořádku uhrazeno.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Platby"]
-},
-"Hrazení plateb pod špatným variabilním symbolem": {
-text: `${OSLOVENI_BLOCK}
+                files: [],
+                tags: ["Platby"]
+        },
+        "Hrazení plateb pod špatným variabilním symbolem": {
+                text: `${OSLOVENI_BLOCK}
 <p>
-<p>při kontrole Vašeho zákaznického účtu jsme zjistili, že nám pravidelné zálohové platby hradíte pod špatným
-  variabilním symbolem. Při následujících platbách uvádějte prosím tento symbol: XXXXXX.</p>
+<p>při kontrole Vašeho zákaznického účtu jsme zjistili, že nám pravidelné zálohové platby hradíte pod špatným variabilním symbolem. Při následujících platbách uvádějte prosím tento symbol: XXXXXX.</p>
 <p>Pro jistotu Vám v příloze zasíláme i aktuální rozpis záloh, kde tento variabilní symbol máte také uvedený.</p>
 <p>Vaši platbu tak budeme moct rychleji identifikovat a poté správně zaevidovat na Váš zákaznický účet.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Platby"]
-},
-"Hrazení plateb bez variabilního symbolu": {
-text: `${OSLOVENI_BLOCK}
+                files: [],
+                tags: ["Platby"]
+        },
+        "Hrazení plateb bez variabilního symbolu": {
+                text: `${OSLOVENI_BLOCK}
 <p>
-<p>při kontrole Vašeho zákaznického účtu jsme zjistili, že nám pravidelné zálohové platby hradíte bez variabilního
-  symbolu. Při následujících platbách uvádějte prosím tento symbol: XXXXXX.</p>
+<p>při kontrole Vašeho zákaznického účtu jsme zjistili, že nám pravidelné zálohové platby hradíte bez variabilního symbolu. Při následujících platbách uvádějte prosím tento symbol: XXXXXX.</p>
 <p>Pro jistotu Vám v příloze zasíláme i aktuální rozpis záloh, kde tento variabilní symbol máte také uvedený.</p>
 <p>Vaši platbu tak budeme moct rychleji identifikovat a poté správně zaevidovat na Váš zákaznický účet.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Platby"]
-},
-"Zpětné hrazení plateb": {
-text: `${OSLOVENI_BLOCK}
-<p>při kontrole Vašeho zákaznického účtu jsme zjistili, že v měsíci MM.RRRR neevidujeme z Vaší strany platbu. Z tohoto
-  důvodu jsou Vaše současné platby přiřazeny k měsícům, ve kterých úhrada nebyla provedena.</p>
+                files: [],
+                tags: ["Platby"]
+        },
+        "Zpětné hrazení plateb": {
+                text: `${OSLOVENI_BLOCK}
+<p>při kontrole Vašeho zákaznického účtu jsme zjistili, že v měsíci MM.RRRR neevidujeme z Vaší strany platbu. Z tohoto důvodu jsou Vaše současné platby přiřazeny k měsícům, ve kterých úhrada nebyla provedena.</p>
 <p>Pokud jste chybějící platbu již uhradil/a, prosíme Vás o zaslání potvrzení o provedení této platby.</p>
-<p>Pokud k úhradě skutečně nedošlo, zašlete prosím platbu ve výši <strong>XXX Kč</strong> na účet
-  <strong>9960227/0100</strong> pod variabilním symbolem <strong>XXX</strong>.</p>
+<p>Pokud k úhradě skutečně nedošlo, zašlete prosím platbu ve výši <strong>XXX Kč</strong> na účet <strong>9960227/0100</strong> pod variabilním symbolem <strong>XXX</strong>.</p>
 <p>Děkujeme Vám za spolupráci.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Platby"]
-},
-"Ověření nastavení způsobu úhrady záloh přes INKASO": {
-text: `${OSLOVENI_BLOCK}
-<p>při kontrole Vašeho zákaznického účtu jsme zjistili, že se nám nedaří provádět inkasování plateb z bankovního účtu,
-  který byl uveden. Rádi bychom Vás požádali o kontrolu správnosti čísla účtu anebo nastavení podmínek inkasování u Vaší
-  banky.</p>
+                files: [],
+                tags: ["Platby"]
+        },
+        "Ověření nastavení způsobu úhrady záloh přes INKASO": {
+                text: `${OSLOVENI_BLOCK}
+<p>při kontrole Vašeho zákaznického účtu jsme zjistili, že se nám nedaří provádět inkasování plateb z bankovního účtu, který byl uveden. Rádi bychom Vás požádali o kontrolu správnosti čísla účtu anebo nastavení podmínek inkasování u Vaší banky.</p>
 <p>V současnosti u Vás evidujeme toto číslo účtu: <strong>XXXXXXXXXXX</strong>.</p>
-<p>Jelikož se nám nepodařilo inkasovat aktuálně splatnou zálohovou platbu, učiňte tak jednorázově převodem na číslo účtu
-  <strong>9960227/0100</strong> pod variabilním symbolem <strong>XXXXXX</strong>. </p>
+<p>Jelikož se nám nepodařilo inkasovat aktuálně splatnou zálohovou platbu, učiňte tak jednorázově převodem na číslo účtu <strong>9960227/0100</strong> pod variabilním symbolem <strong>XXXXXX</strong>. </p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Platby"]
-},
-"SIPO – ověření spojovacího čísla": {
-text: `${OSLOVENI_BLOCK}
-<p>při kontrole Vašeho zákaznického účtu jsme zjistili, že se nám nedaří provádět inkasování plateb prostřednictvím
-  SIPO. Rádi bychom Vás požádali o kontrolu spojovacího čísla, které naleznete na SIPO složence v pravém horním rohu, na
-  druhém řádku.</p>
+                files: [],
+                tags: ["Platby"]
+        },
+        "SIPO – ověření spojovacího čísla": {
+                text: `${OSLOVENI_BLOCK}
+<p>při kontrole Vašeho zákaznického účtu jsme zjistili, že se nám nedaří provádět inkasování plateb prostřednictvím SIPO. Rádi bychom Vás požádali o kontrolu spojovacího čísla, které naleznete na SIPO složence v pravém horním rohu, na druhém řádku.</p>
 <p>V současnosti u Vás evidujeme toto spojovací číslo: <strong>XXXXXXXXXXX</strong>.</p>
-<p>Jelikož se nám nepodařilo inkasovat aktuálně splatnou zálohovou platbu, učiňte tak jednorázově převodem na
-  <strong>číslo účtu 9960227/0100</strong> pod variabilním symbolem <strong>XXXXXX</strong>.</p>
+<p>Jelikož se nám nepodařilo inkasovat aktuálně splatnou zálohovou platbu, učiňte tak jednorázově převodem na <strong>číslo účtu 9960227/0100</strong> pod variabilním symbolem <strong>XXXXXX</strong>.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Platby"]
-},
-"Nesrovnalosti ve způsobu úhrady zálohových plateb": {
-text: `${OSLOVENI_BLOCK}
-<p>při kontrole Vašeho zákaznického účtu jsme zjistili, že využíváte jiný způsob hrazení zálohových plateb, než byl
-  sjednán ve smlouvě nebo dohodnutý v minulosti.</p>
-<p>Rádi bychom Vás požádali o potvrzení, jakým způsobem máme tedy trvale nastavit způsob plateb na Vašem zákaznickém
-  účtu. Vaše platby tak budeme moci přehledně a rychle evidovat.</p>
+                files: [],
+                tags: ["Platby"]
+        },
+        "Nesrovnalosti ve způsobu úhrady zálohových plateb": {
+                text: `${OSLOVENI_BLOCK}
+<p>při kontrole Vašeho zákaznického účtu jsme zjistili, že využíváte jiný způsob hrazení zálohových plateb, než byl sjednán ve smlouvě nebo dohodnutý v minulosti.</p>
+<p>Rádi bychom Vás požádali o potvrzení, jakým způsobem máme tedy trvale nastavit způsob plateb na Vašem zákaznickém účtu. Vaše platby tak budeme moci přehledně a rychle evidovat.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Platby"]
-},
-"Potvrzení závazků - KONFIRMACE (Vzájemné započtení pohledávek)": {
-text: `${OSLOVENI_BLOCK}
+                files: [],
+                tags: ["Platby"]
+        },
+        "Potvrzení závazků - KONFIRMACE (Vzájemné započtení pohledávek)": {
+                text: `${OSLOVENI_BLOCK}
 <p>je nám líto, ale naše společnost konfirmace nepotvrzuje.</p>
 <p>Děkujeme za pochopení. </p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Platby"]
-},
-"Žádost o doložení čísla bankovního účtu": {
-text: `${OSLOVENI_BLOCK}
-<p>v rámci kontroly doložené smlouvy jsme zjistili, že byla označena možnost vyplácení přeplatků na bankovní účet.
-  Nicméně ve smlouvě není uvedeno číslo účtu, na který by měly být případné přeplatky zasílány.</p>
-<p>Dovolujeme si Vás proto požádat o jeho doplnění. Číslo účtu můžete zaslat odpovědí na tento e-mail nebo
-  prostřednictvím telefonického hovoru na naší zákaznickou linku. </p>
+                files: [],
+                tags: ["Platby"]
+        },
+        "Žádost o doložení čísla bankovního účtu": {
+                text: `${OSLOVENI_BLOCK}
+<p>v rámci kontroly doložené smlouvy jsme zjistili, že byla označena možnost vyplácení přeplatků na bankovní účet. Nicméně ve smlouvě není uvedeno číslo účtu, na který by měly být případné přeplatky zasílány.</p>
+<p>Dovolujeme si Vás proto požádat o jeho doplnění. Číslo účtu můžete zaslat odpovědí na tento e-mail nebo prostřednictvím telefonického hovoru na naší zákaznickou linku. </p>
 <p>Děkujeme za spolupráci a v případě dotazů jsme Vám k dispozici. </p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Platby"]
-},
-"Potvrzení o zápočtu! Předmět e-mailu: Potvrzení dohody o zápočtu faktur č. XXXX a č. XXXX": {
-text: `${OSLOVENI_BLOCK}
-<p>v návaznosti na náš telefonický hovor si Vám dovolujeme potvrdit, že jsme se dohodli na provedení zápočtu vzájemných
-  pohledávek, a to konkrétně faktur č. XXXX a č. XXXX. (vypsat všechny čísla FA které se dají započíst)</p>
+                files: [],
+                tags: ["Platby"]
+        },
+        "Potvrzení o zápočtu! Předmět e-mailu: Potvrzení dohody o zápočtu faktur č. XXXX a č. XXXX": {
+                text: `${OSLOVENI_BLOCK}
+<p>v návaznosti na náš telefonický hovor si Vám dovolujeme potvrdit, že jsme se dohodli na provedení zápočtu vzájemných pohledávek, a to konkrétně faktur č. XXXX a č. XXXX. (vypsat všechny čísla FA které se dají započíst)</p>
 <p>Příslušný zápočet Vám bude zaslán k potvrzení v průběhu několika následujících pracovních dnů. </p>
 <p>Děkujeme za součinnost a v případě jakýchkoliv dotazů se na nás neváhejte obrátit. </p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Platby"]
-},
-"Otevřené platby - Zákazníkovi vracíme platbu, kterou uhradil pod chybným VS": {
-text: `${OSLOVENI_BLOCK}
+                files: [],
+                tags: ["Platby"]
+        },
+        "Otevřené platby - Zákazníkovi vracíme platbu, kterou uhradil pod chybným VS": {
+                text: `${OSLOVENI_BLOCK}
 <p>
-<p>dovolujeme si Vás informovat, že částka ve výši <strong> XXXX Kč</strong>, kterou jste uhradil(a) pod chybným
-  variabilním symbolem, Vám bude vrácena na bankovní účet číslo <strong> XXXXX </strong></p>
-<p>Upozorňujeme, že platby je nutné hradit výhradně pod správným variabilním symbolem uvedeným v <strong>platebním
-    kalendáři</strong>, který naleznete v příloze tohoto e-mailu.</p>
+<p>dovolujeme si Vás informovat, že částka ve výši <strong> XXXX Kč</strong>, kterou jste uhradil(a) pod chybným variabilním symbolem, Vám bude vrácena na bankovní účet číslo <strong> XXXXX </strong></p>
+<p>Upozorňujeme, že platby je nutné hradit výhradně pod správným variabilním symbolem uvedeným v <strong>platebním kalendáři</strong>, který naleznete v příloze tohoto e-mailu.</p>
 <p>Zároveň Vám v příloze zasíláme <strong>daňový doklad</strong> k vrácené platbě.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Platby"]
-},
-"Otevřené platby - Zákazníkovi vracíme platbu, kterou uhradil mimo PK (nadrámec)": {
-text: `${OSLOVENI_BLOCK}
+                files: [],
+                tags: ["Platby"]
+        },
+        "Otevřené platby - Zákazníkovi vracíme platbu, kterou uhradil mimo PK (nadrámec)": {
+                text: `${OSLOVENI_BLOCK}
 <p>
-<p>dovolujeme si Vás informovat, že částka ve výši <strong>XXXX Kč</strong>, kterou jste uhradil(a) nad rámec
-  předepsaných záloh, Vám bude vrácena na bankovní účet číslo <strong>XXXXX</strong>.</p>
-<p>Zároveň si Vás dovolujeme upozornit, že platby byly hrazeny ve vyšší výši, než stanovuje aktuální rozpis záloh.
-  Doporučujeme proto upravit trvalý příkaz dle <strong>platného platebního kalendáře</strong>, který Vám zasíláme v
-  příloze tohoto e-mailu.</p>
+<p>dovolujeme si Vás informovat, že částka ve výši <strong>XXXX Kč</strong>, kterou jste uhradil(a) nad rámec předepsaných záloh, Vám bude vrácena na bankovní účet číslo <strong>XXXXX</strong>.</p>
+<p>Zároveň si Vás dovolujeme upozornit, že platby byly hrazeny ve vyšší výši, než stanovuje aktuální rozpis záloh. Doporučujeme proto upravit trvalý příkaz dle <strong>platného platebního kalendáře</strong>, který Vám zasíláme v příloze tohoto e-mailu.</p>
 <p>Zároveň Vám v příloze zasíláme <strong>daňový doklad</strong> k vrácené platbě.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Platby"]
-},
+                files: [],
+                tags: ["Platby"]
+        },
 "Otevřené platby - Zákazníkovi vracíme platbu, kterou uhradil mimo PK (nadrámec)": {
-"text": `
+    "text": `
 ${OSLOVENI_BLOCK}
 <p>
 <p>děkujeme Vám za Váš e-mail.</p>
-<p>Rádi bychom Vás informovali, že částka <strong>{{castka_vracena}} Kč</strong>, kterou jste obdržel/a dne
-  <strong>{{datum_vratky}}</strong>, byla vrácena z naší strany na základě Vámi provedené platby ve výši
-  <strong>{{castka_uhrazena}} Kč</strong>.</p>
-<p>Po posledním vyúčtování ze dne <strong>{{datum_vyuctovani}}</strong> došlo k úpravě platebního kalendáře, ve kterém
-  je aktuální výše měsíční zálohy stanovena na <strong>{{aktualni_zaloha}} Kč</strong>. Z Vaší strany nám však nadále
-  chodí platby ve výši <strong>{{vase_trvala_platba}} Kč</strong>, tedy vyšší částky, než odpovídá aktuální platebnímu
-  kalendáři.</p>
-<p>Z tohoto důvodu jsme povinni vracet rozdíl mezi uhrazenou částkou a výší zálohy uvedenou v platebním kalendáři zpět
-  na Váš účet. Stejným způsobem jsme Vám vraceli i platby v měsících <strong>{{mesice_predtim}}</strong>.</p>
+<p>Rádi bychom Vás informovali, že částka <strong>{{castka_vracena}} Kč</strong>, kterou jste obdržel/a dne <strong>{{datum_vratky}}</strong>, byla vrácena z naší strany na základě Vámi provedené platby ve výši <strong>{{castka_uhrazena}} Kč</strong>.</p>
+<p>Po posledním vyúčtování ze dne <strong>{{datum_vyuctovani}}</strong> došlo k úpravě platebního kalendáře, ve kterém je aktuální výše měsíční zálohy stanovena na <strong>{{aktualni_zaloha}} Kč</strong>. Z Vaší strany nám však nadále chodí platby ve výši <strong>{{vase_trvala_platba}} Kč</strong>, tedy vyšší částky, než odpovídá aktuální platebnímu kalendáři.</p>
+<p>Z tohoto důvodu jsme povinni vracet rozdíl mezi uhrazenou částkou a výší zálohy uvedenou v platebním kalendáři zpět na Váš účet. Stejným způsobem jsme Vám vraceli i platby v měsících <strong>{{mesice_predtim}}</strong>.</p>
 <p>Aby nedocházelo k dalším vratkám plateb, dovolujeme si doporučit jednu z následujících možností:</p>
 <ul>
-  <li>Upravit trvalý příkaz na částku odpovídající aktuální výši záloh – tedy <strong>{{aktualni_zaloha}} Kč</strong>,
-  </li>
-  <li>nebo informovat nás, zda si přejete, abychom výši záloh navýšili na Vámi preferovanou částku
-    <strong>{{vase_trvala_platba}} Kč</strong>, a podle toho upravíme platební kalendář.</li>
+<li>Upravit trvalý příkaz na částku odpovídající aktuální výši záloh – tedy <strong>{{aktualni_zaloha}} Kč</strong>,</li>
+<li>nebo informovat nás, zda si přejete, abychom výši záloh navýšili na Vámi preferovanou částku <strong>{{vase_trvala_platba}} Kč</strong>, a podle toho upravíme platební kalendář.</li>
 </ul>
 ${PORTAL_BLOCK}`,
-"files": [],
-"tags": ["Platby"]
+    "files": [],
+    "tags": ["Platby"]
 },
 "Zákazník zasílá potvrzení o provedení platby, ale platba není propsaná v ZIS": {
-"text": `
+    "text": `
 ${OSLOVENI_BLOCK}
 <p>
 <p>děkujeme Vám za Váš e-mail a informaci o provedené úhradě {{dlužné faktury/zálohy}}.</p>
 <p>V tuto chvíli však <strong> přijatou platbu v systému zatím neevidujeme. </strong></p>
-<p>Rádi bychom Vás informovali, že připsání platby na náš účet může standardně trvat <strong> 2–3 pracovní dny
-  </strong>, a to v závislosti na mezibankovním zpracování. Jakmile bude platba zaevidována v našem systému, ihned se
-  projeví u Vašeho zákaznického účtu.
+<p>Rádi bychom Vás informovali, že připsání platby na náš účet může standardně trvat <strong> 2–3 pracovní dny </strong>, a to v závislosti na mezibankovním zpracování. Jakmile bude platba zaevidována v našem systému, ihned se projeví u Vašeho zákaznického účtu.
 </p>
 <p>Stav úhrady můžete kdykoliv ověřit také v <strong> Zákaznickém portále </strong> v sekci <i> Platby a zálohy </i>.
 </p>
 ${PORTAL_BLOCK}`,
-"files": [],
-"tags": ["Platby"]
+    "files": [],
+    "tags": ["Platby"]
 },
-/* Zálohy */
-"Úprava výše záloh - Navýšení s informací dle § 11 odst. 6": {
-text: `${OSLOVENI_BLOCK}
-<p>potvrzujeme Vám změnu zálohových plateb na částku <strong>XXXXX Kč</strong>. Tato změna bude provedena od
-  <strong>MM.RRRR.</strong></p>
+        /* Zálohy */
+        "Úprava výše záloh - Navýšení s informací dle § 11 odst. 6": {
+                text: `${OSLOVENI_BLOCK}
+<p>potvrzujeme Vám změnu zálohových plateb na částku <strong>XXXXX Kč</strong>. Tato změna bude provedena od <strong>MM.RRRR.</strong></p>
 <p>Nový platební kalendář Vám bude zaslán v samostatném e-mailu. / poštou.</p>
-<p><i>Informujeme Vás, že v důsledku navýšení záloh může při vyúčtování vzniknout vyšší přeplatek. Vzhledem k této
-    úpravě již rozpis záloh neodpovídá postupu dle § 11 odst. 6 energetického zákona.</i></p>
+<p><i>Informujeme Vás, že v důsledku navýšení záloh může při vyúčtování vzniknout vyšší přeplatek. Vzhledem k této úpravě již rozpis záloh neodpovídá postupu dle § 11 odst. 6 energetického zákona.</i></p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Zálohy"]
-},
+                files: [],
+                tags: ["Zálohy"]
+        },
 
-"Prosba o zaslání fotografie měřidla - stávající zákazník": {
-text: `${OSLOVENI_BLOCK}
+        "Prosba o zaslání fotografie měřidla - stávající zákazník": {
+                text: `${OSLOVENI_BLOCK}
 <p>pro změnu zálohy na Vámi požadovanou výši Vás prosíme o zaslání aktuální fotografie měřidla.</p>
-<p>Na základě fotografie bude Váš požadavek předán na příslušné oddělení k posouzení. O výsledku budete následně co
-  nejdříve informováni.</p>
+<p>Na základě fotografie bude Váš požadavek předán na příslušné oddělení k posouzení. O výsledku budete následně co nejdříve informováni.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Zálohy"]
-},
-"Prosba o zaslání fotografie měřidla - Nový zákazník": {
-text: `${OSLOVENI_BLOCK}
-<p>pro změnu zálohy na Vámi požadovanou výši Vás prosíme o zaslání aktuální fotografie měřidla, včetně konečného
-  vyúčtování od původního dodavatele</p>
-<p>Na základě těchto dokumentů bude Váš požadavek předán na příslušné oddělení k posouzení. O výsledku budete následně
-  co nejdříve informováni.</p>
+                files: [],
+                tags: ["Zálohy"]
+        },
+        "Prosba o zaslání fotografie měřidla - Nový zákazník": {
+                text: `${OSLOVENI_BLOCK}
+<p>pro změnu zálohy na Vámi požadovanou výši Vás prosíme o zaslání aktuální fotografie měřidla, včetně konečného vyúčtování od původního dodavatele</p>
+<p>Na základě těchto dokumentů bude Váš požadavek předán na příslušné oddělení k posouzení. O výsledku budete následně co nejdříve informováni.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Zálohy"]
-},
-"Snížení zálohových plateb - zamítnutí": {
-text: `${OSLOVENI_BLOCK}
+                files: [],
+                tags: ["Zálohy"]
+        },
+        "Snížení zálohových plateb - zamítnutí": {
+                text: `${OSLOVENI_BLOCK}
 <p>je nám líto, ale Vašemu požadavku nemůžeme v tuto chvíli vyhovět.</p>
-<p>Výše záloh, kterou jsme Vám stanovili v platebním kalendáři, se odvíjí od smluvní ceny a očekávaného množství dodané
-  energie.</p>
-<p>V případě, že disponujete informacemi, které prokazují důvodné snížení plateb na daném odběrném místě - instalace
-  fotovoltaické elektrárny, přechod na jiný způsob vytápění (instalace plynového kotle, instalace tepelného čerpadla),
-  případně konečné vyúčtování od původního dodavatele, rádi bychom Vás požádali o jejich doložení <b>(protokol o
-    instalaci, konečné vyúčtování + aktuální foto měřidla s datumovkou)</b>. Následně posoudíme požadavek na výši
-  zálohy.</p>
-<p>Rádi našim zákazníkům vyhovíme, ale musíme si být jisti, že je snížení opodstatněné, aby pak zákazníka nečekal vysoký
-  nedoplatek v ročním zúčtování. Je to ochrana obou stran.</p>
+<p>Výše záloh, kterou jsme Vám stanovili v platebním kalendáři, se odvíjí od smluvní ceny a očekávaného množství dodané energie.</p>
+<p>V případě, že disponujete informacemi, které prokazují důvodné snížení plateb na daném odběrném místě - instalace fotovoltaické elektrárny, přechod na jiný způsob vytápění (instalace plynového kotle, instalace tepelného čerpadla), případně konečné vyúčtování od původního dodavatele, rádi bychom Vás požádali o jejich doložení <b>(protokol o instalaci, konečné vyúčtování + aktuální foto měřidla s datumovkou)</b>. Následně posoudíme požadavek na výši zálohy.</p>
+<p>Rádi našim zákazníkům vyhovíme, ale musíme si být jisti, že je snížení opodstatněné, aby pak zákazníka nečekal vysoký nedoplatek v ročním zúčtování. Je to ochrana obou stran.</p> 
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Zálohy"]
-},
-"Kopie rozpisu záloh": {
-text: `${OSLOVENI_BLOCK}
+                files: [],
+                tags: ["Zálohy"]
+        },
+        "Kopie rozpisu záloh": {
+                text: `${OSLOVENI_BLOCK}
 <p>na základě Vašeho požadavku Vám zasíláme kopii platebního kalendáře k dodávkám energií.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Zálohy"]
-},
-"Platební kalendář – daňový doklad": {
-text: `${OSLOVENI_BLOCK}
-<p>rádi bychom Vás informovali, že platební kalendář, který jsme Vám zaslali, splňuje všechny zákonné náležitosti a
-  slouží jako daňový doklad.</p>
-<p>Daňový doklad navíc Vám vystavíme pouze na přijaté platby, které nám zašlete nad rámec částek stanovených platebním
-  kalendářem.</p>
+                files: [],
+                tags: ["Zálohy"]
+        },
+        "Platební kalendář – daňový doklad": {
+                text: `${OSLOVENI_BLOCK}
+<p>rádi bychom Vás informovali, že platební kalendář, který jsme Vám zaslali, splňuje všechny zákonné náležitosti a slouží jako daňový doklad.</p>
+<p>Daňový doklad navíc Vám vystavíme pouze na přijaté platby, které nám zašlete nad rámec částek stanovených platebním kalendářem.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Zálohy"]
-},
-"Potvrzení změny záloh": {
-text: `${OSLOVENI_BLOCK}
-<p>potvrzujeme Vám změnu zálohových plateb na částku <strong>XXXXX Kč</strong>. Tato změna bude provedena od
-  <strong>MM.RRRR.</strong></p>
+                files: [],
+                tags: ["Zálohy"]
+        },
+        "Potvrzení změny záloh": {
+                text: `${OSLOVENI_BLOCK}
+<p>potvrzujeme Vám změnu zálohových plateb na částku <strong>XXXXX Kč</strong>. Tato změna bude provedena od <strong>MM.RRRR.</strong></p>
 <p>Nový platební kalendář Vám bude zaslán v samostatném e-mailu. / poštou.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Zálohy"]
-},
-"Snížení zálohových plateb - zamítnutí na minumum": {
-text: `${OSLOVENI_BLOCK}
+                files: [],
+                tags: ["Zálohy"]
+        },
+        "Snížení zálohových plateb - zamítnutí na minumum": {
+                text: `${OSLOVENI_BLOCK}
 <p>
 <p>je nám líto, ale měsíční zálohy nelze snížit na Vámi požadovanou částku.</p>
-<p>Součástí plateb za dodávku energií jsou i položky, které je nutné hradit (např. distribuční poplatky). Pokud by tedy
-  byly zálohy sníženy na Vámi požadovanou částku, nedocházelo by k pokrytí těchto poplatků.</p>
-<p>Děkujeme Vám za pochopení.</p>
+<p>Součástí plateb za dodávku energií jsou i položky, které je nutné hradit (např. distribuční poplatky). Pokud by tedy byly zálohy sníženy na Vámi požadovanou částku, nedocházelo by k pokrytí těchto poplatků.</p>
+<p>Děkujeme Vám za pochopení.</p> 
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Zálohy"]
-},
-"Rozpis záloh – Nový zákazník": {
-text: `${OSLOVENI_BLOCK}
+                files: [],
+                tags: ["Zálohy"]
+        },
+          "Rozpis záloh – Nový zákazník": {
+                text: `${OSLOVENI_BLOCK}
 <p>
 <p>děkujeme, že jste si vybral/a naši společnost pro dodávky energií.</p>
-<p>Rádi bychom Vás informovali, že k vystavení a odeslání platebního kalendáře (rozpisu záloh) dochází standardně <b>do
-    14 dnů od data zahájení dodávek.</b></p>
-<p>Ve Vašem případě začínají dodávky u naší společnosti od <b>{{datum_zahajeni}} </b>, proto Vás prosíme o krátké
-  strpení.</b></p>
+<p>Rádi bychom Vás informovali, že k vystavení a odeslání platebního kalendáře (rozpisu záloh) dochází standardně <b>do 14 dnů od data zahájení dodávek.</b></p>
+<p>Ve Vašem případě začínají dodávky u naší společnosti od <b>{{datum_zahajeni}} </b>, proto Vás prosíme o krátké strpení.</b></p>
 <p>Jakmile bude platební kalendář vystaven, bude Vám automaticky zaslán na e-mail uvedený ve smlouvě</p>
-<p>Děkujeme Vám za pochopení.</p>
+<p>Děkujeme Vám za pochopení.</p> 
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Zálohy"]
-},
-/* SPK */
-"Žádost o vystavení SPK": {
-text: `${OSLOVENI_BLOCK}
-<p>děkujeme za Vaši žádost o vystavení splátkového kalendáře (SPK). Rádi bychom Vás informovali o podmínkách, které je
-  nutné splnit, aby mohla být Vaše žádost posouzena a schválena:</p>
+                files: [],
+                tags: ["Zálohy"]
+        },
+        /* SPK */
+        "Žádost o vystavení SPK": {
+                text: `${OSLOVENI_BLOCK}
+<p>děkujeme za Vaši žádost o vystavení splátkového kalendáře (SPK). Rádi bychom Vás informovali o podmínkách, které je nutné splnit, aby mohla být Vaše žádost posouzena a schválena:</p>
 <ul>
-  <li><b>Stav záloh:</b></li> Je nezbytné, aby byly uhrazeny všechny zálohy po splatnosti. Pokud máte aktuálně
-  neuhrazené zálohy, prosíme o jejich doplacení před podáním žádosti o SPK. [<strong>případně zákazníkovi vypíšeme zda u
-    něj evidujeme zálohy po splatnosti)</strong>]
-  <li><b>Úhrada části dluhu:</b></li> Podle našich podmínek je nutné uhradit alespoň 1/3 celkového dluhu Ve Vašem
-  případě se jedná o částku: <strong>XXXXXXXX</strong>. Toto opatření slouží k prokázání zájmu o řádné vyřízení dluhu.
-  Po provedení této platby je třeba zaslat potvrzení o úhrazení.
-  <li><b>Podmínky splátkového kalendáře:</b></li> Splátkový kalendář je možné rozložit maximálně do 3 splátek.
-  <li><b>Další kroky:</li> </b>Po úhradě 1/3 dluhu prosíme vyčkejte <b> 2–3 pracovní </b> dny na připsání platby. Poté
-  kontaktujte zákaznickou linku (ideálně telefonicky) - vaši žádost následně předáme finančnímu oddělení k vystavení
-  splátkového kalendáře (SPK)
-</ul>
+<li><b>Stav záloh:</b></li> Je nezbytné, aby byly uhrazeny všechny zálohy po splatnosti. Pokud máte aktuálně neuhrazené zálohy, prosíme o jejich doplacení před podáním žádosti o SPK. [<strong>případně zákazníkovi vypíšeme zda u něj evidujeme zálohy po splatnosti)</strong>]
+<li><b>Úhrada části dluhu:</b></li> Podle našich podmínek je nutné uhradit alespoň 1/3 celkového dluhu Ve Vašem případě se jedná o částku: <strong>XXXXXXXX</strong>. Toto opatření slouží k prokázání zájmu o řádné vyřízení dluhu. Po provedení této platby je třeba zaslat potvrzení o úhrazení.
+<li><b>Podmínky splátkového kalendáře:</b></li> Splátkový kalendář je možné rozložit maximálně do 3 splátek.
+<li><b>Další kroky:</li> </b>Po úhradě 1/3 dluhu prosíme vyčkejte <b> 2–3 pracovní </b> dny na připsání platby. Poté kontaktujte zákaznickou linku (ideálně telefonicky) - vaši žádost následně předáme finančnímu oddělení k vystavení splátkového kalendáře (SPK)</ul>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["SPK"]
-},
-"SPLÁTKOVÝ KALENDÁŘ - Vystavení": {
-text: `${OSLOVENI_BLOCK}
-<p>chtěli bychom Vás informovat, že jsme schválili Vaši žádost o poskytnutí splátkového kalendáře. Splátkový kalendář se
-  vztahuje k faktuře s variabilním symbolem <b>XXXXXXXX</b>, která byla vystavena na dodávku elektřiny/plynu.</p>
+                files: [],
+                tags: ["SPK"]
+        },
+        "SPLÁTKOVÝ KALENDÁŘ - Vystavení": {
+                text: `${OSLOVENI_BLOCK}
+<p>chtěli bychom Vás informovat, že jsme schválili Vaši žádost o poskytnutí splátkového kalendáře. Splátkový kalendář se vztahuje k faktuře s variabilním symbolem <b>XXXXXXXX</b>, která byla vystavena na dodávku elektřiny/plynu.</p>
 <p>Jednotlivé splátky dlužné částky za dodávky elektřiny/plynu plaťte dle níže uvedeného rozpisu a platebních údajů:</p>
 <li><b>VS:</b> XXXXXXXX</li>
 <li><b>Částka:</b> XXXXX Kč</li>
@@ -2638,1063 +2029,830 @@ text: `${OSLOVENI_BLOCK}
 <li>První splátka je splatná ke dni: <b>XX.XX.XXXX</b></li> <br>
 <p>Detailní rozpis splátek najdete v dokumentu přiloženém v příloze tohoto e-mailu.</p>
 ${PORTAL_BLOCK}`,
-files: [
-{ url: "https://docs.google.com/document/d/13fDHRHzFAzN79kNSr-ECLBv4lUedUvLNxvxAJ7KeIO4/edit?usp=drive_link", name: "
-Splátkový kalendář - rozpis splátek", type: "doc", brand: "epet" },
-{ url: "https://docs.google.com/document/d/1xdJaEgbORi0v3vWVu-P_X1Y0glCwx32j1gn48m_TbUs/edit?usp=drive_link", name: "
-Splátkový kalendář - rozpis splátek", type: "doc", brand: "de" }
-],
-tags: ["SPK"]
-},
-"Výzva k úhradě SPK - Zákazník SPK nehradí ": {
-text: `${OSLOVENI_BLOCK}
-<p>rádi bychom Vás informovali, že k datu <strong>XXXXXXXX</strong> Vám byl schválen splátkový kalendář na nedoplatkovou
-  fakturu ve výši <strong>XXXXXX Kč</strong>. O této skutečnosti jsme Vás informovali e-mailem/telefonicky dne
-  <strong>XXXXXXX</strong>,ve kterém byl uveden rozpis jednotlivých měsíčních splátek.</p>
-<p>Do dnešního dne však evidujeme, že splátky nebyly uhrazeny. Žádáme Vás proto o nápravu této situace. V opačném
-  případě dojde ke zrušení splátkového kalendáře a bude nutné celý dluh ve výši <strong>XXXXXXX Kč</strong> uhradit
-  neprodleně v plné výši.</p>
+                files: [
+                        { url: "https://docs.google.com/document/d/13fDHRHzFAzN79kNSr-ECLBv4lUedUvLNxvxAJ7KeIO4/edit?usp=drive_link", name: " Splátkový kalendář - rozpis splátek", type: "doc", brand: "epet" },
+                        { url: "https://docs.google.com/document/d/1xdJaEgbORi0v3vWVu-P_X1Y0glCwx32j1gn48m_TbUs/edit?usp=drive_link", name: " Splátkový kalendář - rozpis splátek", type: "doc", brand: "de" }
+                ],
+                tags: ["SPK"]
+        },
+        "Výzva k úhradě SPK - Zákazník SPK nehradí ": {
+                text: `${OSLOVENI_BLOCK}
+<p>rádi bychom Vás informovali, že k datu <strong>XXXXXXXX</strong> Vám byl schválen splátkový kalendář na nedoplatkovou fakturu ve výši <strong>XXXXXX Kč</strong>. O této skutečnosti jsme Vás informovali e-mailem/telefonicky dne <strong>XXXXXXX</strong>,ve kterém byl uveden rozpis jednotlivých měsíčních splátek.</p>
+<p>Do dnešního dne však evidujeme, že splátky nebyly uhrazeny. Žádáme Vás proto o nápravu této situace. V opačném případě dojde ke zrušení splátkového kalendáře a bude nutné celý dluh ve výši <strong>XXXXXXX Kč</strong> uhradit neprodleně v plné výši.</p> 
 <p>Pokud platba nebude provedena, může být pohledávka předána k inkasnímu vymáhání.</p>
 <p>Děkujeme za pochopení a věříme v rychlé vyřešení této záležitosti.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["SPK"]
-},
-/* Změny platebního způsobu */
-"ZMĚNA ÚČTU PRO ZASÍLÁNÍ PŘEPLATKŮ": {
-text: `${OSLOVENI_BLOCK}
-<p>na základě Vašeho požadavku potvrzujeme, že jsme změnili číslo bankovního účtu pro zasílání přeplatků za odběr
-  energií. Nové číslo bankovního účtu je <strong>XXXX</strong>.</p>
+                files: [],
+                tags: ["SPK"]
+        },
+        /* Změny platebního způsobu */
+        "ZMĚNA ÚČTU PRO ZASÍLÁNÍ PŘEPLATKŮ": {
+                text: `${OSLOVENI_BLOCK}
+<p>na základě Vašeho požadavku potvrzujeme, že jsme změnili číslo bankovního účtu pro zasílání přeplatků za odběr energií. Nové číslo bankovního účtu je <strong>XXXX</strong>.</p> 
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Změny platebního způsobu"]
-},
-"ZMĚNA HRAZENÍ ZÁLOH PŘES INKASO": {
-text: `${OSLOVENI_BLOCK}
+                files: [],
+                tags: ["Změny platebního způsobu"]
+        },
+        "ZMĚNA HRAZENÍ ZÁLOH PŘES INKASO": {
+                text: `${OSLOVENI_BLOCK}
 <p>na základě Vašeho požadavku potvrzujeme nastavení nového čísla bankovního účtu pro hrazení plateb přes inkaso.</p>
 <p>Nové číslo bankovního účtu je <strong>XXXX</strong>. </p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Změny platebního způsobu"]
-},
-"ZMĚNA HRAZENÍ ZÁLOH PŘES SIPO - PŘED 24. DNEM MĚSÍCE": {
-text: `${OSLOVENI_BLOCK}
-<p>na základě Vašeho požadavku jsme upravili způsob hrazení záloh. Nyní jsou Vaše platby tedy hrazeny prostřednictvím
-  SIPO a Vaše spojovací číslo je <strong>XXXX</strong>.</p>
+                files: [],
+                tags: ["Změny platebního způsobu"]
+        },
+        "ZMĚNA HRAZENÍ ZÁLOH PŘES SIPO - PŘED 24. DNEM MĚSÍCE": {
+                text: `${OSLOVENI_BLOCK}
+<p>na základě Vašeho požadavku jsme upravili způsob hrazení záloh. Nyní jsou Vaše platby tedy hrazeny prostřednictvím SIPO a Vaše spojovací číslo je <strong>XXXX</strong>.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Změny platebního způsobu"]
-},
-"ZMĚNA HRAZENÍ ZÁLOH PŘES SIPO - PO 24. DNI MĚSÍCE": {
-text: `${OSLOVENI_BLOCK}
-<p>na základě Vašeho požadavku jsme upravili způsob hrazení záloh. Nyní jsou Vaše platby tedy hrazeny prostřednictvím
-  SIPO a Vaše spojovací číslo je <strong>XXXX</strong>.</p>
-<p>Jelikož však Česká pošta již v tomto měsíci nepřijímá požadavky na zálohy, je nutné, abyste v následujícím měsíci
-  uhradili zálohu ještě stávajícím způsobem. Další měsíce budou již hrazeny dle nově nastaveného SIPO.</p>
+                files: [],
+                tags: ["Změny platebního způsobu"]
+        },
+        "ZMĚNA HRAZENÍ ZÁLOH PŘES SIPO - PO 24. DNI MĚSÍCE": {
+                text: `${OSLOVENI_BLOCK}
+<p>na základě Vašeho požadavku jsme upravili způsob hrazení záloh. Nyní jsou Vaše platby tedy hrazeny prostřednictvím SIPO a Vaše spojovací číslo je <strong>XXXX</strong>.</p>
+<p>Jelikož však Česká pošta již v tomto měsíci nepřijímá požadavky na zálohy, je nutné, abyste v následujícím měsíci uhradili zálohu ještě stávajícím způsobem. Další měsíce budou již hrazeny dle nově nastaveného SIPO.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Změny platebního způsobu"]
-},
-"ZMĚNA ZASÍLÁNÍ PŘEPLATKU ZE SLOŽENKY NA BANKOVNÍ ÚČET": {
-text: `${OSLOVENI_BLOCK}
-<p>na základě Vašeho požadavku Vám potvrzujeme, že jsme nastavili změnu zasílání případných přeplatků za odběr energií
-  na bankovní účet s číslem <strong>XXXX</strong>.</p>
+                files: [],
+                tags: ["Změny platebního způsobu"]
+        },
+        "ZMĚNA ZASÍLÁNÍ PŘEPLATKU ZE SLOŽENKY NA BANKOVNÍ ÚČET": {
+                text: `${OSLOVENI_BLOCK}
+<p>na základě Vašeho požadavku Vám potvrzujeme, že jsme nastavili změnu zasílání případných přeplatků za odběr energií na bankovní účet s číslem <strong>XXXX</strong>.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Změny platebního způsobu"]
-},
-/* Kontaktní osoby */
-"JAK PŘIDAT KONTAKTNÍ OSOBU": {
-text: `${OSLOVENI_BLOCK}
-<p>je nám líto, ale bohužel Vás neevidujeme jako kontaktní osobu pro vyřizování požadavků a sdělování informací. Proto
-  bychom Vás rádi požádali o doložení plné moci nebo zaslání žádosti o přidání Vašeho kontaktu, a to od kontaktní osoby
-  využívající e-mailovou adresu, kterou v našem systému evidujeme.</p>
-<p>V plné moci či zaslaném požadavku kontaktní osoby prosím vždy uveďte celé jméno, e-mailovou adresu a telefonní číslo.
-</p>
+                files: [],
+                tags: ["Změny platebního způsobu"]
+        },
+        /* Kontaktní osoby */
+        "JAK PŘIDAT KONTAKTNÍ OSOBU": {
+                text: `${OSLOVENI_BLOCK}
+<p>je nám líto, ale bohužel Vás neevidujeme jako kontaktní osobu pro vyřizování požadavků a sdělování informací. Proto bychom Vás rádi požádali o doložení plné moci nebo zaslání žádosti o přidání Vašeho kontaktu, a to od kontaktní osoby využívající e-mailovou adresu, kterou v našem systému evidujeme.</p>
+<p>V plné moci či zaslaném požadavku kontaktní osoby prosím vždy uveďte celé jméno, e-mailovou adresu a telefonní číslo.</p>
 <p>Poté bude možné Vám sdělovat podrobnější informace týkající se odběru energií.</p>
 <p>Děkujeme Vám za pochopení.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Kontaktní osoby"]
-},
-"NENÍ KONTAKTNÍ E-MAIL": {
-text: `${OSLOVENI_BLOCK}
-<p>je nám líto, ale Váš požadavek nemůžeme zpracovat, jelikož Váš e-mail, ze kterého nám píšete neevidujeme jako
-  kontaktní.</p>
-<p>Prosíme Vás o zaslání požadavku z e-mailu, který jste uvedli do smlouvy jako kontaktní, případně nás
-  <b>telefonicky</b> kontaktujte.</p>
+                files: [],
+                tags: ["Kontaktní osoby"]
+        },
+        "NENÍ KONTAKTNÍ E-MAIL": {
+                text: `${OSLOVENI_BLOCK}
+<p>je nám líto, ale Váš požadavek nemůžeme zpracovat, jelikož Váš e-mail, ze kterého nám píšete neevidujeme jako kontaktní.</p>
+<p>Prosíme Vás o zaslání požadavku z e-mailu, který jste uvedli do smlouvy jako kontaktní, případně nás <b>telefonicky</b> kontaktujte.</p>
 <p>Na základě tel. hovoru provedeme Vaši identifikaci a aktualizujeme kontaktní údaje.</p>
 <p>Děkujeme za pochopení.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Kontaktní osoby"]
-},
-"NENÍ KONTAKTNÍ E-MAIL - OZ PÍŠE POŽADAVEK, ALE NEMÁME DOLOŽENOU PM PRO ZASTUPOVÁNÍ": {
-text: `${OSLOVENI_BLOCK}
+                files: [],
+                tags: ["Kontaktní osoby"]
+        },
+        "NENÍ KONTAKTNÍ E-MAIL - OZ PÍŠE POŽADAVEK, ALE NEMÁME DOLOŽENOU PM PRO ZASTUPOVÁNÍ": {
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme za Váš e-mail. </p><br>
-<p>Bohužel neevidujeme podepsanou plnou moc opravňující k zastupování zákazníka, a z tohoto důvodu nemůžeme Váš
-  požadavek v tuto chvíli zpracovat. </p>
+<p>Bohužel neevidujeme podepsanou plnou moc opravňující k zastupování zákazníka, a z tohoto důvodu nemůžeme Váš požadavek v tuto chvíli zpracovat. </p>
 <p>Prosíme Vás proto o doložení platné plné mocí. Po jejím obdržení se Vaším požadavkem budeme ihned dále zabývat.</p>
 <p>Děkujeme za pochopení a spolupráci. </p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Kontaktní osoby"]
-},
-/* Dopisy */
-"DOPIS - Jak zasílat": {
-text: `<p>na základě potřeby zaslat zákazníkovi dopis prostřednictvím ZIS Vám zasíláme postup, který je nutné dodržet:
-</p>
-<ul>
-  <li><strong>E-mail je třeba zaslat na adresu:</strong><br>
-    📧 <strong>tisk@epet.cz</strong>
-  </li>
-  <li><strong>Předmět e-mailu musí být přesně uveden jako:</strong><br>
-    <code>korespondence určená k tisku</code><br>
-    ❗ <em>Jiný předmět není možné uvést – systém jej nezpracuje!</em>
-  </li>
-  <li><strong>Do přílohy přiložte dokument určený k odeslání zákazníkovi:</strong><br>
-    ✅ <strong>formát PDF</strong><br>
-    ❌ <em>jiný formát není přípustný!</em><br>
-    📝 <strong>Název souboru:</strong> <code>příjmení zákazníka_dopis</code>
-  </li>
-  <li><strong>Pokud přikládáte dokument typu PK (platební kalendář), FA (faktura) nebo kopii smlouvy,</strong><br>
-    ➕ <em>vždy musí být přiložen také dopis!</em><br>
-    ❌ <em>Nelze odeslat samotný dokument bez doprovodného dopisu.</em>
-  </li>
-</ul>
-<p><strong>Vzorový text e-mailu:</strong></p>
-<blockquote style="border-left: 4px solid #ccc; margin: 0 0 1em 0; padding-left: 1em;">
-  Ahoj,<br>
-  prosím o zaslání dopisu za Epet na adresu:<br><br>
-  Jan Omáčka<br>
-  Ohořov 414<br>
-  000 00 Pampeliškov<br><br>
-  Děkuji
-</blockquote>
+                files: [],
+                tags: ["Kontaktní osoby"]
+        },
+        /* Dopisy */
+        "DOPIS - Jak zasílat": {
+                text: `<p>na základě potřeby zaslat zákazníkovi dopis prostřednictvím ZIS Vám zasíláme postup, který je nutné dodržet:</p>
+  <ul>
+    <li><strong>E-mail je třeba zaslat na adresu:</strong><br>
+      📧 <strong>tisk@epet.cz</strong>
+    </li>
+    <li><strong>Předmět e-mailu musí být přesně uveden jako:</strong><br>
+      <code>korespondence určená k tisku</code><br>
+      ❗ <em>Jiný předmět není možné uvést – systém jej nezpracuje!</em>
+    </li>
+    <li><strong>Do přílohy přiložte dokument určený k odeslání zákazníkovi:</strong><br>
+      ✅ <strong>formát PDF</strong><br>
+      ❌ <em>jiný formát není přípustný!</em><br>
+      📝 <strong>Název souboru:</strong> <code>příjmení zákazníka_dopis</code>
+    </li>
+    <li><strong>Pokud přikládáte dokument typu PK (platební kalendář), FA (faktura) nebo kopii smlouvy,</strong><br>
+      ➕ <em>vždy musí být přiložen také dopis!</em><br>
+      ❌ <em>Nelze odeslat samotný dokument bez doprovodného dopisu.</em>
+    </li>
+  </ul>
+  <p><strong>Vzorový text e-mailu:</strong></p>
+  <blockquote style="border-left: 4px solid #ccc; margin: 0 0 1em 0; padding-left: 1em;">
+    Ahoj,<br>
+    prosím o zaslání dopisu za Epet na adresu:<br><br>
+    Jan Omáčka<br>
+    Ohořov 414<br>
+    000 00 Pampeliškov<br><br>
+    Děkuji
+  </blockquote>
 
-<p><strong>Další možnosti:</strong></p>
-<ul>
-  <li>Pro ruční úpravu dopisu si můžete stáhnout šablonu ze znalostní báze:<br>
-    🔗 <a
-      href="https://sites.google.com/view/znalostn-bze/%C5%A1ablony/%C5%A1ablona-e-mail-korespondence-ur%C4%8Den%C3%A1-k-tisku?authuser=0"
-      target="_blank">
+  <p><strong>Další možnosti:</strong></p>
+  <ul>
+    <li>Pro ruční úpravu dopisu si můžete stáhnout šablonu ze znalostní báze:<br>
+      🔗 <a href="https://sites.google.com/view/znalostn-bze/%C5%A1ablony/%C5%A1ablona-e-mail-korespondence-ur%C4%8Den%C3%A1-k-tisku?authuser=0" target="_blank">
       Znalostní báze – Šablona e-mail: korespondence určená k tisku</a><br>
-    ➡️ sekce <strong>Šablony ke stažení</strong>
-  </li>
-  <li><strong>Doporučujeme využít také automatické generátory dopisů</strong>, které naleznete níže – zajistí správné
-    vyplnění a profesionální výstup.</li>
-  <li>V rámci výše uvedené <a
-      href="https://sites.google.com/view/znalostn-bze/%C5%A1ablony/%C5%A1ablona-e-mail-korespondence-ur%C4%8Den%C3%A1-k-tisku?authuser=0"
-      target="_blank">
-      znalostní báze</a> je také dostupná <strong>možnost automatického vygenerování e-mailu</strong> pro zaslání na
-    zodpovědnou osobu – tedy na <strong>tisk@epet.cz</strong>.</li>
-</ul>`,
-files: [
-{ url: "https://drive.google.com/file/d/10vEwfyGojwqZ81yvP6xSLI-krF7sD0c0/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- ČEZ - FIRMA", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1DKM958grbFkRFuy4MrqYtXJjd4ZK0Uun/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- ČEZ - DOM", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1Zz5Gx_UHY3hgHAAOl66xqs0hzI5p-o25/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- EGD", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1n7kXH_5h0Utb8yZDkr2V-HK9rPysV-BN/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- GASNET - FIRMA", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1XAoZ_xy-4IOmwAHATnHSjbi9j7yw0Sd0/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- GASNET - DOM", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1t-FFOcEzZWbmqzf-EL40m1hJ78dimmJE/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- původní zákazník neznámý", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1UhAkyEzAaPizqFZrPhB9BbNiRCB8YnUW/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- PRAŽ-PLYN.", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1g_qi7NC8ncY2YW10r0aPD2JYIvCPXMyG/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- PRE", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1tUTwgDiU9L4dTsoa_DfHvDrIJi4IDTuQ/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- z C na D", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1HKsGDY14VD8bREp744I2ze7EXC29j7J6/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- ZMD", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/14JwJ2-7d3FtTbm8Q6xGzQ0PU4yu39-et/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-z PO – změna sazby Firma → Dom", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1Xra9Xs7KsPb-Tua_2V_8NE1F1__uCoo2/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- PRAŽ-PLYN - FIRMA", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1BjeKuD2NOpyYjJCMO2TnU2tTrST3musN/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- EGD - FIRMA", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/18CENh1sJWOtFSE7yiU8yNE1MopDxRhbi/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- PRE - FIRMA", type: "pdf" , brand: "epet"},
-{ url: "https://drive.google.com/file/d/1RSfEY2py1TVAD-PNSK6F0IaWZtH_msub/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- ZMD - FIRMA", type: "pdf", brand: "epet" },
-{ url: "https://drive.google.com/file/d/1VGTUSlS0NyAxG40XNawIsEsC73eLJ8vT/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- původní zákazník neznámý", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/1U-7HjEN_2Otc_Nqyc0SEEAVh-4-TbXh0/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- ZMD -DOMÁCNOST", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/1e4hYb1RV5JyLxw9z3r3AibD29KA8cW5C/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- ZMD -FIRMA", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/1Ttt9kAPVvlk4_CvrkuLfz87KFFOT59W2/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- PRAŽ-PLYN - FIRMA", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/19EgEqT3RMRUXJ7keWbJAcrwDZmp0zFPJ/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- PRE - FIRMA", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/1teyOWAV6mLki32XdqwKdzbdEmYMs-EL_/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- EGD - FIRMA", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/1LrIXIU7SsdgKDCHOgxjk0WakJhKKAvps/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- ČEZ - FIRMA", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/18XD0We0JIohhqFO6h-a4DC5zHbnPq1VI/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- GASNET - FIRMA", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/1G6jgmnroL1sMOkjuCCz7N5MdYiryCvYr/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- PRAŽ-PLYN.-DOMÁCNOST", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/1SecyeJ5rUUHr1bZTw4jDwLa6imC1RXLO/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- PRE - DOMÁCNOST", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/15-HQqHUBlD-AuKxwl9lcTf2sm-ldW8_4/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- EGD -DOMÁCNOST", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/1KTVPgMxS2QOKx4P38gyfYfgGAHvybg6n/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- GASNET - DOMÁCNOST", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/1X_9l-Wolx3jGoA_vKBLc50qfAX5FCQ3j/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ
-- ČEZ - DOMÁCNOST", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/12D_dEsRwYzt-bvlM47ABI3NMkejBW5ub/view?usp=drive_link", name: "ČP z PO - Pro
-změnu sazby z Firmy na DOM", type: "pdf", brand: "de" },
-{ url: "https://drive.google.com/file/d/13tl9M1pc5K7KoAzQ66RQFrlw7Pt4Qe-X/view?usp=drive_link", name: "ČP - Z PO NA FO",
-type: "pdf", brand: "de" },],
-generators: [
-{ url:
-"https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-aktualizace-kontaktních-údajů",
-name: "Aktualizace kontaktních údajů – generátor" },
-{ url:
-"https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-kopie-faktury",
-name: "Kopie faktury – generátor" },
-{ url:
-"https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-kopie-platebního-kalendáře",
-name: "Kopie platebního kalendáře – generátor" },
-{ url:
-"https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-kopie-smlouvy",
-name: "Kopie smlouvy – generátor" },
-{ url:
-"https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-neproběhlé-sipo-ověření-spojovacího-čísla",
-name: "Neproběhlé SIPO – generátor" },
-{ url:
-"https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-neuhrazené-pohledávky",
-name: "Neuhrazené pohledávky – generátor" },
-{ url:
-"https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-ověření-nastavení-způsobu-úhrady-záloh-přes-inkaso",
-name: "Ověření úhrady záloh – generátor" },
-{ url:
-"https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-plánovaná-odstávka-dodávek-energií",
-name: "Plánovaná odstávka – generátor" },
-{ url:
-"https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-prosba-o-doložení-předávacího-protokolu",
-name: "Doložení předávacího protokolu – generátor" },
-{ url:
-"https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-úhrada-konečné-faktury-dědické-řízení",
-name: "Úhrada konečné faktury – generátor" },
-{ url:
-"https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-výzva-k-úhradě-smluvní-pokuty-dodávky-nezahájeny",
-name: "Výzva k úhradě – nezahájené dodávky – generátor" },
-{ url:
-"https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-výzva-k-úhradě-smluvní-pokuty-předčasně-ukončené-dodávky",
-name: "Výzva k úhradě – předčasné ukončení – generátor" },
-{ url:
-"https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-změna-měření-z-b-na-c",
-name: "Změna měření B → C – generátor" },
-{ url:
-"https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-změna-měření-z-c-na-b",
-name: "Změna měření C → B – generátor" },
-{ url:
-"https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-změna-příjemní-zaslání-čp",
-name: "Změna příjemní – zaslání čp – generátor" },
-{ url:
-"https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-změna-rezervovaného-příkonu",
-name: "Změna rezervovaného příkonu – generátor" },
-{ url:
-"https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-změna-trvalé-adresy",
-name: "Změna trvalé adresy – generátor" }
-],
-tags: ["Dopisy"]
-},
-/* Montáže */
-"Montáž měřidla - potvrzení termínu": {
-text: `${OSLOVENI_BLOCK}
+      ➡️ sekce <strong>Šablony ke stažení</strong>
+    </li>
+    <li><strong>Doporučujeme využít také automatické generátory dopisů</strong>, které naleznete níže – zajistí správné vyplnění a profesionální výstup.</li>
+    <li>V rámci výše uvedené <a href="https://sites.google.com/view/znalostn-bze/%C5%A1ablony/%C5%A1ablona-e-mail-korespondence-ur%C4%8Den%C3%A1-k-tisku?authuser=0" target="_blank">
+      znalostní báze</a> je také dostupná <strong>možnost automatického vygenerování e-mailu</strong> pro zaslání na zodpovědnou osobu – tedy na <strong>tisk@epet.cz</strong>.</li>
+  </ul>`,
+                files: [
+                                               { url: "https://drive.google.com/file/d/10vEwfyGojwqZ81yvP6xSLI-krF7sD0c0/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ČEZ - FIRMA", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1DKM958grbFkRFuy4MrqYtXJjd4ZK0Uun/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ČEZ - DOM", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1Zz5Gx_UHY3hgHAAOl66xqs0hzI5p-o25/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - EGD", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1n7kXH_5h0Utb8yZDkr2V-HK9rPysV-BN/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - FIRMA", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1XAoZ_xy-4IOmwAHATnHSjbi9j7yw0Sd0/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - DOM", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1t-FFOcEzZWbmqzf-EL40m1hJ78dimmJE/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - původní zákazník neznámý", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1UhAkyEzAaPizqFZrPhB9BbNiRCB8YnUW/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRAŽ-PLYN.", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1g_qi7NC8ncY2YW10r0aPD2JYIvCPXMyG/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRE", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1tUTwgDiU9L4dTsoa_DfHvDrIJi4IDTuQ/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - z C na D", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1HKsGDY14VD8bREp744I2ze7EXC29j7J6/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ZMD", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/14JwJ2-7d3FtTbm8Q6xGzQ0PU4yu39-et/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ z PO – změna sazby Firma → Dom", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1Xra9Xs7KsPb-Tua_2V_8NE1F1__uCoo2/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRAŽ-PLYN - FIRMA", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1BjeKuD2NOpyYjJCMO2TnU2tTrST3musN/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - EGD - FIRMA", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/18CENh1sJWOtFSE7yiU8yNE1MopDxRhbi/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRE - FIRMA", type: "pdf" , brand: "epet"},
+                        { url: "https://drive.google.com/file/d/1RSfEY2py1TVAD-PNSK6F0IaWZtH_msub/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ZMD - FIRMA", type: "pdf", brand: "epet" },
+                        { url: "https://drive.google.com/file/d/1VGTUSlS0NyAxG40XNawIsEsC73eLJ8vT/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - původní zákazník neznámý", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1U-7HjEN_2Otc_Nqyc0SEEAVh-4-TbXh0/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ZMD -DOMÁCNOST", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1e4hYb1RV5JyLxw9z3r3AibD29KA8cW5C/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ZMD -FIRMA", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1Ttt9kAPVvlk4_CvrkuLfz87KFFOT59W2/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRAŽ-PLYN - FIRMA", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/19EgEqT3RMRUXJ7keWbJAcrwDZmp0zFPJ/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRE - FIRMA", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1teyOWAV6mLki32XdqwKdzbdEmYMs-EL_/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - EGD - FIRMA", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1LrIXIU7SsdgKDCHOgxjk0WakJhKKAvps/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ČEZ - FIRMA", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/18XD0We0JIohhqFO6h-a4DC5zHbnPq1VI/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - FIRMA", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1G6jgmnroL1sMOkjuCCz7N5MdYiryCvYr/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRAŽ-PLYN.-DOMÁCNOST", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1SecyeJ5rUUHr1bZTw4jDwLa6imC1RXLO/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - PRE - DOMÁCNOST", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/15-HQqHUBlD-AuKxwl9lcTf2sm-ldW8_4/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - EGD -DOMÁCNOST", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1KTVPgMxS2QOKx4P38gyfYfgGAHvybg6n/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - GASNET - DOMÁCNOST", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/1X_9l-Wolx3jGoA_vKBLc50qfAX5FCQ3j/view?usp=drive_link", name: "ČESTNÉ PROHLÁŠENÍ - ČEZ - DOMÁCNOST", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/12D_dEsRwYzt-bvlM47ABI3NMkejBW5ub/view?usp=drive_link", name: "ČP z PO - Pro změnu sazby z Firmy na DOM", type: "pdf", brand: "de" },
+                        { url: "https://drive.google.com/file/d/13tl9M1pc5K7KoAzQ66RQFrlw7Pt4Qe-X/view?usp=drive_link", name: "ČP - Z PO NA FO", type: "pdf", brand: "de" },],
+                generators: [
+                        { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-aktualizace-kontaktních-údajů", name: "Aktualizace kontaktních údajů – generátor" },
+                        { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-kopie-faktury", name: "Kopie faktury – generátor" },
+                        { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-kopie-platebního-kalendáře", name: "Kopie platebního kalendáře – generátor" },
+                        { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-kopie-smlouvy", name: "Kopie smlouvy – generátor" },
+                        { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-neproběhlé-sipo-ověření-spojovacího-čísla", name: "Neproběhlé SIPO – generátor" },
+                        { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-neuhrazené-pohledávky", name: "Neuhrazené pohledávky – generátor" },
+                        { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-ověření-nastavení-způsobu-úhrady-záloh-přes-inkaso", name: "Ověření úhrady záloh – generátor" },
+                        { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-plánovaná-odstávka-dodávek-energií", name: "Plánovaná odstávka – generátor" },
+                        { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-prosba-o-doložení-předávacího-protokolu", name: "Doložení předávacího protokolu – generátor" },
+                        { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-úhrada-konečné-faktury-dědické-řízení", name: "Úhrada konečné faktury – generátor" },
+                        { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-výzva-k-úhradě-smluvní-pokuty-dodávky-nezahájeny", name: "Výzva k úhradě – nezahájené dodávky – generátor" },
+                        { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-výzva-k-úhradě-smluvní-pokuty-předčasně-ukončené-dodávky", name: "Výzva k úhradě – předčasné ukončení – generátor" },
+                        { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-změna-měření-z-b-na-c", name: "Změna měření B → C – generátor" },
+                        { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-změna-měření-z-c-na-b", name: "Změna měření C → B – generátor" },
+                        { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-změna-příjemní-zaslání-čp", name: "Změna příjemní – zaslání čp – generátor" },
+                        { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-změna-rezervovaného-příkonu", name: "Změna rezervovaného příkonu – generátor" },
+                        { url: "https://sites.google.com/view/znalostn-bze/šablony/šablona-e-mail-korespondence-určená-k-tisku/generátor-dopisu-změna-trvalé-adresy", name: "Změna trvalé adresy – generátor" }
+                ],
+                tags: ["Dopisy"]
+        },
+        /* Montáže */
+        "Montáž měřidla - potvrzení termínu": {
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme Vám za Váš zájem o odběr energií od společnosti epet.</p>
-<p>Rádi bychom Vás informovali, že jsme zpracovali Váš požadavek na montáž u odběrného místa <strong>EAN/EIC
-    ${EAN_BLOCK}</strong> na adrese <strong>${ADRESA_BLOCK}</strong>.</p>
+<p>Rádi bychom Vás informovali, že jsme zpracovali Váš požadavek na montáž u odběrného místa <strong>EAN/EIC ${EAN_BLOCK}</strong> na adrese <strong>${ADRESA_BLOCK}</strong>.</p>
 <p>Montáž Vašeho měřidla provede distributor dne <strong>DD.MM.RRRR v HH</strong>.</p>
-<p>Prosíme Vás o zajištění přístupu technikovi do prostor, kde bude montáž měřidla probíhat, a také si připravte svou
-  revizní zprávu.</p>
+<p>Prosíme Vás o zajištění přístupu technikovi do prostor, kde bude montáž měřidla probíhat, a také si připravte svou revizní zprávu.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Montáže"]
-},
-/* Přepisy */
-"Přepis odběrného místa - Zaslání Odkazu": {
-text: `${OSLOVENI_BLOCK}
-<p>na základě naší telefonické dohody Vám zasíláme odkaz na elektronický formulář pro přepis odběrného místa. Tento
-  formulář můžete vyplnit a odeslat prostřednictvím následujícího odkazu:
-<p><a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank"
-    title="On-line formulář pro přepis odběrného místa" rel="noopener noreferrer">Formulář k přepisu odběrného
-    místa</a>.</p>
-</p>
+                files: [],
+                tags: ["Montáže"]
+        },
+        /* Přepisy */
+        "Přepis odběrného místa - Zaslání Odkazu": {
+                text: `${OSLOVENI_BLOCK}
+<p>na základě naší telefonické dohody Vám zasíláme odkaz na elektronický formulář pro přepis odběrného místa. Tento formulář můžete vyplnit a odeslat prostřednictvím následujícího odkazu: <p><a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank" title="On-line formulář pro přepis odběrného místa" rel="noopener noreferrer">Formulář k přepisu odběrného místa</a>.</p></p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Přepisy"]
-},
-"Přepis odběrného místa - Bez zaslání odkazů (V rámci DINHE NAPŘÍKLAD)": {
-text: `${OSLOVENI_BLOCK}
+                files: [],
+                tags: ["Přepisy"]
+        },
+        "Přepis odběrného místa - Bez zaslání odkazů (V rámci DINHE NAPŘÍKLAD)": {
+                text: `${OSLOVENI_BLOCK}
 
-<p>stále evidujeme nevyřešený požadavek týkající se přepisu smlouvy na odběr energií po zemřelém <b>XXXXXX</b>. Rádi
-  bychom Vás informovali o nutnosti provést tento přepis na nového odběratele. Tento krok je nezbytný pro zajištění
-  kontinuity dodávky energií na odběrném místě <b>${ADRESA_BLOCK}</b>.</p>
+<p>stále evidujeme nevyřešený požadavek týkající se přepisu smlouvy na odběr energií po zemřelém <b>XXXXXX</b>. Rádi bychom Vás informovali o nutnosti provést tento přepis na nového odběratele. Tento krok je nezbytný pro zajištění kontinuity dodávky energií na odběrném místě <b>${ADRESA_BLOCK}</b>.</p>
 
-<p>Prosíme Vás, abyste co nejdříve kontaktovali naši zákaznickou podporu na telefonním čísle <b>255 70 70 99</b> nebo
-  e-mailem na <b>info@epet.cz</b>, kde Vám poskytneme veškeré potřebné formuláře a informace k přepisu smlouvy.</p>
+<p>Prosíme Vás, abyste co nejdříve kontaktovali naši zákaznickou podporu na telefonním čísle <b>255 70 70 99</b> nebo e-mailem na <b>info@epet.cz</b>, kde Vám poskytneme veškeré potřebné formuláře a informace k přepisu smlouvy.</p>
 
 <p>Děkujeme za Vaši spolupráci a jsme Vám k dispozici pro jakékoliv dotazy či další informace.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Přepisy"]
-},
-"Přepis urgence - Bez zaslání odkazů (V rámci DINHE NAPŘÍKLAD)": {
-text: `${OSLOVENI_BLOCK}
+                files: [],
+                tags: ["Přepisy"]
+        },
+        "Přepis urgence  - Bez zaslání odkazů (V rámci DINHE NAPŘÍKLAD)": {
+                text: `${OSLOVENI_BLOCK}
 
-<p>rádi bychom Vás znovu upozornili na nutnost přepsání smlouvy na odběr energií na nového odběratele. Původní smlouva
-  č. byla uzavřena na zemřelého <b>XXXXX</b> a je nezbytné uzavřít novou smlouvu, aby byla zajištěna kontinuální dodávka
-  energií na odběrném místě <b>${ADRESA_BLOCK}</b>.</p>
+<p>rádi bychom Vás znovu upozornili na nutnost přepsání smlouvy na odběr energií na nového odběratele. Původní smlouva č. byla uzavřena na zemřelého <b>XXXXX</b> a je nezbytné uzavřít novou smlouvu, aby byla zajištěna kontinuální dodávka energií na odběrném místě <b>${ADRESA_BLOCK}</b>.</p>
 
-<p>Dosud jsme neobdrželi žádnou odpověď na naši předchozí výzvu. Prosíme Vás, abyste co nejdříve kontaktovali naši
-  zákaznickou podporu na telefonním čísle <b>255 70 70 99</b> nebo e-mailem na <b>info@epet.cz</b>, kde Vám poskytneme
-  veškeré potřebné formuláře a informace k přepisu smlouvy.</p>
+<p>Dosud jsme neobdrželi žádnou odpověď na naši předchozí výzvu. Prosíme Vás, abyste co nejdříve kontaktovali naši zákaznickou podporu na telefonním čísle <b>255 70 70 99</b> nebo e-mailem na <b>info@epet.cz</b>, kde Vám poskytneme veškeré potřebné formuláře a informace k přepisu smlouvy.</p>
 
-<p>Pokud nebude přepis smlouvy proveden do <b>[Datum – D+30 dní]</b>, budeme nuceni přistoupit k přerušení dodávky
-  energií na uvedeném odběrném místě. Tento krok je nezbytný pro zajištění správné evidence a správy odběrného místa.
-</p>
+<p>Pokud nebude přepis smlouvy proveden do <b>[Datum – D+30 dní]</b>, budeme nuceni přistoupit k přerušení dodávky energií na uvedeném odběrném místě. Tento krok je nezbytný pro zajištění správné evidence a správy odběrného místa.</p>
 
 <p>Děkujeme za Vaši spolupráci a pochopení. Jsme Vám k dispozici pro jakékoliv dotazy či další informace.</p>
 
 <p>Děkujeme za Vaši spolupráci a jsme Vám k dispozici pro jakékoliv dotazy či další informace.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Přepisy"]
-},
-"Přepis odběrného místa - Zaslání Odkazu (kdy např. zákazník reaguje v hovoru, že tedy zkusí formulář, nebo že neví jak
-ho vyplnit)": {
-text: `${OSLOVENI_BLOCK}
-<p>na základě naší telefonické dohody Vám zasíláme odkaz na elektronický formulář pro přepis odběrného místa. Tento
-  formulář můžete vyplnit a odeslat prostřednictvím následujícího odkazu:
-<p><a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank"
-    title="On-line formulář pro přepis odběrného místa" rel="noopener noreferrer">Formulář k přepisu odběrného
-    místa</a>.</p>
+                files: [],
+                tags: ["Přepisy"]
+        },
+        "Přepis odběrného místa - Zaslání Odkazu (kdy např. zákazník reaguje v hovoru, že tedy zkusí formulář, nebo že neví jak ho vyplnit)": {
+                text: `${OSLOVENI_BLOCK}
+<p>na základě naší telefonické dohody Vám zasíláme odkaz na elektronický formulář pro přepis odběrného místa. Tento formulář můžete vyplnit a odeslat prostřednictvím následujícího odkazu: <p><a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank" title="On-line formulář pro přepis odběrného místa" rel="noopener noreferrer">Formulář k přepisu odběrného místa</a>.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Přepisy"]
-},
-"Přepis odběrného místa - Zákazník doložil potřebné informace k sepsání smlouvy (předáváme úkolem na Bo_CC)": {
-text: `${OSLOVENI_BLOCK}
+                files: [],
+                tags: ["Přepisy"]
+        },
+        "Přepis odběrného místa - Zákazník doložil potřebné informace k sepsání smlouvy (předáváme úkolem na Bo_CC)": {
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme Vám za zaslání informací.</p>
-<p>Vaše podklady jsme předali <b>kolegům ke zpracování</b> a na jejich základě Vám bude/budou na <b>e-mailovou
-    adresu</b> zaslán/zaslány návrh/návrhy smlouvy/smluv k podpisu, a to včetně aktuální cenové nabídky /aktuálních
-  cenových nabídek.</p>
+<p>Vaše podklady jsme předali <b>kolegům ke zpracování</b> a na jejich základě Vám bude/budou na <b>e-mailovou adresu</b> zaslán/zaslány návrh/návrhy smlouvy/smluv k podpisu, a to včetně aktuální cenové nabídky /aktuálních cenových nabídek.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Přepisy"]
-},
-/* Zranitelný zákazník */
-"Upozornění na blížící se konec platnosti potvrzení pro přiznání práv zranitelného zákazníka": {
-text: `${OSLOVENI_BLOCK}
-<p>dovolujeme si Vás kontaktovat ohledně blížícího se konce platnosti Vašeho potvrzení o splnění podmínek pro přiznání
-  zvláštních práv zranitelného zákazníka.</p>
-<p>Po datu <strong>XX.XX.XXXX</strong> Vám bude status zranitelného zákazníka ukončen. Abychom Vám mohli práva
-  zranitelného zákazníka přiznávat i po tomto termínu, prosíme Vás o doložení nového lékařského potvrzení vydaného Vaším
-  ošetřujícím lékařem na následující období. Vzor dokumentu naleznete ke stažení také na našich webových stránkách na
-  adrese <a href="https://www.epet.cz/zranitelny-zakaznik/" target="_blank">Zranitelný zákazník</a>.</p>
-<p>Nové potvrzení pošlete prosím nejpozději do výše uvedeného data. V případě, že nám nebude dokument doložen, přejde
-  Vaše odběrné místo <strong>EAN/EIC ${EAN_BLOCK}</strong>, na adrese <strong>${ADRESA_BLOCK}</strong> do standardního
-  režimu, na který se nevztahují práva spojená se statusem zranitelného zákazníka.</p>
+                files: [],
+                tags: ["Přepisy"]
+        },
+        /* Zranitelný zákazník */
+        "Upozornění na blížící se konec platnosti potvrzení pro přiznání práv zranitelného zákazníka": {
+                text: `${OSLOVENI_BLOCK}
+<p>dovolujeme si Vás kontaktovat ohledně blížícího se konce platnosti Vašeho potvrzení o splnění podmínek pro přiznání zvláštních práv zranitelného zákazníka.</p>
+<p>Po datu <strong>XX.XX.XXXX</strong> Vám bude status zranitelného zákazníka ukončen. Abychom Vám mohli práva zranitelného zákazníka přiznávat i po tomto termínu, prosíme Vás o doložení nového lékařského potvrzení vydaného Vaším ošetřujícím lékařem na následující období. Vzor dokumentu naleznete ke stažení také na našich webových stránkách na adrese <a href="https://www.epet.cz/zranitelny-zakaznik/" target="_blank">Zranitelný zákazník</a>.</p>
+<p>Nové potvrzení pošlete prosím nejpozději do výše uvedeného data. V případě, že nám nebude dokument doložen, přejde Vaše odběrné místo <strong>EAN/EIC ${EAN_BLOCK}</strong>, na adrese <strong>${ADRESA_BLOCK}</strong> do standardního režimu, na který se nevztahují práva spojená se statusem zranitelného zákazníka.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Zranitelný zákazník"]
-},
-/* Zákaznický portál */
-"Zákaznický portál - Registrace": {
-text: `${OSLOVENI_BLOCK}
+                files: [],
+                tags: ["Zranitelný zákazník"]
+        },
+        /* Zákaznický portál */
+        "Zákaznický portál - Registrace": {
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme za Váš e-mail a rádi bychom Vás informovali, že jsme úspěšně provedli registraci Vašeho účtu.
-  Registrační e-mail s přístupovými údaji a pokyny k aktivaci Vám bude doručen v samostatné zprávě. Pokud byste e-mail
-  neobdržel(a) do několika minut, prosíme o kontrolu složky se spamem nebo hromadnou poštou.</p>
+Registrační e-mail s přístupovými údaji a pokyny k aktivaci Vám bude doručen v samostatné zprávě. Pokud byste e-mail neobdržel(a) do několika minut, prosíme o kontrolu složky se spamem nebo hromadnou poštou.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Zákaznický portál"]
-},
-"Zákaznický portál - Sloučení účtů": {
-text: `${OSLOVENI_BLOCK}
-<p>rádi bychom Vás informovali, že jsme na základě Vašeho požadavku úspěšně provedli sloučení Vašich zákaznických účtů v
-  rámci "Zákaznického portálu".
-  Veškeré sloučené účty nyní naleznete v portálu pod svým jménem, umístěné vpravo nahoře. Nově budete mít možnost:
-  <li>změnit výchozí účet dle Vašich preferencí,</li>
-  <li>libovolně se mezi jednotlivými účty přepínat.</li>
+                files: [],
+                tags: ["Zákaznický portál"]
+        },
+        "Zákaznický portál - Sloučení účtů": {
+                text: `${OSLOVENI_BLOCK}
+<p>rádi bychom Vás informovali, že jsme na základě Vašeho požadavku úspěšně provedli sloučení Vašich zákaznických účtů v rámci "Zákaznického portálu".
+Veškeré sloučené účty nyní naleznete v portálu pod svým jménem, umístěné vpravo nahoře. Nově budete mít možnost:
+<li>změnit výchozí účet dle Vašich preferencí,</li>
+<li>libovolně se mezi jednotlivými účty přepínat.</li>
 <p>Věříme, že Vám tato změna usnadní správu Vašich zákaznických údajů.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Zákaznický portál"]
-},
-"Zákaznický portál - Deaktivace": {
-text: `${OSLOVENI_BLOCK}
+                files: [],
+                tags: ["Zákaznický portál"]
+        },
+        "Zákaznický portál - Deaktivace": {
+                text: `${OSLOVENI_BLOCK}
 <p>na základě Vašeho požadavku jsme úspěšně deaktivovali Váš přístup do Zákaznického portálu.
-  Pokud byste si svou volbu v budoucnu rozmyslel(a) a přál(a) si přístup do portálu znovu aktivovat, neváhejte se na nás
-  obrátit. Rádi Vám jej kdykoliv obnovíme.
-  Děkujeme, že jste využíval(a) náš Zákaznický portál.</p>
+Pokud byste si svou volbu v budoucnu rozmyslel(a) a přál(a) si přístup do portálu znovu aktivovat, neváhejte se na nás obrátit. Rádi Vám jej kdykoliv obnovíme.
+Děkujeme, že jste využíval(a) náš Zákaznický portál.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Zákaznický portál"]
-},
-"Zákaznický portál - Odpověď na úkol - Všebecné dotazy z webu ": {
-text: `${OSLOVENI_BLOCK}
-<p>děkujeme za váš dotaz, týkající se <strong> stručný popis požadavku</strong>, který jste zadal/a prostřednictvím
-  našeho zákaznického portálu.Rádi bychom vám poskytli odpověď:</p>
+                files: [],
+                tags: ["Zákaznický portál"]
+        },
+        "Zákaznický portál - Odpověď na úkol - Všebecné dotazy z webu ": {
+                text: `${OSLOVENI_BLOCK}
+<p>děkujeme za váš dotaz, týkající se <strong> stručný popis požadavku</strong>, který jste zadal/a prostřednictvím našeho zákaznického portálu.Rádi bychom vám poskytli odpověď:</p>
 <p>Sem uveďte konkrétní odpověď na dotaz</p>`,
-files: [],
-tags: ["Zákaznický portál"]
-},
-"Zákaznický portál - Odpověď na zapomenuté heslo ": {
-text: `${OSLOVENI_BLOCK}
-<p>pokud se Vám nedaří přihlásit do zákaznického portálu s heslem, které jste si nastavil/a, případně jste zapomněl/a
-  heslo z automaticky vygenerovaného e-mailu, je nutné provést <b>reset hesla.</b></p>
-<p>Prosíme, klikněte na následující odkaz: <a href="https://zakaznici.epet.cz/forgotten-password" target="_blank">Reset
-    hesla</a></p>
+                files: [],
+                tags: ["Zákaznický portál"]
+        },
+        "Zákaznický portál - Odpověď na zapomenuté heslo ": {
+                text: `${OSLOVENI_BLOCK}
+<p>pokud se Vám nedaří přihlásit do zákaznického portálu s heslem, které jste si nastavil/a, případně jste zapomněl/a heslo z automaticky vygenerovaného e-mailu, je nutné provést <b>reset hesla.</b></p>
+<p>Prosíme, klikněte na následující odkaz: <a href="https://zakaznici.epet.cz/forgotten-password" target="_blank">Reset hesla</a></p>
 <p>Na zadanou e-mailovou adresu Vám bude doručeno nové heslo, se kterým se přihlásíte do portálu.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Zákaznický portál"]
-},
-/* Přeplatky */
-"Žádost o potvrzení údajů pro vrácení přeplatku - Vrácená složenka": {
-text: `${OSLOVENI_BLOCK}
-<p>rádi bychom Vás informovali, že se nám vrátila složenka s přeplatkem, který jsme Vám zasílali. Abychom mohli
-  přeplatek co nejdříve vyřídit, prosíme Vás o následující:</p>
+                files: [],
+                tags: ["Zákaznický portál"]
+        },
+        /* Přeplatky */
+        "Žádost o potvrzení údajů pro vrácení přeplatku - Vrácená složenka": {
+                text: `${OSLOVENI_BLOCK}
+<p>rádi bychom Vás informovali, že se nám vrátila složenka s přeplatkem, který jsme Vám zasílali. Abychom mohli přeplatek co nejdříve vyřídit, prosíme Vás o následující:</p>
 <ul>
-  <li><strong>Potvrzení správnosti Vaší korespondenční adresy</strong> – zda je stále aktuální adresa: <strong> uvést
-      aktuální kam přeplatek odcházel </strong> správná, případně o sdělení nové adresy.</li>
-  <li><strong>Sdělte nám, zda si přejete přeplatek zaslat na bankovní účet</strong> – v tomto případě nám, prosím,
-    zašlete číslo Vašeho bankovního účtu.</li>
+<li><strong>Potvrzení správnosti Vaší korespondenční adresy</strong> – zda je stále aktuální adresa: <strong> uvést aktuální kam přeplatek odcházel </strong> správná, případně o sdělení nové adresy.</li>
+<li><strong>Sdělte nám, zda si přejete přeplatek zaslat na bankovní účet</strong> – v tomto případě nám, prosím, zašlete číslo Vašeho bankovního účtu.</li>
 </ul>
 <p>Vaše údaje můžete zaslat odpovědí na tento e-mail nebo nás kontaktovat na níže uvedeném telefonním čísle</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Přeplatky"]
-},
-"Žádost o sdělení nového bankovního účtu - Vrácená platba z důvodu neexistujícího bankovního účtu": {
-text: `${OSLOVENI_BLOCK}
-<p>dovolujeme si Vás informovat, že se nám vrátil přeplatek ve výši <strong> částka Kč</strong>, který jsme zasílali na
-  bankovní účet<strong> číslo účtu kam platba odcházela</strong>, jenž je bohužel neexistující.</p>
-<p>Pro úspěšné zpracování vrácení této částky Vás tímto zdvořile žádáme o sdělení nového bankovního účtu, na který
-  můžeme přeplatek odeslat. Prosíme o zaslání těchto údajů co nejdříve, abychom mohli platbu bez odkladu uskutečnit.</p>
+                files: [],
+                tags: ["Přeplatky"]
+        },
+        "Žádost o sdělení nového bankovního účtu - Vrácená platba z důvodu neexistujícího bankovního účtu": {
+                text: `${OSLOVENI_BLOCK}
+<p>dovolujeme si Vás informovat, že se nám vrátil přeplatek ve výši <strong> částka Kč</strong>, který jsme zasílali na bankovní účet<strong> číslo účtu kam platba odcházela</strong>, jenž je bohužel neexistující.</p>
+<p>Pro úspěšné zpracování vrácení této částky Vás tímto zdvořile žádáme o sdělení nového bankovního účtu, na který můžeme přeplatek odeslat. Prosíme o zaslání těchto údajů co nejdříve, abychom mohli platbu bez odkladu uskutečnit.</p>
 <p>Vaše údaje můžete zaslat odpovědí na tento e-mail nebo nás kontaktovat na níže uvedeném telefonním čísle</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Přeplatky"]
-},
-"Informace pro ZK - přeplatek bude vyplacen na BÚ k nejbližšímu termínu": {
-text: `${OSLOVENI_BLOCK}
-<p>dovolujeme si Vás informovat, že přeplatek ve výši <strong> částka Kč</strong>, bude vyplacen na Váš bankovní
-  účet:<strong> číslo účtu kam přeplatek bude odcházet</strong> v nejbližším možném termínu.</p>
+                files: [],
+                tags: ["Přeplatky"]
+        },
+        "Informace pro ZK - přeplatek bude vyplacen na BÚ k nejbližšímu termínu": {
+                text: `${OSLOVENI_BLOCK}
+<p>dovolujeme si Vás informovat, že přeplatek ve výši <strong> částka Kč</strong>, bude vyplacen na Váš bankovní účet:<strong> číslo účtu kam přeplatek bude odcházet</strong> v nejbližším možném termínu.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Přeplatky"]
-},
-"Vrácená složenka – potvrzení adresy / převod na účet (nejedená se o přeplatky, ale o platby nad rámec PK)": {
-text: `${OSLOVENI_BLOCK}
-<p>rádi bychom Vás informovali, že se nám vrátila poštovní poukázka (složenka) na částku <strong>XXX Kč</strong>, kterou
-  jsme Vám zasílali z důvodu platby nad rámec platebního kalendáře za <strong>XXXXX</strong>.</p>
-<p>Podle předpisu byla záloha <strong>XXX Kč</strong>, od Vás jsme obdrželi <strong>XXX Kč</strong> – rozdíl <strong>XXX
-    Kč</strong> jsme odeslali složenkou na adresu <strong>XXX</strong>, složenka se však vrátila jako nedoručená.</p>
+                files: [],
+                tags: ["Přeplatky"]
+        },
+        "Vrácená složenka – potvrzení adresy / převod na účet  (nejedená se o přeplatky, ale o platby nad rámec PK)": {
+                text: `${OSLOVENI_BLOCK}
+<p>rádi bychom Vás informovali, že se nám vrátila poštovní poukázka (složenka) na částku <strong>XXX Kč</strong>, kterou jsme Vám zasílali z důvodu platby nad rámec platebního kalendáře za <strong>XXXXX</strong>.</p>
+<p>Podle předpisu byla záloha <strong>XXX Kč</strong>, od Vás jsme obdrželi <strong>XXX Kč</strong> – rozdíl <strong>XXX Kč</strong> jsme odeslali složenkou na adresu <strong>XXX</strong>, složenka se však vrátila jako nedoručená.</p>
 <p>Abychom mohli přeplatek vyřídit co nejdříve, prosíme o:</p>
 <ul>
-  <li><strong>Potvrzení korespondenční adresy</strong> (případně sdělte <strong>novou doručovací adresu</strong> pro
-    opětovné zaslání složenkou), nebo</li>
-  <li>informaci, zda si přejete přeplatek <strong>poukázat na bankovní účet</strong> – v tom případě nám, prosím,
-    zašlete <strong>číslo účtu</strong> (formát: předčíslí–číslo/kód banky).</li>
-</ul>
-<strong>Aby nedocházelo k dalším vratkám plateb, dovolujeme si doporučit jednu z následujících možností:</strong><br>
-<ul>
-  <li> upravit trvalý příkaz na částku odpovídající aktuální výši záloh – tedy <strong>{{aktualni_zaloha}}
-      Kč</strong>,<br>
+  <li><strong>Potvrzení korespondenční adresy</strong> (případně sdělte <strong>novou doručovací adresu</strong> pro opětovné zaslání složenkou), nebo</li>
+  <li>informaci, zda si přejete přeplatek <strong>poukázat na bankovní účet</strong> – v tom případě nám, prosím, zašlete <strong>číslo účtu</strong> (formát: předčíslí–číslo/kód banky).</li>
+ </ul>
+    <strong>Aby nedocházelo k dalším vratkám plateb, dovolujeme si doporučit jednu z následujících možností:</strong><br>
+    <ul>
+    <li> upravit trvalý příkaz na částku odpovídající aktuální výši záloh – tedy <strong>{{aktualni_zaloha}} Kč</strong>,<br>
     <strong>nebo</strong><br>
-  <li> informovat nás, zda si přejete, abychom výši záloh navýšili na Vámi preferovanou částku
-    <strong>{{vase_trvala_platba}} Kč</strong>, a podle toho upravíme platební kalendář.
+    <li> informovat nás, zda si přejete, abychom výši záloh navýšili na Vámi preferovanou částku <strong>{{vase_trvala_platba}} Kč</strong>, a podle toho upravíme platební kalendář.
   </li>
 </ul>
 <p>Údaje nám můžete zaslat odpovědí na tento e-mail, případně nás kontaktovat na níže uvedeném telefonním čísle.</p>
-${PORTAL_BLOCK}`,
-files: [],
-tags: ["Přeplatky"]
+${PORTAL_BLOCK}`, 
+files: [], 
+tags: ["Přeplatky"] 
 },
 
 
-"Vrácená platba – z důvodu neexistujícího bankovního účtu (nejedená se o přeplatky, ale o platby nad rámec PK)": {
-text: `${OSLOVENI_BLOCK}
-<p>rádi bychom Vás informovali, že se nám vrátila platba na částku <strong>XXX Kč</strong>, kterou jsme Vám zasílali na
-  bankovní účet <b>číslo účtu kam platba odcházela </b>, z důvodu platby nad rámec platebního kalendáře za
-  <strong>XXXXX</strong>.</p>
-<p>Podle předpisu byla záloha <strong>XXX Kč</strong>, od Vás jsme obdrželi <strong>XXX Kč</strong> – rozdíl <strong>XXX
-    Kč</strong>. Platba se bohužel vrátila z důvodu, že výše uvedený bankovní účet je bohužel neexistující.</p> <br>
-<p>Pro úspěšné zpracování vrácení této částky Vás tímto zdvořile žádáme o sdělení nového bankovního účtu, na který
-  můžeme přeplatek odeslat. Prosíme o zaslání těchto údajů co nejdříve, abychom mohli platbu bez odkladu uskutečnit.</p>
-</ul>
-<strong>Aby nedocházelo k dalším vratkám plateb, dovolujeme si doporučit jednu z následujících možností:</strong><br>
-<ul>
-  <li> upravit trvalý příkaz na částku odpovídající aktuální výši záloh – tedy <strong>{{aktualni_zaloha}}
-      Kč</strong>,<br>
+        "Vrácená platba – z důvodu neexistujícího bankovního účtu (nejedená se o přeplatky, ale o platby nad rámec PK)": {
+                text: `${OSLOVENI_BLOCK}
+<p>rádi bychom Vás informovali, že se nám vrátila platba na částku <strong>XXX Kč</strong>, kterou jsme Vám zasílali na bankovní účet <b>číslo účtu kam platba odcházela </b>, z důvodu platby nad rámec platebního kalendáře za <strong>XXXXX</strong>.</p>
+<p>Podle předpisu byla záloha <strong>XXX Kč</strong>, od Vás jsme obdrželi <strong>XXX Kč</strong> – rozdíl <strong>XXX Kč</strong>. Platba se bohužel vrátila z důvodu, že výše uvedený bankovní účet je bohužel neexistující.</p> <br>
+<p>Pro úspěšné zpracování vrácení této částky Vás tímto zdvořile žádáme o sdělení nového bankovního účtu, na který můžeme přeplatek odeslat. Prosíme o zaslání těchto údajů co nejdříve, abychom mohli platbu bez odkladu uskutečnit.</p>
+ </ul> 
+    <strong>Aby nedocházelo k dalším vratkám plateb, dovolujeme si doporučit jednu z následujících možností:</strong><br>
+    <ul>
+    <li> upravit trvalý příkaz na částku odpovídající aktuální výši záloh – tedy <strong>{{aktualni_zaloha}} Kč</strong>,<br>
     <strong>nebo</strong><br>
-  <li> informovat nás, zda si přejete, abychom výši záloh navýšili na Vámi preferovanou částku
-    <strong>{{vase_trvala_platba}} Kč</strong>, a podle toho upravíme platební kalendář.
+    <li> informovat nás, zda si přejete, abychom výši záloh navýšili na Vámi preferovanou částku <strong>{{vase_trvala_platba}} Kč</strong>, a podle toho upravíme platební kalendář.
   </li>
 </ul>
 Vaše údaje můžete zaslat odpovědí na tento e-mail nebo nás kontaktovat na níže uvedeném telefonním čísle.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Přeplatky"]
-},
-"Informace pro ZK - nutné vrátit přeplatek, který mu byl chybně vyplacen": {
-text: `${OSLOVENI_BLOCK}
-<p>rádi bychom Vás informovali, že v rámci naší interní kontroly jsme zjistili administrativní chybu ve vystavení
-  přeplatku ve výši <strong> částka Kč</strong>,který Vám byl omylem připsán. Tento přeplatek Vám bohužel nenáleží, a
-  proto bychom Vás chtěli požádat o jeho vrácení.</p>
+                files: [],
+                tags: ["Přeplatky"]
+        },
+        "Informace pro ZK - nutné vrátit přeplatek, který mu byl chybně vyplacen": {
+                text: `${OSLOVENI_BLOCK}
+<p>rádi bychom Vás informovali, že v rámci naší interní kontroly jsme zjistili administrativní chybu ve vystavení přeplatku ve výši  <strong> částka Kč</strong>,který Vám byl omylem připsán. Tento přeplatek Vám bohužel nenáleží, a proto bychom Vás chtěli požádat o jeho vrácení.</p>
 <p>Prosíme Vás o provedení úhrady na níže uvedený bankovní účet:</p>
 <li><strong>Číslo účtu:</strong> [bankovní údaje]</li>
 <li><strong>Variabilní symbol:</strong> [VS nebo jiná identifikace]</li>
 <p>Velmi si vážíme Vaší spolupráce a omlouváme se za případné nepříjemnosti. </p>
 <p>Děkujeme za pochopení a věříme, že celou záležitost vyřešíme k oboustranné spokojenosti.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Přeplatky"]
-},
-"Informace pro ZK - přeplatek odešel složenkou i přes nastavené BÚ": {
-text: `${OSLOVENI_BLOCK}
-<p>rádi bychom Vás informovali o stavu Vašeho přeplatku. Přestože jste v našem systému nastavili bankovní účet pro
-  vyplacení přeplatku, bohužel se tento požadavek nepodařilo zpracovat v původně plánovaném termínu. Z tohoto důvodu byl
-  přeplatek odeslán dle původního nastavení prostřednictvím poštovní poukázky.</p>
+                files: [],
+                tags: ["Přeplatky"]
+        },
+        "Informace pro ZK - přeplatek odešel složenkou i přes nastavené BÚ": {
+                text: `${OSLOVENI_BLOCK}
+<p>rádi bychom Vás informovali o stavu Vašeho přeplatku. Přestože jste v našem systému nastavili bankovní účet pro vyplacení přeplatku, bohužel se tento požadavek nepodařilo zpracovat v původně plánovaném termínu. Z tohoto důvodu byl přeplatek odeslán dle původního nastavení prostřednictvím poštovní poukázky.</p>
 <p>V současné situaci máte dvě možnosti:</p>
 <ol>
-  <li><strong> Vyčkat na vrácení poukázky</strong> – Pokud nevyzvednete složenku, Česká pošta nám ji standardně vrátí
-    zpět. Tento proces může trvat přibližně <em>3–6 týdnů</em>, poté bude přeplatek vyplacen na bankovní účet, který
-    máme evidován v systému.</li>
-  <li><strong> Vyzvednout zaslanou složenku</strong> – Pokud si složenku vyzvednete, obdržíte přeplatek touto cestou.
-  </li>
-</ol>
+<li><strong> Vyčkat na vrácení poukázky</strong> – Pokud nevyzvednete složenku, Česká pošta nám ji standardně vrátí zpět. Tento proces může trvat přibližně <em>3–6 týdnů</em>, poté bude přeplatek vyplacen na bankovní účet, který máme evidován v systému.</li>
+<li><strong> Vyzvednout zaslanou složenku</strong> – Pokud si složenku vyzvednete, obdržíte přeplatek touto cestou.</li></ol>
 <p>Omlouváme se za vzniklé komplikace a děkujeme za pochopení.</p>
 
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Přeplatky"]
-},
-"Potvrzení zk. že nové BÚ bylo nastaveno a požadavek na vyplacení předán na finance": {
-text: `${OSLOVENI_BLOCK}
-<p>děkujeme za zaslání správného čísla bankovního účtu <strong>nové BÚ</strong>, které jsme zaevidovali k Vašemu
-  zákaznickému účtu.</p>
-<p>Informace jsme předali k dalšímu zpracování. Jakmile dojde k vyplacení přeplatku, budeme Vás o této skutečnosti
-  neprodleně informovat</p>
+                files: [],
+                tags: ["Přeplatky"]
+        },
+        "Potvrzení zk. že nové BÚ bylo nastaveno a požadavek na vyplacení předán na finance": {
+                text: `${OSLOVENI_BLOCK}
+<p>děkujeme za zaslání správného čísla bankovního účtu <strong>nové BÚ</strong>, které jsme zaevidovali k Vašemu zákaznickému účtu.</p>
+<p>Informace jsme předali k dalšímu zpracování. Jakmile dojde k vyplacení přeplatku, budeme Vás o této skutečnosti neprodleně informovat</p>
 
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Přeplatky"]
-},
-/* Bezzálohový režim */
+                files: [],
+                tags: ["Přeplatky"]
+        },
+        /* Bezzálohový režim */
 "Žádost o Bezzálohový režim": {
-text:`${OSLOVENI_BLOCK}
-<p>děkujeme za Vaši dosavadní spolupráci. Na základě Vašeho zájmu o přechod na <strong>bezzálohový režim</strong> Vám
-  tímto zasíláme podmínky, které je nutné splnit:</p>
+  text:`${OSLOVENI_BLOCK}
+    <p>děkujeme za Vaši dosavadní spolupráci. Na základě Vašeho zájmu o přechod na <strong>bezzálohový režim</strong> Vám tímto zasíláme podmínky, které je nutné splnit:</p>
 
-<ul>
-  <li>Nemít po splatnosti žádné zálohy ani vyúčtování.
-    {{upozorneni_castky_po_splatnosti}} </li>
+   <ul>
+  <li>Nemít po splatnosti žádné zálohy ani vyúčtování. 
+      {{upozorneni_castky_po_splatnosti}} </li>
   <li>Mít měření typu B.</li>
   <li>
-    Uhradit kauci ve výši jedné měsíční zálohy, tedy částku
-    <strong>{{vyse_mesicni_zalohy}} Kč</strong>.
-    Kauce musí být uhrazena nejpozději <strong>do 3 dnů </strong> od doručení tohoto e-mailu.
+      Uhradit kauci ve výši jedné měsíční zálohy, tedy částku 
+      <strong>{{vyse_mesicni_zalohy}} Kč</strong>. 
+      Kauce musí být uhrazena nejpozději <strong>do 3 dnů </strong> od doručení tohoto e-mailu.
   </li>
   <li>Podepsat přiložený formulář a zaslat jej zpět.</li>
 </ul>
 
-<p>V příloze naleznete příslušný formulář, který Vás prosíme vyplnit, podepsat a vrátit zpět na tuto e-mailovou adresu.
-  Jakmile obdržíme podepsaný dokument a ověříme splnění výše uvedených podmínek, budeme Vás informovat o dalším postupu.
-</p>
+    <p>V příloze naleznete příslušný formulář, který Vás prosíme vyplnit, podepsat a vrátit zpět na tuto e-mailovou adresu. Jakmile obdržíme podepsaný dokument a ověříme splnění výše uvedených podmínek, budeme Vás informovat o dalším postupu.</p>
 
-${PORTAL_BLOCK}
-`,
-files: [
-{
-url: "https://drive.google.com/file/d/1EhfSImShMh7soopf2KBDLK05C3Q7_6c1/view?usp=drive_link",
-name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2022",
-type: "pdf", brand: "epet"
-},
-{
-url: "https://drive.google.com/file/d/1vUBov6r4JO_0g9Mn86irAAjcVkHhZXyv/view?usp=drive_link",
-name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2024",
-type: "pdf", brand: "epet"
-},
-{
-url: "https://drive.google.com/file/d/1YsGBG28zBYV4jpnxVqfKKOv-pOHs4qE1/view?usp=drive_link",
-name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2025",
-type: "pdf", brand: "epet"
-},
-{
-url: "https://drive.google.com/file/d/1Ra71idB4LDOBGFBkPCqEGeEllg-xzrxE/view?usp=drive_link",
-name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2022",
-type: "pdf", brand: "de"
-},
-{
-url: "https://drive.google.com/file/d/1UVYglvcpd8IynJFot1amG9IEIs1m1Xix/view?usp=drive_link",
-name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2024",
-type: "pdf", brand: "de"
-},
-{
-url: "https://drive.google.com/file/d/1S_b479xrvkw25Cy5tabYq_AYaX87LStE/view?usp=drive_link",
-name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2025",
-type: "pdf", brand: "de"
-}
-],
-tags: ["Bezzálohový režim"]
+    ${PORTAL_BLOCK}
+  `,
+  files: [
+    {
+      url: "https://drive.google.com/file/d/1EhfSImShMh7soopf2KBDLK05C3Q7_6c1/view?usp=drive_link",
+      name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2022",
+      type: "pdf", brand: "epet"
+    },
+    {
+      url: "https://drive.google.com/file/d/1vUBov6r4JO_0g9Mn86irAAjcVkHhZXyv/view?usp=drive_link",
+      name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2024",
+      type: "pdf", brand: "epet"
+    },
+          {
+      url: "https://drive.google.com/file/d/1YsGBG28zBYV4jpnxVqfKKOv-pOHs4qE1/view?usp=drive_link",
+      name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2025",
+      type: "pdf", brand: "epet"
+    },
+    {
+      url: "https://drive.google.com/file/d/1Ra71idB4LDOBGFBkPCqEGeEllg-xzrxE/view?usp=drive_link",
+      name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2022",
+      type: "pdf", brand: "de"
+    },
+    {
+      url: "https://drive.google.com/file/d/1UVYglvcpd8IynJFot1amG9IEIs1m1Xix/view?usp=drive_link",
+      name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2024",
+      type: "pdf", brand: "de"
+    },
+          {
+      url: "https://drive.google.com/file/d/1S_b479xrvkw25Cy5tabYq_AYaX87LStE/view?usp=drive_link",
+      name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2025",
+      type: "pdf", brand: "de"
+    }
+  ],
+  tags: ["Bezzálohový režim"]
 },
 
-"Žádost o Bezzálohový režim - Schváleno": {
-text: `${OSLOVENI_BLOCK}
-<p>rádi bychom Vás informovali, že na základě splnění všech podmínek Vám byl schválen <strong>bezzálohový
-    režim</strong>. To znamená, že od nynějška již není nutné <strong>hradit měsíční zálohy</strong>.</p>
-<p>Namísto záloh Vám budeme vystavovat faktury odpovídající skutečné spotřebě, a to každý měsíc dle standardních
-  fakturačních podmínek.</p>
+        "Žádost o Bezzálohový režim - Schváleno": {
+                text: `${OSLOVENI_BLOCK}
+<p>rádi bychom Vás informovali, že na základě splnění všech podmínek Vám byl schválen <strong>bezzálohový režim</strong>. To znamená, že od nynějška již není nutné <strong>hradit měsíční zálohy</strong>.</p>
+<p>Namísto záloh Vám budeme vystavovat faktury odpovídající skutečné spotřebě, a to každý měsíc dle standardních fakturačních podmínek.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Bezzálohový režim"]
-},
-"Žádost o Bezzálohový režim - Zamítnuno": {
-text: `${OSLOVENI_BLOCK}
+                files: [],
+                tags: ["Bezzálohový režim"]
+        },
+        "Žádost o Bezzálohový režim - Zamítnuno": {
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme za Vaši žádost o zařazení do bezzálohového režimu.</p>
-<p>Po pečlivém posouzení Vaší žádosti Vám bohužel musíme sdělit, že aktuálně nesplňujete podmínky pro zařazení do tohoto
-  režimu. Bezzálohový režim je v současné době umožněn pouze <strong>firemním zákazníkům</strong> s typem měření
-  <strong>B</strong>.</p>
-<p>Pokud se v budoucnu změní podmínky Vašeho odběru a budete splňovat uvedené požadavky, rádi Vaši žádost znovu
-  posoudíme.</p>
+<p>Po pečlivém posouzení Vaší žádosti Vám bohužel musíme sdělit, že aktuálně nesplňujete podmínky pro zařazení do tohoto režimu. Bezzálohový režim je v současné době umožněn pouze <strong>firemním zákazníkům</strong> s typem měření <strong>B</strong>.</p>
+<p>Pokud se v budoucnu změní podmínky Vašeho odběru a budete splňovat uvedené požadavky, rádi Vaši žádost znovu posoudíme.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Bezzálohový režim"]
-},
+                files: [],
+                tags: ["Bezzálohový režim"]
+        },
 "Jak je to s vrácením kauce - Bezzálohový režim": {
-text: `${OSLOVENI_BLOCK}
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme za Váš dotaz k vrácení kauce v rámci bezzálohového režimu.</p>
-<p>V případě bezzálohového režimu je kauce standardně držena jako zajištění plateb. Po <b>12 měsících řádného a včasného
-    hrazení faktur</b> má zákazník možnost požádat o její vrácení.</p>
-<p>Vrácení kauce tedy neprobíhá automaticky – je realizováno <b>na základě písemné žádosti zákazníka</b>, kterou nám
-  zašlete po uplynutí uvedené 12 měsíční lhůty.</p>
-<p>Jakmile Vaši žádost obdržíme a ověříme splnění podmínek řádných úhrad, zajistíme zpracování a následné vyplacení
-  kauce na Vámi uvedený bankovní účet.</p>
+<p>V případě bezzálohového režimu je kauce standardně držena jako zajištění plateb. Po <b>12 měsících řádného a včasného hrazení faktur</b> má zákazník možnost požádat o její vrácení.</p>
+<p>Vrácení kauce tedy neprobíhá automaticky – je realizováno <b>na základě písemné žádosti zákazníka</b>, kterou nám zašlete po uplynutí uvedené 12 měsíční lhůty.</p>
+<p>Jakmile Vaši žádost obdržíme a ověříme splnění podmínek řádných úhrad, zajistíme zpracování a následné vyplacení kauce na Vámi uvedený bankovní účet.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Bezzálohový režim"]
-},
+                files: [],
+                tags: ["Bezzálohový režim"]
+        },
 /* Smluvní pokuty */
-"Výpočet smluvní pokuty": {
-text: `${OSLOVENI_BLOCK}
-<p>na základě našeho dnešního telefonického hovoru Vám níže zasíláme informaci k orientační výši smluvní pokuty
-  vztahující se ke smlouvě elektřiny/plynu č. <strong>XXXXX</strong>.</p>
-<p>Částka činí <strong>XXXXX Kč</strong> a je vypočtena na základě předpokladu, že ukončení odběrného místa jiným
-  dodavatelem proběhne nejpozději k <strong>D+10 PD</strong>.</p>
-<p>Upozorňujeme, že v případě, že by k ukončení odběrného místa došlo k jinému datu, může se skutečná výše smluvní
-  pokuty lišit.</p>
+        "Výpočet smluvní pokuty": {
+                text: `${OSLOVENI_BLOCK}
+<p>na základě našeho dnešního telefonického hovoru Vám níže zasíláme informaci k orientační výši smluvní pokuty vztahující se ke smlouvě elektřiny/plynu č. <strong>XXXXX</strong>.</p>
+<p>Částka činí <strong>XXXXX Kč</strong> a je vypočtena na základě předpokladu, že ukončení odběrného místa jiným dodavatelem proběhne nejpozději k <strong>D+10 PD</strong>.</p>
+<p>Upozorňujeme, že v případě, že by k ukončení odběrného místa došlo k jinému datu, může se skutečná výše smluvní pokuty lišit.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Smluvní pokuty"]
-},
-"Výzva k úhradě smluvní pokuty": {
-text: `${OSLOVENI_BLOCK}
-<p>informujeme Vás, že u Vašeho odběrného místa <b>${EAN_BLOCK}</b> došlo k porušení smluvních podmínek z důvodu
-  <b>nezahájení dodávky energií</b> nebo <b>předčasného ukončení dodávky energií</b>.</p>
-<p>Na základě toho uplatňujeme naše právo na vystavení smluvní pokuty. Informace o výši této pokuty a způsobu její
-  úhrady naleznete v přiložené faktuře.</p>
+                files: [],
+                tags: ["Smluvní pokuty"]
+        },
+        "Výzva k úhradě smluvní pokuty": {
+                text: `${OSLOVENI_BLOCK}
+<p>informujeme Vás, že u Vašeho odběrného místa <b>${EAN_BLOCK}</b> došlo k porušení smluvních podmínek z důvodu <b>nezahájení dodávky energií</b> nebo <b>předčasného ukončení dodávky energií</b>.</p>
+<p>Na základě toho uplatňujeme naše právo na vystavení smluvní pokuty. Informace o výši této pokuty a způsobu její úhrady naleznete v přiložené faktuře.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Smluvní pokuty"]
-},
+                files: [],
+                tags: ["Smluvní pokuty"]
+        },
 
-"Přezkoumání smluvní pokuty - je oprávněná": {
-text: `${OSLOVENI_BLOCK}
-<p>informujeme Vás, že jsme znovu a důkladně prozkoumali důvody udělení smluvní pokuty týkající se odběrného místa
-  <strong>${EAN_BLOCK}</strong>.</p>
-<p>I po opětovném přezkoumání však uplatňujeme náš nárok na vystavení smluvní pokuty. Důvodem je <strong>XXXXX</strong>
-  (důvod vypsat z úkolu).</p>
+        "Přezkoumání smluvní pokuty - je oprávněná": {
+                text: `${OSLOVENI_BLOCK}
+<p>informujeme Vás, že jsme znovu a důkladně prozkoumali důvody udělení smluvní pokuty týkající se odběrného místa <strong>${EAN_BLOCK}</strong>.</p>
+<p>I po opětovném přezkoumání však uplatňujeme náš nárok na vystavení smluvní pokuty. Důvodem je <strong>XXXXX</strong> (důvod vypsat z úkolu).</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Smluvní pokuty"]
-},
+                files: [],
+                tags: ["Smluvní pokuty"]
+        },
 
-"Smluvní pokutu nepožadujeme - storno": {
-text: `${OSLOVENI_BLOCK}
+        "Smluvní pokutu nepožadujeme - storno": {
+                text: `${OSLOVENI_BLOCK}
 <p>přehodnotili jsme náš požadavek na úhradu smluvní pokuty pro odběrné místo <strong>${EAN_BLOCK}</strong>.</p>
 <p>Na úhradě této pokuty již netrváme.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Smluvní pokuty"]
-},
-/* Změna typu měření */
-"Změna typu měření z B na C": {
-text: `${OSLOVENI_BLOCK}
-<p>informujeme Vás, že u odběrného místa <b>${EAN_BLOCK}</b> na adrese <b>${ADRESA_BLOCK}</b> distributor provedl změnu
-  typu měření z <i>B</i> na <i>C</i>. Od této chvíle tedy bude odečet na Vašem měřidle vykonáván pouze jednou ročně.</p>
-<p>Pokud byste si přáli nadále využívat možnost měsíční fakturace, je to možné na základě zasílání samoodečtů. Tato
-  možnost je zpoplatněná <i> 41,32 Kč/odběrné místo bez DPH</i>. </p>
-<p>Pro využití této možnosti nám zasílejte stavy Vašeho měřidla zaznamenané v tabulce, kterou naleznete v příloze a to
-  nejpozději dle níže uvedených termínů. Využít můžete i <a href="https://zakaznici.epet.cz/login"
-    target="_blank">Zákaznický portál</a>. </p>
-<li><b>Elektřina:</b> Odečet může být nahlášen k jakémukoli datu, musí být však nahlášen do 20 kalendářních dní od
-  provedení odečtu.</li>
-<li><b>Plyn:</b> Odečet musí být nahlášen k poslednímu dni v měsíci, musí být však nahlášen do 5 kalendářních dní.</li>
-<br>
-<p>Dále Vás informujeme, že pokud jste doposud využívali bezzálohový režim, tento režim Vám bude automaticky zrušen.
-  Nově bude nutné hradit zálohy dle předepsaného platebního kalendáře, který Vám v nejbližších dnech dorazí na Vaši
-  e-mailovou adresu / korespondenční adresu.</p>
+                files: [],
+                tags: ["Smluvní pokuty"]
+        },
+        /* Změna typu měření */
+        "Změna typu měření z B na C": {
+                text: `${OSLOVENI_BLOCK}
+<p>informujeme Vás, že u odběrného místa <b>${EAN_BLOCK}</b> na adrese <b>${ADRESA_BLOCK}</b> distributor provedl změnu typu měření z <i>B</i> na <i>C</i>. Od této chvíle tedy bude odečet na Vašem měřidle vykonáván pouze jednou ročně.</p>
+<p>Pokud byste si přáli nadále využívat možnost měsíční fakturace, je to možné na základě zasílání samoodečtů. Tato možnost je zpoplatněná <i> 41,32 Kč/odběrné místo bez DPH</i>. </p>
+<p>Pro využití této možnosti nám zasílejte stavy Vašeho měřidla zaznamenané v tabulce, kterou naleznete v příloze a to nejpozději dle níže uvedených termínů. Využít můžete i <a href="https://zakaznici.epet.cz/login" target="_blank">Zákaznický portál</a>. </p>
+<li><b>Elektřina:</b> Odečet může být nahlášen k jakémukoli datu, musí být však nahlášen do 20 kalendářních dní od provedení odečtu.</li>
+<li><b>Plyn:</b> Odečet musí být nahlášen k poslednímu dni v měsíci, musí být však nahlášen do 5 kalendářních dní.</li><br>
+<p>Dále Vás informujeme, že pokud jste doposud využívali bezzálohový režim, tento režim Vám bude automaticky zrušen. Nově bude nutné hradit zálohy dle předepsaného platebního kalendáře, který Vám v nejbližších dnech dorazí na Vaši e-mailovou adresu / korespondenční adresu.</p> 
 ${PORTAL_BLOCK}`,
-files: [
-{
-url: "https://drive.google.com/file/d/1EhfSImShMh7soopf2KBDLK05C3Q7_6c1/view?usp=drive_link",
-name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2022",
-type: "pdf", brand: "epet"
-},
-{
-url: "https://drive.google.com/file/d/1vUBov6r4JO_0g9Mn86irAAjcVkHhZXyv/view?usp=drive_link",
-name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2024",
-type: "pdf", brand: "epet"
-},
-{
-url: "https://drive.google.com/file/d/1YsGBG28zBYV4jpnxVqfKKOv-pOHs4qE1/view?usp=drive_link",
-name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2025",
-type: "pdf", brand: "epet"
-},
-{
-url: "https://drive.google.com/file/d/1Ra71idB4LDOBGFBkPCqEGeEllg-xzrxE/view?usp=drive_link",
-name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2022",
-type: "pdf", brand: "de"
-},
-{
-url: "https://drive.google.com/file/d/1UVYglvcpd8IynJFot1amG9IEIs1m1Xix/view?usp=drive_link",
-name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2024",
-type: "pdf", brand: "de"
-},
-{
-url: "https://drive.google.com/file/d/1S_b479xrvkw25Cy5tabYq_AYaX87LStE/view?usp=drive_link",
-name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2025",
-type: "pdf", brand: "de"
-}
-],
-tags: ["Změna typu měření"]
-},
+               files: [
+    {
+      url: "https://drive.google.com/file/d/1EhfSImShMh7soopf2KBDLK05C3Q7_6c1/view?usp=drive_link",
+      name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2022",
+      type: "pdf", brand: "epet"
+    },
+    {
+      url: "https://drive.google.com/file/d/1vUBov6r4JO_0g9Mn86irAAjcVkHhZXyv/view?usp=drive_link",
+      name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2024",
+      type: "pdf", brand: "epet"
+    },
+          {
+      url: "https://drive.google.com/file/d/1YsGBG28zBYV4jpnxVqfKKOv-pOHs4qE1/view?usp=drive_link",
+      name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2025",
+      type: "pdf", brand: "epet"
+    },
+    {
+      url: "https://drive.google.com/file/d/1Ra71idB4LDOBGFBkPCqEGeEllg-xzrxE/view?usp=drive_link",
+      name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2022",
+      type: "pdf", brand: "de"
+    },
+    {
+      url: "https://drive.google.com/file/d/1UVYglvcpd8IynJFot1amG9IEIs1m1Xix/view?usp=drive_link",
+      name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2024",
+      type: "pdf", brand: "de"
+    },
+          {
+      url: "https://drive.google.com/file/d/1S_b479xrvkw25Cy5tabYq_AYaX87LStE/view?usp=drive_link",
+      name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2025",
+      type: "pdf", brand: "de"
+    }
+  ],
+                tags: ["Změna typu měření"]
+        },
 
-"Změna typu měření z C na B - Domácnost": {
-text: `${OSLOVENI_BLOCK}
-<p>informujeme Vás, že u odběrného místa <b>${EAN_BLOCK}</b> na adrese <b>${ADRESA_BLOCK}</b> distributor provedl změnu
-  typu měření z <b>C</b> na <b>B</b>. Od této chvíle se tedy bude odečet na Vašem měřidle vykonávat za každý kalendářní
-  měsíc.</p>
-<p>Každý měsíc Vám budeme zasílat i fakturu. Rádi bychom Vás také upozornili, že fakturace jednou ročně již není možná.
-  Platební kalendář a placení záloh zůstává nezměněn.</p>
+        "Změna typu měření z C na B - Domácnost": {
+                text: `${OSLOVENI_BLOCK}
+<p>informujeme Vás, že u odběrného místa <b>${EAN_BLOCK}</b> na adrese <b>${ADRESA_BLOCK}</b> distributor provedl změnu typu měření z <b>C</b> na <b>B</b>. Od této chvíle se tedy bude odečet na Vašem měřidle vykonávat za každý kalendářní měsíc.</p>
+<p>Každý měsíc Vám budeme zasílat i fakturu. Rádi bychom Vás také upozornili, že fakturace jednou ročně již není možná. Platební kalendář a placení záloh zůstává nezměněn.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Změna typu měření"]
-},
+                files: [],
+                tags: ["Změna typu měření"]
+        },
 
-"Změna typu měření z C na B - Firma - nabídka bezzálohového režimu": {
-text: `${OSLOVENI_BLOCK}
-<p>informujeme Vás, že u odběrného místa <b>${EAN_BLOCK}</b> na adrese <b>${ADRESA_BLOCK}</b> distributor provedl změnu
-  typu měření z <b>C</b> na <b>B</b>. Od této chvíle se tedy bude odečet na Vašem měřidle vykonávat za každý kalendářní
-  měsíc.</p>
-<p>Každý měsíc Vám budeme zasílat i fakturu. Rádi bychom Vás také upozornili, že fakturace jednou ročně již není možná.
-</p>
+        "Změna typu měření z C na B - Firma -  nabídka bezzálohového režimu": {
+                text: `${OSLOVENI_BLOCK}
+<p>informujeme Vás, že u odběrného místa <b>${EAN_BLOCK}</b> na adrese <b>${ADRESA_BLOCK}</b> distributor provedl změnu typu měření z <b>C</b> na <b>B</b>. Od této chvíle se tedy bude odečet na Vašem měřidle vykonávat za každý kalendářní měsíc.</p>
+<p>Každý měsíc Vám budeme zasílat i fakturu. Rádi bychom Vás také upozornili, že fakturace jednou ročně již není možná.</p>
 <p>V návaznosti na tuto změnu Vám rovněž zasíláme podmínky pro případný přechod na bezzálohový režim:</p>
-<li>Nemít po splatnosti žádné zálohy ani vyúčtování. [V případě, že u zákazníka evidujeme částky po splatnosti musíme
-  upozornit na jejich úhradu]</li>
+<li>Nemít po splatnosti žádné zálohy ani vyúčtování. [V případě, že u zákazníka evidujeme částky po splatnosti musíme upozornit na jejich úhradu]</li>
 <li>Mít měření typu B (což nyní splňujete).</li>
 <li>Uhradit kauci ve výši jedné měsíční zálohy tedy ve výši: <b>[aktuální výše zálohy]</b></li>
 <li>Podepsat přiložený formulář a zaslat jej zpět.</li><br>
-<p>V příloze naleznete formulář, který Vás žádáme vyplnit, podepsat a odeslat na tuto e-mailovou adresu. Jakmile
-  obdržíme podepsaný dokument a ověříme splnění uvedených podmínek, budeme Vás informovat o dalším postupu.</p>
+<p>V příloze naleznete formulář, který Vás žádáme vyplnit, podepsat a odeslat na tuto e-mailovou adresu. Jakmile obdržíme podepsaný dokument a ověříme splnění uvedených podmínek, budeme Vás informovat o dalším postupu.</p>
 <p>Děkujeme za spolupráci.</p>
 ${PORTAL_BLOCK}`,
-files: [
-{
-url: "https://drive.google.com/file/d/1EhfSImShMh7soopf2KBDLK05C3Q7_6c1/view?usp=drive_link",
-name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2022",
-type: "pdf", brand: "epet"
-},
-{
-url: "https://drive.google.com/file/d/1vUBov6r4JO_0g9Mn86irAAjcVkHhZXyv/view?usp=drive_link",
-name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2024",
-type: "pdf", brand: "epet"
-},
-{
-url: "https://drive.google.com/file/d/1YsGBG28zBYV4jpnxVqfKKOv-pOHs4qE1/view?usp=drive_link",
-name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2025",
-type: "pdf", brand: "epet"
-},
-{
-url: "https://drive.google.com/file/d/1Ra71idB4LDOBGFBkPCqEGeEllg-xzrxE/view?usp=drive_link",
-name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2022",
-type: "pdf", brand: "de"
-},
-{
-url: "https://drive.google.com/file/d/1UVYglvcpd8IynJFot1amG9IEIs1m1Xix/view?usp=drive_link",
-name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2024",
-type: "pdf", brand: "de"
-},
-{
-url: "https://drive.google.com/file/d/1S_b479xrvkw25Cy5tabYq_AYaX87LStE/view?usp=drive_link",
-name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2025",
-type: "pdf", brand: "de"
-}
-],
-
-tags: ["Změna typu měření"]
-},
-"Změna typu měření z C na B - Firma - bez nabídky bezzálohového režimu": {
-text: `${OSLOVENI_BLOCK}
-<p>informujeme Vás, že u odběrného místa <b>${EAN_BLOCK}</b> na adrese <b>${ADRESA_BLOCK}</b> distributor provedl změnu
-  typu měření z <b>C</b> na <b>B</b>. Od této chvíle se tedy bude odečet na Vašem měřidle vykonávat za každý kalendářní
-  měsíc.</p>
-<p>Každý měsíc Vám budeme zasílat i fakturu. Rádi bychom Vás také upozornili, že fakturace jednou ročně již není možná.
-  Platební kalendář a placení záloh zůstává nezměněn.</p>
+                 files: [
+     {
+      url: "https://drive.google.com/file/d/1EhfSImShMh7soopf2KBDLK05C3Q7_6c1/view?usp=drive_link",
+      name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2022",
+      type: "pdf", brand: "epet"
+    },
+    {
+      url: "https://drive.google.com/file/d/1vUBov6r4JO_0g9Mn86irAAjcVkHhZXyv/view?usp=drive_link",
+      name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2024",
+      type: "pdf", brand: "epet"
+    },
+          {
+      url: "https://drive.google.com/file/d/1YsGBG28zBYV4jpnxVqfKKOv-pOHs4qE1/view?usp=drive_link",
+      name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2025",
+      type: "pdf", brand: "epet"
+    },
+    {
+      url: "https://drive.google.com/file/d/1Ra71idB4LDOBGFBkPCqEGeEllg-xzrxE/view?usp=drive_link",
+      name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2022",
+      type: "pdf", brand: "de"
+    },
+    {
+      url: "https://drive.google.com/file/d/1UVYglvcpd8IynJFot1amG9IEIs1m1Xix/view?usp=drive_link",
+      name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2024",
+      type: "pdf", brand: "de"
+    },
+          {
+      url: "https://drive.google.com/file/d/1S_b479xrvkw25Cy5tabYq_AYaX87LStE/view?usp=drive_link",
+      name: "ŽÁDOST O BEZZÁLOHOVÝ REŽIM - DLE VOPD 2025",
+      type: "pdf", brand: "de"
+    }
+  ],
+ 
+                tags: ["Změna typu měření"]
+        },
+        "Změna typu měření z C na B - Firma - bez nabídky bezzálohového režimu": {
+                text: `${OSLOVENI_BLOCK}
+<p>informujeme Vás, že u odběrného místa <b>${EAN_BLOCK}</b> na adrese <b>${ADRESA_BLOCK}</b> distributor provedl změnu typu měření z <b>C</b> na <b>B</b>. Od této chvíle se tedy bude odečet na Vašem měřidle vykonávat za každý kalendářní měsíc.</p>
+<p>Každý měsíc Vám budeme zasílat i fakturu. Rádi bychom Vás také upozornili, že fakturace jednou ročně již není možná. Platební kalendář a placení záloh zůstává nezměněn.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Změna typu měření"]
-},
-/* Odstávka */
-"Plánovaná odstávka dodávek energií": {
-text: `${OSLOVENI_BLOCK}
-<p>kontaktoval nás Váš distributor s informací týkající se přerušení dodávek do odběrného místa
-  <strong>${EAN_BLOCK}</strong> na adrese <strong>${ADRESA_BLOCK}</strong>.</p>
+                files: [],
+                tags: ["Změna typu měření"]
+        },
+        /* Odstávka */
+        "Plánovaná odstávka dodávek energií": {
+                text: `${OSLOVENI_BLOCK}
+<p>kontaktoval nás Váš distributor s informací týkající se přerušení dodávek do odběrného místa <strong>${EAN_BLOCK}</strong> na adrese <strong>${ADRESA_BLOCK}</strong>.</p>
 <p>Dodávka bude přerušena v rozmezí <strong>DD.MM.RRRR – DD.MM.RRRR</strong> z důvodu plánované stavební úpravy.</p>
-<p>Distributor však předpokládá, že dodávky nebudou přerušeny po celou uvedenou dobu, ale jen na dobu nezbytně nutnou. O
-  přesném termínu Vás distributor bude informovat prostřednictvím informační vývěsky.</p>
+<p>Distributor však předpokládá, že dodávky nebudou přerušeny po celou uvedenou dobu, ale jen na dobu nezbytně nutnou. O přesném termínu Vás distributor bude informovat prostřednictvím informační vývěsky.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Odstávka"]
-},
-/* Sdílená elektřina */
-"ODPOVĚĎ ZÁKAZNÍKOVI DO MAILU, KDE NAJDE MNOŽSTVÍ NASDÍLENÉ ENERGIE:": {
-text: `${OSLOVENI_BLOCK}
+                files: [],
+                tags: ["Odstávka"]
+        },
+        /* Sdílená elektřina */
+        "ODPOVĚĎ ZÁKAZNÍKOVI DO MAILU, KDE NAJDE MNOŽSTVÍ NASDÍLENÉ ENERGIE:": {
+                text: `${OSLOVENI_BLOCK}
 <p>množství energie, které jste fyzicky sdílel/a, si můžete vypočítat následovně:</p>
 <ol>
   <li><b>Zjistěte svou celkovou spotřebu</b> – Ve svém vyúčtování se podívejte na konečný a počáteční stav
-    elektroměru. Rozdíl mezi těmito hodnotami představuje vaši skutečnou fyzickou spotřebu za dané období.</li>
-  <li><b>Podívejte se na hodnoty ve vyúčtování</b> – V kolonkách "Distribuováno" a "Dodáno" najdete množství
-    energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energii, kterou jste sdílel.</li>
-  <li><b>Výpočet sdílené energie</b> – Sdílené množství zjistíte takto: <i>Sdílená energie (kWh) = Fyzicky spotřebovaná
-      energie – Účtovaná spotřeba</i></li>
+elektroměru. Rozdíl mezi těmito hodnotami představuje vaši skutečnou fyzickou spotřebu za dané období.</li>
+ <li><b>Podívejte se na hodnoty ve vyúčtování</b> – V kolonkách "Distribuováno" a "Dodáno" najdete množství
+energie, které vám bylo skutečně účtováno. Tyto hodnoty nezahrnují energii, kterou jste sdílel.</li>
+ <li><b>Výpočet sdílené energie</b> – Sdílené množství zjistíte takto: <i>Sdílená energie (kWh) = Fyzicky spotřebovaná energie – Účtovaná spotřeba</i></li>
 </ol>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Sdílená elektřina"]
-},
-"ODPOVĚĎ ZÁKAZNÍKOVI DO MAILU - INFORMACE,KE SDÍLENÍ": {
-text: `${OSLOVENI_BLOCK}
+                files: [],
+                tags: ["Sdílená elektřina"]
+        },
+        "ODPOVĚĎ ZÁKAZNÍKOVI DO MAILU - INFORMACE,KE SDÍLENÍ": {
+                text: `${OSLOVENI_BLOCK}
 <p>děkujeme za Váš dotaz ke sdílené elektřině.</p>
-<p>Sdílení elektřiny není nabízeno jako samostatný produkt dodavatele, jedná se o proces, který je plně v rukou
-  zákazníka. My, jako dodavatel, do tohoto procesu zákazníkovi nezasahujeme.</p>
-<p>Pro registraci a správu sdílení prosím využijte oficiální portál <a href="http://edc-cr.cz/" target="_blank">EDC-ČR
-  </a>, kde si založíte účet a nastavíte potřebné údaje. Jakmile EDC-ČR zveřejní a potvrdí Vaše alokace, promítneme
-  sdílené množství do Vašeho vyúčtování.</p>
-<p>
-<ul><strong>Důležité stručně:</strong></p>
-  <li><strong>Změna dodavatele</strong> není nutná. Sdílení zohledníme v rámci Vaší stávající smlouvy.</li>
-  <li>Započtení sdílené energie vychází z údajů EDC-ČR; regulované složky (distribuce, daně, stálé platby) se účtují dle
-    platné regulace.</li>
-  <li>Pro zapojená odběrná místa je obvykle vyžadováno průběhové (dálkově odečítané) měření.</li>
-</ul><br>
+<p>Sdílení elektřiny není nabízeno jako samostatný produkt dodavatele, jedná se o proces, který je plně v rukou zákazníka. My, jako dodavatel, do tohoto procesu zákazníkovi nezasahujeme.</p>
+<p>Pro registraci a správu sdílení prosím využijte oficiální portál  <a href="http://edc-cr.cz/"target="_blank">EDC-ČR </a>, kde si založíte účet a nastavíte potřebné údaje. Jakmile EDC-ČR zveřejní a potvrdí Vaše alokace, promítneme sdílené množství do Vašeho vyúčtování.</p>
+<p><ul><strong>Důležité stručně:</strong></p>
+<li><strong>Změna dodavatele</strong> není nutná. Sdílení zohledníme v rámci Vaší stávající smlouvy.</li>
+<li>Započtení sdílené energie vychází z údajů EDC-ČR; regulované složky (distribuce, daně, stálé platby) se účtují dle platné regulace.</li>
+<li>Pro zapojená odběrná místa je obvykle vyžadováno průběhové (dálkově odečítané) měření.</li></ul><br>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Sdílená elektřina"]
-},
-/* FVE - MIKROZDROJE */
-"Šablona č.1 s Předmětem:Zamítnutý výrobní EAN": {
-text: `${OSLOVENI_BLOCK}
-<p>rádi bychom Vás informovali, že jsme se pokusili převzít za Vás odchylku u Operátora trhu. Bohužel nám bylo
-  přihlášení zamítnuto z důvodu, že nemáte aktivovaný druhý EAN, který Vám přidělil distributor.</p>
-<p>Prosíme Vás proto o co nejrychlejší aktivaci tohoto EAN, nejpozději do 3 pracovních dnů. Po provedení registrace Vám
-  distributor zašle potvrzovací e-mail, ve kterém uvede, že byl EAN aktivován a od jakého data. Jakmile tento e-mail
-  obdržíte, přepošlete nám jej prosím jako potvrzení.</p>
-<p>Vzhledem k vysokému zájmu o převzetí odchylek v tomto období a nutnosti zajištění technických kroků předem, nemůžeme
-  v případě Vaší nesoučinnosti zaručit včasné převzetí odchylky. To může vést k neoprávněnému odběru, za který nese
-  odpovědnost zákazník.</p>
-<p>Děkujeme za pochopení a spolupráci.</p>
+                files: [],
+                tags: ["Sdílená elektřina"]
+        },
+        /* FVE - MIKROZDROJE */
+        "Šablona č.1 s Předmětem:Zamítnutý výrobní EAN": {
+                text: `${OSLOVENI_BLOCK}
+<p>rádi bychom Vás informovali, že jsme se pokusili převzít za Vás odchylku u Operátora trhu. Bohužel nám bylo přihlášení zamítnuto z důvodu, že nemáte aktivovaný druhý EAN, který Vám přidělil distributor.</p>
+    <p>Prosíme Vás proto o co nejrychlejší aktivaci tohoto EAN, nejpozději do 3 pracovních dnů. Po provedení registrace Vám distributor zašle potvrzovací e-mail, ve kterém uvede, že byl EAN aktivován a od jakého data. Jakmile tento e-mail obdržíte, přepošlete nám jej prosím jako potvrzení.</p>
+    <p>Vzhledem k vysokému zájmu o převzetí odchylek v tomto období a nutnosti zajištění technických kroků předem, nemůžeme v případě Vaší nesoučinnosti zaručit včasné převzetí odchylky. To může vést k neoprávněnému odběru, za který nese odpovědnost zákazník.</p>
+    <p>Děkujeme za pochopení a spolupráci.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Převzetí odchylky"]
-},
-"Šablona č.2 s Předmětem:Žádost o doplnění údajů k připojení Vaší výrobny elektřiny z FVE ": {
-text: `${OSLOVENI_BLOCK}
-<p>děkujeme Vám za zájem o připojení Vaší výrobny elektřiny z fotovoltaické elektrárny (FVE).</p>
-<p>Abychom mohli zahájit proces připojení, prosíme Vás o zaslání následujících údajů:</p>
-<p><strong>Povinné údaje:</strong><br>
-  • Jméno a příjmení (nebo název společnosti):<br>
-  • Datum narození (nebo IČ):<br>
-  • EAN kód výrobny:<br>
-  • Adresa výrobny:<br>
-  • K jakému datu je/bude výrobna připojena do distribuční sítě?: <br>
-  • Je výrobní EAN nový ? Pokud <b>Ne</b>: Poprosíme o doložení akceptace ukončení smlouvy od původního dodavatele.<br>
-  • Sdílíte v tuto chvíli energie? Pokud ano, tak z kolika % <br>
-  • Dále poprosíme o doložení <b>Smlouvy o připojení</b>, kterou Vám vystavil Váš distributor nebo je možné doložit
-  <b>Protokol o připojení k distribuční síti</b></p>
-<p><strong>Nepovinný údaj (doporučeno):</strong><br>
-  • EAN kód odběrného (spotřebního) místa:</p>
-<p>Aktuálně Vám můžeme nabídnout dvě varianty. První možností je převzetí odpovědnosti za odchylku s nulovou výkupní
-  cenou, bez dalších poplatků. Druhou možností je uzavření smlouvy na výkup za spotovou výkupní cenu, která se odvíjí od
-  cen na burze a je snížena o poplatek 350 Kč/MWh bez DPH.</p>
-<p>Prosíme Vás o informaci, o kterou z uvedených variant byste měl/a zájem, tedy zda preferujete převzetí odpovědnosti
-  za odchylku s nulovou výkupní cenou, nebo výkup za spotovou cenu.</p>
-<p>Díky změně legislativy začne od 1. 7. 2025 příslušný distributor ukládat pokuty výrobnám, které nemají sjednaného
-  obchodníka.<br>
-  Společnosti epet za Vás převezmou odpovědnost za odchylku, aby k těmto pokutám nedocházelo.</p>
-<hr>
-<p>Vyjadřuji tímto souhlas a projevuji vůli, aby se společnost epet stala obchodníkem pro mé výrobní místo a provedla
-  jeho registraci u Operátora trhu s elektřinou (OTE).<br>
-<p>Vyplněné údaje prosím zašlete na e-mailovou adresu: <strong>info@epet.cz</strong></p>
+                files: [],
+                tags: ["Převzetí odchylky"]
+        },
+        "Šablona č.2 s Předmětem:Žádost o doplnění údajů k připojení Vaší výrobny elektřiny z FVE ": {
+                text: `${OSLOVENI_BLOCK}
+ <p>děkujeme Vám za zájem o připojení Vaší výrobny elektřiny z fotovoltaické elektrárny (FVE).</p>
+    <p>Abychom mohli zahájit proces připojení, prosíme Vás o zaslání následujících údajů:</p>
+    <p><strong>Povinné údaje:</strong><br>
+    • Jméno a příjmení (nebo název společnosti):<br>
+    • Datum narození (nebo IČ):<br>
+    • EAN kód výrobny:<br>
+    • Adresa výrobny:<br>
+    • K jakému datu je/bude výrobna připojena do distribuční sítě?: <br>
+    • Je výrobní EAN nový ? Pokud <b>Ne</b>: Poprosíme o doložení akceptace ukončení smlouvy od původního dodavatele.<br>
+    • Sdílíte v tuto chvíli energie? Pokud ano, tak z kolika % <br>
+    • Dále poprosíme o doložení <b>Smlouvy o připojení</b>, kterou Vám vystavil Váš distributor nebo je možné doložit <b>Protokol o připojení k distribuční síti</b></p>
+    <p><strong>Nepovinný údaj (doporučeno):</strong><br>
+    • EAN kód odběrného (spotřebního) místa:</p>
+    <p>Aktuálně Vám můžeme nabídnout dvě varianty. První možností je převzetí odpovědnosti za odchylku s nulovou výkupní cenou, bez dalších poplatků. Druhou možností je uzavření smlouvy na výkup za spotovou         výkupní cenu, která se odvíjí od cen na burze a je snížena o poplatek 350 Kč/MWh bez DPH.</p>
+    <p>Prosíme Vás o informaci, o kterou z uvedených variant byste měl/a zájem, tedy zda preferujete převzetí odpovědnosti za odchylku s nulovou výkupní cenou, nebo výkup za spotovou cenu.</p>
+    <p>Díky změně legislativy začne od 1. 7. 2025 příslušný distributor ukládat pokuty výrobnám, které nemají sjednaného obchodníka.<br>
+    Společnosti epet za Vás převezmou odpovědnost za odchylku, aby k těmto pokutám nedocházelo.</p>
+    <hr>
+    <p>Vyjadřuji tímto souhlas a projevuji vůli, aby se společnost epet stala obchodníkem pro mé výrobní místo a provedla jeho registraci u Operátora trhu s elektřinou (OTE).<br>
+    <p>Vyplněné údaje prosím zašlete na e-mailovou adresu: <strong>info@epet.cz</strong></p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Převzetí odchylky"]
-},
-"Zajištění odchylky – předáno k dalšímu zpracování": {
-text: `${OSLOVENI_BLOCK}
-<p>děkujeme za zaslání požadovaných podkladů a informací k zajištění odchylky.</p>
-<p>Váš požadavek jsme zaevidovali a v tuto chvíli jej předáváme k dalšímu zpracování kolegům z oddělení nabídek. Jakmile
-  budou mít kolegové připravené podklady/smlouvu, zašleme Vám ji na Váš e-mail k podpisu.</p>
-<p>V případě jakýchkoliv dotazů se na nás neváhejte obrátit.</p>
+                files: [],
+                tags: ["Převzetí odchylky"]
+        },
+ "Zajištění odchylky – předáno k dalšímu zpracování": {
+  text: `${OSLOVENI_BLOCK}
+  <p>děkujeme za zaslání požadovaných podkladů a informací k zajištění odchylky.</p>
+  <p>Váš požadavek jsme zaevidovali a v tuto chvíli jej předáváme k dalšímu zpracování kolegům z oddělení nabídek. Jakmile budou mít kolegové připravené podklady/smlouvu, zašleme Vám ji na Váš e-mail k podpisu.</p>
+  <p>V případě jakýchkoliv dotazů se na nás neváhejte obrátit.</p>
 
-${PORTAL_BLOCK}`,
-files: [],
-tags: ["Převzetí odchylky"]
+  ${PORTAL_BLOCK}`,
+  files: [],
+  tags: ["Převzetí odchylky"]
 },
 
 /* Jednotková cena */
-"Zamítnutí reklamace: Jednotková cena (Případně pokud chceme zákazníkovi vysvětlit co to jednotková cena je a jak se
-počítá) - ELE": {
-text: 'Pro výpočet jednotkové ceny a vysvětlení zákazníkovi, jak jsme k částkám v rámci vyúčtování za jednotkovou cenu
-došli, je potřeba nově využít <a
-  href="https://sites.google.com/view/znalostka/%C5%A1ablony/v%C3%BDpo%C4%8Det-jednotkov%C3%A9-ceny-ele-nem%C4%9Bn%C3%AD-se-cen%C3%ADk"
-  target="_blank">https://sites.google.com/view/znalostka/%C5%A1ablony/v%C3%BDpo%C4%8Det-jednotkov%C3%A9-ceny-ele-nem%C4%9Bn%C3%AD-se-cen%C3%ADk</a>.',
-files: [],
-tags: ["Jednotková cena"],
-category: "Jednotková cena"
-},
-"Zamítnutí reklamace: Jednotková cena (Případně pokud chceme zákazníkovi vysvětlit co to jednotková cena je a jak se
-počítá) - PLYN": {
-text: 'Pro výpočet jednotkové ceny a vysvětlení zákazníkovi, jak jsme k částkám v rámci vyúčtování za jednotkovou cenu
-došli, je potřeba nově využít <a
-  href="https://sites.google.com/view/znalostka/%C5%A1ablony/v%C3%BDpo%C4%8Det-jednotkov%C3%A9-ceny-ele-nem%C4%9Bn%C3%AD-se-cen%C3%ADk"
-  target="_blank">https://sites.google.com/view/znalostka/%C5%A1ablony/v%C3%BDpo%C4%8Det-jednotkov%C3%A9-ceny-ele-nem%C4%9Bn%C3%AD-se-cen%C3%ADk</a>.',
-files: [],
-tags: ["Jednotková cena"],
-category: "Jednotková cena"
-},
-/* Spínání NT a VT */
-"Dotaz na časy spínání NT/VT (HDO)": {
-text: `
+        "Zamítnutí reklamace: Jednotková cena (Případně pokud chceme zákazníkovi vysvětlit co to jednotková cena je a jak se počítá) - ELE": {
+                text: 'Pro výpočet jednotkové ceny a vysvětlení zákazníkovi, jak jsme k částkám v rámci vyúčtování za jednotkovou cenu došli, je potřeba nově využít <a href="https://sites.google.com/view/znalostka/%C5%A1ablony/v%C3%BDpo%C4%8Det-jednotkov%C3%A9-ceny-ele-nem%C4%9Bn%C3%AD-se-cen%C3%ADk" target="_blank">https://sites.google.com/view/znalostka/%C5%A1ablony/v%C3%BDpo%C4%8Det-jednotkov%C3%A9-ceny-ele-nem%C4%9Bn%C3%AD-se-cen%C3%ADk</a>.',
+                files: [],
+                tags: ["Jednotková cena"],
+                category: "Jednotková cena"
+        },
+        "Zamítnutí reklamace: Jednotková cena (Případně pokud chceme zákazníkovi vysvětlit co to jednotková cena je a jak se počítá) - PLYN": {
+                text: 'Pro výpočet jednotkové ceny a vysvětlení zákazníkovi, jak jsme k částkám v rámci vyúčtování za jednotkovou cenu došli, je potřeba nově využít <a href="https://sites.google.com/view/znalostka/%C5%A1ablony/v%C3%BDpo%C4%8Det-jednotkov%C3%A9-ceny-ele-nem%C4%9Bn%C3%AD-se-cen%C3%ADk" target="_blank">https://sites.google.com/view/znalostka/%C5%A1ablony/v%C3%BDpo%C4%8Det-jednotkov%C3%A9-ceny-ele-nem%C4%9Bn%C3%AD-se-cen%C3%ADk</a>.',
+                files: [],
+                tags: ["Jednotková cena"],
+                category: "Jednotková cena"
+        },
+        /* Spínání NT a VT */
+        "Dotaz na časy spínání NT/VT (HDO)": {
+                text: `
 ${OSLOVENI_BLOCK}
 
 <p>děkujeme za Váš dotaz týkající se časů spínání vysokého (VT) a nízkého tarifu (NT).</p>
-<p>Časy spínání nízkého tarifu naleznete na internetových stránkách příslušného provozovatele distribuční soustavy,
-  případně také na jeho telefonické informační lince nebo v zákaznickém centru společnosti <b>ČEZ Distribuce, EG.D nebo
-    PREdistribuce.</b></p>
-<p>Dovolujeme si zároveň upozornit, že distributoři mohou časy spínání měnit, přičemž případnou změnu jsou povinni
-  zveřejnit minimálně s týdenním předstihem.</p>
+<p>Časy spínání nízkého tarifu naleznete na internetových stránkách příslušného provozovatele distribuční soustavy, případně také na jeho telefonické informační lince nebo v zákaznickém centru společnosti <b>ČEZ Distribuce, EG.D nebo PREdistribuce.</b></p>
+<p>Dovolujeme si zároveň upozornit, že distributoři mohou časy spínání měnit, přičemž případnou změnu jsou povinni zveřejnit minimálně s týdenním předstihem.</p>
 <p><strong>Pro rychlé ověření můžete využít i oficiální stránky Vašeho distributora:</strong><br>
 <ul>
-  <li>ČEZ Distribuce – <a
-      href="https://www.cezdistribuce.cz/pro-zakazniky/potrebuji-vyresit/stavajici-pripojeni/casy-spinani-nizkeho-tarifu"
-      target="_blank">zde</a></li>
-  <li>PREdistribuce – <a href="https://www.predistribuce.cz/cs/potrebuji-zaridit/zakaznici/stav-hdo/"
-      target="_blank">zde</a></li>
-  <li>EG.D (E.ON) – <a href="https://www.eon.cz/domacnosti/zakaznicka-pece/technicke-dotazy/casy-nizkeho-tarifu-hdo/"
-      target="_blank">zde</a></li>
+  <li>ČEZ Distribuce – <a href="https://www.cezdistribuce.cz/pro-zakazniky/potrebuji-vyresit/stavajici-pripojeni/casy-spinani-nizkeho-tarifu" target="_blank">zde</a></li>
+  <li>PREdistribuce – <a href="https://www.predistribuce.cz/cs/potrebuji-zaridit/zakaznici/stav-hdo/" target="_blank">zde</a></li>
+  <li>EG.D (E.ON) – <a href="https://www.eon.cz/domacnosti/zakaznicka-pece/technicke-dotazy/casy-nizkeho-tarifu-hdo/" target="_blank">zde</a></li>
 </ul>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Spínání NT a VT"],
-category: "Spínání NT a VT"
-},
-/* Zastavení odpojení - Dluhy*/
-"Odpojení - Dotaz na znovupřipojovací poplatek, případně dotaz zda není možné zastavit, případně posunout proces
-odpojení(a pořád dluží)": {
-text: `
+                files: [],
+                tags: ["Spínání NT a VT"],
+                category: "Spínání NT a VT"
+        },
+           /* Zastavení odpojení - Dluhy*/
+        "Odpojení - Dotaz na znovupřipojovací poplatek, případně dotaz zda není možné zastavit, případně posunout proces odpojení(a pořád dluží)": {
+                text: `
 ${OSLOVENI_BLOCK}
 <p>děkujeme Vám za Váš e-mail.</p>
-<p>Bohužel musíme uvést, že požadavek na odpojení je plně v kompetenci <strong>distributora</strong>, který provádí
-  technické úkony na odběrném místě. Jako dodavatel nemáme možnost proces odpojení posunout, oddálit ani jinak ovlivnit.
-</p>
-<p>Stejně tak případné <strong>poplatky za znovupřipojení</strong> stanovuje a účtuje přímo distributor dle svých
-  platných ceníků a pravidel.</p>
-<p>Aby k odpojení nedošlo, je nutné, aby byly všechny částky po splatnosti <strong>připsané v našem systému</strong>
-  ještě před provedením technického zásahu. Doporučujeme proto úhradu provést co nejdříve, ideálně okamžitou platbou.
-</p>
+<p>Bohužel musíme uvést, že požadavek na odpojení je plně v kompetenci <strong>distributora</strong>, který provádí technické úkony na odběrném místě. Jako dodavatel nemáme možnost proces odpojení posunout, oddálit ani jinak ovlivnit.</p>
+<p>Stejně tak případné <strong>poplatky za znovupřipojení</strong> stanovuje a účtuje přímo distributor dle svých platných ceníků a pravidel.</p>
+<p>Aby k odpojení nedošlo, je nutné, aby byly všechny částky po splatnosti <strong>připsané v našem systému</strong> ještě před provedením technického zásahu. Doporučujeme proto úhradu provést co nejdříve, ideálně okamžitou platbou.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Zastavení odpojení - Dluhy"],
-category: "Zastavení odpojení - Dluhy"
-},
-"Odpojení - Odpojení - Výzva k okamžité úhradě pro zastavení procesu": {
-text: `
+                files: [],
+                tags: ["Zastavení odpojení - Dluhy"],
+                category: "Zastavení odpojení - Dluhy"
+        },
+           "Odpojení - Odpojení - Výzva k okamžité úhradě pro zastavení procesu": {
+                text: `
 ${OSLOVENI_BLOCK}
 <p>děkujeme Vám za Váš e-mail.</p>
-<p>Abychom mohli zabránit pokračování procesu odpojení elektřiny, je nezbytné <strong>obratem uhradit všechny částky po
-    splatnosti</strong>. Teprve po <strong>připsání plateb v našem systému</strong> bude možné zastavit další kroky
-  týkající se odpojení.</p>
-<p>Doporučujeme provést úhradu co nejdříve, ideálně okamžitou platbou. Pokud budete chtít, můžete nám po provedení
-  úhrady zaslat potvrzení o platbě – ověření můžeme urychlit, nicméně rozhodující je její skutečné připsání.</p>
+<p>Abychom mohli zabránit pokračování procesu odpojení elektřiny, je nezbytné <strong>obratem uhradit všechny částky po splatnosti</strong>. Teprve po <strong>připsání plateb v našem systému</strong> bude možné zastavit další kroky týkající se odpojení.</p>
+<p>Doporučujeme provést úhradu co nejdříve, ideálně okamžitou platbou. Pokud budete chtít, můžete nám po provedení úhrady zaslat potvrzení o platbě – ověření můžeme urychlit, nicméně rozhodující je její skutečné připsání.</p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Zastavení odpojení - Dluhy"],
-category: "Zastavení odpojení - Dluhy"
-},
+                files: [],
+                tags: ["Zastavení odpojení - Dluhy"],
+                category: "Zastavení odpojení - Dluhy"
+        },
 /* Daňové doklady */
-"Vystavení daňového dokladu k přijaté platbě (DDPP - (platba v jiném měsíci než splatnost / převod platby / mimo PK)": {
-date: "2026-02-06",
-text: `${OSLOVENI_BLOCK}
+  "Vystavení daňového dokladu k přijaté platbě (DDPP - (platba v jiném měsíci než splatnost / převod platby / mimo PK)": {
+          date: "2026-02-06",  
+          text: `${OSLOVENI_BLOCK}
 <p>
-  na základě Vámi uhrazené platby ve výši <strong>{{castka}} Kč</strong> dne <strong>{{datum_platby}}</strong>
-  byl vystaven <strong>daňový doklad k přijaté platbě (DDPP)</strong>.
+na základě Vámi uhrazené platby ve výši <strong>{{castka}} Kč</strong> dne <strong>{{datum_platby}}</strong>
+byl vystaven <strong>daňový doklad k přijaté platbě (DDPP)</strong>.
 </p>
 
 <p>
-  Důvodem je skutečnost, že platba byla <strong>{{duvod_ddpp}}</strong>
-  (např. uhrazena v jiném měsíci než splatnost zálohy, použita na jiné období
-  nebo nebyla přiřazena k platebnímu kalendáři).
+Důvodem je skutečnost, že platba byla <strong>{{duvod_ddpp}}</strong>
+(např. uhrazena v jiném měsíci než splatnost zálohy, použita na jiné období
+nebo nebyla přiřazena k platebnímu kalendáři).
 </p>
 
 <p>
-  V takovém případě nelze jako daňový doklad použít platební kalendář
-  a je nutné vystavit samostatný DDPP.
+V takovém případě nelze jako daňový doklad použít platební kalendář
+a je nutné vystavit samostatný DDPP.
 </p>
 
 <p>
-  Daňový doklad Vám byl zaslán <strong>{{zpusob_zaslani}}</strong>.
+Daňový doklad Vám byl zaslán <strong>{{zpusob_zaslani}}</strong>.
 </p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Daňové doklady"]
-},
+    files: [],
+    tags: ["Daňové doklady"]
+  },
 "Daňový doklad k platbě – platební kalendář (platba na PK, ve stejném měsíci splatnosti)": {
-date: "2026-02-06",
-text: `${OSLOVENI_BLOCK}
+        date: "2026-02-06", 
+        text: `${OSLOVENI_BLOCK}
 <p>
-  k Vámi uhrazené platbě ve výši <strong>{{castka}} Kč</strong>
-  nebude vystaven samostatný <strong>daňový doklad k přijaté platbě (DDPP)</strong>.
+k Vámi uhrazené platbě ve výši <strong>{{castka}} Kč</strong>
+nebude vystaven samostatný <strong>daňový doklad k přijaté platbě (DDPP)</strong>.
 </p>
 
 <p>
-  Platba byla uhrazena <strong>ve stejném měsíci, ve kterém byla záloha splatná
-    ({{mesic_splatnosti}})</strong> a byla správně přiřazena k platebnímu kalendáři.
+Platba byla uhrazena <strong>ve stejném měsíci, ve kterém byla záloha splatná
+({{mesic_splatnosti}})</strong> a byla správně přiřazena k platebnímu kalendáři.
 </p>
 
 <p>
-  V tomto případě slouží <strong>platební kalendář jako daňový doklad</strong>
-  a další daňový doklad se již nevystavuje.
+V tomto případě slouží <strong>platební kalendář jako daňový doklad</strong>
+a další daňový doklad se již nevystavuje.
 </p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Daňové doklady"]
-},
-"Platba nad rámec zálohy – daňový doklad (částka nad rámec předepsané zálohy)": {
-date: "2026-02-06",
-text: `${OSLOVENI_BLOCK}
+    files: [],
+    tags: ["Daňové doklady"]
+  },
+  "Platba nad rámec zálohy – daňový doklad (částka nad rámec předepsané zálohy)": {
+    date: "2026-02-06", 
+          text: `${OSLOVENI_BLOCK}
 <p>
-  k části platby, která <strong>přesahuje předepsanou výši zálohy</strong>,
-  se <strong>nevystavuje daňový doklad k přijaté platbě (DDPP)</strong>.
+k části platby, která <strong>přesahuje předepsanou výši zálohy</strong>,
+se <strong>nevystavuje daňový doklad k přijaté platbě (DDPP)</strong>.
 </p>
 
 <ul>
@@ -3703,52 +2861,52 @@ text: `${OSLOVENI_BLOCK}
 </ul>
 
 <p>
-  Platební kalendář slouží jako daňový doklad pouze do výše předepsané zálohy.
-  Částka <strong>{{castka_navic}} Kč</strong> je evidována jako platba navíc a bude
-  <strong>{{zpusob_nalozeni_s_preplatkem}}</strong>.
+Platební kalendář slouží jako daňový doklad pouze do výše předepsané zálohy.
+Částka <strong>{{castka_navic}} Kč</strong> je evidována jako platba navíc a bude
+<strong>{{zpusob_nalozeni_s_preplatkem}}</strong>.
 </p>
 
 <p>
-  K této části platby se daňový doklad nevystavuje, jelikož se nejedná
-  o zdanitelné plnění.
+K této části platby se daňový doklad nevystavuje, jelikož se nejedná
+o zdanitelné plnění.
 </p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Daňové doklady"]
-},
+    files: [],
+    tags: ["Daňové doklady"]
+  },
 "Daňový doklad k platbě – zákazník není plátcem DPH": {
-date: "2026-02-06",
-text: `${OSLOVENI_BLOCK}
+date: "2026-02-06",     
+        text: `${OSLOVENI_BLOCK}
 <p>
-  na základě kontroly Vašich údajů Vás informujeme, že
-  <strong>nelze vystavit daňový doklad k přijaté platbě (DDPP)</strong>,
-  jelikož <strong>nejste veden(a) jako plátce DPH</strong>.
+na základě kontroly Vašich údajů Vás informujeme, že
+<strong>nelze vystavit daňový doklad k přijaté platbě (DDPP)</strong>,
+jelikož <strong>nejste veden(a) jako plátce DPH</strong>.
 </p>
 
 <p>
-  DDPP je možné vystavit pouze zákazníkům, kteří jsou plátci DPH
-  a mají tuto skutečnost řádně evidovanou v systému (DIČ).
+DDPP je možné vystavit pouze zákazníkům, kteří jsou plátci DPH
+a mají tuto skutečnost řádně evidovanou v systému (DIČ).
 </p>
 
 <p>
-  V ostatních případech slouží jako doklad k úhradám
-  <strong>platební kalendář nebo faktura</strong>.
+V ostatních případech slouží jako doklad k úhradám
+<strong>platební kalendář nebo faktura</strong>.
 </p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Daňové doklady"]
-},
-"Změna fakturačního cyklu - Z měsíční na Roční": {
-date: "2026-04-10",
-text: `${OSLOVENI_BLOCK}
+    files: [],
+    tags: ["Daňové doklady"]
+  },
+  "Změna fakturačního cyklu - Z měsíční na Roční": {
+  date: "2026-04-10",
+  text: `${OSLOVENI_BLOCK}
 <p>
-  informujeme Vás, že u odběrného místa <strong>${EAN_BLOCK}</strong>
-  došlo ke změně fakturačního cyklu z <strong>měsíční fakturace na roční</strong>.
-  Vyúčtovací faktury Vám budou nově vystavovány k <strong>XXXXX</strong>.
+informujeme Vás, že u odběrného místa <strong>${EAN_BLOCK}</strong>
+došlo ke změně fakturačního cyklu z <strong>měsíční fakturace na roční</strong>.
+Vyúčtovací faktury Vám budou nově vystavovány k <strong>XXXXX</strong>.
 </p>
 ${PORTAL_BLOCK}`,
-files: [],
-tags: ["Fakturace"]
+  files: [],
+  tags: ["Fakturace"]
 }
 };
 window.SABLONY = Object.assign(window.SABLONY || {}, data);
