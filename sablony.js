@@ -1134,7 +1134,7 @@ ${PORTAL_BLOCK}`,
   <li>přepsání odběrného místa na nového odběratele, nebo</li>
   <li>ukončení odběrného místa s demontáží měřidla.</li>
 </ul>
-<p>V případě <em>přepisu odběrného místa</em> můžete využít tento  <a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank">odkaz</a></p>
+<p>V případě <em>přepisu odběrného místa</em> můžete využít tento  <a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank" title="On-line formulář pro přepis odběrného místa" rel="noopener noreferrer">odkaz</a></p>
 <p>Děkujeme za Vaší součinnost.</p>
 ${PORTAL_BLOCK}`,
   files: [],
@@ -1409,7 +1409,7 @@ ${PORTAL_BLOCK}`,
         "Přepis (šablona číslo 1)": {
                 text: `${OSLOVENI_BLOCK}
 <p>stále evidujeme nevyřešený požadavek týkající se přepisu smlouvy na odběr energií po zemřelém <b>xxxxxx</b>. Rádi bychom Vás informovali o nutnosti provést tento přepis na nového odběratele. Tento krok je nezbytný pro zajištění kontinuity dodávky energií na odběrném místě <b>${ADRESA_BLOCK}</B>.</p>
-<p>Prosíme Vás, abyste co nejdříve kontaktovali naši zákaznickou podporu na telefonním čísle <b>255 70 70 99 </b> nebo e-mailem na <b>info@epet.cz </b>, kde Vám poskytneme veškeré potřebné formuláře a informace k přepisu smlouvy. Přepis je možné také dořešit pomocí online formuláře na tomto  <a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank"> Odkazu</a></p>
+<p>Prosíme Vás, abyste co nejdříve kontaktovali naši zákaznickou podporu na telefonním čísle <b>255 70 70 99 </b> nebo e-mailem na <b>info@epet.cz </b>, kde Vám poskytneme veškeré potřebné formuláře a informace k přepisu smlouvy. Přepis je možné také dořešit pomocí online formuláře na tomto  <a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank" title="On-line formulář pro přepis odběrného místa" rel="noopener noreferrer"> Odkazu</a></p>
 <p>Děkujeme za Vaší součinnost.</p>
 ${PORTAL_BLOCK}`,
                 files: [],
@@ -1418,7 +1418,7 @@ ${PORTAL_BLOCK}`,
         "Urgence přepisu (šablona číslo 2)": {
                 text: `${OSLOVENI_BLOCK}
 <p>rádi bychom Vás znovu upozornili na nutnost přepsání smlouvy na odběr energií na nového odběratele. Původní smlouva č. byla uzavřena na zemřelého <b>xxxxx</b>, a je nezbytné uzavřít novou smlouvu, aby byla zajištěna kontinuální dodávka energií na odběrném místě <b>${ADRESA_BLOCK}</b>.</p>
-<p>Dosud jsme neobdrželi žádnou odpověď na naši předchozí výzvu. Prosíme Vás, abyste co nejdříve kontaktovali naši zákaznickou podporu na telefonním čísle <b>255 70 70 99 </b> nebo e-mailem na <b>info@epet.cz </b>, kde Vám poskytneme veškeré potřebné formuláře a informace k přepisu smlouvy. Přepis je možné také dořešit pomocí online formuláře na tomto <a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank"> Odkazu</a></p>
+<p>Dosud jsme neobdrželi žádnou odpověď na naši předchozí výzvu. Prosíme Vás, abyste co nejdříve kontaktovali naši zákaznickou podporu na telefonním čísle <b>255 70 70 99 </b> nebo e-mailem na <b>info@epet.cz </b>, kde Vám poskytneme veškeré potřebné formuláře a informace k přepisu smlouvy. Přepis je možné také dořešit pomocí online formuláře na tomto <a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank" title="On-line formulář pro přepis odběrného místa" rel="noopener noreferrer"> Odkazu</a></p>
 <p>Pokud nebude přepis smlouvy proveden do <b>[Datum – D+30 dní]</b>, budeme nuceni přistoupit k přerušení dodávky energií na uvedeném odběrném místě. Tento krok je nezbytný pro zajištění správné evidence a správy odběrného místa.</p>
 
 ${PORTAL_BLOCK}`,
@@ -2093,37 +2093,6 @@ ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Kontaktní osoby"]
         },
-
-        /* Výkup */
-        "FVE - Dle nové legislativy - Nepoužíváme od 10.04.2025": {
-                text: `${OSLOVENI_BLOCK}
-<p>děkujeme za Vaši zprávu. Vámi uvedený výrobní EAN jsme zaevidovali a počítáme také s převzetím
-odpovědnosti za odchylku.</p>
-<p><i> Rádi bychom Vás požádali o doplnění následujících informací:</i></p>
-<li>Plánujete vyrobenou elektřinu spotřebovávat v místě odběru, sdílet ji, nebo prodávat?</li>
-<li>Máte u svého provozovatele distribuční soustavy schválené přetoky do sítě?</li>
-<p>Dále Vás chceme informovat, že máte čas nový EAN zaevidovat u dodavatele do 1. července 2025. Do této
-doby bude vše vyřešeno k Vaší plné spokojenosti.</p>
-<p>Děkujeme za Vaši spolupráci a trpělivost. O dalším postupu Vás budeme informovat s dostatečným předstihem.</p>
-${PORTAL_BLOCK}
-<p>--------------------------------------------------------------------------------------------------------------------</p>
-<p><b>
-- NA E-MAIL, KDE NÁS ZÁKAZNÍK INFORMUJE, ŽE MU PŘIŠEL DOPIS OD PDS O VZNIKU MIKROZDROJE - NEODPOVÍDÁME! Měníme garanta na <b>NABÍDKY</B> + ZAKLÁDÁME ÚKOL VE STAVU <B>NOVÝ </B> A <B>ŘEŠITELEM</B> Nabídky (propojíme e-mail s úkolem)</p>`,
-                files: [],
-                tags: ["Výkup"]
-        },
-        "FVE - Dle nové legislativy - Odpověď zákazníkovi po doložení informací, které jsme po něm chtěli - Nepoužíváme od 10.04.2025": {
-                text: `${OSLOVENI_BLOCK}
-<p>děkujeme za zaslání požadovaných informací. Vaše údaje jsme zaevidovali a zahrneme je do dalšího postupu.</p>
-<p>Jak jsme již avizovali, o dalším průběhu Vás budeme informovat.</p>
-<p>Děkujeme za spolupráci, trpělivost a přejeme hezký den.</p>
-${PORTAL_BLOCK}
-<p>--------------------------------------------------------------------------------------------------------------------</p>
-<p><b>
-- NA E-MAIL, KDE NÁS ZÁKAZNÍK INFORMUJE, ŽE MU PŘIŠEL DOPIS OD PDS O VZNIKU MIKROZDROJE - NEODPOVÍDÁME! Měníme garanta na <b>NABÍDKY</B> + ZAKLÁDÁME ÚKOL VE STAVU <B>NOVÝ </B> A <B>ŘEŠITELEM</B> Nabídky (propojíme e-mail s úkolem)</p>`,
-                files: [],
-                tags: ["Výkup"]
-        },
         /* Dopisy */
         "DOPIS - Jak zasílat": {
                 text: `<p>na základě potřeby zaslat zákazníkovi dopis prostřednictvím ZIS Vám zasíláme postup, který je nutné dodržet:</p>
@@ -2232,7 +2201,7 @@ ${PORTAL_BLOCK}`,
         /* Přepisy */
         "Přepis odběrného místa - Zaslání Odkazu": {
                 text: `${OSLOVENI_BLOCK}
-<p>na základě naší telefonické dohody Vám zasíláme odkaz na elektronický formulář pro přepis odběrného místa. Tento formulář můžete vyplnit a odeslat prostřednictvím následujícího odkazu: <a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank"> Formulář k přepisu odběrného místa.</a></p>
+<p>na základě naší telefonické dohody Vám zasíláme odkaz na elektronický formulář pro přepis odběrného místa. Tento formulář můžete vyplnit a odeslat prostřednictvím následujícího odkazu: <p><a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank" title="On-line formulář pro přepis odběrného místa" rel="noopener noreferrer">Formulář k přepisu odběrného místa</a>.</p></p>
 ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Přepisy"]
@@ -2267,7 +2236,7 @@ ${PORTAL_BLOCK}`,
         },
         "Přepis odběrného místa - Zaslání Odkazu (kdy např. zákazník reaguje v hovoru, že tedy zkusí formulář, nebo že neví jak ho vyplnit)": {
                 text: `${OSLOVENI_BLOCK}
-<p>na základě naší telefonické dohody Vám zasíláme odkaz na elektronický formulář pro přepis odběrného místa. Tento formulář můžete vyplnit a odeslat prostřednictvím následujícího odkazu: <a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank">Formulář k přepisu odběrného místa</a>.</p>
+<p>na základě naší telefonické dohody Vám zasíláme odkaz na elektronický formulář pro přepis odběrného místa. Tento formulář můžete vyplnit a odeslat prostřednictvím následujícího odkazu: <p><a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank" title="On-line formulář pro přepis odběrného místa" rel="noopener noreferrer">Formulář k přepisu odběrného místa</a>.</p>.</p>
 ${PORTAL_BLOCK}`,
                 files: [],
                 tags: ["Přepisy"]
