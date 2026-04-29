@@ -3268,29 +3268,6 @@ ${PORTAL_BLOCK}`,
     files: [],
     tags: ["Převzetí odchylky"]
 },
- /* ========================= Jednotková cena  ========================= */
-"Jednotková cena ELE – odkaz na výpočet a vysvětlení": {
-    text: `${OSLOVENI_BLOCK}
-<p>pro výpočet jednotkové ceny a vysvětlení zákazníkovi, jak jsme k částkám v rámci vyúčtování dospěli, je nově potřeba využít následující nástroj:</p>
-
-<p><a href="https://sites.google.com/view/znalostka/%C5%A1ablony/v%C3%BDpo%C4%8Det-jednotkov%C3%A9-ceny-ele-nem%C4%9Bn%C3%AD-se-cen%C3%ADk" target="_blank" rel="noopener noreferrer">https://sites.google.com/view/znalostka/%C5%A1ablony/v%C3%BDpo%C4%8Det-jednotkov%C3%A9-ceny-ele-nem%C4%9Bn%C3%AD-se-cen%C3%ADk</a></p>
-
-${PORTAL_BLOCK}`,
-    files: [],
-    tags: ["Jednotková cena"],
-    category: "Jednotková cena"
-},
-"Jednotková cena PLYN – odkaz na výpočet a vysvětlení": {
-    text: `${OSLOVENI_BLOCK}
-<p>pro výpočet jednotkové ceny a vysvětlení zákazníkovi, jak jsme k částkám v rámci vyúčtování dospěli, je nově potřeba využít následující nástroj:</p>
-
-<p><a href="https://sites.google.com/view/znalostka/%C5%A1ablony/v%C3%BDpo%C4%8Det-jednotkov%C3%A9-ceny-ele-nem%C4%9Bn%C3%AD-se-cen%C3%ADk" target="_blank" rel="noopener noreferrer">https://sites.google.com/view/znalostka/%C5%A1ablony/v%C3%BDpo%C4%8Det-jednotkov%C3%A9-ceny-ele-nem%C4%9Bn%C3%AD-se-cen%C3%ADk</a></p>
-
-${PORTAL_BLOCK}`,
-    files: [],
-    tags: ["Jednotková cena"],
-    category: "Jednotková cena"
-},
  /* ========================= Spínání NT a VT ========================= */
 "Dotaz na časy spínání NT/VT (HDO)": {
     text: `${OSLOVENI_BLOCK}
