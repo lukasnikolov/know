@@ -3273,7 +3273,7 @@ ${PORTAL_BLOCK}`,
     text: `${OSLOVENI_BLOCK}
 <p>pro výpočet jednotkové ceny a vysvětlení zákazníkovi, jak jsme k částkám v rámci vyúčtování dospěli, je nově potřeba využít následující nástroj:</p>
 
-<p><a href="https://sites.google.com/view/znalostka/%C5%A1ablony/v%C3%BDpo%C4%8Det-jednotkov%C3%A9-ceny-ele-nem%C4%9Bn%C3%AD-se-cen%C3%ADk" target="_blank" rel="noopener noreferrer">Výpočet jednotkové ceny Elektřiny</a></p>
+<p><a href="https://sites.google.com/view/znalostka/%C5%A1ablony/v%C3%BDpo%C4%8Det-jednotkov%C3%A9-ceny-ele-nem%C4%9Bn%C3%AD-se-cen%C3%ADk" target="_blank" rel="noopener noreferrer">https://sites.google.com/view/znalostka/%C5%A1ablony/v%C3%BDpo%C4%8Det-jednotkov%C3%A9-ceny-ele-nem%C4%9Bn%C3%AD-se-cen%C3%ADk</a></p>
 
 ${PORTAL_BLOCK}`,
     files: [],
@@ -3284,7 +3284,7 @@ ${PORTAL_BLOCK}`,
     text: `${OSLOVENI_BLOCK}
 <p>pro výpočet jednotkové ceny a vysvětlení zákazníkovi, jak jsme k částkám v rámci vyúčtování dospěli, je nově potřeba využít následující nástroj:</p>
 
-<p><a href="https://sites.google.com/view/znalostka/%C5%A1ablony/v%C3%BDpo%C4%8Det-jednotkov%C3%A9-ceny-ele-nem%C4%9Bn%C3%AD-se-cen%C3%ADk" target="_blank" rel="noopener noreferrer">Výpočet jednotkové ceny Plynu</a></p>
+<p><a href="https://sites.google.com/view/znalostka/%C5%A1ablony/v%C3%BDpo%C4%8Det-jednotkov%C3%A9-ceny-ele-nem%C4%9Bn%C3%AD-se-cen%C3%ADk" target="_blank" rel="noopener noreferrer">https://sites.google.com/view/znalostka/%C5%A1ablony/v%C3%BDpo%C4%8Det-jednotkov%C3%A9-ceny-ele-nem%C4%9Bn%C3%AD-se-cen%C3%ADk</a></p>
 
 ${PORTAL_BLOCK}`,
     files: [],
