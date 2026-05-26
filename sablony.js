@@ -2689,7 +2689,8 @@ ${PORTAL_BLOCK}`,
 },
        /* ========================= Přeplatky ========================= */
 "Oslovení zákazníka k nahlášení BÚ – výplata přeplatků místo složenky (na základě úkolu z FIN, kde po nás chtějí BÚ jelikož zk. má nastaven pro přeplatky složenku": {
-    text: `${OSLOVENI_BLOCK}
+  date: "2026-05-26",  
+  text: `${OSLOVENI_BLOCK}
 <p>rádi bychom Vám usnadnili vyplácení případných přeplatků za energie.</p>
 <p>V tuto chvíli Vám přeplatky zasíláme prostřednictvím poštovní složenky. Tento způsob výplaty může být spojen s delší dobou doručení a také s poplatkem za zpracování.</p>
 <p>Pokud si nastavíte výplatu přeplatků na bankovní účet, obdržíte své peníze rychleji, pohodlněji a bez zbytečných nákladů.</p>
