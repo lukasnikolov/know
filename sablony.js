@@ -2688,7 +2688,29 @@ ${PORTAL_BLOCK}`,
     tags: ["Zákaznický portál"]
 },
        /* ========================= Přeplatky ========================= */
-"Vrácená složenka – potvrzení údajů pro vyplacení přeplatku": {
+"Oslovení zákazníka k nahlášení BÚ – výplata přeplatků místo složenky (na základě úkolu z FIN, kde po nás chtějí BÚ jelikož zk. má nastaven pro přeplatky složenku": {
+    text: `${OSLOVENI_BLOCK}
+<p>rádi bychom Vám usnadnili vyplácení případných přeplatků za energie.</p>
+<p>V tuto chvíli Vám přeplatky zasíláme prostřednictvím poštovní složenky. Tento způsob výplaty může být spojen s delší dobou doručení a také s poplatkem za zpracování.</p>
+<p>Pokud si nastavíte výplatu přeplatků na bankovní účet, obdržíte své peníze rychleji, pohodlněji a bez zbytečných nákladů.</p>
+<p>Pro nastavení výplaty na bankovní účet nám stačí zaslat číslo Vašeho bankovního účtu:</p>
+<ul>
+  <li>odpovědí na tento e-mail,</li>
+  <li>případně prostřednictvím Zákaznického portálu.</li>
+</ul>
+<p>Výplata přeplatku na bankovní účet je:</p>
+<ul>
+  <li><strong>zdarma</strong>,</li>
+  <li><strong>pohodlná</strong>,</li>
+  <li><strong>bezpečná</strong>,</li>
+  <li>a peníze máte k dispozici bez nutnosti čekání na poště.</li>
+</ul>
+<p>Děkujeme a věříme, že pro Vás bude tento způsob vyplácení přeplatků komfortnější.</p>
+${PORTAL_BLOCK}`,
+    files: [],
+    tags: ["Přeplatky"]
+},
+  "Vrácená složenka – potvrzení údajů pro vyplacení přeplatku": {
     text: `${OSLOVENI_BLOCK}
 <p>rádi bychom Vás informovali, že se nám vrátila složenka s přeplatkem, který jsme Vám zasílali.</p>
 
