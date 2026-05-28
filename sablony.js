@@ -1934,9 +1934,7 @@ ${PORTAL_BLOCK}`,
   </tfoot>
 </table>
 
-<p>V této souvislosti Vás žádáme o sdělení identifikačních a kontaktních údajů osoby, která spravuje pozůstalost, a to v rozsahu jméno, příjmení, adresa trvalého pobytu, telefonní číslo a e-mail.</p>
-
-<p>Do doby pravomocného ukončení dědického řízení je vhodné zajistit úhradu evidovaných pohledávek, aby nedocházelo k jejich dalšímu navyšování.</p>
+<p><b>V této souvislosti Vás žádáme o sdělení identifikačních a kontaktních údajů v rozsahu jméno, příjmení, adresy trvalého pobytu, telefonního čísla a e-mailu osoby, která spravuje pozůstalost.</b> Pozůstalost může ve smyslu § 1677 zákona č. 89/2012 Sb., občanský zákoník, spravovat vykonavatel závěti, nebo povolaný či příslušným soudem jmenovaný správce pozůstalosti. Po této osobě následně ve smyslu § 1703 občanského zákoníku budeme požadovat uspokojení Pohledávky. Pohledávka pak může být uspokojena jen z majetku náležejícího do pozůstalosti. Není-li správa pozůstalosti vykonávána správcem pozůstalosti ani vykonavatelem závěti, pak je správcem pozůstalosti dědic. V případě, že je dědiců více a neujednají-li si jinak, spravují pozůstalost všichni dědicové a odpovídají za uspokojení Pohledávky společně a nerozdílně. V takvém případě naše společnost zasílá obodobný e-mail též těmto dalším dědicům.<p>
 
 <p><strong>Upozorňujeme Vás, že nebude-li Pohledávka uhrazena, může naše společnost přistoupit k vymáhání dlužné částky dostupnými právními prostředky, například soudní cestou. V takovém případě může dojít k navýšení dlužné částky zejména o náklady soudního řízení.</strong></p>
 
