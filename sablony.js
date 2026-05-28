@@ -1728,7 +1728,7 @@ ${PORTAL_BLOCK}`,
     files: [],
     tags: ["Dědické řízení"]
 },
-"Dědické řízení – výzva k úhradě dlužných plateb (Šablona č.3)": {
+"Dědické řízení – výzva k úhradě dlužných plateb - Dědicové (Šablona č.3)": {
     text: `${OSLOVENI_BLOCK}
 
 <p>dovolujeme si Vás informovat, že společnost <strong>EP ENERGY TRADING, a.s.</strong>, IČO <strong>27386643</strong>, se sídlem Klimentská 46, 110 00 Praha 1, obdržela informaci o skončení řízení o pozůstalosti, resp. dědického řízení, po zákazníkovi <strong>{jméno, příjmení, datum narození, trvalý pobyt}</strong> dále jen <strong>„Zůstavitel“</strong>.</p>
@@ -1822,7 +1822,7 @@ ${PORTAL_BLOCK}`,
     files: [],
     tags: ["Dědické řízení"]
 },
-"Výzva k úhradě dluhu – potenciální dědic a aktivní odběr (Šablona č.5)": {
+"Výzva k úhradě dluhu – potenciální dědic a aktivní odběr - potencionální dědic – aktivní odběr (Šablona č.5)": {
     text: `${OSLOVENI_BLOCK}
 
 <p>obracíme se na Vás jakožto na potenciálního dědice pana/paní <strong>{jméno, příjmení, datum narození, trvalý pobyt}</strong>, dále jen <strong>„Zůstavitel“</strong>.</p>
