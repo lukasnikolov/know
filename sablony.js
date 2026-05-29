@@ -61,6 +61,26 @@ ${PORTAL_BLOCK}`,
     tags: ["Nedoručenky"]
 },
          /* ========================= Fakturace ========================= */
+"Výkup elektřiny – Dotaz na nedoplatek za výkup": {
+    date: "2026-05-29",
+    text: `${OSLOVENI_BLOCK}
+<p>děkujeme za Váš dotaz týkající se faktury za výkup elektřiny.</p>
+
+<p>Standardně při výkupu elektřiny s kladnou výkupní cenou zákazník za dodanou elektřinu finanční prostředky dostává. Ve Vašem případě však v části fakturovaného období došlo k záporné výkupní ceně elektřiny na trhu.</p>
+
+<p>To znamená, že cena elektřiny byla v daném čase nižší než <strong>0 Kč/MWh</strong>. V takové situaci nevzniká nárok na výplatu za dodanou elektřinu, ale naopak vzniká částka k úhradě za převzetí elektřiny do sítě.</p>
+
+<p>Zjednodušeně řečeno:</p>
+<ul>
+  <li>při <strong>kladné výkupní ceně</strong> elektřiny dostáváte za dodávku zaplaceno Vy,</li>
+  <li>při <strong>záporné výkupní ceně</strong> je naopak účtována částka za převzetí elektřiny do sítě.</li>
+</ul>
+
+<p>Z tohoto důvodu je na vystavené faktuře uvedena částka k úhradě z Vaší strany.</p>
+${PORTAL_BLOCK}`,
+    files: [],
+    tags: ["Fakturace", "Výkup elektřiny"]
+},
 "Opravná faktura – oprava fakturačních údajů": {
     date: "2026-04-21",
     text: `${OSLOVENI_BLOCK}
