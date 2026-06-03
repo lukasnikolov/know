@@ -1480,7 +1480,9 @@ ${PORTAL_BLOCK}`,
 <p>Současně Vás prosíme o sdělení, na koho má být odběrné místo přepsáno, případně zda budete odběrné místo ukončovat s demontáží měřidla.</p>
 
 <p>V případě <em>přepisu odběrného místa</em> můžete využít tento <a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank" title="On-line formulář pro přepis odběrného místa" rel="noopener noreferrer">on-line formulář pro přepis odběrného místa</a>.</p>
+<p>Po otevření odkazu budete nejprve přesměrován/a na kalkulačku pro výpočet ceny energií. Tento krok je standardní součástí procesu přepisu odběrného místa.</p>
 
+<p>Po zadání údajů o odběrném místě se Vám zobrazí dostupné cenové nabídky, se kterými je možné odběrné místo přepsat. Po výběru konkrétní nabídky budete následně přesměrován/a do samotného formuláře pro přepis smlouvy, kde doplníte potřebné údaje k novému odběrateli.</p>
 <p>Děkujeme Vám za součinnost.</p>
 
 ${PORTAL_BLOCK}`,
@@ -1506,7 +1508,9 @@ ${PORTAL_BLOCK}`,
 </ul>
 
 <p>V případě <em>přepisu odběrného místa</em> můžete využít tento <a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank" title="On-line formulář pro přepis odběrného místa" rel="noopener noreferrer">on-line formulář pro přepis odběrného místa</a>.</p>
+<p>Po otevření odkazu budete nejprve přesměrován/a na kalkulačku pro výpočet ceny energií. Tento krok je standardní součástí procesu přepisu odběrného místa.</p>
 
+<p>Po zadání údajů o odběrném místě se Vám zobrazí dostupné cenové nabídky, se kterými je možné odběrné místo přepsat. Po výběru konkrétní nabídky budete následně přesměrován/a do samotného formuláře pro přepis smlouvy, kde doplníte potřebné údaje k novému odběrateli.</p>
 <p>Děkujeme Vám za součinnost.</p>
 
 ${PORTAL_BLOCK}`,
@@ -1725,7 +1729,9 @@ ${PORTAL_BLOCK}`,
 <p>Prosíme Vás, abyste co nejdříve kontaktoval/a naši zákaznickou podporu na telefonním čísle <strong>255 70 70 99</strong> nebo e-mailem na <strong>info@epet.cz</strong>, kde Vám poskytneme veškeré potřebné informace k přepisu smlouvy.</p>
 
 <p>Přepis je možné dořešit také prostřednictvím <a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank" title="On-line formulář pro přepis odběrného místa" rel="noopener noreferrer">on-line formuláře pro přepis odběrného místa</a>.</p>
+<p>Po otevření odkazu budete nejprve přesměrován/a na kalkulačku pro výpočet ceny energií. Tento krok je standardní součástí procesu přepisu odběrného místa.</p>
 
+<p>Po zadání údajů o odběrném místě se Vám zobrazí dostupné cenové nabídky, se kterými je možné odběrné místo přepsat. Po výběru konkrétní nabídky budete následně přesměrován/a do samotného formuláře pro přepis smlouvy, kde doplníte potřebné údaje k novému odběrateli.</p>
 <p>Děkujeme Vám za součinnost.</p>
 
 ${PORTAL_BLOCK}`,
@@ -1741,7 +1747,9 @@ ${PORTAL_BLOCK}`,
 <p>Dosud jsme neobdrželi odpověď na naši předchozí výzvu. Prosíme Vás, abyste co nejdříve kontaktoval/a naši zákaznickou podporu na telefonním čísle <strong>255 70 70 99</strong> nebo e-mailem na <strong>info@epet.cz</strong>, kde Vám poskytneme veškeré potřebné informace k přepisu smlouvy.</p>
 
 <p>Přepis je možné dořešit také prostřednictvím <a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank" title="On-line formulář pro přepis odběrného místa" rel="noopener noreferrer">on-line formuláře pro přepis odběrného místa</a>.</p>
+<p>Po otevření odkazu budete nejprve přesměrován/a na kalkulačku pro výpočet ceny energií. Tento krok je standardní součástí procesu přepisu odběrného místa.</p>
 
+<p>Po zadání údajů o odběrném místě se Vám zobrazí dostupné cenové nabídky, se kterými je možné odběrné místo přepsat. Po výběru konkrétní nabídky budete následně přesměrován/a do samotného formuláře pro přepis smlouvy, kde doplníte potřebné údaje k novému odběrateli.</p>
 <p>Pokud nebude přepis smlouvy proveden do <strong>{DD. MM. RRRR}</strong>, budeme nuceni přistoupit k dalším krokům směřujícím k přerušení dodávky energií na uvedeném odběrném místě. Tento krok je nezbytný pro zajištění správné evidence a správy odběrného místa.</p>
 
 ${PORTAL_BLOCK}`,
@@ -2562,9 +2570,11 @@ ${PORTAL_BLOCK}`,
         /* ========================= Přepisy ========================= */
 "Přepis odběrného místa – zaslání odkazu na formulář": {
     text: `${OSLOVENI_BLOCK}
-<p>na základě naší telefonické dohody Vám zasíláme odkaz na elektronický formulář pro přepis odběrného místa.</p>
+<p>na základě naší telefonické  / e-mailové komunikace Vám zasíláme odkaz na elektronický formulář pro přepis odběrného místa.</p>
 
 <p>Formulář můžete vyplnit a odeslat prostřednictvím následujícího odkazu: <a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank" title="On-line formulář pro přepis odběrného místa" rel="noopener noreferrer">Formulář k přepisu odběrného místa</a>.</p>
+<p>Po otevření odkazu budete nejprve přesměrován/a na kalkulačku pro výpočet ceny energií. Tento krok je standardní součástí procesu přepisu odběrného místa.</p>
+<p>Po zadání údajů o odběrném místě se Vám zobrazí dostupné cenové nabídky, se kterými je možné odběrné místo přepsat. Po výběru konkrétní nabídky budete následně přesměrován/a do samotného formuláře pro přepis smlouvy, kde doplníte potřebné údaje k novému odběrateli.</p>
 
 ${PORTAL_BLOCK}`,
     files: [],
@@ -2605,7 +2615,8 @@ ${PORTAL_BLOCK}`,
 <p>na základě naší telefonické dohody Vám zasíláme odkaz na elektronický formulář pro přepis odběrného místa.</p>
 
 <p>Formulář můžete vyplnit a odeslat prostřednictvím následujícího odkazu: <a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank" title="On-line formulář pro přepis odběrného místa" rel="noopener noreferrer">Formulář k přepisu odběrného místa</a>.</p>
-
+<p>Po otevření odkazu budete nejprve přesměrován/a na kalkulačku pro výpočet ceny energií. Tento krok je standardní součástí procesu přepisu odběrného místa.</p>
+<p>Po zadání údajů o odběrném místě se Vám zobrazí dostupné cenové nabídky, se kterými je možné odběrné místo přepsat. Po výběru konkrétní nabídky budete následně přesměrován/a do samotného formuláře pro přepis smlouvy, kde doplníte potřebné údaje k novému odběrateli.</p>
 <p>V případě, že si nebudete jistý/jistá, jak formulář správně vyplnit, můžete nás kontaktovat na zákaznické lince <strong>255 70 70 99</strong> nebo e-mailem na <strong>info@epet.cz</strong>.</p>
 
 ${PORTAL_BLOCK}`,
