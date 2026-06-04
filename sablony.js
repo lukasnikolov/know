@@ -2402,7 +2402,6 @@ ${PORTAL_BLOCK}`,
 <p>děkujeme Vám za žádost o vystavení splátkového kalendáře (SPK). Níže Vám zasíláme podmínky, které je nutné splnit, aby mohla být žádost posouzena a případně předána k vystavení.</p>
 <ul>
   <li>
-  <li>
     <strong>Stav záloh:</strong> Je nezbytné, aby byly uhrazeny všechny zálohy po splatnosti. Pokud máte aktuálně neuhrazené zálohy, prosíme o jejich doplacení před podáním žádosti o SPK.
     <strong>{zde případně doplnit informaci, zda evidujeme zálohy po splatnosti}</strong>
   </li>
