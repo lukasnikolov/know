@@ -2399,18 +2399,23 @@ ${PORTAL_BLOCK}`,
         /* ========================= SPK ========================= */
 "Žádost o splátkový kalendář – podmínky posouzení": {
     text: `${OSLOVENI_BLOCK}
-<p>děkujeme Vám za žádost o vystavení splátkového kalendáře (SPK). Rádi bychom Vás informovali o podmínkách, které je nutné splnit, aby mohla být Vaše žádost posouzena.</p>
-
+<p>děkujeme Vám za žádost o vystavení splátkového kalendáře (SPK). Níže Vám zasíláme podmínky, které je nutné splnit, aby mohla být žádost posouzena a případně předána k vystavení.</p>
 <ul>
-  <li><strong>Stav záloh:</strong> Je nezbytné, aby byly uhrazeny všechny zálohy po splatnosti. Pokud máte aktuálně neuhrazené zálohy, prosíme o jejich doplacení před podáním žádosti o SPK. <strong>{zde případně doplnit informaci, zda evidujeme zálohy po splatnosti}</strong></li>
-
-  <li><strong>Úhrada části dluhu:</strong> Podle našich podmínek je nutné uhradit alespoň <strong>1/3 celkového dluhu</strong>. Ve Vašem případě se jedná o částku <strong>{částka} Kč</strong>. Toto opatření slouží k prokázání zájmu o řádné vyřízení dluhu.</li>
-
-<p><strong>Podmínky splátkového kalendáře:</strong></p> 
-<li>Splátkový kalendář je možné rozložit maximálně do <strong>3 splátek</strong></li>.
-<li><strong>Další kroky:</strong> Po úhradě 1/3 dluhu prosíme vyčkejte <strong>2–3 pracovní dny</strong> na připsání platby. Poté kontaktujte naši zákaznickou linku, ideálně telefonicky. Vaši žádost následně předáme finančnímu oddělení k vystavení splátkového kalendáře.</li>
+  <li>
+  <li>
+    <strong>Stav záloh:</strong> Je nezbytné, aby byly uhrazeny všechny zálohy po splatnosti. Pokud máte aktuálně neuhrazené zálohy, prosíme o jejich doplacení před podáním žádosti o SPK.
+    <strong>{zde případně doplnit informaci, zda evidujeme zálohy po splatnosti}</strong>
+  </li>
+  <li>
+    <strong>Úhrada části dluhu:</strong> Dle našich podmínek je nutné před vystavením splátkového kalendáře uhradit alespoň <strong>1/3 celkového dluhu</strong>. Ve Vašem případě se jedná o částku <strong>{částka} Kč</strong>.
+  </li>
+  <li>
+    <strong>Rozložení splátek:</strong> Splátkový kalendář je možné rozložit maximálně do <strong>3 splátek</strong>.
+  </li>
+  <li>
+    <strong>Další postup:</strong> Po úhradě 1/3 dluhu prosíme vyčkejte <strong>2–3 pracovní dny</strong> na připsání platby. Poté nás kontaktujte, ideálně telefonicky. Vaši žádost následně předáme finančnímu oddělení k vystavení splátkového kalendáře.
+  </li>
 </ul>
-
 ${PORTAL_BLOCK}`,
     files: [],
     tags: ["SPK"]
