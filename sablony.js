@@ -2406,9 +2406,9 @@ ${PORTAL_BLOCK}`,
 
   <li><strong>Úhrada části dluhu:</strong> Podle našich podmínek je nutné uhradit alespoň <strong>1/3 celkového dluhu</strong>. Ve Vašem případě se jedná o částku <strong>{částka} Kč</strong>. Toto opatření slouží k prokázání zájmu o řádné vyřízení dluhu.</li>
 
-  <li><strong>Podmínky splátkového kalendáře:</strong> Splátkový kalendář je možné rozložit maximálně do <strong>3 splátek</strong>.</li>
-
-  <li><strong>Další kroky:</strong> Po úhradě 1/3 dluhu prosíme vyčkejte <strong>2–3 pracovní dny</strong> na připsání platby. Poté kontaktujte naši zákaznickou linku, ideálně telefonicky. Vaši žádost následně předáme finančnímu oddělení k vystavení splátkového kalendáře.</li>
+<p><strong>Podmínky splátkového kalendáře:</strong></p> 
+<li>Splátkový kalendář je možné rozložit maximálně do <strong>3 splátek</strong></li>.
+<li><strong>Další kroky:</strong> Po úhradě 1/3 dluhu prosíme vyčkejte <strong>2–3 pracovní dny</strong> na připsání platby. Poté kontaktujte naši zákaznickou linku, ideálně telefonicky. Vaši žádost následně předáme finančnímu oddělení k vystavení splátkového kalendáře.</li>
 </ul>
 
 ${PORTAL_BLOCK}`,
