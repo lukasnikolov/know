@@ -2404,7 +2404,7 @@ ${PORTAL_BLOCK}`,
 <ul>
   <li><strong>Stav záloh:</strong> Je nezbytné, aby byly uhrazeny všechny zálohy po splatnosti. Pokud máte aktuálně neuhrazené zálohy, prosíme o jejich doplacení před podáním žádosti o SPK. <strong>{zde případně doplnit informaci, zda evidujeme zálohy po splatnosti}</strong></li>
 
-  <li><strong>Úhrada části dluhu:</strong> Podle našich podmínek je nutné uhradit alespoň <strong>1/3 celkového dluhu</strong>. Ve Vašem případě se jedná o částku <strong>{částka} Kč</strong>. Toto opatření slouží k prokázání zájmu o řádné vyřízení dluhu. Po provedení této platby je třeba zaslat potvrzení o úhradě.</li>
+  <li><strong>Úhrada části dluhu:</strong> Podle našich podmínek je nutné uhradit alespoň <strong>1/3 celkového dluhu</strong>. Ve Vašem případě se jedná o částku <strong>{částka} Kč</strong>. Toto opatření slouží k prokázání zájmu o řádné vyřízení dluhu.</li>
 
   <li><strong>Podmínky splátkového kalendáře:</strong> Splátkový kalendář je možné rozložit maximálně do <strong>3 splátek</strong>.</li>
 
