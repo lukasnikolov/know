@@ -1759,7 +1759,7 @@ ${PORTAL_BLOCK}`,
 "Dědické řízení – výzva k úhradě dlužných plateb - Dědicové (Šablona č.3)": {
     text: `${OSLOVENI_BLOCK}
 
-<p>dovolujeme si Vás informovat, že společnost <strong>EP ENERGY TRADING, a.s.</strong>, IČO <strong>27386643</strong>, se sídlem Klimentská 46, 110 00 Praha 1, obdržela informaci o skončení řízení o pozůstalosti, resp. dědického řízení, po zákazníkovi <strong>{jméno, příjmení, datum narození, trvalý pobyt}</strong> dále jen <strong>„Zůstavitel“</strong>.</p>
+<p>dovolujeme si Vás informovat, že společnost <strong>epet energie, a.s.</strong>, IČO <strong>27386643</strong>, se sídlem Klimentská 46, 110 00 Praha 1, obdržela informaci o skončení řízení o pozůstalosti, resp. dědického řízení, po zákazníkovi <strong>{jméno, příjmení, datum narození, trvalý pobyt}</strong> dále jen <strong>„Zůstavitel“</strong>.</p>
 
 <p>Na základě pravomocného rozhodnutí o dědictví bylo naší společnosti sděleno, že právním nástupcem Zůstavitele v oblasti dodávky energií do odběrného místa <strong>EAN/EIC ${EAN_BLOCK}</strong> na adrese <strong>${ADRESA_BLOCK}</strong> dále jen <strong>„Odběrné místo“</strong>, zajišťované naší společností na základě Smlouvy o sdružených službách dodávky elektřiny/plynu uzavřené mezi naší společností a Zůstavitelem dále jen <strong>„Smlouva“</strong>, se stala/staly tato osoba / tyto osoby:</p>
 
