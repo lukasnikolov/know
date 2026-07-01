@@ -492,7 +492,7 @@ ${PORTAL_BLOCK}`,
 
 <p>Po uplynutí této lhůty Vám distributor zašle Smlouvu o připojení. V ní bude uvedeno, jaké změny je nutné realizovat na odběrném místě. Pokud ve Smlouvě o připojení naleznete, že je třeba hradit podíl, prosíme o doložení potvrzení o platbě či data, kdy byl podíl uhrazen.</p>
 
-<p>Podepsaný originál <strong>Smlouvy o připojení</strong> a <strong>revizní zprávu</strong>, kterou Vám vystaví po úpravách na odběrném místě revizní technik, zašlete zpět distributorovi. Před odesláním dokumenty prosím naskenujte a zašlete na e-mail <strong>info@epet.cz</strong>, případně je okopírujte a zašlete poštou na adresu <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</p>
+<p>Podepsaný originál <strong>Smlouvy o připojení</strong> a <strong>revizní zprávu</strong>, kterou Vám vystaví po úpravách na odběrném místě revizní technik, zašlete zpět distributorovi. Před odesláním dokumenty prosím naskenujte a zašlete na e-mail <strong>info@epet.cz</strong>, případně je okopírujte a zašlete poštou na adresu <strong>epet energie, a.s. Klimentská 46, 110 00 Praha 1</strong>.</p>
 
 <p>Dále nám prosím zašlete <strong>protokol o instalaci tepelného čerpadla</strong> a <strong>výpočet tepelných ztrát</strong>. Dokumenty předáme distributorovi, který je vyžaduje pro změnu distribuční sazby.</p>
 
@@ -523,7 +523,7 @@ ${PORTAL_BLOCK}`,
 
 <p>Po uplynutí této lhůty Vám distributor zašle Smlouvu o připojení. V ní bude uvedeno, jaké změny je nutné realizovat na odběrném místě. Pokud ve Smlouvě o připojení naleznete, že je třeba hradit podíl, prosíme o doložení potvrzení o platbě či data, kdy byl podíl uhrazen.</p>
 
-<p>Podepsaný originál <strong>Smlouvy o připojení</strong> a <strong>revizní zprávu</strong>, kterou Vám vystaví po úpravách na odběrném místě revizní technik, zašlete zpět distributorovi. Před odesláním dokumenty prosím naskenujte a zašlete na e-mail <strong>info@epet.cz</strong>, případně je okopírujte a zašlete poštou na adresu <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</p>
+<p>Podepsaný originál <strong>Smlouvy o připojení</strong> a <strong>revizní zprávu</strong>, kterou Vám vystaví po úpravách na odběrném místě revizní technik, zašlete zpět distributorovi. Před odesláním dokumenty prosím naskenujte a zašlete na e-mail <strong>info@epet.cz</strong>, případně je okopírujte a zašlete poštou na adresu <strong>epet energie, a.s. Klimentská 46, 110 00 Praha 1</strong>.</p>
 
 <p>Následně změnu zaevidujeme na Vašem zákaznickém účtu.</p>
 
@@ -552,7 +552,7 @@ ${PORTAL_BLOCK}`,
 
 <p>Na vyřízení požadavku má distributor 30 kalendářních dní. Po uplynutí této lhůty Vám distributor zašle <strong>Smlouvu o připojení</strong>. V ní bude uvedeno, jaké změny je nutné realizovat na odběrném místě. Pokud ve Smlouvě o připojení naleznete, že je třeba hradit podíl, prosíme o doložení potvrzení o platbě či data, kdy byl podíl uhrazen.</p>
 
-<p>Podepsaný originál <strong>Smlouvy o připojení</strong> a <strong>revizní zprávu</strong>, kterou Vám vystaví po úpravách na odběrném místě revizní technik, zašlete zpět distributorovi. Před odesláním dokumenty prosím naskenujte a zašlete na e-mail <strong>info@epet.cz</strong>, případně je okopírujte a zašlete poštou na adresu <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</p>
+<p>Podepsaný originál <strong>Smlouvy o připojení</strong> a <strong>revizní zprávu</strong>, kterou Vám vystaví po úpravách na odběrném místě revizní technik, zašlete zpět distributorovi. Před odesláním dokumenty prosím naskenujte a zašlete na e-mail <strong>info@epet.cz</strong>, případně je okopírujte a zašlete poštou na adresu <strong>epet energie, a.s. Klimentská 46, 110 00 Praha 1</strong>.</p>
 
 <p>Následně změnu zaevidujeme na Vašem zákaznickém účtu.</p>
 
@@ -580,7 +580,7 @@ ${PORTAL_BLOCK}`,
 
 <p>Na vyřízení požadavku má distributor 30 kalendářních dní. Po uplynutí této lhůty Vám distributor zašle <strong>Smlouvu o připojení</strong>. V ní bude uvedeno, jaké změny je nutné realizovat na odběrném místě. Pokud ve Smlouvě o připojení naleznete, že je třeba hradit podíl, prosíme o doložení potvrzení o platbě či data, kdy byl podíl uhrazen.</p>
 
-<p>Podepsaný originál <strong>Smlouvy o připojení</strong> a <strong>revizní zprávu</strong>, kterou Vám vystaví po úpravách na odběrném místě revizní technik, zašlete zpět distributorovi. Před odesláním dokumenty prosím naskenujte a zašlete na e-mail <strong>info@epet.cz</strong>, případně je okopírujte a zašlete poštou na adresu <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</p>
+<p>Podepsaný originál <strong>Smlouvy o připojení</strong> a <strong>revizní zprávu</strong>, kterou Vám vystaví po úpravách na odběrném místě revizní technik, zašlete zpět distributorovi. Před odesláním dokumenty prosím naskenujte a zašlete na e-mail <strong>info@epet.cz</strong>, případně je okopírujte a zašlete poštou na adresu <strong>epet energie, a.s. Klimentská 46, 110 00 Praha 1</strong>.</p>
 
 <p>Dále nám prosím zašlete <strong>protokol o instalaci tepelného čerpadla</strong> a <strong>výpočet tepelných ztrát</strong>. Dokumenty předáme distributorovi, který je vyžaduje pro změnu distribuční sazby.</p>
 
@@ -619,7 +619,7 @@ ${PORTAL_BLOCK}`,
   <li><strong>Revizní zpráva</strong> od elektrikáře</li>
 </ul>
 
-<p>Dokumenty nám můžete zaslat naskenované na e-mail <strong>info@epet.cz</strong>, případně poštou na adresu <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</p>
+<p>Dokumenty nám můžete zaslat naskenované na e-mail <strong>info@epet.cz</strong>, případně poštou na adresu <strong>epet energie, a.s. Klimentská 46, 110 00 Praha 1</strong>.</p>
 
 <p>Po obdržení potřebných podkladů změnu zaevidujeme na Vašem zákaznickém účtu.</p>
 
@@ -739,7 +739,7 @@ ${PORTAL_BLOCK}`,
 
 <ul>
   <li><strong>originál podepsané Smlouvy o připojení</strong> zašlete zpět distributorovi,</li>
-  <li><strong>kopii podepsané smlouvy</strong> zašlete také nám, ideálně elektronicky na e-mail <a href="mailto:info@epet.cz">info@epet.cz</a>, případně poštou na adresu <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</li>
+  <li><strong>kopii podepsané smlouvy</strong> zašlete také nám, ideálně elektronicky na e-mail <a href="mailto:info@epet.cz">info@epet.cz</a>, případně poštou na adresu <strong>epet energie, a.s. Klimentská 46, 110 00 Praha 1</strong>.</li>
 </ul>
 
 ${PORTAL_BLOCK}`,
@@ -772,7 +772,7 @@ ${PORTAL_BLOCK}`,
 
 <p><em>Upozornění pouze pro elektřinu:</em> Pokud bude v souvislosti se sloučením docházet k navýšení kapacity hlavního jističe u aktivního, tedy zůstávajícího odběrného místa, je nutné doložit také <strong>Žádost o změnu smlouvy</strong> a platnou <strong>revizní zprávu</strong>.</p>
 
-<p>Vyplněné a podepsané dokumenty nám prosím zašlete zpět jako odpověď na tento e-mail. Dokumenty můžete také zaslat poštou na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</p>
+<p>Vyplněné a podepsané dokumenty nám prosím zašlete zpět jako odpověď na tento e-mail. Dokumenty můžete také zaslat poštou na adresu naší společnosti: <strong>epet energie, a.s. Klimentská 46, 110 00 Praha 1</strong>.</p>
 
 ${PORTAL_BLOCK}`,
     files: [
@@ -792,7 +792,7 @@ ${PORTAL_BLOCK}`,
 
 <p>Podklady musí podepsat osoba, která je oprávněna jednat za společnost. Případně lze k žádosti doložit plnou moc opravňující k podpisu žádosti, kterou Vám zasíláme v příloze.</p>
 
-<p>Prosíme o vyplnění a zaslání dokumentů zpět na naši e-mailovou adresu. Dokumenty můžete také zaslat poštou na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</p>
+<p>Prosíme o vyplnění a zaslání dokumentů zpět na naši e-mailovou adresu. Dokumenty můžete také zaslat poštou na adresu naší společnosti: <strong>epet energie, a.s. Klimentská 46, 110 00 Praha 1</strong>.</p>
 
 ${PORTAL_BLOCK}`,
     files: [
@@ -808,7 +808,7 @@ ${PORTAL_BLOCK}`,
     text: `${OSLOVENI_BLOCK}
 <p>v příloze tohoto e-mailu naleznete podklady k ukončení smlouvy s demontáží měřidla. Jedná se o <strong>Žádost o ukončení smlouvy / dodávky elektřiny do odběrného místa – Domácnost</strong> a <strong>Žádost o demontáž měřicího zařízení</strong>.</p>
 
-<p>Prosíme o jejich vyplnění a zaslání zpět na naši e-mailovou adresu. Dokumenty můžete také zaslat poštou na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</p>
+<p>Prosíme o jejich vyplnění a zaslání zpět na naši e-mailovou adresu. Dokumenty můžete také zaslat poštou na adresu naší společnosti: <strong>epet energie, a.s. Klimentská 46, 110 00 Praha 1</strong>.</p>
 
 ${PORTAL_BLOCK}`,
     files: [
@@ -823,7 +823,7 @@ ${PORTAL_BLOCK}`,
     text: `${OSLOVENI_BLOCK}
 <p>v příloze tohoto e-mailu naleznete podklad k ukončení smlouvy s demontáží měřidla. Jedná se o <strong>Žádost o ukončení smlouvy / dodávky elektřiny do odběrného místa – Domácnost</strong>.</p>
 
-<p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokument můžete také zaslat poštou na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</p>
+<p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokument můžete také zaslat poštou na adresu naší společnosti: <strong>epet energie, a.s. Klimentská 46, 110 00 Praha 1</strong>.</p>
 
 ${PORTAL_BLOCK}`,
     files: [
@@ -838,7 +838,7 @@ ${PORTAL_BLOCK}`,
 
 <p>Podklady musí podepsat osoba, která je oprávněna jednat za společnost. Případně lze k žádosti doložit plnou moc opravňující k podpisu žádosti, kterou Vám zasíláme v příloze.</p>
 
-<p>Prosíme o vyplnění a zaslání dokumentů zpět na naši e-mailovou adresu. Dokumenty můžete také zaslat poštou na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</p>
+<p>Prosíme o vyplnění a zaslání dokumentů zpět na naši e-mailovou adresu. Dokumenty můžete také zaslat poštou na adresu naší společnosti: <strong>epet energie, a.s. Klimentská 46, 110 00 Praha 1</strong>.</p>
 
 ${PORTAL_BLOCK}`,
     files: [
@@ -857,7 +857,7 @@ ${PORTAL_BLOCK}`,
 
 <p>Podklad musí podepsat osoba, která je oprávněna jednat za společnost. Případně lze k žádosti doložit plnou moc opravňující k podpisu žádosti, kterou Vám zasíláme v příloze.</p>
 
-<p>Prosíme o vyplnění a zaslání dokumentu zpět na naši e-mailovou adresu. Dokument můžete také zaslat poštou na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</p>
+<p>Prosíme o vyplnění a zaslání dokumentu zpět na naši e-mailovou adresu. Dokument můžete také zaslat poštou na adresu naší společnosti: <strong>epet energie, a.s. Klimentská 46, 110 00 Praha 1</strong>.</p>
 
 ${PORTAL_BLOCK}`,
     files: [
@@ -872,7 +872,7 @@ ${PORTAL_BLOCK}`,
     text: `${OSLOVENI_BLOCK}
 <p>v příloze tohoto e-mailu naleznete podklad k ukončení smlouvy s demontáží měřidla. Jedná se o <strong>Žádost o ukončení smlouvy / dodávky plynu do odběrného místa – Domácnost</strong>.</p>
 
-<p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokument můžete také zaslat poštou na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</p>
+<p>Prosíme o jeho vyplnění a zaslání zpět na naši e-mailovou adresu. Dokument můžete také zaslat poštou na adresu naší společnosti: <strong>epet energie, a.s. Klimentská 46, 110 00 Praha 1</strong>.</p>
 
 ${PORTAL_BLOCK}`,
     files: [
@@ -887,7 +887,7 @@ ${PORTAL_BLOCK}`,
 
 <p>Podklad musí podepsat osoba, která je oprávněna jednat za společnost. Případně lze k žádosti doložit plnou moc opravňující k podpisu žádosti, kterou Vám zasíláme v příloze.</p>
 
-<p>Prosíme o vyplnění a zaslání dokumentu zpět na naši e-mailovou adresu. Dokument můžete také zaslat poštou na adresu naší společnosti: <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</p>
+<p>Prosíme o vyplnění a zaslání dokumentu zpět na naši e-mailovou adresu. Dokument můžete také zaslat poštou na adresu naší společnosti: <strong>epet energie, a.s. Klimentská 46, 110 00 Praha 1</strong>.</p>
 
 ${PORTAL_BLOCK}`,
     files: [
@@ -1433,7 +1433,7 @@ ${PORTAL_BLOCK}`,
 <p>Vaši reklamaci jsme z naší strany důkladně prošetřili, vyhodnotili a k dnešnímu dni ji uzavíráme jako neoprávněnou.</p>
 <p>Důvodem zamítnutí reklamace je: <strong>{zde uvést důvod zamítnutí reklamace}</strong>.</p>
 <p>Zákazníci, kteří jsou spotřebiteli ve smyslu § 419 zákona č. 89/2012 Sb., občanský zákoník, se mohou v souladu s § 17 odst. 7 písm. e) zákona č. 458/2000 Sb., energetický zákon, ve znění pozdějších předpisů, v případě vzniklého sporu obracet na Energetický regulační úřad (<a href="https://eru.gov.cz/" target="_blank" rel="noopener noreferrer">www.eru.cz</a>), jakožto orgán mimosoudního řešení sporů v oblasti energetiky.</p>
-<p>Energetický regulační úřad může rozhodnout spor mezi zákazníkem a společností EP ENERGY TRADING, a.s., o splnění povinností z uzavřené smlouvy, jejímž předmětem je dodávka nebo distribuce elektřiny nebo plynu, a dále spor o určení, zda taková smlouva vznikla, trvá, nebo zanikla, a kdy se tak stalo.</p>
+<p>Energetický regulační úřad může rozhodnout spor mezi zákazníkem a společností epet energie, a.s. o splnění povinností z uzavřené smlouvy, jejímž předmětem je dodávka nebo distribuce elektřiny nebo plynu, a dále spor o určení, zda taková smlouva vznikla, trvá, nebo zanikla, a kdy se tak stalo.</p>
 <p>Děkujeme za pochopení a omlouváme se za případné komplikace, které Vám tato situace mohla způsobit.</p>
 ${PORTAL_BLOCK}`,
     files: [],
@@ -1530,7 +1530,7 @@ ${PORTAL_BLOCK}`,
 <p>Vyplněné a ověřené čestné prohlášení nám prosím zašlete:</p>
 <ul>
   <li>e-mailem na adresu <strong>info@epet.cz</strong>, nebo</li>
-  <li>poštou na adresu <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</li>
+  <li>poštou na adresu <strong>epet energie, a.s. Klimentská 46, 110 00 Praha 1</strong>.</li>
 </ul>
 
 <p>Jakmile obdržíme kompletní dokumentaci, zajistíme vyplacení přeplatku na uvedený účet.</p>
@@ -1574,7 +1574,7 @@ ${PORTAL_BLOCK}`,
   <li>Čestné prohlášení musí podepsat všichni dědicové uvedení v usnesení.</li>
   <li>Jelikož jsou v usnesení uvedeni <strong>{počet dědiců}</strong> dědicové, je nutné zaslat čestné prohlášení ve <strong>{počet vyhotovení čestného prohlášení}</strong> vyhotoveních, každé podepsané příslušnou osobou.</li>
   <li>U všech podpisů je nutné úřední ověření – lze jej provést na Czech POINTu, například na poště nebo obecním úřadě, případně u notáře či na matrice.</li>
-  <li>Vyplněné, podepsané a úředně ověřené dokumenty nám prosím zašlete zpět v odpovědi na tento e-mail nebo poštou na adresu <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</li>
+  <li>Vyplněné, podepsané a úředně ověřené dokumenty nám prosím zašlete zpět v odpovědi na tento e-mail nebo poštou na adresu <strong>epet energie, a.s. Klimentská 46, 110 00 Praha 1</strong>.</li>
 </ul>
 
 <p>Jakmile obdržíme všechny potřebné dokumenty, přeplatek bude vyplacen na uvedený účet.</p>
@@ -1600,7 +1600,7 @@ ${PORTAL_BLOCK}`,
   <li>Čestné prohlášení musí podepsat všichni dědicové uvedení v usnesení.</li>
   <li>Jelikož jsou v usnesení uvedeni <strong>{počet dědiců}</strong> dědicové, je nutné zaslat čestné prohlášení ve <strong>{počet vyhotovení čestného prohlášení}</strong> vyhotoveních, každé podepsané příslušnou osobou.</li>
   <li>U všech podpisů je nutné úřední ověření – lze jej provést na Czech POINTu, například na poště nebo obecním úřadě, případně u notáře či na matrice.</li>
-  <li>Vyplněné, podepsané a úředně ověřené dokumenty nám prosím zašlete zpět v odpovědi na tento e-mail nebo poštou na adresu <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</li>
+  <li>Vyplněné, podepsané a úředně ověřené dokumenty nám prosím zašlete zpět v odpovědi na tento e-mail nebo poštou na adresu <strong>epet energie, a.s. Klimentská 46, 110 00 Praha 1</strong>.</li>
 </ul>
 
 <p>Jakmile obdržíme Vaše upřesnění, případně kompletní potřebné dokumenty, budeme moci pokračovat ve zpracování požadavku.</p>
@@ -1658,7 +1658,7 @@ ${PORTAL_BLOCK}`,
 
 <p>Oba výše uvedené údaje jsou nezbytné k provedení platby. Formulář čestného prohlášení Vám zasíláme v příloze tohoto e-mailu.</p>
 
-<p>Vyplněné, vlastnoručně podepsané a úředně ověřené čestné prohlášení nám prosím zašlete e-mailem na adresu <strong>info@epet.cz</strong> nebo poštou na adresu <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</p>
+<p>Vyplněné, vlastnoručně podepsané a úředně ověřené čestné prohlášení nám prosím zašlete e-mailem na adresu <strong>info@epet.cz</strong> nebo poštou na adresu <strong>epet energie, a.s. Klimentská 46, 110 00 Praha 1</strong>.</p>
 
 ${PORTAL_BLOCK}`,
     files: [
@@ -1988,7 +1988,7 @@ ${PORTAL_BLOCK}`,
 <ul>
   <li>čestné prohlášení musí podepsat dědic uvedený v usnesení,</li>
   <li>podpis musí být úředně ověřen – ověření je možné na Czech POINTu, například na poště nebo obecním úřadě, případně u notáře či na matrice,</li>
-  <li>vyplněný, podepsaný a úředně ověřený dokument nám prosím zašlete zpět v odpovědi na tento e-mail nebo poštou na adresu <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</li>
+  <li>vyplněný, podepsaný a úředně ověřený dokument nám prosím zašlete zpět v odpovědi na tento e-mail nebo poštou na adresu <strong>epet energie, a.s. Klimentská 46, 110 00 Praha 1</strong>.</li>
 </ul>
 
 <p>Jakmile obdržíme všechny potřebné dokumenty a dojde k ukončení smlouvy, bude případný přeplatek vyplacen na uvedený účet.</p>
@@ -2015,7 +2015,7 @@ ${PORTAL_BLOCK}`,
   <li>čestné prohlášení musí doložit <strong>všichni dědicové</strong> uvedení v usnesení,</li>
   <li>každý dědic vyplní a podepíše <strong>vlastní formulář</strong>, tedy počet prohlášení odpovídá počtu dědiců,</li>
   <li>u všech podpisů je nutné úřední ověření – ověření je možné na Czech POINTu, například na poště nebo obecním úřadě, případně u notáře či na matrice,</li>
-  <li>vyplněná, podepsaná a úředně ověřená prohlášení od všech dědiců nám prosím zašlete zpět v odpovědi na tento e-mail nebo poštou na adresu <strong>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</strong>.</li>
+  <li>vyplněná, podepsaná a úředně ověřená prohlášení od všech dědiců nám prosím zašlete zpět v odpovědi na tento e-mail nebo poštou na adresu <strong>epet energie, a.s. Klimentská 46, 110 00 Praha 1</strong>.</li>
 </ul>
 
 <p>Jakmile obdržíme všechny potřebné dokumenty a dojde k ukončení smlouvy, bude případný přeplatek vyplacen na uvedený účet.</p>
