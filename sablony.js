@@ -224,17 +224,26 @@ ${PORTAL_BLOCK}`,
     files: [],
     tags: ["Fakturace"]
 },
-"Změna fakturačního cyklu – z měsíční na roční": {
+"Změna fakturačního cyklu – z měsíční na roční - pro jedno OM": {
     date: "2026-04-10",
     text: `${OSLOVENI_BLOCK}
-<p>informujeme Vás, že u odběrného místa <strong>EAN/EIC ${EAN_BLOCK}</strong> došlo ke změně fakturačního cyklu z <strong>měsíční fakturace na roční</strong>.</p>
-
-<p>Vyúčtovací faktury Vám budou nově vystavovány k <strong>{termín vystavení / odečtový měsíc}</strong>.</p>
+<p>na základě Vaší žádosti potvrzujeme změnu fakturační frekvence z měsíční na roční.</p>
+<p>Vyúčtovací faktura pro odběrné místo <strong>EAN/EIC ${EAN_BLOCK}</strong>  bude nově vystavována jednou ročně, a to v měsíci  <strong>{termín vystavení / odečtový měsíc}</strong></p>
 
 ${PORTAL_BLOCK}`,
     files: [],
     tags: ["Fakturace"]
-},      
+},  
+"Změna fakturačního cyklu – z měsíční na roční - pro Více OM (Nutnost přiložit excel soubor s danými odběrnými místy)": {
+    date: "2026-04-10",
+    text: `${OSLOVENI_BLOCK}
+<p>na základě Vaší žádosti potvrzujeme změnu fakturační frekvence z měsíční na roční.</p>
+<p>Vyúčtovací faktury pro odběrná místa uvedená v příloze budou nově vystavovány jednou ročně, a to v měsíci <strong>{termín vystavení / odečtový měsíc}</strong></p></p>
+
+${PORTAL_BLOCK}`,
+    files: [],
+    tags: ["Fakturace"]
+},        
       /* ========================= Smlouvy ========================= */
 "Potvrzení změny korespondenční adresy": {
     text: `${OSLOVENI_BLOCK}
