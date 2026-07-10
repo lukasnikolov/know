@@ -228,7 +228,7 @@ ${PORTAL_BLOCK}`,
     date: "2026-04-10",
     text: `${OSLOVENI_BLOCK}
 <p>na základě Vaší žádosti potvrzujeme změnu fakturační frekvence z měsíční na roční.</p>
-<p>Vyúčtovací faktura pro odběrné místo <strong>EAN/EIC ${EAN_BLOCK}</strong>  bude nově vystavována jednou ročně, a to v měsíci  <strong>{termín vystavení / odečtový měsíc}</strong></p>
+<p>Vyúčtovací faktura pro odběrné místo <strong>EAN/EIC ${EAN_BLOCK}</strong>  bude nově vystavována jednou ročně s odečtem k datu <strong>{termín vystavení / odečtový měsíc}</strong></p>
 
 ${PORTAL_BLOCK}`,
     files: [],
@@ -238,7 +238,7 @@ ${PORTAL_BLOCK}`,
     date: "2026-04-10",
     text: `${OSLOVENI_BLOCK}
 <p>na základě Vaší žádosti potvrzujeme změnu fakturační frekvence z měsíční na roční.</p>
-<p>Vyúčtovací faktury pro odběrná místa uvedená v příloze budou nově vystavovány jednou ročně, a to v měsíci <strong>{termín vystavení / odečtový měsíc}</strong></p></p>
+<p>Vyúčtovací faktury pro odběrná místa uvedená v příloze budou nově vystavovány jednou ročně s odečtem k datu <strong>{termín vystavení / odečtový měsíc}</strong></p></p>
 
 ${PORTAL_BLOCK}`,
     files: [],
