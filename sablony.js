@@ -1864,7 +1864,7 @@ ${PORTAL_BLOCK}`,
 
 <p>obracíme se na Vás jakožto na potenciálního dědice pana/paní <strong>{jméno, příjmení, datum narození, trvalý pobyt}</strong>, dále jen <strong>„Zůstavitel“</strong>.</p>
 
-<p>Naše společnost <strong>EP ENERGY TRADING, a.s.</strong>, IČO <strong>27386643</strong>, se sídlem Klimentská 46, 110 00 Praha 1, je na základě Smlouvy o sdružených službách dodávky elektřiny/plynu č. <strong>{číslo smlouvy}</strong>, uzavřené mezi naší společností a Zůstavitelem, dále jen <strong>„Smlouva“</strong>, dodavatelem elektřiny/plynu do odběrného místa <strong>EAN/EIC ${EAN_BLOCK}</strong> na adrese <strong>${ADRESA_BLOCK}</strong>, dále jen <strong>„Odběrné místo“</strong>.</p>
+<p>Naše společnost <strong>epet energie, a.s.</strong>, IČO <strong>27386643</strong>, se sídlem Klimentská 46, 110 00 Praha 1, je na základě Smlouvy o sdružených službách dodávky elektřiny/plynu č. <strong>{číslo smlouvy}</strong>, uzavřené mezi naší společností a Zůstavitelem, dále jen <strong>„Smlouva“</strong>, dodavatelem elektřiny/plynu do odběrného místa <strong>EAN/EIC ${EAN_BLOCK}</strong> na adrese <strong>${ADRESA_BLOCK}</strong>, dále jen <strong>„Odběrné místo“</strong>.</p>
 
 <p>Aktuálně u odběrného místa evidujeme následující pohledávku, dále jen <strong>„Pohledávka“</strong>:</p>
 
@@ -1929,7 +1929,7 @@ ${PORTAL_BLOCK}`,
 
 <p>obracíme se na Vás jakožto na potenciálního dědice pana/paní <strong>{jméno, příjmení, datum narození, trvalý pobyt}</strong>, dále jen <strong>„Zůstavitel“</strong>.</p>
 
-<p>Naše společnost <strong>EP ENERGY TRADING, a.s.</strong>, IČO <strong>27386643</strong>, se sídlem Klimentská 46, 110 00 Praha 1, byla na základě Smlouvy o sdružených službách dodávky elektřiny/plynu č. <strong>{číslo smlouvy}</strong>, uzavřené mezi naší společností a Zůstavitelem, dále jen <strong>„Smlouva“</strong>, dodavatelem elektřiny/plynu do odběrného místa <strong>EAN/EIC ${EAN_BLOCK}</strong> na adrese <strong>${ADRESA_BLOCK}</strong>, dále jen <strong>„Odběrné místo“</strong>.</p>
+<p>Naše společnost <strong>epet energie, a.s.</strong>, IČO <strong>27386643</strong>, se sídlem Klimentská 46, 110 00 Praha 1, byla na základě Smlouvy o sdružených službách dodávky elektřiny/plynu č. <strong>{číslo smlouvy}</strong>, uzavřené mezi naší společností a Zůstavitelem, dále jen <strong>„Smlouva“</strong>, dodavatelem elektřiny/plynu do odběrného místa <strong>EAN/EIC ${EAN_BLOCK}</strong> na adrese <strong>${ADRESA_BLOCK}</strong>, dále jen <strong>„Odběrné místo“</strong>.</p>
 
 <p>Aktuálně u odběrného místa evidujeme následující pohledávku, dále jen <strong>„Pohledávka“</strong>:</p>
 
@@ -3336,8 +3336,9 @@ ${PORTAL_BLOCK}`,
     files: [],
     tags: ["Daňové doklady"]
 },
-     /* Jednotková cena */
-        "Zamítnutí reklamace: Jednotková cena (Případně pokud chceme zákazníkovi vysvětlit co to jednotková cena je a jak se počítá - ELE": {
+     /* ========================= Jednotková cena ========================= */
+        "Zamítnutí reklamace: Jednotková cena (Případně pokud chceme zákazníkovi vysvětlit co to jednotková cena je a jak se počítá - ELE": 
+        {
     text: `${OSLOVENI_BLOCK}
 <p>Po pečlivém přezkoumání Vaší žádosti a zaslaných podkladů jsme dospěli k závěru, že průměrná jednotková cena za energie, která je uvedena ve vyúčtování, odpovídá podmínkám smlouvy a aktuálním cenám na trhu. Z tohoto důvodu nemůžeme Vaši reklamaci uznat. Pro lepší porozumění si dovolujeme uvést vysvětlení jednotkové ceny:</p>
 <p>Jednotková cena za energie je stanovena jako celková částka za spotřebu energií (včetně pevných poplatků a daní) vydělená celkovým množstvím odebraných energií. Tato cena zahrnuje náklady na:</p>
@@ -3351,7 +3352,7 @@ ${PORTAL_BLOCK}`,
   <tr style="background-color:#ffffff; font-weight:bold;">
     <td colspan="5">Regulované platby:</td>
   </tr>
-  <tr style="background-color:#94c11f; font-weight:bold;">
+  <tr data-brand-row style="background-color:#94c11f; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -3384,7 +3385,7 @@ ${PORTAL_BLOCK}`,
   <tr style="background-color:#ffffff; font-weight:bold;">
     <td colspan="5">Neregulované platby:</td>
   </tr>
-  <tr style="background-color:#94c11f; font-weight:bold;">
+  <tr data-brand-row style="background-color:#94c11f; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -3403,7 +3404,7 @@ ${PORTAL_BLOCK}`,
   <tr style="background-color:#ffffff; font-weight:bold;">
     <td colspan="5">Daň:</td>
   </tr>
-  <tr style="background-color:#94c11f; font-weight:bold;">
+  <tr data-brand-row style="background-color:#94c11f; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -3426,7 +3427,7 @@ ${PORTAL_BLOCK}`,
   <tr style="background-color:#ffffff; font-weight:bold;">
     <td colspan="5">Regulované platby:</td>
   </tr>
-  <tr style="background-color:#94c11f; font-weight:bold;">
+  <tr data-brand-row style="background-color:#94c11f; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -3459,7 +3460,7 @@ ${PORTAL_BLOCK}`,
   <tr style="background-color:#ffffff; font-weight:bold;">
     <td colspan="5">Neregulované platby:</td>
   </tr>
-  <tr style="background-color:#94c11f; font-weight:bold;">
+  <tr data-brand-row style="background-color:#94c11f; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -3478,7 +3479,7 @@ ${PORTAL_BLOCK}`,
   <tr style="background-color:#ffffff; font-weight:bold;">
     <td colspan="5">Daň:</td>
   </tr>
-  <tr style="background-color:#f94c11f; font-weight:bold;">
+  <tr data-brand-row style="background-color:#94c11f; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -3508,7 +3509,7 @@ ${PORTAL_BLOCK}`,
   <tr style="background-color:#ffffff; font-weight:bold;">
     <td colspan="5">Regulované platby:</td>
   </tr>
-  <tr style="background-color:#94c11f; font-weight:bold;">
+  <tr data-brand-row style="background-color:#94c11f; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -3534,7 +3535,7 @@ ${PORTAL_BLOCK}`,
   <tr style="background-color:#ffffff; font-weight:bold;">
     <td colspan="5">Neregulované platby:</td>
   </tr>
-  <tr style="background-color:#94c11f; font-weight:bold;">
+  <tr data-brand-row style="background-color:#94c11f; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -3573,7 +3574,7 @@ ${PORTAL_BLOCK}`,
   <tr style="background-color:#ffffff; font-weight:bold;">
     <td colspan="5">Regulované platby:</td>
   </tr>
-  <tr style="background-color:#94c11f; font-weight:bold;">
+  <tr data-brand-row style="background-color:#94c11f; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -3599,7 +3600,7 @@ ${PORTAL_BLOCK}`,
   <tr style="background-color:#ffffff; font-weight:bold;">
     <td colspan="5">Neregulované platby:</td>
   </tr>
-  <tr style="background-color:#94c11f; font-weight:bold;">
+  <tr data-brand-row style="background-color:#94c11f; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -3618,7 +3619,7 @@ ${PORTAL_BLOCK}`,
   <tr style="background-color:#ffffff; font-weight:bold;">
     <td colspan="5">Daň:</td>
   </tr>
-  <tr style="background-color:#94c11f; font-weight:bold;">
+  <tr data-brand-row style="background-color:#94c11f; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -3647,7 +3648,7 @@ ${PORTAL_BLOCK}`,
   <tr style="background-color:#ffffff; font-weight:bold;">
     <td colspan="5">Regulované platby:</td>
   </tr>
-  <tr style="background-color:#94c11f; font-weight:bold;">
+  <tr data-brand-row style="background-color:#94c11f; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
@@ -3666,7 +3667,7 @@ ${PORTAL_BLOCK}`,
   <tr style="background-color:#ffffff; font-weight:bold;">
     <td colspan="5">Neregulované platby:</td>
   </tr>
-  <tr style="background-color:#94c11f; font-weight:bold;">
+  <tr data-brand-row style="background-color:#94c11f; font-weight:bold;">
     <td></td>
     <td>Počet jednotek</td>
     <td>Jednotka</td>
