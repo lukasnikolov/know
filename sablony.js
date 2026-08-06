@@ -2910,6 +2910,14 @@ ${PORTAL_BLOCK}`,
     files: [],
     tags: ["Bezzálohový režim"]
 },
+"Potvrzení o nastavení režimu bez záloh - Domácnosti": {
+    text: `${OSLOVENI_BLOCK}
+<p>tímto Vám potvrzujeme nastavení <strong>bezzálohového režimu</strong> pro odběrné místo [EAN/EIC KÓD] na adrese <strong>[ADRESA ODBĚRNÉHO MÍSTA]</strong>. Nyní hradíte pouze měsíční faktury.</p>
+${PORTAL_BLOCK}`,
+    files: [],
+    tags: ["Bezzálohový režim"]
+},
+  
   "Bezzálohový režim – žádost a podmínky": {
     text: `${OSLOVENI_BLOCK}
 <p>děkujeme Vám za dosavadní spolupráci. Na základě Vašeho zájmu o přechod na <strong>bezzálohový režim</strong> Vám zasíláme podmínky, které je nutné splnit:</p>
