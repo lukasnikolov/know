@@ -2892,7 +2892,25 @@ ${PORTAL_BLOCK}`,
     tags: ["Přeplatky"]
 },
        /* ========================= Bezzálohový režim ========================= */
-"Bezzálohový režim – žádost a podmínky": {
+"Podmínky nastavení měsíční fakturace - Domácnosti": {
+    text: `${OSLOVENI_BLOCK}
+<p>děkujeme za Váš požadavek na zachování měsíční fakturace.</p>
+
+<p>Měsíční fakturaci je možné nastavit pouze v kombinaci s <strong>bezzálohovým režimem</strong>.</p>
+
+<p>To znamená, že již nebudete hradit pravidelné měsíční zálohy. Každý měsíc Vám bude vystavena faktura podle skutečně evidované spotřeby.</p>
+
+<p>Prosíme proto o potvrzení, že s nastavením bezzálohového režimu za těchto podmínek souhlasíte. Pro jednodušší vyřízení můžete ve své odpovědi uvést:</p>
+
+<p><em>„Souhlasím s nastavením bezzálohového režimu a se zachováním měsíční fakturace.“</em></p>
+
+<p>Po obdržení Vašeho souhlasu provedeme příslušnou změnu. Pokud pro Vás bezzálohový režim nebude vhodný, nebude možné měsíční fakturaci zachovat a fakturační cyklus bude nastaven na roční.</p>
+
+${PORTAL_BLOCK}`,
+    files: [],
+    tags: ["Bezzálohový režim"]
+},
+  "Bezzálohový režim – žádost a podmínky": {
     text: `${OSLOVENI_BLOCK}
 <p>děkujeme Vám za dosavadní spolupráci. Na základě Vašeho zájmu o přechod na <strong>bezzálohový režim</strong> Vám zasíláme podmínky, které je nutné splnit:</p>
 
