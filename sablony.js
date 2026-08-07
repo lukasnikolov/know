@@ -2912,7 +2912,7 @@ ${PORTAL_BLOCK}`,
 },
 "Potvrzení o nastavení režimu bez záloh - Domácnosti": {
     text: `${OSLOVENI_BLOCK}
-<p>tímto Vám potvrzujeme nastavení <strong>bezzálohového režimu</strong> pro odběrné místo [EAN/EIC KÓD] na adrese <strong>[ADRESA ODBĚRNÉHO MÍSTA]</strong>.</p>
+<p>tímto Vám potvrzujeme nastavení <strong>bezzálohového režimu</strong> pro odběrné místo <strong> [EAN/EIC KÓD] </strong> na adrese <strong>[ADRESA ODBĚRNÉHO MÍSTA]</strong>.</p>
 
 <p>Od nynějška již není nutné hradit pravidelné zálohy. Hradit budete pouze měsíční faktury vystavené podle skutečně evidované spotřeby.</p>
 
