@@ -2409,11 +2409,7 @@ ${PORTAL_BLOCK}`,
 "Splátkový kalendář – žádost bez dlužných záloh": {
     text: `${OSLOVENI_BLOCK}
 <p>děkujeme Vám za žádost o vystavení splátkového kalendáře (SPK).</p>
-
-<p>Aktuálně neevidujeme žádné zálohy po splatnosti ani neuhrazené poplatky za upomínky. Splátkový kalendář je možné rozložit maximálně do <strong>3 splátek</strong>.</p>
-
-<p>Vaši žádost předáme finančnímu oddělení k posouzení a případnému vystavení splátkového kalendáře.</p>
-
+<p>Vaši žádost předáváme finančnímu oddělení k posouzení a případnému vystavení splátkového kalendáře.</p>
 <p>Upozorňujeme, že přijetí a předání žádosti neznamená automatické schválení splátkového kalendáře. O výsledku posouzení Vás budeme následně informovat.</p>
 
 ${PORTAL_BLOCK}`,
@@ -2424,20 +2420,14 @@ ${PORTAL_BLOCK}`,
 "Splátkový kalendář – žádost s dlužnými zálohami nebo poplatky": {
     text: `${OSLOVENI_BLOCK}
 <p>děkujeme Vám za žádost o vystavení splátkového kalendáře (SPK).</p>
-
-<p>Abychom mohli Vaši žádost předat finančnímu oddělení k posouzení, je nutné nejprve uhradit všechny zálohy po splatnosti a případné neuhrazené poplatky za upomínky.</p>
-
+<p>Abychom mohli Vaši žádost předat finančnímu oddělení k posouzení, je nutné nejprve uhradit všechny zálohy po splatnosti (případné neuhrazené poplatky za upomínky).</p>
 <p>Aktuálně evidujeme následující neuhrazené položky:</p>
-
 <ul>
   <li><strong>Zálohy po splatnosti:</strong> {částka / neevidujeme}</li>
   <li><strong>Poplatky za upomínky:</strong> {částka / neevidujeme}</li>
 </ul>
-
 <p>Prosíme o úhradu všech výše uvedených položek. Po provedení platby vyčkejte <strong>2–3 pracovní dny</strong> na její připsání a následně nás kontaktujte.</p>
-
-<p>Po zaevidování úhrady Vaši žádost předáme finančnímu oddělení k posouzení a případnému vystavení splátkového kalendáře. Splátkový kalendář je možné rozložit maximálně do <strong>3 splátek</strong>.</p>
-
+<p>Po zaevidování úhrady Vaši žádost předáme finančnímu oddělení k posouzení a případnému vystavení splátkového kalendáře.</p>
 <p>Upozorňujeme, že splnění uvedených podmínek a předání žádosti neznamená automatické schválení splátkového kalendáře. O výsledku posouzení Vás budeme následně informovat.</p>
 
 ${PORTAL_BLOCK}`,
