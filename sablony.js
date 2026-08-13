@@ -2406,50 +2406,42 @@ ${PORTAL_BLOCK}`,
     tags: ["Zálohy"]
 },
         /* ========================= SPK ========================= */
-"Žádost o splátkový kalendář – podmínky posouzení": {
+"Splátkový kalendář – žádost bez dlužných záloh": {
     text: `${OSLOVENI_BLOCK}
-<p>děkujeme Vám za žádost o vystavení splátkového kalendáře (SPK). Níže Vám zasíláme podmínky, které je nutné splnit, aby mohla být žádost posouzena a případně předána k vystavení.</p>
-<ul>
-  <li>
-    <strong>Stav záloh:</strong> Je nezbytné, aby byly uhrazeny všechny zálohy po splatnosti. Pokud máte aktuálně neuhrazené zálohy, prosíme o jejich doplacení před podáním žádosti o SPK.
-    <strong>{zde případně doplnit informaci, zda evidujeme zálohy po splatnosti}</strong>
-  </li>
-  <li>
-    <strong>Úhrada části dluhu:</strong> Dle našich podmínek je nutné před vystavením splátkového kalendáře uhradit alespoň <strong>1/3 celkového dluhu</strong>. Ve Vašem případě se jedná o částku <strong>{částka} Kč</strong>.
-  </li>
-  <li>
-    <strong>Rozložení splátek:</strong> Splátkový kalendář je možné rozložit maximálně do <strong>3 splátek</strong>.
-  </li>
-  <li>
-    <strong>Další postup:</strong> Po úhradě 1/3 dluhu prosíme vyčkejte <strong>2–3 pracovní dny</strong> na připsání platby. Poté nás kontaktujte, ideálně telefonicky. Vaši žádost následně předáme finančnímu oddělení k vystavení splátkového kalendáře.
-  </li>
-</ul>
+<p>děkujeme Vám za žádost o vystavení splátkového kalendáře (SPK).</p>
+
+<p>Aktuálně neevidujeme žádné zálohy po splatnosti ani neuhrazené poplatky za upomínky. Splátkový kalendář je možné rozložit maximálně do <strong>3 splátek</strong>.</p>
+
+<p>Vaši žádost předáme finančnímu oddělení k posouzení a případnému vystavení splátkového kalendáře.</p>
+
+<p>Upozorňujeme, že přijetí a předání žádosti neznamená automatické schválení splátkového kalendáře. O výsledku posouzení Vás budeme následně informovat.</p>
+
 ${PORTAL_BLOCK}`,
     files: [],
     tags: ["SPK"]
 },
-"Splátkový kalendář – schválení a vystavení": {
+
+"Splátkový kalendář – žádost s dlužnými zálohami nebo poplatky": {
     text: `${OSLOVENI_BLOCK}
-<p>chtěli bychom Vás informovat, že jsme schválili Vaši žádost o poskytnutí splátkového kalendáře.</p>
+<p>děkujeme Vám za žádost o vystavení splátkového kalendáře (SPK).</p>
 
-<p>Splátkový kalendář se vztahuje k faktuře s variabilním symbolem <strong>{variabilní symbol}</strong>, která byla vystavena za dodávku elektřiny/plynu.</p>
+<p>Abychom mohli Vaši žádost předat finančnímu oddělení k posouzení, je nutné nejprve uhradit všechny zálohy po splatnosti a případné neuhrazené poplatky za upomínky.</p>
 
-<p>Jednotlivé splátky dlužné částky prosím hraďte dle níže uvedeného rozpisu a platebních údajů:</p>
+<p>Aktuálně evidujeme následující neuhrazené položky:</p>
 
 <ul>
-  <li><strong>Variabilní symbol:</strong> {variabilní symbol}</li>
-  <li><strong>Částka splátky:</strong> {částka} Kč</li>
-  <li><strong>Bankovní spojení:</strong> 9960227/0100</li>
-  <li><strong>První splátka je splatná ke dni:</strong> {DD. MM. RRRR}</li>
+  <li><strong>Zálohy po splatnosti:</strong> {částka / neevidujeme}</li>
+  <li><strong>Poplatky za upomínky:</strong> {částka / neevidujeme}</li>
 </ul>
 
-<p>Detailní rozpis splátek najdete v dokumentu přiloženém v příloze tohoto e-mailu.</p>
+<p>Prosíme o úhradu všech výše uvedených položek. Po provedení platby vyčkejte <strong>2–3 pracovní dny</strong> na její připsání a následně nás kontaktujte.</p>
+
+<p>Po zaevidování úhrady Vaši žádost předáme finančnímu oddělení k posouzení a případnému vystavení splátkového kalendáře. Splátkový kalendář je možné rozložit maximálně do <strong>3 splátek</strong>.</p>
+
+<p>Upozorňujeme, že splnění uvedených podmínek a předání žádosti neznamená automatické schválení splátkového kalendáře. O výsledku posouzení Vás budeme následně informovat.</p>
 
 ${PORTAL_BLOCK}`,
-    files: [
-        { url: "https://docs.google.com/document/d/13fDHRHzFAzN79kNSr-ECLBv4lUedUvLNxvxAJ7KeIO4/edit?usp=drive_link", name: "Splátkový kalendář - rozpis splátek", type: "doc", brand: "epet" },
-        { url: "https://docs.google.com/document/d/1xdJaEgbORi0v3vWVu-P_X1Y0glCwx32j1gn48m_TbUs/edit?usp=drive_link", name: "Splátkový kalendář - rozpis splátek", type: "doc", brand: "de" }
-    ],
+    files: [],
     tags: ["SPK"]
 },
 "Splátkový kalendář – výzva k úhradě neuhrazených splátek": {
