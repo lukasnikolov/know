@@ -652,7 +652,7 @@ ${PORTAL_BLOCK}`,
     text: `${OSLOVENI_BLOCK}
 <p>potvrzujeme vyřízení Vašeho požadavku na změnu distribuční sazby na <strong>{XXXX}</strong> / změnu hodnoty hlavního jističe na <strong>{XXXX A}</strong> u odběrného místa <strong>EAN/EIC ${EAN_BLOCK}</strong>.</p>
 
-<p>Distributor tuto změnu provedl k datu <strong>{DD. MM. RRRR}</strong>.</p>
+<p>Změna byla provedena k datu<strong>{DD. MM. RRRR}</strong>.</p>
 
 ${PORTAL_BLOCK}`,
     files: [],
@@ -2039,6 +2039,16 @@ ${PORTAL_BLOCK}`,
     tags: ["Dědické řízení"]
 },
         /* ========================= Platby ========================= */
+"Zaslání potvrzení o platbách - Kdy zákazník žádá o potvrzení pro ÚP / nebo když ho chce jen pro své potřeby ": {
+    date: "2026-10-13",
+    text: `${OSLOVENI_BLOCK}
+<p>na základě naší telefonické dohody / Vaší žádosti Vám v příloze tohoto e-mailu zasíláme potvrzení o platbách za období <strong>{období}</strong></p>
+
+${PORTAL_BLOCK}`,
+    files: [],
+    tags: ["Platby"]
+},
+
 "Platební údaje pro úhradu záloh": {
     date: "2026-04-01",
     text: `${OSLOVENI_BLOCK}
