@@ -1,0 +1,3078 @@
+{
+  "metadata": {
+    "title": "Rozvrhy notářů – 2026 (pracovní databáze)",
+    "date_checked": "2026-10-26",
+    "scope": "Celorepublikový rejstřík soudních obvodů s různým stupněm ověření, nikoli kompletně automatizované určování notářů.",
+    "index": "https://www.nkcr.cz/seznam-notaru/rozvrhy-rizeni-o-pozustalosti"
+  },
+  "sources": [
+    {
+      "region": "Praha",
+      "label": "Základní rozvrh 2026",
+      "url": "https://www.nkcr.cz/data/rozvrhy-pozustalostnich-rizeni/2026_rozvrh_hlmp.pdf"
+    },
+    {
+      "region": "Středočeský",
+      "label": "Základní rozvrh 2026",
+      "url": "https://www.nkcr.cz/data/rozvrhy-pozustalostnich-rizeni/2026_rozvrh_vp.pdf"
+    },
+    {
+      "region": "Jihočeský",
+      "label": "Základní rozvrh 2026",
+      "url": "https://www.nkcr.cz/data/rozvrhy-pozustalostnich-rizeni/2026_rozvrh_cb.pdf"
+    },
+    {
+      "region": "Plzeňský",
+      "label": "Základní rozvrh 2026",
+      "url": "https://www.nkcr.cz/data/rozvrhy-pozustalostnich-rizeni/2026_rozvrh_plzen.pdf"
+    },
+    {
+      "region": "Ústecký a Liberecký",
+      "label": "Základní rozvrh 2026",
+      "url": "https://www.nkcr.cz/data/rozvrhy-pozustalostnich-rizeni/2026_rozvrh_usti.pdf"
+    },
+    {
+      "region": "Královéhradecký a Pardubický",
+      "label": "Základní rozvrh 2026",
+      "url": "https://www.nkcr.cz/data/rozvrhy-pozustalostnich-rizeni/2026_rozvrh_hk.pdf"
+    },
+    {
+      "region": "Jihomoravský a Vysočina",
+      "label": "Základní rozvrh 2026",
+      "url": "https://www.nkcr.cz/data/rozvrhy-pozustalostnich-rizeni/2026_rozvrh_brno.pdf"
+    },
+    {
+      "region": "Moravskoslezský, Olomoucký a Zlínský",
+      "label": "Základní rozvrh 2026 – otevřít přes oficiální rozcestník",
+      "url": "https://www.nkcr.cz/seznam-notaru/rozvrhy-rizeni-o-pozustalosti"
+    },
+    {
+      "region": "Praha",
+      "label": "Doplnění rozvrhu 2026 č. 1",
+      "url": "https://www.nkcr.cz/data/rozvrhy-pozustalostnich-rizeni/2026_rozvrh_hlmp_zmena1.pdf"
+    },
+    {
+      "region": "Plzeňský",
+      "label": "Doplnění rozvrhu 2026 č. 1",
+      "url": "https://www.nkcr.cz/data/rozvrhy-pozustalostnich-rizeni/2026_rozvrh_plzen_zmena1.pdf"
+    },
+    {
+      "region": "Plzeňský",
+      "label": "Doplnění rozvrhu 2026 č. 2",
+      "url": "https://www.nkcr.cz/data/rozvrhy-pozustalostnich-rizeni/2026_rozvrh_plzen_zmena2.pdf"
+    },
+    {
+      "region": "Královéhradecký a Pardubický",
+      "label": "Doplnění rozvrhu 2026 č. 1",
+      "url": "https://www.nkcr.cz/data/rozvrhy-pozustalostnich-rizeni/2026_rozvrh_hk_zmena1.pdf"
+    },
+    {
+      "region": "Královéhradecký a Pardubický",
+      "label": "Doplnění rozvrhu 2026 č. 2",
+      "url": "https://www.nkcr.cz/data/rozvrhy-pozustalostnich-rizeni/2026_rozvrh_hk_zmena2.pdf"
+    },
+    {
+      "region": "Královéhradecký a Pardubický",
+      "label": "Doplnění rozvrhu 2026 č. 3",
+      "url": "https://www.nkcr.cz/data/rozvrhy-pozustalostnich-rizeni/2026_rozvrh_hk_zmena3.pdf"
+    },
+    {
+      "region": "Moravskoslezský, Olomoucký a Zlínský",
+      "label": "Doplnění rozvrhu 2026 č. 1",
+      "url": "https://www.nkcr.cz/data/rozvrhy-pozustalostnich-rizeni/2026_rozvrh_ostrava_zmena1.pdf"
+    },
+    {
+      "region": "Moravskoslezský, Olomoucký a Zlínský",
+      "label": "Doplnění rozvrhu 2026 č. 2",
+      "url": "https://www.nkcr.cz/data/rozvrhy-pozustalostnich-rizeni/2026_rozvrh_ostrava_zmena2.pdf"
+    },
+    {
+      "region": "Moravskoslezský, Olomoucký a Zlínský",
+      "label": "Doplnění rozvrhu 2026 č. 3",
+      "url": "https://www.nkcr.cz/data/rozvrhy-pozustalostnich-rizeni/2026_rozvrh_ostrava_zmena3.pdf"
+    },
+    {
+      "region": "Moravskoslezský, Olomoucký a Zlínský",
+      "label": "Doplnění rozvrhu 2026 č. 4",
+      "url": "https://www.nkcr.cz/data/rozvrhy-pozustalostnich-rizeni/2026_rozvrh_ostrava_zmena4.pdf"
+    },
+    {
+      "region": "Moravskoslezský, Olomoucký a Zlínský",
+      "label": "Doplnění rozvrhu 2026 č. 5",
+      "url": "https://www.nkcr.cz/data/rozvrhy-pozustalostnich-rizeni/2026_rozvrh_ostrava_zmena5.pdf"
+    },
+    {
+      "region": "Moravskoslezský a Olomoucký",
+      "label": "Rozvrh pozůstalostí 2026 – OS Frýdek-Místek",
+      "url": "https://msp.gov.cz/documents/d/okresni-soud-ve-frydku-mistku/rozvrh-cinnosti-notaru-2026-spr-1291-2025"
+    },
+    {
+      "region": "Moravskoslezský a Olomoucký",
+      "label": "Rozvrh pozůstalostí 2026 – OS Karviná",
+      "url": "https://msp.gov.cz/documents/d/okresni-soud-v-karvine/osvkarvine2026"
+    },
+    {
+      "region": "Moravskoslezský a Olomoucký",
+      "label": "Aktualizovaný rozvrh 2026 – OS Opava",
+      "url": "https://msp.gov.cz/documents/d/okresni-soud-v-opave/spr896-2026-rozvrh_notari-osvopave-oprava"
+    },
+    {
+      "region": "Moravskoslezský a Olomoucký",
+      "label": "Rozvrh pozůstalostí 2026 – OS Šumperk",
+      "url": "https://msp.gov.cz/documents/d/okresni-soud-v-sumperku/spr15652025osvsumperku-pdf"
+    },
+    {
+      "region": "Moravskoslezský a Olomoucký",
+      "label": "Rozvrh OS Bruntál 2026 do dubna",
+      "url": "https://msp.gov.cz/documents/d/okresni-soud-v-bruntale/rozvrh-notari-os-v-bruntale-2026-pdf"
+    },
+    {
+      "region": "Moravskoslezský a Olomoucký",
+      "label": "Rozvrh OS Bruntál od 1. 5. 2026",
+      "url": "https://msp.gov.cz/documents/d/okresni-soud-v-bruntale/rozvrh-os-v-bruntale_zmena-od-1-5-2026-pdf"
+    },
+    {
+      "region": "Moravskoslezský a Olomoucký",
+      "label": "Rozvrh OS Jeseník 2026",
+      "url": "https://msp.gov.cz/documents/d/okresni-soud-v-jeseniku/rozvrhnotariosvjeseniku-pdf"
+    },
+    {
+      "region": "Moravskoslezský a Olomoucký",
+      "label": "Rozvrh OS Nový Jičín 2026",
+      "url": "https://msp.gov.cz/documents/d/okresni-soud-v-novem-jicine/rozvrh-cinnosti-notaru-o-pozustalosti-pro-rok-2026"
+    },
+    {
+      "region": "Moravskoslezský a Olomoucký",
+      "label": "Upravený rozvrh OS Olomouc 2026",
+      "url": "https://msp.gov.cz/documents/d/okresni-soud-v-olomouci/zmena-rozvrhu-cinnosti-notaru-pdf"
+    },
+    {
+      "region": "Moravskoslezský a Olomoucký",
+      "label": "Rozvrh OS Přerov 2026",
+      "url": "https://msp.gov.cz/documents/d/okresni-soud-v-prerove/rozvrh-cinnosti-notaru-2026-pdf"
+    },
+    {
+      "region": "Moravskoslezský a Olomoucký",
+      "label": "Rozvrh OS Ostrava 2026",
+      "url": "https://msp.gov.cz/documents/d/okresni-soud-v-ostrave/rp-2026-priloha-rozvrh-notaru-seznam-notaru-dle-113-notarskeho-radu"
+    }
+  ],
+  "courts": [
+    {
+      "id": "Benešov",
+      "region": "Středočeský",
+      "method": "Den úmrtí",
+      "rule": {
+        "type": "death_mod5",
+        "names": [
+          "JUDr. Jana Benková",
+          "JUDr. Hana Kasalová",
+          "JUDr. Martina Králová",
+          "Mgr. Zuzana Buchtová",
+          "Mgr. Ivana Vlachová"
+        ],
+        "day31": {
+          "1": 3,
+          "3": 4,
+          "5": 0,
+          "7": 1,
+          "8": 2,
+          "10": 3,
+          "12": 4
+        }
+      },
+      "notaries": [
+        "JUDr. Jana Benková",
+        "JUDr. Hana Kasalová",
+        "JUDr. Martina Králová",
+        "Mgr. Zuzana Buchtová",
+        "Mgr. Ivana Vlachová"
+      ],
+      "source": 1,
+      "description": "Konec měsíce (31. den) má zvláštní rozpis; doplnění pro neznámé datum úmrtí mimo standardní výpočet.",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Beroun",
+      "region": "Středočeský",
+      "method": "Obec pobytu",
+      "rule": {
+        "type": "town_groups",
+        "groups": [
+          {
+            "name": "Mgr. Andrea Cafourková",
+            "places": "Beroun|Hudlice|Králův Dvůr|Nový Jáchymov|Otročiněves|Trubín|Trubská|Zahořany|Železná"
+          },
+          {
+            "name": "Mgr. Jindřich Procházka",
+            "places": "Broumy|Cerhovice|Drozdov|Felbabka|Hořovice|Hvozdec|Hýskov|Chaloupky|Chyňava|Jivina|Komárov|Kublov|Malá Víska|Neumětely|Nižbor|Olešná|Osek|Podluhy|Rpety|Svatá|Tetín|Tlustice|Újezd|Vráž|Zaječov|Záluží"
+          },
+          {
+            "name": "Mgr. Jan Voleský",
+            "places": "Bavoryně|Běštín|Březová|Bubovice|Bykoš|Bzová|Hlásná Třebaň|Hostomice|Hředle|Chlustina|Chodouň|Chrustenice|Karlštejn|Koněprusy|Korno|Kotopeky|Lážovice|Lhotka|Libomyšl|Liteň|Loděnice|Lochovice|Lužce|Málkov|Měňany|Mezouň|Mořina|Mořinka|Nenačovice|Nesvačily|Osov|Otmíče|Podbrdy|Praskolesy|Skřipel|Skuhrov|Srbsko|Stašov|Suchomasty|Svatý Jan pod Skalou|Svinaře|Tmaň|Točník|Velký Chlumec|Vinařice|Vižina|Všeradice|Vysoký Újezd|Zadní Třebaň|Zdice|Žebrák"
+          }
+        ]
+      },
+      "notaries": [
+        "Mgr. Andrea Cafourková",
+        "Mgr. Jindřich Procházka",
+        "Mgr. Jan Voleský"
+      ],
+      "source": 1,
+      "description": "Obce podle oddílu II základního rozvrhu 2026.",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Kladno",
+      "region": "Středočeský",
+      "method": "Obec + den úmrtí",
+      "rule": {
+        "type": "kladno"
+      },
+      "notaries": [
+        "Mgr. Daniel Borský",
+        "Mgr. Martina Čermáková",
+        "Mgr. Martin Kopal",
+        "JUDr. Romana Lužná",
+        "Mgr. Jan Jiříček",
+        "Mgr. Martina Rambousková"
+      ],
+      "source": 1,
+      "description": "Automatické určení je pokryto pro město Kladno; u jiných obcí vyhledejte příslušný obvod v originále rozvrhu.",
+      "status": "částečné pokrytí"
+    },
+    {
+      "id": "České Budějovice",
+      "region": "Jihočeský",
+      "method": "Den úmrtí",
+      "rule": {
+        "type": "cb_death"
+      },
+      "notaries": [
+        "Mgr. Šárka Aschenbrennerová",
+        "Mgr. Robert Procházka",
+        "JUDr. Eva Ivicová Brejchová",
+        "Mgr. Veronika Kočerová",
+        "JUDr. Libuše Jandovská",
+        "JUDr. Ivan Kočer",
+        "Mgr. Libuše Londinová",
+        "Mgr. Tereza Schovánková",
+        "JUDr. Jana Pražáková"
+      ],
+      "source": 2,
+      "description": "Pozor: rozvrh uvádí, že rozhoduje rok, ve kterém soudu došel úmrtní list a věc byla zapsána do rejstříku D. Zvláštní přidělení 10., 20., 30. a 31. dne v měsíci.",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Český Krumlov",
+      "region": "Jihočeský",
+      "method": "Postupné přidělování",
+      "rule": {
+        "type": "round_robin"
+      },
+      "notaries": [
+        "JUDr. Jaroslav Adam",
+        "JUDr. Helena Hájková"
+      ],
+      "source": 2,
+      "description": "Rovnoměrné rozdělování podle pořadí 1–2: nelze určit z data úmrtí ani narození.",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Jindřichův Hradec",
+      "region": "Jihočeský",
+      "method": "Měsíc narození",
+      "rule": {
+        "type": "birth_month",
+        "groups": [
+          [
+            1,
+            2,
+            5,
+            10
+          ],
+          [
+            3,
+            6,
+            7,
+            11
+          ],
+          [
+            4,
+            8,
+            9,
+            12
+          ]
+        ]
+      },
+      "notaries": [
+        "Mgr. Eliška Černá",
+        "JUDr. Eva Vlčková",
+        "Mgr. Blanka Žáková"
+      ],
+      "source": 2,
+      "description": "",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Pelhřimov",
+      "region": "Jihočeský",
+      "method": "Postupné přidělování",
+      "rule": {
+        "type": "round_robin"
+      },
+      "notaries": [
+        "Mgr. Adéla Vlčková",
+        "Mgr. Bc. Michal Roubík",
+        "Mgr. Bc. Ondřej Řitička"
+      ],
+      "source": 2,
+      "description": "",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Písek",
+      "region": "Jihočeský",
+      "method": "Postupné přidělování",
+      "rule": {
+        "type": "round_robin"
+      },
+      "notaries": [
+        "JUDr. Marta Javorská",
+        "JUDr. Lenka Lojdová",
+        "Ilona Pavlasová"
+      ],
+      "source": 2,
+      "description": "",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Prachatice",
+      "region": "Jihočeský",
+      "method": "Den narození",
+      "rule": {
+        "type": "birth_day_prachatice"
+      },
+      "notaries": [
+        "JUDr. Jiří Pražák",
+        "Mgr. Magdalena Vosátková, MBA"
+      ],
+      "source": 2,
+      "description": "31. 10. a 31. 12. jsou zvlášť přiřazeny prvnímu notáři.",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Strakonice",
+      "region": "Jihočeský",
+      "method": "Měsíc narození",
+      "rule": {
+        "type": "birth_month",
+        "groups": [
+          [
+            1,
+            4,
+            7,
+            10
+          ],
+          [
+            2,
+            5,
+            8,
+            11
+          ],
+          [
+            3,
+            6,
+            9,
+            12
+          ]
+        ]
+      },
+      "notaries": [
+        "Mgr. Gabriela Kučerová",
+        "Mgr. Jana Ghazaliová",
+        "Mgr. Ivo Siegel"
+      ],
+      "source": 2,
+      "description": "",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Tábor",
+      "region": "Jihočeský",
+      "method": "Den narození",
+      "rule": {
+        "type": "birth_day_tabor"
+      },
+      "notaries": [
+        "Mgr. Martina Šmajstrlová",
+        "Mgr. Jana Krätzerová",
+        "Mgr. Hana Kapicová Kohoutková",
+        "Mgr. Michael Rousek, LL.M.",
+        "JUDr. Vladimíra Kotrlíková"
+      ],
+      "source": 2,
+      "description": "Zvláštní přiřazení pro 11.–15. den a vybrané 31. dny.",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Česká Lípa",
+      "region": "Ústecký a Liberecký",
+      "method": "Měsíc narození",
+      "rule": {
+        "type": "birth_month",
+        "groups": [
+          [
+            1,
+            10,
+            11,
+            12
+          ],
+          [
+            2,
+            7,
+            8,
+            9
+          ],
+          [
+            3,
+            4,
+            5,
+            6
+          ]
+        ]
+      },
+      "notaries": [
+        "JUDr. Aneta Slaná",
+        "Mgr. Šárka Jihlavcová",
+        "Mgr. Petra Krnošová"
+      ],
+      "source": 4,
+      "description": "",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Děčín",
+      "region": "Ústecký a Liberecký",
+      "method": "Obec + den úmrtí",
+      "rule": {
+        "type": "decin",
+        "special": "Dolní Poustevna|Jiřetín pod Jedlovou|Jiříkov|Lipová|Lobendava|Mikulášovice|Staré Křečany|Varnsdorf|Vilémov|Šluknov"
+      },
+      "notaries": [
+        "Mgr. Tomáš Kohoutek, MBA",
+        "JUDr. Vratislav Makovec",
+        "JUDr. Zuzana Nejedlová",
+        "Mgr. Radka Vrataninová"
+      ],
+      "source": 4,
+      "description": "Pro desítku výslovně uvedených obcí připadá Mgr. Vrataninová; pro ostatní obce okresu platí den úmrtí. Musí být správně zvolen okresní soud.",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Chomutov",
+      "region": "Ústecký a Liberecký",
+      "method": "Den úmrtí",
+      "rule": {
+        "type": "death_day_ranges",
+        "bounds": [
+          10,
+          20,
+          31
+        ]
+      },
+      "notaries": [
+        "Mgr. Marta Bláhová",
+        "Mgr. Zdeňka Batrinová",
+        "JUDr. PhDr. Josef Marcel"
+      ],
+      "source": 4,
+      "description": "",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Jablonec nad Nisou",
+      "region": "Ústecký a Liberecký",
+      "method": "Den úmrtí",
+      "rule": {
+        "type": "death_day_ranges",
+        "bounds": [
+          10,
+          20,
+          31
+        ]
+      },
+      "notaries": [
+        "JUDr. Jitka Skalská",
+        "Mgr. Veronika Křížová",
+        "Mgr. Lucie Svobodová"
+      ],
+      "source": 4,
+      "description": "",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Liberec",
+      "region": "Ústecký a Liberecký",
+      "method": "Den úmrtí",
+      "rule": {
+        "type": "death_day_ranges",
+        "bounds": [
+          6,
+          12,
+          18,
+          24,
+          31
+        ]
+      },
+      "notaries": [
+        "JUDr. Jana Seemanová",
+        "Mgr. David Škorpík",
+        "Mgr. Filip Vorel",
+        "Mgr. Denisa Van Geet",
+        "JUDr. Marcela Fianová"
+      ],
+      "source": 4,
+      "description": "",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Litoměřice",
+      "region": "Ústecký a Liberecký",
+      "method": "Den + parita měsíce úmrtí",
+      "rule": {
+        "type": "death_month_parity"
+      },
+      "notaries": [
+        "Mgr. Petr Elšík",
+        "Mgr. Luboš Holík",
+        "Mgr. Romana Marková",
+        "JUDr. Radka Kulhánková"
+      ],
+      "source": 4,
+      "description": "",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Louny",
+      "region": "Ústecký a Liberecký",
+      "method": "Obec + sudý/lichý den úmrtí",
+      "rule": {
+        "type": "louny",
+        "groups": [
+          "Louny|Postoloprty|Blšany u Loun|Břvany|Cítoliby|Černčice|Domoušice|Hřivice|Hříškov|Chlumčany|Chožov|Chraberce|Jimlín|Koštice|Lenešice|Libčeves|Lipno|Lišany|Nová Ves|Obora|Opočno|Panenský Týnec|Peruc|Pnětluky|Počedělice|Raná|Ročov|Slavětín|Smolnice|Toužetín|Úherce|Veltěže|Vinařice|Vrbno nad Lesy|Výškov|Zbrašín|Žerotín",
+          "Žatec|Podbořany|Bitozeves|Blatno|Blažim|Blšany|Deštnice|Holedeč|Krásný Dvůr|Kryry|Liběšice|Libořice|Lubenec|Měchlupy|Nepomyšl|Nové Sedlo|Očihov|Petrohrad|Podbořanský Rohozec|Staňkovice|Tuchořice|Velemyšleves|Vroutek|Žíželice"
+        ]
+      },
+      "notaries": [
+        "Mgr. Kamila Johanovská",
+        "Mgr. Olga Baladová",
+        "Mgr. Ivana Rožnovská",
+        "Mgr. Ondřej Demut"
+      ],
+      "source": 4,
+      "description": "",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Most",
+      "region": "Ústecký a Liberecký",
+      "method": "Den úmrtí",
+      "rule": {
+        "type": "death_day_ranges",
+        "bounds": [
+          10,
+          20,
+          31
+        ]
+      },
+      "notaries": [
+        "Mgr. Michaela Valušková",
+        "Mgr. Jana Galková",
+        "Mgr. Sabina Burešová"
+      ],
+      "source": 4,
+      "description": "",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Teplice",
+      "region": "Ústecký a Liberecký",
+      "method": "Den + parita měsíce úmrtí",
+      "rule": {
+        "type": "death_month_parity"
+      },
+      "notaries": [
+        "Mgr. Ing. Daniela Paparegová",
+        "Mgr. Petr Michal",
+        "Mgr. Martin Palus",
+        "JUDr. Veronika Matějková"
+      ],
+      "source": 4,
+      "description": "",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Ústí nad Labem",
+      "region": "Ústecký a Liberecký",
+      "method": "Měsíc úmrtí",
+      "rule": {
+        "type": "death_month",
+        "groups": [
+          [
+            1,
+            5,
+            9
+          ],
+          [
+            2,
+            6,
+            10
+          ],
+          [
+            3,
+            7,
+            11
+          ],
+          [
+            4,
+            8,
+            12
+          ]
+        ]
+      },
+      "notaries": [
+        "Mgr. Petr Werner",
+        "Mgr. Markéta Tulačková",
+        "Mgr. Tomáš Ostrožlík",
+        "Mgr. Daniela Málková"
+      ],
+      "source": 4,
+      "description": "",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Hradec Králové",
+      "region": "Královéhradecký a Pardubický",
+      "method": "Kalendářní týden úmrtí",
+      "rule": {
+        "type": "iso_week_cycle"
+      },
+      "notaries": [
+        "Mgr. Milan Gančár",
+        "JUDr. Helena Divišová",
+        "JUDr. Monika Čírtková",
+        "JUDr. Hana Kulhánková",
+        "JUDr. Olga Adamíra Čepelová, Ph.D.",
+        "Mgr. Jan Krček",
+        "JUDr. Bc. Světlana Čápová",
+        "Mgr. Hana Kulčeková"
+      ],
+      "source": 5,
+      "description": "Cyklický rozvrh osmi notářů podle kalendářních týdnů; u hraničních dat nového roku doporučeno ověřit počítání týdne na soudu.",
+      "status": "výpočet s výhradou"
+    },
+    {
+      "id": "Trutnov",
+      "region": "Královéhradecký a Pardubický",
+      "method": "Obec + den úmrtí",
+      "rule": {
+        "type": "trutnov",
+        "groups": [
+          {
+            "name": "JUDr. Jan Kuřík",
+            "places": "Černý Důl|Dolní Branná|Dolní Dvůr|Dolní Kalná|Dolní Lánov|Dolní Olešnice|Horní Kalná|Horní Olešnice|Klášterská Lhota|Kunčice nad Labem|Lánov|Prosečné|Strážné|Špindlerův Mlýn|Vrchlabí|Borovnice|Borovnička|Čermná"
+          },
+          {
+            "name": "Mgr. Miloslav Culek, LL.M.",
+            "places": "Hajnice|Chotěvice|Mladé Buky|Mostek|Pilníkov|Rudník|Staré Buky|Vlčice|Havlovice|Malé Svatoňovice|Maršov u Úpice|Rtyně v Podkrkonoší"
+          },
+          {
+            "name": "JUDr. Michaela Jiroutová",
+            "places": "Bílá Třemešná|Bílé Poličany|Dolní Brusnice|Doubravice|Dubenec|Dvůr Králové nad Labem|Horní Brusnice|Hřibojedy|Kuks|Lanžov|Libotov|Litíč|Nemojov|Stanovice|Trotina|Třebihošť|Velký Vřešťov|Vilantice|Vítězná|Zábřezí-Řečice|Zdobín|Choustníkovo Hradiště|Libňatov"
+          },
+          {
+            "name": "Mgr. Klára Pouchlá, LL.M.",
+            "places": "Bernartice|Horní Maršov|Chvaleč|Janské Lázně|Jívka|Kocbeře|Kohoutov|Královec|Lampertice|Malá Úpa|Pec pod Sněžkou|Svoboda nad Úpou|Vlčkovice v Podkrkonoší|Zlatá Olešnice|Žacléř|Úpice"
+          },
+          {
+            "name": "JUDr. Jan Meduna",
+            "places": "Batňovice|Radvanice|Suchovršice|Velké Svatoňovice"
+          }
+        ]
+      },
+      "notaries": [
+        "JUDr. Jan Meduna",
+        "JUDr. Jan Kuřík",
+        "Mgr. Miloslav Culek, LL.M.",
+        "JUDr. Michaela Jiroutová",
+        "Mgr. Klára Pouchlá, LL.M."
+      ],
+      "source": 5,
+      "description": "Převzato ze změny č. 1 účinné od 1. 1. 2026. Pro Trutnov: 1.–7. Pouchlá, 8.–11. Culek, 12.–31. Meduna; Hostinné: 1.–7. Kuřík, od 8. Culek. Důležité: nezaměňovat s původním zněním PDF.",
+      "status": "ověřeno v dodatku č. 1",
+      "amendment": [
+        11
+      ]
+    },
+    {
+      "id": "Svitavy",
+      "region": "Královéhradecký a Pardubický",
+      "method": "Obec pobytu",
+      "rule": {
+        "type": "town_groups",
+        "groups": [
+          {
+            "name": "Mgr. Karolína Páchová",
+            "places": "Hradec nad Svitavou|Chmelík|Javorník|Karle|Kukle|Mikuleč|Svitavy|Trstěnice"
+          },
+          {
+            "name": "Mgr. Markéta Kucejová",
+            "places": "Benátky|Bohuňovice|Budislav|Cerekvice nad Loučnou|Čistá|Desná|Dolní Újezd|Horky|Horní Újezd|Chotěnov|Chotovice|Janov|Jarošov|Litomyšl|Makov|Morašice|Nová Sídla|Nová Ves u Jarošova|Osík|Poříčí u Litomyšle|Příluka|Řídký|Sedliště|Strakov|Suchá Lhota|Tržek|Újezdec|Vidlatá Seč"
+          },
+          {
+            "name": "JUDr. Marie Tomanová, Ph.D.",
+            "places": "Borová|Bystré|Březiny|Hartmanice|Jedlová|Kamenec u Poličky|Korouhev|Lubná|Nedvězí|Oldřiš|Polička|Pomezí|Pustá Kamenice|Pustá Rybná|Sádek|Sebranice|Stašov|Široký Důl|Telecí|Trpín"
+          },
+          {
+            "name": "JUDr. Šárka Navrátilová",
+            "places": "Borušov|Dětřichov|Dětřichov u Moravské Třebové|Dlouhá Loučka|Gruna|Koruna|Kunčina|Linhartice|Malíkov|Mladějov na Moravě|Moravská Třebová|Opatov|Opatovec|Radkov|Rozstání|Rychnov na Moravě|Staré Město|Třebařov|Útěchov"
+          },
+          {
+            "name": "JUDr. Jitka Zabloudilová",
+            "places": "Banín|Bezděčí u Trnávky|Bělá nad Svitavou|Bělá u Jevíčka|Biskupice|Bohuňov|Brněnec|Březina|Březinky|Březová nad Svitavou|Hartinkov|Chornice|Chrastavec|Janůvky|Jaroměřice|Jevíčko|Kamenná Horka|Koclířov|Křenov|Květná|Lavičné|Městečko Trnávka|Pohledy|Radiměř|Rohozná|Rozhraní|Rudná|Sklené|Slatina|Svojanov|Študlov|Víska u Jevíčka|Vendolí|Vítějeves|Vranová Lhota|Vrážné|Vysoká|Želivsko"
+          }
+        ]
+      },
+      "notaries": [
+        "Mgr. Karolína Páchová",
+        "Mgr. Markéta Kucejová",
+        "JUDr. Marie Tomanová, Ph.D.",
+        "JUDr. Šárka Navrátilová",
+        "JUDr. Jitka Zabloudilová"
+      ],
+      "source": 5,
+      "description": "",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Ústí nad Orlicí",
+      "region": "Královéhradecký a Pardubický",
+      "method": "Obec + den úmrtí",
+      "rule": {
+        "type": "usti_orlici"
+      },
+      "notaries": [
+        "JUDr. Marie Fajtová",
+        "Mgr. Jana Filipová",
+        "Mgr. Lukáš Macháček",
+        "Mgr. Pavlína Kačírková",
+        "Mgr. Andrea Červinková",
+        "Mgr. Martina Suchodolová"
+      ],
+      "source": 5,
+      "description": "Automatické určení pro samotné město Ústí nad Orlicí; pro okolní obce v tomto vydání zvolte zdrojový rozvrh.",
+      "status": "částečné pokrytí"
+    },
+    {
+      "id": "Chrudim",
+      "region": "Královéhradecký a Pardubický",
+      "method": "Obec + den úmrtí + změny 2026",
+      "rule": {
+        "type": "chrudim"
+      },
+      "notaries": [
+        "JUDr. Raisa Doubravová",
+        "Mgr. Milan Kučera",
+        "JUDr. Miloslava Křivská",
+        "Mgr. Dita Boštíková Kuštová",
+        "Mgr. Lenka Holcová",
+        "JUDr. Jana Udržalová"
+      ],
+      "source": 5,
+      "description": "Změna č. 3: od 1. 5. do 30. 6. 2026 dočasné přerozdělení; od 1. 7. 2026 zastoupení uvolněného úřadu. Uvažováno datum nápadu, nikoli jen datum úmrtí.",
+      "status": "ověřeno v dodatku č. 3",
+      "amendment": [
+        13
+      ]
+    },
+    {
+      "id": "Plzeň-sever",
+      "region": "Plzeňský",
+      "method": "Obec pobytu + změna od 1. 7. 2026",
+      "rule": {
+        "type": "plzen_north",
+        "groups": [
+          {
+            "name": "Mgr. Ivana Legová",
+            "places": "Blatnice|Nýřany|Úherce|Hněvnice|Plešnice|Vejprnice|Kbelany|Přehýšov|Zbůch|Líně|Rochlov|Bohy|Lochousice|Tlučná|Brodeslavy|Černíkovice|Dolní Hradiště|Kopidlo|Kočín|Kozojedy|Hlince|Holovousy|Chříč|Výrov|Všehrdy|Slatina|Studená|Pernarec|Líšťany"
+          },
+          {
+            "name": "Mgr. Alžběta Garhoferová",
+            "places": "Bezvěrov|Ostrov u Bezdružic|Krsy|Česká Bříza|Hromnice|Nadryby|Dolany|Chrást|Příšov|Druztová|Kyšice|Třemošná|Horní Bříza|Ledce|Zruč-Senec|Tis u Blatna|Velečín|Žihle|Pastuchovice"
+          },
+          {
+            "name": "Mgr. Martina Vovsíková",
+            "places": "Blažim|Kunějovice|Štichovice|Čerňovice|Úněšov|Dolní Bělá|Lité|Úlice|Dražeň|Loza|Úterý|Heřmanova Huť|Manětín|Všeruby|Horní Bělá|Nečtiny|Zahrádka|Hvozd|Dýšina|Křelovice|Chotíkov|Kralovice|Pňovany"
+          },
+          {
+            "name": "JUDr. Julie Pokorná",
+            "places": "Bděněves|Krašovice|Tatiná|Bučí|Město Touškov|Trnová|Čeminy|Mrtník|Újezd nade Mží|Dobříč|Myslinka|Vochov|Jarov|Nekmíř|Žilov|Kaceřov|Nevřeň|Bílov|Kaznějov|Obora|Mladotice|Kozolupy|Rybnice|Plasy|Koryta|Potvorov|Sedlec|Kožlany|Vysoká Libyně|Pláně"
+          }
+        ]
+      },
+      "notaries": [
+        "Mgr. Ivana Legová",
+        "Mgr. Alžběta Garhoferová",
+        "Mgr. Martina Vovsíková",
+        "JUDr. Julie Pokorná"
+      ],
+      "source": 3,
+      "description": "Změna č. 2 platná od 1. 7. do 31. 12. 2026 mění nápad věcí z Bezvěrova, Ostrova u Bezdružic, Krs, Kožlan, Pernarce a Líšťan. U starších případů je nutno zjistit datum přidělení.",
+      "status": "podmíněno datem nápadu",
+      "amendment": [
+        10
+      ]
+    },
+    {
+      "id": "Praha 1",
+      "region": "Praha",
+      "method": "Měsíc narození (dvojice měsíců)",
+      "rule": {
+        "type": "birth_month",
+        "groups": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            11,
+            12
+          ]
+        ]
+      },
+      "notaries": [
+        "JUDr. Petr Hochman",
+        "JUDr. Roman Hochman",
+        "JUDr. Bohdan Hallada",
+        "JUDr. Jarmila Humpolcová",
+        "JUDr. Miroslav Novák",
+        "JUDr. Lucie Vaňková"
+      ],
+      "source": 0,
+      "description": "Rozhoduje datum narození, při jeho nedohledání použít datum úmrtí.",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Praha 2",
+      "region": "Praha",
+      "method": "Čtvrtletí narození + změna 2. 6.",
+      "rule": {
+        "type": "praha2"
+      },
+      "notaries": [
+        "JUDr. Zuzana Holá Procházková",
+        "Mgr. Nikola Slavík",
+        "Mgr. Lukáš Valigura",
+        "JUDr. František Bouček, Ph.D."
+      ],
+      "source": 0,
+      "description": "Od 2. 6. 2026 je pro červenec–září zástupcem Mgr. Nikola Slavík; rozhoduje datum nápadu na soud. Před změnou Mgr. Lukáš Valigura. Pokud narození chybí, rozvrh připouští den úmrtí.",
+      "status": "podmíněno datem nápadu",
+      "amendment": [
+        8
+      ]
+    },
+    {
+      "id": "Praha 3",
+      "region": "Praha",
+      "method": "Den narození včetně výjimek 31.",
+      "rule": {
+        "type": "birth_special",
+        "patterns": [
+          {
+            "range": [
+              1,
+              6
+            ],
+            "special": {
+              "1": [
+                31
+              ]
+            }
+          },
+          {
+            "range": [
+              7,
+              12
+            ],
+            "special": {
+              "3": [
+                31
+              ]
+            }
+          },
+          {
+            "range": [
+              13,
+              18
+            ],
+            "special": {
+              "5": [
+                31
+              ]
+            }
+          },
+          {
+            "range": [
+              19,
+              24
+            ],
+            "special": {
+              "7": [
+                31
+              ]
+            }
+          },
+          {
+            "range": [
+              25,
+              30
+            ],
+            "special": {
+              "8": [
+                31
+              ],
+              "10": [
+                31
+              ],
+              "12": [
+                31
+              ]
+            }
+          }
+        ]
+      },
+      "notaries": [
+        "JUDr. Iva Šídová",
+        "Mgr. Erik Mrzena",
+        "Mgr. Radim Neubauer",
+        "JUDr. Markéta Menclerová",
+        "Mgr. Štěpán Štancl, LL.M."
+      ],
+      "source": 0,
+      "description": "",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Praha 4",
+      "region": "Praha",
+      "method": "Měsíc narození",
+      "rule": {
+        "type": "birth_month",
+        "groups": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ],
+          [
+            8
+          ],
+          [
+            9
+          ],
+          [
+            10
+          ],
+          [
+            11
+          ],
+          [
+            12
+          ]
+        ]
+      },
+      "notaries": [
+        "Mgr. Markéta Nývltová",
+        "JUDr. Ing. Ondřej Klička",
+        "Mgr. Markéta Káninská",
+        "Mgr. František Novotný",
+        "Mgr. Šárka Tlášková",
+        "Mgr. Petr Duda",
+        "Mgr. Šárka Matějčková",
+        "Mgr. Šárka Sýkorová",
+        "Mgr. Jana Rybářová",
+        "Mgr. Petr Oulík",
+        "JUDr. Petra Habartová",
+        "JUDr. Miloslav Peterka"
+      ],
+      "source": 0,
+      "description": "",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Praha 5",
+      "region": "Praha",
+      "method": "Den narození + výjimky",
+      "rule": {
+        "type": "birth_special",
+        "patterns": [
+          {
+            "range": [
+              1,
+              3
+            ],
+            "special": {
+              "1": [
+                28
+              ],
+              "2": [
+                28
+              ],
+              "3": [
+                28
+              ],
+              "4": [
+                28
+              ],
+              "5": [
+                28
+              ]
+            }
+          },
+          {
+            "range": [
+              4,
+              6
+            ],
+            "special": {
+              "6": [
+                28
+              ],
+              "7": [
+                28
+              ],
+              "8": [
+                28
+              ],
+              "9": [
+                28
+              ],
+              "10": [
+                28
+              ]
+            }
+          },
+          {
+            "range": [
+              8,
+              10
+            ],
+            "special": {
+              "11": [
+                28
+              ],
+              "12": [
+                28
+              ],
+              "1": [
+                29
+              ],
+              "3": [
+                29
+              ],
+              "4": [
+                29
+              ]
+            }
+          },
+          {
+            "range": [
+              13,
+              15
+            ],
+            "special": {
+              "5": [
+                29
+              ],
+              "6": [
+                29
+              ],
+              "7": [
+                29
+              ],
+              "8": [
+                29
+              ],
+              "9": [
+                29
+              ]
+            }
+          },
+          {
+            "range": [
+              16,
+              18
+            ],
+            "special": {
+              "10": [
+                29
+              ],
+              "11": [
+                29
+              ],
+              "12": [
+                29
+              ],
+              "1": [
+                30
+              ],
+              "3": [
+                30
+              ]
+            }
+          },
+          {
+            "range": [
+              19,
+              21
+            ],
+            "special": {
+              "4": [
+                30
+              ],
+              "5": [
+                30
+              ],
+              "6": [
+                30
+              ],
+              "7": [
+                30
+              ],
+              "2": [
+                29
+              ]
+            }
+          },
+          {
+            "range": [
+              25,
+              27
+            ],
+            "special": {
+              "8": [
+                30
+              ],
+              "9": [
+                30
+              ],
+              "10": [
+                30
+              ],
+              "11": [
+                30
+              ]
+            }
+          },
+          {
+            "range": [
+              22,
+              24
+            ],
+            "special": {
+              "12": [
+                30
+              ],
+              "1": [
+                31
+              ],
+              "3": [
+                31
+              ],
+              "5": [
+                31
+              ]
+            }
+          },
+          {
+            "days": [
+              7,
+              11,
+              12
+            ],
+            "special": {
+              "7": [
+                31
+              ],
+              "8": [
+                31
+              ],
+              "10": [
+                31
+              ],
+              "12": [
+                31
+              ]
+            }
+          }
+        ]
+      },
+      "notaries": [
+        "JUDr. Aleš Březina",
+        "Mgr. Jakub Straděj",
+        "JUDr. Michaela Havlová",
+        "JUDr. Alena Procházková",
+        "JUDr. Tereza Kubišová",
+        "JUDr. Lenka Leszay, Ph.D.",
+        "Mgr. Martin Diviš, LL.B.",
+        "JUDr. Jiří Svoboda",
+        "Mgr. Václav Voda"
+      ],
+      "source": 0,
+      "description": "V naskenovaném rozvrhu je řada zvláštních dnů (28.–31.), navíc záleží na měsíci narození. Neobsazený den vrátí upozornění.",
+      "status": "ověřený přepis s výjimkami"
+    },
+    {
+      "id": "Praha 6",
+      "region": "Praha",
+      "method": "Den narození + výjimky",
+      "rule": {
+        "type": "birth_special",
+        "patterns": [
+          {
+            "range": [
+              1,
+              3
+            ],
+            "special": {
+              "6": [
+                27
+              ],
+              "7": [
+                27
+              ],
+              "8": [
+                27
+              ],
+              "9": [
+                27
+              ],
+              "10": [
+                27
+              ]
+            }
+          },
+          {
+            "range": [
+              4,
+              6
+            ],
+            "special": {
+              "1": [
+                7
+              ],
+              "2": [
+                7
+              ],
+              "3": [
+                7
+              ],
+              "4": [
+                7
+              ],
+              "5": [
+                7
+              ]
+            }
+          },
+          {
+            "range": [
+              9,
+              11
+            ],
+            "special": {
+              "7": [
+                8
+              ],
+              "8": [
+                8
+              ],
+              "9": [
+                8
+              ],
+              "10": [
+                8
+              ],
+              "11": [
+                8
+              ]
+            }
+          },
+          {
+            "range": [
+              12,
+              14
+            ],
+            "special": {
+              "2": [
+                8
+              ],
+              "3": [
+                8
+              ],
+              "4": [
+                8
+              ],
+              "5": [
+                8
+              ],
+              "6": [
+                8
+              ]
+            }
+          },
+          {
+            "range": [
+              15,
+              17
+            ],
+            "special": {
+              "12": [
+                8
+              ]
+            }
+          },
+          {
+            "range": [
+              18,
+              20
+            ],
+            "special": {
+              "9": [
+                7
+              ],
+              "10": [
+                7
+              ],
+              "11": [
+                7
+              ],
+              "12": [
+                7
+              ]
+            }
+          },
+          {
+            "range": [
+              21,
+              23
+            ],
+            "special": {
+              "11": [
+                27
+              ],
+              "12": [
+                27
+              ],
+              "6": [
+                7
+              ],
+              "7": [
+                7
+              ],
+              "8": [
+                7
+              ]
+            }
+          },
+          {
+            "range": [
+              24,
+              26
+            ],
+            "special": {
+              "1": [
+                27
+              ],
+              "2": [
+                27
+              ],
+              "3": [
+                27
+              ],
+              "4": [
+                27
+              ],
+              "5": [
+                27
+              ]
+            }
+          },
+          {
+            "range": [
+              28,
+              31
+            ],
+            "special": {}
+          }
+        ]
+      },
+      "notaries": [
+        "Mgr. Naděžda Alšová",
+        "JUDr. Ivana Krušková",
+        "Mgr. Jana Večerníková",
+        "JUDr. Martin Krčma",
+        "Mgr. Olga Spoustová",
+        "Mgr. Alexandra Červová",
+        "Mgr. Jan Hejtmánek",
+        "JUDr. Jan Krůta",
+        "JUDr. Blanka Čechová"
+      ],
+      "source": 0,
+      "description": "Zvláštní rozdělení sedmého, osmého a 27. dne; pokud datum není v přiřazení, nelze z rozvrhu určit automaticky.",
+      "status": "ověřený přepis s výjimkami"
+    },
+    {
+      "id": "Praha 7",
+      "region": "Praha",
+      "method": "Čtvrtletí narození",
+      "rule": {
+        "type": "birth_month",
+        "groups": [
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            4,
+            5,
+            6
+          ],
+          [
+            7,
+            8,
+            9
+          ],
+          [
+            10,
+            11,
+            12
+          ]
+        ]
+      },
+      "notaries": [
+        "Mgr. Eva Králová",
+        "JUDr. Ing. Vanda Pirková",
+        "Mgr. Gajane Rejzková",
+        "Mgr. Karel Uhlíř"
+      ],
+      "source": 0,
+      "description": "",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Praha 8",
+      "region": "Praha",
+      "method": "Den narození + výjimky 31.",
+      "rule": {
+        "type": "birth_special",
+        "patterns": [
+          {
+            "range": [
+              1,
+              6
+            ],
+            "special": {
+              "1": [
+                31
+              ],
+              "7": [
+                31
+              ],
+              "12": [
+                31
+              ]
+            }
+          },
+          {
+            "range": [
+              7,
+              12
+            ],
+            "special": {}
+          },
+          {
+            "range": [
+              13,
+              18
+            ],
+            "special": {
+              "3": [
+                31
+              ],
+              "8": [
+                31
+              ]
+            }
+          },
+          {
+            "range": [
+              19,
+              24
+            ],
+            "special": {}
+          },
+          {
+            "range": [
+              25,
+              30
+            ],
+            "special": {
+              "5": [
+                31
+              ],
+              "10": [
+                31
+              ]
+            }
+          }
+        ]
+      },
+      "notaries": [
+        "JUDr. Ing. Michael Šablík",
+        "Mgr. Michaela Oswaldová",
+        "Mgr. Hana Remešová",
+        "Mgr. Šárka Zwierzynová",
+        "JUDr. Eva Krejcarová"
+      ],
+      "source": 0,
+      "description": "",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Praha 9",
+      "region": "Praha",
+      "method": "Den narození + výjimky 31.",
+      "rule": {
+        "type": "birth_special",
+        "patterns": [
+          {
+            "range": [
+              1,
+              6
+            ],
+            "special": {
+              "1": [
+                31
+              ]
+            }
+          },
+          {
+            "range": [
+              7,
+              12
+            ],
+            "special": {
+              "3": [
+                31
+              ]
+            }
+          },
+          {
+            "range": [
+              13,
+              18
+            ],
+            "special": {
+              "5": [
+                31
+              ]
+            }
+          },
+          {
+            "range": [
+              19,
+              24
+            ],
+            "special": {
+              "7": [
+                31
+              ]
+            }
+          },
+          {
+            "range": [
+              25,
+              30
+            ],
+            "special": {
+              "8": [
+                31
+              ],
+              "10": [
+                31
+              ],
+              "12": [
+                31
+              ]
+            }
+          }
+        ]
+      },
+      "notaries": [
+        "Mgr. Šimon Březina",
+        "Mgr. Soňa Glazarová",
+        "JUDr. Věra Šáblíková",
+        "Mgr. Petr Diviš",
+        "JUDr. Sylva Kotrbová"
+      ],
+      "source": 0,
+      "description": "",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Praha 10",
+      "region": "Praha",
+      "method": "Den narození + výjimky",
+      "rule": {
+        "type": "birth_special",
+        "patterns": [
+          {
+            "range": [
+              1,
+              3
+            ],
+            "special": {
+              "1": [
+                16,
+                31
+              ],
+              "2": [
+                16
+              ],
+              "3": [
+                16
+              ],
+              "4": [
+                16
+              ]
+            }
+          },
+          {
+            "range": [
+              5,
+              7
+            ],
+            "special": {
+              "5": [
+                16
+              ],
+              "6": [
+                16
+              ],
+              "7": [
+                16
+              ],
+              "8": [
+                16
+              ],
+              "3": [
+                31
+              ]
+            }
+          },
+          {
+            "range": [
+              9,
+              11
+            ],
+            "special": {
+              "9": [
+                16
+              ],
+              "10": [
+                16
+              ],
+              "11": [
+                16
+              ],
+              "12": [
+                16
+              ],
+              "5": [
+                31
+              ]
+            }
+          },
+          {
+            "range": [
+              13,
+              15
+            ],
+            "special": {
+              "1": [
+                20
+              ],
+              "2": [
+                20
+              ],
+              "3": [
+                20
+              ],
+              "4": [
+                20
+              ],
+              "7": [
+                31
+              ]
+            }
+          },
+          {
+            "range": [
+              17,
+              19
+            ],
+            "special": {
+              "5": [
+                20
+              ],
+              "6": [
+                20
+              ],
+              "7": [
+                20
+              ],
+              "8": [
+                20,
+                31
+              ]
+            }
+          },
+          {
+            "range": [
+              21,
+              23
+            ],
+            "special": {
+              "9": [
+                20
+              ],
+              "10": [
+                20
+              ],
+              "11": [
+                20
+              ],
+              "12": [
+                20
+              ]
+            }
+          },
+          {
+            "range": [
+              24,
+              26
+            ],
+            "special": {
+              "1": [
+                27
+              ],
+              "2": [
+                27
+              ],
+              "3": [
+                27
+              ],
+              "4": [
+                27
+              ],
+              "10": [
+                31
+              ]
+            }
+          },
+          {
+            "range": [
+              28,
+              30
+            ],
+            "special": {
+              "5": [
+                27
+              ],
+              "6": [
+                27
+              ],
+              "7": [
+                27
+              ],
+              "8": [
+                27
+              ],
+              "12": [
+                31
+              ]
+            }
+          },
+          {
+            "days": [
+              4,
+              8,
+              12
+            ],
+            "special": {
+              "9": [
+                27
+              ],
+              "10": [
+                27
+              ],
+              "11": [
+                27
+              ],
+              "12": [
+                27
+              ]
+            }
+          }
+        ]
+      },
+      "notaries": [
+        "Mgr. Šimon Klein",
+        "JUDr. Jaroslava Voclová",
+        "Mgr. Martin Říha",
+        "Mgr. Štěpán Nývlt",
+        "JUDr. Daniela Anderson, Ph.D.",
+        "JUDr. Věra Dundová",
+        "JUDr. Jana Zangiová",
+        "JUDr. Ing. Martin Muzikář",
+        "JUDr. Lucie Foukalová"
+      ],
+      "source": 0,
+      "description": "Pozor: data 16., 20. a 27. mají přiřazení podle měsíce; v seznamu jsou explicitně všechny výjimky.",
+      "status": "ověřený přepis s výjimkami"
+    },
+    {
+      "id": "Kolín",
+      "region": "Středočeský",
+      "method": "Obec a den úmrtí",
+      "rule": {
+        "type": "source_only"
+      },
+      "notaries": [
+        "JUDr. Silvie Kürtiová",
+        "Mgr. Petra Němcová",
+        "Mgr. Etela Kubešová",
+        "Mgr. Stanislav Trčka"
+      ],
+      "source": 1,
+      "description": "Kombinace území a času; kompletní územní rejstřík zatím není v automatickém výpočtu.",
+      "status": "pouze evidence rozvrhu"
+    },
+    {
+      "id": "Kutná Hora",
+      "region": "Středočeský",
+      "method": "Obec pobytu",
+      "rule": {
+        "type": "source_only"
+      },
+      "notaries": [
+        "JUDr. Josef Doležal",
+        "JUDr. Tereza Urbanová",
+        "Mgr. Jana Tvrdíková",
+        "JUDr. Renata Tremlová"
+      ],
+      "source": 1,
+      "description": "Obce se dělí do notářských územních obvodů; je nutný kompletní výčet obcí a částí.",
+      "status": "pouze evidence rozvrhu"
+    },
+    {
+      "id": "Mělník",
+      "region": "Středočeský",
+      "method": "Měsíc narození",
+      "rule": {
+        "type": "birth_month",
+        "groups": [
+          [
+            2,
+            6,
+            10
+          ],
+          [
+            3,
+            7,
+            11
+          ],
+          [
+            1,
+            5,
+            9
+          ],
+          [
+            4,
+            8,
+            12
+          ]
+        ]
+      },
+      "notaries": [
+        "Mgr. Michael Komenda",
+        "Mgr. Ing. Lenka Holíková",
+        "Mgr. Pavel Mlíkovský",
+        "Mgr. Anna Salajková"
+      ],
+      "source": 1,
+      "description": "",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Mladá Boleslav",
+      "region": "Středočeský",
+      "method": "Postup po dnech úmrtí v roce",
+      "rule": {
+        "type": "death_cycle",
+        "cycle": 4
+      },
+      "notaries": [
+        "Mgr. Jitka Horáčková",
+        "Mgr. Zdeňka Hrdá",
+        "JUDr. Eva Kučerová",
+        "Mgr. Radka Koudele"
+      ],
+      "source": 1,
+      "description": "Čtyřdenní cyklus od 1. 1. 2026. Datum nápadu 2026 může být odlišné od data úmrtí.",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Nymburk",
+      "region": "Středočeský",
+      "method": "Obec posledního trvalého pobytu",
+      "rule": {
+        "type": "town_groups",
+        "groups": [
+          {
+            "name": "Mgr. Karel Bareš",
+            "places": "Bříství|Černíky|Hradištko|Chrást|Jiřice|Kostomlaty nad Labem|Kounice|Lysá nad Labem|Milovice|Ostrá|Přerov nad Labem|Semice|Stará Lysá|Starý Vestec|Stratov|Velenka|Vykáň|Zbožíčko"
+          },
+          {
+            "name": "JUDr. Marcela Svobodová",
+            "places": "Běrunice|Činěves|Dlouhopolsko|Dobšice|Dymokury|Hradčany|Chotěšice|Choťovice|Chroustov|Kněžice|Kněžičky|Kolaje|Košík|Křinec|Libice nad Cidlinou|Městec Králové|Odřepsy|Okřínek|Opočnice|Opolany|Podmoky|Rožďalovice|Rožďalovice – Podlužany|Sány|Senice|Sloveč|Úmyslovice|Velenice|Vlkov pod Oškobrhem|Vrbice|Záhornice|Žehuň|Žitovlice"
+          },
+          {
+            "name": "JUDr. Hana Vančurová",
+            "places": "Bobnice|Budiměřice|Čilec|Dvory|Hořátev|Hrubý Jeseník|Chleby|Jíkev|Jizbice|Kamenné Zboží|Kostomlátky|Kovanice|Krchleby|Loučeň|Mcely|Nový Dvůr|Nymburk|Oskořínek|Písty|Seletice|Straky|Vestec|Všechlapy|Zvěřinek"
+          },
+          {
+            "name": "JUDr. Marta Večeřová",
+            "places": "Hořany|Choťánky|Kostelní Lhota|Kouty|Křečkov|Milčice|Netřebice|Oseček|Pátek|Písková Lhota|Pňov - Předhradí|Poděbrady|Sadská|Sokoleč|Tatce|Třebestovice"
+          }
+        ]
+      },
+      "notaries": [
+        "Mgr. Karel Bareš",
+        "JUDr. Marcela Svobodová",
+        "JUDr. Hana Vančurová",
+        "JUDr. Marta Večeřová"
+      ],
+      "source": 1,
+      "description": "Úplné čtyři územní skupiny pro obce okresu Nymburk, včetně výjimky Rožďalovice – Podlužany. U podobných názvů doplňte místní část.",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Praha-východ",
+      "region": "Středočeský",
+      "method": "Obec posledního trvalého pobytu",
+      "rule": {
+        "type": "town_groups",
+        "groups": [
+          {
+            "name": "Mgr. David Borský",
+            "places": "Babice|Březí|Dobročovice|Doubek|Jirny|Křenice|Květnice|Louňovice|Sluštice|Šestajovice|Tehovec|Úvaly"
+          },
+          {
+            "name": "JUDr. Radim Drášil",
+            "places": "Hovorčovice|Klokočná|Mirošovice|Mnichovice|Mukařov|Ondřejov|Pětihosty|Senohraby|Strančice|Struhařov|Světice|Svojetice|Veliká Ves|Všestary|Zvánovice"
+          },
+          {
+            "name": "JUDr. Ondřej Hönig",
+            "places": "Čestlice|Dobřejovice|Herink|Modletice|Nupaky|Popovičky|Radějovice|Říčany"
+          },
+          {
+            "name": "Mgr. Lucie Lahodová",
+            "places": "Bašť|Hrusice|Husinec|Kaliště|Klecany|Klíčany|Máslovice|Odolená Voda|Panenské Břežany|Postřižín|Předboj|Větrušice|Vodochody|Zlonín"
+          },
+          {
+            "name": "Mgr. Markéta Motlíková",
+            "places": "Brandýs nad Labem - Stará Boleslav|Brandýs nad Labem – Stará Boleslav|Měšice|Sedlec"
+          },
+          {
+            "name": "JUDr. Kamil Hradský, Ph.D., LL.M., MBA",
+            "places": "Čakovičky|Čelákovice|Lázně Toušeň|Líbeznice|Vyšehořovice|Zdiby"
+          },
+          {
+            "name": "JUDr. Svatopluk Procházka",
+            "places": "Bořanovice|Brázdim|Dřevčice|Jenštejn|Káraný|Kojetice|Křížkový Újezdec|Mratín|Nehvizdy|Podolanka|Polerady|Přezletice|Radonice|Řehenice|Sluhy|Svémyslice|Veleň|Zápy|Zeleneč"
+          },
+          {
+            "name": "Mgr. Robert Řezníček",
+            "places": "Horoušany|Kamenice|Kostelec u Křížků|Kunice|Mochov|Nová Ves|Nový Vestec|Petříkov|Sibřina|Sulice|Škvorec|Tehov|Velké Popovice|Zlatá"
+          }
+        ]
+      },
+      "notaries": [
+        "Mgr. David Borský",
+        "JUDr. Radim Drášil",
+        "JUDr. Ondřej Hönig",
+        "Mgr. Lucie Lahodová",
+        "Mgr. Markéta Motlíková",
+        "JUDr. Kamil Hradský, Ph.D., LL.M., MBA",
+        "JUDr. Svatopluk Procházka",
+        "Mgr. Robert Řezníček"
+      ],
+      "source": 1,
+      "description": "Všech osm územních skupin obcí dle oddílu IX rozvrhu Krajského soudu v Praze na rok 2026. Pozor na obce stejného jména v jiných okresech.",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Praha-západ",
+      "region": "Středočeský",
+      "method": "Den úmrtí",
+      "rule": {
+        "type": "death_day_index",
+        "ranges": [
+          [
+            28,
+            31,
+            0
+          ],
+          [
+            1,
+            4,
+            1
+          ],
+          [
+            5,
+            8,
+            2
+          ],
+          [
+            24,
+            27,
+            3
+          ],
+          [
+            17,
+            20,
+            4
+          ],
+          [
+            13,
+            16,
+            5
+          ],
+          [
+            21,
+            23,
+            6
+          ],
+          [
+            9,
+            12,
+            7
+          ]
+        ]
+      },
+      "notaries": [
+        "Mgr. Matěj Duben",
+        "Mgr. Jan Dytrych",
+        "JUDr. Stanislava Ferešová",
+        "JUDr. Martina Herzánová",
+        "JUDr. Jana Kurková",
+        "Mgr. Karel Libert",
+        "JUDr. Šárka Novotná",
+        "Mgr. Klára Svobodová"
+      ],
+      "source": 1,
+      "description": "",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Příbram",
+      "region": "Středočeský",
+      "method": "Den narození",
+      "rule": {
+        "type": "birth_day_index",
+        "ranges": [
+          [
+            25,
+            31,
+            0
+          ],
+          [
+            7,
+            12,
+            1
+          ],
+          [
+            1,
+            6,
+            2
+          ],
+          [
+            19,
+            24,
+            3
+          ],
+          [
+            13,
+            18,
+            4
+          ]
+        ]
+      },
+      "notaries": [
+        "JUDr. Eduard Grygar",
+        "Mgr. Věra Karasová",
+        "Mgr. Kateřina Lukavská",
+        "Mgr. Radek Šmíd",
+        "Mgr. Václav Štěrba"
+      ],
+      "source": 1,
+      "description": "",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Rakovník",
+      "region": "Středočeský",
+      "method": "Obec + den úmrtí 1.–15./16.–31.",
+      "rule": {
+        "type": "rakovnik_2026",
+        "sole": "Bdín|Hředle|Kalivody|Kounov|Kozojedy|Kroučová|Krupá|Krušovice|Lány|Lány – Vašírov|Milostín|Milostín – Povlčín|Milý|Mšec|Mšecké Žehrovice|Mšecké Žehrovice – Lodenice|Mutějovice|Mutějovice – Lhota pod Džbánem|Nesuchyně|Nové Strašecí|Nové Strašecí – Pecínov|Pochvalov|Přerubenice|Přerubenice – Dučice|Ruda|Rynholec|Řevničov|Smilovice|Srbeč|Svojetín|Svojetín – Veclov|Třeboc|Třtice",
+        "shared": "Branov|Břežany|Čistá|Děkov|Drahouš|Hořesedly|Hořovičky|Hostokryje|Hracholusky|Hřebečníky|Hvozd|Chrášťany|Janov|Jesenice|Karlova Ves|Kněževes|Kolešov|Kolešovice|Krakov|Krakovec|Krty|Křivoklát|Lašovice|Lišany|Lubná|Lužná|Malinová|Městečko|Nezabudice|Nový Dům|Olešná|Oráčov|Panoší Újezd|Pavlíkov|Petrovice|Příčina|Přílepy|Pšovlky|Pustověty|Račice|Rakovník|Roztoky|Řeřichy|Senec|Senomaty|Skryje|Slabce|Sýkořice|Šanov|Šípy|Švihov|Václavy|Velká Buková|Velká Chmelištná|Všesulov|Všetaty|Zavidov|Zbečno|Žďár"
+      },
+      "notaries": [
+        "JUDr. Monika Kroulíková",
+        "JUDr. Jana Michálková",
+        "JUDr. Ladislava Šebánková"
+      ],
+      "source": 1,
+      "description": "Obvod Nové Strašecí = JUDr. Monika Kroulíková; v Rakovníku a seznamu dalších obcí 1.–15. JUDr. Ladislava Šebánková, 16.–31. JUDr. Jana Michálková.",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Domažlice",
+      "region": "Plzeňský a Karlovarský",
+      "method": "Postupné přidělování",
+      "rule": {
+        "type": "round_robin"
+      },
+      "notaries": [
+        "JUDr. Jitka Holečková",
+        "Mgr. Milan Platzer",
+        "JUDr. Miroslava Szabová"
+      ],
+      "source": 3,
+      "description": "Časový systém podle pořadí nápadu – bez soudní evidence nelze určit.",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Cheb",
+      "region": "Plzeňský a Karlovarský",
+      "method": "Postupné přidělování",
+      "rule": {
+        "type": "round_robin"
+      },
+      "notaries": [
+        "JUDr. Ing. Robert Koupšet",
+        "JUDr. Eva Jung",
+        "Mgr. Tereza Špelinová",
+        "Mgr. Iva Pánková"
+      ],
+      "source": 3,
+      "description": "",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Karlovy Vary",
+      "region": "Plzeňský a Karlovarský",
+      "method": "Postupné přidělování",
+      "rule": {
+        "type": "round_robin"
+      },
+      "notaries": [
+        "Mgr. Adéla Gabányiová",
+        "JUDr. Lucie Gabányiová",
+        "JUDr. Ing. Jan Svoboda",
+        "Mgr. Sylvie Schmiegerová",
+        "Mgr. Štěpán Tichý"
+      ],
+      "source": 3,
+      "description": "",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Klatovy",
+      "region": "Plzeňský a Karlovarský",
+      "method": "Postupné přidělování",
+      "rule": {
+        "type": "round_robin"
+      },
+      "notaries": [
+        "JUDr. Vlastimil Heřman",
+        "JUDr. Irena Chocová",
+        "JUDr. Ivana Kozlová",
+        "Mgr. Ivana Bernasová",
+        "Mgr. Hana Mičicová"
+      ],
+      "source": 3,
+      "description": "",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Plzeň-jih",
+      "region": "Plzeňský a Karlovarský",
+      "method": "Postupné přidělování",
+      "rule": {
+        "type": "round_robin"
+      },
+      "notaries": [
+        "Mgr. Martina Machová",
+        "JUDr. Kateřina Šleglová",
+        "JUDr. Jitka Skoblová",
+        "Mgr. Michal Šilhavý"
+      ],
+      "source": 3,
+      "description": "",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Plzeň-město",
+      "region": "Plzeňský a Karlovarský",
+      "method": "Postupné přidělování",
+      "rule": {
+        "type": "round_robin"
+      },
+      "notaries": [
+        "JUDr. Josef Burda",
+        "Mgr. Daniel Řezanina",
+        "Mgr. Lucie Kernerová",
+        "JUDr. Jan Stránský",
+        "Mgr. Ondřej Šíma",
+        "Mgr. Pavel Škůrek",
+        "Mgr. Zdeňka Pláničková",
+        "JUDr. Miroslava Protivová",
+        "Mgr. David Kittel",
+        "JUDr. Jana Svejkovská"
+      ],
+      "source": 3,
+      "description": "",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Rokycany",
+      "region": "Plzeňský a Karlovarský",
+      "method": "Postupné přidělování",
+      "rule": {
+        "type": "round_robin"
+      },
+      "notaries": [
+        "Mgr. Michal Kypta",
+        "Mgr. Pavla Bučková"
+      ],
+      "source": 3,
+      "description": "",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Sokolov",
+      "region": "Plzeňský a Karlovarský",
+      "method": "Postupné přidělování",
+      "rule": {
+        "type": "round_robin"
+      },
+      "notaries": [
+        "Mgr. Dana Všahová",
+        "Mgr. Pavla Kovaříková",
+        "Mgr. Viktor Semaník"
+      ],
+      "source": 3,
+      "description": "",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Tachov",
+      "region": "Plzeňský a Karlovarský",
+      "method": "Obec pobytu + střídání pro Planou",
+      "rule": {
+        "type": "source_only"
+      },
+      "notaries": [
+        "Mgr. Eva Vávrová",
+        "JUDr. Ing. Sandra Bartošová"
+      ],
+      "source": 3,
+      "description": "Obecní přiřazení se zvláštním střídáním pro Planou.",
+      "status": "pouze evidence rozvrhu"
+    },
+    {
+      "id": "Havlíčkův Brod",
+      "region": "Královéhradecký a Pardubický",
+      "method": "Obec pobytu + den úmrtí",
+      "rule": {
+        "type": "source_only"
+      },
+      "notaries": [
+        "Mgr. Kateřina Lacinová",
+        "JUDr. Jarmila Endrlová",
+        "JUDr. Petra Slanařová",
+        "JUDr. Ladislav Vondrák"
+      ],
+      "source": 5,
+      "description": "Město Havlíčkův Brod se dělí dle dne úmrtí, ostatní obce mají územní rozpis.",
+      "status": "pouze evidence rozvrhu"
+    },
+    {
+      "id": "Jičín",
+      "region": "Královéhradecký a Pardubický",
+      "method": "Postupné přidělování v ISAS",
+      "rule": {
+        "type": "round_robin"
+      },
+      "notaries": [
+        "Mgr. Helena Pospíchalová",
+        "JUDr. Jitka Matějková",
+        "Mgr. Pavel Halama",
+        "Mgr. Zuzana Bartoňová"
+      ],
+      "source": 5,
+      "description": "Přiděluje systém ISAS v nápadovém pořadí; neodhadovat podle data úmrtí.",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Náchod",
+      "region": "Královéhradecký a Pardubický",
+      "method": "Obec pobytu",
+      "rule": {
+        "type": "source_only"
+      },
+      "notaries": [
+        "JUDr. Renata Vysoká",
+        "Mgr. Eva Pokorná",
+        "Mgr. Marie Možíšová",
+        "Mgr. Jiří Souček"
+      ],
+      "source": 5,
+      "description": "Nutno převést všechny obce a místní části z rozvrhu.",
+      "status": "pouze evidence rozvrhu"
+    },
+    {
+      "id": "Pardubice",
+      "region": "Královéhradecký a Pardubický",
+      "method": "Obec + den úmrtí",
+      "rule": {
+        "type": "city_death_day_index",
+        "city": "Pardubice",
+        "ranges": [
+          [
+            1,
+            4,
+            0
+          ],
+          [
+            5,
+            8,
+            1
+          ],
+          [
+            9,
+            12,
+            2
+          ],
+          [
+            13,
+            16,
+            3
+          ],
+          [
+            17,
+            20,
+            4
+          ],
+          [
+            21,
+            24,
+            5
+          ],
+          [
+            25,
+            31,
+            6
+          ]
+        ]
+      },
+      "notaries": [
+        "JUDr. Filip Plašil",
+        "JUDr. Josef Lát",
+        "Mgr. Bc. Kateřina Hajská",
+        "JUDr. Kateřina Horká",
+        "Mgr. Dalibor Novák",
+        "Mgr. Martina Kondrová",
+        "JUDr. Rita Korolová"
+      ],
+      "source": 5,
+      "description": "Město Pardubice v části uvedené jako časový rozvrh; vybrané místní části (např. Opočínek, Lány na Důlku) mají vlastní územní přidělení.",
+      "status": "částečné pokrytí"
+    },
+    {
+      "id": "Rychnov nad Kněžnou",
+      "region": "Královéhradecký a Pardubický",
+      "method": "Obec pobytu",
+      "rule": {
+        "type": "source_only"
+      },
+      "notaries": [
+        "JUDr. Dana Ševců",
+        "Mgr. Bc. Soňa Matějková",
+        "Mgr. Marie Floriánová",
+        "Mgr. Eva Šimonová"
+      ],
+      "source": 5,
+      "description": "Rozdělení po obcích a místních částech je v příslušné kapitole oficiálního rozvrhu.",
+      "status": "pouze evidence rozvrhu"
+    },
+    {
+      "id": "Semily",
+      "region": "Královéhradecký a Pardubický",
+      "method": "Obec pobytu",
+      "rule": {
+        "type": "source_only"
+      },
+      "notaries": [
+        "Mgr. Ing. Jana Krejsová",
+        "Mgr. Martina Pokorná",
+        "Mgr. Klára Holubová",
+        "Mgr. Petra Lánská"
+      ],
+      "source": 5,
+      "description": "Kompletní územní seznam zatím není strojově přepsán.",
+      "status": "pouze evidence rozvrhu"
+    },
+    {
+      "id": "Blansko",
+      "region": "Jihomoravský, Vysočina a Zlínský",
+      "method": "Obec + den úmrtí",
+      "rule": {
+        "type": "source_only"
+      },
+      "notaries": [
+        "JUDr. Alena Havránková, Ph.D.",
+        "Mgr. Jan Kohoutek",
+        "JUDr. Vladimír Macko",
+        "JUDr. Luděk Měřínský",
+        "JUDr. Lenka Pikálková"
+      ],
+      "source": 6,
+      "description": "Pro Blansko a další obce časový systém, pro Boskovice jiné kombinované pravidlo.",
+      "status": "pouze evidence rozvrhu"
+    },
+    {
+      "id": "Brno-město",
+      "region": "Jihomoravský, Vysočina a Zlínský",
+      "method": "Postup po dnech úmrtí v roce",
+      "rule": {
+        "type": "death_cycle",
+        "cycle": 15
+      },
+      "notaries": [
+        "Mgr. Pavel Bernard",
+        "Mgr. Richard Brázda",
+        "JUDr. Jarmila Červinková",
+        "Mgr. Martin Fajt",
+        "Mgr. Jana Hyráková",
+        "JUDr. Lubomír Mika",
+        "Liběna Pernicová",
+        "Mgr. Petr Šedivý",
+        "JUDr. Andrea Štěpánová",
+        "Mgr. Pavel Vážan",
+        "Mgr. Eva Věrná",
+        "JUDr. Michal Voříšek",
+        "Mgr. Pavel Voříšek",
+        "Mgr. Pavel Vrba",
+        "Mgr. Petra Vymazalová"
+      ],
+      "source": 6,
+      "description": "Městský soud v Brně: patnáctidenní cyklus podle dne úmrtí počínaje 1. lednem 2026.",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Brno-venkov",
+      "region": "Jihomoravský, Vysočina a Zlínský",
+      "method": "Obec pobytu",
+      "rule": {
+        "type": "source_only"
+      },
+      "notaries": [
+        "JUDr. Klára Hejtmánková",
+        "Mgr. Klára Janulíková",
+        "JUDr. Přemysl Kalous",
+        "JUDr. Ing. Jiří Lorenčík",
+        "Mgr. Jitka Musilová",
+        "Mgr. Ondřej Stupka",
+        "Mgr. Pavel Vavříček"
+      ],
+      "source": 6,
+      "description": "Sedm notářů a rozdělení podle obcí; původní příloha obsahuje místní části.",
+      "status": "pouze evidence rozvrhu"
+    },
+    {
+      "id": "Břeclav",
+      "region": "Jihomoravský, Vysočina a Zlínský",
+      "method": "Obec pobytu",
+      "rule": {
+        "type": "town_groups",
+        "groups": [
+          {
+            "name": "JUDr. Pavel Hungr",
+            "places": "Brod nad Dyjí|Cvrčovice|Dobré Pole|Dolní Věstonice|Drnholec|Horní Věstonice|Ivaň|Jevišovka|Milovice|Novosedly|Nový Přerov|Pasohlávky|Pavlov|Pohořelice|Přibice|Uherčice|Vlasatice|Vranovice"
+          },
+          {
+            "name": "JUDr. Ilona Jančaříková",
+            "places": "Boleradice|Borkovany|Brumovice|Diváky|Hrušky|Kašnice|Klobouky|Krumvíř|Moravská Nová Ves|Moravský Žižkov|Morkůvky|Nikolčice|Podivín|Přítluky|Rakvice|Šitbořice|Tvrdonice|Týnec|Velké Hostěrádky|Zaječí"
+          },
+          {
+            "name": "Mgr. Petra Osičková",
+            "places": "Bořetice|Horní Bojanovice|Hustopeče|Kobylí|Kurdějov|Křepice|Němčičky|Popice|Pouzdřany|Starovice|Starovičky|Strachotín|Šakvice|Velké Bílovice|Velké Němčice|Velké Pavlovice|Vrbice"
+          },
+          {
+            "name": "Mgr. Petr Ševčík",
+            "places": "Bavory|Březí|Bulhary|Dolní Dunajovice|Hlohovec|Klentnice|Kostice|Lanžhot|Lednice|Mikulov|Perná|Sedlec|Valtice"
+          },
+          {
+            "name": "Mgr. Petra Tichavová",
+            "places": "Břeclav|Ladná"
+          }
+        ]
+      },
+      "notaries": [
+        "JUDr. Pavel Hungr",
+        "JUDr. Ilona Jančaříková",
+        "Mgr. Petra Osičková",
+        "Mgr. Petr Ševčík",
+        "Mgr. Petra Tichavová"
+      ],
+      "source": 6,
+      "description": "Přepsány obce z oddílu B, nárok na místní části je nutno ověřit z rozvrhu.",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Hodonín",
+      "region": "Jihomoravský, Vysočina a Zlínský",
+      "method": "Obec + den úmrtí",
+      "rule": {
+        "type": "source_only"
+      },
+      "notaries": [
+        "Mgr. Romana Baláková",
+        "JUDr. Renata Běhalová",
+        "JUDr. Zdeňka Horáková",
+        "Mgr. Ing. Tomáš Kremr",
+        "Mgr. Pavlína Mytyzková",
+        "JUDr. Ivana Šafaříková",
+        "Mgr. Pavlína Zugárková"
+      ],
+      "source": 6,
+      "description": "Kombinuje obec s datem smrti, zejména pro města.",
+      "status": "pouze evidence rozvrhu"
+    },
+    {
+      "id": "Jihlava",
+      "region": "Jihomoravský, Vysočina a Zlínský",
+      "method": "Obec + den úmrtí",
+      "rule": {
+        "type": "source_only"
+      },
+      "notaries": [
+        "JUDr. Jana Pavlincová",
+        "Mgr. Lucie Sobotková",
+        "JUDr. Jaroslava Sabrina Háni Trojanová",
+        "Mgr. Ludvík Vinopal"
+      ],
+      "source": 6,
+      "description": "Pravidla v městě a obcích mají výjimky; pro určení otevřete zdrojový rozvrh.",
+      "status": "pouze evidence rozvrhu"
+    },
+    {
+      "id": "Kroměříž",
+      "region": "Jihomoravský, Vysočina a Zlínský",
+      "method": "Obec + den úmrtí",
+      "rule": {
+        "type": "source_only"
+      },
+      "notaries": [
+        "JUDr. Ivo Havlíček",
+        "JUDr. Petr Skopal",
+        "JUDr. Alena Vraníková",
+        "Mgr. Kateřina Zlámalová"
+      ],
+      "source": 6,
+      "description": "Rozdělení obcí, v Kroměříži dále podle dne úmrtí.",
+      "status": "pouze evidence rozvrhu"
+    },
+    {
+      "id": "Prostějov",
+      "region": "Jihomoravský, Vysočina a Zlínský",
+      "method": "Obec + kalendářní týden úmrtí",
+      "rule": {
+        "type": "city_week_cycle",
+        "city": "Prostějov",
+        "cycle": 5
+      },
+      "notaries": [
+        "JUDr. Hana Dvořáková",
+        "Mgr. Linda Lorencová",
+        "Mgr. Kateřina Štoplová",
+        "Mgr. Petra Vránová",
+        "JUDr. Lenka Vrzalová"
+      ],
+      "source": 6,
+      "description": "Pro Prostějov cyklus kalendářních týdnů v roce 2026; ostatní obce jsou přiděleny jmenovitě.",
+      "status": "částečné pokrytí"
+    },
+    {
+      "id": "Třebíč",
+      "region": "Jihomoravský, Vysočina a Zlínský",
+      "method": "Obec + datum narození",
+      "rule": {
+        "type": "source_only"
+      },
+      "notaries": [
+        "JUDr. Věra Hodějovská",
+        "Neobsazený úřad po JUDr. Miroslavu Michálkovi (náhradník Mgr. Bc. Miroslav Michálek)",
+        "Mgr. Bc. Miroslav Michálek",
+        "Mgr. Markéta Novotná",
+        "JUDr. Tomáš Strnad"
+      ],
+      "source": 6,
+      "description": "Město Třebíč se rozděluje podle narození, ostatní obce územně. Nutno ověřit náhradníka.",
+      "status": "pouze evidence rozvrhu"
+    },
+    {
+      "id": "Uherské Hradiště",
+      "region": "Jihomoravský, Vysočina a Zlínský",
+      "method": "Obec + den úmrtí",
+      "rule": {
+        "type": "source_only"
+      },
+      "notaries": [
+        "JUDr. Gabriela Bičanová",
+        "Petr Boháč",
+        "JUDr. Jitka Famfulíková",
+        "Mgr. Bohumil Kunc",
+        "Mgr. Petr Ondrůšek",
+        "JUDr. Pavla Šimková"
+      ],
+      "source": 6,
+      "description": "Místní části samotného Uherského Hradiště mají různá pravidla; nelze odhadnout bez místní části.",
+      "status": "pouze evidence rozvrhu"
+    },
+    {
+      "id": "Vyškov",
+      "region": "Jihomoravský, Vysočina a Zlínský",
+      "method": "Obec + parita dne úmrtí",
+      "rule": {
+        "type": "city_death_parity",
+        "city": "Vyškov",
+        "special31": [
+          1,
+          3,
+          8,
+          12
+        ]
+      },
+      "notaries": [
+        "Mgr. Jiří Hron",
+        "JUDr. Lucie Kavanová",
+        "JUDr. Blanka Lotreková",
+        "Mgr. Filip Schwarzenstein"
+      ],
+      "source": 6,
+      "description": "Vyškov a určené městské části: lichý den Mgr. Jiří Hron, sudý Mgr. Filip Schwarzenstein. Zvláštní 31. dny podle měsíce.",
+      "status": "částečné pokrytí"
+    },
+    {
+      "id": "Zlín",
+      "region": "Jihomoravský, Vysočina a Zlínský",
+      "method": "Postup po dnech úmrtí v roce",
+      "rule": {
+        "type": "death_cycle",
+        "cycle": 6
+      },
+      "notaries": [
+        "JUDr. Eva Dufková",
+        "Mgr. Markéta Jiříčková",
+        "JUDr. Helena Juráková",
+        "Mgr. Tereza Melzerová",
+        "Mgr. Monika Polášková",
+        "JUDr. Lenka Řezáčová"
+      ],
+      "source": 6,
+      "description": "Od 1. ledna do 31. prosince 2026 souvislý šestidenní cyklus.",
+      "status": "ověřený přepis"
+    },
+    {
+      "id": "Znojmo",
+      "region": "Jihomoravský, Vysočina a Zlínský",
+      "method": "Obec + kalendářní týden úmrtí",
+      "rule": {
+        "type": "city_week_cycle",
+        "city": "Znojmo",
+        "cycle": 4,
+        "city_extra": "Dobšice|Nový Šaldorf-Sedlešovice|Suchohrdly"
+      },
+      "notaries": [
+        "Mgr. Pavel Čvanda",
+        "Mgr. Jiří Horák",
+        "JUDr. Zuzana Kellová",
+        "Mgr. Martina Řehková"
+      ],
+      "source": 6,
+      "description": "Město Znojmo, Dobšice, Nový Šaldorf-Sedlešovice a Suchohrdly se dělí dle kalendářního týdne úmrtí; ostatní obce územně.",
+      "status": "částečné pokrytí"
+    },
+    {
+      "id": "Žďár nad Sázavou",
+      "region": "Jihomoravský, Vysočina a Zlínský",
+      "method": "Obec + den úmrtí",
+      "rule": {
+        "type": "source_only"
+      },
+      "notaries": [
+        "Mgr. Patrik Luběna",
+        "JUDr. Jana Trutnová",
+        "JUDr. Eva Turinská",
+        "Mgr. Eva Vinopalová"
+      ],
+      "source": 6,
+      "description": "Město Žďár nad Sázavou se dělí podle dne úmrtí, ostatní obce územně.",
+      "status": "pouze evidence rozvrhu"
+    },
+    {
+      "id": "Frýdek-Místek",
+      "region": "Moravskoslezský a Olomoucký",
+      "method": "Obec + den úmrtí",
+      "rule": {
+        "type": "frydek_2026",
+        "trinec": "Třinec|Jablunkov|Vendryně|Ropice|Mosty u Jablunkova|Hrádek|Nýdek|Košařiska|Milíkov|Písek|Bystřice|Hrčava|Návsí|Bukovec|Dolní Lomná|Horní Lomná|Bocanovice",
+        "frydlant": "Frýdlant nad Ostravicí|Bílá|Staré Hamry|Janovice|Malenovice|Pstruží|Čeladná|Kunčice pod Ondřejníkem|Metylovice|Ostravice|Pržno|Baška|Lhotka"
+      },
+      "notaries": [
+        "JUDr. Ivo Kuchařík",
+        "JUDr. Jana Matýsková",
+        "Mgr. Petra Brücknerová",
+        "Mgr. Karel Volný",
+        "Mgr. Ing. Lucie Bártová",
+        "Mgr. Vojtěch Novobilský",
+        "JUDr. Jana Šebestová",
+        "Mgr. Šárka Otipková"
+      ],
+      "source": 19,
+      "description": "Třinecko a Jablunkovsko mají střídání sudé/liché dny; Frýdlantsko je územní obvod Mgr. Petry Brücknerové; zbylé území má pětidenní cyklus se zvláštními 31. dny. Zkontrolujte místní části ve zdrojovém PDF.",
+      "status": "ověřený samostatný rozvrh 2026"
+    },
+    {
+      "id": "Jeseník",
+      "region": "Moravskoslezský a Olomoucký",
+      "method": "Veškeré nové pozůstalosti jednomu notáři",
+      "rule": {
+        "type": "single_notary"
+      },
+      "notaries": [
+        "Mgr. Dita Krátká"
+      ],
+      "source": 25,
+      "description": "Celý obvod OS Jeseník – notářka Mgr. Dita Krátká. Ve specifických případech může nastat zastoupení či výměna soudem.",
+      "status": "ověřený samostatný rozvrh 2026"
+    },
+    {
+      "id": "Karviná",
+      "region": "Moravskoslezský a Olomoucký",
+      "method": "Obec / místní část + den úmrtí",
+      "rule": {
+        "type": "karvina_2026",
+        "havirov": "Havířov-Město|Bludovice|Suchá|Šumbark|Datyně|Těrlicko|Petřvald|Horní Suchá",
+        "karvina": "Karviná|Dětmarovice|Petrovice u Karviné",
+        "fixed": [
+          {
+            "name": "JUDr. Eva Cechlová",
+            "places": "Bohumín|Rychvald|Dolní Lutyně|Skřečoň|Pudlov|Záblatí"
+          },
+          {
+            "name": "JUDr. Radim Duda",
+            "places": "Orlová|Doubrava|Horní Lutyně"
+          },
+          {
+            "name": "JUDr. Lenka Chodurová",
+            "places": "Český Těšín|Chotěbuz|Albrechtice|Stonava|Koňakov|Mistřovice"
+          }
+        ]
+      },
+      "notaries": [
+        "Mgr. Radka Pětvalská",
+        "JUDr. Barbora Škopková",
+        "Mgr. Petra Vlčková",
+        "Mgr. Karolína Stejskalová",
+        "JUDr. Marcela Veberová",
+        "JUDr. Eva Cechlová",
+        "JUDr. Radim Duda",
+        "JUDr. Lenka Chodurová"
+      ],
+      "source": 20,
+      "description": "Plný rozvrh 2026 obsahuje výjimky pro dny 28.–31. v Havířově; výpočet je tam omezen na dny 1.–27. (ostatní data výslovně označena k ověření). Pro Karvinou a Dětmarovice 31. den též výjimka; místní části obcí se mohou lišit.",
+      "status": "částečné pokrytí"
+    },
+    {
+      "id": "Nový Jičín",
+      "region": "Moravskoslezský a Olomoucký",
+      "method": "Obec + den úmrtí pro Nový Jičín",
+      "rule": {
+        "type": "novy_jicin_2026",
+        "city": "Nový Jičín|Nový Jičín - Loučka|Loučka|Libhošť|Kojetín|Šenov u Nového Jičína|Kunín",
+        "groups": [
+          {
+            "name": "Mgr. Tomáš Malota",
+            "places": "Studénka|Butovice|Pustějov|Jistebník|Fulnek|Jerlochovice|Dolejší Kunčice|Vlkovice|Vrchy|Děrné|Lukavec|Jílovec|Pohořílky|Kujavy|Hladké Životice|Stachovice|Jestřabí|Nová Horka|Albrechtičky"
+          },
+          {
+            "name": "Mgr. Jarmila Chvistková",
+            "places": "Odry|Véska|Loučky u Oder|Vítovka|Tošovice|Heřmanice u Oder|Kamenka|Spálov|Luboměř|Klokočůvek|Heřmánky|Jakubčovice nad Odrou|Vražné|Hynčice|Emauzy|Dobešov|Hrabětice|Mankovice|Pohoř|Veselí|Suchdol nad Odrou|Kletné|Jeseník nad Odrou|Blahutovice|Polouvsí|Bernartice nad Odrou|Hůrka|Starý Jičín|Vlčnov|Jičina|Janovice|Petřkovice|Palačov|Starojická Lhota|Dub|Heřmanice u Polomi|Štramberk|Sedlnice|Bartošovice|Hukovice|Bludovice|Životice u Nového Jičína|Závišice|Rybí|Žilina u Nového Jičína"
+          },
+          {
+            "name": "Mgr. Kamila Mirafuentes",
+            "places": "Tichá|Lichnov|Bordovice|Veřovice|Ženklava|Mořkov|Frenštát pod Radhoštěm|Trojanovice"
+          },
+          {
+            "name": "Mgr. Filip Vencel",
+            "places": "Příbor|Klokočov|Prchalov|Hájov|Mošnov|Kateřinice|Trnávka|Petřvald|Petřvaldík|Skotnice|Kopřivnice|Mniší|Vlčovice|Štikovec|Lubina"
+          },
+          {
+            "name": "Mgr. Svatava Trčková",
+            "places": "Bílovec|Výškovice|Slatina|Ohrada|Stará Ves|Bravinné|Bílov|Tísek|Velké Albrechtice|Lubojaty|Bítov|Bravantice|Nový Svět|Klimkovice|Josefovice|Václavovice|Hýlov|Vřesina|Zbyslavice|Olbramice|Hodslavice|Hostašovice|Lhotka|Straník"
+          }
+        ]
+      },
+      "notaries": [
+        "Mgr. Jarmila Chvistková",
+        "Mgr. Tomáš Malota",
+        "Mgr. Kamila Mirafuentes",
+        "Mgr. Svatava Trčková",
+        "Mgr. Filip Vencel"
+      ],
+      "source": 26,
+      "description": "Nový Jičín a výslovně uvedené okolní části: 1.–10. Trčková, 11.–20. Malota, 21.–31. Mirafuentes. Ostatní obce podle místního seznamu; pozor na části obcí, které jsou zde uvedeny samostatně.",
+      "status": "ověřený samostatný rozvrh 2026"
+    },
+    {
+      "id": "Olomouc",
+      "region": "Moravskoslezský a Olomoucký",
+      "method": "Týden úmrtí, osmitýdenní cyklus",
+      "rule": {
+        "type": "olomouc_2026"
+      },
+      "notaries": [
+        "Mgr. Andrea Polášková",
+        "JUDr. Hana Orletová",
+        "JUDr. Irena Bischofová",
+        "Mgr. Pavel Huták",
+        "Mgr. Michal Špaček",
+        "Mgr. Ondřej Krejčovský",
+        "Mgr. Lucie Holubová",
+        "JUDr. Iveta Vankátová, Ph.D."
+      ],
+      "source": 27,
+      "description": "Týden 1 začíná 1. 1. 2026, dále osmitýdenní cyklus. Rozvrh je publikován jako změna původního rozvrhu 2026; u raných nápadů před změnou ověřte, která verze platila. Dodatečné projednání zpravidla původnímu notáři.",
+      "status": "ověřený přepis s výhradou data nápadu"
+    },
+    {
+      "id": "Opava",
+      "region": "Moravskoslezský a Olomoucký",
+      "method": "Den v týdnu úmrtí",
+      "rule": {
+        "type": "weekday_opava"
+      },
+      "notaries": [
+        "Mgr. et Mgr. Michaela Fajová",
+        "JUDr. Ing. Vanda Kavanová",
+        "JUDr. Jaromír Kožiak, Ph.D.",
+        "JUDr. Petr Filip Schindler",
+        "JUDr. Hana Staníčková",
+        "JUDr. Naděžda Zaděláková",
+        "JUDr. Ivan Zimola"
+      ],
+      "source": 21,
+      "description": "Upravený rozvrh 2026: pondělí Staníčková, úterý Zaděláková, středa Zimola, čtvrtek Fajová, pátek Kavanová, sobota Kožiak a neděle Schindler. Dodatečná dědictví se přidělují původnímu komisaři.",
+      "status": "ověřený samostatný rozvrh 2026"
+    },
+    {
+      "id": "Ostrava",
+      "region": "Moravskoslezský a Olomoucký",
+      "method": "Den úmrtí, zvláštní cyklus 28.–31.",
+      "rule": {
+        "type": "ostrava_2026"
+      },
+      "notaries": [
+        "Mgr. Jan Mihálik",
+        "Mgr. Hana Parobková",
+        "JUDr. Martina Niklová",
+        "JUDr. Josef Kawulok",
+        "JUDr. Kateřina Levit",
+        "JUDr. Miluše Rabasová",
+        "JUDr. Iveta Sladčíková",
+        "Mgr. Eva Studentová",
+        "Mgr. Petra Dombrovská"
+      ],
+      "source": 29,
+      "description": "Podle dne úmrtí: 1./10./19. Mihálik až 9./18./27. Dombrovská. Dny 28.–31. jdou nepřerušeným devítimístným cyklem přes měsíce roku 2026 (výslovně podle tabulky). Dodatečné řízení původnímu notáři.",
+      "status": "ověřený samostatný rozvrh 2026"
+    },
+    {
+      "id": "Přerov",
+      "region": "Moravskoslezský a Olomoucký",
+      "method": "Část obce + datum narození",
+      "rule": {
+        "type": "prerov_2026",
+        "fixed": [
+          {
+            "name": "Mgr. Alexandra Geroldová",
+            "places": "Bohuslávky|Buk|Dolní Újezd|Skoky|Staměřice|Grymov|Hlinsko|Jezernice|Kladníky|Lazníčky|Lazníky|Svrčov|Lhota u Lipníka nad Bečvou|Loučka|Podhoří|Nové Dvory|Trnávka|Oldřichov|Oprostovice|Osek nad Bečvou|Radotín|Radslavice|Radvanice|Sobíšky|Sušice|Tučín|Veselíčko|Tupec|Výkleky"
+          },
+          {
+            "name": "Mgr. Milada Bartošová",
+            "places": "Bezuchov|Beňov|Čechy|Domaželice|Dobřice|Dřevohostice|Horní Moštěnice|Hradčany|Lipová|Křtomil|Líšná|Nahošovice|Pavlovice u Přerova|Prusy|Prusinky|Přerov VI – Újezdec|Podolí|Přestavlky|Radkova Lhota|Radkovy|Říkovice|Stará Ves|Šišma|Turovice|Želatovice"
+          },
+          {
+            "name": "JUDr. Lucie Melzerová, Ph.D.",
+            "places": "Býškovice|Černotín|Hluzov|Dolní Nětčice|Drahotuše|Drahotuše – Rybáře|Horní Nětčice|Horní Těšice|Dolní Těšice|Horní Újezd|Malhotice|Opatovice|Paršovice|Provodovice|Rakova|Rouské|Soběchleby|Skalička|Teplice nad Bečvou|Týn nad Bečvou|Ústí|Valšovice|Všechovice|Zámrsky|Žákovice"
+          },
+          {
+            "name": "Mgr. Viktor Audy",
+            "places": "Brodek u Přerova|Luková|Citov|Císařov|Přerov VII – Čekyně|Čelechovice|Přerov V – Dluhonice|Kokory|Přerov IV – Kozlovice|Lhotka u Přerova|Přerov IX – Lýsky|Nelešovice|Přerov XIII – Penčice|Přerov X – Popovice|Prosenice|Rokytnice|Přerov XI – Vinary|Zábeštní Lhota|Žeravice"
+          },
+          {
+            "name": "Mgr. Alena Vraníková",
+            "places": "Bělotín|Božkov|Kunčice|Lučice|Nejdek|Hrabůvka|Hustopeče nad Bečvou|Hranické Loučky|Vysoká|Jindřichov|Klokočí|Hranice II – Lhotka|Milenov|Milotice nad Bečvou|Olšovec|Partutovice|Polom|Poruba|Potštát|Kovářov|Kyžlířov|Lipná|Luboměř pod Strážnou|Radíkov|Slavíč|Středolesí|Střítež nad Ludinou|Špičky|Uhřínov|Velká u Hranic"
+          },
+          {
+            "name": "Mgr. Hana Lexová",
+            "places": "Bochoř|Kojetín|Křenovice|Lobodice|Měrovice nad Hanou|Oplocany|Polkovice|Přerov VIII – Henčlov|Přerov III – Lověšice|Stříbrnice|Tovačov|Troubky|Uhřičice|Věžky|Vlkoš"
+          }
+        ]
+      },
+      "notaries": [
+        "Mgr. Viktor Audy",
+        "Mgr. Milada Bartošová",
+        "Mgr. Alexandra Geroldová",
+        "Mgr. Hana Lexová",
+        "JUDr. Lucie Melzerová, Ph.D.",
+        "Mgr. Alena Vraníková"
+      ],
+      "source": 28,
+      "description": "Územní části Přerov I-Město a Přerov II-Předmostí podle narození (7 intervalů); Hranice I-Město a Lipník I-Město vlastní cyklus data narození. Jiné obce a části podle územního seznamu. Obec Přerov bez určení části není dostatečná.",
+      "status": "částečné pokrytí místních částí"
+    },
+    {
+      "id": "Šumperk",
+      "region": "Moravskoslezský a Olomoucký",
+      "method": "Postup po dnech úmrtí v roce",
+      "rule": {
+        "type": "death_cycle",
+        "cycle": 5
+      },
+      "notaries": [
+        "Mgr. Táňa Iliadu",
+        "Mgr. Martina Müllerová Zelená",
+        "Mgr. Hana Mátlová",
+        "Mgr. Andrea Salvová",
+        "Mgr. Magdalena Iliadisová"
+      ],
+      "source": 22,
+      "description": "Pětidenní cyklus začíná 1. ledna 2026; v dalším roce pořadí nepřerušovat, pro databázi ale používáme pouze data roku 2026.",
+      "status": "ověřený samostatný rozvrh 2026"
+    },
+    {
+      "id": "Bruntál",
+      "region": "Moravskoslezský a Olomoucký",
+      "method": "Obec + den úmrtí + změna 1. 5.",
+      "rule": {
+        "type": "bruntal_2026",
+        "krnov": "Bohušov|Býkov-Láryšov|Dívčí Hrad|Heřmanovice|Hlinka|Hošťálkovy|Janov|Jindřichov|Krnov|Liptaň|Osoblaha|Petrovice|Rusín|Slezské Pavlovice|Slezské Rudoltice|Třemešná|Úvalno|Vysoká",
+        "alternation": "Andělská Hora|Bílčice|Brantice|Bruntál|Břidličná|Čaková|Dětřichov nad Bystřicí|Dlouhá Stráň|Dolní Moravice|Dvorce|Holčovice|Horní Benešov|Horní Město|Horní Životice|Huzová|Jiříkov|Karlova Studánka|Karlovice|Krasov|Křišťanovice|Leskovec nad Moravicí|Lichnov|Lomnice|Ludvíkov|Město Albrechtice|Malá Morávka|Malá Štáhle|Mezina|Milotice nad Opavou|Moravskoslezský Kočov|Moravský Beroun|Norberčany|Nová Pláň|Nové Heřminovy|Oborná|Razová|Roudno|Rudná pod Pradědem|Rýmařov|Ryžoviště|Sosnová|Stará Ves|Staré Heřminovy|Staré Město|Svobodné Heřmanice|Světlá Hora|Široká Niva|Tvrdkov|Václavov|Valšov|Velká Štáhle|Vrbno pod Pradědem|Zátor"
+      },
+      "notaries": [
+        "Mgr. Romana Tatarčíková",
+        "Mgr. Ivana Valtová",
+        "Mgr. Silvie Dohnalová, LL.M."
+      ],
+      "source": 23,
+      "description": "Krnovsko Mgr. Romana Tatarčíková. Ostatní vymezené obce: do 30. 4. zvláštní dny Tatarčíková/Valtová, od 1. 5. 2026 lichý den Dohnalová, sudý Valtová. Pro volbu časové verze je vhodné datum nápadu.",
+      "status": "podmíněno datem nápadu",
+      "amendment": [
+        24
+      ]
+    },
+    {
+      "id": "Vsetín",
+      "region": "Moravskoslezský a Olomoucký",
+      "method": "Obec pobytu + změna od 3. 3. 2026",
+      "rule": {
+        "type": "source_only"
+      },
+      "notaries": [
+        "JUDr. Kateřina Brejlová",
+        "JUDr. Milan Cellar",
+        "Mgr. Ing. Michal Jadrníček",
+        "JUDr. Alžběta Šulová"
+      ],
+      "source": 7,
+      "description": "Dle dodatku č. 2 zastupuje JUDr. Milan Cellar uvolněný úřad po JUDr. Jaroslavu Haratickém od 3. 3. 2026. Pravidla jsou územně kombinovaná.",
+      "status": "pouze evidence dodatku",
+      "amendment": [
+        15
+      ]
+    }
+  ]
+}
