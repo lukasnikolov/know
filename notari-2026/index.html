@@ -10,7 +10,7 @@
 <section class="kpis"><div class="kpi"><strong id="numCourts">–</strong><span>Soudních obvodů v rejstříku</span></div><div class="kpi"><strong id="numRules">–</strong><span>Obvodů s algoritmem (část jen vybraná města)</span></div><div class="kpi"><strong id="numSources">–</strong><span>Rozvrhů a dodatků v odkazovníku</span></div></section>
 <section class="section"><h2>Vyhledat notáře</h2><p class="subtitle">Zadávejte pouze nezbytné údaje. Jméno zemřelého není potřeba.</p>
 <div class="formgrid"><div><label for="place">Obec posledního trvalého pobytu zůstavitele</label><input id="place" type="text" placeholder="Např. Trutnov, Vendolí, Beroun…" autocomplete="off"><span id="placeHint" class="help" role="status"></span><span class="help">Pokud má obec více shod nebo není v databázi, zvolte soud ručně.</span></div>
-<div><label for="court">Příslušný okresní soud</label><select id="court"></select><span class="help">Pro obce mimo přepsané územní seznamy soud nelze určit automaticky.</span></div>
+<div><label for="court">Příslušný okresní soud</label><select id="court"></select><span class="help">Začněte obcí. Pokud ji systém dokáže jednoznačně přiřadit k soudu, soud vybere sám. U shodných názvů nebo neznámých obcí jej zvolte ručně.</span></div>
 <div><label for="death">Datum úmrtí</label><input id="death" type="date"><span class="help">Vyplňte tam, kde soud rozděluje podle úmrtí.</span></div>
 <div><label for="birth">Datum narození zůstavitele</label><input id="birth" type="date"><span class="help">Pro soudy přidělující podle měsíce/dne narození.</span></div>
 <div><label for="arrival">Datum nápadu / pověření soudem (je-li známo)</label><input id="arrival" type="date" min="2026-01-01" max="2026-12-31"><span class="help">Důležité při změnách rozvrhu v průběhu roku 2026 (např. Chrudim, Plzeň-sever).</span></div></div>
@@ -196,7 +196,25 @@ function engine(c,place,death,birth,arrival){
   return maybe('Pravidlo není zatím strojově přepsáno.');
 }
 function putOptions(){const s=byId('court');s.innerHTML='<option value="">— Vyberte soud / nebo nejprve napište obec —</option>'+courts.map((c,i)=>`<option value="${i}">${esc(c.id)} (${esc(c.region)})</option>`).join('');}
-function placeCourtSuggestions(place){if(!place)return[];let matches=new Set();courts.forEach((c,i)=>{if(norm(c.id)===norm(place))matches.add(i);let t=c.rule.type;if(t==='town_groups'||t==='trutnov'||t==='plzen_north'){(c.rule.groups||[]).forEach(g=>{if(hit(g.places,place))matches.add(i);});}if(t==='louny'){c.rule.groups.forEach(g=>{if(hit(g,place))matches.add(i)});}if(t==='decin'&&hit(c.rule.special,place))matches.add(i);});return [...matches];}
+function placeCourtSuggestions(place){
+  if(!place)return[];
+  const matches=new Set();
+  const add=(i,list)=>{if(typeof list==='string'&&hit(list,place))matches.add(i)};
+  courts.forEach((c,i)=>{
+    if(norm(c.id)===norm(place))matches.add(i);
+    const r=c.rule||{}, t=r.type;
+    if(['town_groups','trutnov','plzen_north','novy_jicin_2026','prerov_2026','karvina_2026'].includes(t)){
+      (r.groups||[]).forEach(g=>add(i,g.places));
+      (r.fixed||[]).forEach(g=>add(i,g.places));
+    }
+    if(t==='louny')(r.groups||[]).forEach(g=>add(i,g));
+    if(t==='decin')add(i,r.special);
+    if(t==='bruntal_2026'){add(i,r.krnov);add(i,r.alternation)}
+    if(t==='karvina_2026'){add(i,r.havirov);add(i,r.karvina)}
+    if(t==='novy_jicin_2026')add(i,r.city);
+  });
+  return [...matches];
+}
 function helpPlace(){const p=byId('place').value,ms=placeCourtSuggestions(p);byId('placeHint').textContent=ms.length===1?`Obec nalezena v rozvrhu: okresní soud ${courts[ms[0]].id}.`:ms.length>1?`Obec má více možných shod (${ms.map(i=>courts[i].id).join(', ')}). Vyberte soud ručně.`:(p?'Obec není v automatickém rejstříku; zvolte příslušný soud ručně.':'');}
 function showResult(){const place=byId('place').value.trim();let idx=byId('court').value;if(idx===''){const ms=placeCourtSuggestions(place);if(ms.length===1){idx=String(ms[0]);byId('court').value=idx;}else{renderResult(maybe(ms.length>1?'Více soudních obvodů odpovídá zadané obci. Vyberte správný okresní soud.':'Vyberte okresní soud. Z samotné obce, která není v rejstříku, soud automaticky neodhadujeme.'));return;}}
    const c=courts[Number(idx)],death=parseISO(byId('death').value),birth=parseISO(byId('birth').value),arrival=parseISO(byId('arrival').value);
