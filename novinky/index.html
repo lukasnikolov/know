@@ -1,163 +1,623 @@
 <!doctype html>
 <html lang="cs">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light">
-<title>Novinky – Znalostka EPET / Dobrá Energie</title>
-<style>
-:root{--green:#94c11f;--green-deep:#607e10;--violet:#9362d6;--ink:#1e293b;--muted:#64748b;--line:#e2e8f0;--bg:#f6f9f4}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:linear-gradient(180deg,#f0f8e5 0,#f7f9fa 290px,#fff 600px);color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
-button,input{font:inherit}
-a{color:var(--green-deep);text-underline-offset:3px}
-a:hover{color:#42570c}
-.shell{max-width:1160px;margin:auto;padding:24px 20px 42px}
-.hero{position:relative;overflow:hidden;border-radius:23px;background:linear-gradient(115deg,#608814,#91c01f 70%,#aed54d);color:#fff;padding:29px 32px 30px;box-shadow:0 12px 30px rgba(93,132,23,.13)}
-.hero:after{content:"";position:absolute;width:225px;height:225px;right:-45px;top:-128px;border:38px solid rgba(255,255,255,.12);border-radius:50%}
-.eyebrow{margin:0 0 8px;letter-spacing:.13em;text-transform:uppercase;font-size:11px;font-weight:800;color:#eff7dd}
-h1{font-size:clamp(25px,4vw,36px);letter-spacing:-.035em;line-height:1.15;margin:0}
-.hero p:last-child{margin:11px 0 0;max-width:630px;color:#f5faec;font-size:14px}
-.controls{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;margin:19px 0 15px;box-shadow:0 6px 22px rgba(31,41,51,.04)}
-.controls-head{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}
-.controls-head strong{font-size:16px}
-.muted,.meta{color:var(--muted);font-size:12px}
-.search-row{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
-.search{height:43px;min-width:220px;flex:1;border:1px solid #cdd9df;border-radius:11px;padding:0 14px;background:#fff;color:var(--ink);outline:none}
-.search:focus{border-color:#8db924;box-shadow:0 0 0 3px #e5f2c4}
-.refresh,.more{height:43px;border-radius:11px;border:1px solid #ccdfae;background:#eff7e0;color:#405b12;padding:0 16px;font-weight:750;cursor:pointer}
-.refresh:hover,.more:hover{background:#dfeecc}
-.filter-wrap{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}
-.filter{cursor:pointer;border:1px solid #dbe4eb;border-radius:99px;padding:6px 12px;background:#fff;color:#526374;font-size:12px;font-weight:650}
-.filter.active{background:#6a9019;border-color:#6a9019;color:#fff}
-.status{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:9px;margin:0 1px 15px}
-.status strong{font-size:13px}
-.items{display:grid;gap:12px}
-.article{background:#fff;border:1px solid #e0e8ed;border-radius:17px;box-shadow:0 7px 24px rgba(26,42,54,.045);overflow:hidden}
-.article[open]{border-color:#bbd795;box-shadow:0 10px 26px rgba(86,120,18,.09)}
-.article summary{list-style:none;cursor:pointer;padding:18px 21px;display:block}
-.article summary::-webkit-details-marker{display:none}
-.title-row{display:flex;align-items:center;justify-content:space-between;gap:14px}
-.title-row strong{display:block;font-size:16px;line-height:1.35;letter-spacing:-.01em}
-.chevron{border-right:2px solid #8b9a9d;border-bottom:2px solid #8b9a9d;width:9px;height:9px;transform:rotate(45deg);flex:0 0 auto;margin-right:7px;transition:transform .15s}
-.article[open] .chevron{transform:rotate(225deg)}
-.tagrow{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0}
-.tag{background:#f1f5eb;color:#587322;border-radius:6px;padding:3px 8px;font-size:11px;font-weight:700}
-.tag-new{background:#fff2d5;color:#995b00}
-.item-meta{margin:6px 0 0;color:var(--muted);font-size:12px}
-.article-content{border-top:1px solid #eaf0e5;padding:17px 22px 21px;overflow-wrap:anywhere}
-.article-content>*:first-child{margin-top:0}
-.article-content>*:last-child{margin-bottom:0}
-.article-content p,.article-content li{font-size:14px;line-height:1.7}
-.article-content h2{font-size:18px;margin:19px 0 8px}
-.article-content h3{font-size:16px;margin:18px 0 8px}
-.article-content ul,.article-content ol{padding-left:24px}
-.article-content li+li{margin-top:5px}
-.article-content a{font-weight:650}
-.article-content code{overflow-wrap:anywhere}
-.actions{text-align:center;margin-top:17px}
-.more{min-width:220px}
-.empty,.error{background:#fff;border:1px dashed #d3ddd9;border-radius:16px;padding:25px;text-align:center;color:var(--muted)}
-.error{border-color:#f4b5ad;color:#a12218;background:#fff8f7}
-footer{text-align:center;font-size:12px;color:#74828c;margin-top:28px}
-a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #a3cb4a;outline-offset:3px}
-@media(max-width:600px){.shell{padding:12px 10px 30px}.hero{padding:24px 20px;border-radius:17px}.controls{padding:15px}.article summary{padding:15px}.article-content{padding:15px}.refresh{width:100%}.title-row strong{font-size:15px}}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Novinky – Znalostní báze EPET</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@latest/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/quill-emoji@0.2.0/dist/quill-emoji.css" rel="stylesheet">
+
+  <!-- Styl samostatně na GitHubu – automatické obnovení při otevření stránky. -->
+  <script>
+    (function () {
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = './style.css?v=' + Date.now();
+      document.head.appendChild(link);
+    })();
+  </script>
 </head>
+
 <body>
-<main class="shell">
-<header class="hero">
-<p class="eyebrow">Znalostní báze • Aktuality</p>
-<h1>Novinky a aktualizace</h1>
-<p>Pracovní postupy, metodiky, šablony a školení na jednom místě. Aktualizace se načítají z repozitáře Znalostky.</p>
-</header>
-<section class="controls" aria-label="Vyhledávání a filtry">
-<div class="controls-head"><strong>Přehled aktualizací</strong><span class="muted" id="updated">Načítám novinky…</span></div>
-<div class="search-row"><input class="search" id="search" type="search" placeholder="Vyhledat novinku nebo téma…" aria-label="Hledat v aktualizacích"><button class="refresh" id="refresh" type="button">Obnovit novinky</button></div>
-<div class="filter-wrap" id="filters" aria-label="Filtrovat podle tématu"></div>
-</section>
-<div class="status"><strong id="count" aria-live="polite">Načítám…</strong><span class="muted">Kliknutím na novinku zobrazíš podrobnosti</span></div>
-<section class="items" id="items" aria-live="polite"><p class="empty">Načítám nejnovější aktualizace…</p></section>
-<div class="actions"><button class="more" id="more" type="button" hidden>Zobrazit další aktualizace</button></div>
-<footer>EPET / Dobrá Energie • Znalostka • Zdroj: GitHub <a href="https://github.com/lukasnikolov/know/blob/main/novinky.js" target="_blank" rel="noopener noreferrer">novinky.js</a></footer>
-</main>
-<script>
-(function(){
-"use strict";
-var categoryNames={manualy:"Manuály",sablony:"Šablony",finance:"Finance",fakturace:"Fakturace",smlouvy:"Smlouvy",ceniky:"Ceníky",nabidky:"Nabídky a retence",video:"Videa"};
-var all=[],active="all",query="",shown=8;
-var box=document.getElementById("items");
-function cleanText(s){return String(s==null?"":s).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLocaleLowerCase("cs-CZ")}
-function prettyDate(s){var d=new Date(String(s||"")+"T12:00:00");return isNaN(d.getTime())?String(s||""):new Intl.DateTimeFormat("cs-CZ",{day:"numeric",month:"long",year:"numeric"}).format(d)}
-function isRecent(s){var t=new Date(String(s||"")+"T12:00:00").getTime();return Number.isFinite(t)&&Date.now()-t>=0&&Date.now()-t<31*86400000}
-function node(name,cls,txt){var x=document.createElement(name);if(cls)x.className=cls;if(txt!=null)x.textContent=txt;return x}
-function label(c){return categoryNames[c]||c}
-function safeHtml(raw){
- var template=document.createElement("template");template.innerHTML=String(raw||"");
- Array.from(template.content.querySelectorAll("*")).forEach(function(el){
-  if(["SCRIPT","STYLE","IFRAME","OBJECT","EMBED","FORM","INPUT","BUTTON","SVG","LINK","META","BASE"].includes(el.tagName)){el.remove();return}
-  Array.from(el.attributes).forEach(function(attr){
-   if(el.tagName==="A"&&attr.name==="href"){if(!/^https?:\/\//i.test(attr.value)&&!/^#/.test(attr.value))el.removeAttribute("href")}
-   else if(attr.name==="class"&&/^ql-indent-[1-5]$/.test(attr.value)){return}
-   else el.removeAttribute(attr.name)
+  <canvas id="snow-canvas"></canvas>
+
+  <div class="floating-contacts">
+      <div class="floating-tab" title="Zobrazit rychlé kontakty">
+          <i class="bi bi-telephone-outbound"></i>
+      </div>
+      
+      <h6 class="fw-bold mb-3 text-muted text-uppercase text-center" style="font-size:0.75rem; letter-spacing: 1px;">
+          Rychlé kontakty
+      </h6>
+      
+      <div class="contact-group-v epet">
+          <div class="fw-bold mb-3"><span class="brand-epet contact-brand">EPET</span></div>
+          <div class="contact-item-v"><i class="bi bi-telephone-fill text-success"></i> 255 707 099</div>
+          <div class="contact-item-v"><i class="bi bi-envelope-at-fill text-success"></i> info@epet.cz</div>
+          <div class="contact-item-v mt-2">
+              <i class="bi bi-person-fill text-success mt-1"></i> 
+              <div>
+                  255 707 098 <span class="text-indiv">(INDIV)</span>
+                  <div class="mt-1"><span class="badge border text-muted" style="background: #ffffff; font-size: 0.7rem; letter-spacing: 0.5px;">Při přepojení používat tento kód. <strong>3003</strong></span></div>
+              </div>
+          </div>
+          <div class="contact-item-v mt-3 pt-3 border-top">
+              <i class="bi bi-building-fill-slash text-danger mt-1"></i> 
+              <div>
+                  255 707 097 
+                  <div class="mt-1"><span class="text-danger-custom d-inline-block">VELKOODBĚR – NELZE PŘEPOJIT!</span></div>
+              </div>
+          </div>
+      </div>
+
+      <div class="contact-group-v de">
+          <div class="fw-bold mb-3"><span class="brand-de contact-brand">DE</span></div>
+          <div class="contact-item-v"><i class="bi bi-telephone-fill text-warning"></i> 226 284 283</div>
+          <div class="contact-item-v"><i class="bi bi-envelope-at-fill text-warning"></i> info@dobra-energie.eu</div>
+      </div>
+  </div>
+  <div class="container mb-2">
+    <div id="adminAuth" class="text-center shadow-sm">
+        <p class="helper">Generátor připraví zápis novinky ke zkopírování. Neprovádí změny na GitHubu.</p>
+        <button class="btn btn-sm btn-dark" onclick="checkLogin()">Otevřít generátor novinek</button>
+    </div>
+
+    <div id="adminEditor">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h4 class="fw-bold m-0">Nová novinka</h4>
+            <button class="btn btn-sm btn-outline-danger" onclick="logout()">Zavřít</button>
+        </div>
+        <div class="row g-3">
+            <div class="col-md-7">
+                <input type="text" id="admTitle" class="form-control" placeholder="Nadpis novinky">
+            </div>
+         <div class="col-md-3">
+    <label class="form-label small fw-bold">Ikona novinky</label>
+    <select id="admIcon" class="form-select">
+        <optgroup label="Energetika">
+            <option value="bi bi-lightning-charge">⚡ Elektřina (Výboj)</option>
+            <option value="bi bi-fuel-pump-diesel">🔥 Plyn / Palivo</option>
+            <option value="bi bi-sun">☀️ FVE (Slunce)</option>
+            <option value="bi bi-house-gear">🏠 Tepelné čerpadlo / Tech. domu</option>
+            <option value="bi bi-plug">🔌 Připojení / OM</option>
+            <option value="bi bi-speedometer">⏲️ Elektroměr / Plynoměr</option>
+            <option value="bi bi-thermometer-half">🌡️ Vytápění / Teplota</option>
+        </optgroup>
+
+        <optgroup label="Média a Video">
+            <option value="bi bi-camera-video">🎥 Video návod (Kamera)</option>
+            <option value="bi bi-play-circle">▶️ Přehrát (Video)</option>
+            <option value="bi bi-mic">🎙️ Zvukový záznam / Podcast</option>
+            <option value="bi bi-volume-up">🔊 Hlasitost / Audio</option>
+            <option value="bi bi-tv">📺 HDO / TV vysílání</option>
+            <option value="bi bi-youtube">🎬 YouTube / Video kanál</option>
+        </optgroup>
+
+        <optgroup label="Korespondence">
+            <option value="bi bi-envelope">✉️ E-mail (Obálka)</option>
+            <option value="bi bi-envelope-paper">📝 Dopis / Pošta</option>
+            <option value="bi bi-send">📤 Odeslaná pošta</option>
+            <option value="bi bi-mailbox">📬 Datová schránka / Schránka</option>
+            <option value="bi bi-chat-dots">💬 SMS / Chat</option>
+            <option value="bi bi-telephone">📞 Telefon / Hovory</option>
+        </optgroup>
+
+        <optgroup label="Finance a Ceníky">
+            <option value="bi bi-receipt">🧾 Fakturace / Doklad</option>
+            <option value="bi bi-tags">🏷️ Ceníky / Sazby</option>
+            <option value="bi bi-wallet2">💳 Platby / Saldo</option>
+            <option value="bi bi-piggy-bank">💰 Přeplatky / Spoření</option>
+            <option value="bi bi-graph-up-arrow">📈 Prolongace / Index</option>
+            <option value="bi bi-calculator">🧮 Výpočty / Kalkulačka</option>
+        </optgroup>
+
+        <optgroup label="Ostatní">
+            <option value="bi bi-info-circle">ℹ️ Info / Důležité</option>
+            <option value="bi bi-exclamation-triangle">⚠️ Varování / Pozor</option>
+            <option value="bi bi-file-earmark-text">📄 Manuál / Dokument</option>
+            <option value="bi bi-pencil-square">✍️ Změna / Editace</option>
+            <option value="bi bi-person-badge">🆔 Identifikace / Zákazník</option>
+            <option value="bi bi-building">🏢 SVJ / Budova</option>
+        </optgroup>
+    </select>
+</div>
+            <div class="col-md-2">
+            <select id="admColor" class="form-select">
+        <option value="success" style="color: #94c11f; font-weight: bold;">Zelená (EPET)</option>
+        <option value="primary" style="color: #0d6efd; font-weight: bold;">Modrá (Standard)</option>
+        <option value="warning" style="color: #ffc107; font-weight: bold;">Oranžová (Varování)</option>
+        <option value="danger" style="color: #dc3545; font-weight: bold;">Červená (Ceníky)</option>
+        <option value="purple" style="color: #9362d6; font-weight: bold;">Fialová (Šablony)</option>
+        <option value="info" style="color: #0dcaf0; font-weight: bold;">Tyrkysová (Video)</option>
+        <option value="dark" style="color: #212529; font-weight: bold;">Černá (Obecné)</option>
+        <option value="secondary" style="color: #6c757d; font-weight: bold;">Šedá (Archiv)</option>
+    </select>
+    </div>
+            <div class="col-12">
+                <div id="catCheckboxes" class="d-flex flex-wrap">
+                    <label class="cat-checkbox"><input type="checkbox" value="manualy"> Manuály</label>
+                    <label class="cat-checkbox"><input type="checkbox" value="sablony"> Šablony</label>
+                    <label class="cat-checkbox"><input type="checkbox" value="smlouvy"> Smlouvy</label>
+                    <label class="cat-checkbox"><input type="checkbox" value="finance"> Finance</label>
+                    <label class="cat-checkbox"><input type="checkbox" value="fakturace"> Fakturace</label>
+                    <label class="cat-checkbox"><input type="checkbox" value="nabidky"> Nabídky</label>
+                    <label class="cat-checkbox"><input type="checkbox" value="video"> Video</label>
+                </div>
+            </div>
+            <div id="editor-container"></div>
+            <button class="btn btn-success w-100 fw-bold" onclick="generateCode()">GENEROVAT KÓD</button>
+            <div id="generatedCode" class="mt-3"></div>
+        </div>
+    </div>
+  </div>
+
+  <div class="container top-nav-wrapper">
+    <div class="row align-items-center g-3">
+      <div class="col-md-2 text-center text-md-start">
+        <div class="logo-container">
+        <img src="https://i.postimg.cc/htK5cxLw/logo.png" alt="EPET Logo" class="logo-img">
+      </div></div>
+      <div class="col-md-10">
+        <div class="filter-container">
+          <input type="text" id="mainSearch" class="form-control search-input" placeholder="Rychlé hledání v novinkách...">
+          <div id="categoryFilters" class="d-flex flex-wrap justify-content-center justify-content-md-start">
+            <button class="btn btn-filter btn-vse active" onclick="filterByCategory('vše')">Vše <span class="badge" id="count-vse">0</span></button>
+            <button class="btn btn-filter btn-manualy" onclick="filterByCategory('manualy')">Manuály <span class="badge" id="count-manualy">0</span></button>
+            <button class="btn btn-filter btn-sablony" onclick="filterByCategory('sablony')">Šablony <span class="badge" id="count-sablony">0</span></button>
+            <button class="btn btn-filter btn-smlouvy" onclick="filterByCategory('smlouvy')">Smlouvy <span class="badge" id="count-smlouvy">0</span></button>
+            <button class="btn btn-filter btn-finance" onclick="filterByCategory('finance')">Finance <span class="badge" id="count-finance">0</span></button>
+            <button class="btn btn-filter btn-ceniky" onclick="filterByCategory('ceniky')">Ceníky <span class="badge" id="count-ceniky">0</span></button>
+            <button class="btn btn-filter btn-fakturace" onclick="filterByCategory('fakturace')">Fakturace <span class="badge" id="count-fakturace">0</span></button>
+            <button class="btn btn-filter btn-nabidky" onclick="filterByCategory('nabidky')">Nabídky <span class="badge" id="count-nabidky">0</span></button>
+            <button class="btn btn-filter btn-video" onclick="filterByCategory('video')">Video <span class="badge" id="count-video">0</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="container">
+    <div id="newsStatus" class="mb-2" aria-live="polite">Načítám aktuální aktualizace…</div>
+     <div id="newsFeed"></div>
+    <nav class="mt-4 pb-5">
+      <ul class="pagination justify-content-center" id="paginationNav"></ul>
+    </nav>
+  </main>
+<footer class="container text-center py-4 border-top">
+    <i class="bi bi-shield-lock-fill text-muted" style="cursor: pointer; font-size: 1.2rem;" onclick="showLogin()"></i>
+  </footer>
+
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/quill-emoji@0.2.0/dist/quill-emoji.js"></script>
+  <!-- Žádný připnutý commit novinky.js. Data načte dynamický loader níže. -->
+
+  <script>
+        // --- ADMIN LOGIKA ---
+    function showLogin() { document.getElementById('adminAuth').style.display = 'block'; window.scrollTo(0,0); }
+    function checkLogin() {
+        document.getElementById('adminAuth').style.display = 'none';
+        document.getElementById('adminEditor').style.display = 'block';
+        initQuill();
+    }
+    function logout() { document.getElementById('adminEditor').style.display = 'none'; }
+    function initQuill() {
+        if (window.quill) return;
+        if (!window.Quill) { alert('Editor se nenačetl. Zkontrolujte připojení k internetu.'); return; }
+        if (window.QuillEmoji) Quill.register('modules/emoji', QuillEmoji);
+        window.quill = new Quill('#editor-container', {
+            theme: 'snow',
+            modules: {
+                'toolbar': [['bold', 'italic', 'underline'], [{ 'list': 'ordered'}, { 'list': 'bullet' }], ['link', 'emoji'], ['clean']],
+                'emoji-toolbar': !!window.QuillEmoji, 'emoji-shortname': !!window.QuillEmoji,
+            }
+        });
+    }
+    function generateCode() {
+        const title = document.getElementById('admTitle').value;
+        if (!window.quill) { alert('Editor zatím není připraven.'); return; }
+        const content = window.quill.root.innerHTML;
+        const selectedCats = Array.from(document.querySelectorAll('#catCheckboxes input:checked')).map(i => i.value);
+        const newNode = {
+            id: Date.now(), title: title, date: new Date().toISOString().split('T')[0],
+            category: selectedCats, icon: document.getElementById('admIcon').value,
+            color: document.getElementById('admColor').value, author: "Lukáš", isNew: true, content: content
+        };
+        const res = document.getElementById('generatedCode');
+        res.style.display = 'block';
+        res.innerText = JSON.stringify(newNode, null, 2) + ",";
+    }
+    let currentPage = 1;
+    const itemsPerPage = 3; 
+    let currentCategory = 'vše';
+    let readItems = [];
+    try { readItems = JSON.parse(localStorage.getItem('epet_read_news')) || []; }
+    catch (_) { readItems = []; }
+    if (!Array.isArray(readItems)) readItems = [];
+
+    function formatCzechDate(dateStr) {
+      if (!dateStr) return "";
+      if (dateStr.includes("-")) {
+        const parts = dateStr.split("-");
+        if (parts.length === 3 && parts[0].length === 4) {
+          return `${parts[2]}.${parts[1]}.${parts[0]}`;
+        }
+      }
+      return dateStr;
+    }
+
+    function toggleRead(id) {
+      if (readItems.includes(id)) readItems = readItems.filter(i => i !== id);
+      else readItems.push(id);
+      try { localStorage.setItem('epet_read_news', JSON.stringify(readItems)); } catch (_) { /* Uložiště může být blokované. */ }
+      renderNews();
+    }
+
+    function toggleDetail(id) {
+      const full = document.getElementById(`full-${id}`);
+      const prev = document.getElementById(`prev-${id}`);
+      const btn = document.getElementById(`btn-${id}`);
+      const isShowing = full.classList.toggle('show');
+      prev.style.display = isShowing ? 'none' : '-webkit-box';
+      btn.innerHTML = isShowing ? '<i class="bi bi-dash-square"></i> Skrýt detail' : '<i class="bi bi-plus-square"></i> Zobrazit detail';
+    }
+
+    function filterByCategory(cat) {
+      currentCategory = cat;
+      currentPage = 1;
+      document.querySelectorAll('.btn-filter').forEach(btn => btn.classList.remove('active'));
+      const btnClass = cat === 'vše' ? 'vse' : cat;
+      const targetBtn = document.querySelector(`.btn-${btnClass}`);
+      if(targetBtn) targetBtn.classList.add('active');
+      renderNews();
+    }
+    
+    function updateCounters(filtered) {
+      const cats = ['manualy', 'sablony', 'smlouvy', 'finance', 'ceniky', 'fakturace', 'nabidky', 'video'];
+      document.getElementById('count-vse').innerText = filtered.length;
+      cats.forEach(c => {
+        const count = filtered.filter(u => {
+            const uCat = Array.isArray(u.category) ? u.category : [u.category];
+            return uCat.includes(c);
+        }).length;
+        const el = document.getElementById(`count-${c}`);
+        if(el) el.innerText = count;
+      });
+    }
+
+    function renderNews() {
+      const feed = document.getElementById('newsFeed');
+      const nav = document.getElementById('paginationNav');
+      const query = document.getElementById('mainSearch').value.toLowerCase();
+      
+      if (typeof updates === 'undefined') return;
+
+      const textFiltered = updates.filter(u => 
+        u.title.toLowerCase().includes(query) || (u.content && u.content.toLowerCase().includes(query))
+      );
+      updateCounters(textFiltered);
+
+      const finalFiltered = textFiltered.filter(u => {
+        const uCat = Array.isArray(u.category) ? u.category : [u.category];
+        return currentCategory === 'vše' || uCat.includes(currentCategory);
+      });
+      
+      const totalPages = Math.ceil(finalFiltered.length / itemsPerPage);
+      const paginated = finalFiltered.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+
+      feed.innerHTML = '';
+      paginated.forEach((u, idx) => {
+        const id = u.id || `idx-${idx}`;
+        const isRead = readItems.includes(id);
+        const catArray = Array.isArray(u.category) ? u.category : [u.category || 'obecne'];
+        const displayDate = formatCzechDate(u.date);
+
+        const card = document.createElement('div');
+        card.innerHTML = `
+            <article class="news-card p-3 border-${catArray[0]}">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2 class="news-title">
+                        <i class="${u.icon || 'bi bi-dot'} me-1 text-${u.color || 'success'}"></i>
+                        ${u.title}
+                    </h2>
+                    
+                </div>
+                <div class="card-meta">
+                    <span><i class="bi bi-calendar3"></i> ${displayDate}</span>
+                    <span><i class="bi bi-person"></i> ${u.author || "Redakce"}</span>
+                    <div class="d-flex gap-1">
+                      ${catArray.map(c => `<span class="badge border-0 badge-${c}">${c}</span>`).join('')}
+                    </div>
+                </div>
+                <div id="prev-${id}" class="content-preview">${u.content ? u.content.replace(/<[^>]*>/g, '') : ''}</div>
+                <div id="full-${id}" class="content-full content-text">${u.content || ""}</div>
+                <button id="btn-${id}" class="btn-detail-toggle" onclick="toggleDetail('${id}')">
+                    <i class="bi bi-plus-square"></i> Zobrazit detail
+                </button>
+            </article>
+        `;
+        feed.appendChild(card);
+      });
+
+      nav.innerHTML = '';
+      if(totalPages > 1) {
+          for (let i = 1; i <= totalPages; i++) {
+            const li = document.createElement('li');
+            li.className = `page-item ${i === currentPage ? 'active' : ''}`;
+            li.innerHTML = `<a class="page-link shadow-sm" href="#" onclick="event.preventDefault(); currentPage=${i}; renderNews(); window.scrollTo({top:0, behavior:'smooth'})">${i}</a>`;
+            nav.appendChild(li);
+          }
+      }
+    }
+
+    document.getElementById('mainSearch').addEventListener('input', () => { currentPage = 1; renderNews(); });
+    // renderNews() se spustí teprve po úspěšném načtení novinky.js.
+  </script>
+  <script>
+(() => {
+  const canvas = document.getElementById('snow-canvas');
+  const ctx = canvas.getContext('2d');
+
+  let width = 0, height = 0;
+  let particles = [];
+  let mode = 'off'; // off | snow | rain | fog | storm
+  let rafId = null;
+
+  function resize() {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+  }
+
+  function setMode(next) {
+    mode = next;
+    particles = [];
+
+    // Vypnout plátno, když efekt nechceš (šetří výkon)
+    canvas.style.display = (mode === 'off') ? 'none' : 'block';
+    if (mode === 'off') stop();
+    else start();
+  }
+
+  function seedParticles() {
+    const count =
+      mode === 'snow' ? 160 :
+      mode === 'rain' ? 220 :
+      mode === 'fog'  ? 25  :
+      mode === 'storm'? 220 : 0;
+
+    particles = [];
+    for (let i = 0; i < count; i++) {
+      particles.push(makeParticle());
+    }
+  }
+
+  function makeParticle() {
+    const base = {
+      x: Math.random() * width,
+      y: Math.random() * height,
+      vx: 0,
+      vy: 0,
+      r: 1,
+      a: 0.6
+    };
+
+    if (mode === 'snow') {
+      base.r = Math.random() * 2.8 + 0.6;
+      base.vy = Math.random() * 1.2 + 0.4;
+      base.vx = 0;
+      base.a = 0.75;
+      base.d = Math.random() * 6.28;
+    } else if (mode === 'rain' || mode === 'storm') {
+      base.r = Math.random() * 1.2 + 0.3;
+      base.vy = Math.random() * 8 + (mode === 'storm' ? 10 : 7);
+      base.vx = -1.5;
+      base.a = mode === 'storm' ? 0.55 : 0.4;
+      base.len = Math.random() * 14 + (mode === 'storm' ? 18 : 10);
+    } else if (mode === 'fog') {
+      base.r = Math.random() * 140 + 80;      // velké “mraky”
+      base.vx = Math.random() * 0.25 + 0.05;  // pomalý posun
+      base.vy = 0;
+      base.a = Math.random() * 0.06 + 0.03;   // jemně
+    }
+
+    return base;
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, width, height);
+
+    if (mode === 'snow') {
+      ctx.fillStyle = 'rgba(180, 200, 220, 0.85)';
+      ctx.beginPath();
+      for (const p of particles) {
+        ctx.moveTo(p.x, p.y);
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2, true);
+      }
+      ctx.fill();
+    }
+
+    if (mode === 'rain' || mode === 'storm') {
+      ctx.lineWidth = 1;
+      ctx.strokeStyle = mode === 'storm'
+        ? 'rgba(120, 170, 210, 0.75)'
+        : 'rgba(150, 190, 220, 0.5)';
+      ctx.beginPath();
+      for (const p of particles) {
+        ctx.moveTo(p.x, p.y);
+        ctx.lineTo(p.x + p.vx * 2, p.y + p.len);
+      }
+      ctx.stroke();
+
+      // občasný “blesk” ve storm módu (hodně jemně)
+      if (mode === 'storm' && Math.random() < 0.01) {
+        ctx.fillStyle = 'rgba(255,255,255,0.12)';
+        ctx.fillRect(0, 0, width, height);
+      }
+    }
+
+    if (mode === 'fog') {
+      for (const p of particles) {
+        const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r);
+        g.addColorStop(0, `rgba(200, 210, 220, ${p.a})`);
+        g.addColorStop(1, `rgba(200, 210, 220, 0)`);
+        ctx.fillStyle = g;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    update();
+    rafId = requestAnimationFrame(draw);
+  }
+
+  function update() {
+    for (const p of particles) {
+      if (mode === 'snow') {
+        p.y += p.vy;
+        p.x += Math.sin(p.d) * 0.6;
+        p.d += 0.01;
+
+        if (p.y > height + 10) { p.y = -10; p.x = Math.random() * width; }
+        if (p.x > width + 10)  { p.x = -10; }
+        if (p.x < -10)         { p.x = width + 10; }
+      }
+
+      if (mode === 'rain' || mode === 'storm') {
+        p.y += p.vy;
+        p.x += p.vx;
+
+        if (p.y > height + 30) { p.y = -30; p.x = Math.random() * width; }
+        if (p.x < -50)         { p.x = width + 50; }
+      }
+
+      if (mode === 'fog') {
+        p.x += p.vx;
+        if (p.x - p.r > width + 50) {
+          p.x = -p.r - 50;
+          p.y = Math.random() * height;
+        }
+      }
+    }
+  }
+
+  function start() {
+    if (rafId) return;
+    resize();
+    seedParticles();
+    canvas.style.display = 'block';
+    rafId = requestAnimationFrame(draw);
+  }
+
+  function stop() {
+    if (rafId) cancelAnimationFrame(rafId);
+    rafId = null;
+    ctx.clearRect(0, 0, width, height);
+  }
+
+  // --- POČASÍ (Open-Meteo) ---
+  async function fetchWeather(lat, lon) {
+    // current_weather=true + weathercode
+    const url =
+      `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}` +
+      `&current_weather=true&timezone=auto`;
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('Weather fetch failed');
+    return await res.json();
+  }
+
+  // Mapování WMO weathercode -> mód efektu
+  function modeFromWmo(code) {
+    // dle Open-Meteo WMO kódů: sníh 71–75, 77, 85–86; déšť 61–65, 80–82; mlha 45–48; bouřka 95–99
+    if ([45, 48].includes(code)) return 'fog';
+    if ((code >= 71 && code <= 75) || code === 77 || code === 85 || code === 86) return 'snow';
+    if ((code >= 61 && code <= 65) || (code >= 80 && code <= 82) || code === 51 || code === 53 || code === 55 || code === 56 || code === 57 || code === 66 || code === 67) return 'rain';
+    if (code >= 95 && code <= 99) return 'storm';
+    return 'off'; // jasno / oblačno / nic
+  }
+
+  async function initWeatherDrivenEffect() {
+    // Fallback: Praha (když geolokace nebude dostupná / povolená)
+    const fallback = { lat: 50.0755, lon: 14.4378 };
+
+    const useCoords = async (lat, lon) => {
+      try {
+        const data = await fetchWeather(lat, lon);
+        const code = data?.current_weather?.weathercode;
+        const nextMode = (typeof code === 'number') ? modeFromWmo(code) : 'off';
+        setMode(nextMode);
+      } catch {
+        setMode('off');
+      }
+    };
+
+    // Pokud geolokace projde, použijeme ji (jinak Praha)
+    if (navigator.geolocation && window.isSecureContext) {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => useCoords(pos.coords.latitude, pos.coords.longitude),
+        () => useCoords(fallback.lat, fallback.lon),
+        { enableHighAccuracy: false, timeout: 4000, maximumAge: 60_000 }
+      );
+    } else {
+      useCoords(fallback.lat, fallback.lon);
+    }
+
+    // Obnova efektu třeba každých 30 minut
+    setInterval(() => {
+      if (navigator.geolocation && window.isSecureContext) {
+        navigator.geolocation.getCurrentPosition(
+          (pos) => useCoords(pos.coords.latitude, pos.coords.longitude),
+          () => useCoords(fallback.lat, fallback.lon),
+          { enableHighAccuracy: false, timeout: 4000, maximumAge: 60_000 }
+        );
+      } else {
+        useCoords(fallback.lat, fallback.lon);
+      }
+    }, 30 * 60 * 1000);
+  }
+
+  window.addEventListener('resize', () => {
+    resize();
+    if (mode !== 'off') seedParticles();
   });
-  if(el.tagName==="A"){el.setAttribute("target","_blank");el.setAttribute("rel","noopener noreferrer")}
- });
- return template.content;
-}
-function filters(){
- var categories=Array.from(new Set(all.flatMap(function(x){return Array.isArray(x.category)?x.category:[]})));
- categories.sort(function(a,b){return label(a).localeCompare(label(b),"cs")});
- var root=document.getElementById("filters");root.replaceChildren();
- [["all","Všechny"]].concat(categories.map(function(c){return[c,label(c)]})).forEach(function(pair){
-  var btn=node("button","filter"+(active===pair[0]?" active":""),pair[1]);
-  btn.type="button";btn.setAttribute("aria-pressed",active===pair[0]?"true":"false");
-  btn.addEventListener("click",function(){active=pair[0];shown=8;filters();render()});
-  root.appendChild(btn);
- });
-}
-function createCard(item){
- var det=node("details","article");var summary=node("summary"),heading=node("div","title-row"),titles=node("div"),name=node("strong",null,item.title||"Bez názvu");
- titles.appendChild(name);titles.appendChild(node("p","item-meta",prettyDate(item.date)+" • "+(item.author||"Znalostka")));
- heading.appendChild(titles);heading.appendChild(node("span","chevron"));
- summary.appendChild(heading);
- var tags=node("div","tagrow");if(isRecent(item.date))tags.appendChild(node("span","tag tag-new","Nové"));
- (Array.isArray(item.category)?item.category:[]).forEach(function(c){tags.appendChild(node("span","tag",label(c)))});
- summary.appendChild(tags);det.appendChild(summary);
- var content=node("div","article-content");content.appendChild(safeHtml(item.content));det.appendChild(content);
- return det;
-}
-function render(){
- var q=cleanText(query.trim());var matching=all.filter(function(x){return(active==="all"||(Array.isArray(x.category)&&x.category.includes(active)))&&(!q||cleanText([x.title,x.content,x.author,(x.category||[]).join(" ")].join(" ")).includes(q))});
- var visible=matching.slice(0,shown),fragment=document.createDocumentFragment();visible.forEach(function(x){fragment.appendChild(createCard(x))});
- if(!visible.length)fragment.appendChild(node("p","empty","Žádné novinky neodpovídají hledání."));
- box.replaceChildren(fragment);
- document.getElementById("count").textContent="Zobrazeno "+visible.length+" z "+matching.length+" aktualizací";
- var more=document.getElementById("more");more.hidden=visible.length>=matching.length;
-}
-function ready(data){
- if(!Array.isArray(data))throw new Error("Soubor neobsahuje pole updates.");
- all=data.filter(function(x){return x&&typeof x==="object"}).slice().sort(function(a,b){return String(b.date||"").localeCompare(String(a.date||""))||Number(b.id||0)-Number(a.id||0)});
- document.getElementById("updated").textContent="Poslední aktualizace: "+(all[0]?prettyDate(all[0].date):"—");
- filters();render();
-}
-function load(){
- box.replaceChildren(node("p","empty","Načítám aktuální novinky…"));
- document.getElementById("count").textContent="Načítám…";
- var previous=document.getElementById("news-data");
- if(previous)previous.remove();
- var script=document.createElement("script");script.id="news-data";script.src="../novinky.js?refresh="+Date.now();
- script.onload=function(){try{if(typeof updates==="undefined")throw new Error("Data aktualizací nebyla nalezena.");ready(updates)}catch(e){fail(e)}};
- script.onerror=function(){fail(new Error("Soubor novinky.js se nepodařilo stáhnout. Zkus stránku obnovit."))};
- document.head.appendChild(script);
-}
-function fail(e){box.replaceChildren(node("p","error",e.message||"Novinky nyní nelze načíst."));document.getElementById("count").textContent="Nepodařilo se načíst novinky";}
-document.getElementById("search").addEventListener("input",function(e){query=e.target.value;shown=8;render()});
-document.getElementById("refresh").addEventListener("click",function(){window.location.reload()});
-document.getElementById("more").addEventListener("click",function(){shown+=8;render()});
-load();
+
+  // start
+  resize();
+  initWeatherDrivenEffect();
 })();
 </script>
+
+  <script>
+    // GitHub Pages: novinky.js je ve stejné větvi jako tato stránka.
+    // Cache-busting řeší ruční změny čísla revize v Google Sites.
+    (function loadCurrentNews() {
+      var status = document.getElementById('newsStatus');
+      var script = document.createElement('script');
+      script.src = '../novinky.js?v=' + Date.now();
+      script.onload = function () {
+        try {
+          if (typeof updates === 'undefined' || !Array.isArray(updates)) {
+            throw new Error('Soubor novinky.js nemá očekávaný formát.');
+          }
+          status.textContent = 'Načteno ' + updates.length + ' aktualizací. Zdroj: GitHub / novinky.js';
+          renderNews();
+        } catch (err) {
+          status.textContent = 'Novinky se nepodařilo zobrazit.';
+          document.getElementById('newsFeed').innerHTML = '<p class="feed-error">Chyba dat novinek. Zkus stránku znovu načíst.</p>';
+          console.error(err);
+        }
+      };
+      script.onerror = function () {
+        status.textContent = 'Novinky se nepodařilo stáhnout.';
+        document.getElementById('newsFeed').innerHTML = '<p class="feed-error">Novinky.js se nepodařilo načíst z GitHub Pages. Zkontroluj připojení a načti stránku znovu.</p>';
+      };
+      document.head.appendChild(script);
+    })();
+  </script>
 </body>
 </html>
