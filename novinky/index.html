@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Novinky – Znalostka EPET / Dobrá Energie</title>
+<style>
+:root{--green:#94c11f;--green-deep:#607e10;--violet:#9362d6;--ink:#1e293b;--muted:#64748b;--line:#e2e8f0;--bg:#f6f9f4}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(180deg,#f0f8e5 0,#f7f9fa 290px,#fff 600px);color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+button,input{font:inherit}
+a{color:var(--green-deep);text-underline-offset:3px}
+a:hover{color:#42570c}
+.shell{max-width:1160px;margin:auto;padding:24px 20px 42px}
+.hero{position:relative;overflow:hidden;border-radius:23px;background:linear-gradient(115deg,#608814,#91c01f 70%,#aed54d);color:#fff;padding:29px 32px 30px;box-shadow:0 12px 30px rgba(93,132,23,.13)}
+.hero:after{content:"";position:absolute;width:225px;height:225px;right:-45px;top:-128px;border:38px solid rgba(255,255,255,.12);border-radius:50%}
+.eyebrow{margin:0 0 8px;letter-spacing:.13em;text-transform:uppercase;font-size:11px;font-weight:800;color:#eff7dd}
+h1{font-size:clamp(25px,4vw,36px);letter-spacing:-.035em;line-height:1.15;margin:0}
+.hero p:last-child{margin:11px 0 0;max-width:630px;color:#f5faec;font-size:14px}
+.controls{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;margin:19px 0 15px;box-shadow:0 6px 22px rgba(31,41,51,.04)}
+.controls-head{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.controls-head strong{font-size:16px}
+.muted,.meta{color:var(--muted);font-size:12px}
+.search-row{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.search{height:43px;min-width:220px;flex:1;border:1px solid #cdd9df;border-radius:11px;padding:0 14px;background:#fff;color:var(--ink);outline:none}
+.search:focus{border-color:#8db924;box-shadow:0 0 0 3px #e5f2c4}
+.refresh,.more{height:43px;border-radius:11px;border:1px solid #ccdfae;background:#eff7e0;color:#405b12;padding:0 16px;font-weight:750;cursor:pointer}
+.refresh:hover,.more:hover{background:#dfeecc}
+.filter-wrap{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}
+.filter{cursor:pointer;border:1px solid #dbe4eb;border-radius:99px;padding:6px 12px;background:#fff;color:#526374;font-size:12px;font-weight:650}
+.filter.active{background:#6a9019;border-color:#6a9019;color:#fff}
+.status{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:9px;margin:0 1px 15px}
+.status strong{font-size:13px}
+.items{display:grid;gap:12px}
+.article{background:#fff;border:1px solid #e0e8ed;border-radius:17px;box-shadow:0 7px 24px rgba(26,42,54,.045);overflow:hidden}
+.article[open]{border-color:#bbd795;box-shadow:0 10px 26px rgba(86,120,18,.09)}
+.article summary{list-style:none;cursor:pointer;padding:18px 21px;display:block}
+.article summary::-webkit-details-marker{display:none}
+.title-row{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.title-row strong{display:block;font-size:16px;line-height:1.35;letter-spacing:-.01em}
+.chevron{border-right:2px solid #8b9a9d;border-bottom:2px solid #8b9a9d;width:9px;height:9px;transform:rotate(45deg);flex:0 0 auto;margin-right:7px;transition:transform .15s}
+.article[open] .chevron{transform:rotate(225deg)}
+.tagrow{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0}
+.tag{background:#f1f5eb;color:#587322;border-radius:6px;padding:3px 8px;font-size:11px;font-weight:700}
+.tag-new{background:#fff2d5;color:#995b00}
+.item-meta{margin:6px 0 0;color:var(--muted);font-size:12px}
+.article-content{border-top:1px solid #eaf0e5;padding:17px 22px 21px;overflow-wrap:anywhere}
+.article-content>*:first-child{margin-top:0}
+.article-content>*:last-child{margin-bottom:0}
+.article-content p,.article-content li{font-size:14px;line-height:1.7}
+.article-content h2{font-size:18px;margin:19px 0 8px}
+.article-content h3{font-size:16px;margin:18px 0 8px}
+.article-content ul,.article-content ol{padding-left:24px}
+.article-content li+li{margin-top:5px}
+.article-content a{font-weight:650}
+.article-content code{overflow-wrap:anywhere}
+.actions{text-align:center;margin-top:17px}
+.more{min-width:220px}
+.empty,.error{background:#fff;border:1px dashed #d3ddd9;border-radius:16px;padding:25px;text-align:center;color:var(--muted)}
+.error{border-color:#f4b5ad;color:#a12218;background:#fff8f7}
+footer{text-align:center;font-size:12px;color:#74828c;margin-top:28px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #a3cb4a;outline-offset:3px}
+@media(max-width:600px){.shell{padding:12px 10px 30px}.hero{padding:24px 20px;border-radius:17px}.controls{padding:15px}.article summary{padding:15px}.article-content{padding:15px}.refresh{width:100%}.title-row strong{font-size:15px}}
+</style>
+</head>
+<body>
+<main class="shell">
+<header class="hero">
+<p class="eyebrow">Znalostní báze • Aktuality</p>
+<h1>Novinky a aktualizace</h1>
+<p>Pracovní postupy, metodiky, šablony a školení na jednom místě. Aktualizace se načítají z repozitáře Znalostky.</p>
+</header>
+<section class="controls" aria-label="Vyhledávání a filtry">
+<div class="controls-head"><strong>Přehled aktualizací</strong><span class="muted" id="updated">Načítám novinky…</span></div>
+<div class="search-row"><input class="search" id="search" type="search" placeholder="Vyhledat novinku nebo téma…" aria-label="Hledat v aktualizacích"><button class="refresh" id="refresh" type="button">Obnovit novinky</button></div>
+<div class="filter-wrap" id="filters" aria-label="Filtrovat podle tématu"></div>
+</section>
+<div class="status"><strong id="count" aria-live="polite">Načítám…</strong><span class="muted">Kliknutím na novinku zobrazíš podrobnosti</span></div>
+<section class="items" id="items" aria-live="polite"><p class="empty">Načítám nejnovější aktualizace…</p></section>
+<div class="actions"><button class="more" id="more" type="button" hidden>Zobrazit další aktualizace</button></div>
+<footer>EPET / Dobrá Energie • Znalostka • Zdroj: GitHub <a href="https://github.com/lukasnikolov/know/blob/main/novinky.js" target="_blank" rel="noopener noreferrer">novinky.js</a></footer>
+</main>
+<script>
+(function(){
+"use strict";
+var categoryNames={manualy:"Manuály",sablony:"Šablony",finance:"Finance",fakturace:"Fakturace",smlouvy:"Smlouvy",ceniky:"Ceníky",nabidky:"Nabídky a retence",video:"Videa"};
+var all=[],active="all",query="",shown=8;
+var box=document.getElementById("items");
+function cleanText(s){return String(s==null?"":s).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLocaleLowerCase("cs-CZ")}
+function prettyDate(s){var d=new Date(String(s||"")+"T12:00:00");return isNaN(d.getTime())?String(s||""):new Intl.DateTimeFormat("cs-CZ",{day:"numeric",month:"long",year:"numeric"}).format(d)}
+function isRecent(s){var t=new Date(String(s||"")+"T12:00:00").getTime();return Number.isFinite(t)&&Date.now()-t>=0&&Date.now()-t<31*86400000}
+function node(name,cls,txt){var x=document.createElement(name);if(cls)x.className=cls;if(txt!=null)x.textContent=txt;return x}
+function label(c){return categoryNames[c]||c}
+function safeHtml(raw){
+ var template=document.createElement("template");template.innerHTML=String(raw||"");
+ Array.from(template.content.querySelectorAll("*")).forEach(function(el){
+  if(["SCRIPT","STYLE","IFRAME","OBJECT","EMBED","FORM","INPUT","BUTTON","SVG","LINK","META","BASE"].includes(el.tagName)){el.remove();return}
+  Array.from(el.attributes).forEach(function(attr){
+   if(el.tagName==="A"&&attr.name==="href"){if(!/^https?:\/\//i.test(attr.value)&&!/^#/.test(attr.value))el.removeAttribute("href")}
+   else if(attr.name==="class"&&/^ql-indent-[1-5]$/.test(attr.value)){return}
+   else el.removeAttribute(attr.name)
+  });
+  if(el.tagName==="A"){el.setAttribute("target","_blank");el.setAttribute("rel","noopener noreferrer")}
+ });
+ return template.content;
+}
+function filters(){
+ var categories=Array.from(new Set(all.flatMap(function(x){return Array.isArray(x.category)?x.category:[]})));
+ categories.sort(function(a,b){return label(a).localeCompare(label(b),"cs")});
+ var root=document.getElementById("filters");root.replaceChildren();
+ [["all","Všechny"]].concat(categories.map(function(c){return[c,label(c)]})).forEach(function(pair){
+  var btn=node("button","filter"+(active===pair[0]?" active":""),pair[1]);
+  btn.type="button";btn.setAttribute("aria-pressed",active===pair[0]?"true":"false");
+  btn.addEventListener("click",function(){active=pair[0];shown=8;filters();render()});
+  root.appendChild(btn);
+ });
+}
+function createCard(item){
+ var det=node("details","article");var summary=node("summary"),heading=node("div","title-row"),titles=node("div"),name=node("strong",null,item.title||"Bez názvu");
+ titles.appendChild(name);titles.appendChild(node("p","item-meta",prettyDate(item.date)+" • "+(item.author||"Znalostka")));
+ heading.appendChild(titles);heading.appendChild(node("span","chevron"));
+ summary.appendChild(heading);
+ var tags=node("div","tagrow");if(isRecent(item.date))tags.appendChild(node("span","tag tag-new","Nové"));
+ (Array.isArray(item.category)?item.category:[]).forEach(function(c){tags.appendChild(node("span","tag",label(c)))});
+ summary.appendChild(tags);det.appendChild(summary);
+ var content=node("div","article-content");content.appendChild(safeHtml(item.content));det.appendChild(content);
+ return det;
+}
+function render(){
+ var q=cleanText(query.trim());var matching=all.filter(function(x){return(active==="all"||(Array.isArray(x.category)&&x.category.includes(active)))&&(!q||cleanText([x.title,x.content,x.author,(x.category||[]).join(" ")].join(" ")).includes(q))});
+ var visible=matching.slice(0,shown),fragment=document.createDocumentFragment();visible.forEach(function(x){fragment.appendChild(createCard(x))});
+ if(!visible.length)fragment.appendChild(node("p","empty","Žádné novinky neodpovídají hledání."));
+ box.replaceChildren(fragment);
+ document.getElementById("count").textContent="Zobrazeno "+visible.length+" z "+matching.length+" aktualizací";
+ var more=document.getElementById("more");more.hidden=visible.length>=matching.length;
+}
+function ready(data){
+ if(!Array.isArray(data))throw new Error("Soubor neobsahuje pole updates.");
+ all=data.filter(function(x){return x&&typeof x==="object"}).slice().sort(function(a,b){return String(b.date||"").localeCompare(String(a.date||""))||Number(b.id||0)-Number(a.id||0)});
+ document.getElementById("updated").textContent="Poslední aktualizace: "+(all[0]?prettyDate(all[0].date):"—");
+ filters();render();
+}
+function load(){
+ box.replaceChildren(node("p","empty","Načítám aktuální novinky…"));
+ document.getElementById("count").textContent="Načítám…";
+ var previous=document.getElementById("news-data");
+ if(previous)previous.remove();
+ var script=document.createElement("script");script.id="news-data";script.src="../novinky.js?refresh="+Date.now();
+ script.onload=function(){try{if(typeof updates==="undefined")throw new Error("Data aktualizací nebyla nalezena.");ready(updates)}catch(e){fail(e)}};
+ script.onerror=function(){fail(new Error("Soubor novinky.js se nepodařilo stáhnout. Zkus stránku obnovit."))};
+ document.head.appendChild(script);
+}
+function fail(e){box.replaceChildren(node("p","error",e.message||"Novinky nyní nelze načíst."));document.getElementById("count").textContent="Nepodařilo se načíst novinky";}
+document.getElementById("search").addEventListener("input",function(e){query=e.target.value;shown=8;render()});
+document.getElementById("refresh").addEventListener("click",function(){window.location.reload()});
+document.getElementById("more").addEventListener("click",function(){shown+=8;render()});
+load();
+})();
+</script>
+</body>
+</html>
