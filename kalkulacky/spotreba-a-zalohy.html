@@ -747,6 +747,8 @@ footer{max-width:1480px;margin:10px auto 26px;padding:0 18px;text-align:center;f
 
     function electricityTaskText(startDate, endDate, days, tariffs, totalConsumption, totalAnnual) {
       const lines = [
+        &quot;POZOR!! Proaktivně zákazníkovi NEZASÍLAT!! Podrobný propočet lze zaslat pouze v případě, že zákazník rozporuje námi navrženou výši zálohy nebo požaduje vysvětlení, jak jsme k výpočtu dospěli. Jinak NEZASÍLAT!&quot;,
+        &quot;&quot;,
         &quot;VÝPOČET PŘEDPOKLÁDANÉ ROČNÍ SPOTŘEBY – ELEKTŘINA&quot;,
         `Období odečtů: ${dateFormat(startDate)} – ${dateFormat(endDate)} (${days} dní).`,
         &quot;--------------------------------------------&quot;
@@ -773,6 +775,8 @@ footer{max-width:1480px;margin:10px auto 26px;padding:0 18px;text-align:center;f
     function gasTaskText(startDate, endDate, days, start, end, factor, consumption, annualM3, annualKwh) {
       const periodKwh = consumption * factor;
       return [
+        &quot;POZOR!! Proaktivně zákazníkovi NEZASÍLAT!! Podrobný propočet lze zaslat pouze v případě, že zákazník rozporuje námi navrženou výši zálohy nebo požaduje vysvětlení, jak jsme k výpočtu dospěli. Jinak NEZASÍLAT!&quot;,
+        &quot;&quot;,
         &quot;VÝPOČET PŘEDPOKLÁDANÉ ROČNÍ SPOTŘEBY – PLYN&quot;,
         `Období odečtů: ${dateFormat(startDate)} – ${dateFormat(endDate)} (${days} dní).`,
         &quot;--------------------------------------------&quot;,
@@ -1928,7 +1932,7 @@ body.is-gas #inputSummary {
       const omIdentifier = el(&#x27;omIdentifier&#x27;).value.trim();
       const omAddress = el(&#x27;omAddress&#x27;).value.trim();
       const omAccount = el(&#x27;omAccount&#x27;).value.trim();
-      const lines = [&#x27;Přepočet předpokládané výše zálohy&#x27;];
+      const lines = [&#x27;POZOR!! Proaktivně zákazníkovi NEZASÍLAT!! Podrobný propočet lze zaslat pouze v případě, že zákazník rozporuje námi navrženou výši zálohy nebo požaduje vysvětlení, jak jsme k výpočtu dospěli. Jinak NEZASÍLAT!&#x27;, &#x27;&#x27;, &#x27;Přepočet předpokládané výše zálohy&#x27;];
       if (omAccount) lines.push(`Zákaznický účet: ${omAccount}`);
       if (omIdentifier) lines.push(`EAN/EIC: ${omIdentifier}`);
       if (omAddress) lines.push(`Adresa OM: ${omAddress}`);
@@ -4670,6 +4674,7 @@ const annual=$('annualFrame'),advance=$('advanceFrame');
 const stored={electricity:{generated:'',text:'',dirty:false},gas:{generated:'',text:'',dirty:false},advance:{generated:'',text:'',dirty:false},both:{generated:'',text:'',dirty:false}};
 const current={electricity:null,gas:null};
 let latestKind='electricity';
+const TASK_WARNING='POZOR!! Proaktivně zákazníkovi NEZASÍLAT!! Podrobný propočet lze zaslat pouze v případě, že zákazník rozporuje námi navrženou výši zálohy nebo požaduje vysvětlení, jak jsme k výpočtu dospěli. Jinak NEZASÍLAT!';
 const formatter=new Intl.NumberFormat('cs-CZ',{minimumFractionDigits:3,maximumFractionDigits:3});
 function setStatus(title,help,badge){$('workflowTitle').textContent=title;$('workflowHelp').textContent=help;$('workflowBadge').textContent=badge}
 function showTab(name){
@@ -4686,10 +4691,14 @@ function composeCombined(){
  const type=latestKind;
  const a=stored[type].text;
  const b=stored.advance.text;
+ const stripNotice=text=>{
+  const value=String(text||'');
+  return value.startsWith(TASK_WARNING)?value.slice(TASK_WARNING.length).trimStart():value;
+ };
  const chunks=[];
- if(a)chunks.push(a);
- if(b)chunks.push(b);
- return chunks.join('\n\n====================================\n\n');
+ if(a)chunks.push(stripNotice(a));
+ if(b)chunks.push(stripNotice(b));
+ return chunks.length ? TASK_WARNING+'\n\n'+chunks.join('\n\n====================================\n\n') : '';
 }
 function updateStore(kind,generated,note,isEdited){
  const state=stored[kind];
