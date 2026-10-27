@@ -1,7 +1,7 @@
 const updates = [
 {
   "id": 1793102400000,
-  "title": "Nové manuály: Potvrzení úhrady, podružné měření a FVE kompenzace",
+  "title": "Nové manuály: Potvrzení úhrady pro potřeby Úřadu práce, podružné měření a FVE kompenzace",
   "date": "2026-10-27",
   "category": [
     "manualy",
@@ -17,8 +17,8 @@ const updates = [
     <p>Do naší <strong>Znalostky</strong> byly doplněny tři pracovní postupy, které vám pomohou při řešení zákaznických požadavků v oblasti plateb, měření a fotovoltaiky. Nové stránky najdete přímo v příslušných tematických sekcích.</p>
 
     <h3>1. Potvrzení úhrady a související požadavky</h3>
-    <p>V sekci <strong>Fakturace a finance</strong> je nově k dispozici stránka věnovaná požadavkům zákazníků na potvrzení úhrady a souvisejícím platebním situacím. Slouží jako rozcestník pro orientaci a správné zpracování těchto dotazů.</p>
-    <p><strong>Kdy ji využít?</strong> Pokud zákazník požaduje potvrzení o provedené úhradě nebo řeší související platební doklad, nejprve nahlédněte do tohoto postupu.</p>
+    <p>V sekci <strong>Fakturace a finance</strong> je nově k dispozici stránka věnovaná požadavkům úřadu práce na potvrzení úhrady a souvisejícím platebním situacím. Slouží jako rozcestník pro orientaci a správné zpracování těchto požadavků.</p>
+    <p><strong>Kdy ji využít?</strong> Pokud ÚP požaduje potvrzení o provedené úhradě nebo řeší související platební doklad, nejprve nahlédněte do tohoto postupu.</p>
 
     <h3>2. Podružné měření – obecný pracovní postup</h3>
     <p>V sekci <strong>Smlouvy a kontaktní údaje</strong> přibyl samostatný obecný postup k podružnému měření. Pomůže vám zorientovat se v této problematice a při odpovídání na dotazy zákazníků, například pokud potřebují odděleně sledovat spotřebu v rámci jednoho objektu.</p>
@@ -35,9 +35,9 @@ const updates = [
 
     <p><strong>📂 Kde nové postupy najdete?</strong></p>
     <ul>
-      <li><strong>FAKTURACE A FINANCE:</strong> <a href="https://sites.google.com/view/znalostka/fakturace-a-finance/potvrzen%C3%AD-%C3%BA%C5%99ady-apod?authuser=0" target="_blank" rel="noopener noreferrer">Potvrzení úhrady apod.</a></li>
-      <li><strong>SMLOUVY + KONTAKTNÍ ÚDAJE:</strong> <a href="https://sites.google.com/view/znalostka/smlouvy-kontaktn%C3%AD-%C3%BAdaje/podru%C5%BEn%C3%A9-m%C4%9B%C5%99en%C3%AD-obecn%C3%BD-pracovn%C3%AD-postup" target="_blank" rel="noopener noreferrer">Podružné měření – Obecný pracovní postup</a></li>
-      <li><strong>FAKTURACE A FINANCE:</strong> <a href="https://sites.google.com/view/znalostka/fakturace-a-finance/fve-kompenzace?authuser=0" target="_blank" rel="noopener noreferrer">FVE – Kompenzace</a></li>
+      <li><strong>FAKTURACE A FINANCE:</strong>  ⏩ <a href="https://sites.google.com/view/znalostka/fakturace-a-finance/potvrzen%C3%AD-%C3%BA%C5%99ady-apod?authuser=0" target="_blank" rel="noopener noreferrer">Potvrzení úhrady apod.</a></li>
+      <li><strong>SMLOUVY + KONTAKTNÍ ÚDAJE:</strong> ⏩ <a href="https://sites.google.com/view/znalostka/smlouvy-kontaktn%C3%AD-%C3%BAdaje/podru%C5%BEn%C3%A9-m%C4%9B%C5%99en%C3%AD-obecn%C3%BD-pracovn%C3%AD-postup" target="_blank" rel="noopener noreferrer">Podružné měření – Obecný pracovní postup</a></li>
+      <li><strong>FAKTURACE A FINANCE:</strong> ⏩ <a href="https://sites.google.com/view/znalostka/fakturace-a-finance/fve-kompenzace?authuser=0" target="_blank" rel="noopener noreferrer">FVE – Kompenzace</a></li>
     </ul>
     <p>Prosím, věnujte těmto postupům pozornost a při řešení souvisejících požadavků využívejte aktuální informace ve Znalostce.</p>
   `
