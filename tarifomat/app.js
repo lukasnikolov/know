@@ -17,300 +17,300 @@ const documentLogic = {
         "CEZ": {
             "home": {
                 "D01d": {
-                    "D01d": ["🧾Epet žádost"],
-                    "D02d": ["🧾Epet žádost"],
-                    "D25d": ["🧾Epet žádost", "🧾RZ", "🧾SOP"],
-                    "D26d": ["🧾Epet žádost", "🧾RZ", "🧾SOP"],
-                    "D27d": ["🧾Epet žádost", "🧾RZ", "🧾SOP"],
-                    "D57d": ["🧾Epet žádost", "🧾RZ", "🧾SOP", "🧾Protokol tepelného čerpadla", "🧾Výpočet tepelných ztrát"],
-                    "D61d": ["🧾Epet žádost", "🧾RZ", "🧾SOP"]
+                    "D01d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "D02d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "D25d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ", "🧾SOP"],
+                    "D26d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ", "🧾SOP"],
+                    "D27d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ", "🧾SOP"],
+                    "D57d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ", "🧾SOP", "🧾Protokol tepelného čerpadla", "🧾Výpočet tepelných ztrát"],
+                    "D61d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ", "🧾SOP"]
                 },
                 "D02d": {
-                    "D01d": ["🧾Epet žádost"],
-                    "D02d": ["🧾Epet žádost"],
-                    "D25d": ["🧾Epet žádost", "🧾RZ", "🧾SOP"],
-                    "D26d": ["🧾Epet žádost", "🧾RZ", "🧾SOP"],
-                    "D27d": ["🧾Epet žádost", "🧾RZ", "🧾SOP"],
-                    "D57d": ["🧾Epet žádost", "🧾RZ", "🧾SOP", "🧾Protokol tepelného čerpadla", "🧾Výpočet tepelných ztrát"],
-                    "D61d": ["🧾Epet žádost", "🧾RZ", "🧾SOP"]
+                    "D01d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "D02d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "D25d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ", "🧾SOP"],
+                    "D26d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ", "🧾SOP"],
+                    "D27d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ", "🧾SOP"],
+                    "D57d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ", "🧾SOP", "🧾Protokol tepelného čerpadla", "🧾Výpočet tepelných ztrát"],
+                    "D61d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ", "🧾SOP"]
                 },
  		 "D25d": {
-                "D01d": ["🧾Epet žádost"],
-                "D02d": ["🧾Epet žádost"],
-                "D25d": ["🧾Epet žádost", "🧾RZ", "🧾SOP"],
-                "D26d": ["🧾Epet žádost", "🧾RZ", "🧾SOP"],
-                "D27d": ["🧾Epet žádost", "🧾RZ", "🧾SOP"],
-                "D57d": ["🧾Epet žádost", "🧾RZ", "🧾SOP", "🧾Protokol tepelného čerpadla", "🧾Výpočet tepelných ztrát"],
-                "D61d": ["🧾Epet žádost", "🧾RZ", "🧾SOP"]
+                "D01d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D02d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D25d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ", "🧾SOP"],
+                "D26d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ", "🧾SOP"],
+                "D27d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ", "🧾SOP"],
+                "D57d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ", "🧾SOP", "🧾Protokol tepelného čerpadla", "🧾Výpočet tepelných ztrát"],
+                "D61d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ", "🧾SOP"]
             },
            	 "D26d": {
-                "D01d": ["🧾Epet žádost"],
-                "D02d": ["🧾Epet žádost"],
-                "D25d": ["🧾Epet žádost"],
-                "D26d": ["🧾Epet žádost", "🧾RZ", "🧾SOP"],
-                "D27d": ["🧾Epet žádost", "🧾RZ", "🧾SOP"],
-                "D57d": ["🧾Epet žádost", "🧾RZ", "🧾SOP", "🧾Protokol tepelného čerpadla", "🧾Výpočet tepelných ztrát"],
-                "D61d": ["🧾Epet žádost", "🧾RZ", "🧾SOP"]
+                "D01d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D02d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D25d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D26d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ", "🧾SOP"],
+                "D27d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ", "🧾SOP"],
+                "D57d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ", "🧾SOP", "🧾Protokol tepelného čerpadla", "🧾Výpočet tepelných ztrát"],
+                "D61d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ", "🧾SOP"]
             },
             "D27d": {
-                "D01d": ["🧾Epet žádost"],
-                "D02d": ["🧾Epet žádost"],
-                "D25d": ["🧾Epet žádost"],
-                "D26d": ["🧾Epet žádost"],
-                "D27d": ["🧾Epet žádost", "🧾RZ", "🧾SOP"],
-                "D57d": ["🧾Epet žádost", "🧾RZ", "🧾SOP", "🧾Protokol tepelného čerpadla", "🧾Výpočet tepelných ztrát"],
-                "D61d": ["🧾Epet žádost", "🧾RZ", "🧾SOP"]
+                "D01d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D02d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D25d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D26d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D27d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ", "🧾SOP"],
+                "D57d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ", "🧾SOP", "🧾Protokol tepelného čerpadla", "🧾Výpočet tepelných ztrát"],
+                "D61d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ", "🧾SOP"]
             },
             "D57d": {
-                "D01d": ["🧾Epet žádost"],
-                "D02d": ["🧾Epet žádost"],
-                "D25d": ["🧾Epet žádost"],
-                "D26d": ["🧾Epet žádost"],
-                "D27d": ["🧾Epet žádost"],
-                "D57d": ["🧾Epet žádost", "🧾RZ", "🧾SOP", "🧾Protokol tepelného čerpadla", "🧾Výpočet tepelných ztrát"],
-                "D61d": ["🧾Epet žádost", "🧾RZ", "🧾SOP"]
+                "D01d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D02d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D25d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D26d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D27d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D57d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ", "🧾SOP", "🧾Protokol tepelného čerpadla", "🧾Výpočet tepelných ztrát"],
+                "D61d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ", "🧾SOP"]
             },
             "D61d": {
-                "D01d": ["🧾Epet žádost"],
-                "D02d": ["🧾Epet žádost"],
-                "D25d": ["🧾Epet žádost"],
-                "D26d": ["🧾Epet žádost"],
-                "D27d": ["🧾Epet žádost"],
-                "D57d": ["🧾Epet žádost"],
-                "D61d": ["🧾Epet žádost", "🧾RZ", "🧾SOP"]
+                "D01d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D02d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D25d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D26d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D27d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D57d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D61d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ", "🧾SOP"]
             }
               
             },
             "business": {
                 "C01d": {
-                    "C01d": ["🧾Epet žádost"],
-                    "C02d": ["🧾Epet žádost"],
-                    "C03d": ["🧾Epet žádost"],
-                    "C25d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C26d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C27d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
-                    "C46d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
-                    "C56d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"]
+                    "C01d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C02d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C03d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C25d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C26d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C27d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
+                    "C46d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
+                    "C56d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"]
                 },
                 "C02d": {
-                    "C01d": ["🧾Epet žádost"],
-                    "C02d": ["🧾Epet žádost"],
-                    "C03d": ["🧾Epet žádost"],
-                   "C25d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C26d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C27d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
-                    "C46d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
-                    "C56d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"]
+                    "C01d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C02d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C03d": ["🧾Epet žádost";"🧾DE žádost"],
+                   "C25d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C26d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C27d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
+                    "C46d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
+                    "C56d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"]
                 },
                 "C03d": {
-                    "C01d": ["🧾Epet žádost"],
-                    "C02d": ["🧾Epet žádost"],
-                    "C03d": ["🧾Epet žádost"],
-                    "C25d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C26d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C27d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
-                    "C46d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
-                    "C56d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"]
+                    "C01d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C02d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C03d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C25d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C26d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C27d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
+                    "C46d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
+                    "C56d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"]
                 },
                 "C25d": {
-                    "C01d": ["🧾Epet žádost"],
-                    "C02d": ["🧾Epet žádost"],
-                    "C03d": ["🧾Epet žádost"],
-                    "C25d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C26d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C27d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
-                    "C46d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
-                    "C56d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"]
+                    "C01d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C02d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C03d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C25d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C26d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C27d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
+                    "C46d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
+                    "C56d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"]
                 },
                 "C26d": {
-                    "C01d": ["🧾Epet žádost"],
-                    "C02d": ["🧾Epet žádost"],
-                    "C03d": ["🧾Epet žádost"],
-                    "C25d": ["🧾Epet žádost"],
-                    "C26d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C27d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
-                    "C46d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
-                    "C56d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"]
+                    "C01d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C02d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C03d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C25d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C26d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C27d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
+                    "C46d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
+                    "C56d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"]
                 },
                 "C27d": {
-                    "C01d": ["🧾Epet žádost"],
-                    "C02d": ["🧾Epet žádost"],
-                    "C03d": ["🧾Epet žádost"],
-                    "C25d": ["🧾Epet žádost"],
-                    "C26d": ["🧾Epet žádost"],
-                    "C27d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C46d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
-                    "C56d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"]
+                    "C01d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C02d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C03d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C25d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C26d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C27d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C46d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
+                    "C56d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"]
                 },
                 "C46d": {
-                    "C01d": ["🧾Epet žádost"],
-                    "C02d": ["🧾Epet žádost"],
-                    "C03d": ["🧾Epet žádost"],
-                    "C25d": ["🧾Epet žádost"],
-                    "C26d": ["🧾Epet žádost"],
-                    "C27d": ["🧾Epet žádost"],
-                    "C46d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C56d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"]
+                    "C01d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C02d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C03d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C25d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C26d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C27d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C46d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C56d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"]
                 },
                 "C56d": {
-                    "C01d": ["🧾Epet žádost"],
-                    "C02d": ["🧾Epet žádost"],
-                    "C03d": ["🧾Epet žádost"],
-                    "C25d": ["🧾Epet žádost"],
-                    "C26d": ["🧾Epet žádost"],
-                    "C27d": ["🧾Epet žádost"],
-                    "C46d": ["🧾Epet žádost"],
-                    "C56d": ["🧾Epet žádost", "🧾SOP","🧾RZ"]
+                    "C01d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C02d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C03d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C25d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C26d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C27d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C46d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C56d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"]
                 }
 }
         },
         "EGD": {
             "home": {
                 "D01d": {
-                    "D01d": ["🧾Epet žádost","🧾RZ"],
-                    "D02d": ["🧾Epet žádost","🧾RZ"],
-                    "D25d": ["🧾Epet žádost","🧾RZ"],
-                    "D26d": ["🧾Epet žádost","🧾RZ"],
-                    "D27d": ["🧾Epet žádost","🧾RZ"],
-                    "D57d": ["🧾Epet žádost","🧾RZ", "🧾SOP", "🧾Protokol tepelného čerpadla", "🧾Výpočet tepelných ztrát"],
-                    "D61d": ["🧾Epet žádost","🧾RZ"]
+                    "D01d": ["🧾Epet žádost";"🧾DE žádost","🧾RZ"],
+                    "D02d": ["🧾Epet žádost";"🧾DE žádost","🧾RZ"],
+                    "D25d": ["🧾Epet žádost";"🧾DE žádost","🧾RZ"],
+                    "D26d": ["🧾Epet žádost";"🧾DE žádost","🧾RZ"],
+                    "D27d": ["🧾Epet žádost";"🧾DE žádost","🧾RZ"],
+                    "D57d": ["🧾Epet žádost";"🧾DE žádost","🧾RZ", "🧾SOP", "🧾Protokol tepelného čerpadla", "🧾Výpočet tepelných ztrát"],
+                    "D61d": ["🧾Epet žádost";"🧾DE žádost","🧾RZ"]
                 },
                 "D02d": {
-                    "D01d": ["🧾Epet žádost"],
-                    "D02d": ["🧾Epet žádost","🧾RZ"],
-                    "D25d": ["🧾Epet žádost","🧾RZ"],
-                    "D26d": ["🧾Epet žádost","🧾RZ"],
-                    "D27d": ["🧾Epet žádost","🧾RZ"],
-                    "D57d": ["🧾Epet žádost", "🧾RZ", "🧾SOP", "🧾Protokol tepelného čerpadla", "🧾Výpočet tepelných ztrát"],
-                    "D61d": ["🧾Epet žádost","🧾RZ"]
+                    "D01d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "D02d": ["🧾Epet žádost";"🧾DE žádost","🧾RZ"],
+                    "D25d": ["🧾Epet žádost";"🧾DE žádost","🧾RZ"],
+                    "D26d": ["🧾Epet žádost";"🧾DE žádost","🧾RZ"],
+                    "D27d": ["🧾Epet žádost";"🧾DE žádost","🧾RZ"],
+                    "D57d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ", "🧾SOP", "🧾Protokol tepelného čerpadla", "🧾Výpočet tepelných ztrát"],
+                    "D61d": ["🧾Epet žádost";"🧾DE žádost","🧾RZ"]
                 },
  		 "D25d": {
-                "D01d": ["🧾Epet žádost"],
-                "D02d": ["🧾Epet žádost"],
-                "D25d": ["🧾Epet žádost", "🧾RZ"],
-                "D26d": ["🧾Epet žádost", "🧾RZ"],
-                "D27d": ["🧾Epet žádost", "🧾RZ"],
-                "D57d": ["🧾Epet žádost", "🧾RZ", "🧾SOP", "🧾Protokol tepelného čerpadla", "🧾Výpočet tepelných ztrát"],
-                "D61d": ["🧾Epet žádost", "🧾RZ"]
+                "D01d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D02d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D25d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ"],
+                "D26d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ"],
+                "D27d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ"],
+                "D57d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ", "🧾SOP", "🧾Protokol tepelného čerpadla", "🧾Výpočet tepelných ztrát"],
+                "D61d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ"]
             },
            	 "D26d": {
-                "D01d": ["🧾Epet žádost"],
-                "D02d": ["🧾Epet žádost"],
-                "D25d": ["🧾Epet žádost"],
-                "D26d": ["🧾Epet žádost", "🧾RZ"],
-                "D27d": ["🧾Epet žádost", "🧾RZ"],
-                "D57d": ["🧾Epet žádost", "🧾RZ", "🧾SOP", "🧾Protokol tepelného čerpadla", "🧾Výpočet tepelných ztrát"],
-                "D61d": ["🧾Epet žádost", "🧾RZ"]
+                "D01d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D02d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D25d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D26d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ"],
+                "D27d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ"],
+                "D57d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ", "🧾SOP", "🧾Protokol tepelného čerpadla", "🧾Výpočet tepelných ztrát"],
+                "D61d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ"]
             },
             "D27d": {
-                "D01d": ["🧾Epet žádost"],
-                "D02d": ["🧾Epet žádost"],
-                "D25d": ["🧾Epet žádost"],
-                "D26d": ["🧾Epet žádost"],
-                "D27d": ["🧾Epet žádost"],
-                "D57d": ["🧾Epet žádost", "🧾RZ", "🧾SOP", "🧾Protokol tepelného čerpadla", "🧾Výpočet tepelných ztrát"],
-                "D61d": ["🧾Epet žádost", "🧾RZ"]
+                "D01d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D02d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D25d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D26d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D27d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D57d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ", "🧾SOP", "🧾Protokol tepelného čerpadla", "🧾Výpočet tepelných ztrát"],
+                "D61d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ"]
             },
             "D57d": {
-                "D01d": ["🧾Epet žádost"],
-                "D02d": ["🧾Epet žádost"],
-                "D25d": ["🧾Epet žádost"],
-                "D26d": ["🧾Epet žádost"],
-                "D27d": ["🧾Epet žádost"],
-                "D57d": ["🧾Epet žádost", "🧾RZ", "🧾SOP", "🧾Protokol tepelného čerpadla", "🧾Výpočet tepelných ztrát"],
-                "D61d": ["🧾Epet žádost", "🧾RZ"]
+                "D01d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D02d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D25d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D26d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D27d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D57d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ", "🧾SOP", "🧾Protokol tepelného čerpadla", "🧾Výpočet tepelných ztrát"],
+                "D61d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ"]
             },
             "D61d": {
-                "D01d": ["🧾Epet žádost"],
-                "D02d": ["🧾Epet žádost"],
-                "D25d": ["🧾Epet žádost"],
-                "D26d": ["🧾Epet žádost"],
-                "D27d": ["🧾Epet žádost"],
-                "D57d": ["🧾Epet žádost"],
-                "D61d": ["🧾Epet žádost", "🧾RZ"]
+                "D01d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D02d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D25d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D26d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D27d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D57d": ["🧾Epet žádost";"🧾DE žádost"],
+                "D61d": ["🧾Epet žádost";"🧾DE žádost", "🧾RZ"]
             }
               
             },
             "business": {
                 "C01d": {
-                    "C01d": ["🧾Epet žádost"],
-                    "C02d": ["🧾Epet žádost"],
-                    "C03d": ["🧾Epet žádost"],
-                    "C25d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C26d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C27d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
-                    "C46d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
-                    "C56d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"]
+                    "C01d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C02d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C03d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C25d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C26d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C27d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
+                    "C46d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
+                    "C56d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"]
                 },
                 "C02d": {
-                    "C01d": ["🧾Epet žádost"],
-                    "C02d": ["🧾Epet žádost"],
-                    "C03d": ["🧾Epet žádost"],
-                    "C25d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C26d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C27d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
-                    "C46d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
-                    "C56d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"]
+                    "C01d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C02d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C03d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C25d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C26d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C27d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
+                    "C46d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
+                    "C56d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"]
                 },
                 "C03d": {
-                    "C01d": ["🧾Epet žádost"],
-                    "C02d": ["🧾Epet žádost"],
-                    "C03d": ["🧾Epet žádost"],
-                    "C25d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C26d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C27d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
-                    "C46d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
-                    "C56d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"]
+                    "C01d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C02d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C03d": ["🧾Epet žádost";"🧾DE žádost"],
+                    "C25d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C26d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C27d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
+                    "C46d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
+                    "C56d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"]
                 },
                 "C25d": {
-                    "C01d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C02d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C03d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C25d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C26d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C27d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
-                    "C46d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
-                    "C56d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"]
+                    "C01d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C02d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C03d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C25d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C26d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C27d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
+                    "C46d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
+                    "C56d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"]
                 },
                 "C26d": {
-                    "C01d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C02d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C03d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C25d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C26d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C27d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
-                    "C46d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
-                    "C56d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"]
+                    "C01d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C02d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C03d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C25d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C26d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C27d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
+                    "C46d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
+                    "C56d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"]
                 },
                 "C27d": {
-                    "C01d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C02d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C03d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C25d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C26d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C27d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C46d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
-                    "C56d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"]
+                    "C01d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C02d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C03d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C25d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C26d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C27d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C46d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"],
+                    "C56d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"]
                 },
                 "C46d": {
-                    "C01d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C02d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C03d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C25d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C26d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C27d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C46d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C56d": ["🧾Epet žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"]
+                    "C01d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C02d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C03d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C25d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C26d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C27d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C46d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C56d": ["🧾Epet žádost";"🧾DE žádost", "🧾2X SOP(PRO STÁVAJÍCÍ OM + NOVÉ OM)","🧾RZ"]
                 },
                 "C56d": {
-                    "C01d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C02d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C03d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C25d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C26d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C27d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C46d": ["🧾Epet žádost", "🧾SOP","🧾RZ"],
-                    "C56d": ["🧾Epet žádost", "🧾SOP","🧾RZ"]
+                    "C01d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C02d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C03d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C25d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C26d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C27d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C46d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"],
+                    "C56d": ["🧾Epet žádost";"🧾DE žádost", "🧾SOP","🧾RZ"]
                 }
 }}
     
