@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#24352e">
+  <meta name="description" content="Interní Tarifomat – orientační přehled distribučních sazeb, změn sazby a výše jističe.">
+  <title>Tarifomat | Znalostka EPET</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<svg aria-hidden="true" width="0" height="0" style="position:absolute;overflow:hidden">
+<symbol id="i-bolt" viewBox="0 0 24 24"><path d="m13 2-9 12h7l-1 8 10-13h-7V2Z"/></symbol>
+<symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+<symbol id="i-file" viewBox="0 0 24 24"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9Z"/><path d="M13 2v7h7M8 13h8M8 17h8"/></symbol>
+<symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></symbol>
+<symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="13" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></symbol>
+<symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 11v6M12 7h.01"/></symbol>
+<symbol id="i-refresh" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></symbol>
+<symbol id="i-printer" viewBox="0 0 24 24"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 15h12v7H6zM18 12h.01"/></symbol>
+</svg>
+<div class="app">
+  <div class="topline"><div class="brand"><span class="brand-square">e</span><span>EPET <span style="color:#93ad77">/</span> Znalostka</span></div><span class="top-tag">Interní metodická pomůcka · Podklady 04. 11. 2025</span></div>
+  <header class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow"><span class="circle"></span> Distribuční změny · Pracovní průvodce</div>
+      <h1>Tarifomat<span>.</span><br><span>Sazby a jističe</span></h1>
+      <p class="hero-copy">Najdi charakter odběrného místa, zkontroluj změnu distribuční sazby a zjisti orientační seznam dokumentů pro změnu hlavního jističe. Vše přehledně na jednom místě.</p>
+    </div>
+    <div class="hero-side" aria-label="Obsah průvodce"><div class="hero-step"><b>01</b><span>Charakteristika sazeb</span></div><div class="hero-step"><b>02</b><span>Změna distribuční sazby</span></div><div class="hero-step"><b>03</b><span>Změna hlavního jističe</span></div></div>
+  </header>
+  <div class="quickbar">
+    <nav class="anchors" aria-label="Přejít na sekci"><a class="anchor" href="#charakter"><b>01</b> Charakteristika</a><a class="anchor" href="#sazba"><b>02</b> Změna sazby</a><a class="anchor" href="#jistic"><b>03</b> Hlavní jistič</a></nav>
+    <div class="utility-actions"><button type="button" id="resetAll" class="btn-lite"><svg class="icon sm"><use href="#i-refresh"/></svg> Obnovit výběry</button><button type="button" id="printPage" class="btn-lite"><svg class="icon sm"><use href="#i-printer"/></svg> Tisk / PDF</button></div>
+  </div>
+
+  <section class="section" id="charakter" aria-labelledby="h-char">
+    <div class="section-heading"><span class="section-index">01</span><div><h2 id="h-char">Charakteristika distribučních sazeb</h2><p>Rychlá orientace podle segmentu a zvolené distribuční sazby.</p></div><svg class="icon lg section-glyph"><use href="#i-grid"/></svg></div>
+    <div class="layout"><div class="panel"><div class="panel-top"><svg class="icon sm"><use href="#i-sliders"/></svg><h3>Výběr parametrů</h3><small>Identifikace sazby</small></div><div class="panel-body">
+      <div class="field-grid"><div class="field"><label for="segmentZIS">Segment</label><div class="select-wrap"><select id="segmentZIS"><option value="domacnost">Domácnost</option><option value="podnikatel">Podnikatel / firma</option></select></div></div><div class="field"><label for="sazbaZIS">Distribuční sazba</label><div class="select-wrap"><select id="sazbaZIS"></select></div></div></div>
+      <p class="helper">Základní charakteristiky převzaté z původního Tarifomatu. Přidělení konkrétní sazby se řídí aktuálními podmínkami distributora.</p>
+    </div></div><div class="panel"><div class="result pale"><div class="result-label"><svg class="icon sm"><use href="#i-bolt"/></svg> Vyhodnocení sazby</div><div class="result-value" id="charTitle">—</div><p class="result-desc" id="charText">Zvol sazbu pro zobrazení její charakteristiky.</p><div class="result-meta"><span class="softpill" id="charTag">Sazba —</span><span class="softpill gray" id="charSegment">Domácnost</span></div></div></div></div>
+  </section>
+
+  <section class="section" id="sazba" aria-labelledby="h-sazba">
+    <div class="section-heading"><span class="section-index">02</span><div><h2 id="h-sazba">Změna distribuční sazby</h2><p>Zadej původní a požadovanou sazbu pro orientační určení dokumentů.</p></div><svg class="icon lg section-glyph"><use href="#i-file"/></svg></div>
+    <div class="layout"><div class="panel"><div class="panel-top"><svg class="icon sm"><use href="#i-sliders"/></svg><h3>Parametry změny</h3><small>Údaje odběrného místa</small></div><div class="panel-body">
+      <div class="field-grid"><div class="field"><label for="region">Distribuční území</label><div class="select-wrap"><select id="region"><option value="CEZ">ČEZ Distribuce</option><option value="EGD">EG.D / PRE</option></select></div></div><div class="field"><label for="segment">Segment</label><div class="select-wrap"><select id="segment"><option value="home">Domácnost</option><option value="business">Podnikatel / firma</option></select></div></div><div class="field"><label for="oldRate">Původní sazba</label><div class="select-wrap"><select id="oldRate"></select></div></div><div class="field"><label for="newRate">Požadovaná sazba</label><div class="select-wrap"><select id="newRate"></select></div></div></div>
+      <p class="helper">Po změně libovolného parametru se seznam podkladů automaticky aktualizuje. Území EG.D a PRE jsou ve zdrojové metodice vedena společně.</p>
+    </div></div><div class="panel"><div class="result violet"><div class="result-label violet-text"><svg class="icon sm"><use href="#i-file"/></svg> Výsledek změny sazby</div><div class="result-value"><span id="rateFrom">D01d</span><span class="arrow">→</span><span id="rateTo">D01d</span></div><div class="result-meta"><span class="softpill purple" id="rateRegion">ČEZ Distribuce</span><span class="softpill gray" id="rateSegment">Domácnost</span></div>
+      <div class="docs"><div class="docs-head"><h4>Podklady podle původní metodiky</h4><span class="docs-count" id="rateDocsCount">0</span></div><ul class="docs-list" id="documentsList"></ul><div class="doc-actions"><button class="btn-copy" id="copyRate" type="button"><svg class="icon sm"><use href="#i-copy"/></svg> Kopírovat dokumenty</button><span class="copy-status" id="rateCopyStatus" aria-live="polite"></span></div></div><p class="summary" id="rateNote">Podklady vycházejí z přiložené interní tabulky.</p></div></div></div>
+  </section>
+
+  <section class="section" id="jistic" aria-labelledby="h-jistic">
+    <div class="section-heading"><span class="section-index">03</span><div><h2 id="h-jistic">Změna výše hlavního jističe</h2><p>Porovnej stávající a požadovaný jistič a ověř přílohy žádosti.</p></div><svg class="icon lg section-glyph"><use href="#i-bolt"/></svg></div>
+    <div class="layout"><div class="panel"><div class="panel-top"><svg class="icon sm"><use href="#i-sliders"/></svg><h3>Parametry jističe</h3><small>Jistič před elektroměrem</small></div><div class="panel-body">
+      <div class="field-grid"><div class="field full"><label for="territory">Distribuční území</label><div class="select-wrap"><select id="territory"><option value="cez">ČEZ Distribuce</option><option value="egd">EG.D / PRE</option></select></div></div><div class="field"><label for="oldSwitch">Původní jistič</label><div class="select-wrap"><select id="oldSwitch"></select></div></div><div class="field"><label for="newSwitch">Požadovaný jistič</label><div class="select-wrap"><select id="newSwitch"></select></div></div></div>
+      <p class="helper">Hodnoty uvádějí počet fází × proud jističe. Při změně počtu fází je nutné postup a dokumenty ověřit individuálně.</p>
+    </div></div><div class="panel"><div class="result blue"><div class="result-label blue-text"><svg class="icon sm"><use href="#i-bolt"/></svg> Výsledek změny jističe</div><div class="result-value"><span id="breakerFrom">1×6 A</span><span class="arrow">→</span><span id="breakerTo">1×6 A</span></div><div class="result-meta"><span class="softpill blue" id="breakerChange">Beze změny</span><span class="softpill gray" id="breakerTerritory">ČEZ Distribuce</span></div>
+      <div class="docs"><div class="docs-head"><h4>Orientační seznam dokumentů</h4><span class="docs-count" id="breakerDocsCount">0</span></div><ul class="docs-list" id="breakerList"></ul><div class="doc-actions"><button class="btn-copy" id="copyBreaker" type="button"><svg class="icon sm"><use href="#i-copy"/></svg> Kopírovat dokumenty</button><span class="copy-status" id="breakerCopyStatus" aria-live="polite"></span></div></div><p class="summary blue-note" id="breakerNote">Výsledek odpovídá orientační logice původního nástroje.</p></div></div></div>
+  </section>
+  <aside class="footnote"><svg class="icon lg"><use href="#i-info"/></svg><div><b>Důležité upozornění:</b> Tarifomat je interní pracovní pomůcka vytvořená z dodaných podkladů (verze 04. 11. 2025). Seznam dokumentů je orientační. Před sdělením závazných požadavků zákazníkovi ověř aktuální pravidla příslušného PDS, revizní a technické podmínky konkrétního odběrného místa.</div></aside>
+  <footer class="footer"><span><span class="mini-logo">EPET</span> · Znalostka · Tarifomat</span><span>Charakteristiky sazeb / Změny sazeb / Hlavní jistič</span></footer>
+</div>
+<script src="./app.js"></script>
+</body>
+</html>
