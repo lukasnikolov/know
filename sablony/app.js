@@ -283,9 +283,9 @@
         },
 
         // Neznámé položky ve složených závorkách vytvářejí vlastní pole.
-        // Zatím pouze pro konkrétní dědickou výzvu, aby se neměnilo ovládání ostatních šablon.
+        // Platí pro celou kategorii dědického řízení, ostatních kategorií se netýká.
         get additionalPlaceholderFields() {
-          if (this.selected?.subject !== 'Výzva k úhradě neuhrazených plateb za pokračující odběr') return [];
+          if (!this.selected || this.getCategorySection(this.selected.category) !== 'inheritance') return [];
           const html = String(this.selected.body || '').replace(/<table\b[^>]*>[\s\S]*?<\/table>/gi, '');
           const handled = new Set(['variabilní symbol', 'smluvní účet', 'datum splatnosti', 'částka', 'celková částka',
             'termín vystavení / odečtový měsíc', 'hodnota jističe', 'distribuční sazba', 'sazba', 'xxx a', 'xxxx a', 'xxxx']);
@@ -296,6 +296,8 @@
             if (handled.has(name.toLocaleLowerCase('cs-CZ'))) continue;
             if (/^jméno\s*,\s*příjmení\s*,\s*datum narození\s*,\s*trvalý pobyt$/i.test(name)) {
               ['jméno', 'příjmení', 'datum narození', 'trvalý pobyt'].forEach(add);
+            } else if (/^jméno\s+a\s+příjmení\s*,\s*datum narození\s*,\s*adresa zákazníka$/i.test(name)) {
+              ['jméno a příjmení', 'datum narození', 'adresa zákazníka'].forEach(add);
             } else {
               add(name);
             }
@@ -407,7 +409,7 @@
           this.additionalOpen = false;
           if (!this.selected || this.requiredVariablesCount === 0) return;
 
-          // Nově doplňované údaje o zůstaviteli zpřístupníme hned po výběru výzvy.
+          // Automatické údaje z dědických šablon zpřístupníme hned po výběru.
           if (this.additionalPlaceholderFields.some(field => !String(this.additionalValues[field] || '').trim())) {
             this.additionalOpen = true;
             return;
@@ -1058,16 +1060,17 @@
           out = out.replace(/\{částka\}/gi, this.castka ? markVar(this.castka.trim()) : "{částka}");
           out = out.replace(/\{celková částka\}/gi, targetCelkovaCastka);
 
-          // 5b. AUTOMATICKÁ POLE VE SLOŽENÝCH ZÁVORKÁCH (dědická výzva)
-          if (this.selected?.subject === 'Výzva k úhradě neuhrazených plateb za pokračující odběr') {
+          // 5b. AUTOMATICKÁ POLE VE SLOŽENÝCH ZÁVORKÁCH (celé dědické řízení)
+          if (this.selected && this.getCategorySection(this.selected.category) === 'inheritance') {
             const getPart = key => {
               const value = String(this.additionalValues[key] || '').trim();
               return value ? markVar(value) : `{${key}}`;
             };
             const composed = `${getPart('jméno')} ${getPart('příjmení')}, nar. ${getPart('datum narození')}, trvale bytem ${getPart('trvalý pobyt')}`;
             out = out.replace(/\{jméno\s*,\s*příjmení\s*,\s*datum narození\s*,\s*trvalý pobyt\}/gi, composed);
+            const composedCustomer = `${getPart('jméno a příjmení')}, nar. ${getPart('datum narození')}, bytem ${getPart('adresa zákazníka')}`;
+            out = out.replace(/\{jméno\s+a\s+příjmení\s*,\s*datum narození\s*,\s*adresa zákazníka\}/gi, composedCustomer);
             for (const key of this.additionalPlaceholderFields) {
-              if (['jméno', 'příjmení', 'datum narození', 'trvalý pobyt'].includes(key)) continue;
               const value = String(this.additionalValues[key] || '').trim();
               if (!value) continue;
               // Nahradí opakovaný výskyt stejné proměnné, v HTML zachová atributy a escapuje text.
