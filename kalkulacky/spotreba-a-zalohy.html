@@ -47,6 +47,15 @@ html.access-granted #kalk-access-gate{display:none!important}
 html.access-granted #access-logout{display:block}
 @media(max-width:520px){.access-head{padding:23px}.access-head h2{font-size:23px}.access-form{padding:23px}}
 @media print{#access-logout{display:none!important}}
+
+/* Pravidla pro vykreslení v iframe Google Sites: do odemčení nezobrazovat obsah aplikace. */
+html:not(.access-granted) body>header,
+html:not(.access-granted) body>nav,
+html:not(.access-granted) body>main,
+html:not(.access-granted) body>footer,
+html:not(.access-granted) body>section,
+html:not(.access-granted) body>.wrap {visibility:hidden!important}
+html:not(.access-granted) #kalk-access-gate{display:grid!important;visibility:visible!important}
 </style></head>
 <body>
 <div id="kalk-access-gate" role="main" aria-labelledby="access-title">
@@ -4845,11 +4854,13 @@ renderEditor();
 <script id="kalk-access-control">
 (function(){
   "use strict";
-  const SALT="dbbc5f1ad2d90d30f8f8aad027ab2842", HASH="0d86183efad10ec0d96eab9fce7fc695543f0fa1dbfaeb21e0976363458ad852", KEY="know-kalkulacky-auth-v1";
+  const SALT="dbbc5f1ad2d90d30f8f8aad027ab2842", HASH="0d86183efad10ec0d96eab9fce7fc695543f0fa1dbfaeb21e0976363458ad852";
   const form=document.getElementById("access-form"), input=document.getElementById("access-password"), button=document.getElementById("access-submit"), status=document.getElementById("access-error");
   const unlock=()=>{document.documentElement.classList.add("access-granted");input.value="";status.textContent="";};
-  const lock=()=>{try{sessionStorage.removeItem(KEY)}catch(_){}document.documentElement.classList.remove("access-granted");input.value="";status.textContent="";input.focus();};
-  try {if(sessionStorage.getItem(KEY)==="granted:"+HASH.slice(0,12))unlock();}catch(_){}
+  const lock=()=>{document.documentElement.classList.remove("access-granted");input.value="";status.textContent="";input.focus();};
+  // Záměrně neukládáme odemčení: heslo se vyžaduje při každém načtení, i v Google Sites.
+  document.documentElement.classList.remove("access-granted");
+  window.addEventListener("pageshow", event => { if(event.persisted) lock(); });
   form.addEventListener("submit",async event=>{
     event.preventDefault();
     if(!input.value)return;
@@ -4858,7 +4869,7 @@ renderEditor();
     try{
       const bytes=new Uint8Array(await crypto.subtle.digest("SHA-256",new TextEncoder().encode(SALT+":"+input.value)));
       const actual=Array.from(bytes,b=>b.toString(16).padStart(2,"0")).join("");
-      if(actual===HASH){try{sessionStorage.setItem(KEY,"granted:"+HASH.slice(0,12))}catch(_){}unlock();}
+      if(actual===HASH){unlock();}
       else{status.textContent="Nesprávné heslo. Zkuste to znovu.";input.value="";input.focus();}
     }catch(error){status.textContent="Heslo se nepodařilo ověřit. Obnovte stránku.";console.warn(error)}
     finally{button.disabled=false;button.textContent="Odemknout kalkulačku";}
