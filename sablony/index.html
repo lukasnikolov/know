@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="cs">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Smart Engine v2.9 | Responzivní šablony</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7/dist/fuse.basic.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Načítání aktuálního sablony.js (GitHub Pages) místo pevně připnutého commitu. -->
+  <script>
+    window.sablonyDataReady = new Promise(function (resolve, reject) {
+      var script = document.createElement('script');
+      script.src = '../sablony.js?v=' + Date.now();
+      script.onload = function () {
+        if (window.SABLONY && typeof window.SABLONY === 'object') resolve(window.SABLONY);
+        else reject(new Error('Databáze sablony.js se načetla bez objektu SABLONY.'));
+      };
+      script.onerror = function () {
+        reject(new Error('Soubor sablony.js se nepodařilo stáhnout z GitHub Pages.'));
+      };
+      document.head.appendChild(script);
+    });
+  </script>
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body x-data="catalog()" x-init="init()" :class="brand === 'epet' ? 'theme-epet' : 'theme-de'">
+  <div id="templateLoadError" role="alert" style="display:none; position:fixed; z-index:10000; top:12px; left:12px; right:12px; margin:auto; max-width:760px; background:#fff6f3; border:1px solid #ef9a91; border-left:5px solid #dc2626; padding:15px 18px; border-radius:13px; box-shadow:0 8px 30px #0002; color:#812019;">
+    <strong>Šablony se nepodařilo načíst.</strong> <span data-error-detail></span>
+    <button type="button" onclick="location.reload()" style="margin-left:12px; border-radius:8px; border:1px solid #ef9a91; background:white; padding:5px 12px;">Zkusit znovu</button>
+  </div>
+
+
+  <div x-show="false" id="error-fallback"
+    style="display: none; padding: 20px; color: red; font-weight: bold; text-align: center;">
+    Došlo k chybě při načítání databáze. Zkontroluj konzoli prohlížeče (F12).
+  </div>
+  <script>setTimeout(() => { if (!document.querySelector('[x-data]')) document.getElementById('error-fallback').style.display = 'block'; }, 1000);</script>
+
+  <div class="app-grid">
+
+    <aside class="panel-cats" x-show="!isMobile || mobileStep === 'templates'" x-cloak>
+      <div class="sidebar-header">
+
+        <div class="d-flex align-items-center mb-3 w-100">
+          <div class="logo-sq"></div>
+          <h6 class="sidebar-header-text m-0 fw-bold text-uppercase ms-3"
+            style="letter-spacing: 1px; font-size: 0.75rem; color: #94a3b8;"
+            x-text="brand === 'epet' ? 'EPET Šablony' : 'Dobrá Energie Šablony'"></h6>
+        </div>
+
+        <div class="brand-switcher d-flex mb-1">
+          <button class="btn btn-sm w-50" :class="brand === 'epet' ? 'btn-dark' : 'text-muted'"
+            @click="setBrand('epet')">EPET</button>
+          <button class="btn btn-sm w-50" :class="brand === 'de' ? 'btn-dark' : 'text-muted'"
+            @click="setBrand('de')">DE</button>
+        </div>
+        <div class="brand-switcher-help small text-muted px-1 mt-1" style="font-size: 0.68rem; line-height: 1.25;">
+          Přepnutí upraví kontakty a odkazy.
+        </div>
+        <div class="small mt-2 px-1" :style="{color: currentBrandColor}" style="font-size: 0.68rem; line-height: 1.25;">
+          <i class="bi bi-info-circle me-1"></i>Aktivní značka: <strong
+            x-text="brand === 'epet' ? 'EPET' : 'Dobrá Energie'"></strong>
+        </div>
+
+      </div>
+
+      <!-- Přehledná navigace: pouze hlavní tematické sekce; detailní kategorie jsou v prostředním panelu. -->
+      <div class="cat-container">
+        <div class="section-navigation-title">Rychlý přístup</div>
+        <button type="button" class="cat-btn cat-tone-all" :class="activeSection === 'all' ? 'active' : ''" @click="setSection('all')">
+          <span class="cat-text"><i class="bi bi-collection me-2"></i>Všechny šablony</span>
+          <span class="cat-count" x-text="totalCount"></span>
+        </button>
+        <button type="button" class="cat-btn cat-tone-favorites" :class="activeSection === 'favorites' ? 'active' : ''" @click="setSection('favorites')">
+          <span class="cat-text"><i class="bi bi-star me-2"></i>Oblíbené</span>
+          <span class="cat-count" x-text="favoriteItems().length"></span>
+        </button>
+        <button type="button" class="cat-btn cat-tone-recent" :class="activeSection === 'recent' ? 'active' : ''" @click="setSection('recent')">
+          <span class="cat-text"><i class="bi bi-clock-history me-2"></i>Naposledy použité</span>
+          <span class="cat-count" x-text="recentItems().length"></span>
+        </button>
+
+        <div class="section-navigation-title section-topic-title">Tematické sekce</div>
+        <template x-for="section in mainSections" :key="section.id">
+          <button type="button" class="cat-btn" :class="activeSection === section.id ? 'active' : ''"
+            @click="setSection(section.id)" :title="section.label">
+            <span class="cat-text"><i class="bi me-2" :class="section.icon"></i><span x-text="section.label"></span></span>
+            <span class="cat-count" x-text="getSectionCount(section.id)"></span>
+          </button>
+        </template>
+      </div>
+    </aside>
+
+    <section class="panel-list" :class="isMobile && mobileStep === 'variables' ? 'mobile-variables-step' : ''" x-show="!isMobile || mobileStep !== 'preview'" x-cloak>
+
+      <div class="search-area">
+
+        <div x-show="!isMobile || mobileStep === 'templates'" x-cloak>
+
+        <!-- Kategorie jsou nyní v prostředním sloupci místo dlouhého levého menu. -->
+        <div class="section-filter mb-3" x-show="activeSection !== 'all' && activeSection !== 'favorites' && activeSection !== 'recent'" x-cloak>
+          <div class="d-flex justify-content-between align-items-center gap-2 mb-2">
+            <label class="section-filter-label mb-0" for="subcategorySelect" x-text="getSectionLabel(activeSection)"></label>
+            <span class="section-filter-counter" x-text="getSectionCategories().length + ' podkategorií'"></span>
+          </div>
+          <select id="subcategorySelect" class="form-select form-select-sm section-filter-select"
+            :value="category" @change="setSubcategory($event.target.value)">
+            <option value="all">Všechny podkategorie v sekci</option>
+            <template x-for="cat in getSectionCategories()" :key="cat">
+              <option :value="cat" x-text="cat + ' (' + (categoryCounts[cat] || 0) + ')'"></option>
+            </template>
+          </select>
+        </div>
+
+        <div class="custom-search d-flex align-items-center mb-2 rounded-3">
+          <i class="bi bi-search ms-3 me-2" :style="{color: currentBrandColor}"></i>
+          <input id="searchInput" type="text"
+            class="form-control border-0 bg-transparent py-2 px-1 shadow-none fw-medium"
+            placeholder="Hledat šablonu (název, text)..." x-model="q" @input="onFiltersChanged()">
+        </div>
+
+        <div class="shortcut-hint mb-3">
+          <i class="bi bi-keyboard me-1"></i>
+          Tip: klávesa / skočí do hledání, Ctrl + Enter kopíruje šablonu.
+        </div>
+
+        <div class="list-toolbar">
+          <span class="text-muted fw-bold list-result-count"
+            x-text="filtered.length + ' šablon v seznamu'"></span>
+          <button class="view-toggle" @click="compactList = !compactList"
+            :title="compactList ? 'Přepnout na karty' : 'Přepnout na kompaktní seznam'">
+            <i class="bi" :class="compactList ? 'bi-view-stacked' : 'bi-list-ul'"></i>
+            <span x-text="compactList ? 'Karty' : 'Kompaktní'"></span>
+          </button>
+        </div>
+
+        </div>
+
+        <div x-show="!isMobile || mobileStep === 'variables'" x-cloak>
+          <div class="mobile-selected-summary" x-show="selected">
+            <div class="mobile-selected-summary-title" x-text="selected?.subject"></div>
+            <button type="button" @click="goMobileStep('templates')">
+              <i class="bi bi-arrow-left me-1"></i>Změnit
+            </button>
+          </div>
+
+        <div class="variables-toolbar">
+          <div>
+            <div class="variables-toolbar-title">
+              <i class="bi bi-sliders2 me-2" :style="{color: currentBrandColor}"></i>
+              Proměnné pro doplnění
+            </div>
+            <div class="variables-toolbar-subtitle">
+              <span x-show="!selected">Nejprve vyberte šablonu.</span>
+              <span x-show="selected && requiredVariablesCount === 0">Tato šablona nevyžaduje žádné doplnění.</span>
+              <span x-show="selected && requiredVariablesCount > 0">
+                Doplněno <strong x-text="filledRequiredVariablesCount"></strong>
+                z <strong x-text="requiredVariablesCount"></strong> potřebných údajů.
+              </span>
+            </div>
+          </div>
+          <button type="button" class="variables-clear" :class="clearConfirmArmed ? 'is-confirming' : ''"
+            x-show="selected && requiredVariablesCount > 0" x-cloak
+            @click.prevent.stop="clearVariables()"
+            :title="clearConfirmArmed ? 'Kliknutím potvrďte vymazání údajů' : 'Vymazat všechny vyplněné údaje'">
+            <i class="bi" :class="clearConfirmArmed ? 'bi-exclamation-triangle' : 'bi-trash3'"></i>
+            <span x-text="clearConfirmArmed ? 'Potvrdit' : 'Vymazat'"></span>
+          </button>
+        </div>
+
+        <div class="variable-accordion">
+
+          <div class="variables-context-empty" x-show="!selected" x-cloak>
+            <i class="bi bi-cursor-fill d-block mb-2" :style="{color: currentBrandColor}" style="font-size:1.2rem;"></i>
+            Vyberte šablonu. Zobrazí se pouze pole, která daná šablona skutečně používá.
+          </div>
+
+          <div class="variables-context-empty" x-show="selected && requiredVariablesCount === 0" x-cloak>
+            <i class="bi bi-check-circle d-block mb-2 text-success" style="font-size:1.2rem;"></i>
+            Vybraná šablona je připravena bez doplňování údajů.
+          </div>
+
+          <!-- ZÁKAZNÍK -->
+          <section class="variable-section" x-show="requiredGroups.customer" x-cloak>
+            <button type="button" class="variable-section-toggle" @click="customerOpen = !customerOpen; if (customerOpen) { supplyOpen = false; paymentsOpen = false }"
+              :aria-expanded="customerOpen">
+              <span class="variable-section-heading">
+                <span class="variable-section-icon">
+                  <i class="bi bi-person"></i>
+                </span>
+                <span>
+                  <span class="variable-section-title">Zákazník</span>
+                  <span class="variable-section-caption">Příjmení a oslovení</span>
+                </span>
+              </span>
+              <span class="variable-section-end">
+                <span class="variable-count-badge" x-show="customerRelevantFilledCount > 0" x-cloak
+                  x-text="customerRelevantFilledCount"></span>
+                <i class="bi bi-chevron-down variable-section-chevron"
+                  :class="customerOpen ? 'is-open' : ''"></i>
+              </span>
+            </button>
+
+            <div class="variable-section-body" x-show="customerOpen" x-cloak
+              x-transition:enter="transition ease-out duration-200"
+              x-transition:enter-start="opacity-0 -translate-y-1"
+              x-transition:enter-end="opacity-100 translate-y-0"
+              x-transition:leave="transition ease-in duration-150"
+              x-transition:leave-start="opacity-100 translate-y-0"
+              x-transition:leave-end="opacity-0 -translate-y-1">
+              <div class="row g-2">
+                <div class="col-12 col-sm-8">
+                  <label class="variable-label" for="customerSurname">Příjmení</label>
+                  <input id="customerSurname" type="text"
+                    class="form-control form-control-sm variable-input"
+                    x-model="lname" @blur="lname = lname.trim()" placeholder="Příjmení pro oslovení...">
+                </div>
+                <div class="col-12 col-sm-4">
+                  <label class="variable-label" for="customerGender">Oslovení</label>
+                  <div class="input-group input-group-sm">
+                    <span class="input-group-text variable-input-icon" :style="{color: currentBrandColor}">
+                      <i class="bi" :class="gender === 'male' ? 'bi-gender-male' : 'bi-gender-female'"></i>
+                    </span>
+                    <select id="customerGender" class="form-select variable-input" x-model="gender">
+                      <option value="male">Muž</option>
+                      <option value="female">Žena</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ODBĚRNÉ MÍSTO -->
+          <section class="variable-section" x-show="requiredGroups.supply" x-cloak>
+            <button type="button" class="variable-section-toggle" @click="supplyOpen = !supplyOpen; if (supplyOpen) { customerOpen = false; paymentsOpen = false }"
+              :aria-expanded="supplyOpen">
+              <span class="variable-section-heading">
+                <span class="variable-section-icon">
+                  <i class="bi bi-house-door"></i>
+                </span>
+                <span>
+                  <span class="variable-section-title">Odběrné místo</span>
+                  <span class="variable-section-caption">EAN/EIC, adresa, odečtový měsíc, jistič a sazba</span>
+                </span>
+              </span>
+              <span class="variable-section-end">
+                <span class="variable-count-badge" x-show="supplyRelevantFilledCount > 0" x-cloak
+                  x-text="supplyRelevantFilledCount"></span>
+                <i class="bi bi-chevron-down variable-section-chevron"
+                  :class="supplyOpen ? 'is-open' : ''"></i>
+              </span>
+            </button>
+
+            <div class="variable-section-body" x-show="supplyOpen" x-cloak
+              x-transition:enter="transition ease-out duration-200"
+              x-transition:enter-start="opacity-0 -translate-y-1"
+              x-transition:enter-end="opacity-100 translate-y-0"
+              x-transition:leave="transition ease-in duration-150"
+              x-transition:leave-start="opacity-100 translate-y-0"
+              x-transition:leave-end="opacity-0 -translate-y-1">
+
+              <div class="row g-2" x-show="isVariableRequired('ean')" x-cloak>
+                <div class="col-12">
+                  <label class="variable-label" for="supplyEan">EAN / EIC (lze zadat více kódů)</label>
+                  <textarea id="supplyEan" rows="3" class="form-control form-control-sm variable-input"
+                    :class="isEanValid === false ? 'is-invalid' : (isEanValid === true ? 'is-valid' : '')"
+                    x-model="ean" @blur="ean = normalizeEanInput(ean)"
+                    placeholder="Každý EAN nebo EIC zadejte na samostatný řádek..."></textarea>
+                </div>
+              </div>
+
+              <div class="validation-help mt-1 mb-2" x-show="isVariableRequired('ean')" x-cloak
+                :class="isEanValid === false ? 'text-danger' : (isEanValid === true ? 'text-success' : 'text-muted')">
+                <span x-show="isEanValid === true" class="ean-type-pill">
+                  <i class="bi" :class="eanTypeInfo.icon"></i>
+                  <span x-text="eanTypeInfo.label"></span>
+                </span>
+                <span x-show="isEanValid === false">
+                  <i class="bi bi-exclamation-triangle me-1"></i>
+                  Zkontrolujte <span x-text="invalidEanCount === 1 ? 'zadaný kód' : invalidEanCount + ' zadané kódy'"></span>.
+                  EAN má 18 číslic, EIC má 16 znaků.
+                </span>
+                <span x-show="isEanValid === null">
+                  <i class="bi bi-info-circle me-1"></i>
+                  Kódy oddělte novým řádkem, čárkou nebo středníkem.
+                </span>
+              </div>
+
+              <div class="row g-2">
+                <div class="col-12" x-show="isVariableRequired('adresa')" x-cloak>
+                  <label class="variable-label" for="supplyAddress">Adresa odběrného místa</label>
+                  <input id="supplyAddress" type="text" class="form-control form-control-sm variable-input"
+                    x-model="adresa" @blur="adresa = adresa.trim()" placeholder="Ulice, číslo, obec...">
+                </div>
+                <div class="col-12" x-show="isVariableRequired('odecetDatum')" x-cloak>
+                  <label class="variable-label" for="supplyReadingDate">Termín vystavení / odečtový měsíc</label>
+                  <div class="input-group input-group-sm">
+                    <span class="input-group-text variable-input-icon" :style="{color: currentBrandColor}">
+                      <i class="bi bi-calendar3"></i>
+                    </span>
+                    <input id="supplyReadingDate" type="date"
+                      class="form-control form-control-sm variable-input"
+                      x-model="odecetDatum">
+                  </div>
+                  <div class="validation-help mt-1 text-muted">
+                    <i class="bi bi-info-circle me-1"></i>
+                    Do šablony se vloží datum bez roku:
+                    <strong x-show="odecetDenMesic" x-text="odecetDenMesic"></strong>
+                    <span x-show="!odecetDenMesic">např. 31. 5.</span>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6" x-show="isVariableRequired('jistic')" x-cloak>
+                  <label class="variable-label" for="supplyBreaker">Jistič</label>
+                  <input id="supplyBreaker" type="text" class="form-control form-control-sm variable-input"
+                    x-model="jistic" @blur="jistic = formatJistic(jistic)" placeholder="Např. 3×25 A...">
+                </div>
+                <div class="col-12 col-sm-6" x-show="isVariableRequired('sazba')" x-cloak>
+                  <label class="variable-label" for="supplyRate">Distribuční sazba</label>
+                  <input id="supplyRate" type="text" class="form-control form-control-sm variable-input"
+                    x-model="sazba" @blur="sazba = formatSazba(sazba)" placeholder="Např. D57d...">
+                </div>
+              </div>
+
+              <div class="validation-help mt-2 text-muted" x-show="isVariableRequired('jistic') || isVariableRequired('sazba')" x-cloak>
+                <i class="bi bi-lightning-charge me-1"></i>
+                Jistič nahrazuje <code>{XXX A}</code> / <code>{XXXX A}</code>,
+                sazba nahrazuje <code>{XXXX}</code> nebo <code>{DISTRIBUČNÍ SAZBA}</code>.
+              </div>
+            </div>
+          </section>
+
+          <!-- PLATBY -->
+          <section class="variable-section" x-show="requiredGroups.payments" x-cloak>
+            <button type="button" class="variable-section-toggle" @click="paymentsOpen = !paymentsOpen; if (paymentsOpen) { customerOpen = false; supplyOpen = false }"
+              :aria-expanded="paymentsOpen">
+              <span class="variable-section-heading">
+                <span class="variable-section-icon">
+                  <i class="bi bi-wallet2"></i>
+                </span>
+                <span>
+                  <span class="variable-section-title">Platby</span>
+                  <span class="variable-section-caption">VS, smluvní účet, splatnost a částka</span>
+                </span>
+              </span>
+              <span class="variable-section-end">
+                <span class="variable-count-badge" x-show="paymentsRelevantFilledCount > 0" x-cloak
+                  x-text="paymentsRelevantFilledCount"></span>
+                <i class="bi bi-chevron-down variable-section-chevron"
+                  :class="paymentsOpen ? 'is-open' : ''"></i>
+              </span>
+            </button>
+
+            <div class="variable-section-body" x-show="paymentsOpen" x-cloak
+              x-transition:enter="transition ease-out duration-200"
+              x-transition:enter-start="opacity-0 -translate-y-1"
+              x-transition:enter-end="opacity-100 translate-y-0"
+              x-transition:leave="transition ease-in duration-150"
+              x-transition:leave-start="opacity-100 translate-y-0"
+              x-transition:leave-end="opacity-0 -translate-y-1">
+
+              <div class="row g-2">
+                <div class="col-12 col-sm-6" x-show="isVariableRequired('vs')" x-cloak>
+                  <label class="variable-label" for="paymentVs">Variabilní symbol</label>
+                  <input id="paymentVs" type="text" class="form-control form-control-sm variable-input"
+                    x-model="vs" @blur="vs = vs.trim()" placeholder="Variabilní symbol...">
+                </div>
+                <div class="col-12 col-sm-6" x-show="isVariableRequired('smluvniUcet')" x-cloak>
+                  <label class="variable-label" for="paymentAccount">Smluvní účet</label>
+                  <input id="paymentAccount" type="text" class="form-control form-control-sm variable-input"
+                    x-model="smluvniUcet" @blur="smluvniUcet = smluvniUcet.trim()" placeholder="Smluvní účet...">
+                </div>
+                <div class="col-12 col-sm-6" x-show="isVariableRequired('splatnost')" x-cloak>
+                  <label class="variable-label" for="paymentDue">Splatnost</label>
+                  <input id="paymentDue" type="text" class="form-control form-control-sm variable-input"
+                    x-model="splatnost" @blur="splatnost = splatnost.trim()" placeholder="Např. 15. 06. 2026...">
+                </div>
+                <div class="col-12 col-sm-6" x-show="isVariableRequired('castka')" x-cloak>
+                  <label class="variable-label" for="paymentAmount">Částka</label>
+                  <input id="paymentAmount" type="text" class="form-control form-control-sm variable-input"
+                    x-model="castka" @blur="castka = castka ? formatMoney(parseMoney(castka)) : ''"
+                    placeholder="Částka v Kč...">
+                </div>
+                <div class="col-12" x-show="isVariableRequired('dluhyRadky')" x-cloak>
+                  <label class="variable-label" for="paymentRows">Více plateb</label>
+                  <div class="debt-help-wrap">
+                    <div class="debt-help-trigger">
+                      <textarea id="paymentRows" class="form-control form-control-sm variable-input"
+                        x-model="dluhyRadky"
+                        placeholder="Druh; VS; Účet; Splatnost; Částka..."></textarea>
+                      <span class="debt-help-icon" :style="{backgroundColor: currentBrandColor}">?</span>
+                    </div>
+                    <div class="debt-help-popover" role="tooltip">
+                      <strong>Jak vyplnit více plateb:</strong><br>
+                      Každou platbu napište na nový řádek. Hodnoty oddělte středníkem <code>;</code> v pořadí:<br>
+                      <code>Druh dokladu; Variabilní symbol; Smluvní účet; Splatnost; Částka</code>
+                      <div class="debt-help-example">
+                        <strong>Příklad:</strong><br>
+                        Záloha; 1234567890; 21734750; 15.05.2026; 1 500<br>
+                        Záloha; 1234567891; 21734750; 15.06.2026; 1 500
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <button type="button" class="mobile-preview-cta" x-show="selected" @click="goMobileStep('preview')">
+            <i class="bi bi-file-earmark-text"></i>
+            Pokračovat na náhled
+          </button>
+        </div>
+
+        </div>
+      </div>
+
+      <div class="list-scroll" :class="compactList ? 'compact-list' : ''" x-show="!isMobile || mobileStep === 'templates'" x-cloak>
+        <template x-for="t in pageItems()" :key="t.id">
+          <div class="tpl-item" :class="selected?.id === t.id ? 'active' : ''"
+            @click="selectTemplate(t)">
+
+            <div class="d-flex align-items-start justify-content-between gap-2">
+              <div class="min-w-0">
+                <div class="d-flex align-items-center gap-2 flex-wrap mb-1">
+                  <span class="category-chip" :class="getCategoryTone(t.category)">
+                    <i class="bi" :class="getCategoryIcon(t.category)"></i>
+                    <span x-text="t.category"></span>
+                  </span>
+                  <span x-show="isNew(t.date)" class="badge-new" style="margin-left:0;">NOVÉ</span>
+                </div>
+                <div class="tpl-subject" x-text="t.subject"></div>
+              </div>
+              <button type="button" class="tpl-fav-btn" :class="isFavorite(t.id) ? 'is-favorite' : ''"
+                @click.stop="toggleFavorite(t)" :title="isFavorite(t.id) ? 'Odebrat z oblíbených' : 'Přidat do oblíbených'">
+                <i class="bi" :class="isFavorite(t.id) ? 'bi-star-fill' : 'bi-star'"></i>
+              </button>
+            </div>
+
+            <div class="tpl-preview mt-1" x-text="previewText(t.body)"></div>
+          </div>
+        </template>
+
+        <div class="py-4 text-center px-3" x-show="filtered.length === 0">
+          <i class="bi bi-search-heart text-muted" style="font-size: 1.8rem;"></i>
+          <h6 class="fw-bold mt-2 mb-1">Nic jsme nenašli</h6>
+          <p class="text-muted small mb-0">Zkuste zkrátit hledaný výraz nebo vybrat kategorii „Všechny šablony“.</p>
+        </div>
+      </div>
+
+      <div class="list-pagination" x-show="!isMobile || mobileStep === 'templates'" x-cloak>
+        <button class="btn btn-sm btn-light border rounded-circle pagination-arrow" @click="prev()"
+          :disabled="page === 1" title="Předchozí stránka">
+          <i class="bi bi-chevron-left"></i>
+        </button>
+        <span class="fw-bold text-muted pagination-status" x-text="page + ' / ' + totalPages"></span>
+        <button class="btn btn-sm btn-light border rounded-circle pagination-arrow" @click="next()"
+          :disabled="page === totalPages" title="Další stránka">
+          <i class="bi bi-chevron-right"></i>
+        </button>
+      </div>
+    </section>
+
+    <main class="panel-editor" x-show="!isMobile || mobileStep === 'preview'" x-cloak>
+      <template x-if="selected">
+        <div class="preview-wrapper">
+          <div class="editor-header">
+            <div>
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="category-chip" :class="getCategoryTone(selected.category)">
+                  <i class="bi" :class="getCategoryIcon(selected.category)"></i>
+                  <span x-text="selected.category"></span>
+                </span>
+                <span x-show="isNew(selected.date)" class="badge-new" style="margin: 0;">NOVÁ</span>
+              </div>
+              <h4 class="fw-bold m-0" x-text="selected.subject"></h4>
+              <div class="editor-meta">
+                <span><i class="bi bi-folder2-open me-1"></i><span x-text="selected.category"></span></span>
+                <span class="editor-meta-dot"></span>
+                <span><i class="bi bi-calendar3 me-1"></i><span x-text="formatDate(selected.date)"></span></span>
+                <span class="editor-meta-dot"></span>
+                <span><i class="bi bi-type me-1"></i><span
+                    x-text="charCount(applyVariables(selected.body)) + ' znaků'"></span></span>
+              </div>
+            </div>
+
+            <div class="editor-actions">
+              <button type="button" class="editor-fav-btn" :class="isFavorite(selected.id) ? 'is-favorite' : ''"
+                @click="toggleFavorite(selected)" :title="isFavorite(selected.id) ? 'Odebrat z oblíbených' : 'Přidat do oblíbených'">
+                <i class="bi" :class="isFavorite(selected.id) ? 'bi-star-fill' : 'bi-star'"></i>
+              </button>
+              <button class="btn-copy-secondary" @click="selected = {...selected}"
+                title="Vrátí náhled na původní podobu šablony včetně aktuálních proměnných.">
+                <i class="bi bi-arrow-counterclockwise"></i> Obnovit
+              </button>
+              <button class="btn-copy-secondary" @click="copyPlain()" title="Zkopíruje text bez formátování.">
+                <i class="bi bi-text-paragraph"></i> Prostý text
+              </button>
+              <button class="btn-copy" @click="copyRich(selected)">
+                <span x-show="!selectedCopied"><i class="bi bi-clipboard"></i> Kopírovat</span>
+                <span x-show="selectedCopied"><i class="bi bi-check-lg"></i> Hotovo</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Náhled otevřeného e-mailu; předmět a hlavička nejsou součástí kopírované zprávy. -->
+          <section class="email-client-card" aria-label="Náhled e-mailové zprávy">
+            <div class="email-client-header">
+              <div class="email-client-row">
+                <span class="email-client-label">Od:</span>
+                <div class="email-client-value email-client-sender">
+                  <span class="email-client-avatar" aria-hidden="true" x-text="brand === 'epet' ? 'E' : 'DE'"></span>
+                  <span class="email-client-sender-address" x-text="brand === 'epet' ? 'info@epet.cz' : 'info@dobra-energie.eu'"></span>
+                </div>
+              </div>
+              <div class="email-client-row">
+                <span class="email-client-label">Předmět:</span>
+                <div class="email-client-value email-client-subject-value" x-text="emailSubject"></div>
+                <button type="button" class="email-client-copy-subject" @click="copySubject()"
+                  title="Zkopírovat předmět e-mailu" aria-label="Zkopírovat předmět e-mailu">
+                  <i class="bi bi-clipboard" aria-hidden="true"></i>
+                  <span class="copy-subject-text">Kopírovat</span>
+                </button>
+              </div>
+              <div class="email-client-subject-manual" x-show="subjectCopyManual" x-cloak role="status">
+                <i class="bi bi-info-circle me-1" aria-hidden="true"></i>
+                Google Weby mohou blokovat automatické kopírování.
+                <strong>Předmět je označený – stiskněte Ctrl+C</strong>
+                (na Macu ⌘+C). Potom ho vložte pomocí Ctrl+V.
+                <textarea id="subject-copy-fallback" readonly spellcheck="false"
+                  aria-label="Předmět připravený k ručnímu kopírování"
+                  :value="emailSubject" @focus="$el.select()" @click="$el.select()"></textarea>
+              </div>
+            </div>
+            <div class="email-client-message-label">Zpráva</div>
+            <div class="preview-paper" contenteditable="true" aria-label="Text e-mailu – upravitelný náhled"
+              x-html="applyVariables(selected.body)"></div>
+          </section>
+
+          <template
+            x-if="selected.attachments && selected.attachments.filter(f => !f.brand || f.brand === brand).length > 0">
+            <div class="attachment-section mt-4">
+              <h6 class="fw-bold mb-3 small text-uppercase text-muted" style="letter-spacing: 1px;">
+                <i class="bi bi-paperclip me-2"></i>Doporučené přílohy
+              </h6>
+              <div class="d-flex flex-wrap">
+                <template x-for="file in selected.attachments.filter(f => !f.brand || f.brand === brand)"
+                  :key="file.url">
+                  <a :href="attachmentHref(file)" target="_blank" rel="noopener noreferrer" class="attachment-badge"
+                    @click="showToast('Stahuji přílohu...')"
+                    title="Stáhnout přílohu">
+                    <i class="bi me-2" :class="getFileIcon(file)"></i>
+                    <span x-text="file.name"></span>
+                    <i class="bi bi-download ms-2 text-muted" style="font-size: 0.85em;"></i>
+                  </a>
+                </template>
+              </div>
+            </div>
+          </template>
+        </div>
+      </template>
+
+      <template x-if="!selected">
+        <div class="empty-state-card">
+          <i class="bi bi-file-earmark-richtext empty-icon" style="font-size: 3rem;"></i>
+          <h5 class="fw-bold mt-3">Začněte výběrem šablony</h5>
+          <p class="small text-muted mb-0">Vyberte kategorii vlevo nebo použijte vyhledávání podle názvu, textu či
+            tématu.</p>
+        </div>
+      </template>
+    </main>
+  </div>
+
+  <nav class="mobile-step-nav" x-show="isMobile" x-cloak aria-label="Postup práce se šablonou">
+    <button type="button" class="mobile-step-btn" :class="mobileStep === 'templates' ? 'active' : ''" @click="goMobileStep('templates')">
+      <i class="bi bi-collection"></i>
+      <span>1. Šablony</span>
+    </button>
+    <button type="button" class="mobile-step-btn" :class="mobileStep === 'variables' ? 'active' : ''" :disabled="!selected" @click="goMobileStep('variables')">
+      <i class="bi bi-ui-checks-grid"></i>
+      <span>2. Doplnit</span>
+    </button>
+    <button type="button" class="mobile-step-btn" :class="mobileStep === 'preview' ? 'active' : ''" :disabled="!selected" @click="goMobileStep('preview')">
+      <i class="bi bi-file-earmark-text"></i>
+      <span>3. Náhled</span>
+    </button>
+  </nav>
+
+  <div x-show="toast" class="toast-msg" x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="opacity-0 transform translate-y-4"
+    x-transition:enter-end="opacity-100 transform translate-y-0" x-text="toast"></div>
+
+  <script src="./app.js"></script>
+</body>
+
+</html>
