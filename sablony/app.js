@@ -13,6 +13,8 @@
         castka: '',
         splatnost: '',
         dluhyRadky: '',
+        additionalValues: {},
+        additionalOpen: false,
         selected: null,
         selectedCopied: false,
         subjectCopyManual: false,
@@ -280,8 +282,33 @@
             .filter(value => String(value || '').trim() !== '').length;
         },
 
+        // Neznámé položky ve složených závorkách vytvářejí vlastní pole.
+        // Zatím pouze pro konkrétní dědickou výzvu, aby se neměnilo ovládání ostatních šablon.
+        get additionalPlaceholderFields() {
+          if (this.selected?.subject !== 'Výzva k úhradě neuhrazených plateb za pokračující odběr') return [];
+          const html = String(this.selected.body || '').replace(/<table\b[^>]*>[\s\S]*?<\/table>/gi, '');
+          const handled = new Set(['variabilní symbol', 'smluvní účet', 'datum splatnosti', 'částka', 'celková částka',
+            'termín vystavení / odečtový měsíc', 'hodnota jističe', 'distribuční sazba', 'sazba', 'xxx a', 'xxxx a', 'xxxx']);
+          const fields = [];
+          const add = name => { if (!fields.includes(name)) fields.push(name); };
+          for (const match of html.matchAll(/\{([^{}<>]+)\}/g)) {
+            const name = match[1].trim();
+            if (handled.has(name.toLocaleLowerCase('cs-CZ'))) continue;
+            if (/^jméno\s*,\s*příjmení\s*,\s*datum narození\s*,\s*trvalý pobyt$/i.test(name)) {
+              ['jméno', 'příjmení', 'datum narození', 'trvalý pobyt'].forEach(add);
+            } else {
+              add(name);
+            }
+          }
+          return fields;
+        },
+
+        get additionalRelevantFilledCount() {
+          return this.additionalPlaceholderFields.filter(field => String(this.additionalValues[field] || '').trim()).length;
+        },
+
         get filledVariablesCount() {
-          return this.customerFilledCount + this.supplyFilledCount + this.paymentsFilledCount;
+          return this.customerFilledCount + this.supplyFilledCount + this.paymentsFilledCount + this.additionalRelevantFilledCount;
         },
 
         get requiredVariableKeys() {
@@ -310,7 +337,8 @@
           return {
             customer: keys.includes('lname'),
             supply: keys.some(key => ['ean', 'adresa', 'odecetDatum', 'jistic', 'sazba'].includes(key)),
-            payments: keys.some(key => ['vs', 'smluvniUcet', 'splatnost', 'castka', 'dluhyRadky'].includes(key))
+            payments: keys.some(key => ['vs', 'smluvniUcet', 'splatnost', 'castka', 'dluhyRadky'].includes(key)),
+            additional: this.additionalPlaceholderFields.length > 0
           };
         },
 
@@ -343,20 +371,21 @@
           const keys = this.requiredVariableKeys;
           const alternativeTechnicalFields = this.technicalChangeIsAlternative
             && keys.includes('jistic') && keys.includes('sazba');
-          return keys.length - (alternativeTechnicalFields ? 1 : 0);
+          return keys.length - (alternativeTechnicalFields ? 1 : 0) + this.additionalPlaceholderFields.length;
         },
 
         get filledRequiredVariablesCount() {
           const keys = this.requiredVariableKeys;
+          const additionalFilled = this.additionalRelevantFilledCount;
           if (!this.technicalChangeIsAlternative || !keys.includes('jistic') || !keys.includes('sazba')) {
-            return keys.filter(key => this.fieldIsFilled(key)).length;
+            return keys.filter(key => this.fieldIsFilled(key)).length + additionalFilled;
           }
 
           const otherFilled = keys
             .filter(key => key !== 'jistic' && key !== 'sazba')
             .filter(key => this.fieldIsFilled(key)).length;
           const technicalFilled = this.fieldIsFilled('jistic') || this.fieldIsFilled('sazba') ? 1 : 0;
-          return otherFilled + technicalFilled;
+          return otherFilled + technicalFilled + additionalFilled;
         },
 
         get customerRelevantFilledCount() {
@@ -375,7 +404,14 @@
           this.customerOpen = false;
           this.supplyOpen = false;
           this.paymentsOpen = false;
+          this.additionalOpen = false;
           if (!this.selected || this.requiredVariablesCount === 0) return;
+
+          // Nově doplňované údaje o zůstaviteli zpřístupníme hned po výběru výzvy.
+          if (this.additionalPlaceholderFields.some(field => !String(this.additionalValues[field] || '').trim())) {
+            this.additionalOpen = true;
+            return;
+          }
 
           const groups = [
             { name: 'customer', keys: ['lname'] },
@@ -709,7 +745,8 @@
             this.smluvniUcet,
             this.castka,
             this.splatnost,
-            this.dluhyRadky
+            this.dluhyRadky,
+            ...Object.values(this.additionalValues)
           ];
           const hasData = values.some(value => String(value ?? '').trim() !== '');
 
@@ -746,6 +783,7 @@
           this.castka = '';
           this.splatnost = '';
           this.dluhyRadky = '';
+          this.additionalValues = {};
           this.selectedCopied = false;
           this.$nextTick(() => this.syncRelevantVariableSections());
           this.showToast('Vyplněná pole byla vymazána.');
@@ -1019,6 +1057,23 @@
           out = out.replace(/\{datum splatnosti\}/gi, this.splatnost ? markVar(this.splatnost.trim()) : "{datum splatnosti}");
           out = out.replace(/\{částka\}/gi, this.castka ? markVar(this.castka.trim()) : "{částka}");
           out = out.replace(/\{celková částka\}/gi, targetCelkovaCastka);
+
+          // 5b. AUTOMATICKÁ POLE VE SLOŽENÝCH ZÁVORKÁCH (dědická výzva)
+          if (this.selected?.subject === 'Výzva k úhradě neuhrazených plateb za pokračující odběr') {
+            const getPart = key => {
+              const value = String(this.additionalValues[key] || '').trim();
+              return value ? markVar(value) : `\${key}`;
+            };
+            const composed = `\${getPart('jméno')} \${getPart('příjmení')}, nar. \${getPart('datum narození')}, trvale bytem \${getPart('trvalý pobyt')}`;
+            out = out.replace(/\{jméno\s*,\s*příjmení\s*,\s*datum narození\s*,\s*trvalý pobyt\}/gi, composed);
+            for (const key of this.additionalPlaceholderFields) {
+              if (['jméno', 'příjmení', 'datum narození', 'trvalý pobyt'].includes(key)) continue;
+              const value = String(this.additionalValues[key] || '').trim();
+              if (!value) continue;
+              // Nahradí opakovaný výskyt stejné proměnné, v HTML zachová atributy a escapuje text.
+              out = out.replace(/\{([^{}<>]+)\}/g, (whole, label) => label.trim() === key ? markVar(value) : whole);
+            }
+          }
 
           // 6. DYNAMICKÁ ZMĚNA TEXTŮ PODLE ZVOLENÉ ZNAČKY
           if (this.brand === 'de') {
