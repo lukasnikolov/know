@@ -23,8 +23,45 @@ main{max-width:1480px;margin:auto;padding:0 18px 32px}.notice{display:flex;gap:1
 footer{max-width:1480px;margin:10px auto 26px;padding:0 18px;text-align:center;font-size:12px;color:#718096}
 @media(max-width:730px){main,nav{padding-left:9px;padding-right:9px}.tabbtn{flex:1;justify-content:center;padding:10px 7px;font-size:12px}.card{padding:15px}.examples{grid-template-columns:1fr}header{padding:19px 13px}}
 @media print{nav,.notice,.toolbar,.notes-head .btn,footer{display:none!important}body{background:#fff}.pane{display:none!important}#pane-notes{display:block!important}main{padding:0}.card{box-shadow:none;border:0}#noteEditor{border:0;min-height:95vh}}
+</style>
+<meta name="robots" content="noindex,nofollow,noarchive">
+<style id="access-guard-style">
+html:not(.access-granted) body > :not(#kalk-access-gate) { display: none !important; }
+#kalk-access-gate {min-height:100vh;min-height:100dvh;display:grid;place-items:center;padding:24px;background:radial-gradient(circle at 10% 10%,rgba(148,193,31,.20),transparent 45%),#f1f6ef;font:15px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;color:#243331}
+html.access-granted #kalk-access-gate{display:none!important}
+.access-card{width:min(100%,470px);border-radius:20px;overflow:hidden;background:white;border:1px solid #dbe6d6;box-shadow:0 22px 56px #19292724}
+.access-head{padding:30px;background:linear-gradient(125deg,#1d2c2d,#2c4740);border-bottom:5px solid #94c11f;color:white}
+.access-head small{display:block;color:#d8ecb7;letter-spacing:.11em;font-size:11px;font-weight:800;text-transform:uppercase}
+.access-head h2{margin:12px 0 8px;font-size:26px;line-height:1.2;letter-spacing:-.03em;color:#fff}
+.access-head p{margin:0;font-size:13px;color:#d6e3df}
+.access-form{padding:26px 30px 30px}
+.access-form label{display:block;font-size:13px;font-weight:750;margin-bottom:7px}
+.access-form input{width:100%;height:46px;border:1px solid #c9d6d1;border-radius:10px;padding:0 13px;color:#263c35;background:white;font:inherit}
+.access-form input:focus{outline:3px solid #94c11f44;border-color:#6a9924}
+.access-form button{width:100%;height:45px;margin-top:13px;border:0;border-radius:10px;background:#6c9520;color:#fff;font-weight:800;cursor:pointer}
+.access-form button:hover{background:#567b14}
+.access-form button:disabled{opacity:.6}
+#access-error{color:#a92d29;min-height:18px;font-size:12px;font-weight:650;margin:10px 0 0}
+.access-note{margin:13px 0 0;color:#7a8680;font-size:12px}
+#access-logout{display:none;position:fixed;right:16px;bottom:16px;z-index:999999;background:#fff;color:#253b32;border:1px solid #d5e1d1;border-radius:999px;padding:10px 17px;box-shadow:0 5px 18px #16231c29;font:700 12px system-ui,sans-serif;cursor:pointer}
+html.access-granted #access-logout{display:block}
+@media(max-width:520px){.access-head{padding:23px}.access-head h2{font-size:23px}.access-form{padding:23px}}
+@media print{#access-logout{display:none!important}}
 </style></head>
-<body><header><div class="wrap headrow"><div><div class="kicker">EPET · Dobrá Energie · Interní nástroj</div><h1>Spotřeba a přepočet záloh</h1><p>Od odečtů až k doporučené záloze a zápisu pro kolegy – v jednom souboru</p></div><div class="headerbadge">Všechny výpočty probíhají v prohlížeči</div></div></header>
+<body>
+<div id="kalk-access-gate" role="main" aria-labelledby="access-title">
+ <div class="access-card"><div class="access-head">
+ <small>EPET · Dobrá Energie · Interní nástroj</small>
+ <h2 id="access-title">Spotřeba a přepočet záloh</h2>
+ <p>Pro otevření kalkulačky zadejte společné přístupové heslo.</p>
+ </div><div class="access-form"><form id="access-form">
+ <label for="access-password">Přístupové heslo</label>
+ <input id="access-password" type="password" autocomplete="off" required maxlength="128" placeholder="Zadejte heslo">
+ <button id="access-submit" type="submit">Odemknout kalkulačku</button>
+ <p id="access-error" role="status" aria-live="polite"></p>
+ </form><p class="access-note">Určeno pro oprávněné pracovníky. Po dokončení práce aplikaci zamkněte.</p></div></div>
+</div>
+<button id="access-logout" type="button" aria-label="Zamknout kalkulačku">Zamknout</button><header><div class="wrap headrow"><div><div class="kicker">EPET · Dobrá Energie · Interní nástroj</div><h1>Spotřeba a přepočet záloh</h1><p>Od odečtů až k doporučené záloze a zápisu pro kolegy – v jednom souboru</p></div><div class="headerbadge">Všechny výpočty probíhají v prohlížeči</div></div></header>
 <nav aria-label="Funkce kalkulačky"><button class="tabbtn" data-tab="annual" aria-selected="true">1 · Odečty a roční spotřeba</button><button class="tabbtn" data-tab="advance" aria-selected="false">2 · Výpočet zálohy</button><button class="tabbtn" data-tab="notes" aria-selected="false">3 · Zápis do úkolu</button></nav>
 <main>
 <div class="notice" role="status"><div><strong id="workflowTitle">Nejprve spočítej spotřebu.</strong> <span id="workflowHelp">Ve výsledku odečtů klikni na „Přenést do záloh“.</span></div><span class="indicator" id="workflowBadge">Propojení připraveno</span></div>
@@ -4805,4 +4842,27 @@ window.addEventListener('message',event=>{
 renderEditor();
 })();
 </script>
-</body></html>
+<script id="kalk-access-control">
+(function(){
+  "use strict";
+  const SALT="dbbc5f1ad2d90d30f8f8aad027ab2842", HASH="0d86183efad10ec0d96eab9fce7fc695543f0fa1dbfaeb21e0976363458ad852", KEY="know-kalkulacky-auth-v1";
+  const form=document.getElementById("access-form"), input=document.getElementById("access-password"), button=document.getElementById("access-submit"), status=document.getElementById("access-error");
+  const unlock=()=>{document.documentElement.classList.add("access-granted");input.value="";status.textContent="";};
+  const lock=()=>{try{sessionStorage.removeItem(KEY)}catch(_){}document.documentElement.classList.remove("access-granted");input.value="";status.textContent="";input.focus();};
+  try {if(sessionStorage.getItem(KEY)==="granted:"+HASH.slice(0,12))unlock();}catch(_){}
+  form.addEventListener("submit",async event=>{
+    event.preventDefault();
+    if(!input.value)return;
+    if(!(window.crypto&&window.crypto.subtle&&window.TextEncoder)){status.textContent="Ověření není v tomto prostředí dostupné. Otevřete stránku přímo přes HTTPS.";return;}
+    button.disabled=true;button.textContent="Ověřuji heslo…";status.textContent="";
+    try{
+      const bytes=new Uint8Array(await crypto.subtle.digest("SHA-256",new TextEncoder().encode(SALT+":"+input.value)));
+      const actual=Array.from(bytes,b=>b.toString(16).padStart(2,"0")).join("");
+      if(actual===HASH){try{sessionStorage.setItem(KEY,"granted:"+HASH.slice(0,12))}catch(_){}unlock();}
+      else{status.textContent="Nesprávné heslo. Zkuste to znovu.";input.value="";input.focus();}
+    }catch(error){status.textContent="Heslo se nepodařilo ověřit. Obnovte stránku.";console.warn(error)}
+    finally{button.disabled=false;button.textContent="Odemknout kalkulačku";}
+  });
+  document.getElementById("access-logout").addEventListener("click",lock);
+})();
+</script></body></html>
