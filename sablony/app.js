@@ -1062,7 +1062,7 @@
           if (this.selected?.subject === 'Výzva k úhradě neuhrazených plateb za pokračující odběr') {
             const getPart = key => {
               const value = String(this.additionalValues[key] || '').trim();
-              return value ? markVar(value) : `${key}`;
+              return value ? markVar(value) : `{${key}}`;
             };
             const composed = `${getPart('jméno')} ${getPart('příjmení')}, nar. ${getPart('datum narození')}, trvale bytem ${getPart('trvalý pobyt')}`;
             out = out.replace(/\{jméno\s*,\s*příjmení\s*,\s*datum narození\s*,\s*trvalý pobyt\}/gi, composed);
