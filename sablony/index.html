@@ -189,7 +189,7 @@
 
           <!-- ZÁKAZNÍK -->
           <section class="variable-section" x-show="requiredGroups.customer" x-cloak>
-            <button type="button" class="variable-section-toggle" @click="customerOpen = !customerOpen; if (customerOpen) { supplyOpen = false; paymentsOpen = false }"
+            <button type="button" class="variable-section-toggle" @click="customerOpen = !customerOpen; if (customerOpen) { supplyOpen = false; paymentsOpen = false; additionalOpen = false }"
               :aria-expanded="customerOpen">
               <span class="variable-section-heading">
                 <span class="variable-section-icon">
@@ -240,7 +240,7 @@
 
           <!-- ODBĚRNÉ MÍSTO -->
           <section class="variable-section" x-show="requiredGroups.supply" x-cloak>
-            <button type="button" class="variable-section-toggle" @click="supplyOpen = !supplyOpen; if (supplyOpen) { customerOpen = false; paymentsOpen = false }"
+            <button type="button" class="variable-section-toggle" @click="supplyOpen = !supplyOpen; if (supplyOpen) { customerOpen = false; paymentsOpen = false; additionalOpen = false }"
               :aria-expanded="supplyOpen">
               <span class="variable-section-heading">
                 <span class="variable-section-icon">
@@ -339,7 +339,7 @@
 
           <!-- PLATBY -->
           <section class="variable-section" x-show="requiredGroups.payments" x-cloak>
-            <button type="button" class="variable-section-toggle" @click="paymentsOpen = !paymentsOpen; if (paymentsOpen) { customerOpen = false; supplyOpen = false }"
+            <button type="button" class="variable-section-toggle" @click="paymentsOpen = !paymentsOpen; if (paymentsOpen) { customerOpen = false; supplyOpen = false; additionalOpen = false }"
               :aria-expanded="paymentsOpen">
               <span class="variable-section-heading">
                 <span class="variable-section-icon">
@@ -413,6 +413,42 @@
             </div>
           </section>
 
+
+          <!-- DALŠÍ ÚDAJE ZE SLOŽENÝCH ZÁVOREK -->
+          <section class="variable-section" x-show="requiredGroups.additional" x-cloak>
+            <button type="button" class="variable-section-toggle"
+              @click="additionalOpen = !additionalOpen; if (additionalOpen) { customerOpen = false; supplyOpen = false; paymentsOpen = false }"
+              :aria-expanded="additionalOpen">
+              <span class="variable-section-heading">
+                <span class="variable-section-icon"><i class="bi bi-braces"></i></span>
+                <span>
+                  <span class="variable-section-title">Další údaje ze šablony</span>
+                  <span class="variable-section-caption">Údaje z textu v { } – doplní se automaticky</span>
+                </span>
+              </span>
+              <span class="variable-section-end">
+                <span class="variable-count-badge" x-show="additionalRelevantFilledCount > 0" x-cloak
+                  x-text="additionalRelevantFilledCount"></span>
+                <i class="bi bi-chevron-down variable-section-chevron"
+                  :class="additionalOpen ? 'is-open' : ''"></i>
+              </span>
+            </button>
+            <div class="variable-section-body" x-show="additionalOpen" x-cloak>
+              <div class="row g-2">
+                <template x-for="(field, i) in additionalPlaceholderFields" :key="field">
+                  <div class="col-12">
+                    <label class="variable-label" :for="'additionalField' + i" x-text="field.charAt(0).toLocaleUpperCase('cs-CZ') + field.slice(1)"></label>
+                    <input class="form-control form-control-sm variable-input" type="text"
+                      :id="'additionalField' + i" x-model="additionalValues[field]"
+                      :placeholder="'Vyplnit: ' + field" autocomplete="off" />
+                  </div>
+                </template>
+              </div>
+              <p class="validation-help text-muted mt-2 mb-0">
+                <i class="bi bi-info-circle me-1"></i>Hodnoty se ihned propisují do náhledu e-mailu a do kopírovaného obsahu.
+              </p>
+            </div>
+          </section>
           <button type="button" class="mobile-preview-cta" x-show="selected" @click="goMobileStep('preview')">
             <i class="bi bi-file-earmark-text"></i>
             Pokračovat na náhled
