@@ -3219,7 +3219,7 @@ ${PORTAL_BLOCK}`,
 
 <p>Prosíme Vás o sdělení, o kterou z uvedených variant máte zájem.</p>
 
-<p>Díky změně legislativy začne od <strong>1. 7. 2025</strong> příslušný distributor ukládat pokuty výrobnám, které nemají sjednaného obchodníka. Společnost epet za Vás může převzít odpovědnost za odchylku, aby k těmto pokutám nedocházelo.</p>
+<p>Díky změně legislativy od <strong>1. 7. 2025</strong> zahájil příslušný distributor ukládání pokut výrobnám, které nemají sjednaného obchodníka. Společnost epet za Vás může převzít odpovědnost za odchylku, aby k těmto pokutám nedocházelo.</p>
 
 <hr>
 
