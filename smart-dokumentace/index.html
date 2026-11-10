@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light" />
+  <title>Smart dokumentace | EPET & Dobrá Energie</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+<div
+  x-data="documentApp()"
+  x-init="initApp()"
+  class="app-shell"
+  :class="'theme-' + activeBrand"
+  x-cloak
+  @keydown.window="handleShortcut($event)"
+>
+  <header class="app-header">
+    <div class="brand-heading">
+      <div class="brand-mark"><i class="fa fa-folder-open"></i></div>
+      <div>
+        <h1>Smart dokumentace</h1>
+        <p>Formuláře, šablony a pracovní dokumenty na jednom místě</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-backdrop" x-show="sidebarOpen" x-transition.opacity @click="sidebarOpen = false"></div>
+
+  <div class="layout">
+    <aside class="sidebar" :class="sidebarOpen ? 'mobile-open' : ''">
+      <div class="sidebar-head">
+        <span class="sidebar-title">Kategorie a společnost</span>
+        <button type="button" class="sidebar-close" @click="sidebarOpen = false" aria-label="Zavřít panel"><i class="fa fa-times"></i></button>
+      </div>
+
+      <div class="section-label">Společnost</div>
+      <div class="brand-switch">
+        <button type="button" class="brand-btn" :class="activeBrand === 'epet' ? 'active' : ''" @click="setBrand('epet')">
+          <i class="fa fa-fire me-1"></i> EPET
+        </button>
+        <button type="button" class="brand-btn" :class="activeBrand === 'de' ? 'active' : ''" @click="setBrand('de')">
+          <i class="fa fa-sun-o me-1"></i> DE
+        </button>
+      </div>
+
+      <div class="side-divider"></div>
+      <div class="section-label">Rychlý výběr</div>
+      <ul class="nav-list">
+        <li>
+          <button type="button" class="nav-link-compact" :class="category === 'all' && searchQuery === '' ? 'active' : ''" @click="setCategory('all')">
+            <i class="fa fa-th-large nav-icon"></i><span>Všechny dokumenty</span><span class="nav-count" x-text="brandItems.length"></span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="nav-link-compact" :class="category === 'fav' && searchQuery === '' ? 'active' : ''" @click="setCategory('fav')">
+            <i class="fa fa-star nav-icon"></i><span>Oblíbené</span><span class="nav-count" x-text="favCount"></span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="nav-link-compact" :class="category === 'recent' && searchQuery === '' ? 'active' : ''" @click="setCategory('recent')">
+            <i class="fa fa-clock-o nav-icon"></i><span>Nedávné</span><span class="nav-count" x-text="recentCount"></span>
+          </button>
+        </li>
+      </ul>
+
+      <div class="side-divider"></div>
+      <div class="section-label">Kategorie</div>
+      <div class="category-scroll">
+        <ul class="category-list">
+          <template x-for="(count, catName) in currentCategories" :key="catName">
+            <li>
+              <button type="button" class="nav-link-compact" :class="category === catName && searchQuery === '' ? 'active' : ''" @click="setCategory(catName)" :title="catName">
+                <i class="fa nav-icon" :class="getCategoryIcon(catName)"></i>
+                <span class="category-name" x-text="catName"></span>
+                <span class="nav-count" x-text="count"></span>
+              </button>
+            </li>
+          </template>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="content-panel">
+      <div class="toolbar">
+        <div class="search-wrap">
+          <i class="fa fa-search search-icon"></i>
+          <input
+            x-ref="searchInput"
+            type="search"
+            class="search-input"
+            placeholder="Hledat více slovy, např. ČEZ firma změna…"
+            x-model="searchQuery"
+            @input="page = 1"
+            autocomplete="off"
+          >
+          <span class="search-shortcut">Ctrl K</span>
+          <button type="button" x-show="searchQuery !== ''" @click="searchQuery = ''; page = 1" class="clear-search" title="Vymazat hledání" aria-label="Vymazat hledání">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+
+        <div class="toolbar-actions">
+          <button type="button" class="tool-btn mobile-filter-btn" @click="sidebarOpen = true">
+            <i class="fa fa-bars"></i><span class="btn-label">Kategorie</span>
+          </button>
+          <button type="button" class="tool-btn" :class="filtersOpen ? 'active' : ''" @click="filtersOpen = !filtersOpen">
+            <i class="fa fa-sliders"></i><span class="btn-label">Filtry</span><span class="count-dot" x-show="activeFiltersCount" x-text="activeFiltersCount"></span>
+          </button>
+          <button type="button" class="tool-btn" :class="viewMode === 'grid' ? 'active' : ''" @click="setViewMode('grid')" title="Mřížka"><i class="fa fa-th"></i></button>
+          <button type="button" class="tool-btn" :class="viewMode === 'list' ? 'active' : ''" @click="setViewMode('list')" title="Seznam"><i class="fa fa-list"></i></button>
+        </div>
+      </div>
+
+      <div class="filter-panel" x-show="filtersOpen" x-transition>
+        <div class="filter-grid">
+          <div class="filter-field">
+            <label for="formatFilter">Formát</label>
+            <select id="formatFilter" class="filter-select" x-model="formatFilter" @change="page = 1">
+              <option value="all">Všechny formáty</option>
+              <option value="pdf">PDF</option>
+              <option value="docx">Word</option>
+              <option value="xlsx">Excel</option>
+              <option value="image">Obrázky</option>
+            </select>
+          </div>
+          <div class="filter-field">
+            <label for="commodityFilter">Komodita</label>
+            <select id="commodityFilter" class="filter-select" x-model="commodityFilter" @change="page = 1">
+              <option value="all">Všechny komodity</option>
+              <option value="elektrina">Elektřina</option>
+              <option value="plyn">Plyn</option>
+            </select>
+          </div>
+          <div class="filter-field">
+            <label for="audienceFilter">Typ zákazníka</label>
+            <select id="audienceFilter" class="filter-select" x-model="audienceFilter" @change="page = 1">
+              <option value="all">Všechny typy</option>
+              <option value="domacnost">Domácnost</option>
+              <option value="firma">Firma / podnikatel</option>
+            </select>
+          </div>
+          <div class="filter-field">
+            <label for="distributorFilter">Distributor</label>
+            <select id="distributorFilter" class="filter-select" x-model="distributorFilter" @change="page = 1">
+              <option value="all">Všichni distributoři</option>
+              <option value="cez">ČEZ</option>
+              <option value="egd">EG.D</option>
+              <option value="pre">PRE</option>
+              <option value="gasnet">GasNet</option>
+              <option value="ppas">Pražská plynárenská</option>
+              <option value="zmd">ZMD</option>
+            </select>
+          </div>
+          <div class="filter-field">
+            <label for="sortMode">Řazení</label>
+            <select id="sortMode" class="filter-select" x-model="sortMode" @change="page = 1">
+              <option value="name">Název A–Z</option>
+              <option value="category">Kategorie</option>
+              <option value="popular">Nejčastěji používané</option>
+              <option value="recent">Naposledy otevřené</option>
+            </select>
+          </div>
+          <button type="button" class="reset-filter" @click="clearFilters()"><i class="fa fa-undo me-1"></i> Vyčistit</button>
+        </div>
+      </div>
+
+      <div class="context-row">
+        <div class="context-left">
+          <span class="crumb-chip"><strong x-text="activeBrand === 'epet' ? 'EPET' : 'Dobrá energie'"></strong></span>
+          <span class="active-section" x-text="activeLabel"></span>
+
+          <template x-for="chip in activeFilterChips" :key="chip.key">
+            <span class="filter-chip">
+              <span x-text="chip.label"></span>
+              <button type="button" @click="removeFilter(chip.key)" :aria-label="'Odebrat filtr ' + chip.label"><i class="fa fa-times"></i></button>
+            </span>
+          </template>
+        </div>
+        <span class="result-pill" :title="filteredItems.length + ' výsledků'" x-text="filteredItems.length"></span>
+      </div>
+
+      <div class="document-grid" :class="viewMode === 'list' ? 'list-view' : ''" x-show="filteredItems.length > 0">
+        <template x-for="doc in paginatedItems" :key="doc.id">
+          <article class="doc-card" :class="'brand-' + doc.brand">
+            <div class="card-actions">
+              <button type="button" class="icon-btn fav" @click.stop="toggleFav(doc)" :title="isFav(doc) ? 'Odebrat z oblíbených' : 'Přidat do oblíbených'">
+                <i class="fa" :class="isFav(doc) ? 'fa-star fav-active' : 'fa-star-o'"></i>
+              </button>
+              <a class="icon-btn" :href="getDownloadLink(doc)" target="_blank" rel="noopener" @click.stop="registerUse(doc, 'download')" title="Stáhnout dokument" aria-label="Stáhnout dokument">
+                <i class="fa fa-download"></i>
+              </a>
+              <button type="button" class="icon-btn" @click.stop="copyLink(doc)" title="Kopírovat odkaz" aria-label="Kopírovat odkaz">
+                <i class="fa fa-link"></i>
+              </button>
+            </div>
+
+            <a class="doc-open" :href="getPreviewLink(doc)" target="_blank" rel="noopener" @click="openDocument(doc)" :title="doc.name + ' – otevřít náhled'">
+              <div class="file-icon-box">
+                <i class="fa" :class="getFaIcon(doc.format) + ' file-' + doc.format"></i>
+              </div>
+              <div class="doc-copy">
+                <div class="doc-title" x-text="doc.name"></div>
+                <div class="doc-meta">
+                  <span class="format-badge" x-text="doc.format || 'soubor'"></span>
+                  <span class="brand-badge" :class="doc.brand" x-text="getBrandLabel(doc.brand)"></span>
+                  <span class="doc-category" x-text="doc.category"></span>
+                </div>
+              </div>
+              <span class="open-hint"><i class="fa fa-external-link"></i></span>
+            </a>
+          </article>
+        </template>
+      </div>
+
+      <div class="empty-state" x-show="filteredItems.length === 0">
+        <div>
+          <i class="fa fa-folder-open-o"></i>
+          <strong>Žádný dokument nebyl nalezen.</strong><br>
+          <span>Zkuste jiná slova nebo vyčistěte některý z filtrů.</span><br>
+          <button type="button" class="reset-filter mt-3" @click="clearAllSearch()">Zobrazit všechny dokumenty</button>
+        </div>
+      </div>
+
+      <div class="pagination-bar" x-show="totalPages > 1 || filteredItems.length > 0">
+        <div>Zobrazeno <strong x-text="pageStart"></strong>–<strong x-text="pageEnd"></strong> z <strong x-text="filteredItems.length"></strong></div>
+        <div class="pagination-right">
+          <div class="per-page">
+            <span>Na stránku</span>
+            <select x-model.number="itemsPerPage" @change="page = 1; savePreferences()">
+              <option :value="12">12</option>
+              <option :value="24">24</option>
+              <option :value="48">48</option>
+            </select>
+          </div>
+          <div class="pagination-actions" x-show="totalPages > 1">
+            <button type="button" class="page-btn" :disabled="page === 1" @click="goToPage(page - 1)" title="Předchozí strana"><i class="fa fa-chevron-left"></i></button>
+            <template x-for="item in paginationItems" :key="item.key">
+              <button
+                type="button"
+                class="page-btn"
+                :class="item.type === 'ellipsis' ? 'ellipsis' : (item.value === page ? 'active' : '')"
+                :disabled="item.type === 'ellipsis'"
+                @click="item.type === 'page' && goToPage(item.value)"
+                x-text="item.type === 'ellipsis' ? '…' : item.value"
+              ></button>
+            </template>
+            <button type="button" class="page-btn" :disabled="page === totalPages" @click="goToPage(page + 1)" title="Další strana"><i class="fa fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div x-show="toast" x-transition class="toast-compact" x-text="toast"></div>
+</div>
+
+<script src="./dokumenty.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>
