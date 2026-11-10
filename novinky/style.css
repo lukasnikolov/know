@@ -1105,3 +1105,111 @@ a {
   .news-status { font-size: .68rem; }
   .contacts-js .floating-contacts { --contacts-top: 80px; }
 }
+
+/* 19 — MODERNI CISLOVANE NADPISY CLANKU -------------------------------------
+   Varianta 2: cislo v samostatnem bloku + elegantni oddeleni textu.
+   Ciste bile pozadi; epet a Dobra energie rovnomerne v cislech.
+   Classy doplnuje novinky-vylepseni.js pouze uvnitr detailu novinek. */
+.content-full :is(h2, h3):not(.article-section-heading) {
+  margin: 22px 0 12px;
+  color: var(--text-primary);
+  font-size: clamp(1.05rem, 1.7vw, 1.22rem);
+  font-weight: 750;
+  line-height: 1.4;
+  letter-spacing: -0.015em;
+}
+
+.content-full .article-section-heading {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(10px, 1.6vw, 15px);
+  margin: 26px 0 14px;
+  padding: 0 0 14px;
+  border: 0;
+  border-bottom: 1px solid #e2e8f0;
+  background: transparent;
+  color: var(--text-primary);
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  font-size: clamp(1.08rem, 1.8vw, 1.32rem);
+  font-weight: 760;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  text-wrap: pretty;
+  overflow-wrap: anywhere;
+}
+
+.content-full .article-section-heading:first-child {
+  margin-top: 6px;
+}
+
+.content-full .article-section-number {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  min-height: 46px;
+  padding: 0 3px;
+  border: 1px solid #d7e8bf;
+  border-radius: 12px;
+  background: #edf6de;
+  color: #425e15;
+  font-size: 1.06rem;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  user-select: none;
+}
+
+.content-full .article-section--de .article-section-number {
+  border-color: #f6dbad;
+  background: #fff2dc;
+  color: #8b4a00;
+}
+
+.content-full .article-section-label {
+  display: block;
+  min-width: 0;
+}
+
+.content-full .article-section-label :is(strong, b) {
+  font-weight: inherit;
+}
+
+/* Drobne podnadpisy se nechavaji bez cisla, aby hierarchie nepusobila rusne. */
+.content-full :is(h4, h5) {
+  margin: 18px 0 8px;
+  padding-left: 11px;
+  border-left: 3px solid #c6d99e;
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 720;
+  line-height: 1.45;
+}
+
+@media (max-width: 520px) {
+  .content-full .article-section-heading {
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 10px;
+    margin: 22px 0 12px;
+    padding-bottom: 12px;
+    font-size: 1.05rem;
+  }
+  .content-full .article-section-number {
+    width: 40px;
+    min-height: 40px;
+    border-radius: 10px;
+    font-size: 0.96rem;
+  }
+}
+
+@media print {
+  .content-full .article-section-heading {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+  .content-full .article-section-number {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
