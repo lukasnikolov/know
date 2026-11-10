@@ -33,6 +33,52 @@
     return match ? Number(match[3]) + '. ' + Number(match[2]) + '. ' + match[1] : String(value);
   }
 
+  // Moderni cislovane kapitoly uvnitr obsahu clanku.
+  // Zachovava veskery obsah nadpisu a odstranuje jen jiz existujici cislo "1. ".
+  // Puvodni novinky.js ani struktura dat se nemeni.
+  function decorateArticleHeadings(card) {
+    const content = card.querySelector('.content-full');
+    if (!content) return;
+
+    let ordinal = 0;
+    content.querySelectorAll('h2, h3').forEach(heading => {
+      if (heading.classList.contains('article-section-heading')) return;
+      if (!heading.textContent?.trim()) return;
+
+      // Resi i cislovani uvnitr <strong> nebo jineho formatovani.
+      const walker = document.createTreeWalker(heading, NodeFilter.SHOW_TEXT);
+      let textNode = null;
+      let candidate;
+      while ((candidate = walker.nextNode())) {
+        if (candidate.nodeValue.trim()) {
+          textNode = candidate;
+          break;
+        }
+      }
+
+      const numbered = textNode?.nodeValue.match(/^\s*(\d{1,2})[.)](?:\s+|$)/);
+      if (numbered && Number(numbered[1]) > 0) {
+        ordinal = Number(numbered[1]);
+        textNode.nodeValue = textNode.nodeValue.slice(numbered[0].length);
+      } else {
+        ordinal += 1;
+      }
+
+      const number = document.createElement('span');
+      number.className = 'article-section-number';
+      number.textContent = String(ordinal).padStart(2, '0');
+      number.setAttribute('aria-label', 'Kapitola ' + ordinal);
+
+      const label = document.createElement('span');
+      label.className = 'article-section-label';
+      while (heading.firstChild) label.appendChild(heading.firstChild);
+
+      heading.classList.add('article-section-heading');
+      heading.classList.add(ordinal % 2 === 0 ? 'article-section--de' : 'article-section--epet');
+      heading.append(number, label);
+    });
+  }
+
   function decorateCards() {
     const entries = getUpdates();
     const feed = document.getElementById('newsFeed');
@@ -46,6 +92,7 @@
       if (!item) return;
       const kind = statusOf(item);
       card.dataset.newsStatus = kind;
+      decorateArticleHeadings(card);
 
       const row = card.querySelector('.news-title')?.parentElement;
       if (row && !row.querySelector('.news-status')) {
