@@ -1,7 +1,7 @@
 /* ============================================================================
    ZNALOSTKA | Jednotny firemni vizual epet + Dobra energie
    Kompatibilni nahrada za puvodni style.css — zachovane tridy a ID.
-   Verze: 2026-11-10 / revize dual-brand + bile pozadi
+   Verze: 2026-11-10 / novinky + kontaktni panel
    ============================================================================ */
 
 /* 01 — DESIGN TOKENS --------------------------------------------------------- */
@@ -908,9 +908,200 @@ a {
 @media print {
   html, body { background: #ffffff !important; }
   .top-nav-wrapper { position: static; box-shadow: none; }
-  .floating-contacts, #snow-canvas, .pagination, .btn-detail-toggle { display: none !important; }
+  .floating-contacts, #snow-canvas, .pagination, .btn-detail-toggle, .news-filterbar { display: none !important; }
   .news-card, .filter-container, .contact-group-v { box-shadow: none !important; }
   .content-full.show { display: block; }
   .news-card { break-inside: avoid; }
   a { text-decoration: underline; }
+}
+
+/* 17 — STAVY NOVINEK: epet + Dobra energie -------------------------------
+   Vykresluje novinky-vylepseni.js. Pozadi stranky zustava bile. */
+.news-card > .d-flex:first-child {
+  align-items: flex-start !important;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+}
+.news-card .news-title {
+  flex: 1 1 240px;
+  min-width: 0;
+}
+.news-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex: 0 0 auto;
+  min-height: 26px;
+  padding: 4px 10px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 750;
+  letter-spacing: .02em;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+.news-status::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: currentColor;
+}
+.news-status--new {
+  color: #425e15;
+  background: #edf6de;
+  border-color: #d4e8b3;
+}
+.news-status--updated {
+  color: #8b4a00;
+  background: #fff2dc;
+  border-color: #f6dbad;
+}
+.news-status--normal {
+  color: #536275;
+  background: #f2f5f8;
+  border-color: #e2e8f0;
+}
+.news-updated-at {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #566476;
+  font-variant-numeric: tabular-nums;
+}
+.news-filterbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 9px 14px;
+  margin: 12px 0 16px 12px;
+  padding: 10px 12px;
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+.news-filterbar__label {
+  color: var(--text-secondary);
+  font-size: .84rem;
+  font-weight: 600;
+}
+.news-only-new {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 39px;
+  padding: 8px 13px;
+  color: var(--text-primary);
+  background: #fff;
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  font-size: .81rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+.news-only-new:hover {
+  border-color: #99a9b8;
+  box-shadow: var(--shadow-sm);
+}
+.news-only-new[aria-pressed='true'] {
+  background: linear-gradient(90deg, #f0f8e3 0%, #fff5e6 100%);
+  border-color: #b5c5a4;
+  color: #294120;
+}
+.news-only-new__count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  padding: 2px 6px;
+  border-radius: 6px;
+  color: #475569;
+  background: #edf2f7;
+  font-size: .72rem;
+  font-variant-numeric: tabular-nums;
+}
+.news-only-new[aria-pressed='true'] .news-only-new__count {
+  background: #fff;
+}
+.news-empty {
+  margin: 12px 0;
+  padding: 24px 16px;
+  color: var(--text-secondary);
+  text-align: center;
+  background: #fff;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-md);
+}
+
+/* 18 — KLIKACI PANEL KONTAKTU -----------------------------------------------
+   Pri dostupnem JS se vypne otevirani pouhym hoverem a zafunguje tlacitko. */
+.contacts-js .floating-contacts {
+  --contacts-top: 130px;
+  transform: translateX(100%);
+}
+.contacts-js .floating-contacts:hover:not(.is-open),
+.contacts-js .floating-contacts:focus-within:not(.is-open) {
+  transform: translateX(100%);
+}
+.contacts-js .floating-contacts.is-open {
+  transform: translateX(0);
+}
+.contacts-js .floating-tab {
+  appearance: none;
+  -webkit-appearance: none;
+  font-family: inherit;
+}
+.contacts-js .floating-contacts.is-open .floating-tab {
+  color: #1e293b;
+  background: linear-gradient(135deg, #ecf6db 0 50%, #fff0d6 50% 100%);
+  border-color: #cbd5e1;
+}
+.contacts-body {
+  max-height: calc(100dvh - var(--contacts-top, 130px) - 52px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #fff;
+}
+.contacts-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  color: #475569;
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.contacts-close:hover {
+  color: #1e293b;
+  background: #f8fafc;
+  border-color: var(--border-strong);
+}
+@media (max-width: 767px) {
+  .news-filterbar { margin-left: 0; }
+  .contacts-js .floating-contacts { --contacts-top: 105px; }
+}
+@media (max-width: 480px) {
+  .news-filterbar { padding: 10px; }
+  .news-filterbar__label { font-size: .8rem; }
+  .news-only-new { width: 100%; }
+  .news-status { font-size: .68rem; }
+  .contacts-js .floating-contacts { --contacts-top: 80px; }
 }
