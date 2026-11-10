@@ -944,7 +944,24 @@ ${PORTAL_BLOCK}`,
     tags: ["Demontáže"]
 },
        /* ========================= Ostatní ========================= */
-"Potvrzení přijetí Vašeho požadavku": {
+"Reakce na neretencování zákazníka": {
+    text: `${OSLOVENI_BLOCK}
+<p>děkujeme za Vaši zprávu a zájem o zachování stávajících cenových podmínek.</p>
+
+<p>V návaznosti na zaslané oznámení o změně ceny si Vás dovolujeme informovat, že v tomto případě <strong>není možné sjednat individuální cenovou nabídku ani zachovat dosavadní cenové podmínky prostřednictvím retenční nabídky.</strong></p>
+
+<p>Od data uvedeného v oznámení se proto bude dodávka energií řídit <strong>novým ceníkem</strong>.</p>
+
+<p>Pokud s navrhovanou změnou ceny nesouhlasíte, máte možnost využít svého práva na odstoupení od smlouvy, a to za podmínek a ve lhůtě uvedených v zaslaném oznámení.</p>
+
+<p>Děkujeme za pochopení.</p>
+
+${PORTAL_BLOCK}`,
+    files: [],
+    tags: ["Retence", "Změna ceny", "Ostatní"]
+},
+  
+  "Potvrzení přijetí Vašeho požadavku": {
     text: `${OSLOVENI_BLOCK}
 <p>děkujeme za zaslání Vašeho požadavku. Rádi bychom Vás informovali, že jsme jej zaevidovali a v tuto chvíli je v řešení.</p>
 
