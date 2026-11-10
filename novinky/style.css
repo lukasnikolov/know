@@ -1,7 +1,7 @@
 /* ============================================================================
-   ZNALOSTKA | Moderni vizualni system (epet / Dobra energie)
+   ZNALOSTKA | Jednotny firemni vizual epet + Dobra energie
    Kompatibilni nahrada za puvodni style.css — zachovane tridy a ID.
-   Verze: 2026-11-10
+   Verze: 2026-11-10 / revize dual-brand + bile pozadi
    ============================================================================ */
 
 /* 01 — DESIGN TOKENS --------------------------------------------------------- */
@@ -20,15 +20,19 @@
   /* Semanticke barvy */
   --epet-green-dark: #4c6710;
   --epet-green-soft: #eff7df;
+  --de-orange-dark: #8a4c00;
+  --de-orange-soft: #fff3df;
+  /* Dve rovnocenne znacky: zeleny epet, oranzova Dobra energie */
+  --brand-dual: linear-gradient(90deg, var(--epet-green) 0 50%, var(--de-orange) 50% 100%);
   --text-primary: #1e293b;
   --text-secondary: #475569;
   --text-muted: #64748b;
-  --page-background: #f8fafc;
+  --page-background: #ffffff;
   --surface: #ffffff;
-  --surface-subtle: #f9fbfd;
+  --surface-subtle: #ffffff;
   --border-color: #e2e8f0;
   --border-strong: #cbd5e1;
-  --focus-ring: rgba(108, 149, 29, 0.2);
+  --focus-ring: rgba(71, 85, 105, 0.25);
 
   /* Jednotny rytmus, zaobleni a stiny */
   --radius-sm: 9px;
@@ -50,18 +54,15 @@
 
 html {
   color-scheme: light;
+  background: #ffffff;
+  scroll-padding-top: 90px;
 }
 
 body {
   min-width: 0;
   margin: 0;
   padding-top: 20px;
-  background: var(--page-background);
-  background-image: radial-gradient(
-    ellipse at 50% 0%,
-    rgba(148, 193, 31, 0.055),
-    transparent 52%
-  );
+  background: #ffffff; /* Ciste bile pozadi bez gradientu */
   color: var(--text-primary);
   font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
   font-size: 0.9375rem;
@@ -96,17 +97,21 @@ a {
   top: 0;
   z-index: 1000;
   padding-bottom: 13px;
-  background: rgba(255, 255, 255, 0.96);
+  background: #ffffff;
   border-bottom: 1px solid var(--border-color);
   box-shadow: 0 5px 24px rgba(15, 23, 42, 0.035);
 }
 
-@supports (backdrop-filter: blur(12px)) {
-  .top-nav-wrapper {
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-  }
+/* Jemna dvoubarevna linka pod navigaci odkazuje na OBE znacky. */
+.top-nav-wrapper::after {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 3px;
+  content: '';
+  background: var(--brand-dual);
+  pointer-events: none;
 }
 
 .logo-container {
@@ -116,7 +121,32 @@ a {
   padding: 10px 12px;
   background: var(--epet-green);
   border-radius: var(--radius-md);
-  box-shadow: 0 6px 15px rgba(94, 130, 18, 0.15);
+  box-shadow: 0 6px 15px rgba(94, 130, 18, 0.12);
+}
+
+/* Vychozi zelena zustava kvuli citelnosti existujiciho loga epet.
+   Na druhem logu lze pouzit class="logo-container de" (nebo brand-de). */
+.logo-container.de,
+.logo-container.brand-de {
+  background: var(--de-orange);
+  box-shadow: 0 6px 15px rgba(249, 159, 28, 0.13);
+}
+
+.logo-container.epet,
+.logo-container.brand-epet {
+  background: var(--epet-green);
+}
+
+/* Volitelny obal obou log (vyzaduje pouze zmenu HTML). */
+.brand-logos {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.brand-logos .logo-container {
+  flex: 0 0 auto;
 }
 
 .logo-img {
@@ -164,7 +194,7 @@ a {
 
 .search-input:focus {
   outline: none;
-  border-color: var(--epet-green-dark);
+  border-color: #64748b;
   box-shadow: 0 0 0 4px var(--focus-ring);
   background: #fff;
 }
@@ -355,9 +385,10 @@ a {
   height: 14px;
   content: '';
   background: #fff;
-  border: 3px solid var(--epet-green);
+  border: 2px solid #ffffff;
   border-radius: 50%;
-  box-shadow: 0 0 0 4px var(--page-background);
+  background: linear-gradient(135deg, var(--epet-green) 0 50%, var(--de-orange) 50% 100%);
+  box-shadow: 0 0 0 1px var(--border-strong), 0 0 0 4px #ffffff;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -422,8 +453,8 @@ a {
   max-width: 100%;
   margin: 2px 2px 2px 0;
   padding: 3px 9px;
-  background: var(--epet-green-soft);
-  color: var(--epet-green-dark);
+  background: linear-gradient(90deg, #eef7e0, #fff1dc);
+  color: #334155;
   border-radius: 6px;
   font-size: 0.91em;
   font-weight: 650;
@@ -433,8 +464,8 @@ a {
 }
 
 .content-full a:hover {
-  background: #dfefbb;
-  color: #31480a;
+  background: linear-gradient(90deg, #e2efc9, #ffe8bf);
+  color: #1e293b;
   text-decoration: underline;
 }
 
@@ -445,7 +476,7 @@ a {
   min-height: 36px;
   margin-top: 8px;
   padding: 5px 2px;
-  color: var(--epet-green-dark);
+  color: #334155;
   background: transparent;
   border: 0;
   border-radius: 6px;
@@ -457,8 +488,9 @@ a {
 }
 
 .btn-detail-toggle:hover {
-  color: #344b0b;
+  color: #1e293b;
   text-decoration: underline;
+  text-decoration-color: var(--de-orange);
 }
 
 /* 08 — STRANKOVANI ----------------------------------------------------------- */
@@ -484,21 +516,21 @@ a {
 }
 
 .pagination .page-link:hover {
-  color: var(--epet-green-dark);
-  background: var(--epet-green-soft);
-  border-color: #bed592;
+  color: #334155;
+  background: linear-gradient(90deg, #f3f8ec, #fff8ee);
+  border-color: #cbd5e1;
 }
 
 .pagination .page-item.active .page-link {
-  color: #243807;
-  background: #d8edaf;
-  border-color: #b4d477;
-  box-shadow: 0 4px 12px rgba(94, 130, 18, 0.11);
+  color: #1e293b;
+  background: linear-gradient(90deg, #e9f4d6 0 50%, #ffedcf 50% 100%);
+  border-color: #bfc9d5;
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.06);
 }
 
 .pagination .page-item.disabled .page-link {
   color: #94a3b8;
-  background: #f8fafc;
+  background: #ffffff;
   box-shadow: none;
 }
 
@@ -510,7 +542,7 @@ a {
   z-index: 1050;
   width: min(340px, calc(100vw - 64px));
   padding: 19px;
-  background: #f9fbfd;
+  background: #ffffff;
   border: 1px solid var(--border-color);
   border-right: 0;
   border-radius: 18px 0 0 18px;
@@ -536,8 +568,8 @@ a {
   width: 54px;
   height: 54px;
   padding: 0;
-  color: var(--epet-green-dark);
-  background: #fff;
+  color: #334155;
+  background: #ffffff;
   border: 1px solid var(--border-color);
   border-right: 0;
   border-radius: 14px 0 0 14px;
@@ -553,9 +585,9 @@ a {
 .floating-contacts:hover .floating-tab,
 .floating-contacts:focus-within .floating-tab,
 .floating-contacts.is-open .floating-tab {
-  color: #2d4108;
-  background: #e5f3c6;
-  border-color: #c4dd93;
+  color: #1e293b;
+  background: linear-gradient(135deg, #eff7df, #fff1dd);
+  border-color: #cbd5e1;
 }
 
 .contact-group-v {
@@ -660,10 +692,22 @@ a {
   margin-bottom: 30px;
   padding: clamp(18px, 3vw, 28px);
   background: #fff;
-  border: 1px solid #d7e8b5;
-  border-left: 4px solid var(--epet-green);
+  position: relative;
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
+}
+
+#adminEditor::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 4px;
+  content: '';
+  background: var(--brand-dual);
+  border-radius: 18px 18px 0 0;
+  pointer-events: none;
 }
 
 #editor-container {
@@ -809,7 +853,44 @@ a {
   .floating-tab { left: -48px; width: 48px; height: 48px; }
 }
 
-/* 14 — PRISTUPNOST A SYSTEMOVE PREFERENCE ---------------------------------- */
+/* 14 — DALSI DROBNE UX UPRAVY ---------------------------------------------- */
+/* Kotvy neskoci pod sticky hlavicku; ovladaci prvky reaguji i klavesnici. */
+:where(section[id], article[id], h2[id], h3[id]) {
+  scroll-margin-top: 90px;
+}
+
+:where(.btn-filter, .btn-detail-toggle, .floating-tab, .pagination .page-link):focus-visible {
+  outline: 3px solid #64748b;
+  outline-offset: 3px;
+}
+
+/* Necha viditelny nadpis pri dlouhych slovech a odkazech vkladanych z editoru. */
+:where(.news-title, .content-full, .contact-item-v) {
+  overflow-wrap: anywhere;
+}
+
+/* Pripraveny neutralni nadpis sekce, pokud se doplni do HTML. */
+.section-heading {
+  margin: 0 0 14px;
+  color: var(--text-primary);
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  font-weight: 750;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+
+/* Neutralni informacni box s dvoubarevnou znackou. */
+.info-panel {
+  padding: 14px 16px;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-left: 3px solid var(--epet-green);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+.info-panel.de { border-left-color: var(--de-orange); }
+
+/* 15 — PRISTUPNOST A SYSTEMOVE PREFERENCE ---------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -821,4 +902,15 @@ a {
   }
 
   #snow-canvas { display: none; }
+}
+
+/* 16 — TISK: LEPE CITELNE VNITROFIREMNI MATERIALY ---------------------------- */
+@media print {
+  html, body { background: #ffffff !important; }
+  .top-nav-wrapper { position: static; box-shadow: none; }
+  .floating-contacts, #snow-canvas, .pagination, .btn-detail-toggle { display: none !important; }
+  .news-card, .filter-container, .contact-group-v { box-shadow: none !important; }
+  .content-full.show { display: block; }
+  .news-card { break-inside: avoid; }
+  a { text-decoration: underline; }
 }
