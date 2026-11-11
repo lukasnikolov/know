@@ -1978,13 +1978,14 @@ body.is-gas #inputSummary {
       const omIdentifier = el(&#x27;omIdentifier&#x27;).value.trim();
       const omAddress = el(&#x27;omAddress&#x27;).value.trim();
       const omAccount = el(&#x27;omAccount&#x27;).value.trim();
-      const lines = [&#x27;POZOR!! Proaktivně zákazníkovi NEZASÍLAT!! Podrobný propočet lze zaslat pouze v případě, že zákazník rozporuje námi navrženou výši zálohy nebo požaduje vysvětlení, jak jsme k výpočtu dospěli. Jinak NEZASÍLAT!&#x27;, &#x27;&#x27;, &#x27;Přepočet předpokládané výše zálohy&#x27;];
-      if (omAccount) lines.push(`Zákaznický účet: ${omAccount}`);
-      if (omIdentifier) lines.push(`EAN/EIC: ${omIdentifier}`);
-      if (omAddress) lines.push(`Adresa OM: ${omAddress}`);
-      lines.push(`Dodavatel: ${supplier}`);
-      lines.push(`Komodita: ${commodityName} | Segment: ${segment}`);
-      lines.push(`Distribuce: ${distributor}`);
+      // Stručný zápis pro ZIS: výsledek vždy jako první řádek.
+      const lines = [`Předpokládaná záloha: ${money0(latestRecommendedAdvance)} / měs. (vč. DPH)`];
+      const omParts = [];
+      if (omAccount) omParts.push(`Zák. účet: ${omAccount}`);
+      if (omIdentifier) omParts.push(`EAN/EIC: ${omIdentifier}`);
+      if (omParts.length) lines.push(omParts.join(&#x27; | &#x27;));
+      if (omAddress) lines.push(`OM: ${omAddress}`);
+      lines.push(`${commodityName} | ${supplier} | ${segment} | ${distributor}`);
 
       if (commodity === &#x27;electricity&#x27;) {
         const tariff = el(&#x27;tariff&#x27;).value || &#x27;—&#x27;;
@@ -1992,23 +1993,22 @@ body.is-gas #inputSummary {
         const amps = taskNoteNumber(n(el(&#x27;breakerA&#x27;).value));
         const vt = taskNoteNumber(n(el(&#x27;consVT&#x27;).value));
         const nt = taskNoteNumber(n(el(&#x27;consNT&#x27;).value));
-        lines.push(`Sazba: ${tariff} | Jistič: ${phase}${amps} A`);
+        lines.push(`Sazba / jistič: ${tariff} / ${phase}${amps} A`);
         lines.push(TWO_TARIFF.has(tariff)
-          ? `Spotřeba za ${taskNoteNumber(months, 2)} měs.: VT ${vt} MWh, NT ${nt} MWh`
-          : `Spotřeba za ${taskNoteNumber(months, 2)} měs.: ${vt} MWh (VT)`);
+          ? `Spotřeba (${taskNoteNumber(months, 2)} měs.): VT ${vt} MWh, NT ${nt} MWh`
+          : `Spotřeba (${taskNoteNumber(months, 2)} měs.): ${vt} MWh`);
       } else {
-        lines.push(`Spotřeba za ${taskNoteNumber(months, 2)} měs.: ${taskNoteNumber(n(el(&#x27;consVT&#x27;).value))} MWh`);
+        lines.push(`Spotřeba (${taskNoteNumber(months, 2)} měs.): ${taskNoteNumber(n(el(&#x27;consVT&#x27;).value))} MWh`);
       }
-
-      lines.push(&#x27;&#x27;, `Předpokládaná výše měsíční zálohy: ${money0(latestRecommendedAdvance)} (včetně DPH).`);
+      lines.push(&#x27;Interní orientační výpočet; detail zákazníkovi nezasílat proaktivně.&#x27;);
       advanceNoteAuto = lines.join(&#x27;\n&#x27;);
       if (!advanceNoteDirty) note.value = advanceNoteAuto;
       else {
         // Změněný výsledek v ručně upravené poznámce aktualizujeme,
         // zbylé doplněné informace pro kolegy zůstanou zachované.
-        const newestAmount = lines.find(line=&gt;line.startsWith(&#x27;Předpokládaná výše měsíční zálohy:&#x27;));
-        if(newestAmount &amp;&amp; /^Předpokládaná výše měsíční zálohy:.*$/m.test(note.value)) {
-          note.value = note.value.replace(/^Předpokládaná výše měsíční zálohy:.*$/m,newestAmount);
+        const newestAmount = lines[0];
+        if (/^Předpokládaná záloha:.*$/m.test(note.value)) {
+          note.value = note.value.replace(/^Předpokládaná záloha:.*$/m, newestAmount);
         }
       }
       talkToShell(&#x27;advanceCalculated&#x27;, {
@@ -4708,7 +4708,7 @@ document.getElementById(&#x27;btnPDF&#x27;).addEventListener(&#x27;click&#x27;, 
 <textarea id="noteEditor" spellcheck="false" aria-label="Upravitelná poznámka pro interní úkol" placeholder="Nejprve vypočítej spotřebu nebo zálohu."></textarea>
 <div class="status" id="noteStatus" aria-live="polite">Zápis lze kdykoli ručně upravit.</div>
 <div class="toolbar"><span>Údaje se nikam automaticky neodesílají. Kopíruje se jen po stisknutí tlačítka.</span><button class="btn green" type="button" id="btnCopyNote">Kopírovat do úkolu</button></div>
-<div class="examples"><div><strong>Stručný zápis zálohy</strong><span>Identifikace OM + výše předpokládané měsíční zálohy; bez položkového výpočtu.</span></div><div><strong>Spotřeba</strong><span>Odečty, období, VT/NT v MWh a výpočtový postup, popřípadě plyn.</span></div><div><strong>Spojený zápis</strong><span>Oba výsledky v jednom textu, který můžeš doplnit o další informace.</span></div></div>
+<div class="examples"><div><strong>Stručný zápis zálohy</strong><span>Nejdřív záloha, potom OM a spotřeba; bez položkového výpočtu.</span></div><div><strong>Spotřeba</strong><span>Odečty, období, VT/NT v MWh a výpočtový postup, popřípadě plyn.</span></div><div><strong>Spojený zápis</strong><span>Nejdřív záloha, potom podklady z odečtů a roční spotřeba – bez mezivýpočtů.</span></div></div>
 </div></section>
 </main><footer>Interní pracovní pomůcka · výsledky jsou orientační · vždy ověř aktuální ceník, sazbu, distribuční údaje a sezónnost spotřeby.</footer>
 <script>
@@ -4734,17 +4734,18 @@ doc.addEventListener('click',event=>{
 });
 function mode(){return $('noteMode').value}
 function composeCombined(){
- const type=latestKind;
- const a=stored[type].text;
- const b=stored.advance.text;
- const stripNotice=text=>{
-  const value=String(text||'');
-  return value.startsWith(TASK_WARNING)?value.slice(TASK_WARNING.length).trimStart():value;
- };
- const chunks=[];
- if(a)chunks.push(stripNotice(a));
- if(b)chunks.push(stripNotice(b));
- return chunks.length ? TASK_WARNING+'\n\n'+chunks.join('\n\n====================================\n\n') : '';
+ const annualText=String(stored[latestKind].text||'');
+ const advanceText=String(stored.advance.text||'').trim();
+ const period=(annualText.match(/^Období odečtů:\s*(.+)$/m)||[])[1];
+ const annualResult=(annualText.match(/^PŘEDPOKLÁDANÁ ROČNÍ SPOTŘEBA CELKEM:\s*(.+)$/m)||[])[1];
+ const shortAnnual=[period?`Odečty: ${period}`:'',annualResult?`Roční spotřeba dle odečtů: ${annualResult}`:''].filter(Boolean);
+ if(!advanceText){
+   return shortAnnual.length ? shortAnnual.join('\n')+'\nInterní orientační výpočet; detail zákazníkovi nezasílat proaktivně.' : '';
+ }
+ // U společného zápisu je záloha vždy první; dlouhý postup je dostupný zvlášť.
+ const notice='Interní orientační výpočet; detail zákazníkovi nezasílat proaktivně.';
+ const body=advanceText.split(/\r?\n/).filter(line=>line.trim()!==notice).join('\n').trim();
+ return [body,...shortAnnual,notice].filter(Boolean).join('\n');
 }
 function updateStore(kind,generated,note,isEdited){
  const state=stored[kind];
