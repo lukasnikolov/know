@@ -26,9 +26,10 @@ body.theme-epet,body.theme-de{background:#fff!important;color:var(--se-ink);font
 .se-brand-selector button:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
 .app-grid.se-workspace{height:calc(100vh - 80px)!important;height:calc(100dvh - 80px)!important;display:grid!important;grid-template-columns:242px 352px minmax(0,1fr)!important;overflow:hidden!important;grid-template-rows:minmax(0,1fr)!important}
 .se-workspace .panel-cats,.se-workspace .panel-list,.se-workspace .panel-editor{height:100%!important;min-height:0!important;max-height:none!important;overflow-y:auto}
-.se-workspace .panel-cats{background:#fff!important;border-right:1px solid var(--se-line);padding:15px 10px 12px!important;overflow-y:auto;display:flex;flex-direction:column}
+.se-workspace .panel-cats{background:#fff!important;border-right:1px solid var(--se-line);padding:15px 10px 12px!important;overflow-y:auto;display:flex;flex-direction:column
 .se-workspace .sidebar-header{display:none!important}
 .se-sidebar-heading{font-size:10px;font-weight:800;letter-spacing:.65px;color:#8998a4;padding:12px 12px 17px}
+.se-workspace .panel-cats .cat-text{display:inline-flex!important;align-items:center}
 .se-workspace .panel-cats .cat-btn{font-size:12px!important;min-height:39px;margin-bottom:3px;padding:9px 11px;border-radius:9px;color:#526576!important}
 .se-workspace .panel-cats .cat-btn:hover{color:var(--brand-hover)!important;background:var(--brand-light)!important;box-shadow:none}
 .se-workspace .panel-cats .cat-btn.active{background:var(--brand-light)!important;color:var(--brand-hover)!important;border-color:var(--brand-border)!important;box-shadow:none}
@@ -52,7 +53,7 @@ body.theme-epet,body.theme-de{background:#fff!important;color:var(--se-ink);font
 .se-workspace .tpl-preview{font-size:11px;color:#84919e;line-height:1.48}
 .se-workspace .category-chip{font-size:9px;letter-spacing:.1px;padding:4px 7px;border-radius:6px}
 .se-workspace .list-pagination{background:#fff;border-top:1px solid var(--se-line);padding:10px}
-.se-workspace .panel-editor{padding:26px 28px!important;background:#fff!important;background-image:none!important;display:block!important}
+.se-workspace .panel-editor{padding:26px 28px!important;background:#fff!important;background-image:none!important;display:block}
 .se-workspace .preview-wrapper{max-width:1020px;margin:0 auto}
 .se-workspace .editor-header{position:static!important;display:flex;align-items:center!important;border:none!important;border-radius:0!important;border-left:0!important;box-shadow:none!important;background:#fff!important;padding:0 0 21px!important;backdrop-filter:none!important;overflow:visible}
 .se-workspace .editor-header:before{display:none!important}
@@ -62,7 +63,7 @@ body.theme-epet,body.theme-de{background:#fff!important;color:var(--se-ink);font
 .se-workspace .editor-actions .btn-copy,.se-workspace .editor-actions .btn-copy-secondary{padding:8px 12px;font-size:11px;border-radius:9px;box-shadow:none}
 .se-workspace .editor-actions .btn-copy{background:var(--brand)!important;color:#fff!important}
 .se-workspace .se-variable-workspace{background:#fff;border:1px solid var(--se-line);border-radius:13px;margin:0 0 20px;overflow:hidden;box-shadow:0 4px 24px #17243307}
-.se-workspace .se-variable-workspace>div{display:block!important}
+.se-workspace .se-variable-workspace>div{display:block}
 .se-workspace .se-variable-workspace .variables-toolbar{background:#f9fbfc;border-bottom:1px solid #ecf0f3;padding:14px 18px;min-height:65px}
 .se-workspace .se-variable-workspace .variables-toolbar-title{font-size:13px;color:#273948}
 .se-workspace .se-variable-workspace .variables-toolbar-subtitle{font-size:11px;color:#8696a2}
@@ -102,7 +103,7 @@ body.theme-epet,body.theme-de{background:#fff!important;color:var(--se-ink);font
  .se-brand-selector button{padding:6px 9px;font-size:11px}
  .se-global-search{order:3;flex:1 1 100%;max-width:unset;height:39px}
  .app-grid.se-workspace{height:auto!important;min-height:calc(100dvh - 115px)!important;display:flex!important;flex-direction:column!important;overflow:visible!important}
- .se-workspace .panel-cats{height:auto!important;min-height:0!important;overflow-x:auto!important;overflow-y:hidden!important;display:flex!important;flex-direction:row!important;gap:6px;padding:8px!important;position:static!important}
+ .se-workspace .panel-cats{height:auto!important;min-height:0!important;overflow-x:auto!important;overflow-y:hidden!important;display:flex;flex-direction:row!important;gap:6px;padding:8px!important;position:static!important}
  .se-workspace .panel-cats .se-sidebar-heading{display:none!important}
  .se-workspace .panel-cats .cat-text{display:inline-flex!important}
  .se-workspace .panel-cats .cat-btn{width:auto!important;white-space:nowrap;min-width:max-content}
