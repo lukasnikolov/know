@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Smart Engine 3.0 — opravené tabulky a původní kategorie</title>
+  <meta name="description" content="Interaktivní návrh rozhraní e-mailových šablon epet a Dobrá Energie. Prohlížecí prototyp, neprodukční verze.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700;750;800&display=swap" rel="stylesheet">
+  <style>
+:root{--ink:#17212e;--muted:#64748b;--subtle:#94a3b8;--line:#e7ebef;--bg:#fff;--panel:#fcfdfd;--soft:#f7f9fa;--accent:#94c11f;--accent-dark:#67891a;--accent-light:#f2f8e4;--accent-border:#d8e9b2;--shadow:0 9px 35px rgba(28,42,59,.055);--radius:14px;font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;color-scheme:light}
+*{box-sizing:border-box}html,body{margin:0;width:100%;min-height:100%;background:#fff;color:var(--ink)}body.theme-de{--accent:#f99f1c;--accent-dark:#a76000;--accent-light:#fff6e8;--accent-border:#f7ddb3}button,input,select{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.48}button:focus-visible,input:focus-visible,select:focus-visible,[contenteditable]:focus-visible{outline:3px solid var(--accent-border);outline-offset:2px}svg{flex:none}button{transition:background .15s,color .15s,border-color .15s,box-shadow .15s}.app-shell{height:100dvh;min-height:650px;display:flex;flex-direction:column;overflow:hidden}.topbar{height:94px;flex:0 0 94px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:29px;padding:0 28px;position:relative;z-index:5}.top-left{display:flex;align-items:center;gap:17px;min-width:265px}.app-mark{width:38px;height:38px;display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,1fr);gap:4px;transform:rotate(-8deg)}.app-mark span{background:var(--accent);border-radius:5px}.app-mark span:nth-child(2){opacity:.43}.app-mark span:nth-child(3){opacity:.62}.eyebrow{color:#83919f;font-size:10px;letter-spacing:.105em;font-weight:800;margin-bottom:6px;display:flex;align-items:center;gap:7px}.eyebrow-dot{height:6px;width:6px;background:var(--accent);border-radius:50%}.eyebrow-sep{color:#cbd5e1}.app-title h1{margin:0;font-weight:790;letter-spacing:-.045em;font-size:21px;white-space:nowrap}.version{font-size:10px;color:var(--accent-dark);background:var(--accent-light);border-radius:7px;padding:4px 6px;vertical-align:middle;letter-spacing:0;margin-left:3px}.search-wrap{height:49px;flex:1;max-width:660px;display:flex;align-items:center;gap:13px;padding:0 15px;background:#f7f9fb;border:1px solid #e9edf0;border-radius:12px;color:#8492a2;transition:.15s}.search-wrap:focus-within{background:#fff;border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-light)}.search-wrap input{height:100%;min-width:0;outline:none!important;border:0;background:transparent;flex:1;font-size:13px;color:var(--ink)}.search-wrap input::placeholder{color:#98a3af}.search-wrap kbd,.list-footer kbd{font-family:inherit;font-size:11px;color:#9aa4b3;background:white;border:1px solid #e0e5e9;border-radius:5px;padding:2px 6px}.top-actions{display:flex;gap:14px;align-items:center;margin-left:auto}.brand-switch{padding:4px;display:flex;gap:3px;border:1px solid #e9edf0;background:#f3f5f7;border-radius:12px}.brand-option{height:37px;padding:0 13px;white-space:nowrap;font-size:12px;font-weight:750;border:0;border-radius:8px;color:#64748b;background:transparent}.brand-option.active{background:#fff;color:var(--accent-dark);box-shadow:0 1px 5px rgba(0,0,0,.09)}.help-btn{height:37px;width:37px;color:#64748b;border:1px solid #e5e9ef;background:#fff;font-weight:700;font-size:16px;border-radius:50%}.help-btn:hover{background:var(--soft)}
+.workspace{min-height:0;flex:1;display:grid;grid-template-columns:232px minmax(315px,365px) minmax(420px,1fr)}.sidebar{background:#fcfdfd;border-right:1px solid var(--line);display:flex;flex-direction:column;min-height:0}.sidebar-scroll{padding:25px 13px;flex:1;overflow:auto;scrollbar-width:thin}.side-heading{font-size:10px;font-weight:800;letter-spacing:.11em;color:#94a0af;padding:0 12px;margin:5px 0 11px}.side-heading-top{margin-top:28px;padding-top:19px;border-top:1px solid #e9edf0}.quick-nav,.section-nav{display:flex;flex-direction:column;gap:3px}.nav-item{width:100%;display:flex;align-items:center;gap:10px;min-height:43px;text-align:left;border:1px solid transparent;border-radius:10px;background:transparent;color:#566477;padding:8px 10px;font-size:12.6px;font-weight:600}.nav-item:hover{background:#f1f4f6;color:#253248}.nav-item.active{background:var(--accent-light);border-color:var(--accent-border);color:var(--accent-dark);font-weight:750}.nav-item .nav-ico{display:grid;place-items:center;width:21px;height:21px;font-size:16px;flex:none;color:#8592a0}.nav-item.active .nav-ico{color:var(--accent-dark)}.nav-text{flex:1;overflow:hidden;text-overflow:ellipsis}.nav-count{color:#8b98a8;background:#eff1f3;padding:3px 6px;border-radius:7px;font-size:10px;font-weight:700}.nav-item.active .nav-count{color:var(--accent-dark);background:#fff}.sidebar-foot{padding:15px;border-top:1px solid var(--line);display:flex;align-items:center;gap:7px;min-height:65px;color:#7f8a97;font-size:10px}.status-dot{height:7px;width:7px;border-radius:50%;background:#f0a445;flex:none}.status-dot.live{background:#49ab6d}.sidebar-tip{margin-left:auto;color:var(--accent-dark);background:var(--accent-light);padding:4px 6px;border-radius:6px;font-weight:700;white-space:nowrap}
+.list-panel{display:flex;min-width:0;min-height:0;flex-direction:column;background:#fbfcfd;border-right:1px solid var(--line)}.list-panel-header{padding:26px 18px 13px;border-bottom:1px solid var(--line);background:#fff}.section-eyebrow{font-size:10px;letter-spacing:.11em;font-weight:800;color:var(--accent-dark);margin-bottom:10px}.section-headline{display:flex;align-items:center;gap:10px}.section-headline h2{font-size:20px;letter-spacing:-.045em;margin:0;font-weight:800}.total-bubble{border-radius:9px;background:#f1f3f6;padding:5px 8px;color:#64748b;font-size:11px;font-weight:700}.list-description{font-size:11.5px;color:#8893a1;margin:9px 0 18px;line-height:1.5}.category-controls{margin:0 0 19px}.category-controls[hidden]{display:none}.category-controls label{display:block;color:#5f6c7b;font-size:10px;font-weight:700;margin-bottom:7px}.category-controls select{width:100%;background:#fafbfc;border:1px solid #e0e5eb;border-radius:9px;padding:10px;color:#253248;font-size:11.5px;outline:none}.category-controls select:focus{border-color:var(--accent)}.list-controls{display:flex;align-items:center;justify-content:space-between;gap:10px}.result-count{font-size:11px;color:#7d8896;font-weight:650}.density-toggle{display:flex;align-items:center;gap:6px;border:1px solid #e5e9ef;background:#fff;color:#677486;font-size:10px;font-weight:700;padding:8px 9px;border-radius:8px;white-space:nowrap}.density-toggle[aria-pressed="true"]{background:var(--accent-light);color:var(--accent-dark);border-color:var(--accent-border)}.template-scroll{min-height:0;flex:1;overflow-y:auto;overscroll-behavior:contain;padding:10px 11px 20px;scrollbar-width:thin}.template-item{position:relative;background:#fff;border:1px solid #e7ebef;border-radius:12px;padding:14px 13px 12px;margin:0 0 8px;cursor:pointer;transition:.18s;box-shadow:0 2px 7px rgba(24,39,61,.016)}.template-item:hover{border-color:var(--accent-border);box-shadow:0 6px 18px rgba(24,39,61,.055);transform:translateY(-1px)}.template-item.selected{border:1px solid var(--accent);box-shadow:0 0 0 2px var(--accent-light)}.template-item.selected:before{content:"";position:absolute;left:0;top:13px;bottom:13px;width:3px;background:var(--accent);border-radius:0 3px 3px 0}.template-head{display:flex;align-items:flex-start;justify-content:space-between;gap:7px}.template-tags{display:flex;align-items:center;flex-wrap:wrap;gap:5px;min-width:0}.template-tag{font-size:9.5px;line-height:1.3;border-radius:6px;padding:3px 6px;font-weight:750;color:#657687;background:#f2f5f8;max-width:228px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.template-new{background:#eff7df;color:#70952c;font-size:9px;font-weight:800;padding:3px 5px;border-radius:5px}.tpl-star{border:0;background:transparent;font-size:19px;color:#adb6c3;padding:0;line-height:1;flex:none;min-width:23px}.tpl-star:hover,.tpl-star.is-favorite{color:#d69f20}.template-name{font-weight:750;font-size:12.7px;line-height:1.45;margin:9px 0 5px;color:#243144;letter-spacing:-.015em}.template-description{font-size:11.2px;color:#8b98a6;line-height:1.53;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.template-item mark{background:#e7f4c8;color:#283818;border-radius:2px}.template-list.compact .template-item{padding:10px 12px;margin-bottom:6px}.template-list.compact .template-name{margin:6px 0 0;font-size:12px}.template-list.compact .template-description{display:none}.load-more{width:100%;padding:12px;border:1px solid #e2e7ed;border-radius:10px;background:#fff;font-size:12px;color:#64748b;font-weight:700}.load-more:hover{border-color:var(--accent);color:var(--accent-dark)}.empty-list{display:flex;align-items:center;flex-direction:column;text-align:center;padding:55px 18px;color:#84919c;font-size:12px}.empty-list strong{display:block;font-size:14px;margin:12px 0 7px;color:#394558}.empty-list button{margin-top:12px;border:1px solid var(--accent-border);background:var(--accent-light);border-radius:8px;color:var(--accent-dark);padding:8px 10px}.list-footer{height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 17px;border-top:1px solid var(--line);font-size:10px;color:#a1abba;background:#fff}
+.editor-panel{min-height:0;min-width:0;background:#fff;overflow-y:auto;overscroll-behavior:contain}.editor-content{min-height:100%}.editor-content[hidden],.empty-state[hidden]{display:none}.editor-top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;padding:27px 33px 22px;border-bottom:1px solid var(--line);background:#fff}.editor-kicker{display:flex;align-items:center;gap:8px;font-size:10px;font-weight:800;letter-spacing:.095em;color:var(--accent-dark);margin-bottom:10px}.small-dot{width:6px;height:6px;background:var(--accent);border-radius:50%}.editor-cat{font-size:10px;letter-spacing:0;background:var(--soft);color:#738092;border-radius:5px;padding:3px 6px;max-width:220px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.editor-title-block{min-width:0;flex:1}.editor-title-block h2{margin:0;font-size:22px;letter-spacing:-.04em;line-height:1.3;font-weight:790}.editor-subtitle{margin-top:10px;display:flex;flex-wrap:wrap;gap:16px;font-size:11px;color:#929daa}.editor-button-row{display:flex;align-items:center;gap:7px;flex-wrap:wrap;justify-content:flex-end}.primary-btn,.outline-btn,.icon-button{min-height:40px;border-radius:9px;font-size:11.5px;font-weight:750;padding:0 13px;white-space:nowrap}.primary-btn{background:var(--accent);border:1px solid var(--accent);color:white;box-shadow:0 3px 10px rgba(100,140,30,.12)}.primary-btn:hover{background:var(--accent-dark);border-color:var(--accent-dark)}.outline-btn{border:1px solid #e1e7eb;color:#516075;background:white}.outline-btn:hover{border-color:var(--accent-border);color:var(--accent-dark);background:var(--accent-light)}.icon-button{background:white;border:1px solid #e4eaf0;color:#8190a2;font-size:23px;padding:0 11px}.icon-button.faved{color:#d6a42d}.icon-button:hover{border-color:var(--accent-border);background:var(--accent-light)}.copy-icon{font-size:19px;vertical-align:-2px;margin-right:3px}.more-wrap{position:relative}.more-menu{position:absolute;z-index:9;top:46px;right:0;min-width:225px;border:1px solid var(--line);background:white;box-shadow:0 12px 34px rgba(19,38,58,.14);border-radius:11px;padding:5px}.more-menu[hidden]{display:none}.more-menu button{display:block;width:100%;border:0;border-radius:7px;background:transparent;text-align:left;font-size:11px;color:#4b5a6a;padding:12px}.more-menu button:hover{background:var(--soft)}.editor-flow{padding:25px 33px 28px;max-width:1080px;margin:0 auto}.variables-card{border:1px solid #e3e9ef;background:#fff;border-radius:14px;box-shadow:0 4px 18px rgba(24,39,61,.035);overflow:hidden;margin-bottom:23px}.variables-summary{display:flex;align-items:center;gap:13px;text-align:left;width:100%;padding:15px 18px;background:#fff;border:0}.variables-summary:hover{background:#fdfefd}.variables-icon{display:grid;place-items:center;width:36px;height:36px;border-radius:10px;background:var(--accent-light);color:var(--accent-dark)}.variables-header-main{display:flex;flex-direction:column;gap:4px;flex:1}.variables-title{font-size:12.5px;font-weight:800;letter-spacing:-.01em}.variables-caption{font-size:10.5px;color:#8a96a4}.progress-info{color:var(--accent-dark);border-radius:7px;background:var(--accent-light);padding:6px 8px;font-size:10.5px;font-weight:800}.chevron{color:#8190a0;transition:transform .2s}.chevron.open{transform:rotate(180deg)}.progress-track{height:3px;background:#eef1f4}.progress-fill{height:100%;width:0;background:var(--accent);transition:width .2s}.variables-body[hidden]{display:none}.variables-body{padding:18px;border-top:1px solid #eef1f3}.fields-intro{font-size:11px;color:#7c8997;margin-bottom:18px;line-height:1.5}.field-group{margin-bottom:18px}.field-group-title{font-size:10px;font-weight:800;color:#64758a;letter-spacing:.09em;text-transform:uppercase;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #eef1f3}.fields-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field-item{min-width:0}.field-item.wide{grid-column:span 2}.field-item label{display:block;font-size:10.5px;color:#526174;font-weight:700;margin-bottom:6px}.field-item input,.field-item select,.field-item textarea{width:100%;border:1px solid #dfe6eb;border-radius:9px;min-height:40px;padding:8px 11px;background:#fff;color:#27384c;font-size:12px;outline:0}.field-item textarea{min-height:77px;resize:vertical}.field-item input:focus,.field-item select:focus,.field-item textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-light)}.fields-actions{display:flex;justify-content:space-between;gap:12px;border-top:1px solid #eef1f3;padding-top:14px}.fields-actions button{border:0;background:transparent;font-size:11px;color:#8290a1;font-weight:700}.fields-actions button:hover{color:var(--accent-dark)}.fields-actions .collapse-link{color:var(--accent-dark)}
+.email-paper{border:1px solid #e0e6ec;border-radius:15px;background:#fff;overflow:hidden;box-shadow:0 12px 42px rgba(20,37,60,.055)}.email-topline{border-bottom:1px solid #e7ebef;display:flex;justify-content:space-between;gap:12px;padding:16px 24px;align-items:center}.email-topline-label{font-size:10px;letter-spacing:.11em;color:#77879a;font-weight:800}.edit-label{font-size:10px;color:#95a0ac}.email-envelope{background:#fbfcfd;border-bottom:1px solid #e6ebf0;padding:15px 24px;display:grid;grid-template-columns:75px minmax(0,1fr);row-gap:15px;align-items:center}.email-label{font-size:11px;color:#8e9aa7;font-weight:650}.sender{display:flex;align-items:center;gap:10px;font-size:12px;min-width:0}.sender-avatar{display:grid;place-items:center;width:29px;height:29px;background:var(--accent);border-radius:50%;font-size:12px;font-weight:800;color:#fff}.sender strong{font-size:12px}.sender #senderMail{color:#7f8e9b;font-size:11px;overflow:hidden;text-overflow:ellipsis}.subject-box{display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:0}.subject-box strong{font-size:12px;line-height:1.5;overflow-wrap:anywhere}.subject-box button{background:white;color:var(--accent-dark);font-size:10px;font-weight:800;padding:7px 10px;border-radius:7px;border:1px solid var(--accent-border)}.subject-box button:hover{background:var(--accent-light)}.message-label{font-size:10px;letter-spacing:.1em;color:#a0aaba;font-weight:800;padding:24px 30px 0}.message-content{font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#243043;line-height:1.75;min-height:300px;padding:12px 30px 32px;outline:none;overflow-x:auto;overflow-wrap:anywhere}.message-content p{margin:0 0 13px}.message-content a{color:var(--accent-dark);font-weight:650;text-decoration:none}.message-content strong,.message-content b{color:var(--accent-dark)}.message-content .var-filled{background:var(--accent-light);border-radius:3px;padding:1px 3px;color:var(--accent-dark);font-weight:650}/* Tabulky si nechávají původní inline styly, border/cellpadding a rozměry. */
+.message-content table{max-width:100%;}/* Bez globálního paddingu/barvy/rámečku buněk: řídí je HTML původní šablony. *//* Jednotný značkový odstín pro ty řádky, které byly označené v původní šabloně. */
+.message-content tr[data-brand-row]{background-color:var(--accent)!important}
+.message-content tr[data-brand-row]>th,.message-content tr[data-brand-row]>td{background-color:var(--accent)!important}.message-content li{margin-bottom:5px}.attachments-panel{border:1px solid var(--line);border-radius:12px;margin-top:18px;padding:18px 21px}.attachments-panel h3{font-size:11px;letter-spacing:.075em;text-transform:uppercase;color:#657387;margin:0 0 14px}.attachments-list{display:flex;flex-wrap:wrap;gap:7px}.attachment-link{display:inline-flex;align-items:center;gap:6px;border:1px solid #dfe7eb;color:#526276;background:#fbfcfd;padding:9px 11px;font-size:11px;font-weight:700;text-decoration:none;border-radius:8px;max-width:100%;overflow-wrap:anywhere}.attachment-link:hover{color:var(--accent-dark);border-color:var(--accent-border)}.editor-note{font-size:10px;color:#a4aeb8;text-align:center;margin:20px 0 0;line-height:1.5}.empty-state{min-height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:30px;gap:6px}.empty-illustration{color:#a8c96b;width:122px;height:122px;border-radius:28px;display:grid;place-items:center;background:var(--accent-light);margin-bottom:18px}.empty-state h2{font-size:24px;letter-spacing:-.04em;margin:0;font-weight:800}.empty-state p{font-size:13px;color:#8290a0;line-height:1.7;max-width:370px}.empty-pill{font-size:11px;font-weight:700;color:var(--accent-dark);padding:11px 14px;background:var(--accent-light);border-radius:100px}.empty-pill span{color:#a5b582;padding:0 5px}.toast{position:fixed;bottom:22px;right:22px;z-index:50;color:white;background:#243143;box-shadow:0 12px 45px #1e293b33;border-radius:10px;padding:12px 18px;font-size:12px;font-weight:700;opacity:0;transform:translateY(14px);pointer-events:none;transition:.2s}.toast.show{opacity:1;transform:translateY(0)}.info-dialog{max-width:460px;width:calc(100vw - 40px);border:1px solid var(--line);border-radius:17px;box-shadow:0 20px 80px #17212e30;padding:29px}.info-dialog::backdrop{background:#14213a6a}.info-dialog h2{font-size:21px;letter-spacing:-.03em}.info-dialog p{font-size:12px;color:#596779;line-height:1.8}.info-dialog .primary-btn{margin-top:10px}.mobile-switch{display:none}
+@media(max-width:1480px){.topbar{gap:20px;padding:0 22px}.workspace{grid-template-columns:208px minmax(285px,325px) minmax(420px,1fr)}.editor-top{padding:24px 25px 19px}.editor-flow{padding:22px 25px}.editor-top{flex-direction:column;gap:16px}.editor-button-row{justify-content:flex-start}.brand-option{padding:0 10px}.top-left{min-width:235px}}
+@media(max-width:1120px){.topbar{height:81px;flex-basis:81px;gap:15px;padding:0 14px}.top-left{min-width:auto}.app-title h1{font-size:17px}.app-mark{height:29px;width:29px}.search-wrap{max-width:none}.brand-option{font-size:11px}.help-btn{display:none}.workspace{grid-template-columns:66px minmax(285px,330px) minmax(370px,1fr)}.sidebar-scroll{padding:19px 8px}.side-heading,.nav-text,.nav-count,.sidebar-foot{display:none}.nav-item{justify-content:center;min-height:45px;padding:9px}.nav-item .nav-ico{font-size:18px}.editor-top{padding:20px}.editor-flow{padding:20px}.list-panel-header{padding:20px 14px 13px}}
+@media(max-width:850px){.app-shell{height:auto;min-height:100dvh;overflow:visible}.topbar{height:auto;min-height:119px;padding:14px;display:grid;grid-template-columns:1fr auto;gap:12px}.top-left{grid-column:1}.top-actions{grid-column:2;grid-row:1}.search-wrap{grid-column:1/-1;grid-row:2;height:44px}.workspace{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100dvh - 170px)}.sidebar{grid-column:1/-1;min-height:auto;border-right:0;border-bottom:1px solid var(--line)}.sidebar-scroll{padding:9px 10px;display:flex;flex-direction:row;gap:6px;overflow:auto}.side-heading,.sidebar-foot{display:none}.quick-nav,.section-nav{display:flex;flex-direction:row;gap:6px}.nav-item{width:auto;min-width:max-content;min-height:36px;padding:7px 9px}.nav-text{display:inline;font-size:11px}.nav-count{display:none}.nav-item .nav-ico{width:auto;font-size:13px}.list-panel{min-height:72vh}.editor-panel{min-height:72vh}.list-description{margin-bottom:12px}.list-footer{display:none}.editor-flow{padding:15px}.editor-top{padding:15px}.editor-title-block h2{font-size:18px}.editor-button-row .outline-btn{display:none}.email-topline{padding:13px}.email-envelope{padding:12px;grid-template-columns:54px minmax(0,1fr)}.message-label{padding:17px 18px 0}.message-content{padding:12px 18px 25px;font-size:13px}.editor-cat{max-width:140px}}
+@media(max-width:660px){.topbar{grid-template-columns:1fr;grid-template-rows:auto auto auto;height:auto;min-height:0;flex:0 0 auto;gap:10px}.top-left{grid-column:1;grid-row:1}.top-actions{grid-column:1;grid-row:2;margin:0}.search-wrap{grid-column:1;grid-row:3}.brand-switch{width:100%}.brand-option{flex:1}.mobile-switch{display:flex;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:4;background:white;padding:7px;gap:7px}.mobile-switch button{flex:1;border:0;background:transparent;font-weight:750;font-size:12px;border-radius:7px;padding:11px;color:#7c8898}.mobile-switch button.active{background:var(--accent-light);color:var(--accent-dark)}.workspace{display:block}.sidebar{display:block}.sidebar-scroll{padding:8px}.nav-item{padding:6px 8px}.list-panel{display:flex;min-height:calc(100dvh - 230px);height:calc(100dvh - 230px)}.editor-panel{display:none;min-height:calc(100dvh - 230px)}.workspace.preview-mobile .sidebar,.workspace.preview-mobile .list-panel{display:none}.workspace.preview-mobile .editor-panel{display:block}.editor-top{flex-direction:column}.editor-button-row{flex-wrap:wrap}.editor-flow{padding:12px}.variables-summary{padding:13px}.fields-grid{grid-template-columns:1fr}.field-item.wide{grid-column:span 1}.email-topline-label{font-size:9px}.edit-label{font-size:9px}.sender{flex-wrap:wrap}.editor-note{margin-bottom:22px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+
+/* v3: Původní tabulka pohledávek ze Smart Engine v2.9. */
+.message-content .table-upominka {
+  width:100%; border-collapse:collapse; margin:14px 0 18px;
+  font-family:Arial,Helvetica,sans-serif; font-size:11pt;
+  min-width:620px; table-layout:auto; overflow-wrap:normal;
+}
+.message-content .table-upominka th,
+.message-content .table-upominka td {
+  border:1px solid #d1d5db !important;
+  padding:7px 8px !important;
+  vertical-align:middle;
+  overflow-wrap:normal;
+}
+.message-content .table-upominka thead th,
+.message-content .table-upominka tfoot td {
+  color:#fff !important;
+  background-color:var(--accent) !important;
+  font-weight:700;
+}
+.message-content .table-upominka thead th {text-align:left;}
+.message-content .table-upominka tbody tr:nth-child(even) td {background-color:#f9fafb;}
+.message-content .table-upominka tfoot strong,
+.message-content .table-upominka thead strong {color:#fff !important;}
+.message-content .table-upominka th:nth-child(5),
+.message-content .table-upominka td:nth-child(5){text-align:right;}
+.message-content .table-upominka td:nth-child(5){white-space:nowrap;}
+.debt-hint {display:block;margin-top:7px;font-size:10px;line-height:1.5;color:#718096;}
+
+</style>
+</head>
+<body class="theme-epet">
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="top-left">
+        <div class="app-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        <div class="app-title">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> ZNALOSTKA <span class="eyebrow-sep">/</span> NÁSTROJE</div>
+          <h1>E-mailové šablony <span class="version">3.0</span></h1>
+        </div>
+      </div>
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        <input id="globalSearch" type="search" autocomplete="off" placeholder="Hledat šablonu podle názvu, tématu nebo textu…" aria-label="Vyhledat e-mailovou šablonu">
+        <kbd>/</kbd>
+      </div>
+      <div class="top-actions">
+        <div class="brand-switch" role="group" aria-label="Značka">
+          <button type="button" class="brand-option active" data-brand="epet" aria-pressed="true">epet</button>
+          <button type="button" class="brand-option" data-brand="de" aria-pressed="false">Dobrá energie</button>
+        </div>
+        <button class="help-btn" title="O prototypu" aria-label="O prototypu" id="helpButton">?</button>
+      </div>
+    </header>
+    <div class="mobile-switch" aria-label="Mobilní navigace">
+      <button id="showBrowser" class="active" type="button">Katalog šablon</button>
+      <button id="showPreview" type="button">Náhled e-mailu</button>
+    </div>
+    <div class="workspace" id="workspace">
+      <aside class="sidebar" aria-label="Tematické sekce">
+        <div class="sidebar-scroll">
+          <div class="side-heading">RYCHLÝ PŘÍSTUP</div>
+          <nav class="quick-nav" id="quickNav"></nav>
+          <div class="side-heading side-heading-top">TEMATICKÉ SEKCE</div>
+          <nav class="section-nav" id="sectionNav"></nav>
+        </div>
+        <div class="sidebar-foot">
+          <span class="status-dot" id="statusDot"></span>
+          <span id="dataSourceLabel">Načítám databázi…</span>
+          <span class="sidebar-tip">Náhled 3.0</span>
+        </div>
+      </aside>
+      <section class="list-panel" aria-label="Seznam šablon">
+        <div class="list-panel-header">
+          <div class="section-eyebrow" id="sectionEyebrow">KATALOG ŠABLON</div>
+          <div class="section-headline"><h2 id="sectionTitle">Všechny šablony</h2><span class="total-bubble" id="sectionCount">0</span></div>
+          <p class="list-description" id="sectionDescription">Vyber šablonu, případně použij vyhledávání.</p>
+          <div class="category-controls" id="categoryControls" hidden>
+            <label for="categorySelect">Upřesnit podkategorii</label>
+            <select id="categorySelect"><option value="all">Všechny podkategorie</option></select>
+          </div>
+          <div class="list-controls">
+            <div class="result-count" id="resultCount">Načítám…</div>
+            <button class="density-toggle" id="densityToggle" type="button" aria-pressed="false" title="Přepnout hustotu seznamu">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+              <span>Kompaktní</span>
+            </button>
+          </div>
+        </div>
+        <div class="template-scroll" id="templateScroll">
+          <div class="template-list" id="templateList"></div>
+          <button class="load-more" type="button" id="loadMore" hidden>Zobrazit další šablony</button>
+        </div>
+        <div class="list-footer"><span>Tip: <kbd>/</kbd> vyhledávání</span><span><kbd>Ctrl</kbd> + <kbd>Enter</kbd> kopírování</span></div>
+      </section>
+      <main class="editor-panel" aria-label="Náhled šablony">
+        <div id="emptyState" class="empty-state">
+          <div class="empty-illustration"><svg viewBox="0 0 90 90" width="90" height="90" fill="none"><rect x="9" y="18" width="72" height="54" rx="10" stroke="currentColor" stroke-width="2"/><path d="m10 25 35 26 35-26" stroke="currentColor" stroke-width="2"/><path d="M19 10h52" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <h2>Vyber si šablonu</h2>
+          <p>V katalogu vlevo otevři šablonu. Tady pak uvidíš její náhled, potřebné údaje a možnosti kopírování.</p>
+          <span class="empty-pill">1. Vyhledat <span>→</span> 2. Doplnit <span>→</span> 3. Kopírovat</span>
+        </div>
+        <div id="editorContent" class="editor-content" hidden>
+          <div class="editor-top">
+            <div class="editor-title-block">
+              <div class="editor-kicker"><span class="small-dot"></span> VYBRANÁ ŠABLONA <span class="editor-cat" id="editorCategory"></span></div>
+              <h2 id="editorTitle"></h2>
+              <div class="editor-subtitle"><span id="editorUpdated"></span><span id="editorLength"></span></div>
+            </div>
+            <div class="editor-button-row">
+              <button id="editorFavorite" class="icon-button" type="button" aria-label="Přidat do oblíbených" title="Oblíbené">☆</button>
+              <button id="copySubjectTop" class="outline-btn" type="button" title="Kopírovat předmět">Kopírovat předmět</button>
+              <button id="copyEmailTop" class="primary-btn" type="button"><span class="copy-icon">⧉</span> Kopírovat e-mail</button>
+              <div class="more-wrap">
+                <button id="moreButton" class="icon-button" type="button" aria-label="Další možnosti" aria-expanded="false" title="Další možnosti">···</button>
+                <div id="moreMenu" class="more-menu" hidden>
+                  <button id="copyPlain" type="button">Kopírovat jako prostý text</button>
+                  <button id="restorePreview" type="button">Obnovit původní náhled</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="editor-flow">
+            <section class="variables-card" aria-labelledby="variableSectionTitle">
+              <button id="variablesToggle" type="button" class="variables-summary" aria-expanded="false">
+                <span class="variables-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 17h16M8 4v6M16 14v6"/></svg></span>
+                <span class="variables-header-main">
+                  <span class="variables-title" id="variableSectionTitle">Doplnit údaje do šablony</span>
+                  <span class="variables-caption" id="variablesCaption">Pole potřebná pro tuto šablonu</span>
+                </span>
+                <span class="progress-info" id="progressInfo">0 / 0</span>
+                <svg id="chevron" class="chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+              <div id="variablesBody" class="variables-body" hidden>
+                <div class="fields-intro">Vyplněné hodnoty se automaticky promítnou do náhledu. Osobní údaje se v tomto prototypu neukládají.</div>
+                <div id="fieldsForm" class="fields-form"></div>
+                <div class="fields-actions"><button id="clearFields" type="button">Vymazat údaje</button><button id="collapseVariables" class="collapse-link" type="button">Skrýt údaje ↑</button></div>
+              </div>
+            </section>
+            <section class="email-paper" aria-labelledby="emailHeading">
+              <div class="email-topline"><span class="email-topline-label" id="emailHeading">NÁHLED ODCHOZÍHO E-MAILU</span><span class="edit-label">✎ Text lze upravit</span></div>
+              <div class="email-envelope">
+                <div class="email-label">Od</div>
+                <div class="sender"><span class="sender-avatar" id="senderAvatar">e</span><strong id="senderName">epet</strong><span id="senderMail">info@epet.cz</span></div>
+                <div class="email-label">Předmět</div>
+                <div class="subject-box"><strong id="subjectText"></strong><button id="copySubjectInline" type="button">Kopírovat</button></div>
+              </div>
+              <div class="message-label">TEXT ZPRÁVY</div>
+              <div class="message-content" id="emailBody" role="textbox" contenteditable="true" aria-multiline="true" aria-label="Upravitelný text e-mailu" spellcheck="true"></div>
+            </section>
+            <section class="attachments-panel" id="attachmentsPanel" hidden><h3>Doporučené přílohy</h3><div class="attachments-list" id="attachmentsList"></div></section>
+            <p class="editor-note">Vizuální ukázka s původním rozdělením tematických sekcí a podkategorií. HTML tabulky v těle šablon zachovávají své formátování, jejich původní značková barva se mění podle výběru epet / Dobrá Energie. Před nasazením je potřeba zkontrolovat také všechny složité proměnné původní aplikace.</p>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <dialog id="infoDialog" class="info-dialog">
+    <h2>O této ukázce</h2>
+    <p>Jde o <strong>samostatný interaktivní návrh</strong>, nikoli produkční aplikaci. Rozhraní zachovává původní kategorie a podkategorie, kompaktní katalog a panel proměnných přímo nad náhledem.</p>
+    <p>Je-li dostupný internet, aplikace načte aktuální veřejný soubor <code>sablony.js</code> z GitHub Pages. Jinak zobrazí ukázkové položky. Pro nasazení na GitHub bude třeba spojit nový vzhled s plnou původní logikou aplikace.</p>
+    <button id="closeInfo" class="primary-btn" type="button">Rozumím</button>
+  </dialog>
+  <script>
+/* Smart Engine 3.0 — interaktivní vzhledový prototyp. Samostatný, bez externích JS knihoven.
+   Stávající produkční app.js není tímto souborem nahrazen. */
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const escapeHtml = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const clean = v => String(v ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('cs-CZ');
+  const getSaved = (key, fallback=[]) => { try {const x=JSON.parse(localStorage.getItem(key)||'null');return Array.isArray(x)?x:fallback;}catch{return fallback;} };
+  const save = (key,v) => {try{localStorage.setItem(key,JSON.stringify(v));}catch{}};
+  const DEMOS = [
+    {subject:'Výzva k úhradě – tabulka pohledávek (ukázka)',category:'Dědické řízení',date:'2026-11-12',text:`<p>Dobrý den,</p><p>Aktuálně u odběrného místa evidujeme následující pohledávku, dále jen <strong>„Pohledávka“</strong>:</p><table class="table-upominka"><thead><tr><th>Druh dokladu</th><th>Variabilní symbol</th><th>Smluvní účet</th><th>Splatnost</th><th>Částka</th><th>Měna</th></tr></thead><tbody><tr><td>Záloha</td><td>{variabilní symbol}</td><td>{smluvní účet}</td><td>{datum splatnosti}</td><td>{částka}</td><td>Kč</td></tr><tr><td>Záloha</td><td>{variabilní symbol}</td><td>{smluvní účet}</td><td>{datum splatnosti}</td><td>{částka}</td><td>Kč</td></tr></tbody><tfoot><tr><td colspan="4" style="text-align:right;"><strong>Platby po splatnosti celkem</strong></td><td><strong>{celková částka}</strong></td><td><strong>Kč</strong></td></tr></tfoot></table><p>Na základě výše uvedeného Vás vyzýváme k úhradě Pohledávky na účet č. <strong>9960227/0100</strong> s variabilním symbolem <strong>{variabilní symbol}</strong>, a to do <strong>10 dnů</strong> od data doručení této výzvy.</p>`},
+    {subject:'Ukázka původní tabulky – struktura ceny',category:'Jednotková cena',date:'2026-11-12',text:`<p>Dobrý den, pane XXX,</p><p>níže uvádíme ilustrační strukturu ceny. Tabulka má vlastní formátování jako v dosavadních šablonách.</p><table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse; font-family:Arial; font-size:14px; width:100%;"><tr style="background-color:#ffffff; font-weight:bold;"><td colspan="4">Detailní struktura složení ceny (bez DPH)</td></tr><tr style="background-color:#ffffff; font-weight:bold;"><td colspan="4">Regulované platby:</td></tr><tr data-brand-row style="background-color:#94c11f; font-weight:bold;"><td>Položka</td><td>Množství</td><td>Jednotka</td><td>Celkem</td></tr><tr><td>Distribuce – stálý měsíční plat</td><td>12</td><td>měsíc</td><td>– Kč</td></tr><tr><td>Distribuce VT</td><td>3,200</td><td>MWh</td><td>– Kč</td></tr><tr style="background-color:#ffffff; font-weight:bold;"><td colspan="4">Obchodní složka:</td></tr><tr data-brand-row style="background-color:#94c11f; font-weight:bold;"><td>Položka</td><td>Množství</td><td>Jednotka</td><td>Celkem</td></tr><tr><td>Dodávka VT</td><td>3,200</td><td>MWh</td><td>– Kč</td></tr></table><p>Uvedené částky jsou pouze ilustrační a nejsou určeny k odeslání zákazníkovi.</p>`},
+    {subject:'Zaslání platebního kalendáře',category:'Nedoručenky',date:'2026-08-01',text:'<p>Dobrý den, pane XXX,</p><p>v příloze tohoto e-mailu Vám zasíláme platební kalendář k dodávce elektřiny/plynu pro následující období.</p><p>Rádi bychom Vás také informovali, že požadavky můžete řešit i přes náš <a href="https://zakaznici.epet.cz/login">Zákaznický portál</a>.</p>'},
+    {subject:'Oprava vyúčtování dodávek energií',category:'Fakturace',date:'2026-04-21',text:'<p>Dobrý den, pane XXX,</p><p>rádi bychom Vás informovali, že jsme v rámci interní kontroly zjistili, že u Vaší smlouvy došlo k nesprávnému nastavení fakturačních údajů.</p><p>Oprava byla promítnuta do opravného vyúčtování.</p>'},
+    {subject:'Zaslání upomínky k neuhrazené platbě',category:'Nedoručenky',date:'2026-08-01',text:'<p>Dobrý den, pane XXX,</p><p>dovolujeme si Vás upozornit, že u Vaší smlouvy evidujeme neuhrazenou platbu.</p><p><strong>Variabilní symbol:</strong> [VARIABILNÍ SYMBOL]<br><strong>Částka:</strong> [ČÁSTKA] Kč<br><strong>Splatnost:</strong> [DATUM SPLATNOSTI]</p><p>Prosíme o úhradu a děkujeme za spolupráci.</p>'},
+    {subject:'Vysvětlení vyúčtování za výkup elektřiny',category:'Výkup elektřiny',date:'2026-05-29',text:'<p>Dobrý den, pane XXX,</p><p>děkujeme za Váš dotaz týkající se faktury za výkup elektřiny.</p><p>V určité části fakturovaného období došlo k <strong>záporné výkupní ceně elektřiny</strong>, což může ovlivnit výsledné vyúčtování.</p>'},
+    {subject:'Změna distribuční sazby',category:'Distribuce',date:'2026-08-01',text:'<p>Dobrý den, pane XXX,</p><p>děkujeme za Vaši žádost o změnu distribuční sazby na <strong>{DISTRIBUČNÍ SAZBA}</strong> pro odběrné místo [EAN/EIC KÓD] na adrese [ADRESA ODBĚRNÉHO MÍSTA].</p><p>O dalším postupu Vás budeme informovat.</p>'},
+    {subject:'Nastavení nové výše záloh',category:'Zálohy',date:'2026-08-01',text:'<p>Dobrý den, pane XXX,</p><p>na základě Vaší žádosti jsme upravili výši záloh na <strong>[ČÁSTKA] Kč</strong>.</p><p>Pro správné přiřazení platby uveďte variabilní symbol <strong>[VARIABILNÍ SYMBOL]</strong>.</p>'},
+    {subject:'Samoodečet – potvrzení přijetí',category:'Samoodečty',date:'2026-08-01',text:'<p>Dobrý den, pane XXX,</p><p>děkujeme za zaslání samoodečtu pro odběrné místo [EAN/EIC KÓD].</p><p>Vaše podklady jsme převzali k dalšímu zpracování.</p>'},
+    {subject:'Informace k dědickému řízení',category:'Dědické řízení',date:'2026-08-01',text:'<p>Dobrý den,</p><p>děkujeme za doložení podkladů k dědickému řízení po zákazníkovi {jméno a příjmení}, nar. {datum narození}.</p><p>Vaši žádost o vyplacení přeplatku dále prověříme.</p>'},
+    {subject:'Přístup do zákaznického portálu',category:'Zákaznický portál',date:'2026-08-01',text:'<p>Dobrý den, pane XXX,</p><p>pro správu Vašeho odběrného místa využijte prosím <a href="https://zakaznici.epet.cz/login">Zákaznický portál</a>.</p>'},
+    {subject:'Ukončení smluvního vztahu',category:'Výpovědi a ukončení',date:'2026-08-01',text:'<p>Dobrý den, pane XXX,</p><p>potvrzujeme přijetí Vašeho požadavku na ukončení smlouvy, kterou evidujeme pro odběrné místo [EAN/EIC KÓD].</p><p>O dalším postupu Vás budeme informovat.</p>'}
+  ];
+  const NAV = [
+    {id:'finance',label:'Finance a platby',symbol:'▤',desc:'Vyúčtování, zálohy, pohledávky a platby'},
+    {id:'contracts',label:'Smlouvy a produkty',symbol:'▧',desc:'Přepisy, výpovědi, ukončení a nabídky'},
+    {id:'distribution',label:'Měření a distribuce',symbol:'⌁',desc:'Sazby, jističe a distributoři'},
+    {id:'readings',label:'Samoodečty',symbol:'▣',desc:'Evidence a potvrzení samoodečtů'},
+    {id:'inheritance',label:'Dědické řízení',symbol:'♙',desc:'Pozůstalosti a komunikace s dědici'},
+    {id:'portal',label:'Zákaznický portál',symbol:'▦',desc:'Přihlášení a samoobsluha zákazníků'},
+    {id:'fve',label:'FVE a výkup',symbol:'☼',desc:'Fotovoltaika a výkup elektřiny'},
+    {id:'customers',label:'Péče o zákazníky',symbol:'♧',desc:'Reklamace a obecná komunikace'},
+    {id:'other',label:'Ostatní',symbol:'⋯',desc:'Další šablony'}
+  ];
+  const FIELD_DEFS = [
+    {key:'lname',label:'Příjmení zákazníka',placeholder:'Např. Novák',type:'text',group:'Zákazník',pattern:/(Vážený\s+pane|Vážená\s+paní|Dobrý\s+den,?\s*(?:pane|paní)|(?:pane|paní)\s+(?:X{2,}|XY)|[\[{]\s*PŘÍJMENÍ\s*[\]}])/i},
+    {key:'ean',label:'EAN / EIC',placeholder:'18místný EAN nebo 16znakový EIC',type:'textarea',group:'Odběrné místo',pattern:/\[EAN\/EIC\s+KÓD\]/i},
+    {key:'adresa',label:'Adresa odběrného místa',placeholder:'Ulice a číslo, obec',type:'text',group:'Odběrné místo',pattern:/\[ADRESA\s+ODBĚRNÉHO\s+MÍSTA\]/i},
+    {key:'sazba',label:'Distribuční sazba',placeholder:'Např. D25d',type:'text',group:'Odběrné místo',pattern:/[\[{]\s*(?:DISTRIBUČNÍ\s+SAZBA|SAZBA)\s*[\]}]|\{XXXX\}/i},
+    {key:'jistic',label:'Hodnota hlavního jističe',placeholder:'Např. 3×25 A',type:'text',group:'Odběrné místo',pattern:/[\[{]\s*(?:XXX|XXXX)\s*A\s*[\]}]|[\[{]\s*HODNOTA\s+JISTIČE\s*[\]}]/i},
+    {key:'odecetDatum',label:'Termín odečtu',placeholder:'',type:'date',group:'Odběrné místo',pattern:/[\[{]\s*termín\s+vystavení\s*\/\s*odečtový\s+měsíc\s*[\]}]/i},
+    {key:'vs',label:'Variabilní symbol',placeholder:'Např. 1234567890',type:'text',group:'Platby',pattern:/\[VARIABILNÍ\s+SYMBOL\]|\{variabilní\s+symbol\}/i},
+    {key:'smluvniUcet',label:'Smluvní účet',placeholder:'Číslo zákaznického účtu',type:'text',group:'Platby',pattern:/\[SMLUVNÍ\s+ÚČET\]|\{smluvní\s+účet\}/i},
+    {key:'castka',label:'Částka (Kč)',placeholder:'Např. 1 580',type:'text',group:'Platby',pattern:/\[(?:CELKOVÁ\s+)?ČÁSTKA\]|\{(?:celková\s+)?částka\}/i},
+    {key:'splatnost',label:'Datum splatnosti',placeholder:'Např. 15. 11. 2026',type:'text',group:'Platby',pattern:/\[DATUM\s+SPLATNOSTI\]|\{datum\s+splatnosti\}/i},
+    {key:'dluhyRadky',label:'Pohledávky – jednotlivé řádky',placeholder:'Záloha; 1234567890; 22222222; 15. 11. 2026; 1 250',type:'textarea',group:'Platby',pattern:/table-upominka/i}
+  ];
+  const state = {brand:'epet', section:'all',category:'all',query:'',data:[],selectedId:null,favorites:getSaved('se3demoFavorites'),recent:getSaved('se3demoRecents'),fields:{gender:'male'},compact:false,limit:40,variablesOpen:false,editedHtml:null,online:false};
+  let toastTimer = null;
+  function notify(s){const el=$('toast');el.textContent=s;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),2600);}
+  function sourceText(t){const el=document.createElement('div');el.innerHTML=t.body||'';return(el.textContent||'').replace(/\s+/g,' ').trim();}
+  function sectionOf(category){
+    const name=clean(category);
+    // Původní mapování ze Smart Engine v2.9, včetně pořadí pravidel.
+    if(/samoodec|odec/.test(name)) return 'readings';
+    if(/dedic|notar|pozustal/.test(name)) return 'inheritance';
+    if(/zakaznicky portal|portal|pristup/.test(name)) return 'portal';
+    if(/fve|fotovolta|mikrozdroj|vykup|sdilen|sdileni|odchylk/.test(name)) return 'fve';
+    if(/spk|splatk|zaloh|bezzaloh|faktur|danov|plateb|platb|preplat|nedoplat|upom|dluh|inkaso|sipo|pokut|penal|saldo|jednotkova cena|vyuct|pohledav|finance/.test(name)) return 'finance';
+    if(/reklamac|stiznost|nedoruc|zranitel|kontakt|telefon|e-mail|email|zakaznic/.test(name)) return 'customers';
+    if(/mereni|spinani|odstavk|demont|montaz|distribuc|technic|elektrom|plynom|jistic|sazb|elektrin|plyn|reviz|hdo|pripojen/.test(name)) return 'distribution';
+    if(/smlouv|prepis|vypoved|ukonc|retenc|nabid|produkt|cenik|fixac|prolong|sloucen|zmena dodavatel|zmena odberat/.test(name)) return 'contracts';
+    return 'other';
+  }
+  function convert(obj){return Object.entries(obj).map(([subject,v])=>({id:subject,subject:subject.replace(/^Předmět\s*:\s*/i,''),category:v.category||(v.tags&&v.tags[0])||'Ostatní',date:v.date||v.updated||'',body:v.text||'',tags:Array.isArray(v.tags)?v.tags:[],attachments:Array.isArray(v.files)?v.files:[]}));}
+  function demoData(){return DEMOS.map(v=>({...v,id:v.subject,body:v.text,tags:[v.category],attachments:[]}));}
+  function filtered(){let items=state.data.slice();if(state.section==='favorites')items=state.favorites.map(id=>items.find(t=>t.id===id)).filter(Boolean);else if(state.section==='recent')items=state.recent.map(id=>items.find(t=>t.id===id)).filter(Boolean);else if(state.section!=='all')items=items.filter(t=>sectionOf(t.category)===state.section);if(state.category!=='all')items=items.filter(t=>t.category===state.category);const q=clean(state.query.trim());if(q)items=items.map(t=>({t,hay:clean([t.subject,t.category,...t.tags,sourceText(t)].join(' '))})).filter(x=>x.hay.includes(q)).map(x=>x.t);return items;}
+  function countIn(section){return section==='all'?state.data.length:section==='favorites'?state.favorites.filter(x=>state.data.some(t=>t.id===x)).length:section==='recent'?state.recent.filter(x=>state.data.some(t=>t.id===x)).length:state.data.filter(t=>sectionOf(t.category)===section).length;}
+  function navHtml(section,label,symbol){return `<button type="button" class="nav-item ${state.section===section?'active':''}" data-section="${section}" title="${escapeHtml(label)}"><span class="nav-ico" aria-hidden="true">${symbol}</span><span class="nav-text">${escapeHtml(label)}</span><span class="nav-count">${countIn(section)}</span></button>`;}
+  function renderNav(){ $('quickNav').innerHTML=navHtml('all','Všechny šablony','▥')+navHtml('favorites','Oblíbené','☆')+navHtml('recent','Naposledy použité','◷');$('sectionNav').innerHTML=NAV.map(x=>navHtml(x.id,x.label,x.symbol)).join('');document.querySelectorAll('[data-section]').forEach(b=>b.addEventListener('click',()=>{state.section=b.dataset.section;state.category='all';state.limit=40;render();}));}
+  function renderCategories(items){const active=NAV.find(n=>n.id===state.section);const quick={all:['Všechny šablony','Celý katalog e-mailových šablon'],favorites:['Oblíbené','Šablony, které sis označil hvězdičkou'],recent:['Naposledy použité','Rychlý přístup k posledním šablonám']};$('sectionTitle').textContent=active?active.label:quick[state.section][0];$('sectionDescription').textContent=active?active.desc:quick[state.section][1];$('sectionCount').textContent=countIn(state.section);$('sectionEyebrow').textContent=active?'TEMATICKÁ SEKCE':'KATALOG ŠABLON';const allCategories=state.data.filter(t=>sectionOf(t.category)===state.section).reduce((acc,t)=>acc.set(t.category,(acc.get(t.category)||0)+1),new Map());const show=Boolean(active);$('categoryControls').hidden=!show;const select=$('categorySelect');if(show){const options=[...allCategories.entries()].sort((a,b)=>a[0]<b[0]?-1:a[0]>b[0]?1:0);select.innerHTML=`<option value="all">Všechny podkategorie (${countIn(state.section)})</option>`+options.map(([category,n])=>`<option value="${escapeHtml(category)}">${escapeHtml(category)} (${n})</option>`).join('');select.value=state.category;} $('resultCount').textContent=`${items.length} ${items.length===1?'nalezená šablona':items.length>1&&items.length<5?'nalezené šablony':'nalezených šablon'}`;}
+  function highlight(value){const str=escapeHtml(value);const q=state.query.trim();if(!q)return str;const ix=clean(value).indexOf(clean(q));if(ix<0)return str;const left=escapeHtml(value.slice(0,ix));const mid=escapeHtml(value.slice(ix,ix+q.length));const right=escapeHtml(value.slice(ix+q.length));return `${left}<mark>${mid}</mark>${right}`;}
+  function listHtml(t){const fav=state.favorites.includes(t.id);const date=t.date?new Date(t.date):null;const recent=date&&Number.isFinite(date.getTime())&&Date.now()-date.getTime()<7*86400000&&Date.now()>=date.getTime();return `<article class="template-item ${state.selectedId===t.id?'selected':''}" data-template="${escapeHtml(t.id)}" role="button" tabindex="0" aria-label="Otevřít šablonu: ${escapeHtml(t.subject)}"><div class="template-head"><div class="template-tags"><span class="template-tag" title="${escapeHtml(t.category)}">${escapeHtml(t.category)}</span>${recent?'<span class="template-new">NOVÁ</span>':''}</div><button type="button" class="tpl-star ${fav?'is-favorite':''}" data-favorite="${escapeHtml(t.id)}" aria-label="${fav?'Odebrat z oblíbených':'Přidat do oblíbených'}" title="Oblíbené">${fav?'★':'☆'}</button></div><div class="template-name">${highlight(t.subject)}</div><p class="template-description">${escapeHtml(sourceText(t).slice(0,125))}${sourceText(t).length>125?'…':''}</p></article>`;}
+  function renderList(items){$('templateList').classList.toggle('compact',state.compact);const visible=items.slice(0,state.limit);$('templateList').innerHTML=visible.length?visible.map(listHtml).join(''):`<div class="empty-list"><div style="font-size:33px">⌕</div><strong>Žádné odpovídající šablony</strong><span>Zkus jiné hledání nebo vyber jinou sekci.</span><button type="button" id="resetSearch">Zobrazit všechny šablony</button></div>`;$('loadMore').hidden=visible.length===items.length;$('loadMore').textContent=`Zobrazit další šablony (${items.length-visible.length} zbývá)`;$('densityToggle').setAttribute('aria-pressed',String(state.compact));$('densityToggle').querySelector('span').textContent=state.compact?'Rozšířený':'Kompaktní';$('templateList').querySelectorAll('[data-template]').forEach(el=>{el.addEventListener('click',()=>select(el.dataset.template));el.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();select(el.dataset.template);}});});$('templateList').querySelectorAll('[data-favorite]').forEach(el=>el.addEventListener('click',e=>{e.stopPropagation();toggleFavorite(el.dataset.favorite);}));$('resetSearch')?.addEventListener('click',()=>{state.section='all';state.query='';state.category='all';$('globalSearch').value='';render();});}
+  function render(){renderNav();const items=filtered();renderCategories(items);renderList(items);renderEditor();}
+  function current(){return state.data.find(t=>t.id===state.selectedId)||null;}
+  function select(id){const t=state.data.find(x=>x.id===id);if(!t)return;state.selectedId=id;state.editedHtml=null;state.variablesOpen=requiredFields(t).length>0;state.recent=[id,...state.recent.filter(x=>x!==id)].slice(0,12);save('se3demoRecents',state.recent);render();if(window.matchMedia('(max-width:660px)').matches){$('workspace').classList.add('preview-mobile');$('showPreview').classList.add('active');$('showBrowser').classList.remove('active');window.scrollTo(0,0);}}
+  function toggleFavorite(id){if(state.favorites.includes(id))state.favorites=state.favorites.filter(x=>x!==id);else state.favorites=[id,...state.favorites];save('se3demoFavorites',state.favorites);render();notify(state.favorites.includes(id)?'Přidáno do oblíbených':'Odebráno z oblíbených');}
+  function requiredFields(t){if(!t)return[];const html=t.body||'';const plain=sourceText(t);const fields=FIELD_DEFS.filter(f=>f.pattern.test(f.key==='lname'?plain:html)).map(f=>({...f}));if(sectionOf(t.category)==='inheritance'){
+    const normalized = html.replace(/<table\b[^>]*>[\s\S]*?<\/table>/gi,''); const known=['variabilní symbol','smluvní účet','datum splatnosti','částka','celková částka','termín vystavení / odečtový měsíc','hodnota jističe','distribuční sazba','sazba','xxx a','xxxx a','xxxx'];
+    const extra=[];for(const match of normalized.matchAll(/\{([^{}<>]+)\}/g)){const token=match[1].trim();if(known.includes(clean(token)))continue;if(clean(token)==='jmeno, prijmeni, datum narozeni, trvaly pobyt'){extra.push('jméno','příjmení','datum narození','trvalý pobyt');}else if(clean(token)==='jmeno a prijmeni, datum narozeni, adresa zakaznika'){extra.push('jméno a příjmení','datum narození','adresa zákazníka');}else extra.push(token);}
+    [...new Set(extra)].forEach(token=>fields.push({key:'custom:'+token,label:token.charAt(0).toUpperCase()+token.slice(1),placeholder:'Doplňte údaj',type:'text',group:'Další údaje'}));
+  }return fields;}
+  function progress(t){const fields=requiredFields(t);const filled=fields.filter(f=>String(state.fields[f.key]||'').trim()).length;return{total:fields.length,filled};}
+  function renderVariables(t){const fields=requiredFields(t);const {total,filled}=progress(t);$('variablesCaption').textContent=total?`${filled} z ${total} potřebných údajů vyplněno`:'Tato šablona nevyžaduje doplnění';$('progressInfo').textContent=`${filled} / ${total}`;$('progressFill').style.width=(total?filled/total*100:100)+'%';$('variablesToggle').setAttribute('aria-expanded',String(state.variablesOpen));$('chevron').classList.toggle('open',state.variablesOpen);$('variablesBody').hidden=!state.variablesOpen;if(!total){$('fieldsForm').innerHTML='<p style="font-size:12px;color:#7d8b99">Šablona je připravena bez dalších údajů.</p>';return;}
+    const groups=[...new Set(fields.map(x=>x.group))];$('fieldsForm').innerHTML=groups.map(group=>{const inputs=fields.filter(f=>f.group===group).map(f=>{const value=escapeHtml(state.fields[f.key]||'');const id='form-'+f.key.replace(/[^a-z0-9]/gi,'-');const field=f.type==='textarea'?`<textarea id="${id}" data-field="${escapeHtml(f.key)}" placeholder="${escapeHtml(f.placeholder)}">${value}</textarea>`:`<input id="${id}" data-field="${escapeHtml(f.key)}" type="${f.type}" value="${value}" placeholder="${escapeHtml(f.placeholder)}" autocomplete="off">`;return `<div class="field-item ${f.type==='textarea'?'wide':''}"><label for="${id}">${escapeHtml(f.label)}</label>${field}${f.key==='dluhyRadky'?'<small class="debt-hint">Jedna pohledávka na řádek: <b>druh dokladu; variabilní symbol; smluvní účet; splatnost; částka</b>. Součet se vypočítá automaticky.</small>':''}</div>`;}).join('');return `<div class="field-group"><div class="field-group-title">${group}</div><div class="fields-grid">${group==='Zákazník'?`<div class="field-item"><label for="genderInput">Oslovení</label><select id="genderInput"><option value="male" ${state.fields.gender==='female'?'':'selected'}>Muž (pane)</option><option value="female" ${state.fields.gender==='female'?'selected':''}>Žena (paní)</option></select></div>`:''}${inputs}</div></div>`;}).join('');
+    $('fieldsForm').querySelectorAll('[data-field]').forEach(el=>el.addEventListener('input',()=>{state.fields[el.dataset.field]=el.value;state.editedHtml=null;updateProgress();renderEmailBody();}));$('genderInput')?.addEventListener('change',e=>{state.fields.gender=e.target.value;state.editedHtml=null;renderEmailBody();});}
+  function updateProgress(){const t=current();if(!t)return;const{filled,total}=progress(t);$('progressInfo').textContent=`${filled} / ${total}`;$('variablesCaption').textContent=total?`${filled} z ${total} potřebných údajů vyplněno`:'Tato šablona nevyžaduje doplnění';$('progressFill').style.width=(total?filled/total*100:100)+'%';}
+  // Převzato z původní logiky Smart Engine v2.9: tabulky pohledávek jsou
+  // generované dynamicky, nejde jen o obarvení tabulky z databáze.
+  function parseCzechMoney(value){
+    let text=String(value??'').replace(/\s|\u00a0|Kč/gi,'').replace(/[^\d,.-]/g,'');
+    if(!text)return 0;
+    if(text.includes(','))text=text.replace(/\./g,'').replace(',','.');
+    const n=Number(text);
+    return Number.isFinite(n)?n:0;
+  }
+  function formatCzechMoney(value){
+    return Number(value||0).toLocaleString('cs-CZ',{minimumFractionDigits:0,maximumFractionDigits:2});
+  }
+  function debtRows(){
+    const rows=[];
+    const entries=String(state.fields.dluhyRadky||'').split(/\r?\n/).map(s=>s.trim()).filter(Boolean);
+    for(const entry of entries){
+      const parts=entry.split(';').map(s=>s.trim());
+      rows.push({
+        druh:parts[0]||'Záloha',vs:parts[1]||'',smluvniUcet:parts[2]||'',
+        splatnost:parts[3]||'',castka:parts[4]||''
+      });
+    }
+    const val=k=>String(state.fields[k]||'').trim();
+    if(!rows.length&&['vs','smluvniUcet','splatnost','castka'].some(k=>val(k))){
+      rows.push({druh:'Záloha',vs:val('vs'),smluvniUcet:val('smluvniUcet'),
+        splatnost:val('splatnost'),castka:val('castka')});
+    }
+    if(!rows.length){
+      for(let i=0;i<2;i++)rows.push({druh:'Záloha',vs:'{variabilní symbol}',
+        smluvniUcet:'{smluvní účet}',splatnost:'{datum splatnosti}',castka:'{částka}'});
+    }
+    return rows;
+  }
+  function debtTableHtml(){
+    const brand=state.brand==='de'?'#F99F1C':'#94C11F';
+    const border='#d1d5db';
+    const rows=debtRows();
+    const total=rows.reduce((sum,row)=>sum+parseCzechMoney(row.castka),0);
+    const totalText=total>0?formatCzechMoney(total):'{celková částka}';
+    const hStyle=`background:${brand};background-color:${brand};color:#ffffff;border:1px solid ${border};padding:7px 8px;text-align:left;font-weight:700;`;
+    const cStyle=`border:1px solid ${border};padding:7px 8px;vertical-align:middle;`;
+    const foot=`background:${brand};background-color:${brand};color:#ffffff;border:1px solid ${border};padding:7px 8px;font-weight:700;`;
+    const heading=['Druh dokladu','Variabilní symbol','Smluvní účet','Splatnost','Částka','Měna'];
+    const head=heading.map((label,i)=>`<th style="${hStyle}${i===4?'text-align:right;':''}">${escapeHtml(label)}</th>`).join('');
+    const rowsHtml=rows.map((row,i)=>`<tr>
+      <td style="${cStyle}${i%2?'background-color:#f9fafb;':''}">${escapeHtml(row.druh)}</td>
+      <td style="${cStyle}${i%2?'background-color:#f9fafb;':''}">${escapeHtml(row.vs||'{variabilní symbol}')}</td>
+      <td style="${cStyle}${i%2?'background-color:#f9fafb;':''}">${escapeHtml(row.smluvniUcet||'{smluvní účet}')}</td>
+      <td style="${cStyle}${i%2?'background-color:#f9fafb;':''}">${escapeHtml(row.splatnost||'{datum splatnosti}')}</td>
+      <td style="${cStyle}${i%2?'background-color:#f9fafb;':''}text-align:right;white-space:nowrap">${escapeHtml(row.castka||'{částka}')}</td>
+      <td style="${cStyle}${i%2?'background-color:#f9fafb;':''}">Kč</td>
+    </tr>`).join('');
+    return `<table class="table-upominka" cellpadding="0" cellspacing="0"
+        style="width:100%;border-collapse:collapse;margin:14px 0 18px;font-family:Arial,sans-serif;font-size:11pt;">
+      <thead><tr>${head}</tr></thead>
+      <tbody>${rowsHtml}</tbody>
+      <tfoot><tr>
+        <td colspan="4" style="${foot}text-align:right;"><strong style="color:#ffffff">Platby po splatnosti celkem</strong></td>
+        <td style="${foot}text-align:right;white-space:nowrap;"><strong style="color:#ffffff">${escapeHtml(totalText)}</strong></td>
+        <td style="${foot}"><strong style="color:#ffffff">Kč</strong></td>
+      </tr></tfoot>
+    </table>`;
+  }
+  function replaceDebtTables(html){
+    const wrap=document.createElement('div');
+    wrap.innerHTML=html;
+    wrap.querySelectorAll('table.table-upominka').forEach(table=>{
+      table.outerHTML=debtTableHtml();
+    });
+    return wrap.innerHTML;
+  }
+  function formatNumber(v){return String(v||'').trim();}
+  function applyVariables(raw){let html=replaceDebtTables(String(raw||''));const val=key=>String(state.fields[key]||'').trim();const mark=(v)=>`<span class="var-filled">${escapeHtml(v)}</span>`;const swap=(re,key,empty)=>{html=html.replace(re,val(key)?mark(val(key)):empty);};
+    if(state.fields.gender==='female')html=html.replace(/\bpane\s+(X{2,}|XY)/giu,'paní $1').replace(/\bVážený\s+paní/giu,'Vážená paní');else html=html.replace(/\bpaní\s+(X{2,}|XY)/giu,'pane $1').replace(/\bVážená\s+pane/giu,'Vážený pane');
+    const ln=val('lname');if(ln){const gender=state.fields.gender==='female'?'female':'male';let voc=ln;if(gender==='male'){if(/ák$/i.test(ln))voc=ln.replace(/ák$/i,'áku');else if(/ek$/i.test(ln))voc=ln.replace(/ek$/i,'ku');else if(/a$/i.test(ln))voc=ln.replace(/a$/i,'o');else if(/k$/i.test(ln))voc=ln+'u';else if(/[rszčšž]$/i.test(ln))voc=ln+'i';else if(/[nmlpbtd]$/i.test(ln))voc=ln+'e';}else if(/a$/i.test(ln))voc=ln.replace(/a$/i,'o');html=html.replace(/\b(pane|paní)\s+(X{2,}|XY)/giu,(_,p)=>`${p} ${mark(voc)}`);}
+    swap(/\[EAN\/EIC\s+KÓD\]/gi,'ean','[EAN/EIC KÓD]');swap(/\[ADRESA\s+ODBĚRNÉHO\s+MÍSTA\]/gi,'adresa','[ADRESA ODBĚRNÉHO MÍSTA]');swap(/[\[{]\s*(?:DISTRIBUČNÍ\s+SAZBA|SAZBA)\s*[\]}]|\{XXXX\}/gi,'sazba','{SAZBA}');swap(/[\[{]\s*(?:XXX|XXXX)\s*A\s*[\]}]|[\[{]\s*HODNOTA\s+JISTIČE\s*[\]}]/gi,'jistic','{XXX A}');swap(/\[VARIABILNÍ\s+SYMBOL\]|\{variabilní\s+symbol\}/gi,'vs','[VARIABILNÍ SYMBOL]');swap(/\[SMLUVNÍ\s+ÚČET\]|\{smluvní\s+účet\}/gi,'smluvniUcet','[SMLUVNÍ ÚČET]');swap(/\[ČÁSTKA\]|\{částka\}/gi,'castka','[ČÁSTKA]');html=html.replace(/\[CELKOVÁ\s+ČÁSTKA\]|\{celková\s+částka\}/gi,()=>{const sum=debtRows().reduce((n,row)=>n+parseCzechMoney(row.castka),0);return sum>0?mark(formatCzechMoney(sum)):'{celková částka}';});swap(/\[DATUM\s+SPLATNOSTI\]|\{datum\s+splatnosti\}/gi,'splatnost','[DATUM SPLATNOSTI]');
+    if(val('odecetDatum')){const d=val('odecetDatum').split('-');const formatted=`${Number(d[2])}. ${Number(d[1])}.`;html=html.replace(/[\[{]\s*termín\s+vystavení\s*\/\s*odečtový\s+měsíc\s*[\]}]/gi,mark(formatted));}
+    html=html.replace(/\{([^{}<>]+)\}/g,(whole,label)=>val('custom:'+label.trim())?mark(val('custom:'+label.trim())):whole);
+    if(state.brand==='de'){
+      html=html.replace(/https:\/\/zakaznici\.epet\.cz\/(?:login|forgotten-password)/gi,'https://zakaznici.dobra-energie.eu/').replace(/info@epet\.cz/gi,'info@dobra-energie.eu').replace(/https:\/\/epet\.cz\/chci-prepsat-smlouvu-na-jinou-osobu-38/gi,'https://dobra-energie.eu/chci-prepsat-smlouvu-na-jinou-osobu-38').replace(/\bepet(?:\s+energie)?\b/gi,'Dobrá Energie').replace(/9960227\/0100/g,'3131444/0100');
+    }
+    // Stejné pravidlo jako původní app.js: barevné záhlaví zůstane tabulkou,
+    // pouze se změní zelená epet <-> oranžová DE. Ostatní styly nezasahujeme.
+    html=applyBrandTableColors(html);
+    return html;
+  }
+  function applyBrandTableColors(html){
+    const root=document.createElement('div');
+    root.innerHTML=String(html||'');
+    const brand=state.brand==='de'?'#F99F1C':'#94C11F';
+    const originalBrandColors=new Set(['#94c11f','#f99f1c','#f94c11f','rgb(148,193,31)','rgb(249,159,28)']);
+    const isBrandColor=(v)=>originalBrandColors.has(String(v||'').replace(/\s+/g,'').toLowerCase());
+    root.querySelectorAll('tr').forEach(row=>{
+      const styleColor=row.style.backgroundColor||row.style.background||row.getAttribute('bgcolor');
+      const brandMarked=row.hasAttribute('data-brand-row')||isBrandColor(styleColor)||
+        [...row.querySelectorAll('th,td')].some(cell=>isBrandColor(cell.style.backgroundColor||cell.style.background||cell.getAttribute('bgcolor')));
+      if(!brandMarked)return;
+      row.setAttribute('data-brand-row','');
+      row.style.backgroundColor=brand;
+      row.querySelectorAll('th,td').forEach(cell=>{cell.style.backgroundColor=brand;});
+    });
+    return root.innerHTML;
+  }
+
+  // E-mail musí zachovat tabulky i po kopírování do Outlooku / jiného klienta.
+  function sanitizeForCopy(html){
+    const brand=state.brand==='de'?'#F99F1C':'#94C11F';
+    const root=document.createElement('div');root.innerHTML=html;
+    root.querySelectorAll('*').forEach(el=>{
+      if(el.closest('.table-upominka, tr[data-brand-row]'))return;
+      el.style.background='transparent';el.style.backgroundColor='transparent';
+    });
+    root.querySelectorAll('tr[data-brand-row]').forEach(row=>{
+      row.style.backgroundColor=brand;
+      row.querySelectorAll('th,td').forEach(cell=>cell.style.backgroundColor=brand);
+    });
+    return `<style>body,p,div,span,td,th{font-family:Arial,sans-serif;font-size:11pt}a,b,strong,em,i{color:${brand}}a{text-decoration:none;font-weight:bold}tr[data-brand-row],tr[data-brand-row]>th,tr[data-brand-row]>td{background-color:${brand}!important}</style>`+root.innerHTML;
+  }
+  function sanitizePreview(html){const wrap=document.createElement('div');wrap.innerHTML=html;wrap.querySelectorAll('script,iframe,object,embed,form,input,textarea,button,video,audio,style,link,meta,base,svg,math').forEach(x=>x.remove());wrap.querySelectorAll('*').forEach(el=>{[...el.attributes].forEach(a=>{const key=a.name.toLowerCase(),value=a.value.trim().toLowerCase();if(key.startsWith('on')||(key==='href'&&!/^(https?:\/\/|#|mailto:)/.test(value))||(key==='src'&&!/^https?:\/\//.test(value))){el.removeAttribute(a.name);}});if(el.tagName==='A'){el.setAttribute('target','_blank');el.setAttribute('rel','noopener noreferrer');}});return wrap.innerHTML;}
+  function emailSubject(t){if(!t)return'';return /,\s*zákaznický účet\s+\S+$/i.test(t.subject)?t.subject:`${t.subject}, zákaznický účet XXXXXX`;}
+  function renderEmailBody(){const t=current();if(!t)return;const el=$('emailBody');const html=state.editedHtml===null?sanitizePreview(applyVariables(t.body)):state.editedHtml;el.innerHTML=html;const text=el.textContent||'';$('editorLength').textContent=`${text.length.toLocaleString('cs-CZ')} znaků`;}
+  function renderEditor(){const t=current();$('emptyState').hidden=Boolean(t);$('editorContent').hidden=!t;if(!t)return;$('editorCategory').textContent=t.category;$('editorTitle').textContent=t.subject;$('editorUpdated').textContent=t.date?'Aktualizace: '+new Intl.DateTimeFormat('cs-CZ').format(new Date(t.date)):'Bez údaje o aktualizaci';$('editorFavorite').textContent=state.favorites.includes(t.id)?'★':'☆';$('editorFavorite').classList.toggle('faved',state.favorites.includes(t.id));$('editorFavorite').title=state.favorites.includes(t.id)?'Odebrat z oblíbených':'Přidat do oblíbených';$('senderAvatar').textContent=state.brand==='epet'?'e':'DE';$('senderName').textContent=state.brand==='epet'?'epet':'Dobrá Energie';$('senderMail').textContent=state.brand==='epet'?'info@epet.cz':'info@dobra-energie.eu';$('subjectText').textContent=emailSubject(t);$('moreMenu').hidden=true;$('moreButton').setAttribute('aria-expanded','false');renderVariables(t);renderEmailBody();renderAttachments(t);}
+  function attachmentHref(item){let url=typeof item==='string'?item:item.url;if(!url)return null;try{const resolved=new URL(url,location.href);if(!/^https?:$/.test(resolved.protocol))return null;const m=resolved.href.match(/drive\.google\.com\/file\/d\/([a-zA-Z0-9_-]+)/i);if(m)return `https://drive.google.com/uc?export=download&id=${encodeURIComponent(m[1])}`;return resolved.href;}catch{return null;}}
+  function renderAttachments(t){const items=(t.attachments||[]).filter(x=>typeof x==='string'||!x.brand||x.brand===state.brand).map(x=>({name:typeof x==='string'?x.split('/').pop():x.name,url:attachmentHref(x)})).filter(x=>x.url);$('attachmentsPanel').hidden=!items.length;$('attachmentsList').innerHTML=items.map(x=>`<a href="${escapeHtml(x.url)}" target="_blank" rel="noopener noreferrer" class="attachment-link">↓ ${escapeHtml(x.name||'Stáhnout přílohu')}</a>`).join('');}
+  async function copyText(value){if(navigator.clipboard?.writeText){try{await navigator.clipboard.writeText(value);notify('Zkopírováno do schránky');return;}catch{}}const t=document.createElement('textarea');t.value=value;t.style.cssText='position:fixed;opacity:0;top:0;left:0';document.body.appendChild(t);t.focus();t.select();let ok=false;try{ok=document.execCommand('copy');}catch{}t.remove();notify(ok?'Zkopírováno do schránky':'Schránka je blokována — text označte a zkopírujte ručně');}
+  async function copyEmail(plain=false){if(!current())return;const el=$('emailBody');if(plain){return copyText(el.innerText||el.textContent||'');}const html=sanitizeForCopy(el.innerHTML),text=el.innerText||el.textContent||'';if(navigator.clipboard?.write&&window.ClipboardItem){try{await navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([html],{type:'text/html'}),'text/plain':new Blob([text],{type:'text/plain'})})]);notify('E-mail zkopírován včetně formátování');return;}catch{}}const handler=e=>{e.clipboardData.setData('text/html',html);e.clipboardData.setData('text/plain',text);e.preventDefault();};document.addEventListener('copy',handler);let ok=false;try{ok=document.execCommand('copy');}catch{}document.removeEventListener('copy',handler);if(ok)notify('E-mail zkopírován včetně formátování');else{el.focus();const range=document.createRange();range.selectNodeContents(el);const sel=window.getSelection();sel.removeAllRanges();sel.addRange(range);notify('Automatické kopírování není dostupné — stiskni Ctrl+C');}}
+  function switchBrand(b){state.editedHtml=null;state.brand=b;document.body.classList.toggle('theme-epet',b==='epet');document.body.classList.toggle('theme-de',b==='de');document.querySelectorAll('[data-brand]').forEach(el=>{const yes=el.dataset.brand===b;el.classList.toggle('active',yes);el.setAttribute('aria-pressed',String(yes));});renderEditor();notify(b==='epet'?'Aktivní značka: epet':'Aktivní značka: Dobrá Energie');}
+  function loadLive(){const src='https://lukasnikolov.github.io/know/sablony.js?v='+Date.now();const script=document.createElement('script');script.src=src;script.async=true;let ended=false;const finished=(ok)=>{if(ended)return;ended=true;if(ok&&window.SABLONY&&Object.keys(window.SABLONY).length){try{state.data=convert(window.SABLONY);state.online=true;const selected=current();if(!selected){const withTable=state.data.find(t=>/<table\b/i.test(t.body));state.selectedId=withTable?.id||null;state.variablesOpen=false;}$('statusDot').classList.add('live');$('dataSourceLabel').textContent='Aktuální databáze · GitHub';render();notify(`Načteno ${state.data.length} skutečných šablon`);return;}catch(e){console.warn('Chyba při převodu databáze',e);}}$('dataSourceLabel').textContent='Ukázková data · offline';};script.onload=()=>finished(true);script.onerror=()=>finished(false);document.head.appendChild(script);setTimeout(()=>finished(false),8000);}
+  function bind(){ $('categorySelect').addEventListener('change',e=>{state.category=e.target.value;state.limit=40;render();});$('globalSearch').addEventListener('input',e=>{state.query=e.target.value;state.limit=40;render();});$('densityToggle').addEventListener('click',()=>{state.compact=!state.compact;renderList(filtered());});$('loadMore').addEventListener('click',()=>{state.limit+=40;renderList(filtered());});document.querySelectorAll('[data-brand]').forEach(b=>b.addEventListener('click',()=>switchBrand(b.dataset.brand)));$('variablesToggle').addEventListener('click',()=>{state.variablesOpen=!state.variablesOpen;renderVariables(current());});$('collapseVariables').addEventListener('click',()=>{state.variablesOpen=false;renderVariables(current());});$('clearFields').addEventListener('click',()=>{if(!confirm('Vymazat všechny právě vyplněné údaje?'))return;state.fields={gender:'male'};state.editedHtml=null;renderVariables(current());renderEmailBody();notify('Vyplněné údaje byly vymazány');});$('copyEmailTop').addEventListener('click',()=>copyEmail());$('copySubjectTop').addEventListener('click',()=>copyText(emailSubject(current())));$('copySubjectInline').addEventListener('click',()=>copyText(emailSubject(current())));$('editorFavorite').addEventListener('click',()=>current()&&toggleFavorite(current().id));$('moreButton').addEventListener('click',()=>{const menu=$('moreMenu');menu.hidden=!menu.hidden;$('moreButton').setAttribute('aria-expanded',String(!menu.hidden));});$('copyPlain').addEventListener('click',()=>{ $('moreMenu').hidden=true;copyEmail(true);});$('restorePreview').addEventListener('click',()=>{ $('moreMenu').hidden=true;state.editedHtml=null;renderEmailBody();notify('Náhled byl obnoven');});$('emailBody').addEventListener('input',()=>{state.editedHtml=$('emailBody').innerHTML;$('editorLength').textContent=($('emailBody').textContent||'').length.toLocaleString('cs-CZ')+' znaků';});document.addEventListener('click',e=>{if(!e.target.closest('.more-wrap'))$('moreMenu').hidden=true;});document.addEventListener('keydown',e=>{const node=document.activeElement;const typing=node&&(/^(INPUT|TEXTAREA|SELECT)$/.test(node.tagName)||node.isContentEditable);if(e.key==='/'&&!typing){e.preventDefault();$('globalSearch').focus();}if(e.ctrlKey&&e.key==='Enter'&&current()){e.preventDefault();copyEmail();}if(e.key==='Escape'){$('moreMenu').hidden=true;}});$('helpButton').addEventListener('click',()=>$('infoDialog').showModal());$('closeInfo').addEventListener('click',()=>$('infoDialog').close());$('showBrowser').addEventListener('click',()=>mobile(false));$('showPreview').addEventListener('click',()=>mobile(true));}
+  function mobile(showPreview){$('workspace').classList.toggle('preview-mobile',showPreview);$('showBrowser').classList.toggle('active',!showPreview);$('showPreview').classList.toggle('active',showPreview);}
+  function init(){state.data=demoData();state.selectedId=state.data[0].id;state.variablesOpen=true;bind();render();$('dataSourceLabel').textContent='Ukázková data · offline';loadLive();}
+  init();
+})();
+
+</script>
+</body>
+</html>
