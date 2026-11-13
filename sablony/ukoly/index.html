@@ -1,0 +1,1094 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Šablony úkolů · Znalostka</title>
+<style>
+:root{--epet:#94c11f;--epet-dark:#587915;--de:#f49a32;--ink:#19283b;--sub:#64748b;--line:#e2e8f0;--soft:#f7f9fb;--softgreen:#f2f9e1;--blue:#2563eb;--shadow:0 8px 28px rgba(23,39,58,.045);--radius:18px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:14px;line-height:1.5}button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{cursor:default;opacity:.4}a{color:inherit}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid rgba(148,193,31,.42);outline-offset:2px}
+.topbar{border-bottom:1px solid var(--line);background:#fff}.topinner{max-width:1780px;padding:22px 30px;margin:auto;display:flex;justify-content:space-between;gap:24px;align-items:center}.overline{text-transform:uppercase;letter-spacing:.14em;color:var(--epet-dark);font-size:10px;font-weight:850;margin:0 0 5px}.topinner h1{font-size:27px;line-height:1.15;letter-spacing:-.04em;margin:0;font-weight:800}.topinner h1::before{content:"";display:inline-block;width:6px;height:27px;border-radius:5px;background:linear-gradient(var(--epet),var(--de));margin-right:13px;vertical-align:-4px}.subtitle{font-size:12px;margin:8px 0 0;color:var(--sub)}.branding{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.brand-badge{font-size:11px;font-weight:800;padding:7px 11px;border:1px solid var(--line);border-radius:8px;background:#fff}.brand-badge.epet{border-bottom:3px solid var(--epet)}.brand-badge.de{border-bottom:3px solid var(--de)}.count-badge{border:1px solid var(--line);background:var(--soft);border-radius:11px;padding:6px 12px;text-align:center;min-width:78px}.count-badge b{display:block;font-size:17px;line-height:1.1}.count-badge small{font-size:10px;color:var(--sub)}
+.app-shell{max-width:1780px;padding:26px 30px 65px;margin:auto;display:grid;grid-template-columns:252px minmax(0,1fr) 292px;gap:22px;align-items:start}.panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);min-width:0}.side{position:sticky;top:15px;max-height:calc(100vh - 30px);overflow:auto;scrollbar-width:thin;min-width:0}.side-title{font-weight:800;letter-spacing:-.015em;font-size:14px;margin:0 0 13px}.field-label{display:block;font-size:10px;text-transform:uppercase;font-weight:800;letter-spacing:.055em;margin-bottom:6px;color:#58677a}.control{width:100%;background:#fff;min-height:38px;border:1px solid #cdd7e4;border-radius:9px;padding:9px 11px;color:var(--ink);min-width:0}.control::placeholder{color:#929dac}.control:focus{outline:none;border-color:#92bd2d;box-shadow:0 0 0 3px #94c11f24}.control.small{min-height:35px;padding:7px 9px;font-size:12px}.search-row{display:flex;position:relative}.search-row .control{padding-left:34px;padding-right:37px}.search-icon{position:absolute;top:10px;left:12px;color:#7b8999;font-size:16px}.clear-search{position:absolute;right:5px;top:4px;border:0;background:transparent;border-radius:7px;padding:6px 10px;color:#627188;font-size:19px}.divider{border:0;border-top:1px solid var(--line);margin:18px 0}.muted{color:var(--sub);font-size:12px}.tiny{color:var(--sub);font-size:11px}.catlist{display:grid;gap:4px;max-height:380px;overflow:auto;padding-right:3px}.cat-btn{width:100%;display:flex;align-items:center;justify-content:space-between;gap:7px;border:0;border-radius:9px;background:#fff;color:#526176;text-align:left;font-size:12px;font-weight:600;padding:9px 10px}.cat-btn span:first-child{overflow-wrap:anywhere}.cat-btn:hover{background:#f7f9f2}.cat-btn.active{background:var(--softgreen);color:#496615;font-weight:800}.cat-count{background:#eff3f7;color:#627188;border-radius:10px;padding:1px 7px;font-weight:800;font-size:10px;flex-shrink:0}.cat-btn.active .cat-count{background:#daeabb;color:var(--epet-dark)}.segmented{display:grid;grid-template-columns:1fr 1fr;gap:5px;background:var(--soft);padding:4px;border-radius:10px}.segmented button{border:0;border-radius:8px;background:transparent;color:#65748a;padding:9px 5px;font-size:11px;font-weight:750}.segmented button.active{background:#fff;color:#3d5c12;box-shadow:0 1px 5px #1d293b20}.reset-btn{margin-top:13px;border:0;background:none;color:#637188;font-size:12px;padding:6px 0;text-decoration:underline;text-underline-offset:3px}.date-result{background:var(--softgreen);padding:15px;border:1px solid #dbeabb;text-align:center;border-radius:13px;margin-top:12px}.date-result .label{font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:#62801a;font-weight:750}.date-result strong{display:block;font-size:24px;letter-spacing:-.045em;line-height:1.25;margin:4px 0}.date-result small{color:#668125;font-size:11px}.button{border:1px solid var(--line);border-radius:10px;padding:9px 13px;background:#fff;color:#40536a;font-weight:750;font-size:12px;display:inline-flex;align-items:center;gap:7px;justify-content:center;transition:background .15s}.button:hover:not(:disabled){background:#f1f6e7;border-color:#a8cf4c}.button.primary{background:var(--epet);border-color:var(--epet);color:#1e3100}.button.primary:hover{background:#a7d234}.button.full{width:100%}.button.xs{font-size:11px;padding:7px 10px}.notice{border:1px solid #f3dcad;background:#fffaf0;border-radius:12px;padding:12px;margin-top:17px}.notice summary{font-size:11px;font-weight:800;color:#8a5e10;cursor:pointer}.notice ul{font-size:11px;color:#725b30;padding-left:18px;line-height:1.6}.results{min-width:0}.results-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:15px;flex-wrap:wrap}.results-head h2{font-size:18px;letter-spacing:-.035em;margin:0 0 4px}.results-head p{margin:0;font-size:12px;color:var(--sub)}.tools{display:flex;gap:8px;align-items:center}.tools label{font-size:11px;color:#718096}.tools select{border:1px solid var(--line);border-radius:8px;padding:6px 25px 6px 8px;background:#fff;color:var(--ink);font-size:12px}.pageline{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:12px 0 16px}.pagination{display:flex;flex-wrap:wrap;align-items:center;gap:5px}.pagination button{width:33px;height:33px;padding:0;background:#fff;border:1px solid var(--line);border-radius:9px;color:#607188;font-weight:750;font-size:12px}.pagination button.current{background:var(--epet);border-color:var(--epet);color:#263900}.pagination button:hover:not(:disabled){border-color:var(--epet);background:#f1f8e6}.page-gap{padding:0 2px;color:#94a3b8}.cards{display:grid;gap:19px}.task-card{background:#fff;border:1px solid #dce5ee;border-radius:17px;overflow:hidden;box-shadow:var(--shadow)}.task-top{padding:18px 20px 16px;border-bottom:1px solid var(--line);background:linear-gradient(90deg,#fafcf7,#fff 36%)}.task-aux{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:9px}.tag{font-size:10px;font-weight:750;color:#5a711b;background:#f2f9df;border:1px solid #e5f1c4;border-radius:6px;padding:4px 8px}.tag.neutral{background:#f5f7fa;color:#65758b;border-color:#e3e9f0}.task-title{font-size:18px;line-height:1.36;letter-spacing:-.025em;font-weight:800;margin:0;overflow-wrap:anywhere}.task-meta{padding:17px 20px;background:#fff}.task-meta h4{font-size:11px;font-weight:800;color:#506177;text-transform:uppercase;letter-spacing:.06em;margin:0 0 12px}.crm-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.crm-field{min-width:0;align-self:stretch}.crm-field.full{grid-column:1/-1}.crm-field .crm-label{font-size:10px;letter-spacing:.04em;text-transform:uppercase;font-weight:800;color:#67778b;display:block;margin-bottom:4px}.crm-value{border:1px solid #e2e9f1;border-radius:9px;background:#f9fbfd;min-height:36px;padding:8px 10px;color:#26384e;font-size:12px;font-weight:600;overflow-wrap:anywhere;white-space:pre-wrap;line-height:1.45}.crm-value.featured{background:#f7fbe8;border-color:#ddecbb;font-weight:750}.crm-value.long{font-size:12px}.meta-subheading{font-size:11px;font-weight:800;margin:16px 0 9px;color:#52627b}.crm-grid.compact{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.crm-grid.compact .crm-field.wide{grid-column:span 2}.crm-grid.compact .crm-field.full{grid-column:1/-1}.desc-wrap{padding:17px 20px;background:#fcfdfb;border-top:1px solid var(--line)}.desc-head{display:flex;align-items:center;gap:8px;margin:0 0 9px;font-size:12px;font-weight:800;color:#52661d}.desc-head::before{content:"";width:4px;height:16px;background:var(--epet);border-radius:2px}.description{border:1px solid #e0e8f1;background:#fff;border-radius:10px;padding:15px;font-size:13px;line-height:1.65;min-height:70px;white-space:pre-wrap;overflow-wrap:anywhere}.template-var-filled{display:inline;background:#f0facd;border-radius:3px;color:#435900;font-weight:750;padding:1px 3px;box-decoration-break:clone}.task-actions{display:flex;justify-content:flex-end;gap:9px;flex-wrap:wrap;border-top:1px solid var(--line);padding:12px 20px;background:#fff}.empty{padding:48px 22px;text-align:center;border:1px dashed #cfdae4;border-radius:16px;color:#708096}.empty b{display:block;font-size:17px;color:var(--ink);margin-bottom:6px}.empty[hidden],.hidden{display:none!important}.right-panel{border-top:4px solid var(--de)}.variable-head{display:flex;justify-content:space-between;align-items:center;gap:10px}.variable-row{margin-top:12px}.two-fields{display:grid;grid-template-columns:1fr 1fr;gap:9px}.two-fields>*{min-width:0}.help{font-size:11px;color:#748398;line-height:1.55;margin:8px 0 13px}.extra{margin-top:16px;border-top:1px solid var(--line);padding-top:14px}.extra summary{font-size:12px;font-weight:750;color:#536980;cursor:pointer;margin-bottom:5px}.extra[open] summary{color:#4d6b12}.variable-status{font-size:10px;color:#6f8292;margin-top:5px;overflow-wrap:anywhere}.variable-status.is-invalid{color:#b74b45}.variable-status.is-valid{color:#5d7e1b}.toast{position:fixed;left:50%;bottom:27px;transform:translate(-50%,20px);background:#223148;color:#fff;border-radius:12px;padding:10px 18px;font-size:12px;font-weight:750;box-shadow:0 15px 30px #14233b33;opacity:0;transition:all .2s;pointer-events:none;z-index:50;max-width:min(94vw,480px);text-align:center}.toast.visible{opacity:1;transform:translate(-50%,0)}.footer{color:#8a97a6;font-size:11px;text-align:center;padding:10px 20px 35px}.page-note{font-size:10px;color:#8794a5}.accent{color:#7e9f23}
+@media (max-width:1450px){.app-shell{grid-template-columns:235px minmax(0,1fr) 272px;gap:16px;padding:20px}.panel{padding:16px}.task-meta,.task-top,.desc-wrap{padding-left:17px;padding-right:17px}}
+@media (max-width:1200px){.app-shell{grid-template-columns:238px minmax(0,1fr)}.left{grid-column:1;grid-row:1}.results{grid-column:2;grid-row:1/span 2}.right{grid-column:1;grid-row:2}.side{max-height:none;position:static;overflow:visible}.crm-grid.compact{grid-template-columns:repeat(2,minmax(0,1fr))}.crm-grid.compact .crm-field.wide{grid-column:auto}}
+@media (max-width:800px){.topinner{padding:18px 17px;align-items:flex-start;flex-wrap:wrap}.topinner h1{font-size:23px}.app-shell{display:flex;flex-direction:column;padding:15px;gap:16px}.left,.results,.right{width:100%}.side{max-height:none}.crm-grid.compact{grid-template-columns:repeat(2,minmax(0,1fr))}.catlist{max-height:220px}.results-head{margin-top:4px}}
+@media (max-width:520px){.topinner h1{font-size:22px}.branding{gap:5px}.task-title{font-size:16px}.crm-grid,.crm-grid.compact{grid-template-columns:1fr}.crm-grid.compact .crm-field.wide{grid-column:1}.task-actions .button{width:100%}.pageline{flex-direction:column;align-items:stretch}.pagination{justify-content:center}.right-panel{padding:15px}}
+@media print{.left,.right,.tools,.pagination,.task-actions,.topbar,.footer{display:none!important}.app-shell{display:block;margin:0;padding:0}.task-card{break-inside:avoid;margin-bottom:15px}.results-head{display:none}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="topinner">
+ <div><p class="overline">Znalostka / pracovní nástroje</p><h1>Šablony úkolů</h1><p class="subtitle">Přehledné podklady pro zápis a předání úkolů v ZIS · návrh před zveřejněním</p></div>
+ <div class="branding"><span class="brand-badge epet">epet</span><span class="brand-badge de">Dobrá Energie</span><span class="count-badge"><b id="statTotal">–</b><small>Výsledků</small></span><span class="count-badge"><b id="statTempl">–</b><small>Ze šablony</small></span></div>
+</div></header>
+<div class="app-shell">
+ <aside class="left side">
+  <section class="panel">
+   <h2 class="side-title">Vyhledávání a filtry</h2>
+   <label class="field-label" for="q">Hledat v celém katalogu</label>
+   <div class="search-row"><span class="search-icon" aria-hidden="true">⌕</span><input class="control" type="search" id="q" placeholder="Název, kód, řešitel, text…" autocomplete="off" aria-label="Vyhledávání v šablonách"><button type="button" class="clear-search" id="clearSearch" title="Vymazat hledání" aria-label="Vymazat hledání">×</button></div>
+   <p class="help">Vyhledávání funguje i bez diakritiky a napříč názvem, popisem, stavem a úrovněmi úkolu.</p>
+   <div class="segmented" aria-label="Zobrazit"><button type="button" id="f-all" class="active" aria-pressed="true">Všechny</button><button type="button" id="f-templ" aria-pressed="false">Jen šablony</button></div>
+   <hr class="divider"><h3 class="side-title">Kategorie</h3><nav id="catList" class="catlist" aria-label="Kategorie úkolů"></nav>
+   <button type="button" class="reset-btn" id="resetFilters">↺ Zrušit filtry</button>
+  </section>
+  <section class="panel" style="margin-top:16px">
+   <h2 class="side-title">SLA kalkulačka</h2>
+   <p class="help">Datum přijetí se promítne do termínu „DO“ u všech zobrazených úkolů.</p>
+   <label class="field-label" for="calc_start_date">Datum přijetí (D)</label><input id="calc_start_date" class="control small" type="date">
+   <label class="field-label" for="calc_days" style="margin-top:12px">Rychlý výpočet</label>
+   <select id="calc_days" class="control small"><option value="2">Nový · D+2 pracovní dny</option><option value="7">Čeká na ZK · D+7</option><option value="14">KOFA DINHE · D+14</option><option value="30">Termínování DINHE · D+30</option><option value="90">DINHE po přepisu · D+90</option></select>
+   <div class="date-result"><div class="label">Vypočítaný termín DO</div><strong id="calc_result">—</strong><small id="calc_dayname">—</small><button type="button" class="button xs full" id="copyCalcDate" style="margin-top:12px">Kopírovat datum</button></div>
+   <p class="tiny" style="margin:10px 0 0">Pracovní dny a české svátky; vypočtené termíny vždy ověřte proti interním pravidlům.</p>
+   <details class="notice" id="infoBox"><summary>Termíny zpracování a urgence</summary><ul><li>Nový – začít řešit do 2 pracovních dnů.</li><li>Při předání úkolu: stav Nový, termín D+2.</li><li>Každý úkol musí mít nastavený termín „DO“.</li><li>U úkolu zakládaného ze šablony vždy ověřit termín D+2.</li></ul></details>
+  </section>
+ </aside>
+ <main class="results" id="results">
+   <div class="results-head"><div><h2>Katalog pracovních šablon</h2><p id="statusInfo" role="status" aria-live="polite">Načítání šablon…</p></div><div class="tools"><label for="perPage">Zobrazit</label><select id="perPage" aria-label="Počet šablon na stránku"><option value="5">5</option><option value="10" selected>10</option><option value="20">20</option><option value="1000">Vše</option></select></div></div>
+   <div class="pageline"><span class="page-note">Věc, popis i údaje ZIS jsou zobrazené bez zkracování.</span><nav class="pagination" id="paginationTop" aria-label="Stránkování nad seznamem"></nav></div>
+   <section id="list" class="cards" aria-label="Seznam úkolů"></section>
+   <div class="empty hidden" id="empty"><b>Žádné odpovídající úkoly</b>Zkuste jiný výraz nebo vymažte aktivní filtry.<p style="margin-bottom:0"><button class="button xs" id="clearFromEmpty" type="button">Zrušit filtry</button></p></div>
+   <div class="pageline"><span class="page-note" id="pageSummary"></span><nav class="pagination" id="paginationBottom" aria-label="Stránkování pod seznamem"></nav></div>
+ </main>
+ <aside class="right side">
+  <section class="panel right-panel">
+    <div class="variable-head"><h2 class="side-title" style="margin:0">Doplnění šablony</h2><button type="button" class="button xs" id="variablesReset">Vymazat</button></div>
+    <p class="help">Zadané hodnoty se promítnou do zobrazených šablon i do kopírovaného textu. Nevyplněné zástupné údaje zůstávají zachované.</p>
+    <div class="variable-row"><label class="field-label" for="var_ean_eic">EAN / EIC kódy</label><textarea id="var_ean_eic" rows="3" class="control small" placeholder="859182400000000000&#10;27ZG100Z0000000X" spellcheck="false"></textarea><div id="var_ean_status" class="variable-status">Kódy se automaticky označí jako EAN nebo EIC.</div><button type="button" id="addEnergyCode" class="button xs" style="margin-top:7px">+ Přidat kód</button></div>
+    <div class="variable-row"><label class="field-label" for="var_address">Adresa odběrného místa</label><input id="var_address" class="control small" placeholder="Ulice, číslo, obec, PSČ"></div>
+    <div class="two-fields variable-row"><div><label class="field-label" for="var_date">Datum</label><input id="var_date" type="date" class="control small"></div><div><label class="field-label" for="var_meter_state">Stav měřidla</label><input id="var_meter_state" class="control small" placeholder="VT 1250"></div></div>
+    <div class="variable-row"><label class="field-label" for="var_email">E-mail</label><input id="var_email" class="control small" type="email" placeholder="zakaznik@example.cz"></div>
+    <details class="extra"><summary>Další údaje a parametry</summary>
+      <div class="variable-row"><label class="field-label" for="var_phone">Telefon</label><input id="var_phone" class="control small" placeholder="Telefonní číslo"></div>
+      <div class="two-fields variable-row"><div><label class="field-label" for="var_amount">Částka / dluh</label><input id="var_amount" class="control small" placeholder="2 500"></div><div><label class="field-label" for="var_vs">Variabilní symbol</label><input id="var_vs" class="control small" placeholder="VS"></div></div>
+      <div class="two-fields variable-row"><div><label class="field-label" for="var_zu">Zákaznický účet</label><input id="var_zu" class="control small" placeholder="ZÚ"></div><div><label class="field-label" for="var_ico">IČ / IČO</label><input id="var_ico" class="control small" placeholder="IČO"></div></div>
+      <div class="variable-row"><label class="field-label" for="var_contract_number">Číslo smlouvy</label><input id="var_contract_number" class="control small"></div>
+      <div class="variable-row"><label class="field-label" for="var_new_customer">Nový odběratel / přepis na</label><input id="var_new_customer" class="control small"></div>
+      <div class="two-fields variable-row"><div><label class="field-label" for="var_breaker_old">Původní jistič</label><input id="var_breaker_old" class="control small" placeholder="3×20 A"></div><div><label class="field-label" for="var_breaker_new">Nový jistič</label><input id="var_breaker_new" class="control small" placeholder="3×25 A"></div></div>
+      <div class="two-fields variable-row"><div><label class="field-label" for="var_rate_old">Původní sazba</label><input id="var_rate_old" class="control small" placeholder="D02d"></div><div><label class="field-label" for="var_rate_new">Nová sazba</label><input id="var_rate_new" class="control small" placeholder="D57d"></div></div>
+      <div class="variable-row"><label class="field-label" for="var_initial_advance">Počáteční záloha</label><input id="var_initial_advance" class="control small"></div>
+      <div class="variable-row"><label class="field-label" for="var_contract_term">Platnost smlouvy</label><input id="var_contract_term" class="control small" placeholder="12 / 24 / 36 měsíců"></div>
+      <div class="variable-row"><label class="field-label" for="var_payment_method">Způsob úhrady záloh</label><input id="var_payment_method" class="control small" placeholder="SIPO / inkaso / převod"></div>
+      <div class="variable-row"><label class="field-label" for="var_refund_method">Vrácení přeplatků</label><input id="var_refund_method" class="control small" placeholder="Složenka / účet"></div>
+    </details>
+   </section>
+ </aside>
+</div>
+<footer class="footer">NÁHLED – zatím není nahráno do repozitáře · Veškeré šablony zůstávají v tomto souboru, bez serverového ukládání</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+'use strict';
+const data = {  
+  "ZMĚNA JISTIČE - kde žádáme o SOP": { 
+        text: "EAN XXXXXXX: Zákazník žádá o navýšení/snížený jističe z [hodnota stávajícího jističe] na hodnotu [počet fází] x [počet ampérů]. SOP podaná pod číslem XXXX.",
+        "HLADINA 1": "ÚKOL ZE ŠABLONY - 10208 ZMĚNA JISTIČE",
+        "HLADINA 2": "ÚKOL ZE ŠABLONY - 10208 ZMĚNA JISTIČE",
+        "STAV": "ČEKÁ NA ZÁKAZNÍKA",
+        "ŘEŠITEL": "MOJE OSOBA",
+        "KATEGORIE": "DISTRIBUČNÍ ZMĚNY"
+    },
+  "ZMĚNA SAZBY - kde žádáme o SOP": { 
+        text: "EAN XXXXXXX: Zákazník žádá o navýšení/snížený jističe [hodnota stávajícího jističe] na hodnotu [počet fází] x [počet ampérů]. SOP podaná pod číslem XXXX.",
+        "HLADINA 1": "ÚKOL ZE ŠABLONY - 10207 ZMĚNA SAZBY",
+        "HLADINA 2": "ÚKOL ZE ŠABLONY - 10207 ZMĚNA SAZBY",
+        "STAV": "ČEKÁ NA ZÁKAZNÍKA",
+        "ŘEŠITEL": "MOJE OSOBA",
+        "KATEGORIE": "DISTRIBUČNÍ ZMĚNY"
+    },
+  "ZMĚNA JISTIČE - Zk dokládá SOP, RZ, Žádost o změnu smlouvy": { 
+        text: "EAN XXXXXXX: Zákazník žádá o navýšení/snížený jističe [hodnota stávajícího jističe] na hodnotu [počet fází] x [počet ampérů]. Dokumenty v příloze. Prosím o podání na PDS.",
+        "HLADINA 1": "ÚKOL ZE ŠABLONY - 10208 ZMĚNA JISTIČE",
+        "HLADINA 2": "ÚKOL ZE ŠABLONY - 10208 ZMĚNA JISTIČE",
+        "STAV": "NOVÝ",
+        "ŘEŠITEL": "EK",
+        "KATEGORIE": "DISTRIBUČNÍ ZMĚNY"
+    },
+  "ZMĚNA SAZBY- Zk dokládá SOP, RZ, Žádost o změnu smlouvy": { 
+        text: "EAN XXXXXXX: Zákazník žádá o změnu distribuční sazby [hodnota stávající sazby] na hodnotu [distribuční sazba]. Dokumenty v příloze. Prosím o podání požadavku na DI. Děkuji.",
+        "HLADINA 1": "ÚKOL ZE ŠABLONY - 10207 ZMĚNA SAZBY",
+        "HLADINA 2": "ÚKOL ZE ŠABLONY - 10207 ZMĚNA SAZBY",
+        "STAV": "NOVÝ",
+        "ŘEŠITEL": "EK",
+        "KATEGORIE": "DISTRIBUČNÍ ZMĚNY"
+    },
+  "DEMONTÁŽ ELEKTROMĚRU:": { 
+        text: "EAN - xxxxxx zk žádá o demo k termínu: (uvedu termín dle ŽOUK). Žádost v příloze, prosím o podání",
+        "HLADINA 1": "UKONČENÍ SMLOUVY",
+        "HLADINA 2": "DEMONTÁŽ",
+        "STAV": "NOVÝ",
+        "ŘEŠITEL": "EK",
+        "KATEGORIE": "UKONČENÍ SMLOUVY"
+    },
+  "DEMONTÁŽ PLYNOMĚRU:": { 
+        text: "EIC - xxxxxx zk žádá o demo k termínu: (uvedu termín dle ŽOUK). Žádost v příloze, prosím o podání",
+        "HLADINA 1": "UKONČENÍ SMLOUVY",
+        "HLADINA 2": "DEMONTÁŽ",
+        "STAV": "NOVÝ",
+        "ŘEŠITEL": "EK",
+        "KATEGORIE": "UKONČENÍ SMLOUVY"
+    },
+  "PROPOČÍTÁNÍ VÝŠE ZÁLOH - 30% ODMÍTNUL": { 
+        text: "EAN/ EIC - ZK žádá o přepočítání záloh z XXX na XXX - 30% snížení odmítnul. Foto Elektroměru+ KOFA doloženo v ÚKOLU se stavem XXX. ",
+        "HLADINA 1": "ÚKOL ZE ŠABLONY - 20000037640 AF058 Změna záloh",
+        "HLADINA 2": "ÚKOL ZE ŠABLONY - 20000037640 AF058 Změna záloh",
+        "STAV": "ČEKÁ NA TERMÍN",
+        "ŘEŠITEL": "LUDVÍKOVÁ MICHAELA / NIKOLOV LUKÁŠ (V PŘÍPADĚ DELŠÍ NEPŘÍTOMNOSTI)",
+        "KATEGORIE": "ZÁLOHY"
+      },
+  "PROPOČÍTÁNÍ VÝŠE ZÁLOH - 30% SNÍŽENO": { 
+        text: "EAN/ EIC - ZK žádá o přepočítání záloh z XXX na XXX - zálohy o 30% sníženy z XXX na XXX. Foto Elektroměru+ KOFA doloženo v ÚKOLU se stavem XXX. ",
+        "HLADINA 1": "ÚKOL ZE ŠABLONY - 20000037640 AF058 Změna záloh",
+        "HLADINA 2": "ÚKOL ZE ŠABLONY - 20000037640 AF058 Změna záloh",
+        "STAV": "ČEKÁ NA TERMÍN",
+        "ŘEŠITEL": "LUDVÍKOVÁ MICHAELA /NIKOLOV LUKÁŠ (V PŘÍPADĚ DELŠÍ NEPŘÍTOMNOSTI)",
+        "KATEGORIE": "ZÁLOHY"
+      },
+  "ZÁPOČET - ZÁLOHY": { 
+        text: "EAN/ EIC - Prosím o provedení zápočtu na ZÚ XXXX  akontančích plateb na zálohy po splatnosti na ZÚ XXXX. Zbytek dlužné částky XXX uhradí obratem.",
+        "HLADINA 1": "ÚKOL ZE ŠABLONY - Platby a upomínání - Zápočet (4700)",
+        "HLADINA 2": "ÚKOL ZE ŠABLONY - Platby a upomínání - Zápočet (4700)",
+        "STAV": "NOVÝ",
+        "ŘEŠITEL": "FINANCE",
+        "KATEGORIE": "FINANCE"
+      },
+  "ZÁPOČET - FAKTURACE": { 
+        text: "EAN/ EIC - Prosím o provedení zápočtu na ZÚ XXXX přeplatkové FA na zálohy po splatnosti / na nedoplatkovou FA na ZÚ XXXX. Zbytek dlužné částky XXX uhradí obratem.",
+        "HLADINA 1": "ÚKOL ZE ŠABLONY - Platby a upomínání - Zápočet (4700)",
+        "HLADINA 2": "ÚKOL ZE ŠABLONY - Platby a upomínání - Zápočet (4700)",
+        "STAV": "NOVÝ",
+        "ŘEŠITEL": "FINANCE",
+        "KATEGORIE": "FINANCE"
+      },
+  "SPLÁTKOVÝ KALENDÁŘ - VYSTAVENÍ": { 
+        text: "EAN/ EIC - Zákazník žádá o splátkový kalendář na FA s VS [VS] . Blokace upomínání nastaveny do [XXXXXXX]. Prosím o vystavení SPK.",
+        "HLADINA 1": "ÚKOL ZE ŠABLONY - 369 ŘEŠENÍ ŽÁDOSTI O SPK",
+        "HLADINA 2": "ÚKOL ZE ŠABLONY - 369 ŘEŠENÍ ŽÁDOSTI O SPK",
+        "STAV": "NOVÝ",
+        "ŘEŠITEL": "FINANCE",
+        "KATEGORIE": "FINANCE"
+       },
+  "Přepis - z důvodu smrti - dom": {
+    text:`EAN/EIC – Zk nahlásil/a, že zk zemřel a OM se bude přepisovat na XXX – prosím o zaslání dokumentu pro přepis – bude se jednat o přepis z dom na dom. Dokumenty zaslat na e-mail XXXXXXX a
+Doplňující údaje k novému odběrateli:
+• Datum narození / IČ:
+• Adresa trvalého bydliště / Sídlo firmy:
+• E-mail:
+• Telefonní číslo:
+• Počáteční výše a četnost záloh:
+• Platnost smlouvy: 12 / 24 / 36 měsíců
+• Způsob úhrady záloh (SIPO – uveďte spojovací číslo / převodní či inkasní příkaz – uveďte číslo bankovního účtu)
+• Způsob vrácení přeplatků (složenka / převodní příkaz)`,
+    "HLADINA 1": "ÚKOL ZE ŠABLONY - 10601 REALIZACE PŘEPISU E",
+    "HLADINA 2": "ÚKOL ZE ŠABLONY - 10601 REALIZACE PŘEPISU E",
+    "STAV": "NOVÝ",
+    "ŘEŠITEL": "BO_CC",
+    "KATEGORIE": "DĚDICKÉ ŘÍZENÍ"
+  },
+  "Přepis - z důvodu smrti - firma": {
+    text: `EAN/EIC – Zk nahlásil/a, že zk zemřel a OM se bude přepisovat na XXX – prosím o zaslání dokumentu pro přepis – bude se jednat o přepis z firmy na firmu. Dokumenty zaslat na e-mail XXXXXXX a
+Doplňující údaje k novému odběrateli:
+• IČ:
+• Adresa trvalého bydliště / Sídlo firmy:
+• E-mail:
+• Telefonní číslo:
+• Počáteční výše a četnost záloh:
+• Platnost smlouvy: 12 / 24 / 36 měsíců
+• Způsob úhrady záloh (SIPO – uveďte spojovací číslo / převodní či inkasní příkaz – uveďte číslo bankovního účtu)
+• Způsob vrácení přeplatků (složenka / převodní příkaz)`,
+    "HLADINA 1": "ÚKOL ZE ŠABLONY - 10601 REALIZACE PŘEPISU E",
+    "HLADINA 2": "ÚKOL ZE ŠABLONY - 10601 REALIZACE PŘEPISU E",
+    "STAV": "NOVÝ",
+    "ŘEŠITEL": "BO_CC",
+    "KATEGORIE": "DĚDICKÉ ŘÍZENÍ"
+  },
+  "Přepis - DOM": { 
+    text:`ZK žádá o zaslání dokumentů pro přepis OM - prosím o zaslání dokumentu pro přepis - bude se jednat o přepis z dom na dom. Dokumenty zaslat na e-mail XXXXXXX.
+Doplňující údaje k novému odběrateli:
+• Datum narození:
+• Adresa trvalého bydliště / Sídlo firmy:
+• E-mail:
+• Telefonní číslo:
+• Počáteční výše a četnost záloh:
+• Platnost smlouvy: 12 / 24 / 36 měsíců
+• Způsob úhrady záloh (SIPO – uveďte spojovací číslo / převodní či inkasní příkaz – uveďte číslo bankovního účtu)
+• Způsob vrácení přeplatků (složenka / převodní příkaz)`,
+    "HLADINA 1": "ÚKOL ZE ŠABLONY - 10601 REALIZACE PŘEPISU E",
+    "HLADINA 2": "ÚKOL ZE ŠABLONY - 10601 REALIZACE PŘEPISU E",
+    "STAV": "NOVÝ",
+    "ŘEŠITEL": "BO_CC",
+    "KATEGORIE": "PŘEPIS"
+  },
+  "Přepis - FIRMA": { 
+    text:`ZK žádá o zaslání dokumentů pro přepis OM - prosím o zaslání dokumentu pro přepis - bude se jednat o přepis z Firmy na na Firmu s IČO XXXX. Dokumenty zaslat na e-mail XXXXXXX.
+Doplňující údaje k novému odběrateli:
+• IČO:
+• Adresa trvalého bydliště / Sídlo firmy:
+• E-mail:
+• Telefonní číslo:
+• Počáteční výše a četnost záloh:
+• Platnost smlouvy: 12 / 24 / 36 měsíců
+• Způsob úhrady záloh (SIPO – uveďte spojovací číslo / převodní či inkasní příkaz – uveďte číslo bankovního účtu)
+• Způsob vrácení přeplatků (složenka / převodní příkaz)`,
+    "HLADINA 1": "ÚKOL ZE ŠABLONY - 10601 REALIZACE PŘEPISU E",
+    "HLADINA 2": "ÚKOL ZE ŠABLONY - 10601 REALIZACE PŘEPISU E",
+    "STAV": "NOVÝ",
+    "ŘEŠITEL": "BO_CC",
+    "KATEGORIE": "PŘEPIS"
+  },
+  "PLATBY": { 
+    text: "EAN/ EIC - Zde je potřeba popsat, co zákazník s platbami potřebuje  ",
+    "HLADINA 1": "ÚKOL ZE ŠABLONY - 20002309943 ",
+    "HLADINA 2": "Platby a upomínání - Platby (4100)",
+    "STAV": "NOVÝ",
+    "ŘEŠITEL": "FINANCE",
+    "KATEGORIE": "FINANCE"
+  },
+  "UPOMÍNKY": { 
+    text: "EAN/ EIC - Zde je potřeba popsat, co zákazník řeší v rámci upomínek ",
+    "HLADINA 1": "ÚKOL ZE ŠABLONY - 20002309946",
+    "HLADINA 2": "ÚKOL ZE ŠABLONY - Platby a upomínání - Upomínání (4200)",
+    "STAV": "NOVÝ",
+    "ŘEŠITEL": "FINANCE",
+    "KATEGORIE": "FINANCE"
+  },
+  "FAKTURY": { 
+    text: "EAN/ EIC - Zde je potřeba napsat, co zk. potřebuje řešit s fakturami např. urgence, dotaz na něco konkrétního z faktur  ",
+    "HLADINA 1": "ÚKOL ZE ŠABLONY - 20002309949",
+    "HLADINA 2": "ÚKOL ZE ŠABLONY - Fakturace a zálohy - Faktury (3100)",
+    "STAV": "NOVÝ",
+    "ŘEŠITEL": "FAKTURACE",
+    "KATEGORIE": "FAKTURACE"
+  },
+  "Samoodečet (duplicitní datum odečtu) došlo ke změně stavů VT,NT nebo M3": { 
+    text: "EAN/ EIC - Zákazník omylem chybně zadal samoodeček pro Výše uvedené OM EIC/EAN XXXXX - správný stav je XXXX prosíme tedy o vystavení MFA dle tohoto stavu XXXX - původní AF je XXXXX (potřeba dotáhnout původní AF, kde je chybný stav)",
+    "HLADINA 1": "Fakturace a zálohy",
+    "HLADINA 2": "Samoodečet",
+    "STAV": "NOVÝ",
+    "ŘEŠITEL": "FAKTURACE",
+    "KATEGORIE": "FAKTURACE"
+  },
+  "ZÁLOHY": { 
+    text: "EAN/ EIC - Zde je potřeba vypsat, co zákazník chce řešit se zálohami např. přegenerování PK apod. ",
+    "HLADINA 1": "ÚKOL ZE ŠABLONY - 20002309951",
+    "HLADINA 2": "ÚKOL ZE ŠABLONY - Fakturace a zálohy - Zálohy (3200)",
+    "STAV": "NOVÝ",
+    "ŘEŠITEL": "FAKTURACE",
+    "KATEGORIE": "ZÁLOHY"
+  },
+  "SAMOODEČET": { 
+    text: "EAN/ EIC - Zk hlásí samoodečet jako MV(kontrolní, konečný) k datu XXXXX, přes web nejde zadat, protože XXXXXX. Prosím o podání. (Tímto úkolem předáváme samoodečty, pokud nejdou zadat prostřednictvím web. rozhraní (nový zk - tedy první samoodečet, výměna měřidla apod, nebo jiná chyba) ",
+    "HLADINA 1": "ÚKOL ZE ŠABLONY - 20002309952",
+    "HLADINA 2": "ÚKOL ZE ŠABLONY - Fakturace a zálohy - Samoodečet (3300)",
+    "STAV": "NOVÝ",
+    "ŘEŠITEL": "FAKTURACE",
+    "KATEGORIE": "FAKTURACE"
+  },
+  "OPRAVA SMLUV (PŘESMLUVNĚNÍ) ": { 
+    text: "EAN/ EIC - Do úkolu zapíšete jakou změnu jste provedli (např. změna doručovací adresy: Dlouhá 36, Praha 1, 110 00) a předáte na garanta Nabídky",
+    "HLADINA 1": "ÚKOL ZE ŠABLONY - 20002339027 - Oprava smlouvy - kampaň srpen 2024",
+    "HLADINA 2": "ÚKOL ZE ŠABLONY - 20002339027 - Oprava smlouvy - kampaň srpen 2024",
+    "STAV": "NOVÝ",
+    "ŘEŠITEL": "NABÍDKY",
+    "KATEGORIE": "SMLOUVY"
+  },
+  "ZMĚNA JMÉNA A PŘÍJMENÍ ": { 
+    text: "EAN/ EIC - Zákazník žádá o změnu příjmení z příjmení [xxxxxx] na příjmení [xxxxxx]. V ZIS provedena změna, přikládám čestné prohlášení. Zákazník byl informován emailem. Prosím o postoupení na distribuci, děkuji.",
+    "HLADINA 1": "ÚKOL ZE ŠABLONY - 10203 ZMĚNA ÚDAJŮ NA SMLOUVĚ",
+    "HLADINA 2": "ÚKOL ZE ŠABLONY - 10203 ZMĚNA ÚDAJŮ NA SMLOUVĚ",
+    "STAV": "NOVÝ",
+    "ŘEŠITEL": "EK",
+    "KATEGORIE": "SMLOUVY"
+  },
+  "ZMĚNA NÁZVU SPOLEČNOSTI ": { 
+    text: "EAN/ EIC - u zákazníka byl změněn název společnosti z názvu [xxxxxx] na název [xxxxxx]. V ZIS nastaveno. Zákazník informován. Prosím o postoupení na distribuci. Děkuji",
+    "HLADINA 1": "ÚKOL ZE ŠABLONY - 10203 ZMĚNA ÚDAJŮ NA SMLOUVĚ",
+    "HLADINA 2": "ÚKOL ZE ŠABLONY - 10203 ZMĚNA ÚDAJŮ NA SMLOUVĚ",
+    "STAV": "NOVÝ",
+    "ŘEŠITEL": "EK",
+    "KATEGORIE": "SMLOUVY"
+  },
+  "ZMĚNA ADRESY TRVALÉHO BYDLIŠTĚ ": { 
+    text: "EAN/ EIC - Zákazník zasílá sken OP pro změnu adresy trv.bydliště z : [xxxxxx] na novou: [xxxxxx] viz .příloha. Nastaveno na OP. Prosím o zajištění změny u PDS. Děkuji.",
+    "HLADINA 1": "ÚKOL ZE ŠABLONY - 10205 ZMĚNA ADRESY TRVALÉHO BYDLIŠTĚ",
+    "HLADINA 2": "ÚKOL ZE ŠABLONY - 10205 ZMĚNA ADRESY TRVALÉHO BYDLIŠTĚ",
+    "STAV": "NOVÝ",
+    "ŘEŠITEL": "EK",
+    "KATEGORIE": "SMLOUVY"
+  },
+  "ZMĚNA ADRESY SÍDLA ": { 
+    text: "EAN/ EIC - Zákazník zasílá žádost o změnu sídla adresy firmy z : [xxxxxx] na : [xxxxxx]. Doklad přiložen do přílohy. Změna provedena na OP. Prosím o zajištění změny u PDS. Děkuji",
+    "HLADINA 1": "ÚKOL ZE ŠABLONY - 10203 ZMĚNA ÚDAJŮ NA SMLOUVĚ",
+    "HLADINA 2": "ÚKOL ZE ŠABLONY - 10203 ZMĚNA ÚDAJŮ NA SMLOUVĚ",
+    "STAV": "NOVÝ",
+    "ŘEŠITEL": "EK",
+    "KATEGORIE": "SMLOUVY"
+  },
+  "ZMĚNA ADRESY ODBĚRNÉHO MÍSTA ": { 
+    text: "EAN/ EIC - Zákazník požaduje změnu OM z : xxxxxxxx na adresu: xxxxxxxxxx. Změna provedena v ZIS. Doklad přiložen do přílohy Úkolu. Prosím o předání na DI. Zákazník informován emailem. Děkuji",
+    "HLADINA 1": "ÚKOL ZE ŠABLONY - 10206 ZMĚNA ADRESY OPM",
+    "HLADINA 2": "ÚKOL ZE ŠABLONY - 10206 ZMĚNA ADRESY OPM",
+    "STAV": "NOVÝ",
+    "ŘEŠITEL": "EK",
+    "KATEGORIE": "SMLOUVY"
+  },
+  "REKLAMACE ZÚČTOVÁNÍ – STAVY ": { 
+    text: "EAN/ EIC - zákazník reklamuje konečný/počáteční stav ve vyúčtovací faktuře vystavené dne [xxxxxx] za období [xxxxxx]-[xxxxxx]. Stav ve faktuře je [xxxxxx]. Zákazník dokládá foto měřidla/předávací protokol se stavem. Dokument přiložen k ÚKOLU. Prosím o postoupení na PDS a reklamaci stavů. Děkuji",
+    "HLADINA 1": "ÚKOL ZE ŠABLONY - 20002305192",
+    "HLADINA 2": "ÚKOL ZE ŠABLONY - Reklamace - Stavy na faktuře (7100)",
+    "STAV": "NOVÝ",
+    "ŘEŠITEL": "FAKTURACE",
+    "KATEGORIE": "REKLAMACE"
+  },
+  "REKLAMACE ZÚČTOVÁNÍ - ZÁLOHY ": { 
+    text: "EAN/ EIC - zákazník reklamuje platbu ve vyúčtovací faktuře vystavené dne [xxxxxx] za období [xxxxxx] - [xxxxxx]. Platbu hradil dne [xxxxxx], neevidujeme v ZIS, doklad o úhradě přiložen ke ÚKOLU : Prosím o dohledání platby a dořešení reklamace faktury – úplným stornem případně dle domluvy se zákazníkem.",
+    "HLADINA 1": "ÚKOL ZE ŠABLONY - 20002305195 - Reklamace - Platby ve faktuře (7400)	",
+    "HLADINA 2": "ÚKOL ZE ŠABLONY - 20002305195 - Reklamace - Platby ve faktuře (7400)",
+    "STAV": "NOVÝ",
+    "ŘEŠITEL": "FINANCE",
+    "KATEGORIE": "REKLAMACE"
+  },
+  "REKLAMCE PLATEB ": { 
+    text: "EAN/ EIC - zákazník reklamuje platbu ve vyúčtovací faktuře vystavené dne xxx za období [xxxxxx]-[xxxxxx]. Platbu hradil dne [xxxxxx], neevidujeme v ZIS, doklad o úhradě přiložen ke ÚKOLU : Prosím o dohledání platby a dořešení reklamace faktury – úplným stornem případně dle domluvy se zákazníkem.",
+    "HLADINA 1": "ÚKOL ZE ŠABLONY - 20002305195 - Reklamace - Platby ve faktuře (7400)",
+    "HLADINA 2": "ÚKOL ZE ŠABLONY - 20002305195 - Reklamace - Platby ve faktuře (7400)",
+    "STAV": "NOVÝ",
+    "ŘEŠITEL": "FINANCE",
+    "KATEGORIE": "REKLAMACE"
+  },
+  "REKLAMACE SMLUVNÍ POKUTY": { 
+    text: "EAN/ EIC - popíšeme co zákazník reklamuje (přikládáme text reklamace), specifikace vystavené pokuty",
+    "HLADINA 1": "REKLAMACE",
+    "HLADINA 2": "PLATBY VE FAKTUŘE",
+    "STAV": "NOVÝ",
+    "ŘEŠITEL": "FINANCE",
+    "KATEGORIE": "REKLAMACE"
+  },
+  "REKLAMACE ZÚČTOVÁNÍ CENY": { 
+    text: "EAN/ EIC - Zákazník reklamuje cenu za dodávku/distribuci ve vyúčtovací faktuře vystavené dne [xx.xx.xx] za období [xx.xx.xx]-[xx.xx.xx]. Dle ceníku/smlouvy [xxxxxx] by měla ceny být [xxxxxx]  a ve faktuře je cena [xxxxxx]. Žádáme o ověření a případnou opravu.",
+    "HLADINA 1": "ÚKOL ZE ŠABLONY - 20002305194",
+    "HLADINA 2": "ÚKOL ZE ŠABLONY - Reklamace - Chybný ceník na faktuře (7300)",
+    "STAV": "NOVÝ",
+    "ŘEŠITEL": "BO_CC",
+    "KATEGORIE": "REKLAMACE"
+  },
+  "REKLAMACE ZÚČTOVÁNÍ – MEŘENÍ": { 
+    text: "EAN/ EIC - zákazník reklamuje -Popíšeme, co zákazník reklamuje (přikládáme text reklamace). Zákazník nemusí dokládat žádný dokument, nicméně je důležité, aby dobře popsal, co konkrétně reklamuje: výpadky/přepětí/podpětí, jak dlouho situace trvá (např. týden/měsíc...), jak je četná (vždy v určitý den/v určitou hodinu/nárazově...), v případě výpadků, jak jsou dlouhé (vteřinové/minutové...).",
+    "HLADINA 1": "ÚKOL ZE ŠABLONY - 20002305192",
+    "HLADINA 2": "ÚKOL ZE ŠABLONY - Reklamace - Stavy na faktuře (7100)",
+    "STAV": "NOVÝ",
+    "ŘEŠITEL": "EK",
+    "KATEGORIE": "REKLAMACE"
+  },
+  "ZMĚNA ZPŮSOBU HRAZENÍ FA (METODA SIPO)": { 
+    text: "EAN/ EIC - Prosím o opravu smlouvy na zákaznickém účtu konkrétně u Splatnosti FA: na 14 dní od vystavení FA z původního nastavení: K poslednímu dni v měsíci. Při zakládání smlouvy došlo k nastavení varianty SIPO, ale FA touto metodou hradit nelze. Proto prosíme o opravu, abychom mohli nastavit novou metodu hrazení. Úkol prosím zpět na můj login. Děkuji",
+    "HLADINA 1": "Úkol -> AF 013 Změna způsobu placení - jedná se o úkol z portálu - není nutné zakládat nový",
+    "HLADINA 2": "Úkol -> AF 013 Změna způsobu placení - jedná se o úkol z portálu - není nutné zakládat nový",
+    "STAV": "NOVÝ",
+    "ŘEŠITEL": "BO_CC",
+    "KATEGORIE": "SMLOUVY"
+  },
+  "ŽÁDOST O BEZZÁLOHOVÝ REŽIM": { 
+    text: "EAN: xxxxx - Zk žádá o bezzáloh režim, má B měření, Zk informován o nutnosti složení kauce a doložení formuláře, čekáme na úhradu.",
+    "HLADINA 1": "Platby a upomínání ",
+    "HLADINA 2": "Požadavek na saldo",
+    "STAV": "Ke schválení",
+    "ŘEŠITEL": "MÁ OSOBA",
+    "KATEGORIE": "SMLOUVY"
+  },
+  "DĚDICKÉ ŘÍZENÍ": { 
+    text: "EAN: xxxxx - Ukončení smlouvy z důvodu úmrtí odběratele.Blokace nastaveny, bude se řešit přepis/demo. Zk informován o nutnosti doložit kopii ÚL + USNESENÍ.",
+    "HLADINA 1": "ÚKOL ZE ŠABLONY 20002438168 - Dědické řízení",
+    "HLADINA 2": "ÚKOL ZE ŠABLONY 20002438168 - Dědické řízení",
+    "STAV": "NOVÝ",
+    "ŘEŠITEL": "DINHE",
+    "KATEGORIE": "DĚDICKÉ ŘÍZENÍ"
+  },
+  "NOVÁ CENOVÁ NABÍDKA - NOVÝ ZÁKAZNÍK - ELE": { 
+    text: "Zákazník má zájem o cenovou nabídku - PSČ:XXXXXX,Spotřeba VN + NT tarifu:XXXXX,Distribuční sazba:XXXXX,Výše hlavního jističe:Xxxxx,Do kdy má smlouvu u stávajícího dodavatele:XXXXXX, E-MAIL: XXXXX",
+    "HLADINA 1": "Úkol -> Úkol ze šablony - 20002357242 - Akvizice",
+    "HLADINA 2": "Úkol -> Úkol ze šablony - 20002357242 - Akvizice",
+    "STAV": "NOVÝ",
+    "ŘEŠITEL": "AKVIZICE_EPET",
+    "KATEGORIE": "AKVIZICE"
+  },
+  "NOVÁ CENOVÁ NABÍDKA - NOVÝ ZÁKAZNÍK - PLYN": { 
+    text: "Zákazník má zájem o cenovou nabídku - PSČ:XXXXXX,Před.spotřeba plynu:XXXXX,Do kdy má smlouvu u stávajícího dodavatele:XXXXXX,E-MAIL: XXXXX",
+    "HLADINA 1": "Úkol -> Úkol ze šablony - 20002357242 - Akvizice",
+    "HLADINA 2": "Úkol -> Úkol ze šablony - 20002357242 - Akvizice",
+    "STAV": "NOVÝ",
+    "ŘEŠITEL": "AKVIZICE_EPET",
+    "KATEGORIE": "AKVIZICE"
+  },
+  "NOVÁ CENOVÁ NABÍDKA - Stávající ZK": { 
+    text: "Zákazník má zájem o cenovou nabídku - pro následující období např. na rok XXXX",
+    "HLADINA 1": "Úkol ->Úkol ze šablony - 20002357243 - Detekce retence",
+    "HLADINA 2": "Úkol ->Úkol ze šablony - 20002357243 - Detekce retence",
+    "STAV": "NOVÝ",
+    "ŘEŠITEL": "Retence_EPET",
+    "KATEGORIE": "DETEKCE RETENCE"
+  },
+  "FVE VÝKUP": { 
+    text: "Do úkolu - uvádíme informace dle zákazníkovi odpovědi na e-mail ze šablony FVE - výkup dle legislativy. + údaje o obou EANECH",
+    "HLADINA 1": "Úkol ->Úkol ze šablony - 20002690815 - FVE – výrobní EAN (vyplň do názvu číslo)",
+    "HLADINA 2": "Úkol ->Úkol ze šablony - 20002690815 - FVE – výrobní EAN (vyplň do názvu číslo)",
+    "STAV": "NOVÝ",
+    "ŘEŠITEL": "NABÍDKY",
+    "KATEGORIE": "SMLOUVY"
+  },
+  "Žádost MPSV - UP": { 
+    text: `ÚP žáda o vystavení Potvrzení, děkuji
+          
+Osoba, která uzavřela smlouvu s dodavatelem:
+XXXXXXXXXXXX
+
+Identifikace odběrného místa:
+EAN/EIC: XXXXXXX
+
+Rozhodné období:
+XXXXXXXXX`,
+     "HLADINA 1": "Úkol ->Úkol ze šablony - 20002871696 - Žádost MPSV - UP",
+    "HLADINA 2": "Úkol ->Úkol ze šablony - 20002871696 - Žádost MPSV - UP",
+    "STAV": "NOVÝ",
+    "ŘEŠITEL": "FINANCE",
+    "KATEGORIE": "POTVRZENÍ A ADMINISTRATIVA"
+  },
+  "ROZDĚLENÍ ZÚ": {
+    "text": "Zákazník žádá o rozdělení OM pod jednotlivá ZÚ. Jedná se o tyto OM:<br> EAN/EIC XXXX se stavem XXXX, <br> EAN/EIC XXXX se stavem XXXX, <br> EAN/EIC XXXX se stavem XXXX, <br> EAN/EIC XXXX se stavem XXXX, <br> EAN/EIC XXXX se stavem XXXX. <br> Prosím o vystavení MV a následné předání úkolu na BO_CC. Aby došlo k rozdělení.  Děkuji.<BR> (\n\nPoznámka: Pokud je rozdělení do <b>5 OM</b>, všechny OM jsou vypsány výše v textu. Pokud je OM více než <b>5</b>, přiložena <a href=\"https://docs.google.com/spreadsheets/d/13wHIPy047lL1JOVuEX1phxT_JqE22cHPscAZj9iF1cQ/edit?gid=197074618#gid=197074618\" target=\"_blank\"> tabulka </a> – viz příloha úkolu.",
+    "HLADINA 1": "ZMĚNA ÚDAJŮ",
+    "HLADINA 2": "ROZDĚLENÍ ZÚ",
+    "STAV": "NOVÝ",
+    "ŘEŠITEL": "FAKTURACE",
+    "KATEGORIE": "ROZDĚLENÍ ZÚ"
+  },
+  "Výpočet SP - detekce retence": {
+    "text": "EAN/EIC - Zákazník žádá u smlouvy číslo: XXXXXX, o ukončení smlouvy i za předpokladu vystavení SP. SP vypočtena, nahrána do přílohy úkolu. Výše SP sdělena e-mailem/telefonicky. Prosím o kontakt zákazníka - chce odejít i přes možnost SP. Děkujeme ",
+    "HLADINA 1": "Úkol ze šablony - 20002357243 - Detekce retence",
+    "HLADINA 2": "Úkol ze šablony - 20002357243 - Detekce retence",
+    "STAV": "NOVÝ",
+    "ŘEŠITEL": "Retence_EPET",
+    "KATEGORIE": "DETEKCE RETENCE"
+  },
+  "ŽÁDOST O KOMPENZACI DLE STANDARDU KVALITY": {
+    "text": "Operátor zakládá do systému úkol dle šablony č. <b>20002457550</b>, kde popíše, oč zákazník žádá, <b>dle jakého § (standard kvality)</b> a připojí žádost od zákazníka. Dále specialista provede šetření, zda skutečně došlo k pozdnímu řešení, a do úkolu zapíše informace:<ul><li>Kdy byla reklamace přijata</li><li>Kdy měla být reklamace vyřízena</li><li>Kdy zákazník obdržel vyjádření reklamace</li><li>Kolik dní celkem byl po termínu</li><li>Kde došlo k chybě (důvod zdržení)</li><li>O jakou výši kompenzace si zákazník žádá</li><li>Na jakou výši má nárok (výpočet dle matice níže)</li></ul><b>Plyn:</b><ul><li>750 Kč pro kategorii maloodběratel a domácnost za každý den prodlení vyřízení reklamace; nejvýše 7&nbsp;500 Kč</li><li>3&nbsp;100 Kč pro kategorii střední odběratel za každý den prodlení vyřízení reklamace; nejvýše 62&nbsp;000 Kč</li><li>7&nbsp;900 Kč pro kategorii velkoodběratel za každý den prodlení vyřízení reklamace; nejvýše 158&nbsp;000 Kč</li></ul><b>Elektřina:</b><ul><li>600 Kč za každý den prodlení vyřízení reklamace; nejvýše 24&nbsp;000 Kč (částky stejné pro distributora i epet)</li></ul>Dále do úkolu zapíše informaci, kam předává kompenzaci k řešení – dle matice níže.<br><b>Kompenzace do 9&nbsp;999 Kč</b> je předávána na níže uvedené osoby:<ul><li>Ladislav Sladký, Sandra Faltus, PAM</li></ul><b>Kompenzace nad 10&nbsp;000 Kč</b> je předávána na risk komisi, tedy na:<ul><li>Radek Hobža, Ladislav Sladký, Sandra Faltus, PAM</li></ul>",
+    "HLADINA 1": "Úkol -> Úkol ze šablony - 20002457550 - Kompenzace - náhrada škody",
+    "HLADINA 2": "Úkol -> Úkol ze šablony - 20002457550 - Kompenzace - náhrada škody",
+    "STAV": "NOVÝ",
+    "ŘEŠITEL": "REKLAMACE",
+    "KATEGORIE": "REKLAMACE"
+  },
+  "Dluh -  (vrácená korepondence) - Nekontaktní zákazník": { 
+    text: "EAN/EIC {{EAN_EIC}} – zákazník nekontaktní. Opakované pokusy o kontakt (tel/e-mail/dopis) bez odezvy. Prosíme o zvážení předání pohledávky na IA. Dluh: {{výše_dluhu}} Kč, VS {{VS}}, splatnost {{splatnost}}.",
+    "HLADINA 1": "ÚKOL ZE ŠABLONY - Platby a upomínání - Upomínání (4200)",
+    "HLADINA 2": "ÚKOL ZE ŠABLONY - Platby a upomínání - Upomínání (4200)",
+    "STAV": "NOVÝ",
+    "ŘEŠITEL": "FINANCE",
+    "KATEGORIE": "FINANCE"
+  },
+  "Přeplatky / Info k platbám -  (vrácená korepondence)- Nekontaktní zákazník": { 
+    text: "EAN/EIC {{EAN_EIC}} – zákazník nekontaktní. Opakované pokusy o kontakt (tel/e-mail/dopis) bez odezvy.",
+    "HLADINA 1": "ÚKOL ZE ŠABLONY - Platby a upomínání - Platby (4100)",
+    "HLADINA 2": "ÚKOL ZE ŠABLONY - Platby a upomínání - Platby (4100)",
+    "STAV": "NOVÝ",
+    "ŘEŠITEL": "FINANCE",
+    "KATEGORIE": "FINANCE"
+  },
+   "Nastavení režimu bez záloh": { 
+    text: "EAN/EIC {{EAN_EIC}} – zákazník vyjádřil zájem o nastavení režimu bez záloh, prosím o zrušení platebního kalendáře, a nastavení měsíční fakturace.",
+    "HLADINA 1": "ÚKOL ZE ŠABLONY - Fakturace a zálohy - Zálohy (3200)",
+    "HLADINA 2": "ÚKOL ZE ŠABLONY - Fakturace a zálohy - Zálohy (3200)",
+    "STAV": "NOVÝ",
+    "ŘEŠITEL": "FAKTURACE",
+    "KATEGORIE": "FAKTURACE"
+  }
+};
+
+/* ====== PROMĚNNÉ ŠABLON ====== */
+const templateVariableIds = [
+  'var_ean_eic',
+  'var_address',
+  'var_date',
+  'var_meter_state',
+  'var_email',
+  'var_phone',
+  'var_amount',
+  'var_vs',
+  'var_zu',
+  'var_ico',
+  'var_contract_number',
+  'var_new_customer',
+  'var_breaker_old',
+  'var_breaker_new',
+  'var_rate_old',
+  'var_rate_new',
+  'var_initial_advance',
+  'var_contract_term',
+  'var_payment_method',
+  'var_refund_method'
+];
+
+function getTemplateInputValue(id) {
+  const element = document.getElementById(id);
+  return element ? String(element.value || '').trim() : '';
+}
+
+function escapeTemplateHtml(value) {
+  return String(value ?? '').replace(
+    /[&<>"']/g,
+    character => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#039;'
+    })[character]
+  );
+}
+
+function renderTemplateValue(value, highlight) {
+  const safeValue = escapeTemplateHtml(value);
+  return highlight
+    ? `<span class="template-var-filled">${safeValue}</span>`
+    : safeValue;
+}
+
+function normalizeTemplateToken(value) {
+  return String(value || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toUpperCase()
+    .replace(/[^A-Z0-9]+/g, '_')
+    .replace(/^_+|_+$/g, '');
+}
+
+function formatVariableDate(value) {
+  if (!value) return '';
+  const parts = String(value).split('-').map(Number);
+  if (
+    parts.length !== 3 ||
+    parts.some(Number.isNaN) ||
+    parts[1] < 1 ||
+    parts[1] > 12 ||
+    parts[2] < 1 ||
+    parts[2] > 31
+  ) {
+    return value;
+  }
+  return `${parts[2]}. ${parts[1]}. ${parts[0]}`;
+}
+
+function formatBreakerValue(value) {
+  const rawValue = String(value || '').trim();
+  if (!rawValue) return '';
+
+  let formatted = rawValue
+    .replace(/[xX]/g, '×')
+    .replace(/\s*×\s*/g, '×')
+    .replace(/\s+/g, ' ')
+    .replace(/\s*A$/i, '');
+
+  if (/\d/.test(formatted)) {
+    formatted += ' A';
+  }
+
+  return formatted;
+}
+
+function formatRateValue(value) {
+  const rawValue = String(value || '').trim().replace(/\s+/g, '');
+  if (!rawValue) return '';
+  const match = rawValue.match(/^([CD])(\d{2})D$/i);
+  return match
+    ? `${match[1].toUpperCase()}${match[2]}d`
+    : rawValue.toUpperCase();
+}
+
+function parseEnergyEntries(value) {
+  const seen = new Set();
+
+  return String(value || '')
+    .split(/[\n,;]+/)
+    .map(entry => entry.trim())
+    .filter(Boolean)
+    .map(entry => {
+      const code = entry
+        .toUpperCase()
+        .replace(/^\s*(?:EAN|EIC)\s*[:\-–]?\s*/i, '')
+        .replace(/\s+/g, '');
+
+      let type = '';
+      if (/^\d{18}$/.test(code)) {
+        type = 'EAN';
+      } else if (/^[A-Z0-9]{16}$/.test(code)) {
+        type = 'EIC';
+      }
+
+      return {
+        original: entry,
+        code,
+        type,
+        valid: Boolean(type),
+        formatted: type ? `${type} ${code}` : ''
+      };
+    })
+    .filter(entry => {
+      const key = entry.code || entry.original;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+}
+
+function getTemplateVariables() {
+  const energyEntries = parseEnergyEntries(getTemplateInputValue('var_ean_eic'));
+
+  return {
+    energyEntries,
+    energyCodes: energyEntries.filter(entry => entry.valid),
+    address: getTemplateInputValue('var_address'),
+    date: formatVariableDate(getTemplateInputValue('var_date')),
+    meterState: getTemplateInputValue('var_meter_state'),
+    email: getTemplateInputValue('var_email'),
+    phone: getTemplateInputValue('var_phone'),
+    amount: getTemplateInputValue('var_amount'),
+    vs: getTemplateInputValue('var_vs'),
+    zu: getTemplateInputValue('var_zu'),
+    ico: getTemplateInputValue('var_ico'),
+    contractNumber: getTemplateInputValue('var_contract_number'),
+    newCustomer: getTemplateInputValue('var_new_customer'),
+    breakerOld: formatBreakerValue(getTemplateInputValue('var_breaker_old')),
+    breakerNew: formatBreakerValue(getTemplateInputValue('var_breaker_new')),
+    rateOld: formatRateValue(getTemplateInputValue('var_rate_old')),
+    rateNew: formatRateValue(getTemplateInputValue('var_rate_new')),
+    initialAdvance: getTemplateInputValue('var_initial_advance'),
+    contractTerm: getTemplateInputValue('var_contract_term'),
+    paymentMethod: getTemplateInputValue('var_payment_method'),
+    refundMethod: getTemplateInputValue('var_refund_method')
+  };
+}
+
+function createEnergyPlaceholderRegex() {
+  return /(?:\b(?:EAN\s*\/\s*EIC|EIC\s*\/\s*EAN|EAN|EIC)\b\s*(?:(?:[:\-–])\s*)?(?:X{3,}|x{3,}|\{\{\s*EAN_EIC\s*\}\})?|\{\{\s*EAN_EIC\s*\}\})/gi;
+}
+
+function replaceEnergyIdentifiers(text, variables, highlight) {
+  const formattedCodes = variables.energyCodes.map(entry => entry.formatted);
+  if (!formattedCodes.length) return text;
+
+  const regex = createEnergyPlaceholderRegex();
+  const matches = [...String(text).matchAll(regex)];
+  if (!matches.length) return text;
+
+  let codeIndex = 0;
+
+  return String(text).replace(regex, (originalValue, ...args) => {
+    const offset = args[args.length - 2];
+    const fullText = args[args.length - 1];
+    let replacement = '';
+
+    if (formattedCodes.length === 1) {
+      replacement = renderTemplateValue(formattedCodes[0], highlight);
+    } else if (matches.length === 1) {
+      replacement = formattedCodes
+        .map(code => renderTemplateValue(code, highlight))
+        .join('; ');
+    } else {
+      const currentCode = formattedCodes[codeIndex];
+      if (!currentCode) return originalValue;
+      codeIndex += 1;
+      replacement = renderTemplateValue(currentCode, highlight);
+    }
+
+    const nextChar = fullText.slice(offset + originalValue.length, offset + originalValue.length + 1);
+
+    // Pokud už za EAN/EIC následuje oddělovač, nic nepřidávej.
+    if (/[:\-–;,.\n]/.test(nextChar)) {
+      return replacement;
+    }
+
+    // Jinak doplň pomlčku, aby nebyl text nalepený přímo za kódem.
+    return `${replacement} –`;
+  });
+}
+
+function replaceAfterPrefix(text, regex, value, highlight) {
+  if (!value) return text;
+  const renderedValue = renderTemplateValue(value, highlight);
+  return String(text).replace(
+    regex,
+    (_match, prefix) => {
+      const separator =
+        /[:\-–]$/.test(prefix) && !/\s$/.test(prefix)
+          ? ' '
+          : '';
+      return `${prefix}${separator}${renderedValue}`;
+    }
+  );
+}
+
+function replaceExactValue(text, regex, value, highlight) {
+  if (!value) return text;
+  const renderedValue = renderTemplateValue(value, highlight);
+  return String(text).replace(regex, () => renderedValue);
+}
+
+function applyTemplateVariables(templateText, highlight = false) {
+  const variables = getTemplateVariables();
+  let output = String(templateText || '');
+
+  output = replaceEnergyIdentifiers(output, variables, highlight);
+
+const tokenValues = {
+    EAN_EIC: variables.energyCodes.map(entry => entry.formatted).join('; '),
+    ADRESA: variables.address,
+    ADRESA_ODBERNEHO_MISTA: variables.address,
+    EMAIL: variables.email,
+    TELEFON: variables.phone,
+    TELEFONNI_CISLO: variables.phone,
+    DATUM: variables.date,
+    SPLATNOST: variables.date,
+    CASTKA: variables.amount,
+    VYSE_DLUHU: variables.amount,
+    VS: variables.vs,
+    VARIABILNI_SYMBOL: variables.vs,
+    ZU: variables.zu,
+    ZAKAZNICKY_UCET: variables.zu,
+    STAV: variables.meterState,
+    STAV_MERIDLA: variables.meterState,
+    IC: variables.ico,
+    ICO: variables.ico,
+    CISLO_SMLOUVY: variables.contractNumber,
+    NOVY_ODBERATEL: variables.newCustomer,
+    PUVODNI_JISTIC: variables.breakerOld,
+    NOVY_JISTIC: variables.breakerNew,
+    PUVODNI_SAZBA: variables.rateOld,
+    NOVA_SAZBA: variables.rateNew,
+    POCATECNI_ZALOHA: variables.initialAdvance,
+    PLATNOST_SMLOUVY: variables.contractTerm,
+    ZPUSOB_UHRADY: variables.paymentMethod,
+    ZPUSOB_VRACENI_PREPLATKU: variables.refundMethod
+  };
+
+  output = output.replace(
+    /\{\{\s*([^{}]+?)\s*\}\}/g,
+    (originalValue, tokenName) => {
+      const value = tokenValues[normalizeTemplateToken(tokenName)];
+      return value
+        ? renderTemplateValue(value, highlight)
+        : originalValue;
+    }
+  );
+
+  output = replaceExactValue(
+    output,
+    /\[\s*ADRESA(?:\s+ODBĚRNÉHO\s+MÍSTA)?\s*\]/gi,
+    variables.address,
+    highlight
+  );
+  output = replaceExactValue(
+    output,
+    /\[\s*hodnota\s+stávajícího\s+jističe\s*\]/gi,
+    variables.breakerOld,
+    highlight
+  );
+  output = replaceExactValue(
+    output,
+    /\[\s*počet\s+fází\s*\]\s*[xX×]\s*\[\s*počet\s+ampérů\s*\]/gi,
+    variables.breakerNew,
+    highlight
+  );
+  output = replaceExactValue(
+    output,
+    /\[\s*hodnota\s+stávající\s+sazby\s*\]/gi,
+    variables.rateOld,
+    highlight
+  );
+  output = replaceExactValue(
+    output,
+    /\[\s*distribuční\s+sazba\s*\]/gi,
+    variables.rateNew,
+    highlight
+  );
+
+  output = replaceAfterPrefix(
+    output,
+    /(\b(?:adresa|adresu|adrese)(?:\s+(?:odběrného\s+místa|trvalého\s+bydliště|sídla\s+firmy|firmy))?\s*[:\-]?\s*)x{3,}/gi,
+    variables.address,
+    highlight
+  );
+  output = replaceAfterPrefix(
+    output,
+    /(\b(?:e-?mail)(?:ová\s+adresa)?\s*[:\-]?\s*)x{3,}/gi,
+    variables.email,
+    highlight
+  );
+  output = replaceAfterPrefix(
+    output,
+    /(\btelefon(?:ní\s+číslo)?\s*[:\-]?\s*)x{3,}/gi,
+    variables.phone,
+    highlight
+  );
+  output = replaceAfterPrefix(
+    output,
+    /(\b(?:k\s+datu|dne|splatnost|nastaveny\s+do)\s*[:\-]?\s*)x{3,}/gi,
+    variables.date,
+    highlight
+  );
+  output = replaceAfterPrefix(
+    output,
+    /(\b(?:správný\s+stav\s+je|dle\s+tohoto\s+stavu|se\s+stavem|stav\s+měřidla)\s*[:\-]?\s*)x{3,}/gi,
+    variables.meterState,
+    highlight
+  );
+  output = replaceAfterPrefix(
+    output,
+    /(\b(?:ve\s+výši|výše|částka|částky|dluh)\s*[:\-]?\s*)x{3,}/gi,
+    variables.amount,
+    highlight
+  );
+  output = replaceAfterPrefix(
+    output,
+    /(\bVS\s*[:\-]?\s*)x{3,}/gi,
+    variables.vs,
+    highlight
+  );
+  output = replaceAfterPrefix(
+    output,
+    /(\bZÚ\s*[:\-]?\s*)x{3,}/gi,
+    variables.zu,
+    highlight
+  );
+  output = replaceAfterPrefix(
+    output,
+    /(\bIČO?\s*[:\-]?\s*)x{3,}/gi,
+    variables.ico,
+    highlight
+  );
+  output = replaceAfterPrefix(
+    output,
+    /(\b(?:smlouvy|smlouva)\s+číslo\s*:\s*)x{3,}/gi,
+    variables.contractNumber,
+    highlight
+  );
+  output = replaceAfterPrefix(
+    output,
+    /(\b(?:přepisovat|přepsat)\s+na\s+)x{3,}/gi,
+    variables.newCustomer,
+    highlight
+  );
+
+  output = replaceAfterPrefix(
+    output,
+    /((?:^|\n)\s*•\s*Adresa\s+trvalého\s+bydliště\s*\/\s*Sídlo\s+firmy:\s*)(?=\n|$)/gim,
+    variables.address,
+    highlight
+  );
+  output = replaceAfterPrefix(
+    output,
+    /((?:^|\n)\s*•\s*E-?mail:\s*)(?=\n|$)/gim,
+    variables.email,
+    highlight
+  );
+  output = replaceAfterPrefix(
+    output,
+    /((?:^|\n)\s*•\s*Telefonní\s+číslo:\s*)(?=\n|$)/gim,
+    variables.phone,
+    highlight
+  );
+  output = replaceAfterPrefix(
+    output,
+    /((?:^|\n)\s*•\s*(?:Datum\s+narození\s*\/\s*)?IČO?:\s*)(?=\n|$)/gim,
+    variables.ico,
+    highlight
+  );
+  output = replaceAfterPrefix(
+    output,
+    /((?:^|\n)\s*•\s*Počáteční\s+výše\s+a\s+četnost\s+záloh:\s*)(?=\n|$)/gim,
+    variables.initialAdvance,
+    highlight
+  );
+  output = replaceAfterPrefix(
+    output,
+    /((?:^|\n)\s*•\s*Platnost\s+smlouvy:\s*)(?:12\s*\/\s*24\s*\/\s*36\s*měsíců)/gim,
+    variables.contractTerm,
+    highlight
+  );
+
+  if (variables.paymentMethod) {
+    output = output.replace(
+      /((?:^|\n)\s*•\s*Způsob\s+úhrady\s+záloh)\s*\([^\n]*\)/gim,
+      (_match, prefix) =>
+        `${prefix}: ${renderTemplateValue(variables.paymentMethod, highlight)}`
+    );
+  }
+
+  if (variables.refundMethod) {
+    output = output.replace(
+      /((?:^|\n)\s*•\s*Způsob\s+vrácení\s+přeplatků)\s*\([^\n]*\)/gim,
+      (_match, prefix) =>
+        `${prefix}: ${renderTemplateValue(variables.refundMethod, highlight)}`
+    );
+  }
+
+  return output;
+}
+
+function templateHtmlToPlainText(html) {
+  const container = document.createElement('div');
+  const preparedHtml = String(html || '')
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<\/p>/gi, '\n\n')
+    .replace(/<li\b[^>]*>/gi, '• ')
+    .replace(/<\/li>/gi, '\n')
+    .replace(/<\/(?:div|ul|ol)>/gi, '\n');
+
+  container.innerHTML = preparedHtml;
+  return String(container.textContent || container.innerText || '')
+    .replace(/\u00a0/g, ' ')
+    .replace(/[ \t]+\n/g, '\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
+function updateEnergyStatus() {
+  const statusElement = document.getElementById('var_ean_status');
+  if (!statusElement) return;
+
+  const entries = parseEnergyEntries(getTemplateInputValue('var_ean_eic'));
+  const validEntries = entries.filter(entry => entry.valid);
+  const invalidEntries = entries.filter(entry => !entry.valid);
+
+  statusElement.classList.remove('is-valid', 'is-invalid');
+
+  if (!entries.length) {
+    statusElement.textContent = 'Kódy budou automaticky označeny jako EAN nebo EIC.';
+    return;
+  }
+
+  if (invalidEntries.length) {
+    statusElement.classList.add('is-invalid');
+    statusElement.textContent =
+      `${formatEnergyCount(validEntries.length)} rozpoznáno, ${formatInvalidEnergyCount(invalidEntries.length)}. ` +
+      'EAN musí mít 18 číslic, EIC 16 znaků.';
+    return;
+  }
+
+  statusElement.classList.add('is-valid');
+  statusElement.textContent =
+    `${formatEnergyCount(validEntries.length)} rozpoznáno: ` +
+    validEntries.map(entry => entry.formatted).join(' • ');
+}
+
+function formatEnergyCount(count) {
+  if (count === 1) return '1 kód';
+  if (count >= 2 && count <= 4) return `${count} kódy`;
+  return `${count} kódů`;
+}
+
+function formatInvalidEnergyCount(count) {
+  if (count === 1) return '1 neplatný';
+  if (count >= 2 && count <= 4) return `${count} neplatné`;
+  return `${count} neplatných`;
+}
+
+function normalizeEnergyInput() {
+  const input = document.getElementById('var_ean_eic');
+  if (!input) return;
+
+  const entries = parseEnergyEntries(input.value);
+  input.value = entries
+    .map(entry => entry.valid ? entry.code : entry.original.trim())
+    .join('\n');
+  updateEnergyStatus();
+}
+
+
+
+function normalizeSearch(value){return String(value??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').replace(/\s+/g,' ').trim();}
+const $=id=>document.getElementById(id);
+const CATEGORY_GROUPS={
+ "DISTRIBUČNÍ ZMĚNY":"DISTRIBUCE A TECHNICKÉ ZMĚNY",
+ "SMLOUVY":"PŘEPISY A ZMĚNY NA SMLOUVĚ",
+ "PŘEPIS":"PŘEPISY A ZMĚNY NA SMLOUVĚ",
+ "FAKTURACE":"FAKTURACE A SAMOODEČTY",
+ "ZÁLOHY":"ZÁLOHY",
+ "FINANCE":"PLATBY, ZÁPOČTY A UPOMÍNKY",
+ "REKLAMACE":"REKLAMACE",
+ "DĚDICKÉ ŘÍZENÍ":"DĚDICKÉ ŘÍZENÍ",
+ "UKONČENÍ SMLOUVY":"UKONČENÍ SMLOUVY",
+ "AKVIZICE":"AKVIZICE A RETENCE",
+ "DETEKCE RETENCE":"AKVIZICE A RETENCE",
+ "ROZDĚLENÍ ZÚ":"FAKTURACE A SAMOODEČTY",
+ "Potvrzení pro ÚP":"POTVRZENÍ A ADMINISTRATIVA"
+};
+function getDisplayCategory(c){return CATEGORY_GROUPS[c]||c||'OSTATNÍ';}
+const items=Object.entries(data).map(([title,val],idx)=>{
+ const displayCategory=getDisplayCategory(val['KATEGORIE']);
+ const isTempl=normalizeSearch(val['HLADINA 1']+' '+val['HLADINA 2']).includes('sablon');
+ return {...val,title,idx,displayCategory,isTempl,searchIndex:normalizeSearch([title,val.text,val['HLADINA 1'],val['HLADINA 2'],val.STAV,val['ŘEŠITEL'],val['KATEGORIE'],displayCategory].join(' '))};
+});
+const categories=['all',...new Set(items.map(i=>i.displayCategory))];
+const state={q:'',cat:'all',mode:'all',page:1,perPage:10};
+const fixedHolidays=new Set(['1.1.','1.5.','8.5.','5.7.','6.7.','28.9.','28.10.','17.11.','24.12.','25.12.','26.12.']);
+function easterSunday(year){const a=year%19,b=Math.floor(year/100),c=year%100,d=Math.floor(b/4),e=b%4,f=Math.floor((b+8)/25),g=Math.floor((b-f+1)/3),h=(19*a+b-d-g+15)%30,i=Math.floor(c/4),k=c%4,l=(32+2*e+2*i-h-k)%7,m=Math.floor((a+11*h+22*l)/451);const month=Math.floor((h+l-7*m+114)/31), day=(h+l-7*m+114)%31+1;return new Date(year,month-1,day);}
+// Gregorian Easter: 32 + ... - k (not a fixed holiday table). Correct for future years.
+function easterHolidayDates(year){const easter=easterSunday(year),friday=new Date(easter),monday=new Date(easter);friday.setDate(friday.getDate()-2);monday.setDate(monday.getDate()+1);return [friday,monday].map(d=>`${d.getDate()}.${d.getMonth()+1}.`);}
+const easterCache=new Map();
+function isHoliday(date){const key=`${date.getDate()}.${date.getMonth()+1}.`;const y=date.getFullYear();if(!easterCache.has(y))easterCache.set(y,new Set(easterHolidayDates(y)));return fixedHolidays.has(key)||easterCache.get(y).has(key);}
+function isWeekend(date){return [0,6].includes(date.getDay());}
+function parseLocalDate(value){if(!value)return new Date();const m=value.match(/^(\d{4})-(\d{2})-(\d{2})$/);return m?new Date(+m[1],+m[2]-1,+m[3]):new Date();}
+function localISO(d){return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;}
+function addWorkingDays(start,days){const d=new Date(start);let x=0;while(x<days){d.setDate(d.getDate()+1);if(!isWeekend(d)&&!isHoliday(d))x++;}return d;}
+function formatDate(d){return `${String(d.getDate()).padStart(2,'0')}.${String(d.getMonth()+1).padStart(2,'0')}.${d.getFullYear()}`;}
+function getSlaDays(i){const s=String(i.STAV||'').toUpperCase(),txt=[i.title,i['KATEGORIE']].join(' ').toUpperCase();if(txt.includes('DINHE PO PŘEPISU'))return 90;if(txt.includes('TERMÍNOVÁNÍ DINHE'))return 30;if(txt.includes('KOFA DINHE'))return 14;if(s.includes('ČEKÁ NA TERMÍN')||s.includes('ČEKÁ NA ZÁKAZNÍKA')||s.includes('KE SCHVÁLENÍ'))return 7;return 2;}
+function matchingItems(){const tokens=normalizeSearch(state.q).split(' ').filter(Boolean);return items.filter(i=>(state.cat==='all'||i.displayCategory===state.cat)&&(state.mode==='all'||i.isTempl)&&tokens.every(t=>i.searchIndex.includes(t)));}
+function field(label,value,options=''){return `<div class="crm-field ${options}"><span class="crm-label">${escapeTemplateHtml(label)}</span><div class="crm-value ${options.includes('featured')?'featured':''}">${escapeTemplateHtml(value||'—')}</div></div>`;}
+function taskCard(item){
+ const term=formatDate(addWorkingDays(parseLocalDate($('calc_start_date').value),getSlaDays(item)));
+ const card=document.createElement('article');card.className='task-card';card.id=`ukol-${item.idx}`;
+ const intro=`<div class="task-top"><div class="task-aux"><span class="tag">${escapeTemplateHtml(item.displayCategory)}</span><span class="tag neutral">${item.isTempl?'Úkol ze šablony':'Standardní úkol'}</span></div><h3 class="task-title">${escapeTemplateHtml(item.title)}</h3></div>`;
+ const main=`<div class="task-meta"><h4>Zadání v ZIS</h4><div class="crm-grid">${field('Věc a popis úkolu:',item.title,'full featured')}${field('Vyhledat šablonu tohoto úkolu:',item['HLADINA 1'],'full')}</div><h4 class="meta-subheading">Nastavení a směrování úkolu</h4><div class="crm-grid compact">${field('Zdroj:','Dle požadavku')}${field('Číslo (ID):','šablona')}${field('Termín DO dle SLA:',`${term} · D+${getSlaDays(item)} PD`)}${field('Zadavatel:','Moje osoba')}${field('Priorita:','Standardní')}${field('Dodavatel:','epet / Dobrá Energie')}${field('Hladina 1:',item['HLADINA 1'],'full')}${field('Hladina 2:',item['HLADINA 2'],'full')}${field('Stav:',item.STAV)}${field('Řešitel:',item['ŘEŠITEL'],'wide')}</div></div>`;
+ // Escape the original prose first; replacement snippets themselves are HTML-escaped by helper.
+ const desc=`<section class="desc-wrap"><h4 class="desc-head">Popis úkolu</h4><div class="description">${applyTemplateVariables(escapeTemplateHtml(item.text),true)}</div></section>`;
+ const footer=`<div class="task-actions"><button class="button primary copy-desc" type="button">▣ Kopírovat popis</button><button class="button copy-all" type="button">⧉ Kopírovat celý úkol</button></div>`;
+ card.innerHTML=intro+main+desc+footer;
+ card.querySelector('.copy-desc').addEventListener('click',()=>copyText(item));
+ card.querySelector('.copy-all').addEventListener('click',()=>copyAll(item));
+ return card;
+}
+function pageButtons(target,totalPages){const nav=$(target);nav.replaceChildren();const add=(label,targetPage,disabled=false,active=false,aria='')=>{const btn=document.createElement('button');btn.type='button';btn.textContent=label;btn.disabled=disabled;btn.className=active?'current':'';btn.setAttribute('aria-label',aria||`Stránka ${targetPage}`);if(active)btn.setAttribute('aria-current','page');btn.onclick=()=>{if(!disabled&&targetPage!==state.page){state.page=targetPage;render();$('results').scrollIntoView({behavior:'auto',block:'start'});}};nav.append(btn)};
+ add('‹',Math.max(1,state.page-1),state.page===1,false,'Předchozí stránka');
+ const chosen=new Set([1,totalPages]);for(let i=Math.max(1,state.page-2);i<=Math.min(totalPages,state.page+2);i++)chosen.add(i);
+ let last=0;for(const n of [...chosen].sort((a,b)=>a-b)){if(n-last>1){const gap=document.createElement('span');gap.className='page-gap';gap.textContent='…';nav.append(gap);}add(String(n),n,false,n===state.page);last=n;}
+ add('›',Math.min(totalPages,state.page+1),state.page===totalPages,false,'Další stránka');}
+function buildCats(){const cont=$('catList');cont.replaceChildren();const tokens=normalizeSearch(state.q).split(' ').filter(Boolean);for(const c of categories){const count=items.filter(i=>(c==='all'||i.displayCategory===c)&&(state.mode==='all'||i.isTempl)&&tokens.every(t=>i.searchIndex.includes(t))).length;const btn=document.createElement('button');btn.type='button';btn.className='cat-btn'+(state.cat===c?' active':'');btn.setAttribute('aria-pressed',String(state.cat===c));const name=document.createElement('span');name.textContent=c==='all'?'Všechny kategorie':c;const badge=document.createElement('span');badge.className='cat-count';badge.textContent=count;btn.append(name,badge);btn.onclick=()=>{state.cat=c;state.page=1;render();};cont.append(btn);}}
+function render(){const filtered=matchingItems(),total=filtered.length, pages=Math.max(1,Math.ceil(total/state.perPage));state.page=Math.min(Math.max(1,state.page),pages);
+ const first=(state.page-1)*state.perPage,last=Math.min(total,first+state.perPage);
+ $('statTotal').textContent=total;$('statTempl').textContent=filtered.filter(i=>i.isTempl).length;
+ $('statusInfo').textContent=total?`Zobrazeno ${first+1}–${last} z ${total} úkolů${state.q?' pro „'+state.q+'“':''}`:'Žádné výsledky pro vybrané filtry';
+ $('pageSummary').textContent=total?`Strana ${state.page} z ${pages} · ${total} výsledků`:'0 výsledků';
+ $('empty').classList.toggle('hidden',total!==0);
+ const list=$('list');list.replaceChildren();const frag=document.createDocumentFragment();filtered.slice(first,last).forEach(i=>frag.append(taskCard(i)));list.append(frag);
+ pageButtons('paginationTop',pages);pageButtons('paginationBottom',pages);
+ $('f-all').classList.toggle('active',state.mode==='all');$('f-templ').classList.toggle('active',state.mode==='templ');$('f-all').setAttribute('aria-pressed',String(state.mode==='all'));$('f-templ').setAttribute('aria-pressed',String(state.mode==='templ'));
+ buildCats();}
+let toastTimer=0;function showToast(msg){const el=$('toast');el.textContent=msg;el.classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('visible'),2200);}
+async function copyToClipboard(str){try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(str);showToast('Zkopírováno do schránky');return;}}catch(e){}const ta=document.createElement('textarea');ta.value=str;ta.style.position='fixed';ta.style.opacity='0';document.body.append(ta);ta.select();let success=false;try{success=document.execCommand('copy')}catch(e){}ta.remove();showToast(success?'Zkopírováno do schránky':'Kopírování se nepodařilo – použijte HTTPS nebo Ctrl+C.');}
+function copyText(item){copyToClipboard(templateHtmlToPlainText(applyTemplateVariables(item.text,false)));}
+function copyAll(item){const text=templateHtmlToPlainText(applyTemplateVariables(item.text,false));const deadline=formatDate(addWorkingDays(parseLocalDate($('calc_start_date').value),getSlaDays(item)));copyToClipboard(`VĚC A POPIS ÚKOLU: ${item.title}\nHLADINA 1: ${item['HLADINA 1']}\nHLADINA 2: ${item['HLADINA 2']}\nSTAV: ${item.STAV}\nŘEŠITEL: ${item['ŘEŠITEL']}\nTERMÍN DO: ${deadline}\n---\nPOPIS ÚKOLU:\n${text}`);}
+function calculateSidebarDeadline(){const input=$('calc_start_date').value;if(!input)return;const deadline=addWorkingDays(parseLocalDate(input),Number($('calc_days').value));$('calc_result').textContent=formatDate(deadline);$('calc_dayname').textContent=['Neděle','Pondělí','Úterý','Středa','Čtvrtek','Pátek','Sobota'][deadline.getDay()];render();}
+function resetFilters(){state.q='';state.cat='all';state.mode='all';state.page=1;$('q').value='';render();}
+function init(){const today=new Date();$('calc_start_date').value=localISO(today);
+ $('q').addEventListener('input',e=>{state.q=e.target.value;state.page=1;render();});$('q').addEventListener('keydown',e=>{if(e.key==='Escape'){resetFilters();$('q').focus();}});$('clearSearch').onclick=()=>{state.q='';state.page=1;$('q').value='';render();$('q').focus();};
+ $('f-all').onclick=()=>{state.mode='all';state.page=1;render();};$('f-templ').onclick=()=>{state.mode='templ';state.page=1;render();};$('resetFilters').onclick=resetFilters;$('clearFromEmpty').onclick=resetFilters;
+ $('perPage').onchange=e=>{state.perPage=+e.target.value;state.page=1;render();};$('calc_start_date').addEventListener('change',calculateSidebarDeadline);$('calc_days').addEventListener('change',calculateSidebarDeadline);
+ $('copyCalcDate').onclick=()=>copyToClipboard($('calc_result').textContent);
+ templateVariableIds.forEach(id=>{const input=$(id);if(input)input.addEventListener('input',()=>{if(id==='var_ean_eic')updateEnergyStatus();render();});});
+ $('var_ean_eic').addEventListener('blur',()=>{normalizeEnergyInput();render();});
+ $('addEnergyCode').onclick=()=>{const i=$('var_ean_eic');i.value=i.value.replace(/\s+$/,'')+(i.value.trim()?'\n':'');i.focus();i.setSelectionRange(i.value.length,i.value.length);};
+ $('variablesReset').onclick=()=>{templateVariableIds.forEach(id=>{if($(id))$(id).value='';});updateEnergyStatus();render();showToast('Doplněné údaje byly vymazány');};
+ calculateSidebarDeadline();}
+init();
+</script>
+</body>
+</html>
