@@ -10,6 +10,7 @@
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:14px;line-height:1.5}button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{cursor:default;opacity:.4}a{color:inherit}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid rgba(148,193,31,.42);outline-offset:2px}
 .topbar{border-bottom:1px solid var(--line);background:#fff}.topinner{max-width:1780px;padding:22px 30px;margin:auto;display:flex;justify-content:space-between;gap:24px;align-items:center}.overline{text-transform:uppercase;letter-spacing:.14em;color:var(--epet-dark);font-size:10px;font-weight:850;margin:0 0 5px}.topinner h1{font-size:27px;line-height:1.15;letter-spacing:-.04em;margin:0;font-weight:800}.topinner h1::before{content:"";display:inline-block;width:6px;height:27px;border-radius:5px;background:linear-gradient(var(--epet),var(--de));margin-right:13px;vertical-align:-4px}.subtitle{font-size:12px;margin:8px 0 0;color:var(--sub)}.branding{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.brand-badge{font-size:11px;font-weight:800;padding:7px 11px;border:1px solid var(--line);border-radius:8px;background:#fff}.brand-badge.epet{border-bottom:3px solid var(--epet)}.brand-badge.de{border-bottom:3px solid var(--de)}.count-badge{border:1px solid var(--line);background:var(--soft);border-radius:11px;padding:6px 12px;text-align:center;min-width:78px}.count-badge b{display:block;font-size:17px;line-height:1.1}.count-badge small{font-size:10px;color:var(--sub)}
 .app-shell{max-width:1780px;padding:26px 30px 65px;margin:auto;display:grid;grid-template-columns:252px minmax(0,1fr) 292px;gap:22px;align-items:start}.panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);min-width:0}.side{position:sticky;top:15px;max-height:calc(100vh - 30px);overflow:auto;scrollbar-width:thin;min-width:0}.side-title{font-weight:800;letter-spacing:-.015em;font-size:14px;margin:0 0 13px}.field-label{display:block;font-size:10px;text-transform:uppercase;font-weight:800;letter-spacing:.055em;margin-bottom:6px;color:#58677a}.control{width:100%;background:#fff;min-height:38px;border:1px solid #cdd7e4;border-radius:9px;padding:9px 11px;color:var(--ink);min-width:0}.control::placeholder{color:#929dac}.control:focus{outline:none;border-color:#92bd2d;box-shadow:0 0 0 3px #94c11f24}.control.small{min-height:35px;padding:7px 9px;font-size:12px}.search-row{display:flex;position:relative}.search-row .control{padding-left:34px;padding-right:37px}.search-icon{position:absolute;top:10px;left:12px;color:#7b8999;font-size:16px}.clear-search{position:absolute;right:5px;top:4px;border:0;background:transparent;border-radius:7px;padding:6px 10px;color:#627188;font-size:19px}.divider{border:0;border-top:1px solid var(--line);margin:18px 0}.muted{color:var(--sub);font-size:12px}.tiny{color:var(--sub);font-size:11px}.catlist{display:grid;gap:4px;max-height:380px;overflow:auto;padding-right:3px}.cat-btn{width:100%;display:flex;align-items:center;justify-content:space-between;gap:7px;border:0;border-radius:9px;background:#fff;color:#526176;text-align:left;font-size:12px;font-weight:600;padding:9px 10px}.cat-btn span:first-child{overflow-wrap:anywhere}.cat-btn:hover{background:#f7f9f2}.cat-btn.active{background:var(--softgreen);color:#496615;font-weight:800}.cat-count{background:#eff3f7;color:#627188;border-radius:10px;padding:1px 7px;font-weight:800;font-size:10px;flex-shrink:0}.cat-btn.active .cat-count{background:#daeabb;color:var(--epet-dark)}.segmented{display:grid;grid-template-columns:1fr 1fr;gap:5px;background:var(--soft);padding:4px;border-radius:10px}.segmented button{border:0;border-radius:8px;background:transparent;color:#65748a;padding:9px 5px;font-size:11px;font-weight:750}.segmented button.active{background:#fff;color:#3d5c12;box-shadow:0 1px 5px #1d293b20}.reset-btn{margin-top:13px;border:0;background:none;color:#637188;font-size:12px;padding:6px 0;text-decoration:underline;text-underline-offset:3px}.date-result{background:var(--softgreen);padding:15px;border:1px solid #dbeabb;text-align:center;border-radius:13px;margin-top:12px}.date-result .label{font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:#62801a;font-weight:750}.date-result strong{display:block;font-size:24px;letter-spacing:-.045em;line-height:1.25;margin:4px 0}.date-result small{color:#668125;font-size:11px}.button{border:1px solid var(--line);border-radius:10px;padding:9px 13px;background:#fff;color:#40536a;font-weight:750;font-size:12px;display:inline-flex;align-items:center;gap:7px;justify-content:center;transition:background .15s}.button:hover:not(:disabled){background:#f1f6e7;border-color:#a8cf4c}.button.primary{background:var(--epet);border-color:var(--epet);color:#1e3100}.button.primary:hover{background:#a7d234}.button.full{width:100%}.button.xs{font-size:11px;padding:7px 10px}.notice{border:1px solid #f3dcad;background:#fffaf0;border-radius:12px;padding:12px;margin-top:17px}.notice summary{font-size:11px;font-weight:800;color:#8a5e10;cursor:pointer}.notice ul{font-size:11px;color:#725b30;padding-left:18px;line-height:1.6}.results{min-width:0}.results-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:15px;flex-wrap:wrap}.results-head h2{font-size:18px;letter-spacing:-.035em;margin:0 0 4px}.results-head p{margin:0;font-size:12px;color:var(--sub)}.tools{display:flex;gap:8px;align-items:center}.tools label{font-size:11px;color:#718096}.tools select{border:1px solid var(--line);border-radius:8px;padding:6px 25px 6px 8px;background:#fff;color:var(--ink);font-size:12px}.pageline{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:12px 0 16px}.pagination{display:flex;flex-wrap:wrap;align-items:center;gap:5px}.pagination button{width:33px;height:33px;padding:0;background:#fff;border:1px solid var(--line);border-radius:9px;color:#607188;font-weight:750;font-size:12px}.pagination button.current{background:var(--epet);border-color:var(--epet);color:#263900}.pagination button:hover:not(:disabled){border-color:var(--epet);background:#f1f8e6}.page-gap{padding:0 2px;color:#94a3b8}.cards{display:grid;gap:19px}.task-card{background:#fff;border:1px solid #dce5ee;border-radius:17px;overflow:hidden;box-shadow:var(--shadow)}.task-top{padding:18px 20px 16px;border-bottom:1px solid var(--line);background:linear-gradient(90deg,#fafcf7,#fff 36%)}.task-aux{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:9px}.tag{font-size:10px;font-weight:750;color:#5a711b;background:#f2f9df;border:1px solid #e5f1c4;border-radius:6px;padding:4px 8px}.tag.neutral{background:#f5f7fa;color:#65758b;border-color:#e3e9f0}.task-title{font-size:18px;line-height:1.36;letter-spacing:-.025em;font-weight:800;margin:0;overflow-wrap:anywhere}.task-meta{padding:17px 20px;background:#fff}.task-meta h4{font-size:11px;font-weight:800;color:#506177;text-transform:uppercase;letter-spacing:.06em;margin:0 0 12px}.crm-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.crm-field{min-width:0;align-self:stretch}.crm-field.full{grid-column:1/-1}.crm-field .crm-label{font-size:10px;letter-spacing:.04em;text-transform:uppercase;font-weight:800;color:#67778b;display:block;margin-bottom:4px}.crm-value{border:1px solid #e2e9f1;border-radius:9px;background:#f9fbfd;min-height:36px;padding:8px 10px;color:#26384e;font-size:12px;font-weight:600;overflow-wrap:anywhere;white-space:pre-wrap;line-height:1.45}.crm-value.featured{background:#f7fbe8;border-color:#ddecbb;font-weight:750}.crm-value.long{font-size:12px}.meta-subheading{font-size:11px;font-weight:800;margin:16px 0 9px;color:#52627b}.crm-grid.compact{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.crm-grid.compact .crm-field.wide{grid-column:span 2}.crm-grid.compact .crm-field.full{grid-column:1/-1}.desc-wrap{padding:17px 20px;background:#fcfdfb;border-top:1px solid var(--line)}.desc-head{display:flex;align-items:center;gap:8px;margin:0 0 9px;font-size:12px;font-weight:800;color:#52661d}.desc-head::before{content:"";width:4px;height:16px;background:var(--epet);border-radius:2px}.description{border:1px solid #e0e8f1;background:#fff;border-radius:10px;padding:15px;font-size:13px;line-height:1.65;min-height:70px;white-space:pre-wrap;overflow-wrap:anywhere}.template-var-filled{display:inline;background:#f0facd;border-radius:3px;color:#435900;font-weight:750;padding:1px 3px;box-decoration-break:clone}.task-actions{display:flex;justify-content:flex-end;gap:9px;flex-wrap:wrap;border-top:1px solid var(--line);padding:12px 20px;background:#fff}.empty{padding:48px 22px;text-align:center;border:1px dashed #cfdae4;border-radius:16px;color:#708096}.empty b{display:block;font-size:17px;color:var(--ink);margin-bottom:6px}.empty[hidden],.hidden{display:none!important}.right-panel{border-top:4px solid var(--de)}.variable-head{display:flex;justify-content:space-between;align-items:center;gap:10px}.variable-row{margin-top:12px}.two-fields{display:grid;grid-template-columns:1fr 1fr;gap:9px}.two-fields>*{min-width:0}.help{font-size:11px;color:#748398;line-height:1.55;margin:8px 0 13px}.extra{margin-top:16px;border-top:1px solid var(--line);padding-top:14px}.extra summary{font-size:12px;font-weight:750;color:#536980;cursor:pointer;margin-bottom:5px}.extra[open] summary{color:#4d6b12}.variable-status{font-size:10px;color:#6f8292;margin-top:5px;overflow-wrap:anywhere}.variable-status.is-invalid{color:#b74b45}.variable-status.is-valid{color:#5d7e1b}.toast{position:fixed;left:50%;bottom:27px;transform:translate(-50%,20px);background:#223148;color:#fff;border-radius:12px;padding:10px 18px;font-size:12px;font-weight:750;box-shadow:0 15px 30px #14233b33;opacity:0;transition:all .2s;pointer-events:none;z-index:50;max-width:min(94vw,480px);text-align:center}.toast.visible{opacity:1;transform:translate(-50%,0)}.footer{color:#8a97a6;font-size:11px;text-align:center;padding:10px 20px 35px}.page-note{font-size:10px;color:#8794a5}.accent{color:#7e9f23}
+.description a{color:#2563eb;text-decoration:underline;text-underline-offset:2px;font-weight:700;overflow-wrap:anywhere}.description a:hover{color:#1d4ed8}.description ul,.description ol{margin:.45rem 0;padding-left:1.6rem;white-space:normal}.description li{margin:.25rem 0;line-height:1.55}.description p{margin:.5rem 0}
 @media (max-width:1450px){.app-shell{grid-template-columns:235px minmax(0,1fr) 272px;gap:16px;padding:20px}.panel{padding:16px}.task-meta,.task-top,.desc-wrap{padding-left:17px;padding-right:17px}}
 @media (max-width:1200px){.app-shell{grid-template-columns:238px minmax(0,1fr)}.left{grid-column:1;grid-row:1}.results{grid-column:2;grid-row:1/span 2}.right{grid-column:1;grid-row:2}.side{max-height:none;position:static;overflow:visible}.crm-grid.compact{grid-template-columns:repeat(2,minmax(0,1fr))}.crm-grid.compact .crm-field.wide{grid-column:auto}}
 @media (max-width:800px){.topinner{padding:18px 17px;align-items:flex-start;flex-wrap:wrap}.topinner h1{font-size:23px}.app-shell{display:flex;flex-direction:column;padding:15px;gap:16px}.left,.results,.right{width:100%}.side{max-height:none}.crm-grid.compact{grid-template-columns:repeat(2,minmax(0,1fr))}.catlist{max-height:220px}.results-head{margin-top:4px}}
@@ -19,7 +20,7 @@
 </head>
 <body>
 <header class="topbar"><div class="topinner">
- <div><p class="overline">Znalostka / pracovní nástroje</p><h1>Šablony úkolů</h1><p class="subtitle">Přehledné podklady pro zápis a předání úkolů v ZIS · návrh před zveřejněním</p></div>
+ <div><p class="overline">Znalostka / pracovní nástroje</p><h1>Šablony úkolů</h1><p class="subtitle">Přehledné podklady pro zápis a předání úkolů v ZIS · aktuální verze</p></div>
  <div class="branding"><span class="brand-badge epet">epet</span><span class="brand-badge de">Dobrá Energie</span><span class="count-badge"><b id="statTotal">–</b><small>Výsledků</small></span><span class="count-badge"><b id="statTempl">–</b><small>Ze šablony</small></span></div>
 </div></header>
 <div class="app-shell">
@@ -75,7 +76,7 @@
    </section>
  </aside>
 </div>
-<footer class="footer">NÁHLED – zatím není nahráno do repozitáře · Veškeré šablony zůstávají v tomto souboru, bez serverového ukládání</footer>
+<footer class="footer">Šablony úkolů · Znalostka · Veškeré šablony zůstávají v tomto souboru, bez serverového ukládání</footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script>
 'use strict';
@@ -933,17 +934,65 @@ const tokenValues = {
   return output;
 }
 
+function sanitizeTemplateHtml(html) {
+  // Zachovat bezpečné formátování, žádné skripty, obrázky ani událostní atributy.
+  const template = document.createElement('template');
+  template.innerHTML = String(html ?? '');
+  const allowed = new Set(['b','strong','i','em','u','a','br','p','div','span','ul','ol','li','sup','sub']);
+  const blocked = new Set(['script','style','iframe','object','embed','svg','math','form','input','button','textarea','select','video','audio','img','link','meta','base']);
+  const result = document.createElement('div');
+  function cleanTree(source, target) {
+    for (const child of Array.from(source.childNodes)) {
+      if (child.nodeType === 3) { target.appendChild(document.createTextNode(child.nodeValue)); continue; }
+      if (child.nodeType !== 1) continue;
+      const tag = child.tagName.toLowerCase();
+      if (blocked.has(tag)) continue;
+      let safe = allowed.has(tag) ? document.createElement(tag) : document.createDocumentFragment();
+      if (tag === 'a') {
+        let safeHref = '';
+        try {
+          const raw = child.getAttribute('href');
+          if (raw) {
+            const url = new URL(raw, document.baseURI);
+            if (['https:', 'http:', 'mailto:'].includes(url.protocol)) safeHref = url.href;
+          }
+        } catch (_) {}
+        if (safeHref) {
+          safe.href = safeHref;
+          safe.target = '_blank';
+          safe.rel = 'noopener noreferrer';
+        } else {
+          safe = document.createDocumentFragment();
+        }
+      }
+      if (tag === 'span' && child.classList.contains('template-var-filled')) {
+        safe.classList.add('template-var-filled');
+      }
+      cleanTree(child, safe);
+      target.appendChild(safe);
+    }
+  }
+  cleanTree(template.content, result);
+  return result.innerHTML;
+}
+
 function templateHtmlToPlainText(html) {
   const container = document.createElement('div');
-  const preparedHtml = String(html || '')
-    .replace(/<br\s*\/?>/gi, '\n')
-    .replace(/<\/p>/gi, '\n\n')
-    .replace(/<li\b[^>]*>/gi, '• ')
-    .replace(/<\/li>/gi, '\n')
-    .replace(/<\/(?:div|ul|ol)>/gi, '\n');
-
-  container.innerHTML = preparedHtml;
-  return String(container.textContent || container.innerText || '')
+  container.innerHTML = sanitizeTemplateHtml(html);
+  container.querySelectorAll('a[href]').forEach(link => {
+    const url = link.getAttribute('href');
+    if (url && !link.textContent.includes(url)) link.appendChild(document.createTextNode(' (' + url + ')'));
+  });
+  container.querySelectorAll('br').forEach(node => node.replaceWith(document.createTextNode('\n')));
+  container.querySelectorAll('li').forEach(node => {
+    node.prepend(document.createTextNode('• '));
+    node.after(document.createTextNode('\n'));
+  });
+  container.querySelectorAll('p, div, ul, ol').forEach(node => {
+    node.before(document.createTextNode('\n'));
+    node.after(document.createTextNode('\n'));
+  });
+  return String(container.textContent || '')
     .replace(/\u00a0/g, ' ')
     .replace(/[ \t]+\n/g, '\n')
     .replace(/\n{3,}/g, '\n\n')
@@ -1049,7 +1098,7 @@ function taskCard(item){
  const intro=`<div class="task-top"><div class="task-aux"><span class="tag">${escapeTemplateHtml(item.displayCategory)}</span><span class="tag neutral">${item.isTempl?'Úkol ze šablony':'Standardní úkol'}</span></div><h3 class="task-title">${escapeTemplateHtml(item.title)}</h3></div>`;
  const main=`<div class="task-meta"><h4>Zadání v ZIS</h4><div class="crm-grid">${field('Věc a popis úkolu:',item.title,'full featured')}${field('Vyhledat šablonu tohoto úkolu:',item['HLADINA 1'],'full')}</div><h4 class="meta-subheading">Nastavení a směrování úkolu</h4><div class="crm-grid compact">${field('Zdroj:','Dle požadavku')}${field('Číslo (ID):','šablona')}${field('Termín DO dle SLA:',`${term} · D+${getSlaDays(item)} PD`)}${field('Zadavatel:','Moje osoba')}${field('Priorita:','Standardní')}${field('Dodavatel:','epet / Dobrá Energie')}${field('Hladina 1:',item['HLADINA 1'],'full')}${field('Hladina 2:',item['HLADINA 2'],'full')}${field('Stav:',item.STAV)}${field('Řešitel:',item['ŘEŠITEL'],'wide')}</div></div>`;
  // Escape the original prose first; replacement snippets themselves are HTML-escaped by helper.
- const desc=`<section class="desc-wrap"><h4 class="desc-head">Popis úkolu</h4><div class="description">${applyTemplateVariables(escapeTemplateHtml(item.text),true)}</div></section>`;
+ const desc=`<section class="desc-wrap"><h4 class="desc-head">Popis úkolu</h4><div class="description">${sanitizeTemplateHtml(applyTemplateVariables(item.text,true))}</div></section>`;
  const footer=`<div class="task-actions"><button class="button primary copy-desc" type="button">▣ Kopírovat popis</button><button class="button copy-all" type="button">⧉ Kopírovat celý úkol</button></div>`;
  card.innerHTML=intro+main+desc+footer;
  card.querySelector('.copy-desc').addEventListener('click',()=>copyText(item));
@@ -1073,9 +1122,60 @@ function render(){const filtered=matchingItems(),total=filtered.length, pages=Ma
  $('f-all').classList.toggle('active',state.mode==='all');$('f-templ').classList.toggle('active',state.mode==='templ');$('f-all').setAttribute('aria-pressed',String(state.mode==='all'));$('f-templ').setAttribute('aria-pressed',String(state.mode==='templ'));
  buildCats();}
 let toastTimer=0;function showToast(msg){const el=$('toast');el.textContent=msg;el.classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('visible'),2200);}
-async function copyToClipboard(str){try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(str);showToast('Zkopírováno do schránky');return;}}catch(e){}const ta=document.createElement('textarea');ta.value=str;ta.style.position='fixed';ta.style.opacity='0';document.body.append(ta);ta.select();let success=false;try{success=document.execCommand('copy')}catch(e){}ta.remove();showToast(success?'Zkopírováno do schránky':'Kopírování se nepodařilo – použijte HTTPS nebo Ctrl+C.');}
-function copyText(item){copyToClipboard(templateHtmlToPlainText(applyTemplateVariables(item.text,false)));}
-function copyAll(item){const text=templateHtmlToPlainText(applyTemplateVariables(item.text,false));const deadline=formatDate(addWorkingDays(parseLocalDate($('calc_start_date').value),getSlaDays(item)));copyToClipboard(`VĚC A POPIS ÚKOLU: ${item.title}\nHLADINA 1: ${item['HLADINA 1']}\nHLADINA 2: ${item['HLADINA 2']}\nSTAV: ${item.STAV}\nŘEŠITEL: ${item['ŘEŠITEL']}\nTERMÍN DO: ${deadline}\n---\nPOPIS ÚKOLU:\n${text}`);}
+async function copyToClipboard(str, richHtml = null) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      if (richHtml && typeof ClipboardItem !== 'undefined' && navigator.clipboard.write) {
+        await navigator.clipboard.write([new ClipboardItem({
+          'text/plain': new Blob([str], {type:'text/plain'}),
+          'text/html': new Blob([richHtml], {type:'text/html'})
+        })]);
+      } else {
+        await navigator.clipboard.writeText(str);
+      }
+      showToast('Zkopírováno do schránky');
+      return;
+    }
+  } catch (e) {
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(str);
+        showToast('Zkopírováno jako text');
+        return;
+      }
+    } catch (_) {}
+  }
+  const ta=document.createElement('textarea');
+  ta.value=str;ta.style.position='fixed';ta.style.opacity='0';
+  document.body.append(ta);ta.select();
+  let success=false;try{success=document.execCommand('copy')}catch(_){}
+  ta.remove();
+  showToast(success?'Zkopírováno do schránky':'Kopírování se nepodařilo – použijte HTTPS nebo Ctrl+C.');
+}
+function getCopyDescription(item) {
+  const html = sanitizeTemplateHtml(applyTemplateVariables(item.text, false));
+  return {html, text:templateHtmlToPlainText(html)};
+}
+function copyText(item) {
+  const description=getCopyDescription(item);
+  copyToClipboard(description.text, '<div>'+description.html.replace(/\r?\n/g,'<br>')+'</div>');
+}
+function copyAll(item) {
+  const description=getCopyDescription(item);
+  const deadline=formatDate(addWorkingDays(parseLocalDate($('calc_start_date').value),getSlaDays(item)));
+  const details=[
+    ['VĚC A POPIS ÚKOLU',item.title],
+    ['HLADINA 1',item['HLADINA 1']],
+    ['HLADINA 2',item['HLADINA 2']],
+    ['STAV',item.STAV],
+    ['ŘEŠITEL',item['ŘEŠITEL']],
+    ['TERMÍN DO',deadline]
+  ];
+  const text=details.map(([label,value])=>label+': '+(value||'')).join('\n')+'\n---\nPOPIS ÚKOLU:\n'+description.text;
+  const headerHtml=details.map(([label,value])=>'<p><strong>'+escapeTemplateHtml(label)+':</strong> '+escapeTemplateHtml(value||'')+'</p>').join('');
+  const html='<div>'+headerHtml+'<p><strong>POPIS ÚKOLU:</strong></p><div>'+description.html.replace(/\r?\n/g,'<br>')+'</div></div>';
+  copyToClipboard(text,html);
+}
 function calculateSidebarDeadline(){const input=$('calc_start_date').value;if(!input)return;const deadline=addWorkingDays(parseLocalDate(input),Number($('calc_days').value));$('calc_result').textContent=formatDate(deadline);$('calc_dayname').textContent=['Neděle','Pondělí','Úterý','Středa','Čtvrtek','Pátek','Sobota'][deadline.getDay()];render();}
 function resetFilters(){state.q='';state.cat='all';state.mode='all';state.page=1;$('q').value='';render();}
 function init(){const today=new Date();$('calc_start_date').value=localISO(today);
