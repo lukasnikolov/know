@@ -76,30 +76,45 @@
     if(pts.length)close();
     return shapes;
   }
+  // Support device RGB/gray AND ICC-based RGB (scn), which is used by newer epet PDFs.
+  // Fill operators may repeat under a single color and may be preceded by /GS0 gs.
+  // Recolor only if every painted shape in the contiguous run is a narrow, wide rectangle.
   function cleanContent(content,sensitivity){
     const lines=content.split(/(?<=\n)/);
-    const rgb=/^\s*([-+]?(?:\d+\.?\d*|\.\d+))\s+([-+]?(?:\d+\.?\d*|\.\d+))\s+([-+]?(?:\d+\.?\d*|\.\d+))\s+rg\s*$/;
-    const gray=/^\s*([-+]?(?:\d+\.?\d*|\.\d+))\s+g\s*$/;
     const n='[-+]?(?:\\d+\\.?\\d*|\\.\\d+)';
-    const op=new RegExp('^(?:\\s*'+n+'\\s+'+n+'\\s+(?:m|l)|\\s*'+n+'\\s+'+n+'\\s+'+n+'\\s+'+n+'\\s+re|\\s*h)\\s*$');
+    const rgb=new RegExp('^\\s*('+n+')\\s+('+n+')\\s+('+n+')\\s+(rg|scn)\\s*$');
+    const gray=new RegExp('^\\s*('+n+')\\s+g\\s*$');
+    const re=new RegExp('^\\s*'+n+'\\s+'+n+'\\s+'+n+'\\s+'+n+'\\s+re\\s*$');
+    const ml=new RegExp('^\\s*'+n+'\\s+'+n+'\\s+[ml]\\s*$');
+    const gs=/^\/[^\s]+\s+gs$/;
     let groups=0,shapes=0;
     for(let i=0;i<lines.length;i++){
       const t=lines[i].trim();let m=t.match(rgb),c=m?[+m[1],+m[2],+m[3]]:null;
+      const operator=m?m[4]:null;
       if(!c){m=t.match(gray);if(m)c=[+m[1],+m[1],+m[1]];}
       if(!c||!colorOK(c,sensitivity))continue;
-      const cmds=[];let painted=false;
-      for(let j=i+1;j<Math.min(lines.length,i+155);j++){
+      let painted=0,good=true;let pending=[];
+      for(let j=i+1;j<Math.min(lines.length,i+1000);j++){
         const s=lines[j].trim();
-        if(s==='f'||s==='f*'){painted=true;break;}
-        if(!op.test(s))break;
-        cmds.push(s);
+        if(!s||gs.test(s))continue;
+        if(re.test(s)||ml.test(s)||s==='h'){pending.push(s);continue;}
+        if(s==='f'||s==='f*'){
+          if(!pending.length){good=false;break;}
+          const arr=rectangles(pending);
+          if(!arr.length||!arr.every(x=>x[0]>=38&&x[1]>=2.2&&x[1]<=[20,27,32][sensitivity]&&x[0]/Math.max(1,x[1])>=3.4)){
+            good=false;break;
+          }
+          painted+=arr.length;
+          pending=[];
+          continue;
+        }
+        // Text, graphics-state restoration, or another drawing operation ends this run.
+        break;
       }
-      if(!painted||!cmds.length)continue;
-      const arr=rectangles(cmds), matched=arr.filter(x=>x[0]>=38&&x[1]>=2.2&&x[1]<=[20,27,32][sensitivity]&&x[0]/Math.max(1,x[1])>=3.4);
-      if(!arr.length||matched.length!==arr.length)continue;
+      if(!good||!painted||pending.length)continue;
       const newline=lines[i].endsWith('\r\n')?'\r\n':lines[i].endsWith('\n')?'\n':'';
-      lines[i]=(t.endsWith(' g')?'1 g':'1 1 1 rg')+newline;
-      groups++;shapes+=matched.length;
+      lines[i]=(operator==='scn'?'1 1 1 scn':operator==='rg'?'1 1 1 rg':'1 g')+newline;
+      groups++;shapes+=painted;
     }
     return {text:lines.join(''),groups,shapes};
   }
@@ -124,7 +139,7 @@
         const data=f==='flate'?window.pako.inflate(raw):raw;
         if(data.length>40*1048576){skipped++;continue;}
         const s=bytesText(data);
-        if(!s.includes(' rg')&&!s.includes(' g\n'))continue;
+        if(!/(?:\srg|\sg|\sscn)(?:\s|$)/.test(s))continue;
         const result=cleanContent(s,level);
         if(!result.groups)continue;
         context.assign(ref,context.flateStream(textBytes(result.text)));
@@ -201,7 +216,8 @@
     }
     busy=false;U.reset.disabled=false;fileList();await preview();
     const shapes=files.reduce((x,f)=>x+(f.stats?.shapes||0),0),fields=files.reduce((x,f)=>x+(f.stats?.fields||0),0);
-    note('Hotovo: '+ok+' PDF. Podbarvení: '+shapes+'. Zafixovaná pole: '+fields+'. '+(bad?bad+' souborů se nezpracovalo.':'Porovnejte náhled před stažením.'),bad>0);
+    if(!shapes&&!fields&&!bad)note('V souborech nebylo rozpoznáno žádné odstranitelné podbarvení ani formulářové pole. Dokument se mohl uložit beze změn. Vyzkoušejte vyšší citlivost nebo nám pošlete problémový vzor.',true);
+    else note('Hotovo: '+ok+' PDF. Podbarvení: '+shapes+'. Zafixovaná pole: '+fields+'. '+(bad?bad+' souborů se nezpracovalo.':'Porovnejte náhled před stažením.'),bad>0);
   }
   async function zipFiles(){
     if(!window.JSZip){note('ZIP knihovna není dostupná. Soubory stáhněte jednotlivě.',true);return;}
