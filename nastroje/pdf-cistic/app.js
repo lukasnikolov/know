@@ -76,7 +76,7 @@
     if(pts.length)close();
     return shapes;
   }
-  // Support device RGB/gray AND ICC-based RGB (scn), which is used by newer epet PDFs.
+  // Support device RGB/gray, ICC-based RGB (scn), and DeviceCMYK (k).
   // Fill operators may repeat under a single color and may be preceded by /GS0 gs.
   // Recolor only if every painted shape in the contiguous run is a narrow, wide rectangle.
   function cleanContent(content,sensitivity){
@@ -84,14 +84,22 @@
     const n='[-+]?(?:\\d+\\.?\\d*|\\.\\d+)';
     const rgb=new RegExp('^\\s*('+n+')\\s+('+n+')\\s+('+n+')\\s+(rg|scn)\\s*$');
     const gray=new RegExp('^\\s*('+n+')\\s+g\\s*$');
+    const cmyk=new RegExp('^\\s*('+n+')\\s+('+n+')\\s+('+n+')\\s+('+n+')\\s+k\\s*$');
     const re=new RegExp('^\\s*'+n+'\\s+'+n+'\\s+'+n+'\\s+'+n+'\\s+re\\s*$');
     const ml=new RegExp('^\\s*'+n+'\\s+'+n+'\\s+[ml]\\s*$');
     const gs=/^\/[^\s]+\s+gs$/;
     let groups=0,shapes=0;
     for(let i=0;i<lines.length;i++){
       const t=lines[i].trim();let m=t.match(rgb),c=m?[+m[1],+m[2],+m[3]]:null;
-      const operator=m?m[4]:null;
-      if(!c){m=t.match(gray);if(m)c=[+m[1],+m[1],+m[1]];}
+      let operator=m?m[4]:null;
+      if(!c){m=t.match(gray);if(m){c=[+m[1],+m[1],+m[1]];operator='g';}}
+      if(!c){m=t.match(cmyk);if(m){
+        // DeviceCMYK to approximate RGB for conservative light-gray detection.
+        const ink=[+m[1],+m[2],+m[3],+m[4]];
+        if(ink.some(v=>v<0||v>1))continue;
+        c=ink.slice(0,3).map(v=>(1-v)*(1-ink[3]));
+        operator='k';
+      }}
       if(!c||!colorOK(c,sensitivity))continue;
       let painted=0,good=true;let pending=[];
       for(let j=i+1;j<Math.min(lines.length,i+1000);j++){
@@ -113,7 +121,7 @@
       }
       if(!good||!painted||pending.length)continue;
       const newline=lines[i].endsWith('\r\n')?'\r\n':lines[i].endsWith('\n')?'\n':'';
-      lines[i]=(operator==='scn'?'1 1 1 scn':operator==='rg'?'1 1 1 rg':'1 g')+newline;
+      lines[i]=(operator==='scn'?'1 1 1 scn':operator==='rg'?'1 1 1 rg':operator==='k'?'0 0 0 0 k':'1 g')+newline;
       groups++;shapes+=painted;
     }
     return {text:lines.join(''),groups,shapes};
@@ -139,7 +147,7 @@
         const data=f==='flate'?window.pako.inflate(raw):raw;
         if(data.length>40*1048576){skipped++;continue;}
         const s=bytesText(data);
-        if(!/(?:\srg|\sg|\sscn)(?:\s|$)/.test(s))continue;
+        if(!/(?:\srg|\sg|\sscn|\sk)(?:\s|$)/.test(s))continue;
         const result=cleanContent(s,level);
         if(!result.groups)continue;
         context.assign(ref,context.flateStream(textBytes(result.text)));
