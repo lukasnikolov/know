@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Přehled a kopírování pracovních šablon zápisů do úkolů v ZIS.">
+  <title>Šablony zápisů do ZIS | Znalostka</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;750;800&display=swap" rel="stylesheet">
+  <style>
+    :root{font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color-scheme:light;--ink:#1d2b3b;--muted:#708093;--line:#e4eaf0;--soft:#f8fafb;--brand:#94c11f;--brand-dark:#64851d;--brand-pale:#f2f8e6;--brand-border:#dcebbb}
+    *,*:before,*:after{box-sizing:border-box}
+    body{margin:0;min-width:320px;background:#fff;color:var(--ink);font-size:13px}
+    button,input,textarea{font:inherit}button{cursor:pointer}
+    button:disabled{opacity:.35;cursor:not-allowed}
+    a{text-decoration:none;color:inherit}
+    button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--brand-border);outline-offset:2px}
+    [hidden]{display:none!important}
+    .wrap{max-width:1430px;margin:auto;padding:0 24px}
+    .topbar{height:74px;border-bottom:1px solid var(--line)}
+    .topbar .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:15px}
+    .identity{display:flex;align-items:center;gap:12px}
+    .logo{display:grid;place-items:center;width:38px;height:38px;background:var(--brand-pale);color:var(--brand-dark);border-radius:10px}
+    .logo svg{width:22px;height:22px}
+    .eyebrow{color:#8794a4;font-size:9px;letter-spacing:.11em;font-weight:800}
+    h1{font-size:19px;font-weight:800;line-height:1.2;letter-spacing:-.04em;margin:4px 0 0}
+    .top-actions{display:flex;align-items:center;gap:8px}
+    .top-link{font-size:11px;font-weight:750;color:#536477;padding:9px 11px;border:1px solid var(--line);border-radius:9px;white-space:nowrap}
+    .top-link:hover{color:var(--brand-dark);border-color:var(--brand-border);background:var(--brand-pale)}
+    .help{width:35px;height:35px;border-radius:50%;border:1px solid var(--line);background:#fff;color:#617285;font-weight:800;font-size:17px}
+    .main{padding-top:24px;padding-bottom:47px}
+    .intro{display:flex;justify-content:space-between;align-items:flex-end;gap:15px;margin-bottom:18px}
+    .intro h2{font-size:23px;letter-spacing:-.045em;line-height:1.22;font-weight:800;margin:5px 0 6px}
+    .intro p{margin:0;color:var(--muted);font-size:12px;line-height:1.6}
+    .kicker{font-size:10px;color:var(--brand-dark);font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+    .totals{font-size:11px;color:#8190a0;text-align:right;white-space:nowrap}
+    .totals strong{display:block;font-size:23px;color:#2a3a4d;line-height:1.2}
+    .workspace{display:grid;grid-template-columns:minmax(250px,.66fr) minmax(0,1.85fr);gap:18px;align-items:start}
+    .filters{border:1px solid var(--line);border-radius:13px;background:#fff;padding:15px;position:sticky;top:16px}
+    .filter-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:13px}
+    .filter-head strong{font-size:13px}
+    .reset{border:0;background:transparent;color:var(--brand-dark);font-size:10px;font-weight:750;padding:4px}
+    .level-label{font-size:10px;text-transform:uppercase;color:#8996a5;font-weight:800;letter-spacing:.08em;margin:13px 0 8px}
+    .level-list{display:flex;flex-direction:column;gap:4px}
+    .filter{display:flex;align-items:center;justify-content:space-between;gap:9px;width:100%;padding:10px 11px;text-align:left;background:#fff;border:1px solid transparent;color:#57677c;border-radius:9px;font-size:12px;font-weight:600}
+    .filter:hover{background:#f6f9f3}
+    .filter.active{background:var(--brand-pale);color:var(--brand-dark);border-color:var(--brand-border);font-weight:800}
+    .filter span:first-child{min-width:0;overflow-wrap:anywhere}
+    .filter small{flex:none;font-weight:800;font-size:10px;color:#8694a4;background:#f3f6f8;padding:3px 6px;border-radius:6px}
+    .filter.active small{color:var(--brand-dark);background:#fff}
+    .side-divider{border:0;border-top:1px solid var(--line);margin:16px 0}
+    .sidebar-note{border-radius:10px;border:1px solid #e9edf0;background:#fbfcfd;padding:12px}
+    .sidebar-note strong{font-size:11px;color:#4a5a6e;display:block;margin-bottom:6px}
+    .sidebar-note p{font-size:10.8px;color:#748397;line-height:1.65;margin:0}
+    .catalog{min-width:0}
+    .toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:11px}
+    .catalog-title{font-size:15px;font-weight:800;letter-spacing:-.02em;margin:0}
+    .search{height:40px;display:flex;align-items:center;gap:9px;border:1px solid var(--line);border-radius:10px;padding:0 12px;width:min(380px,100%);flex:1 1 255px;color:#9aa6b3}
+    .search:focus-within{border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-pale)}
+    .search svg{flex:none;width:16px;height:16px}
+    .search input{width:100%;border:0;background:transparent;min-width:0;outline:0;color:var(--ink);font-size:12px}
+    .search input::placeholder{color:#a0aab5}
+    kbd{padding:2px 5px;border-radius:5px;border:1px solid var(--line);font:10px Inter,Arial;color:#9aa5af;background:#fff}
+    .results{display:flex;justify-content:space-between;align-items:center;min-height:36px;color:#8492a3;font-size:11px;gap:10px}
+    .list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;align-items:stretch}
+    .tpl{border:1px solid #e5ebf0;border-radius:11px;background:#fff;width:100%;padding:13px;min-height:127px;display:flex;flex-direction:column;align-items:stretch;text-align:left;gap:7px;color:inherit;transition:border-color .15s,background .15s,transform .15s,box-shadow .15s}
+    .tpl:hover{border-color:var(--brand-border);background:#fcfef8;box-shadow:0 5px 17px #192b3d0a;transform:translateY(-1px)}
+    .tpl-top{display:flex;align-items:center;gap:9px}
+    .icon{flex:none;width:30px;height:30px;border-radius:8px;background:var(--brand-pale);color:var(--brand-dark);display:grid;place-items:center}
+    .icon svg{width:17px;height:17px}
+    .tpl-name{font-size:12px;font-weight:800;letter-spacing:-.01em;line-height:1.38;min-width:0;overflow-wrap:anywhere}
+    .tpl-desc{font-size:11px;color:#7b899a;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;flex:1}
+    .tpl-bottom{display:flex;align-items:center;gap:5px;margin-top:auto;min-width:0}
+    .type-tag{font-size:9.5px;font-weight:700;color:#687b8a;background:#f3f6f8;padding:4px 6px;border-radius:6px;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .chevron{margin-left:auto;color:var(--brand-dark);font-size:16px;font-weight:800}
+    .empty{grid-column:1/-1;border:1px dashed var(--line);border-radius:10px;text-align:center;padding:50px 12px;color:#7e8e9c}
+    .empty strong{display:block;color:#304254;font-size:14px;margin-bottom:6px}
+    .empty span{font-size:11px}
+    .pagination{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:16px;padding-top:14px;border-top:1px solid var(--line);flex-wrap:wrap}
+    .pages{display:flex;align-items:center;gap:5px}
+    .page{display:grid;place-items:center;min-width:31px;height:31px;border:1px solid var(--line);background:#fff;border-radius:7px;font-size:11px;font-weight:750;color:#54667a}
+    .page[aria-current="page"]{border-color:var(--brand-border);background:var(--brand-pale);color:var(--brand-dark)}
+    .page:not(:disabled):hover{border-color:var(--brand);color:var(--brand-dark)}
+    .page.arrow{font-size:19px;line-height:1}
+    .page-summary{font-size:11px;color:#8694a5}
+    footer{border-top:1px solid var(--line);padding:19px 0;font-size:11px;color:#8795a4}
+    footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+    dialog{border:0;margin:0 0 0 auto;top:0;bottom:0;left:auto;right:0;max-height:100dvh;height:100dvh;width:min(620px,100vw);max-width:100vw;padding:0;box-shadow:-12px 0 50px #1b283640;background:#fff;color:var(--ink);overflow:hidden}
+    dialog::backdrop{background:#11213380}
+    .drawer{height:100%;display:flex;flex-direction:column;min-height:0}
+    .drawer-head{padding:20px 23px 16px;background:#fff;border-bottom:1px solid var(--line)}
+    .drawer-bar{display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .drawer-tag{font-size:10px;font-weight:800;color:var(--brand-dark);text-transform:uppercase;letter-spacing:.08em}
+    .close{width:31px;height:31px;background:#fff;border:1px solid var(--line);border-radius:8px;color:#56687c;font-size:19px}
+    .drawer h2{font-size:19px;letter-spacing:-.035em;line-height:1.32;margin:14px 0 9px}
+    .drawer-meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}
+    .meta-chip{font-size:10px;padding:5px 8px;border:1px solid var(--line);border-radius:7px;background:#f8fafb;color:#536479}
+    .drawer-body{flex:1;overflow:auto;padding:20px 23px}
+    .drawer-body label{display:block;font-weight:750;font-size:11px;margin:0 0 9px}
+    .edit-text{resize:vertical;display:block;width:100%;min-height:220px;line-height:1.75;font-size:13px;color:#27384b;border:1px solid #dfe6ec;border-radius:10px;padding:15px;background:#fcfdfd;outline:0}
+    .edit-text:focus{border-color:var(--brand);background:#fff;box-shadow:0 0 0 3px var(--brand-pale)}
+    .helper{font-size:10.5px;color:#8190a2;line-height:1.6;margin-top:10px}
+    .warning{margin-top:17px;border:1px solid #f1ddc3;background:#fffaf3;padding:12px 13px;border-radius:10px;color:#835915;font-size:11px;line-height:1.6}
+    .warning strong{display:block;margin-bottom:4px}
+    .drawer-foot{border-top:1px solid var(--line);padding:14px 22px;display:flex;justify-content:flex-end;gap:8px;align-items:center;background:#fff;flex-wrap:wrap}
+    .btn{min-height:39px;padding:0 14px;border-radius:9px;border:1px solid #dfe6ec;background:#fff;color:#54667b;font-weight:750;font-size:11px}
+    .btn:hover{background:#f7f9fa}
+    .btn.primary{background:var(--brand);border-color:var(--brand);color:#1c3302}
+    .btn.primary:hover{background:#84af19}
+    .copy-status{color:var(--brand-dark);font-weight:750;font-size:11px;margin-right:auto}
+    .helpdialog{margin:auto;inset:0;width:min(520px,calc(100vw - 24px));height:auto;max-height:calc(100vh - 24px);border-radius:16px;border:1px solid var(--line);box-shadow:0 20px 60px #14243a40;padding:22px}
+    .helpdialog h2{margin:0 0 10px;font-size:19px}
+    .helpdialog p,.helpdialog li{font-size:12px;line-height:1.75;color:#53657a}
+    .helpdialog ul{padding-left:18px}
+    .helpdialog .btn{margin-top:12px}
+    @media(max-width:1000px){.workspace{grid-template-columns:minmax(220px,.64fr) minmax(0,1.45fr)}.tpl{min-height:140px}.top-link{padding:8px}}
+    @media(max-width:790px){.workspace{grid-template-columns:1fr}.filters{position:static}.level-list{display:flex;flex-direction:row;flex-wrap:wrap}.filter{width:auto;flex:1 1 auto}.intro{margin-bottom:15px}}
+    @media(max-width:560px){.wrap{padding:0 15px}.topbar{height:auto}.topbar .wrap{padding-top:13px;padding-bottom:13px;flex-wrap:wrap}.top-actions{margin-left:50px}.intro h2{font-size:20px}.totals{display:none}.list{grid-template-columns:1fr}.tpl{min-height:110px}.drawer-head,.drawer-body{padding:16px}.drawer-foot{padding:12px}.toolbar{align-items:stretch}.search{max-width:none}.page-summary{width:100%;text-align:center}.pagination{justify-content:center}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <div class="identity">
+        <span class="logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></span>
+        <div><div class="eyebrow">ZNALOSTKA / NÁSTROJE</div><h1>Šablony zápisů do ZIS</h1></div>
+      </div>
+      <div class="top-actions"><a class="top-link" href="../dopisy/">Dopisy</a><a class="top-link" href="../../sablony/">E-mailové šablony</a><button type="button" id="helpBtn" class="help" aria-label="Nápověda" title="Nápověda">?</button></div>
+    </div>
+  </header>
+  <main class="wrap main">
+    <div class="intro">
+      <div><div class="kicker">Pracovní pomůcka</div><h2>Katalog pracovních zápisů</h2><p>Vyberte hladinu, najděte odpovídající zápis a upravte jej pro konkrétní případ.</p></div>
+      <div class="totals"><strong id="totalCount">20</strong>připravených šablon</div>
+    </div>
+    <div class="workspace">
+      <aside class="filters" aria-label="Filtrování podle hladin ZIS">
+        <div class="filter-head"><strong>Kategorie v ZIS</strong><button type="button" class="reset" id="resetFilters">Resetovat filtry</button></div>
+        <div class="level-label">Hladina 1</div><div id="level1" class="level-list"></div>
+        <div id="level2Section" hidden><hr class="side-divider"><div class="level-label">Hladina 2</div><div id="level2" class="level-list"></div></div>
+        <hr class="side-divider">
+        <div class="sidebar-note"><strong>Před vložením do ZIS</strong><p>Upravte identifikaci odběrného místa a údaje podle skutečného případu. Před kopírováním zkontrolujte také řešitele, stav a aktuálnost použitého postupu.</p></div>
+      </aside>
+      <section class="catalog" aria-labelledby="catalogTitle">
+        <div class="toolbar"><h2 class="catalog-title" id="catalogTitle">Všechny zápisy</h2>
+          <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><input type="search" id="search" placeholder="Hledat v názvu nebo textu…" autocomplete="off" aria-label="Vyhledat zápis"><kbd>Ctrl K</kbd></label>
+        </div>
+        <div class="results"><span id="resultCount" role="status" aria-live="polite">Načítám šablony…</span><span id="scopeText">Úkoly zákaznické péče</span></div>
+        <div class="list" id="cards"></div>
+        <nav class="pagination" id="pagination" aria-label="Stránkování zápisů" hidden><span class="page-summary" id="pageSummary"></span><div class="pages" id="pageNumbers"></div></nav>
+      </section>
+    </div>
+  </main>
+  <footer><div class="wrap"><span>Znalostka · Šablony zápisů do ZIS</span><span>Údaje se neukládají na server. Před použitím vždy zkontrolujte jejich správnost.</span></div></footer>
+
+  <dialog id="detail" aria-labelledby="detailName">
+    <div class="drawer">
+      <div class="drawer-head"><div class="drawer-bar"><span class="drawer-tag">NÁHLED ZÁPISU DO ZIS</span><button type="button" id="closeDetail" class="close" aria-label="Zavřít náhled">×</button></div>
+        <h2 id="detailName"></h2><div id="detailMeta" class="drawer-meta"></div></div>
+      <div class="drawer-body">
+        <label for="editText">Text zápisu – lze upravit</label>
+        <textarea class="edit-text" id="editText" spellcheck="true"></textarea>
+        <p class="helper">Doplňte EAN / EIC, aktuální údaje a případné částky. Úpravy jsou jen v tomto náhledu a nezasahují do zdrojové šablony.</p>
+        <div id="dataWarning" class="warning" hidden></div>
+      </div>
+      <div class="drawer-foot"><span class="copy-status" id="copyStatus" role="status" aria-live="polite"></span>
+        <button type="button" class="btn" id="resetText">Obnovit původní text</button>
+        <button type="button" class="btn" id="dismissDetail">Zavřít</button>
+        <button type="button" class="btn primary" id="copyText">Kopírovat text</button></div>
+    </div>
+  </dialog>
+
+  <dialog class="helpdialog" id="helpDialog" aria-labelledby="helpTitle">
+    <h2 id="helpTitle">Jak používat šablony zápisů</h2>
+    <p>Vyberte hlavní hladinu a podle potřeby podkategorii úkolu v ZIS. V pravé části můžete vyhledávat podle názvu i textu a procházet výsledky po osmi položkách.</p>
+    <ul>
+      <li>Kliknutím na šablonu otevřete její kompletní text a původně uvedeného řešitele a stav.</li>
+      <li>Text upravte podle konkrétního případu a poté použijte <strong>Kopírovat text</strong>.</li>
+      <li>Klávesová zkratka <strong>Ctrl+K</strong> otevře vyhledávání; <strong>Esc</strong> zavře náhled.</li>
+      <li>Jestliže upozornění označuje původní metadata nebo postup k ověření, nepřebírejte je bez kontroly aktuálních pravidel.</li>
+    </ul>
+    <p>Veřejná stránka nepředstavuje zabezpečené úložiště zákaznických údajů. Neponechávejte zde citlivé informace.</p>
+    <button class="btn primary" id="closeHelp" type="button">Rozumím</button>
+  </dialog>
+
+  <script>
+    "use strict";
+    const sourceData = {
+      "ZAEVIDOVÁNÍ TELEFONÍHO ČÍSLA": { 
+    text: "EAN/ EIC - Zákazník žádá o zaevidování nového telefoního čísla. Původní číslo xxxxxxx a nové telefoní číslo xxxxx. V ZIS provedena změna. Zákazník informován emailem.",
+    "HLADINA 1": "SMLOUVA",
+    "HLADINA 2": "ZMĚNA SMLUVNÍCH ÚDAJŮ",
+    "ŘEŠITEL": "JÁ",
+    "STAV": "UKONČENÍ RELACE",
+  },
+  "ZAEVIDOVÁNÍ EMAILOVÉ ADRESY": { 
+    text: "EAN/ EIC - Zákazník žádá o zaevidování nového emailu. Původní xxxxxxx a nový xxxxx. V ZIS provedena změna. Zákazník informován emailem.",
+    "HLADINA 1": "SMLOUVA",
+    "HLADINA 2": "ZMĚNA SMLUVNÍCH ÚDAJŮ",
+    "ŘEŠITEL": "JÁ",
+    "STAV": "UKONČENÍ RELACE",
+  },
+  "ZASÍLÁNÍ INFORMATIVNÍ SMS O PŘIJATÉ PLATBĚ ZÁKAZNÍKOVI": { 
+    text: "EAN/ EIC - U zákazníka bylo zrušeno zasílání SMS, v ZIS nastaveno. Zákazník informován na",
+    "HLADINA 1": "SMLOUVA",
+    "HLADINA 2": "ZMĚNA SMLUVNÍCH ÚDAJŮ",
+    "ŘEŠITEL": "UKONČENÍ RELACE",
+    "STAV": "JÁ"
+  },
+  "ZMĚNA BÚ": { 
+    text: "EAN/ EIC - Zákazník požaduje změnu BÚ pro zasílání přeplatků. BÚ v ZISU zaevidováno na OP a změněno na ZU. ",
+    "HLADINA 1": "SMLOUVA",
+    "HLADINA 2": "ZMĚNA SMLUVNÍCH ÚDAJŮ",
+    "ŘEŠITEL": "UKONČENÍ RELACE",
+    "STAV": "JÁ"
+  },
+  "ZMĚNA ZPŮSOBU HRAZENÍ - SIPO,TP,INKASO": { 
+    text: "EAN/ EIC - Zákazník požaduje o změnu způsobu hrazení z převodu na SIPO. Nastaveno na OP a ZU. ",
+    "HLADINA 1": "SMLOUVA",
+    "HLADINA 2": "ZMĚNA SMLUVNÍCH ÚDAJŮ",
+    "ŘEŠITEL": "UKONČENÍ RELACE",
+    "STAV": "JÁ"
+  },
+  "ZMĚNA TYPU ZASÍLÁNÍ DOKLADŮ": { 
+    text: "EAN/ EIC - Zákazník si přeje nastavit zasílání dokumentů na na email místo tisku. V ZIS nastaveno. Zákazník informován emailem.",
+    "HLADINA 1": "SMLOUVA",
+    "HLADINA 2": "ZMĚNA SMLUVNÍCH ÚDAJŮ",
+    "ŘEŠITEL": "UKONČENÍ RELACE",
+    "STAV": "JÁ"
+  },
+  "ZMĚNA VÝŠE ZÁLOH - E-MAIL": { 
+    text: "EAN/ EIC - Změna výše záloh od xx z xxxx Kč na xxx Kč. PK upraven a zaslán ze ZIS na emailem",
+    "HLADINA 1": "FAKTURACE",
+    "HLADINA 2": "ZÁLOHY",
+    "ŘEŠITEL": "UKONČENÍ RELACE",
+    "STAV": "JÁ"
+  },
+   "ZMĚNA VÝŠE ZÁLOH NAVÝŠENÍ DLE  § 11 odst. 6  - E-MAIL": { 
+    text: "EAN/ EIC - Změna výše záloh od xx z xxxx Kč na xxx Kč. PK upraven a zaslán ze ZIS na emailem. Zákazník souhlasí s navýšením dle  § 11 odst. 6",
+    "HLADINA 1": "FAKTURACE",
+    "HLADINA 2": "ZÁLOHY",
+    "ŘEŠITEL": "UKONČENÍ RELACE",
+    "STAV": "JÁ"
+  },
+    "ZMĚNA VÝŠE ZÁLOH NAVÝŠENÍ DLE  § 11 odst. 6  - TISK": { 
+    text: "EAN/ EIC - Změna výše záloh od xx z xxxx Kč na xxx Kč. PK upraven a zaslán ze ZISU korespondečně. Zákazník souhlasí s navýšením dle  § 11 odst. 6",
+    "HLADINA 1": "FAKTURACE",
+    "HLADINA 2": "ZÁLOHY",
+    "ŘEŠITEL": "UKONČENÍ RELACE",
+    "STAV": "JÁ"
+  },
+  "ZMĚNA VÝŠE ZÁLOH - TISK": { 
+    text: "EAN/ EIC - Změna výše záloh od xx z xxxx Kč na xxx Kč. PK upraven a zaslán ze ZISU korespondečně.",
+    "HLADINA 1": "FAKTURACE",
+    "HLADINA 2": "ZÁLOHY",
+    "ŘEŠITEL": "UKONČENÍ RELACE",
+    "STAV": "JÁ"
+  },
+  "ZMĚNA ZÁLOH: čtvrtletní/půlroční/roční frekvenci": { 
+    text: "EAN/ EIC - Změna frekvence PK od xx z měsíční xxxx Kč na čtvrtletní zálohy – výše xxx Kč. PK upraven a zaslán ze ZIS na email:",
+    "HLADINA 1": "FAKTURACE",
+    "HLADINA 2": "ZÁLOHY",
+    "ŘEŠITEL": "UKONČENÍ RELACE",
+    "STAV": "JÁ"
+  },
+  "ZALOŽENÍ ZÁKAZNICKÉHO PORTÁLU": { 
+    text: "EAN/ EIC - Zákazník požaduje založit zákaznický portál. Založeno, odkaz poslán na e-mail",
+    "HLADINA 1": "SMLOUVA",
+    "HLADINA 2": "ZÁKAZNICKÝ PORTÁL",
+    "ŘEŠITEL": "UKONČENÍ RELACE",
+    "STAV": "JÁ"
+  },
+  "ZÁKAZNICKÝ PORTÁL – ZMĚNA HESLA": { 
+    text: "EAN/ EIC - Zákazník požaduje vygenerování hesla pro zákaznický portál. Sděleno, že je potřeba na portále kliknout na zapomenuté heslo",
+    "HLADINA 1": "SMLOUVA",
+    "HLADINA 2": "ZÁKAZNICKÝ PORTÁL",
+    "ŘEŠITEL": "UKONČENÍ RELACE",
+    "STAV": "JÁ"
+  },
+  "DOTAZ NA FAKTURU - kdy bude?": { 
+    text: "EAN/ EIC - Dotaz na vystavení FA sděleno, že od odečtů, které zjistí na PDS do 14 dní až 3 týdnů bude FA vystavena, poproseno o vyčkání",
+    "HLADINA 1": "FAKTURACE",
+    "HLADINA 2": "FAKTURY",
+    "ŘEŠITEL": "UKONČENÍ RELACE",
+    "STAV": "JÁ"
+  },
+  "DOTAZ NA SMLOUVU - do kdy má smlouvu?": { 
+    text: "EAN/ EIC - Dotaz na smlouvu - produkt XXX - do xxxxx. Poté přechází na produkt XXXX . Sděleno, že datum prolongace XXX, a k tomuto datumu bychom eventuělne akceptovali výpověď. ",
+    "HLADINA 1": "SMLOUVA",
+    "HLADINA 2": "DOTAZ NA SMLOUVU/NABÍDKU",
+    "ŘEŠITEL": "UKONČENÍ RELACE",
+    "STAV": "JÁ"
+  },
+  "DOTAZ NA SMLOUVU - jaké má ceny?": { 
+    text: "EAN/ EIC - Dotaz na ceny sděleny ceny dle ceníku XXXX.  ",
+    "HLADINA 1": "SMLOUVA",
+    "HLADINA 2": "DOTAZ NA SMLOUVU/NABÍDKU",
+    "ŘEŠITEL": "UKONČENÍ RELACE",
+    "STAV": "JÁ"
+  },
+  "VÝPOČET SPOT (výpočet)": { 
+    text: "EAN/ EIC - Zákazník chtěl výpočet SPOT - poslána šablona na výpočet SPOTU. ",
+    "HLADINA 1": "FAKTURACE",
+    "HLADINA 2": "FAKTURY",
+    "ŘEŠITEL": "UKONČENÍ RELACE",
+    "STAV": "JÁ"
+  },
+  "VÝPOČET SPOT (zpoždění dat)": { 
+    text: "EAN/ EIC - Zákazník s dotazem proč není vystavena FA, sděleno, že má produkt SPOT, ke kterému máme data vždy po 10-15 dni následujícího měsíce, poproseno o strpení.  ",
+    "HLADINA 1": "FAKTURACE",
+    "HLADINA 2": "FAKTURY",
+    "ŘEŠITEL": "UKONČENÍ RELACE",
+    "STAV": "JÁ"
+  },
+  "DOTAZ NA UPOMÍNKU - zpětné hrazení": { 
+    text: "EAN/ EIC - Zákazník s dotazem, za co měl vystavenou upomínku sděleno, že nehradí dle PK a dochází ke zpětnému hrazení, sděleno, kolik má douhradit a upravit si TP.   ",
+    "HLADINA 1": "PLATBY A UPOMÍNÁNÍ",
+    "HLADINA 2": "UPOMÍNÁNÍ",
+    "ŘEŠITEL": "UKONČENÍ RELACE",
+    "STAV": "JÁ"
+  },
+  "SPLÁTKOVÝ KALENDÁŘ - DOTAZ": { 
+    text: "EAN/ EIC - Zákazník s dotazem, na SPK vysvětleno, že je potřeba uhradit 1/3 dlužné FA ve výši XXXX. Poté si zavolat s potvrzením, že proběhla úhrada s zažádá se o SPK.    ",
+    "HLADINA 1": "PLATBY A UPOMÍNÁNÍ",
+    "HLADINA 2": "SPLÁTKOVÝ KALENDÁŘ, ODKLAD SPLATNOSTI",
+    "ŘEŠITEL": "UKONČENÍ RELACE",
+    "STAV": "JÁ"
+  },
+};
+    const $=id=>document.getElementById(id);
+    const items=Object.entries(sourceData).map(([name,d],id)=>({
+      id,name,text:String(d.text||""),level1:d["HLADINA 1"]||"Ostatní",level2:d["HLADINA 2"]||"",assignee:d["ŘEŠITEL"]||"",status:d["STAV"]||""
+    }));
+    const state={level1:"all",level2:"all",query:"",page:1,pageSize:8,selected:null};
+    const icon='<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>';
+    const fold=s=>String(s).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLocaleLowerCase("cs-CZ");
+    const unique=(arr)=>[...new Set(arr)].sort((a,b)=>a.localeCompare(b,"cs"));
+    function filtered(){
+      const needle=fold(state.query.trim());
+      return items.filter(i=>(state.level1==="all"||i.level1===state.level1)
+        &&(state.level2==="all"||i.level2===state.level2)
+        &&(!needle||fold([i.name,i.text,i.level1,i.level2].join(" ")).includes(needle)))
+        .sort((a,b)=>a.name.localeCompare(b.name,"cs"));
+    }
+    function filterButton(name,count,active,onClick){
+      const btn=document.createElement("button");btn.type="button";btn.className="filter"+(active?" active":"");btn.setAttribute("aria-pressed",String(active));
+      const txt=document.createElement("span");txt.textContent=name;const num=document.createElement("small");num.textContent=String(count);
+      btn.append(txt,num);btn.addEventListener("click",onClick);return btn;
+    }
+    function renderFilters(){
+      const level1=$("level1");level1.replaceChildren();
+      level1.append(filterButton("Všechny",items.length,state.level1==="all",()=>{state.level1="all";state.level2="all";state.page=1;render();}));
+      for(const lvl of unique(items.map(i=>i.level1))){
+        level1.append(filterButton(lvl,items.filter(i=>i.level1===lvl).length,state.level1===lvl,()=>{state.level1=lvl;state.level2="all";state.page=1;render();}));
+      }
+      const subSection=$("level2Section");subSection.hidden=state.level1==="all";
+      const level2=$("level2");level2.replaceChildren();
+      if(!subSection.hidden){
+        const subset=items.filter(i=>i.level1===state.level1);
+        level2.append(filterButton("Vše v kategorii",subset.length,state.level2==="all",()=>{state.level2="all";state.page=1;render();}));
+        for(const name of unique(subset.map(i=>i.level2).filter(Boolean))){
+          level2.append(filterButton(name,subset.filter(i=>i.level2===name).length,state.level2===name,()=>{state.level2=name;state.page=1;render();}));
+        }
+      }
+    }
+    function makeCard(item){
+      const button=document.createElement("button");button.type="button";button.className="tpl";
+      button.setAttribute("aria-label","Otevřít zápis: "+item.name);
+      const head=document.createElement("div");head.className="tpl-top";
+      const glyph=document.createElement("span");glyph.className="icon";glyph.innerHTML=icon;
+      const title=document.createElement("span");title.className="tpl-name";title.textContent=item.name;head.append(glyph,title);
+      const preview=document.createElement("span");preview.className="tpl-desc";preview.textContent=item.text;
+      const bottom=document.createElement("span");bottom.className="tpl-bottom";
+      const tag=document.createElement("span");tag.className="type-tag";tag.textContent=item.level2||item.level1;
+      const arrow=document.createElement("span");arrow.className="chevron";arrow.textContent="›";arrow.setAttribute("aria-hidden","true");
+      bottom.append(tag,arrow);button.append(head,preview,bottom);
+      button.addEventListener("click",()=>openDetail(item));return button;
+    }
+    function renderPages(count){
+      const total=Math.ceil(count/state.pageSize);
+      const nav=$("pagination");nav.hidden=total<=1;
+      if(total<=1)return;
+      $("pageSummary").textContent=((state.page-1)*state.pageSize+1)+"–"+Math.min(state.page*state.pageSize,count)+" z "+count+" položek";
+      const pages=$("pageNumbers");pages.replaceChildren();
+      const button=(txt,page,disabled,current,arrow)=>{
+        const b=document.createElement("button");b.className="page"+(arrow?" arrow":"");b.type="button";b.textContent=txt;
+        b.disabled=!!disabled;b.setAttribute("aria-label",arrow?(page<state.page?"Předchozí stránka":"Další stránka"):"Stránka "+page);
+        if(current)b.setAttribute("aria-current","page");
+        b.addEventListener("click",()=>{state.page=page;render();});
+        return b;
+      };
+      pages.append(button("‹",state.page-1,state.page===1,false,true));
+      for(let p=1;p<=total;p++)pages.append(button(String(p),p,false,p===state.page,false));
+      pages.append(button("›",state.page+1,state.page===total,false,true));
+    }
+    function render(){
+      renderFilters();
+      const results=filtered();
+      const pages=Math.max(1,Math.ceil(results.length/state.pageSize));
+      state.page=Math.min(Math.max(1,state.page),pages);
+      const grid=$("cards");grid.replaceChildren();
+      if(results.length===0){
+        const empty=document.createElement("div");empty.className="empty";
+        const strong=document.createElement("strong");strong.textContent="Nic nenalezeno";
+        const small=document.createElement("span");small.textContent="Upravte hledání nebo obnovte filtry.";
+        empty.append(strong,small);grid.append(empty);
+      }else results.slice((state.page-1)*state.pageSize,state.page*state.pageSize).forEach(i=>grid.append(makeCard(i)));
+      $("resultCount").textContent=results.length+" "+(results.length===1?"šablona":"šablon")+" odpovídá zvolenému výběru";
+      $("catalogTitle").textContent=state.level2!=="all"?state.level2:(state.level1!=="all"?state.level1:"Všechny zápisy");
+      $("scopeText").textContent="Strana "+state.page+" z "+pages;
+      $("totalCount").textContent=String(items.length);
+      renderPages(results.length);
+    }
+    function addMeta(label,value,container){
+      const chip=document.createElement("span");chip.className="meta-chip";chip.textContent=label+": "+(value||"Neuvedeno");container.append(chip);
+    }
+    function openDetail(item){
+      state.selected=item;$("detailName").textContent=item.name;$("editText").value=item.text;$("copyStatus").textContent="";
+      const meta=$("detailMeta");meta.replaceChildren();
+      addMeta("Hladina 1",item.level1,meta);
+      addMeta("Hladina 2",item.level2,meta);
+      addMeta("Řešitel",item.assignee,meta);
+      addMeta("Stav",item.status,meta);
+      const concerns=[];
+      if(item.assignee==="UKONČENÍ RELACE"&&item.status==="JÁ")concerns.push("Ve zdrojovém kódu mohou být hodnoty Řešitel a Stav prohozené. Ověřte nastavení přímo v ZIS.");
+      if(/SPLÁTKOVÝ KALENDÁŘ - DOTAZ/i.test(item.name))concerns.push("Tento původní text uvádí podmínku úhrady 1/3 před posouzením SPK. Před použitím ověřte, zda postup stále platí.");
+      if(/ZASÍLÁNÍ INFORMATIVNÍ SMS/i.test(item.name))concerns.push("Původní text zápisu končí nedokončenou větou. Doplňte ji podle případu.");
+      const warning=$("dataWarning");warning.hidden=concerns.length===0;
+      warning.replaceChildren();
+      if(concerns.length){const strong=document.createElement("strong");strong.textContent="Pozor – ověřit původní podklady";warning.append(strong);concerns.forEach(s=>{const p=document.createElement("div");p.textContent=s;warning.append(p);});}
+      $("detail").showModal();
+    }
+    function closeDetail(){if($("detail").open)$("detail").close();state.selected=null;}
+    async function copyText(){
+      const value=$("editText").value;if(!value)return;
+      let ok=false;
+      try{if(navigator.clipboard&&navigator.clipboard.writeText){await navigator.clipboard.writeText(value);ok=true;}}catch{}
+      if(!ok){
+        try{const t=$("editText");t.focus();t.select();ok=document.execCommand("copy")===true;}catch{}
+      }
+      $("copyStatus").textContent=ok?"Text byl zkopírován.":"Zkopírujte označený text klávesami Ctrl+C.";
+    }
+    $("search").addEventListener("input",e=>{state.query=e.target.value;state.page=1;render();});
+    $("resetFilters").addEventListener("click",()=>{state.query="";state.level1="all";state.level2="all";state.page=1;$("search").value="";render();});
+    $("closeDetail").addEventListener("click",closeDetail);
+    $("dismissDetail").addEventListener("click",closeDetail);
+    $("resetText").addEventListener("click",()=>{if(state.selected){$("editText").value=state.selected.text;$("copyStatus").textContent="Původní text obnoven."; }});
+    $("editText").addEventListener("input",()=>{$("copyStatus").textContent="";});
+    $("copyText").addEventListener("click",copyText);
+    $("helpBtn").addEventListener("click",()=>$("helpDialog").showModal());
+    $("closeHelp").addEventListener("click",()=>$("helpDialog").close());
+    document.addEventListener("keydown",e=>{
+      const typing=document.activeElement&&(/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)||document.activeElement.isContentEditable);
+      if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="k"){e.preventDefault();if($("detail").open)closeDetail();$("search").focus();}
+      else if(e.key==="/"&&!typing&&!$("detail").open&&!$("helpDialog").open){e.preventDefault();$("search").focus();}
+      else if((e.ctrlKey||e.metaKey)&&e.key==="Enter"&&$("detail").open){e.preventDefault();copyText();}
+    });
+    render();
+  </script>
+</body>
+</html>
