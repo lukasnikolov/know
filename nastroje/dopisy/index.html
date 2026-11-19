@@ -158,6 +158,59 @@
     @media(max-width:760px){.rules-overview{flex-wrap:wrap}.rules-toggle{margin:0 0 0 47px}.rules-steps{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.heading{margin-bottom:13px}.summary{display:none}}
     @media(max-width:520px){.topbar .shell{gap:10px}.brand-block h1{font-size:18px}.rules-overview{padding:12px}.rules-details{padding:12px}.rules-shortcuts{gap:7px}.rules-shortcuts span+span:before{margin-right:7px}.toolbar{gap:11px}.tabs{width:100%}.tab{font-size:11px}.tab .count{padding:2px 5px}main.shell{padding-top:19px}}
   
+
+    /* Dvousloupcové rozhraní: stálá pravidla vlevo a stránkovaný katalog vpravo */
+    .shell{max-width:1430px}
+    main.shell{padding-top:21px;padding-bottom:42px}
+    .letter-workspace{display:grid;grid-template-columns:minmax(338px,.9fr) minmax(0,1.65fr);align-items:start;gap:20px}
+    .rules-sidebar,.letters-catalog{min-width:0}
+    .print-rules{margin:0;border:1px solid var(--line);border-radius:13px;box-shadow:0 5px 18px #162d3910;overflow:hidden}
+    .rules-overview{padding:17px 17px 14px;align-items:flex-start;gap:11px;border-bottom:1px solid var(--line);background:#fff}
+    .rules-symbol{width:35px;height:35px}
+    .rules-heading{gap:7px;margin-bottom:6px}
+    .rules-heading h3{font-size:15px}
+    .rules-date{font-size:9.5px}
+    .rules-description p{font-size:11.5px;line-height:1.65}
+    .rules-details,.rules-details[hidden]{display:block!important;padding:15px}
+    .rules-layout{display:block}
+    .rules-process h4,.rules-note h4{font-size:12px;margin:0 0 10px}
+    .rules-steps{display:grid;grid-template-columns:1fr;gap:6px}
+    .rules-steps li{padding:7px 8px;font-size:11.25px;line-height:1.53;border-color:#eff2f5;background:#fbfcfd}
+    .rules-steps li:before{flex-basis:18px;width:18px;height:18px;line-height:18px;font-size:9.5px}
+    .rules-side{margin-top:15px;gap:9px}
+    .rules-note{padding:12px 13px}
+    .rules-note li,.rules-note p{font-size:11.25px;line-height:1.6}
+    .rules-exception{border-color:#f1e0ca;background:#fffaf4}
+    .letters-catalog{background:#fff}
+    .letters-catalog .heading{margin:0 0 15px;align-items:center}
+    .letters-catalog .heading h2{font-size:22px;line-height:1.3;margin:5px 0}
+    .letters-catalog .heading p{font-size:11.5px}
+    .letters-catalog .section-kicker{font-size:9.5px}
+    .letters-catalog .toolbar{gap:10px;align-items:center;flex-wrap:wrap}
+    .letters-catalog .tabs{gap:7px}
+    .letters-catalog .tab{font-size:11.3px;padding:9px 11px}
+    .letters-catalog .search{width:100%;max-width:320px;flex:1 1 230px}
+    .letters-catalog .results-bar{min-height:46px}
+    .letters-catalog .grid{grid-template-columns:1fr;gap:7px}
+    .letters-catalog .doc{min-height:59px;padding:10px 12px;border:1px solid #e7ebf0;border-radius:9px;gap:10px}
+    .letters-catalog .doc-title{font-size:12px}
+    .letters-catalog .doc-subtitle{font-size:9.7px}
+    .letters-catalog .file-icon{width:31px;height:31px}
+    .letters-catalog .file-icon svg{width:16px;height:16px}
+    .pagination{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;margin-top:14px;border-top:1px solid var(--line);padding-top:14px}
+    .pagination[hidden]{display:none!important}
+    .pagination-meta{font-size:11px;color:#7a8999}
+    .pagination-actions,.page-numbers{display:flex;align-items:center;gap:5px}
+    .page-button{min-width:31px;height:31px;display:inline-grid;place-items:center;border:1px solid #e3e9ef;background:#fff;border-radius:7px;color:#53657a;font-size:11px;font-weight:750}
+    .page-button:hover:not(:disabled){border-color:var(--accent);color:var(--accent-dark);background:var(--accent-soft)}
+    .page-button[aria-current="page"]{background:var(--accent-soft);border-color:var(--accent-line);color:var(--accent-dark)}
+    .page-button:disabled{opacity:.36}
+    .page-arrow{font-size:19px;line-height:1}
+    .page-ellipsis{color:#8292a1;min-width:16px;text-align:center}
+    @media(max-width:1050px){.letter-workspace{grid-template-columns:minmax(300px,.85fr) minmax(0,1.35fr);gap:15px}.letters-catalog .heading h2{font-size:20px}.letters-catalog .search{max-width:none}}
+    @media(max-width:800px){.letter-workspace{grid-template-columns:minmax(0,1fr)}.rules-sidebar{order:1}.letters-catalog{order:2}.rules-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.rules-layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(230px,1fr);gap:14px}.rules-side{margin:0}}
+    @media(max-width:600px){.rules-layout{display:block}.rules-side{margin-top:14px}.rules-steps{grid-template-columns:1fr}.letters-catalog .heading h2{font-size:19px}.letters-catalog .toolbar{align-items:stretch}.letters-catalog .tabs{width:100%}.letters-catalog .search{max-width:none;flex:1 1 auto}.pagination{justify-content:center}.pagination-meta{width:100%;text-align:center}}
+  
   </style>
 </head>
 <body data-brand="epet">
@@ -177,26 +230,19 @@
     </div>
   </header>
   <main class="shell">
-    <section class="heading">
-      <div>
-        <div class="section-kicker">PRACOVNÍ POMŮCKA</div>
-        <h2>Dopisová korespondence</h2>
-        <p>Generátory a připravené vzory pro epet a Dobrou Energii. Vyhledejte dokument a otevřete jej v nové kartě.</p>
-      </div>
-      <div class="summary"><strong id="allCount">53</strong>podkladů celkem</div>
-    </section>
-
-    <section class="print-rules" aria-labelledby="printRulesTitle">
+    <div class="letter-workspace">
+      <aside class="rules-sidebar" aria-label="Pravidla pro tisk dopisů">
+        <section class="print-rules" aria-labelledby="printRulesTitle">
       <div class="rules-overview">
         <div class="rules-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M7 8V3h10v5M7 18H4V9h16v9h-3M7 14h10v7H7z"/><path d="M16 11h2"/></svg></div>
         <div class="rules-description">
           <div class="rules-heading"><h3 id="printRulesTitle">Pravidla pro tisk</h3><span class="rules-date">Postup od 1. 7. 2026</span></div>
           <p>Poštu k tisku již <strong>neposílejte na tisk@epet.cz</strong>. Standardně se nově zakládá úkol v ZIS.</p>
-          <div class="rules-shortcuts"><span>Úkol bez šablony</span><span>Pošta k odeslání</span><span>CCUSER</span><span>D+2</span></div>
+          
         </div>
-        <button id="rulesToggle" class="rules-toggle" type="button" aria-controls="rulesDetails" aria-expanded="false">Celý postup <svg class="rules-chevron" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+        
       </div>
-      <div class="rules-details" id="rulesDetails" hidden>
+      <div class="rules-details" id="rulesDetails">
         <div class="rules-layout">
           <section class="rules-process" aria-labelledby="rulesStepsHeading">
             <h4 id="rulesStepsHeading">Postup v ZIS</h4>
@@ -228,7 +274,17 @@
         </div>
       </div>
     </section>
-    <section class="toolbar" aria-label="Výběr typu dopisu">
+      </aside>
+      <section class="letters-catalog" aria-labelledby="catalogTitle">
+        <div class="heading">
+          <div>
+            <div class="section-kicker">DOPISOVÁ KORESPONDENCE</div>
+            <h2 id="catalogTitle">Generátory a šablony dopisů</h2>
+            <p>Vyberte kategorii, vyhledejte dokument a otevřete jej v nové kartě.</p>
+          </div>
+          <div class="summary"><strong id="allCount">53</strong>podkladů</div>
+        </div>
+        <section class="toolbar" aria-label="Výběr typu dopisu">
       <div class="tabs" role="tablist" aria-label="Kategorie dopisů">
         <button class="tab" id="genTab" role="tab" aria-selected="true" aria-controls="documents" type="button">Generátory dopisů <span class="count" id="genCount">18</span></button>
         <button class="tab" id="tplTab" role="tab" aria-selected="false" aria-controls="documents" type="button">Šablony dopisů <span class="count" id="tplCount">17</span></button>
@@ -239,12 +295,21 @@
         <kbd>/</kbd>
       </label>
     </section>
-    <div class="results-bar">
+        <div class="results-bar">
       <div class="label"><span class="dot" aria-hidden="true"></span><span id="resultsText" role="status" aria-live="polite">Načítám dokumenty…</span></div>
       <span id="contextText">Generátory se otevírají na Google Sites</span>
     </div>
-    <section class="grid" id="documents" role="tabpanel" aria-labelledby="genTab" aria-live="off"></section>
-    <div class="more-wrap"><button id="showMore" class="more" type="button" hidden>Zobrazit další dokumenty</button></div>
+        <section class="grid" id="documents" role="tabpanel" aria-labelledby="genTab"></section>
+        <nav class="pagination" id="pagination" aria-label="Stránkování dokumentů" hidden>
+          <span class="pagination-meta" id="pageStatus"></span>
+          <div class="pagination-actions">
+            <button type="button" class="page-button page-arrow" id="prevPage" aria-label="Předchozí stránka">‹</button>
+            <span class="page-numbers" id="pageNumbers"></span>
+            <button type="button" class="page-button page-arrow" id="nextPage" aria-label="Další stránka">›</button>
+          </div>
+        </nav>
+      </section>
+    </div>
   </main>
   <footer>
     <div class="shell"><span>Znalostka · Dopisy · epet &amp; Dobrá Energie</span><span>Externí dokumenty se otevírají v nové kartě. Před použitím ověřte správnost údajů a oprávnění k přístupu.</span></div>
@@ -266,7 +331,7 @@
     "use strict";
     const DATA={"generators":[{"name":"Aktualizace kontaktních údajů – generátor","url":"https://sites.google.com/view/znalostka/%C5%A1ablony/korespondence-ur%C4%8Den%C3%A1-k-tisku/gener%C3%A1tor-dopisu-aktualizace-kontaktn%C3%ADch-%C3%BAdaj%C5%AF","format":"web"},{"name":"Kopie faktury – generátor","url":"https://sites.google.com/view/znalostka/šablony/korespondence-ur%C4%8Den%C3%A1-k-tisku/generátor-dopisu-kopie-faktury","format":"web"},{"name":"Kopie platebního kalendáře – generátor","url":"https://sites.google.com/view/znalostka/šablony/korespondence-ur%C4%8Den%C3%A1-k-tisku/generátor-dopisu-kopie-platebního-kalendáře","format":"web"},{"name":"Kopie smlouvy – generátor","url":"https://sites.google.com/view/znalostka/šablony/korespondence-ur%C4%8Den%C3%A1-k-tisku/generátor-dopisu-kopie-smlouvy","format":"web"},{"name":"Neproběhlé SIPO – generátor","url":"https://sites.google.com/view/znalostka/šablony/korespondence-ur%C4%8Den%C3%A1-k-tisku/generátor-dopisu-neproběhlé-sipo-ověření-spojovacího-čísla","format":"web"},{"name":"Neuhrazené pohledávky – generátor","url":"https://sites.google.com/view/znalostka/šablony/korespondence-ur%C4%8Den%C3%A1-k-tisku/generátor-dopisu-neuhrazené-pohledávky","format":"web"},{"name":"Ověření úhrady záloh – generátor","url":"https://sites.google.com/view/znalostka/šablony/korespondence-ur%C4%8Den%C3%A1-k-tisku/generátor-dopisu-ověření-nastavení-způsobu-úhrady-záloh-přes-inkaso","format":"web"},{"name":"Plánovaná odstávka – generátor","url":"https://sites.google.com/view/znalostka/šablony/korespondence-ur%C4%8Den%C3%A1-k-tisku/generátor-dopisu-plánovaná-odstávka-dodávek-energií","format":"web"},{"name":"Doložení předávacího protokolu – generátor","url":"https://sites.google.com/view/znalostka/šablony/korespondence-ur%C4%8Den%C3%A1-k-tisku/generátor-dopisu-prosba-o-doložení-předávacího-protokolu","format":"web"},{"name":"Úhrada konečné faktury – generátor","url":"https://sites.google.com/view/znalostka/šablony/korespondence-ur%C4%8Den%C3%A1-k-tisku/generátor-dopisu-úhrada-konečné-faktury-dědické-řízení","format":"web"},{"name":"Výzva k úhradě – nezahájené dodávky","url":"https://sites.google.com/view/znalostka/šablony/korespondence-ur%C4%8Den%C3%A1-k-tisku/generátor-dopisu-výzva-k-úhradě-smluvní-pokuty-dodávky-nezahájeny","format":"web"},{"name":"Výzva k úhradě – předčasné ukončení","url":"https://sites.google.com/view/znalostka/šablony/korespondence-ur%C4%8Den%C3%A1-k-tisku/generátor-dopisu-výzva-k-úhradě-smluvní-pokuty-předčasně-ukončené-dodávky","format":"web"},{"name":"Změna měření B → C – generátor","url":"https://sites.google.com/view/znalostka/šablony/korespondence-ur%C4%8Den%C3%A1-k-tisku/generátor-dopisu-změna-měření-z-b-na-c","format":"web"},{"name":"Změna měření C → B – generátor","url":"https://sites.google.com/view/znalostka/šablony/korespondence-ur%C4%8Den%C3%A1-k-tisku/generátor-dopisu-změna-měření-z-c-na-b","format":"web"},{"name":"Změna příjemní – zaslání čp – generátor","url":"https://sites.google.com/view/znalostka/šablony/korespondence-ur%C4%8Den%C3%A1-k-tisku/generátor-dopisu-změna-příjemní-zaslání-čp","format":"web"},{"name":"Změna rezervovaného příkonu","url":"https://sites.google.com/view/znalostka/šablony/korespondence-ur%C4%8Den%C3%A1-k-tisku/generátor-dopisu-změna-rezervovaného-příkonu","format":"web"},{"name":"Změna trvalé adresy – generátor","url":"https://sites.google.com/view/znalostka/šablony/korespondence-ur%C4%8Den%C3%A1-k-tisku/generátor-dopisu-změna-trvalé-adresy","format":"web"},{"name":"Prázdný dopis","url":"https://sites.google.com/view/znalostka/%C5%A1ablony/korespondence-ur%C4%8Den%C3%A1-k-tisku/gener%C3%A1tor-dopisu-pr%C3%A1zdn%C3%BD-dopis","format":"web"}],"templates":[{"name":"Změna trvalé adresy","url":"https://docs.google.com/document/d/1wVScdusabeZaSwh2261Nw14tILZNOFYWC8cegzvHqgg/edit?usp=drive_link","format":"docx","brand":"epet"},{"name":"Kopie Faktury","url":"https://docs.google.com/document/d/1BiH9mS4SAYpDqMtOT8rNlKvbkavPES66k89yw-aS6Fs/edit?usp=drive_link","format":"docx","brand":"epet"},{"name":"Aktualizace kontaktních údajů","url":"https://docs.google.com/document/d/1wOa3jiMnBYnrWcJi4rKHSkybJ6h8iJ8sU3ADuDJc26g/edit?usp=drive_link","format":"docx","brand":"epet"},{"name":"Kopie platebního kalendáře","url":"https://docs.google.com/document/d/1JeSiFErcceyDmK-WhfI-Gtj4qCgpzeARt0uX5UPHJ1c/edit?usp=drive_link","format":"docx","brand":"epet"},{"name":"Výzva k úhradě smluvní pokuty předčasně ukončené dodávky","url":"https://docs.google.com/document/d/1vjCGPw4LKLtHL9ljY49FZj7sohrOpM3e7qz8lZNf6l0/edit?usp=drive_link","format":"docx","brand":"epet"},{"name":"Výzva k úhradě smluvní pokuty dodávky nezahájeny","url":"https://docs.google.com/document/d/1pbb7846KaCsTnpS5xO4FOCMz1Y7kkqxX-BM7FlHsbhs/edit?usp=drive_link","format":"docx","brand":"epet"},{"name":"Úhrada konečné faktury - dědické řízení","url":"https://docs.google.com/document/d/1j_DUjBUTlBqCZFGPv7uGgzJFV-p_UtFZEr_gYksr_uI/edit?usp=drive_link","format":"docx","brand":"epet"},{"name":"Prosba o doložení předávacího protokolu","url":"https://docs.google.com/document/d/1XEGAdepoGleX8JVyVSiaAHiyW1QHcUa3mxshFbe-ou4/edit?usp=drive_link","format":"docx","brand":"epet"},{"name":"Plánovaná odstávka dodávek energií","url":"https://docs.google.com/document/d/1WLH-eLtBTZgpQV4_s3bXmGvZ03uXWt0xLZ0Zrf5cVvc/edit?usp=drive_link","format":"docx","brand":"epet"},{"name":"Ověření nastavení způsobu úhrady záloh přes INKASO","url":"https://docs.google.com/document/d/1tDv0s9pZEOVcaQsVBXM4-pmH_E1obmiMgrHvWgNffoo/edit?usp=drive_link","format":"docx","brand":"epet"},{"name":"Neuhrazené pohledávky","url":"https://docs.google.com/document/d/1AlOVmTF7KX2XMAxs219ouNixq7BlLBmjhWTfBNFA0XI/edit?usp=drive_link","format":"docx","brand":"epet"},{"name":"Neproběhlé SIPO - ověření spojovacího čísla","url":"https://docs.google.com/document/d/1mXtkjWOZO0mcrb9PQCEMQJXRbLWTlwJ35V6AYQ42gXg/edit?usp=drive_link","format":"docx","brand":"epet"},{"name":"Kopie smlouvy","url":"https://docs.google.com/document/d/1HAx8-ZwuFo6UvXFSSj4GeX5G2opOlIK0FMs4wAZuEbE/edit?usp=drive_link","format":"docx","brand":"epet"},{"name":"Změna měření z B na C","url":"https://docs.google.com/document/d/1WZ-Z8oCZMLwipI4QRbn9Z93YMPWDQtcn643CRxz01j4/edit?usp=drive_link","format":"docx","brand":"epet"},{"name":"Změna měření z C na B","url":"https://docs.google.com/document/d/1qN_fuXQzTsqagzZsMg5dr4U1DflURMkFIFhwjuMNg_A/edit?usp=drive_link","format":"docx","brand":"epet"},{"name":"Změna příjemní - zaslání čp","url":"https://docs.google.com/document/d/1m3TeTUnV6qZAa6wnvKuQO0fa89ApTPcHSyyYEPKhNwE/edit?usp=drive_link","format":"docx","brand":"epet"},{"name":"Změna rezervovaného příkonu","url":"https://docs.google.com/document/d/1_g1EuPZKtWm3MK68RQE1UvVg4xtfbs1yTJ_RBw-yLeY/edit?usp=drive_link","format":"docx","brand":"epet"},{"name":"Změna trvalé adresy","url":"https://docs.google.com/document/d/1YQ7W8AoO7D7CbdOnHUVHvRMcHq7EYXws6xZb36HGQ14/edit?usp=drive_link","format":"docx","brand":"de"},{"name":"Rozpis splátek","url":"https://docs.google.com/document/d/1ESUU3lDqKQxq0OeEueCw2HW51sJW3DaJmsjeariEx7g/edit?usp=drive_link","format":"docx","brand":"de"},{"name":"Změna typu měření B na C","url":"https://docs.google.com/document/d/19FJIGURV4DEA3vjuLY8pPxLnDtP-HunLtidR4Q-_pJs/edit?usp=drive_link","format":"docx","brand":"de"},{"name":"Úhrada pohledávky v rámci DINHE","url":"https://docs.google.com/document/d/1vStj6zR0CwddCXBNCh7w-d4UYwTRm6rlwWVUnSx6Obg/edit?usp=drive_link","format":"docx","brand":"de"},{"name":"Plánovaná odstávka energií","url":"https://docs.google.com/document/d/1cjv2wTlF-OukJ7R1vdk7f9rLNU83CF8g9vzFyKDjkOQ/edit?usp=drive_link","format":"docx","brand":"de"},{"name":"Ověření nastavení způsobu úhrady záloh přes INKASO","url":"https://docs.google.com/document/d/1ZN7tF4TKxyP4RaGKyHm3wCrg-6uY-hFt4kg1B8GMj8Y/edit?usp=drive_link","format":"docx","brand":"de"},{"name":"Změna rezervovaného příkonu","url":"https://docs.google.com/document/d/1wkEDF_mJVOPhxATcQZWuHFmQPBTpoGSMW9fLHoW-bDg/edit?usp=drive_link","format":"docx","brand":"de"},{"name":"Změna typu měření C na B","url":"https://docs.google.com/document/d/1j0T0WsCSZAlqVKH2EaRb46_YbBAAEhPuC4L2kMtZr8s/edit?usp=drive_link","format":"docx","brand":"de"},{"name":"Změna příjmení – zaslání čestného prohlášení","url":"https://docs.google.com/document/d/1m5MGxWfevl2Grj3TRXLlhDVf7MoH2UtHGPH7swj-0zs/edit?usp=drive_link","format":"docx","brand":"de"},{"name":"Výzva k úhradě smluvní pokuty - předčasné ukončení","url":"https://docs.google.com/document/d/1FY4IxA4eN6nS6etri2huy9nPo5kpq4XXYRaSSPiuohM/edit?usp=drive_link","format":"docx","brand":"de"},{"name":"Výzva k úhradě smluvní pokuty - nezahájení dodávek","url":"https://docs.google.com/document/d/1-4Ze4uobyVfBGeXZT4GDXbBV9SNEaxo47Lkx3jKboTQ/edit?usp=drive_link","format":"docx","brand":"de"},{"name":"Prosba o doložení předávacího protokolu","url":"https://docs.google.com/document/d/1HC4-SKZSXOmR2MHo1ugitC-7E63qSFrXkxfVghuKtuw/edit?usp=drive_link","format":"docx","brand":"de"},{"name":"Kopie platebního kalendáře","url":"https://docs.google.com/document/d/18iN4Amnxlv977D8nMTVeUnSX1QrsxoqIECSBALIl3Z8/edit?usp=drive_link","format":"docx","brand":"de"},{"name":"Neproběhlé SIPO – ověření spojovacího čísla","url":"https://docs.google.com/document/d/1yQDQ27tfKNiA2pmlR-uOjYAr1LVJ6iVBgPPC7OoyC0s/edit?usp=drive_link","format":"docx","brand":"de"},{"name":"Neuhrazené pohledávky","url":"https://docs.google.com/document/d/1F8fwQEByt_9POCJhyZoBu-A56Y47R9oDT0ojf0Hatbo/edit?usp=drive_link","format":"docx","brand":"de"},{"name":"Aktualizace kontaktních údajů","url":"https://docs.google.com/document/d/11rnzub5vm7r3rmGktvCOcR85TSnHm2Kf9zESErinVQg/edit?usp=drive_link","format":"docx","brand":"de"},{"name":"Kopie smlouvy","url":"https://docs.google.com/document/d/1pTDlNDlF_HszfAtWV0WObpYpxYOvfBgNq5laC5sUI-0/edit?usp=drive_link","format":"docx","brand":"de"},{"name":"Kopie Faktury","url":"https://docs.google.com/document/d/1AcscEfly9m7px6NjxfMinq1KemwlgLswnI3LldJ6OFk/edit?usp=drive_link","format":"docx","brand":"de"}]};
     const byId=function(id){return document.getElementById(id);};
-    const state={category:"generators",brand:"epet",query:"",limit:12};
+    const state={category:"generators",brand:"epet",query:"",page:1,pageSize:8};
     const arrows='<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>';
     const icon='<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>';
     function fold(v){return String(v).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLocaleLowerCase("cs-CZ");}
@@ -293,51 +358,82 @@
       return card;
     }
     function render(){
-      const items=visibleItems();
-      const isGen=state.category==="generators";
+      const items=visibleItems(), isGen=state.category==="generators";
       byId("genTab").setAttribute("aria-selected",String(isGen));
       byId("tplTab").setAttribute("aria-selected",String(!isGen));
+      byId("genTab").tabIndex=isGen?0:-1;
+      byId("tplTab").tabIndex=isGen?-1:0;
       byId("documents").setAttribute("aria-labelledby",isGen?"genTab":"tplTab");
       byId("epetBtn").setAttribute("aria-pressed",String(state.brand==="epet"));
       byId("deBtn").setAttribute("aria-pressed",String(state.brand==="de"));
       document.body.setAttribute("data-brand",state.brand);
-      byId("tplCount").textContent=DATA.templates.filter(function(t){return t.brand===state.brand;}).length;
+      byId("tplCount").textContent=DATA.templates.filter(function(d){return d.brand===state.brand;}).length;
       byId("genCount").textContent=DATA.generators.length;
       byId("allCount").textContent=DATA.generators.length+DATA.templates.length;
       byId("resultsText").textContent=items.length+" "+(items.length===1?"položka":"položek")+(state.query?" odpovídá hledání":" v kategorii");
-      byId("contextText").textContent=isGen?"Generátory se otevírají na Google Sites":"Šablony pro "+(state.brand==="epet"?"epet":"Dobrou Energii");
+      byId("contextText").textContent=isGen?"Otevření na Google Sites":"Šablony pro "+(state.brand==="epet"?"epet":"Dobrou Energii");
+      const totalPages=Math.max(1,Math.ceil(items.length/state.pageSize));
+      state.page=Math.min(Math.max(1,state.page),totalPages);
+      const start=(state.page-1)*state.pageSize,end=Math.min(start+state.pageSize,items.length);
       const grid=byId("documents");grid.replaceChildren();
       if(items.length===0){
         const empty=document.createElement("div");empty.className="empty";
         const strong=document.createElement("strong");strong.textContent="Žádný odpovídající dokument";
         const p=document.createElement("p");p.textContent="Zkuste upravit hledaný výraz nebo přepnout značku.";
         empty.append(strong,p);grid.append(empty);
-      }else{items.slice(0,state.limit).forEach(function(d){grid.append(createCard(d));});}
-      const more=byId("showMore");more.hidden=items.length<=state.limit;
-      more.textContent="Zobrazit další ("+(items.length-state.limit)+")";
+      }else{
+        items.slice(start,end).forEach(function(d){grid.append(createCard(d));});
+      }
+      const nav=byId("pagination");
+      nav.hidden=totalPages<=1;
+      byId("pageStatus").textContent=items.length?((start+1)+"–"+end+" z "+items.length+" položek"):"";
+      byId("prevPage").disabled=state.page<=1;
+      byId("nextPage").disabled=state.page>=totalPages;
+      const numbers=byId("pageNumbers");numbers.replaceChildren();
+      function addPage(page){
+        const button=document.createElement("button");
+        button.className="page-button";button.type="button";
+        button.textContent=String(page);
+        button.setAttribute("aria-label","Stránka "+page);
+        if(page===state.page){button.setAttribute("aria-current","page");}
+        button.addEventListener("click",function(){state.page=page;render();});
+        numbers.append(button);
+      }
+      if(totalPages<=7){for(let p=1;p<=totalPages;p++)addPage(p);}
+      else{
+        const visible=new Set([1,totalPages,state.page-1,state.page,state.page+1].filter(p=>p>=1&&p<=totalPages));
+        const pages=[...visible].sort((a,b)=>a-b),previous={value:0};
+        pages.forEach(function(p){
+          if(p-previous.value>1){const ellipsis=document.createElement("span");ellipsis.className="page-ellipsis";ellipsis.textContent="…";numbers.append(ellipsis);}
+          addPage(p);previous.value=p;
+        });
+      }
     }
     function chooseCategory(category){
-      state.category=category;state.limit=12;render();
+      state.category=category;state.page=1;render();
     }
     byId("genTab").addEventListener("click",function(){chooseCategory("generators");});
     byId("tplTab").addEventListener("click",function(){chooseCategory("templates");});
-    byId("epetBtn").addEventListener("click",function(){state.brand="epet";state.limit=12;render();});
-    byId("deBtn").addEventListener("click",function(){state.brand="de";state.limit=12;render();});
-    byId("search").addEventListener("input",function(e){state.query=e.target.value;state.limit=12;render();});
-    byId("showMore").addEventListener("click",function(){state.limit+=12;render();});
+    byId("epetBtn").addEventListener("click",function(){state.brand="epet";state.page=1;render();});
+    byId("deBtn").addEventListener("click",function(){state.brand="de";state.page=1;render();});
+    byId("search").addEventListener("input",function(e){state.query=e.target.value;state.page=1;render();});
+    byId("prevPage").addEventListener("click",function(){if(state.page>1){state.page--;render();}});
+    byId("nextPage").addEventListener("click",function(){state.page++;render();});
+    for(const id of ["genTab","tplTab"]){
+      byId(id).addEventListener("keydown",function(e){
+        if(e.key!=="ArrowRight"&&e.key!=="ArrowLeft")return;
+        e.preventDefault();
+        const next=id==="genTab"?"tplTab":"genTab";
+        chooseCategory(next==="genTab"?"generators":"templates");
+        byId(next).focus();
+      });
+    }
     const dialog=byId("helpDialog");
     byId("helpBtn").addEventListener("click",function(){dialog.showModal();});
     byId("closeHelp").addEventListener("click",function(){dialog.close();});
     document.addEventListener("keydown",function(e){
       const t=document.activeElement;
       if(e.key==="/"&&!e.ctrlKey&&!e.altKey&&!e.metaKey&&!(t&&/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))){e.preventDefault();byId("search").focus();}
-    });
-    const rulesToggle=byId("rulesToggle"),rulesDetails=byId("rulesDetails");
-    rulesToggle.addEventListener("click",function(){
-      const expand=rulesToggle.getAttribute("aria-expanded")!=="true";
-      rulesToggle.setAttribute("aria-expanded",String(expand));
-      rulesDetails.hidden=!expand;
-      rulesToggle.firstChild.nodeValue=expand?"Skrýt postup ":"Celý postup ";
     });
     render();
   </script>
