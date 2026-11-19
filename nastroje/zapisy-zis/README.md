@@ -9,7 +9,8 @@ Samostatná, kompaktní aplikace pro pracovní zápisy zákaznické péče. Vych
 - Katalog **20 originálních záznamů**; hlavní hladiny: Smlouva (10), Fakturace (8), Platby a upomínání (2).
 - Hladina 1 a 2 vlevo, vyhledávání v názvu, textu a hladinách.
 - Dvě kompaktní karty vedle sebe (na užší obrazovce jedna), stránkování po osmi záznamech.
-- Náhled s původními metadaty **Řešitel**, **Stav**, možností dočasné úpravy textu a kopírováním.
+- **Kopírovat** přímo na každé kartě: jedním kliknutím zkopíruje původní text zápisu bez otevírání bočního náhledu a zobrazí potvrzení o úspěchu.
+- **Upravit** na kartě otevírá náhled s původními metadaty **Řešitel**, **Stav** a možností dočasné úpravy textu a kopírování. Pokud je schránka v prohlížeči zablokována, aplikace nabídne označený text k ručnímu kopírování.
 - Navigace z aplikace [Dopisy](../dopisy/). Původní samostatná aplikace [Šablony úkolů](../../sablony/ukoly/) nebyla měněna.
 - Žádné zákaznické hodnoty se neukládají do databáze ani do localStorage.
 
