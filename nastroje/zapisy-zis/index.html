@@ -119,6 +119,26 @@
     @media(max-width:790px){.workspace{grid-template-columns:1fr}.filters{position:static}.level-list{display:flex;flex-direction:row;flex-wrap:wrap}.filter{width:auto;flex:1 1 auto}.intro{margin-bottom:15px}}
     @media(max-width:560px){.wrap{padding:0 15px}.topbar{height:auto}.topbar .wrap{padding-top:13px;padding-bottom:13px;flex-wrap:wrap}.top-actions{margin-left:50px}.intro h2{font-size:20px}.totals{display:none}.list{grid-template-columns:1fr}.tpl{min-height:110px}.drawer-head,.drawer-body{padding:16px}.drawer-foot{padding:12px}.toolbar{align-items:stretch}.search{max-width:none}.page-summary{width:100%;text-align:center}.pagination{justify-content:center}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;scroll-behavior:auto!important}}
+
+    /* Akce přímo na kartě – bez nutnosti otevřít náhled */
+    .tpl{cursor:default;min-height:142px;gap:9px}
+    .tpl:hover{transform:none}
+    .tpl-top{align-items:center}
+    .tpl-name{margin:0;flex:1}
+    .tpl-desc{margin:0}
+    .tpl-bottom{gap:8px;flex-wrap:wrap}
+    .type-tag{flex:1;min-width:0}
+    .tpl-actions{display:flex;gap:6px;align-items:center;margin-left:auto}
+    .tpl-actions button{display:inline-flex;align-items:center;justify-content:center;min-height:31px;white-space:nowrap;font-size:10.5px;font-weight:800;border-radius:7px;padding:0 10px;transition:background .15s,border-color .15s}
+    .tpl-edit{border:1px solid var(--line);background:#fff;color:#64748b}
+    .tpl-edit:hover{border-color:var(--brand-border);color:var(--brand-dark);background:var(--brand-pale)}
+    .tpl-copy{border:1px solid var(--brand-border);background:var(--brand-pale);color:var(--brand-dark)}
+    .tpl-copy:hover{border-color:var(--brand);background:#e9f5d0}
+    .tpl-copy.copied{background:#eaf7e9;border-color:#bfe3bc;color:#337d36}
+    .tpl-caution{font-size:9.5px;line-height:1.45;color:#a06b1c;border-top:1px solid #f3e6d4;padding-top:5px}
+    @media(max-width:1000px){.tpl{min-height:158px}.tpl-bottom{align-items:flex-end}.tpl-actions{flex:0 0 auto}}
+    @media(max-width:560px){.tpl{min-height:120px}.tpl-actions button{min-height:34px}}
+
   </style>
 </head>
 <body>
@@ -177,7 +197,8 @@
     <h2 id="helpTitle">Jak používat šablony zápisů</h2>
     <p>Vyberte hlavní hladinu a podle potřeby podkategorii úkolu v ZIS. V pravé části můžete vyhledávat podle názvu i textu a procházet výsledky po osmi položkách.</p>
     <ul>
-      <li>Kliknutím na šablonu otevřete její kompletní text a původně uvedeného řešitele a stav.</li>
+      <li>Tlačítkem <strong>Kopírovat</strong> na kartě okamžitě zkopírujete původní text, aniž byste museli otevírat náhled.</li>
+      <li>Tlačítkem <strong>Upravit</strong> otevřete kompletní text, hladiny, původního řešitele a stav. Změny můžete následně zkopírovat přímo z náhledu.</li>
       <li>Text upravte podle konkrétního případu a poté použijte <strong>Kopírovat text</strong>.</li>
       <li>Klávesová zkratka <strong>Ctrl+K</strong> otevře vyhledávání; <strong>Esc</strong> zavře náhled.</li>
       <li>Jestliže upozornění označuje původní metadata nebo postup k ověření, nepřebírejte je bez kontroly aktuálních pravidel.</li>
@@ -367,17 +388,34 @@
       }
     }
     function makeCard(item){
-      const button=document.createElement("button");button.type="button";button.className="tpl";
-      button.setAttribute("aria-label","Otevřít zápis: "+item.name);
+      const card=document.createElement("article");card.className="tpl";
       const head=document.createElement("div");head.className="tpl-top";
       const glyph=document.createElement("span");glyph.className="icon";glyph.innerHTML=icon;
-      const title=document.createElement("span");title.className="tpl-name";title.textContent=item.name;head.append(glyph,title);
-      const preview=document.createElement("span");preview.className="tpl-desc";preview.textContent=item.text;
-      const bottom=document.createElement("span");bottom.className="tpl-bottom";
+      const title=document.createElement("h3");title.className="tpl-name";title.textContent=item.name;
+      head.append(glyph,title);
+
+      const preview=document.createElement("p");preview.className="tpl-desc";preview.textContent=item.text;
+      const bottom=document.createElement("div");bottom.className="tpl-bottom";
       const tag=document.createElement("span");tag.className="type-tag";tag.textContent=item.level2||item.level1;
-      const arrow=document.createElement("span");arrow.className="chevron";arrow.textContent="›";arrow.setAttribute("aria-hidden","true");
-      bottom.append(tag,arrow);button.append(head,preview,bottom);
-      button.addEventListener("click",()=>openDetail(item));return button;
+      const actions=document.createElement("div");actions.className="tpl-actions";
+
+      const edit=document.createElement("button");edit.type="button";edit.className="tpl-edit";edit.textContent="Upravit";
+      edit.setAttribute("aria-label","Otevřít zápis pro úpravu: "+item.name);
+      edit.addEventListener("click",()=>openDetail(item));
+
+      const copy=document.createElement("button");copy.type="button";copy.className="tpl-copy";
+      copy.textContent="Kopírovat";
+      copy.setAttribute("aria-label","Zkopírovat text šablony: "+item.name);
+      copy.addEventListener("click",()=>copyFromCard(item,copy));
+
+      actions.append(edit,copy);bottom.append(tag,actions);
+      card.append(head,preview,bottom);
+      if((item.assignee==="UKONČENÍ RELACE"&&item.status==="JÁ")||/SPLÁTKOVÝ KALENDÁŘ - DOTAZ|ZASÍLÁNÍ INFORMATIVNÍ SMS/i.test(item.name)){
+        const caution=document.createElement("span");caution.className="tpl-caution";
+        caution.textContent="Před použitím ověřte původní postup / metadata.";
+        card.append(caution);
+      }
+      return card;
     }
     function renderPages(count){
       const total=Math.ceil(count/state.pageSize);
@@ -417,6 +455,45 @@
     function addMeta(label,value,container){
       const chip=document.createElement("span");chip.className="meta-chip";chip.textContent=label+": "+(value||"Neuvedeno");container.append(chip);
     }
+    async function writeTextToClipboard(value){
+      if(!value)return false;
+      try{
+        if(navigator.clipboard&&navigator.clipboard.writeText){
+          await navigator.clipboard.writeText(value);
+          return true;
+        }
+      }catch(e){/* V některých vložených stránkách je Clipboard API zablokované. */}
+      const tmp=document.createElement("textarea");
+      tmp.value=value;
+      tmp.setAttribute("readonly","");
+      tmp.style.position="fixed";
+      tmp.style.top="-10000px";
+      tmp.style.left="-10000px";
+      tmp.style.opacity="0";
+      document.body.append(tmp);
+      let success=false;
+      try{tmp.focus();tmp.select();success=document.execCommand("copy")===true;}catch(e){success=false;}
+      tmp.remove();
+      return success;
+    }
+    async function copyFromCard(item,button){
+      if(button.disabled)return;
+      button.disabled=true;
+      const result=await writeTextToClipboard(item.text);
+      if(result){
+        button.textContent="Zkopírováno ✓";
+        button.classList.add("copied");
+        setTimeout(()=>{
+          if(button.isConnected){button.textContent="Kopírovat";button.classList.remove("copied");button.disabled=false;}
+        },2300);
+      }else{
+        button.disabled=false;
+        button.textContent="Kopírovat";
+        openDetail(item);
+        const editor=$("editText");editor.focus();editor.select();
+        $("copyStatus").textContent="Automatické kopírování není dostupné. Text je označený – použijte Ctrl+C.";
+      }
+    }
     function openDetail(item){
       state.selected=item;$("detailName").textContent=item.name;$("editText").value=item.text;$("copyStatus").textContent="";
       const meta=$("detailMeta");meta.replaceChildren();
@@ -435,13 +512,11 @@
     }
     function closeDetail(){if($("detail").open)$("detail").close();state.selected=null;}
     async function copyText(){
-      const value=$("editText").value;if(!value)return;
-      let ok=false;
-      try{if(navigator.clipboard&&navigator.clipboard.writeText){await navigator.clipboard.writeText(value);ok=true;}}catch{}
-      if(!ok){
-        try{const t=$("editText");t.focus();t.select();ok=document.execCommand("copy")===true;}catch{}
-      }
-      $("copyStatus").textContent=ok?"Text byl zkopírován.":"Zkopírujte označený text klávesami Ctrl+C.";
+      const value=$("editText").value;
+      if(!value)return;
+      const success=await writeTextToClipboard(value);
+      if(!success){$("editText").focus();$("editText").select();}
+      $("copyStatus").textContent=success?"Text byl zkopírován.":"Zkopírujte označený text klávesami Ctrl+C.";
     }
     $("search").addEventListener("input",e=>{state.query=e.target.value;state.page=1;render();});
     $("resetFilters").addEventListener("click",()=>{state.query="";state.level1="all";state.level2="all";state.page=1;$("search").value="";render();});
