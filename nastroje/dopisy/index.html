@@ -85,6 +85,78 @@
     @media(max-width:720px){.shell{padding-left:16px;padding-right:16px}.topbar{height:auto}.topbar .shell{padding-top:14px;padding-bottom:14px;align-items:flex-start;flex-wrap:wrap}.top-actions{margin-left:55px}.heading{align-items:flex-start}.summary{display:none}main.shell{padding-top:25px}.toolbar{align-items:stretch;flex-direction:column}.search{width:100%}}
     @media(max-width:520px){.grid{grid-template-columns:1fr}.brand-block h1{font-size:19px}.top-actions{margin-left:0}.brand-toggle button{padding:8px 10px}.tab{flex:1;justify-content:center;white-space:nowrap;font-size:11px;padding:10px 8px}.doc{min-height:164px}.heading h2{font-size:25px}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;scroll-behavior:auto!important}}
+
+    /* Kompaktní layout katalogu a plnohodnotný rozbalovací postup k tisku */
+    .topbar{height:70px}
+    .topbar .shell{gap:14px}
+    .logo{width:35px;height:35px;border-radius:10px}
+    .logo svg{width:19px;height:19px}
+    .brand-block{gap:11px}
+    .brand-block h1{font-size:19px;margin-top:2px}
+    .eyebrow{font-size:9px}
+    .brand-toggle button{padding:8px 11px}
+    main.shell{padding-top:21px;padding-bottom:32px}
+    .heading{margin-bottom:16px;align-items:center}
+    .heading h2{font-size:23px;margin:4px 0 4px}
+    .heading p{font-size:12px;line-height:1.5}
+    .section-kicker{font-size:9px}
+    .summary{font-size:10px}
+    .summary strong{font-size:20px}
+    .print-rules{border:1px solid #e4e9ef;border-radius:12px;margin-bottom:19px;background:#fff;overflow:hidden}
+    .rules-overview{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:#fbfcfd}
+    .rules-symbol{width:36px;height:36px;border-radius:10px;flex:none;background:var(--accent-soft);color:var(--accent-dark);display:grid;place-items:center}
+    .rules-description{min-width:0;flex:1}
+    .rules-heading{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 3px}
+    .rules-heading h3{font-size:13px;line-height:1.4;margin:0;font-weight:800;letter-spacing:-.015em}
+    .rules-date{font-size:10px;color:#996026;background:#fff3e5;border:1px solid #f3dfc4;border-radius:6px;padding:2px 7px;font-weight:750}
+    .rules-description p{font-size:11.5px;margin:0;color:#627185;line-height:1.55}
+    .rules-description p strong{color:#aa433b}
+    .rules-shortcuts{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;font-size:10.5px;color:#53667b}
+    .rules-shortcuts span+span:before{content:"·";margin-right:10px;color:#adb8c4}
+    .rules-toggle{margin-left:auto;border:1px solid var(--accent-line);background:#fff;color:var(--accent-dark);font-size:11px;font-weight:800;padding:9px 11px;border-radius:8px;display:flex;align-items:center;gap:7px;white-space:nowrap}
+    .rules-toggle:hover{background:var(--accent-soft)}
+    .rules-chevron{transition:transform .2s}
+    .rules-toggle[aria-expanded="true"] .rules-chevron{transform:rotate(180deg)}
+    .rules-details{border-top:1px solid var(--line);padding:18px}
+    .rules-details[hidden]{display:none}
+    .rules-layout{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(250px,1fr);gap:17px}
+    .rules-process h4,.rules-note h4{font-size:12px;margin:0 0 13px;letter-spacing:-.01em;color:#27384b}
+    .rules-steps{counter-reset:rule;list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+    .rules-steps li{counter-increment:rule;display:flex;align-items:flex-start;gap:8px;font-size:11.3px;line-height:1.55;padding:9px 9px 9px 8px;background:#fafbfc;border:1px solid #eef1f4;border-radius:8px;color:#48596e}
+    .rules-steps li:before{content:counter(rule);flex:0 0 19px;height:19px;line-height:19px;text-align:center;border-radius:6px;background:var(--accent-soft);color:var(--accent-dark);font-size:10px;font-weight:850}
+    .rules-steps li strong{color:#25364a}
+    .rules-steps li .rules-important{color:#b64238}
+    .rules-muted{color:#778699}
+    .rules-emphasis{color:var(--accent-dark)!important}
+    .rules-side{display:flex;flex-direction:column;gap:10px}
+    .rules-note{border:1px solid #e5eaf0;border-radius:10px;background:#fff;padding:14px}
+    .rules-note ul{margin:0;padding-left:17px}
+    .rules-note li,.rules-note p{font-size:11.5px;line-height:1.65;color:#56667a}
+    .rules-note li+li{margin-top:6px}
+    .rules-note p{margin:0}
+    .rules-exception{background:#fffaf4;border-color:#f3e3cd}
+    .rules-exception h4{color:#995a15}
+    .toolbar{padding-bottom:12px;gap:12px}
+    .tab{padding:9px 12px;font-size:11.5px;border-radius:9px;gap:7px}
+    .search{height:38px;width:min(350px,100%)}
+    .results-bar{min-height:49px;font-size:11px}
+    .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+    .doc{min-height:76px;border-radius:10px;box-shadow:none;padding:13px 14px;display:flex;align-items:center;gap:11px;transition:border-color .2s,background .2s,box-shadow .2s,transform .2s}
+    .doc:hover{background:#fcfdfb;box-shadow:0 6px 15px rgba(26,48,66,.045);transform:translateY(-1px)}
+    .file-icon{width:34px;height:34px;border-radius:8px;flex:none}
+    .file-icon svg{width:17px;height:17px}
+    .doc-info{display:flex;flex-direction:column;gap:4px;min-width:0;flex:1}
+    .doc-title{color:#28394d;font-size:12.3px;font-weight:760;line-height:1.4;overflow-wrap:anywhere}
+    .doc-subtitle{font-size:10px;color:#8492a3;line-height:1.3}
+    .doc-action{color:var(--accent-dark);width:16px;flex:none;display:grid;place-items:center}
+    .doc-action svg{width:16px;height:16px}
+    .more-wrap{margin-top:17px}
+    .more{padding:10px 15px}
+    footer{padding:16px 0 22px}
+    @media(max-width:1100px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.rules-layout{grid-template-columns:1fr}}
+    @media(max-width:760px){.rules-overview{flex-wrap:wrap}.rules-toggle{margin:0 0 0 47px}.rules-steps{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.heading{margin-bottom:13px}.summary{display:none}}
+    @media(max-width:520px){.topbar .shell{gap:10px}.brand-block h1{font-size:18px}.rules-overview{padding:12px}.rules-details{padding:12px}.rules-shortcuts{gap:7px}.rules-shortcuts span+span:before{margin-right:7px}.toolbar{gap:11px}.tabs{width:100%}.tab{font-size:11px}.tab .count{padding:2px 5px}main.shell{padding-top:19px}}
+  
   </style>
 </head>
 <body data-brand="epet">
@@ -107,10 +179,53 @@
     <section class="heading">
       <div>
         <div class="section-kicker">PRACOVNÍ POMŮCKA</div>
-        <h2>Generátory a šablony dopisů</h2>
-        <p>Všechny dopisové podklady na jednom místě. Vyberte nástroj nebo vzor, vyhledejte dokument a otevřete jej v samostatné kartě.</p>
+        <h2>Dopisová korespondence</h2>
+        <p>Generátory a připravené vzory pro epet a Dobrou Energii. Vyhledejte dokument a otevřete jej v nové kartě.</p>
       </div>
-      <div class="summary"><strong id="allCount">53</strong>evidovaných položek</div>
+      <div class="summary"><strong id="allCount">53</strong>podkladů celkem</div>
+    </section>
+
+    <section class="print-rules" aria-labelledby="printRulesTitle">
+      <div class="rules-overview">
+        <div class="rules-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M7 8V3h10v5M7 18H4V9h16v9h-3M7 14h10v7H7z"/><path d="M16 11h2"/></svg></div>
+        <div class="rules-description">
+          <div class="rules-heading"><h3 id="printRulesTitle">Pravidla pro tisk</h3><span class="rules-date">Postup od 1. 7. 2026</span></div>
+          <p>Poštu k tisku již <strong>neposílejte na tisk@epet.cz</strong>. Standardně se nově zakládá úkol v ZIS.</p>
+          <div class="rules-shortcuts"><span>Úkol bez šablony</span><span>Pošta k odeslání</span><span>CCUSER</span><span>D+2</span></div>
+        </div>
+        <button id="rulesToggle" class="rules-toggle" type="button" aria-controls="rulesDetails" aria-expanded="false">Celý postup <svg class="rules-chevron" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+      </div>
+      <div class="rules-details" id="rulesDetails" hidden>
+        <div class="rules-layout">
+          <section class="rules-process" aria-labelledby="rulesStepsHeading">
+            <h4 id="rulesStepsHeading">Postup v ZIS</h4>
+            <ol class="rules-steps">
+              <li>Založte <strong>ÚKOL bez šablony</strong>.</li>
+              <li>Do pole <strong>Věc</strong> i <strong>Popis úkolu</strong> uveďte: <strong class="rules-emphasis">Pošta k odeslání</strong> <strong class="rules-important">(stěžejní údaj)</strong>.</li>
+              <li><strong>Hladinu</strong> nastavte podle obsahu dopisu.</li>
+              <li>Dopis včetně <strong>průvodního dopisu</strong> vložte do <strong>Přílohy</strong>.</li>
+              <li>Do <strong>Popisu zadání</strong> napište kompletní adresu: <strong>adresát + adresa</strong>.</li>
+              <li><strong>Řešitel:</strong> <strong class="rules-emphasis">CCUSER</strong></li>
+              <li><strong>Stav:</strong> <strong class="rules-emphasis">Čeká na zákazníka</strong></li>
+              <li><strong>Termín:</strong> <strong class="rules-emphasis">D+2</strong> <span class="rules-muted">(výjimka oproti běžnému nastavení)</span></li>
+            </ol>
+          </section>
+          <aside class="rules-side">
+            <section class="rules-note" aria-labelledby="attachmentsHeading">
+              <h4 id="attachmentsHeading">Pravidla pro přílohy</h4>
+              <ul>
+                <li>Dokument vždy ve formátu <strong>PDF</strong>.</li>
+                <li>Název souboru: <strong>příjmení zákazníka_dopis</strong></li>
+                <li><strong>Faktura či platební kalendář musí vždy obsahovat doprovodný dopis.</strong></li>
+              </ul>
+            </section>
+            <section class="rules-note rules-exception" aria-labelledby="exceptionHeading">
+              <h4 id="exceptionHeading">Výjimka – odpovědní obálka (pouze EP)</h4>
+              <p>Pokud se jedná o dopis s <strong>odpovědní obálkou</strong>, postup zůstává stejný jako dosud – odešlete jej na <strong>tisk@epet.cz</strong>.</p>
+            </section>
+          </aside>
+        </div>
+      </div>
     </section>
     <section class="toolbar" aria-label="Výběr typu dopisu">
       <div class="tabs" role="tablist" aria-label="Kategorie dopisů">
@@ -161,24 +276,20 @@
       return branded.filter(function(d){return !search||fold(d.name).includes(search);}).sort(function(a,b){return a.name.localeCompare(b.name,"cs");});
     }
     function createCard(d){
-      const article=document.createElement("article");article.className="doc";
-      const top=document.createElement("div");top.className="doc-top";
+      const card=document.createElement("a");
+      card.className="doc";
+      card.href=d.url;card.target="_blank";card.rel="noopener noreferrer";
+      card.setAttribute("aria-label",(state.category==="generators"?"Otevřít generátor: ":"Otevřít šablonu: ")+d.name+" (nová karta)");
       const glyph=document.createElement("span");glyph.className="file-icon";glyph.innerHTML=icon;
-      const type=document.createElement("span");type.className="file-type";
-      type.textContent=state.category==="generators"?"GENERÁTOR":String(d.format||"DOC").toUpperCase();
-      top.append(glyph,type);
-      const title=document.createElement("h3");title.textContent=d.name;
-      const footer=document.createElement("div");footer.className="doc-footer";
-      const provider=document.createElement("span");provider.className="provider";
-      provider.textContent=state.category==="generators"?"Google Sites":"Google Dokumenty";
-      const link=document.createElement("a");link.className="open-link";link.textContent=state.category==="generators"?"Otevřít generátor":"Otevřít šablonu";
-      link.setAttribute("aria-label",link.textContent+" v nové kartě: "+d.name);
-      link.href=d.url;link.target="_blank";link.rel="noopener noreferrer";
-      link.insertAdjacentHTML("beforeend",arrows);
-      footer.append(provider,link);article.append(top,title,footer);
-      article.addEventListener("click",function(e){if(e.target.closest("a"))return;link.click();});
-      article.style.cursor="pointer";
-      return article;
+      const textCol=document.createElement("span");textCol.className="doc-info";
+      const title=document.createElement("span");title.className="doc-title";title.textContent=d.name;
+      const provider=document.createElement("span");provider.className="doc-subtitle";
+      provider.textContent=state.category==="generators"?"Generátor · Google Sites":"Šablona · "+(String(d.format||"doc").toUpperCase())+" · Google Dokumenty";
+      textCol.append(title,provider);
+      const action=document.createElement("span");action.className="doc-action";
+      action.innerHTML=arrows;
+      card.append(glyph,textCol,action);
+      return card;
     }
     function render(){
       const items=visibleItems();
@@ -219,6 +330,13 @@
     document.addEventListener("keydown",function(e){
       const t=document.activeElement;
       if(e.key==="/"&&!e.ctrlKey&&!e.altKey&&!e.metaKey&&!(t&&/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))){e.preventDefault();byId("search").focus();}
+    });
+    const rulesToggle=byId("rulesToggle"),rulesDetails=byId("rulesDetails");
+    rulesToggle.addEventListener("click",function(){
+      const expand=rulesToggle.getAttribute("aria-expanded")!=="true";
+      rulesToggle.setAttribute("aria-expanded",String(expand));
+      rulesDetails.hidden=!expand;
+      rulesToggle.firstChild.nodeValue=expand?"Skrýt postup ":"Celý postup ";
     });
     render();
   </script>
