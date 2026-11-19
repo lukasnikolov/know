@@ -211,6 +211,90 @@
     @media(max-width:800px){.letter-workspace{grid-template-columns:minmax(0,1fr)}.rules-sidebar{order:1}.letters-catalog{order:2}.rules-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.rules-layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(230px,1fr);gap:14px}.rules-side{margin:0}}
     @media(max-width:600px){.rules-layout{display:block}.rules-side{margin-top:14px}.rules-steps{grid-template-columns:1fr}.letters-catalog .heading h2{font-size:19px}.letters-catalog .toolbar{align-items:stretch}.letters-catalog .tabs{width:100%}.letters-catalog .search{max-width:none;flex:1 1 auto}.pagination{justify-content:center}.pagination-meta{width:100%;text-align:center}}
   
+
+    /* Dvě úsporné dokumentové karty vedle sebe – navazuje na dvousloupcovou stránku */
+    .letter-workspace{grid-template-columns:minmax(315px,.83fr) minmax(0,1.85fr)}
+    .letters-catalog .grid{
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;
+      align-items:stretch;
+    }
+    .letters-catalog .doc{
+      display:flex;
+      flex-direction:row;
+      align-items:center;
+      justify-content:flex-start;
+      text-align:left;
+      width:100%;
+      min-height:88px;
+      height:auto;
+      margin:0;
+      padding:12px 13px;
+      gap:11px;
+      border-radius:11px;
+      background:#fff;
+      border:1px solid #e5ebf0;
+      box-shadow:none;
+    }
+    .letters-catalog .doc:hover{
+      background:var(--accent-soft);
+      border-color:var(--accent-line);
+      box-shadow:0 4px 14px rgba(25,43,59,.055);
+    }
+    .letters-catalog .doc .file-icon{
+      display:grid;
+      place-items:center;
+      width:35px;
+      height:35px;
+      flex:0 0 35px;
+      border-radius:9px;
+      align-self:center;
+    }
+    .letters-catalog .doc .doc-info{
+      display:flex;
+      flex:1 1 auto;
+      flex-direction:column;
+      align-items:flex-start;
+      justify-content:center;
+      text-align:left;
+      gap:4px;
+      min-width:0;
+    }
+    .letters-catalog .doc .doc-title{
+      width:100%;
+      font-size:12px;
+      font-weight:750;
+      line-height:1.4;
+      color:#27384b;
+      text-align:left;
+      overflow-wrap:break-word;
+    }
+    .letters-catalog .doc .doc-subtitle{
+      font-size:9.7px;
+      line-height:1.4;
+      color:#8593a2;
+      text-align:left;
+    }
+    .letters-catalog .doc .doc-action{
+      display:grid;
+      place-items:center;
+      align-self:center;
+      flex:0 0 18px;
+      width:18px;
+      margin-left:auto;
+      color:var(--accent-dark);
+    }
+    .letters-catalog .doc .doc-action svg{width:17px;height:17px}
+    @media (max-width:1050px) and (min-width:801px){
+      .letter-workspace{grid-template-columns:minmax(300px,.77fr) minmax(0,1.53fr)}
+      .letters-catalog .doc{padding:11px 10px;gap:8px}
+      .letters-catalog .doc .file-icon{width:31px;height:31px;flex-basis:31px}
+    }
+    @media (max-width:640px){
+      .letters-catalog .grid{grid-template-columns:1fr}
+      .letters-catalog .doc{min-height:71px}
+    }
+
   </style>
 </head>
 <body data-brand="epet">
