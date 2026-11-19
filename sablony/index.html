@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
-  <title>Smart Engine 3.0 | E-mailové šablony epet a Dobrá Energie</title>
+  <title>Emailové šablony | epet a Dobrá Energie</title>
   <meta name="description" content="Smart Engine 3.0 – katalog e-mailových šablon epet a Dobrá Energie.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,16 +66,76 @@
 .toast[data-kind="error"]{background:#854d0e;border-left:4px solid #f59e0b}
 .toast[data-kind="success"]{background:#253848;border-left:4px solid var(--accent)}
 @media(max-width:860px){.action-feedback{text-align:left}.toast{top:8px;right:8px;max-width:calc(100vw - 16px)}}
+
+/* Kompaktní editor */
+
+        /* Návrh: změny platí jen pro režim Kompaktní, původní CSS zůstává zachováno. */
+        body.preview-compact .editor-top{padding:15px 23px 12px; gap:12px;position:sticky;top:0;z-index:4;background:rgba(255,255,255,.97);backdrop-filter:blur(6px)}
+        body.preview-compact .editor-kicker{margin-bottom:5px;font-size:9px}
+        body.preview-compact .editor-title-block h2{font-size:18px;line-height:1.25}
+        body.preview-compact .editor-subtitle{margin-top:5px;gap:10px}
+        body.preview-compact .editor-button-row{gap:6px}
+        body.preview-compact .primary-btn,body.preview-compact .outline-btn{min-height:35px;padding:0 11px;font-size:11px}
+        body.preview-compact .editor-flow{padding:12px 21px 25px;max-width:1120px}
+        body.preview-compact .variables-card{margin-bottom:12px;border-radius:12px;box-shadow:0 2px 10px rgba(27,43,61,.025)}
+        body.preview-compact .variables-summary{padding:9px 13px;gap:9px;min-height:49px}
+        body.preview-compact .variables-icon{width:27px;height:27px;border-radius:8px}
+        body.preview-compact .variables-icon svg{width:16px;height:16px}
+        body.preview-compact .variables-title{font-size:11.8px}
+        body.preview-compact .variables-caption{font-size:10px}
+        body.preview-compact .progress-info{padding:5px 7px;font-size:10px}
+        body.preview-compact .variables-body{padding:11px 14px 10px}
+        body.preview-compact .fields-intro{font-size:10px;margin-bottom:10px;line-height:1.4;color:#7e8d9b}
+        body.preview-compact .field-group{margin-bottom:11px}
+        body.preview-compact .field-group:last-child{margin-bottom:8px}
+        body.preview-compact .field-group-title{font-size:9px;letter-spacing:.085em;margin-bottom:7px;padding-bottom:5px}
+        body.preview-compact .fields-grid{gap:8px 10px}
+        body.preview-compact .field-item label{font-size:10px;margin-bottom:4px}
+        body.preview-compact .field-item input,body.preview-compact .field-item select,body.preview-compact .field-item textarea{font-size:11.5px;border-radius:7px;min-height:33px;padding:6px 9px}
+        body.preview-compact .field-item textarea{min-height:36px;height:36px;resize:vertical;line-height:1.5}
+        body.preview-compact .field-item textarea[data-field="ean"]:focus{min-height:68px}
+        body.preview-compact .field-item textarea[data-field="dluhyRadky"]{min-height:75px;height:90px}
+        body.preview-compact .fields-actions{padding-top:9px;gap:8px}
+        body.preview-compact .fields-actions button{font-size:10px}
+        body.preview-compact .email-paper{border-radius:12px;box-shadow:0 5px 20px #192d4310}
+        body.preview-compact .email-topline{padding:11px 17px}
+        body.preview-compact .email-envelope{padding:10px 17px;row-gap:9px;grid-template-columns:60px minmax(0,1fr)}
+        body.preview-compact .sender-avatar{width:24px;height:24px;font-size:10px}
+        body.preview-compact .sender{gap:7px}
+        body.preview-compact .message-label{padding:15px 19px 0}
+        body.preview-compact .message-content{padding:9px 19px 26px;min-height:250px;line-height:1.65}
+        body.preview-compact .editor-note{margin-top:12px}
+        @media(max-width:1480px){body.preview-compact .editor-top{position:sticky;padding:12px 15px}body.preview-compact .editor-flow{padding:10px 13px}}
+        @media(max-width:900px){body.preview-compact .editor-top{position:relative}body.preview-compact .editor-flow{padding:10px}body.preview-compact .email-envelope{padding:9px 12px}}
+        @media(max-width:580px){body.preview-compact .fields-grid{grid-template-columns:1fr}body.preview-compact .field-item.wide{grid-column:span 1}body.preview-compact .editor-top{padding:11px}}
+      
+/* Praktická nápověda */
+
+        .info-dialog{width:min(630px,calc(100vw - 28px));max-width:630px;max-height:min(86dvh,850px);overflow:auto;padding:27px 29px 24px;border-radius:17px}
+        .info-dialog h2{margin:0 0 8px;font-size:21px;letter-spacing:-.035em}
+        .info-dialog .help-lead{font-size:12px;line-height:1.65;color:#667788;margin:0 0 17px}
+        .info-dialog .help-steps{list-style:none;counter-reset:guide;padding:0;margin:0 0 18px;display:grid;gap:12px}
+        .info-dialog .help-steps li{counter-increment:guide;display:grid;grid-template-columns:27px minmax(0,1fr);column-gap:11px;row-gap:2px;align-items:start}
+        .info-dialog .help-steps li::before{content:counter(guide);grid-column:1;grid-row:1 / span 2;display:grid;place-items:center;width:25px;height:25px;border-radius:8px;background:var(--accent-light);color:var(--accent-dark);font-size:11px;font-weight:800}
+        .info-dialog .help-steps li strong{grid-column:2;font-size:12px;color:#27384c}
+        .info-dialog .help-steps li span{grid-column:2;font-size:11.4px;line-height:1.55;color:#6d7c8d}
+        .info-dialog .help-shortcuts{background:#f7f9fb;border:1px solid #e7ecf0;border-radius:11px;padding:12px 14px;display:grid;gap:6px;margin-bottom:15px}
+        .info-dialog .help-shortcuts strong{font-size:11.5px;color:#39485b}
+        .info-dialog .help-shortcuts span{font-size:11px;line-height:1.7;color:#6d7c8d}
+        .info-dialog kbd{font:inherit;font-size:10px;background:#fff;border:1px solid #dbe2e8;padding:2px 5px;border-radius:5px;color:#465465}
+        .info-dialog #closeInfo{display:block;margin:16px 0 0 auto}
+        @media(max-width:580px){.info-dialog{padding:21px 18px;max-height:90dvh}}
+      
 </style>
 </head>
-<body class="theme-epet">
+<body class="theme-epet preview-compact">
   <div class="app-shell">
     <header class="topbar">
       <div class="top-left">
         <div class="app-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
         <div class="app-title">
           <div class="eyebrow"><span class="eyebrow-dot"></span> ZNALOSTKA <span class="eyebrow-sep">/</span> NÁSTROJE</div>
-          <h1>E-mailové šablony <span class="version">3.0</span></h1>
+          <h1>Emailové šablony <span class="version">3.0</span></h1>
         </div>
       </div>
       <div class="search-wrap">
@@ -202,14 +262,22 @@
   </div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <dialog id="infoDialog" class="info-dialog">
-    <h2>O Smart Engine 3.0</h2>
-    <p>Rozhraní zachovává původní kategorie a podkategorie, kompaktní katalog a panel proměnných přímo nad náhledem.</p>
-    <p>Aplikace načítá aktuální e-mailové šablony ze souboru <code>sablony.js</code> v repozitáři. Používá doplňování a formátování z původního Smart Engine.</p>
-    <button id="closeInfo" class="primary-btn" type="button">Rozumím</button>
-  </dialog>
+<h2>Jak používat Emailové šablony</h2>
+<p class="help-lead">Vyberte správnou šablonu, doplňte potřebné údaje a hotový e-mail zkopírujte do zákaznické komunikace.</p>
+<ol class="help-steps">
+<li><strong>Zvolte značku.</strong><span>Vpravo nahoře přepněte mezi epet a Dobrou Energií. Od této volby se odvíjí odesílatel a vzhled e-mailu.</span></li>
+<li><strong>Najděte vhodnou šablonu.</strong><span>Vyberte tematickou sekci vlevo nebo hledejte podle názvu či obsahu pomocí horního vyhledávání. Šablonu otevřete kliknutím.</span></li>
+<li><strong>Doplňte údaje.</strong><span>Do přehledného panelu zadejte oslovení, EAN/EIC, sazbu, částky nebo jiné hodnoty požadované konkrétní šablonou. Údaje se ihned projeví v náhledu.</span></li>
+<li><strong>Zkontrolujte a případně upravte text.</strong><span>V náhledu vidíte odesílatele, předmět a tělo zprávy. Text e-mailu lze přímo upravovat. Změny provádějte nejlépe až po doplnění všech údajů.</span></li>
+<li><strong>Zkopírujte hotový e-mail.</strong><span>Tlačítko „Kopírovat e-mail“ převezme text včetně formátování. Předmět lze zkopírovat samostatně; následně vše vložte do používaného e-mailového systému.</span></li>
+<li><strong>Před dalším zákazníkem vymažte údaje.</strong><span>Pomocí „Vymazat údaje“ vyčistíte vyplněné hodnoty. Možnost „Obnovit původní náhled“ vrátí text šablony do výchozí podoby.</span></li>
+</ol>
+<div class="help-shortcuts"><strong>Užitečné tipy</strong><span><kbd>/</kbd> rychlé vyhledávání &nbsp;·&nbsp; <kbd>Ctrl</kbd> + <kbd>Enter</kbd> kopírování e-mailu &nbsp;·&nbsp; <strong>☆</strong> přidání šablony do oblíbených</span></div>
+<button id="closeInfo" class="primary-btn" type="button">Rozumím</button>
+</dialog>
   <script src="./app.js"></script>
   <script>
-/* Smart Engine 3.0 – nové uživatelské rozhraní s původní šablonovou logikou. */
+/* Emailové šablony – původní šablonová logika, kompaktní editor. */
 (() => {
   'use strict';
   const $ = id => document.getElementById(id);
@@ -495,6 +563,24 @@
   init();
 })();
 
+</script>
+<script>
+/* Automatické rozbalení pole EAN/EIC */
+
+        (()=>{
+          'use strict';
+          // Expand EAN text area only while editing multiple EANs; keep one-line form compact.
+          function syncEan(el){if(!el)return;el.rows=1;if(document.activeElement===el){el.style.height='72px';return;}
+            const multi=(el.value||'').includes('\n');el.style.height=multi?'60px':'36px';}
+          document.addEventListener('focusin',e=>{if(e.target.matches('textarea[data-field="ean"]'))syncEan(e.target);});
+          document.addEventListener('focusout',e=>{if(e.target.matches('textarea[data-field="ean"]'))setTimeout(()=>syncEan(e.target),0);});
+          const observer=new MutationObserver(()=>{
+            const el=document.querySelector('textarea[data-field="ean"]');
+            if(el && !el.dataset.previewBound){el.dataset.previewBound='1';syncEan(el);}
+          });
+          observer.observe(document.body,{childList:true,subtree:true});
+        })();
+      
 </script>
 </body>
 </html>
