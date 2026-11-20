@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Generátor dopisu - Žádost o doložení ČP + BÚ</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@500;600&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  
+  <style>
+    :root {
+      --brand-color: #94c11f;
+      --brand-hover: #7ea815;
+      --brand-purple: #9362d6;
+      --text-dark: #111827;
+      --text-gray: #6b7280;
+      --bg-input: #f3f4f6;
+      --radius-main: 16px;
+      --radius-input: 12px;
+      --border: #e5e7eb;
+    }
+
+    body {
+      background-color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+      padding-bottom: 2rem;
+    }
+
+    /* Hlavička */
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+      margin-bottom: 2rem;
+    }
+    .brand-logo {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      color: var(--brand-color);
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* WIZARD CSS */
+    .step-section { display: none; animation: fadeIn 0.4s ease-in-out; }
+    .step-section.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    
+    .progress-container { margin-bottom: 1.5rem; }
+    .progress-bar-custom { height: 6px; background: #e5e7eb; border-radius: 3px; overflow: hidden; }
+    .progress-fill { height: 100%; background: var(--brand-color); transition: width 0.3s ease; width: 50%; }
+    
+    .btn-nav { border-radius: 99px; padding: 0.6rem 1.5rem; font-weight: 600; border: none; transition: all 0.2s; display: flex; align-items: center; gap: 0.5rem; }
+    .btn-next, .btn-submit-final { background: var(--brand-color); color: white; }
+    .btn-next:hover, .btn-submit-final:hover { background: var(--brand-hover); transform: translateX(2px); }
+    .btn-submit-final { padding: 0.6rem 2rem; font-size: 1rem; box-shadow: 0 4px 6px rgba(148, 193, 31, 0.3); }
+    .btn-prev { background: #e5e7eb; color: #374151; }
+    .btn-prev:hover { background: #d1d5db; }
+
+    /* Karty */
+    .card-custom {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-main);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      transition: border-color 0.2s;
+    }
+    .card-custom:hover {
+        border-color: #d1d5db;
+    }
+    
+    h2.section-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .step-number {
+      background: #ecfccb;
+      color: #3f6212;
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      flex: 0 0 auto;
+    }
+
+    /* Formuláře */
+    .form-label {
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: #374151;
+      margin-bottom: 0.35rem;
+    }
+    .form-control, .form-select {
+      border-radius: var(--radius-input);
+      border: 1px solid #d1d5db;
+      background-color: var(--bg-input);
+      padding: 0.6rem 0.8rem;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+    .form-control:focus, .form-select:focus {
+      border-color: var(--brand-color);
+      box-shadow: 0 0 0 3px rgba(148, 193, 31, 0.2);
+      background-color: #fff;
+    }
+    .required::after { content: " *"; color: #ef4444; }
+    .form-hint { font-size: 0.78rem; color: var(--text-gray); margin-top: 0.25rem; }
+
+    /* Validace - červený rámeček */
+    .is-invalid {
+        border-color: #ef4444 !important;
+        box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2) !important;
+    }
+
+    /* ====== KARTY PRO VÝBĚR SPOLEČNOSTI ====== */
+    .company-select-wrapper { display: flex; gap: 1rem; margin-bottom: 0.5rem; }
+    .company-card-label { flex: 1; cursor: pointer; margin: 0; }
+    .company-card-label input[type="radio"] { display: none; }
+    .company-card {
+        border: 2px solid var(--border);
+        border-radius: .75rem;
+        padding: 1rem 0.5rem;
+        text-align: center;
+        transition: all 0.2s ease;
+        background: #fff;
+        position: relative;
+        height: 100%;
+    }
+    .company-card:hover { border-color: #d1d5db; }
+    .company-card .check-icon {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 1.1rem;
+        opacity: 0;
+        transition: opacity 0.2s;
+    }
+    #spol_epet:checked+.company-card { border-color: #94C11F; background: #f7fceb; }
+    #spol_epet:checked+.company-card .check-icon { opacity: 1; color: #94C11F; }
+    #spol_epet:checked+.company-card h5 { color: #4e6b0b; font-weight: 700; }
+    #spol_de:checked+.company-card { border-color: #F99F1C; background: #fffaf4; }
+    #spol_de:checked+.company-card .check-icon { opacity: 1; color: #F99F1C; }
+    #spol_de:checked+.company-card h5 { color: #a1640c; font-weight: 700; }
+
+    /* Náhled dopisu */
+    .preview-box {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      padding: 3.2rem;
+      font-family: 'Noto Serif', serif;
+      font-size: 11pt;
+      line-height: 1.55;
+      color: #000;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      min-height: 900px;
+    }
+    .preview-list li { margin-bottom: 0.5rem; }
+    
+    /* Zvýraznění proměnných v náhledu */
+    .highlight-var {
+        background-color: rgba(148, 193, 31, 0.12);
+        padding: 0 2px;
+        border-radius: 2px;
+    }
+
+    /* Loader a Výsledek */
+    #loader {
+      position: fixed;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .spinner-border { color: var(--brand-color); width: 3rem; height: 3rem; }
+    
+    .result-wrap {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-main);
+      padding: 1rem;
+      background: #fff;
+    }
+  </style>
+  <!-- Jednotne stylovani a UX vrstva Znalostky -->
+  <link rel="stylesheet" href="../assets/theme.css">
+</head>
+<body>
+
+  <div id="loader" aria-hidden="true">
+    <div class="spinner-border" role="status" aria-label="Načítání"></div>
+    <div class="mt-3 fw-medium text-muted fs-5">Generuji dokument...</div>
+    <div class="small text-muted">Prosím o strpení</div>
+  </div>
+
+  <header>
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between gap-3">
+          <div class="brand-logo">
+            <i class="bi bi-file-earmark-text-fill text-primary" style="color: var(--brand-purple) !important;"></i>
+            <span>Generátor dopisu - Žádost o doložení ČP + BÚ</span>
+          </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between mb-2">
+        <h1 class="h4 mb-0 fw-semibold">Generátor dopisu - Žádost o doložení ČP + BÚ (dědici)</h1>
+        <span class="badge bg-light text-dark border">
+            <i class="bi bi-magic me-1"></i>PDF / Word ze šablony
+        </span>
+    </div>
+    <p class="text-muted mb-4">
+        Společnost informuje adresáta, že byl na základě výsledků dědického řízení identifikován jako dědic oprávněný k převzetí přeplatku po zesnulém zákazníkovi. K úspěšnému vyplacení financí je nutné doložit číslo bankovního účtu a podepsané čestné prohlášení, které je přílohou dopisu. Dokument musí obsahovat úředně ověřený podpis, což lze vyřídit na místech Czech POINT, u notáře nebo na matrice. Vyplněné podklady je třeba zaslat zpět společnosti poštou na pražskou adresu nebo elektronicky na uvedený e-mail.
+    </p>
+
+    <form id="dopisForm" novalidate>
+      <div class="row g-4">
+        
+        <div class="col-lg-5">
+          <div class="d-flex flex-column">
+              <div class="progress-container">
+                <div class="d-flex justify-content-between small text-muted mb-1">
+                    <span id="step-indicator">Krok 1 ze 2</span>
+                    <span id="step-name">Společnost a Adresát</span>
+                </div>
+                <div class="progress-bar-custom">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+              </div>
+
+              <div class="card-custom step-section active" id="step-1">
+                <h2 class="section-title"><span class="step-number">1</span> Společnost a Adresát</h2>
+                <div class="row g-3">
+                  
+                  <div class="col-12 mb-2">
+                      <label class="form-label required">Společnost</label>
+                      <div class="company-select-wrapper">
+                          <label class="company-card-label">
+                              <input type="radio" name="spolecnost" id="spol_epet" value="epet" checked onchange="updatePreview()">
+                              <div class="company-card shadow-sm">
+                                  <i class="bi bi-check-circle-fill check-icon"></i>
+                                  <div class="fs-3 mb-1" style="color: #94C11F;"><i class="bi bi-lightning-charge"></i></div>
+                                  <h5 class="mb-0 fs-6">EPET</h5>
+                              </div>
+                          </label>
+                          <label class="company-card-label">
+                              <input type="radio" name="spolecnost" id="spol_de" value="de" onchange="updatePreview()">
+                              <div class="company-card shadow-sm">
+                                  <i class="bi bi-check-circle-fill check-icon"></i>
+                                  <div class="fs-3 mb-1" style="color: #F99F1C;"><i class="bi bi-sun"></i></div>
+                                  <h5 class="mb-0 fs-6">Dobrá Energie</h5>
+                              </div>
+                          </label>
+                      </div>
+                  </div>
+
+                  <div class="col-12">
+                     <label class="form-label required">Pohlaví adresáta</label>
+                     <select class="form-select" id="pohlavi" name="pohlavi" required>
+                       <option value="" selected disabled>Vyberte...</option>
+                       <option value="male">Muž (Vážený pane...)</option>
+                       <option value="female">Žena (Vážená paní...)</option>
+                     </select>
+                  </div>
+                  <div class="col-6">
+                    <label class="form-label required">Jméno</label>
+                    <input type="text" class="form-control" name="jmeno" required>
+                  </div>
+                  <div class="col-6">
+                    <label class="form-label required">Příjmení</label>
+                    <input type="text" class="form-control" name="prijmeni" required>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label required">Ulice a č.p.</label>
+                    <input type="text" class="form-control" name="ulice_trvala" required>
+                  </div>
+                  <div class="col-7">
+                    <label class="form-label required">Město</label>
+                    <input type="text" class="form-control" name="mesto_trvala" required>
+                  </div>
+                  <div class="col-5">
+                    <label class="form-label required">PSČ</label>
+                    <input type="text" class="form-control" name="psc_trvala" maxlength="6" placeholder="123 45" required>
+                  </div>
+                  <div class="col-12">
+                     <label class="form-label required">Datum dopisu</label>
+                     <input type="date" class="form-control" name="datum" required>
+                  </div>
+                </div>
+                
+                <div class="d-flex justify-content-end mt-4 pt-3 border-top">
+                    <button type="button" class="btn-nav btn-next" onclick="nextStep(1)">
+                        Pokračovat <i class="bi bi-arrow-right"></i>
+                    </button>
+                </div>
+              </div>
+
+              <div class="card-custom step-section" id="step-2">
+                <h2 class="section-title"><span class="step-number">2</span> Zůstavitel a Formát</h2>
+                <div class="row g-3">
+                  <div class="col-12">
+                     <label class="form-label required">Pohlaví zůstavitele</label>
+                     <select class="form-select" name="pohlavi_zakaznika" required>
+                       <option value="" selected disabled>Vyberte...</option>
+                       <option value="male">Muž (po zákazníkovi)</option>
+                       <option value="female">Žena (po zákaznici)</option>
+                     </select>
+                  </div>
+                  <div class="col-6">
+                    <label class="form-label required">Jméno</label>
+                    <input type="text" class="form-control" name="jmeno_zemreleho" required>
+                  </div>
+                  <div class="col-6">
+                    <label class="form-label required">Příjmení</label>
+                    <input type="text" class="form-control" name="prijmeni_zemreleho" required>
+                  </div>
+                  <div class="col-12">
+                     <label class="form-label required">Datum narození</label>
+                     <input type="date" class="form-control" name="datum_narozeni" required>
+                  </div>
+                  <div class="col-12">
+                     <label class="form-label required">Poslední bydliště</label>
+                     <input type="text" class="form-control" name="bydliste_zemreleho" placeholder="Ulice, Město" required>
+                  </div>
+
+                  <div class="col-12">
+                      <hr class="my-1 border-opacity-50">
+                  </div>
+
+                  <div class="col-12">
+                      <label class="form-label required">Formát ke stažení</label>
+                      <select class="form-select" name="format_souboru" id="formatSouboru">
+                          <option value="pdf" selected>PDF dokument</option>
+                          <option value="doc">Word (Docx)</option>
+                      </select>
+                  </div>
+
+                  <input type="hidden" name="osloveni_formalne" value="">
+                  <input type="hidden" name="reseni" value="">
+                  <input type="hidden" name="pohlavi_zakaznika_dat" value="">
+                  <input type="hidden" name="jmeno_zemreleho_sklo" value="">
+                  <input type="hidden" name="prijmeni_zemreleho_sklo" value="">
+
+                </div>
+                
+                <div class="d-flex justify-content-between mt-4 pt-3 border-top align-items-center">
+                    <button type="button" class="btn-nav btn-prev" onclick="prevStep(2)">
+                        <i class="bi bi-arrow-left"></i> Zpět
+                    </button>
+                    <button type="submit" class="btn-submit-final shadow" id="submitBtn">
+                        <span class="spinner-border spinner-border-sm me-2 d-none" id="btnSpinner" aria-hidden="true"></span>
+                        <i class="bi bi-magic me-2"></i>Vygenerovat soubor
+                    </button>
+                </div>
+              </div>
+
+              <div class="result-wrap mb-4">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                      <i class="bi bi-info-circle-fill" style="color:var(--brand-purple)"></i>
+                      <div class="fw-semibold">Výsledek</div>
+                  </div>
+                  <div id="vysledek" class="text-muted small">Po vygenerování se zde zobrazí odkaz na dokument.</div>
+              </div>
+
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h5 class="mb-0 fw-semibold"><i class="bi bi-eye me-2"></i>Náhled dopisu</h5>
+            <span class="badge bg-light text-dark border">ČP + BÚ</span>
+          </div>
+          
+          <div class="preview-box">
+            
+            <div class="mb-5">
+              <div id="prev_adresat_jmeno" class="fw-bold">[Jméno Příjmení]</div>
+              <div id="prev_adresat_ulice">[Ulice]</div>
+              <div id="prev_adresat_mesto">[PSČ a Město]</div>
+            </div>
+
+            <div class="text-end mb-5">
+              <div>V Praze <span id="prev_datum" class="highlight-var">[Datum]</span></div>
+            </div>
+            
+            <div class="fw-bold text-decoration-underline mb-4">Věc: Vyplacení přeplatku na základě dědického řízení</div>
+
+            <div>
+              <p><span id="prev_osloveni" class="highlight-var fw-bold">[Oslovení]</span>,</p>
+
+              <p>
+                na základě doručeného usnesení o dědickém řízení nám byl notářem sdělen Váš status jednoho z dědiců po <span id="prev_pohlZakDat" class="highlight-var">zákazníkovi/zákaznici</span>: <span id="prev_zemrely_dat" class="fw-bold highlight-var">[Jméno a Příjmení 3./6. pád]</span>, datum narození: <span id="prev_datum_narozeni" class="fw-bold highlight-var">...</span>, posledně bytem <span id="prev_bydliste" class="highlight-var">[Adresa]</span>. V souvislosti s touto skutečností bychom Vás rádi informovali, že na zákaznickém účtu zesnulého evidujeme přeplatek, který je možné vyplatit.
+              </p>
+
+              <p>
+                 Abychom mohli přistoupit k jeho výplatě, je třeba z Vaší strany doložit:
+              </p>
+
+              <ul class="preview-list" style="list-style-type: disc; padding-left: 1.5rem;">
+                 <li><strong>Čestné prohlášení</strong> o souhlasu s vyplacením přeplatku – slouží jako potvrzení, že souhlasíte s vyplacením příslušné částky na základě dědictví.</li>
+                 <li><strong>Číslo bankovního účtu</strong>, na který si přejete přeplatek poukázat.</li>
+              </ul>
+
+              <p>
+                 Oba výše uvedené údaje jsou nezbytné k provedení platby. Formulář čestného prohlášení Vám zasíláme v příloze tohoto dopisu. U všech podpisů je nutné úřední ověření – lze provést na Czech POINTu (pošta/obecní úřad), u notáře nebo na matrice.
+              </p>
+
+              <p id="prev_zaslani_text">
+                Prosíme o jeho vyplnění, vlastnoruční podepsání a zaslání zpět – poštou na adresu EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1 nebo e-mailem na info@epet.cz.
+              </p>
+            </div>
+
+            <div class="mt-5 border-top pt-3">
+              <p id="prev_paticka_text" class="small text-muted text-center">
+                Pro komunikaci s námi můžete využívat zákaznickou linku 255 70 70 99, která je Vám k dispozici v pracovní dny od 8 do 17 hodin, nebo nás můžete kontaktovat e-mailem na info@epet.cz.<br><br>
+                S přáním hezkého dne<br>
+                tým společnosti epet
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    (function() {
+        // --- DEKLARACE PROMĚNNÝCH PRO FORMULÁŘ ---
+        const ENDPOINT = 'https://script.google.com/macros/s/AKfycbywh6CZuW0SlZ0U7S9oZeuHvs0rded-Mrf9YIqcnyEFhGB5neJtcEm44XGsU3r22aKThw/exec';
+        
+        // DOPLNIT: Sem vložte odkaz na Google Apps Script pro Dobrou Energii pro tuto konkrétní šablonu
+        const DE_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzD-8bWHFaxlUf7RjIwFXwhaBEuRgAdqqcHxD0lHbBv-H5_lgsTtodTELvWParsoA2jWQ/exec'; 
+
+        let currentStep = 1;
+        const totalSteps = 2;
+        const stepNames = ["Společnost a Adresát", "Zůstavitel a Formát"];
+
+        const form = document.getElementById('dopisForm');
+        const result = document.getElementById('vysledek');
+        const loader = document.getElementById('loader');
+        const submitBtn = document.getElementById('submitBtn');
+        const btnSpinner = document.getElementById('btnSpinner');
+
+        // --- HOISTOVANÉ FUNKCE PRO WIZARD ---
+        function updateStepUI() {
+            document.querySelectorAll('.step-section').forEach(s => s.classList.remove('active'));
+            document.getElementById('step-' + currentStep).classList.add('active');
+            document.getElementById('progress-fill').style.width = (currentStep / totalSteps * 100) + '%';
+            document.getElementById('step-indicator').innerText = `Krok ${currentStep} ze ${totalSteps}`;
+            document.getElementById('step-name').innerText = stepNames[currentStep - 1];
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        window.updateStepUI = updateStepUI;
+
+        function validateCurrentStep(step) {
+            const section = document.getElementById(`step-${step}`);
+            if (!section) return false;
+
+            const inputs = section.querySelectorAll('input, select');
+            let isValid = true;
+            let firstInvalid = null;
+
+            inputs.forEach(inp => {
+                if (inp.offsetParent === null) return;
+                const isRequired = inp.hasAttribute('required');
+
+                if (isRequired) {
+                    if (inp.value.length === 0) {
+                        inp.classList.add('is-invalid');
+                        isValid = false;
+                        if (!firstInvalid) firstInvalid = inp;
+                    } else {
+                        inp.classList.remove('is-invalid');
+                    }
+                }
+            });
+
+            if (!isValid) {
+                alert("Některá povinná pole nejsou vyplněná.");
+                if (firstInvalid) firstInvalid.focus();
+            }
+
+            return isValid;
+        }
+        window.validateCurrentStep = validateCurrentStep;
+
+        function nextStep(step) {
+            if (validateCurrentStep(step)) {
+                currentStep++;
+                updateStepUI();
+            }
+        }
+        window.nextStep = nextStep;
+
+        function prevStep(step) {
+            currentStep--;
+            updateStepUI();
+        }
+        window.prevStep = prevStep;
+
+        // Globální event listenery pro čistění chyb
+        document.addEventListener('input', function (e) {
+            if (e.target && e.target.classList && e.target.classList.contains('is-invalid')) {
+                e.target.classList.remove('is-invalid');
+            }
+            updatePreview();
+        });
+
+        // --- POMOCNÉ A SKLOŇOVACÍ FUNKCE ---
+        function formatDatumCZ(isoDate) {
+            if (!isoDate) return '...';
+            const [y, m, d] = isoDate.split('-');
+            return (y && m && d) ? `${d}.${m}.${y}` : isoDate;
+        }
+
+        function prijmeniVocativ(prijmeni, gender) {
+            if(!prijmeni) return '';
+            const p = prijmeni.trim();
+         if (gender === 'female') {
+        if (/a$/i.test(p)) return p.slice(0, -1) + 'o'; // Svoboda -> Svobodo
+        return p;
+    }
+
+    // Muži - skloňování (Vokativ)
+    if (/^Jaroš$/i.test(p)) return "Jaroši";
+    if (/ř$/i.test(p)) return p + "i";
+    if (/el$/i.test(p)) return p.replace(/el$/i, "le");
+    if (/(al|l)$/i.test(p)) return p + "e";
+    if (/vička$/i.test(p)) return p.replace(/vička$/i, "vičko");
+    if (/ska$/i.test(p)) return p.slice(0, -1) + "o"; // Oprava tvého ška/ska
+    if (/ka$/i.test(p)) return p.replace(/ka$/i, "ko");
+    if (/(ák|ík|ok|uk|ch)$/i.test(p)) return p + "u";
+    if (/ek$/i.test(p)) return p.replace(/ek$/i, "ku");
+    if (/ec$/i.test(p)) return p.replace(/ec$/i, "če");
+    if (/(eš|oš|uš|j|s|áč)$/i.test(p)) return p + "i";
+    if (/or$/i.test(p)) return p.replace(/or$/i, "ore");
+    if (/ší$/i.test(p)) return p;
+    if (/(sch|ss|rz|z|x)$/i.test(p)) return p + "i";
+    if (/a$/i.test(p)) return p.slice(0, -1) + "o";
+    if (/[bcčdďfghjklmnňpqrřsštťvwxzž]$/i.test(p)) return p + "e";
+
+    return p;
+}
+
+        function sklonujJmenoDativ(jmeno, gender) {
+            if (!jmeno) return '';
+            const jm = jmeno.trim();
+            if (gender === 'male') {
+                if (jm.endsWith('í')) return jm + 'mu'; 
+                if (jm.endsWith('áš')) return jm + 'ovi';
+                if (jm.endsWith('ek')) return jm.replace(/ek$/, 'kovi');
+                if (jm.endsWith('el')) return jm.replace(/el$/, 'lovi');
+                if (jm.endsWith('r'))  return jm + 'ovi';
+                if (jm.endsWith('o'))  return jm.slice(0, -1) + 'ovi';
+                if (/[bcčdďfghjklmnňpqrřsštťvwxzž]$/i.test(jm)) return jm + 'ovi';
+                return jm + 'ovi';
+            }
+            if (gender === 'female') {
+                if (jm.endsWith('ka')) return jm.replace(/ka$/, 'ce');
+                if (jm.endsWith('na')) return jm.replace(/na$/, 'ně');
+                if (jm.endsWith('a'))  return jm.slice(0, -1) + 'ě';
+                if (/[eě]$/i.test(jm)) return jm.slice(0, -1) + 'i'; 
+                return jm;
+            }
+            return jm;
+        }
+
+        function sklonujPrijmeniDativ(prijmeni, gender) {
+            if (!prijmeni) return '';
+            let p = prijmeni.trim();
+            if (gender === 'female') {
+                if (p.endsWith('ová')) return p.slice(0, -3) + 'ové';
+                if (p.endsWith('á'))   return p.slice(0, -1) + 'é';
+                if (p.endsWith('a'))   return p.slice(0, -1) + 'ě';
+                return p;
+            }
+            if (gender === 'male') {
+                if (p.endsWith('ý'))   return p.slice(0, -1) + 'ému';
+                if (p.endsWith('ek'))  return p.replace(/ek$/, 'kovi');
+                if (p.endsWith('ák'))  return p.replace(/ák$/, 'ákovi');
+                if (p.endsWith('el'))  return p.replace(/el$/, 'lovi');
+                if (p.endsWith('ec'))  return p.replace(/ec$/, 'ci') + 'ovi'; 
+                if (p.endsWith('a'))   return p.slice(0, -1) + 'ovi';
+                if (/[bcčdďfghjklmnňpqrřsštťvwxzž]$/i.test(p)) return p + 'ovi';
+                return p + 'ovi';
+            }
+            return p;
+        }
+
+        function toggleLoader(show) {
+            loader.style.display = show ? 'flex' : 'none';
+            submitBtn.disabled = !!show;
+            btnSpinner.classList.toggle('d-none', !show);
+        }
+
+        // Auto-formát PSČ
+        const pscInput = document.querySelector('input[name="psc_trvala"]');
+        if(pscInput) {
+            pscInput.addEventListener('input', function(e) {
+                let v = e.target.value.replace(/\D/g, '');
+                if (v.length > 5) v = v.slice(0, 5);
+                if (v.length > 3) v = v.slice(0, 3) + ' ' + v.slice(3);
+                e.target.value = v;
+                updatePreview();
+            });
+        }
+
+        // --- NÁHLED DOPISU A SKRYTÁ POLE ---
+        function updatePreview() {
+            if(!form) return;
+            const fd = new FormData(form);
+            const spolecnost = fd.get('spolecnost');
+
+            // 1. Změna textů dle společnosti
+            const zaslaniText = document.getElementById('prev_zaslani_text');
+            const patickaText = document.getElementById('prev_paticka_text');
+            
+            if(spolecnost === 'epet') {
+                zaslaniText.innerHTML = "Prosíme o jeho vyplnění, vlastnoruční podepsání a zaslání zpět – poštou na adresu <b>EP ENERGY TRADING, a.s., Klimentská 46, 110 00 Praha 1</b> nebo e-mailem na <b>info@epet.cz</b>.";
+                patickaText.innerHTML = "Pro komunikaci s námi můžete využívat zákaznickou linku <b>255 70 70 99</b>, která je Vám k dispozici v pracovní dny od 8 do 17 hodin, nebo nás můžete kontaktovat e-mailem na <b>info@epet.cz</b>.<br><br>S přáním hezkého dne<br>tým společnosti epet";
+            } else {
+                zaslaniText.innerHTML = "Prosíme o jeho vyplnění, vlastnoruční podepsání a zaslání zpět – poštou na adresu <b>Dobrá Energie, s. r. o., Klimentská 46, 110 00 Praha 1</b> nebo e-mailem na <b>info@dobra-energie.eu</b>.";
+                patickaText.innerHTML = "Pro komunikaci s námi můžete využívat zákaznickou linku <b>226 284 283</b>, která je Vám k dispozici v pracovní dny od 8:30 do 17 hodin, nebo nás můžete kontaktovat e-mailem na <b>info@dobra-energie.eu</b>.<br><br>S přáním hezkého dne<br>tým společnosti Dobrá Energie";
+            }
+
+            // 2. Adresát
+            const jAdr = fd.get('jmeno') || '...';
+            const pAdr = fd.get('prijmeni') || '...';
+            document.getElementById('prev_adresat_jmeno').textContent = `${jAdr} ${pAdr}`;
+            document.getElementById('prev_adresat_ulice').textContent = fd.get('ulice_trvala') || '...';
+            const psc = fd.get('psc_trvala') || '...';
+            const mesto = fd.get('mesto_trvala') || '...';
+            document.getElementById('prev_adresat_mesto').textContent = `${psc} ${mesto}`;
+            
+            // 3. Datum
+            document.getElementById('prev_datum').textContent = formatDatumCZ(fd.get('datum'));
+
+            // 4. Oslovení (Vážený pane [Příjmení 5.pád])
+            const gAdr = fd.get('pohlavi');
+            let osloveniText = 'Vážený pane/paní';
+            let ulozeniOsloveniFormalne = '';
+            let ulozeniReseni = 'řešil/a';
+
+            if(gAdr && pAdr !== '...') {
+                const voc = prijmeniVocativ(pAdr, gAdr);
+                osloveniText = (gAdr === 'female') ? `Vážená paní ${voc}` : `Vážený pane ${voc}`;
+                ulozeniOsloveniFormalne = osloveniText;
+                ulozeniReseni = (gAdr === 'female') ? 'řešila' : 'řešil';
+            }
+            document.getElementById('prev_osloveni').textContent = osloveniText;
+            
+            // Zápis do hidden polí
+            const elOsl = form.querySelector('[name="osloveni_formalne"]');
+            if(elOsl) elOsl.value = ulozeniOsloveniFormalne;
+            const elRes = form.querySelector('[name="reseni"]');
+            if(elRes) elRes.value = ulozeniReseni;
+
+            // 5. Zůstavitel
+            const gZem = fd.get('pohlavi_zakaznika');
+            const roleZak = (gZem === 'female') ? 'zákaznici' : 'zákazníkovi';
+            document.getElementById('prev_pohlZakDat').textContent = roleZak;
+            
+            const elPohlZemDat = form.querySelector('[name="pohlavi_zakaznika_dat"]');
+            if(elPohlZemDat) elPohlZemDat.value = roleZak;
+
+            const jZem = fd.get('jmeno_zemreleho');
+            const pZem = fd.get('prijmeni_zemreleho');
+            const jDat = sklonujJmenoDativ(jZem, gZem) || '...';
+            const pDat = sklonujPrijmeniDativ(pZem, gZem) || '...';
+            document.getElementById('prev_zemrely_dat').textContent = `${jDat} ${pDat}`;
+
+            const elJmZemSklo = form.querySelector('[name="jmeno_zemreleho_sklo"]');
+            if(elJmZemSklo) elJmZemSklo.value = jDat;
+            const elPrijmZemSklo = form.querySelector('[name="prijmeni_zemreleho_sklo"]');
+            if(elPrijmZemSklo) elPrijmZemSklo.value = pDat;
+
+            document.getElementById('prev_datum_narozeni').textContent = formatDatumCZ(fd.get('datum_narozeni'));
+            document.getElementById('prev_bydliste').textContent = fd.get('bydliste_zemreleho') || '...';
+        }
+        window.updatePreview = updatePreview;
+
+        // Init today's date
+        const today = new Date().toISOString().split('T')[0];
+        const dateInput = document.querySelector('input[name="datum"]');
+        if(dateInput && !dateInput.value) dateInput.value = today;
+
+        // --- ODESLÁNÍ FORMULÁŘE ---
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            if (!validateCurrentStep(2)) return;
+
+            const fd = new FormData(form);
+            const dataObj = Object.fromEntries(fd.entries());
+
+            // Výběr cílové URL podle vybrané společnosti
+            const TARGET_URL = dataObj.spolecnost === 'de' ? DE_ENDPOINT : ENDPOINT;
+
+            // Datová pole převedeme na český formát přímo do payloadu
+            ['datum', 'datum_narozeni'].forEach(function (k) {
+                const v = fd.get(k);
+                if (v) fd.set(k, formatDatumCZ(v));
+            });
+
+            // Čtení ze skrytých proměnných nastavených z updatePreview()
+            fd.set('osloveni_formalne', form.querySelector('[name="osloveni_formalne"]').value);
+            fd.set('reseni', form.querySelector('[name="reseni"]').value);
+            // Sjednocení jména a příjmení adresáta (dědice)
+            fd.set('adresat_cele_jmeno', `${dataObj.jmeno} ${dataObj.prijmeni}`.replace(/ /g, '\u00A0'));
+            // Apps Script očekával, že mu rovnou přehrajeme 'pohlavi_zakaznika', tak to zachováme
+            fd.set('pohlavi_zakaznika', form.querySelector('[name="pohlavi_zakaznika_dat"]').value);
+            
+            fd.set('jmeno_zemreleho_sklo', form.querySelector('[name="jmeno_zemreleho_sklo"]').value);
+            fd.set('prijmeni_zemreleho_sklo', form.querySelector('[name="prijmeni_zemreleho_sklo"]').value);
+
+            toggleLoader(true);
+            result.innerHTML = '<p class="text-muted"><i class="bi bi-hourglass-split me-1"></i>Zpracovávám…</p>';
+
+            const controller = new AbortController();
+            const timeout = setTimeout(() => controller.abort(), 45000);
+
+            try {
+                const res = await fetch(TARGET_URL, { 
+                    method: 'POST', 
+                    body: fd, 
+                    signal: controller.signal 
+                });
+                clearTimeout(timeout);
+
+                if (!res.ok) throw new Error('Server vrátil ' + res.status);
+                const data = await res.json();
+
+                if (!data || data.status !== 'success' || !data.url) {
+                    throw new Error((data && data.message) ? data.message : 'Neznámá chyba při generování.');
+                }
+
+                result.innerHTML =
+                    '<div class="alert alert-success mb-3"><i class="bi bi-check-circle me-1"></i><strong>Dokument byl úspěšně vygenerován.</strong></div>' +
+                    '<a href="' + data.url + '" target="_blank" rel="noopener" class="btn btn-success"><i class="bi bi-download me-1"></i>Stáhnout dokument</a>';
+
+                window.open(data.url, '_blank');
+
+            } catch (err) {
+                const msg = (err.name === 'AbortError') ? 'Vypršel časový limit požadavku.' : (err.message || String(err));
+                result.innerHTML = '<div class="alert alert-danger"><i class="bi bi-x-octagon me-1"></i><strong>Chyba:</strong> ' + msg + '</div>';
+            } finally {
+                toggleLoader(false);
+            }
+        });
+
+        // První render
+        updateStepUI();
+        updatePreview();
+    })();
+  </script>
+  <script src="../assets/ui.js" defer></script>
+</body>
+</html>

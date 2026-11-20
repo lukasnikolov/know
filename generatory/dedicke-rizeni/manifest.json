@@ -1,0 +1,202 @@
+[
+  {
+    "name": "Čestné prohlášení dědice – Souhlas se zápočtem (rozdělení rovným dílem) (návrh zápočtu - dle počtu dědiců)",
+    "original_file": "Generátor dopisu - Čestné prohlášení dědice – Souhlas se zápočtem (rozdělení rovným dílem) (návrh zápočtu - dle počtu dědiců).html",
+    "slug": "cestne-prohlaseni-dedice-souhlas-se-zapoctem-rozdeleni-rovnym-dilem-navrh-zapoctu-dle-poctu",
+    "url": "cestne-prohlaseni-dedice-souhlas-se-zapoctem-rozdeleni-rovnym-dilem-navrh-zapoctu-dle-poctu/index.html",
+    "group": "Zápočty a prohlášení",
+    "source_title": "Návrh – zápočet podle počtu dědiců | Generátor",
+    "sha256": "13a8ddedf342e14d686ee9f49b5d66b04a78a59d892692b5231a3b8502f395b6",
+    "duplicate_source": false
+  },
+  {
+    "name": "Informace k odběrnému místu po zemřelém – Více dědiců",
+    "original_file": "Generátor dopisu - Informace k odběrnému místu po zemřelém – Více dědiců.html",
+    "slug": "informace-k-odbernemu-mistu-po-zemrelem-vice-dedicu",
+    "url": "informace-k-odbernemu-mistu-po-zemrelem-vice-dedicu/index.html",
+    "group": "Informace dědicům",
+    "source_title": "Generátor dopisu – Informace k odběrnému místu (Známe dědice)",
+    "sha256": "4c3808c06de5306ac95cc1b09a2ab7f24b42b5254f8e8e557735cad7e1a26474",
+    "duplicate_source": true
+  },
+  {
+    "name": "Informace k odběrnému místu po zemřelém – Vypravitel pohřbu",
+    "original_file": "Generátor dopisu - Informace k odběrnému místu po zemřelém – Vypravitel pohřbu.html",
+    "slug": "informace-k-odbernemu-mistu-po-zemrelem-vypravitel-pohrbu",
+    "url": "informace-k-odbernemu-mistu-po-zemrelem-vypravitel-pohrbu/index.html",
+    "group": "Informace dědicům",
+    "source_title": "Generátor dopisu – Informace k odběrnému místu (Vypravitel pohřbu)",
+    "sha256": "7e272d70c39fd7e9d5c1a8b7e35f7232b9ffe623112f0b31564b0e4216124518",
+    "duplicate_source": false
+  },
+  {
+    "name": "Návrh na zápočet pohledávek a rozdělení přeplatku – dle počtu dědiců - Zůstává přeplatek",
+    "original_file": "Generátor dopisu - Návrh na zápočet pohledávek a rozdělení přeplatku – dle počtu dědiců - Zůstává přeplatek.html",
+    "slug": "navrh-na-zapocet-pohledavek-a-rozdeleni-preplatku-dle-poctu-dedicu-zustava-preplatek",
+    "url": "navrh-na-zapocet-pohledavek-a-rozdeleni-preplatku-dle-poctu-dedicu-zustava-preplatek/index.html",
+    "group": "Zápočty a prohlášení",
+    "source_title": "Generátor dopisu – Zápočet dle počtu dědiců (přeplatek)",
+    "sha256": "06af5c342beb8b0c12c7b689c963261df5fc9b5df6124b8ceb9abf892b1e16da",
+    "duplicate_source": false
+  },
+  {
+    "name": "Odpověď notáři – OM neukončeno",
+    "original_file": "Generátor dopisu - Odpověď notáři – OM neukončeno.html",
+    "slug": "odpoved-notari-om-neukonceno",
+    "url": "odpoved-notari-om-neukonceno/index.html",
+    "group": "Odpovědi notáři",
+    "source_title": "Odpověď notáři – OM neukončeno",
+    "sha256": "87f3f1c928ee723e6a1588006dae889a0432e07fdf6a32ab3e2083f55590d7a7",
+    "duplicate_source": false
+  },
+  {
+    "name": "Oslovení notáře",
+    "original_file": "Generátor dopisu - Oslovení notáře.html",
+    "slug": "osloveni-notare",
+    "url": "osloveni-notare/index.html",
+    "group": "Odpovědi notáři",
+    "source_title": "Generátor dopisu - Oslovení notáře",
+    "sha256": "ff92e0a4c50b1780bf28030c01cfa35ac528f1a20a3a459869ebff82f94caa21",
+    "duplicate_source": false
+  },
+  {
+    "name": "Prohlášení se zápočtem (dle podílu)",
+    "original_file": "Generátor dopisu – Prohlášení se zápočtem (dle podílu).html",
+    "slug": "prohlaseni-se-zapoctem-dle-podilu",
+    "url": "prohlaseni-se-zapoctem-dle-podilu/index.html",
+    "group": "Zápočty a prohlášení",
+    "source_title": "Návrh – zápočet podle podílu | Generátor",
+    "sha256": "4b4b54eb4eed1a77dd0d5c00c2f64ee60c824df1a6df88a6babb9e2e2f408029",
+    "duplicate_source": false
+  },
+  {
+    "name": "Přeplatek vyplacen",
+    "original_file": "Generátor dopisu – Přeplatek vyplacen.html",
+    "slug": "preplatek-vyplacen",
+    "url": "preplatek-vyplacen/index.html",
+    "group": "Ostatní",
+    "source_title": "Informace pro notáře – přeplatek již vyplacen",
+    "sha256": "a2258045945fb2a3368cb5e0f17fa3606f1fdaf631ea5a6da951d85bff0d75cb",
+    "duplicate_source": false
+  },
+  {
+    "name": "Výzva k úhradě dluhu – Nabídka zápočtu pohledávek v rámci dědictví - dané podíly (po zápočtu vzniká přeplatek)",
+    "original_file": "Generátor dopisu - Výzva k úhradě dluhu – Nabídka zápočtu pohledávek v rámci dědictví - dané podíly (po zápočtu vzniká přeplatek).html",
+    "slug": "vyzva-k-uhrade-dluhu-nabidka-zapoctu-pohledavek-v-ramci-dedictvi-dane-podily-po-zapoctu-vzni",
+    "url": "vyzva-k-uhrade-dluhu-nabidka-zapoctu-pohledavek-v-ramci-dedictvi-dane-podily-po-zapoctu-vzni/index.html",
+    "group": "Zápočty a prohlášení",
+    "source_title": "Výzva k úhradě dluhu – dané podíly (přeplatek)",
+    "sha256": "510d223b6d1bc9876e03effc5ae1a11cc2ae1d30a1243c9d9abe55381cc4ca55",
+    "duplicate_source": false
+  },
+  {
+    "name": "Výzva k úhradě dluhu – Návrh na zápočet pohledávek a rozdělení přeplatku - dle podílů - Zůstává nedoplatek",
+    "original_file": "Generátor dopisu - Výzva k úhradě dluhu – Návrh na zápočet pohledávek a rozdělení přeplatku - dle podílů - Zůstává nedoplatek.html",
+    "slug": "vyzva-k-uhrade-dluhu-navrh-na-zapocet-pohledavek-a-rozdeleni-preplatku-dle-podilu-zustava-ne",
+    "url": "vyzva-k-uhrade-dluhu-navrh-na-zapocet-pohledavek-a-rozdeleni-preplatku-dle-podilu-zustava-ne/index.html",
+    "group": "Zápočty a prohlášení",
+    "source_title": "Výzva k úhradě dluhu – s podíly (nedoplatek)",
+    "sha256": "d9be648f771dae8a8d27650721965a81b48258a31d145084a675f2bc5d7843aa",
+    "duplicate_source": false
+  },
+  {
+    "name": "Žádost o doložení ČP + BÚ",
+    "original_file": "Generátor dopisu - Žádost o doložení ČP + BÚ.html",
+    "slug": "zadost-o-dolozeni-cp-bu",
+    "url": "zadost-o-dolozeni-cp-bu/index.html",
+    "group": "Ostatní",
+    "source_title": "Generátor dopisu - Žádost o doložení ČP + BÚ",
+    "sha256": "7b5c12eab625fbece4d2ad140a0dec0950163d2de92c39bc3ccaac97901272c7",
+    "duplicate_source": false
+  },
+  {
+    "name": "Žádost o doložení dědického usnesení + ČP (Potenciální dědic)",
+    "original_file": "Generátor dopisu - Žádost o doložení dědického usnesení + ČP (Potenciální dědic).html",
+    "slug": "zadost-o-dolozeni-dedickeho-usneseni-cp-potencialni-dedic",
+    "url": "zadost-o-dolozeni-dedickeho-usneseni-cp-potencialni-dedic/index.html",
+    "group": "Informace dědicům",
+    "source_title": "Generátor dopisu – Dopis potenciálnímu dědici",
+    "sha256": "6bdc88dac8ccc89e11a13250dbf3c6dc85449ee15d80e094c8f4901a81edc916",
+    "duplicate_source": false
+  },
+  {
+    "name": "Informace k odběrnému místu po zemřelém – Známe dědice (je pouze jeden)",
+    "original_file": "Informace k odběrnému místu po zemřelém – Známe dědice (je pouze jeden).html",
+    "slug": "informace-k-odbernemu-mistu-po-zemrelem-zname-dedice-je-pouze-jeden",
+    "url": "informace-k-odbernemu-mistu-po-zemrelem-zname-dedice-je-pouze-jeden/index.html",
+    "group": "Informace dědicům",
+    "source_title": "Generátor dopisu – Informace k odběrnému místu (Známe dědice)",
+    "sha256": "4c3808c06de5306ac95cc1b09a2ab7f24b42b5254f8e8e557735cad7e1a26474",
+    "duplicate_source": true
+  },
+  {
+    "name": "Informace pro notáře – evidovaný nedoplatek",
+    "original_file": "Informace pro notáře – evidovaný nedoplatek.html",
+    "slug": "informace-pro-notare-evidovany-nedoplatek",
+    "url": "informace-pro-notare-evidovany-nedoplatek/index.html",
+    "group": "Odpovědi notáři",
+    "source_title": "Odpověď notáři – evidovaný nedoplatek",
+    "sha256": "3c929702c9274842d23273441914071d3764b9d982e116db309db4966f1e92bc",
+    "duplicate_source": false
+  },
+  {
+    "name": "Informace pro notáře – Není náš zákazník",
+    "original_file": "Informace pro notáře – Není náš zákazník.html",
+    "slug": "informace-pro-notare-neni-nas-zakaznik",
+    "url": "informace-pro-notare-neni-nas-zakaznik/index.html",
+    "group": "Odpovědi notáři",
+    "source_title": "Informace pro notáře – neaktivní smlouvy",
+    "sha256": "73032a216d13e2ef9b2423c88c84499a117f9e402692063dd43d51a509d83925",
+    "duplicate_source": false
+  },
+  {
+    "name": "Odběrné místo dosud nebylo ukončeno",
+    "original_file": "Odběrné místo dosud nebylo ukončeno.html",
+    "slug": "odberne-misto-dosud-nebylo-ukonceno",
+    "url": "odberne-misto-dosud-nebylo-ukonceno/index.html",
+    "group": "Odpovědi notáři",
+    "source_title": "Odpověď notáři | Odběrné místo neukončeno",
+    "sha256": "b6e3a461db12c4db8ff61ad864abe981e00627080dc222a12a014cc158a3de54",
+    "duplicate_source": false
+  },
+  {
+    "name": "Odpověď notáři – OM ukončeno – přeplatek i nedoplatek",
+    "original_file": "Odpověď notáři – OM ukončeno – přeplatek i nedoplatek.html",
+    "slug": "odpoved-notari-om-ukonceno-preplatek-i-nedoplatek",
+    "url": "odpoved-notari-om-ukonceno-preplatek-i-nedoplatek/index.html",
+    "group": "Odpovědi notáři",
+    "source_title": "Informace pro notáře – Přeplatek/Nedoplatek",
+    "sha256": "b87dcef41d7c42a2e09974cf6482c46b55b25f6740260c2a8a9030d7bee7d843",
+    "duplicate_source": false
+  },
+  {
+    "name": "Odpověď notáři – OM ukončeno – přeplatek",
+    "original_file": "Odpověď notáři – OM ukončeno – přeplatek.html",
+    "slug": "odpoved-notari-om-ukonceno-preplatek",
+    "url": "odpoved-notari-om-ukonceno-preplatek/index.html",
+    "group": "Odpovědi notáři",
+    "source_title": "Odpověď notáři – Kompletní Finální Verze",
+    "sha256": "956ceb073124c1845240087a88d3b0a20226c463e14e812a89674eb1d5427f4b",
+    "duplicate_source": false
+  },
+  {
+    "name": "Ukončená smlouva – čekáme na konečnou fakturu",
+    "original_file": "Ukončená smlouva – čekáme na konečnou fakturu.html",
+    "slug": "ukoncena-smlouva-cekame-na-konecnou-fakturu",
+    "url": "ukoncena-smlouva-cekame-na-konecnou-fakturu/index.html",
+    "group": "Odpovědi notáři",
+    "source_title": "Odpověď notáři | Generátor korespondence",
+    "sha256": "60aff552de539da2d641470e499aab924c837b2fe84bb6dbb90590e6f7d7066f",
+    "duplicate_source": false
+  },
+  {
+    "name": "Výzva k úhradě dluhu – Návrh na zápočet pohledávek a rozdělení přeplatku - dle počtů dědiců - Zůstává nedoplatek",
+    "original_file": "Výzva k úhradě dluhu – Návrh na zápočet pohledávek a rozdělení přeplatku - dle počtů dědiců - Zůstává nedoplatek.html",
+    "slug": "vyzva-k-uhrade-dluhu-navrh-na-zapocet-pohledavek-a-rozdeleni-preplatku-dle-poctu-dedicu-zust",
+    "url": "vyzva-k-uhrade-dluhu-navrh-na-zapocet-pohledavek-a-rozdeleni-preplatku-dle-poctu-dedicu-zust/index.html",
+    "group": "Zápočty a prohlášení",
+    "source_title": "Generátor dopisu – Souhlas dědiců se zápočtem (nedoplatek)",
+    "sha256": "70c91a2d0f0d6901faacf8cfb5a004748d279ba7cad89c399fbefd3fd51f494e",
+    "duplicate_source": false
+  }
+]

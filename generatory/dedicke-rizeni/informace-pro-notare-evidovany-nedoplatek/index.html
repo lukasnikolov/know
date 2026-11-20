@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Odpověď notáři – evidovaný nedoplatek</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  
+  <style>
+    :root {
+      --brand-color: #94c11f;
+      --brand-hover: #7ea815;
+      --brand-purple: #9362d6;
+      --text-dark: #111827;
+      --bg-input: #f3f4f6;
+      --radius-main: 16px;
+      --radius-input: 12px;
+      --border: #e5e7eb;
+    }
+    body { background-color: #ffffff; font-family: 'Inter', sans-serif; color: var(--text-dark); padding-bottom: 6rem; }
+    header { background: #ffffff; border-bottom: 1px solid var(--border); padding: 1rem 0; margin-bottom: 2rem; }
+    .brand-logo { font-family: 'Poppins', sans-serif; font-weight: 600; color: var(--brand-color); font-size: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+    
+    .step-section { display: none; animation: fadeIn 0.4s ease-in-out; }
+    .step-section.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    .card-custom { background: #ffffff; border: 1px solid var(--border); border-radius: var(--radius-main); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); padding: 1.5rem; margin-bottom: 1.5rem; }
+    .step-number { background: #ecfccb; color: #3f6212; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.8rem; margin-right: 8px; }
+    
+    .form-label { font-weight: 500; font-size: 0.9rem; color: #374151; }
+    .form-control, .form-select { border-radius: var(--radius-input); background-color: var(--bg-input); border: 1px solid #d1d5db; padding: 0.6rem 0.8rem; }
+    .contract-row { background: #f9fafb; border: 1px solid var(--border); border-radius: 12px; padding: 15px; margin-bottom: 15px; position: relative; }
+    .btn-remove-row { position: absolute; top: 10px; right: 10px; color: #ef4444; background: none; border: none; cursor: pointer; }
+
+    .preview-box { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-main); padding: 3.5rem; font-family: 'Noto Serif', serif; font-size: 11pt; line-height: 1.5; color: #000; box-shadow: 0 10px 25px rgba(0,0,0,0.05); min-height: 800px; }
+    .contract-list-item { display: block; margin-bottom: 2px; }
+    
+    .btn-nav { border-radius: 99px; padding: 0.6rem 1.5rem; font-weight: 600; border: none; display: flex; align-items: center; gap: 0.5rem; transition: 0.2s; }
+    .btn-next, .btn-submit-final { background: var(--brand-color); color: white; }
+    .btn-prev { background: #e5e7eb; color: #374151; }
+    .progress-bar-custom { height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; margin-bottom: 1.5rem; }
+    .progress-fill { height: 100%; background: var(--brand-color); width: 33%; transition: width 0.3s ease; }
+    #loader { position: fixed; inset: 0; background: rgba(255, 255, 255, 0.9); z-index: 9999; display: none; flex-direction: column; align-items: center; justify-content: center; }
+
+    /* ====== KARTY PRO VÝBĚR SPOLEČNOSTI ====== */
+    .company-select-wrapper { display: flex; gap: 1rem; margin-bottom: 0.5rem; }
+    .company-card-label { flex: 1; cursor: pointer; margin: 0; }
+    .company-card-label input[type="radio"] { display: none; }
+    .company-card {
+      border: 2px solid var(--border); border-radius: .75rem;
+      padding: 1rem 0.5rem; text-align: center; transition: all 0.2s ease;
+      background: #fff; position: relative; height: 100%;
+    }
+    .company-card:hover { border-color: #d1d5db; }
+    .company-card .check-icon {
+      position: absolute; top: 10px; right: 10px;
+      font-size: 1.1rem; opacity: 0; transition: opacity 0.2s;
+    }
+    
+    /* EPET (Zelená) */
+    #spol_epet:checked + .company-card { border-color: #94C11F; background: #f7fceb; }
+    #spol_epet:checked + .company-card .check-icon { opacity: 1; color: #94C11F; }
+    #spol_epet:checked + .company-card h5 { color: #4e6b0b; font-weight: 700; }
+
+    /* Dobrá Energie (Oranžová) */
+    #spol_de:checked + .company-card { border-color: #F99F1C; background: #fffaf4; }
+    #spol_de:checked + .company-card .check-icon { opacity: 1; color: #F99F1C; }
+    #spol_de:checked + .company-card h5 { color: #a1640c; font-weight: 700; }
+    /* PDF IMPORT – lokální čtení a zvýraznění dohledaných údajů */
+    .pdf-upload-card { border:1px solid #bddc76; background:linear-gradient(135deg,#f9fdf1,#ffffff); padding:1.15rem; }
+    .pdf-upload-card .pdf-upload-heading { font-size:1rem; font-weight:700; color:#425c0c; }
+    .pdf-import-status { display:none; border-radius:11px; padding:10px 12px; font-size:.86rem; line-height:1.55; margin-top:12px; }
+    .pdf-import-status.success {display:block;background:#f0fdf4;border:1px solid #a7d59a;color:#285b29;}
+    .pdf-import-status.warning {display:block;background:#fff7e9;border:1px solid #f4cc8a;color:#774b07;}
+    .pdf-import-status.error {display:block;background:#fef2f2;border:1px solid #f5a5a5;color:#922020;}
+    .pdf-autofilled {border-color:#8ab522!important;background:#f3fbe5!important;}
+  
+/* Základní responzivní styly vložené lokálně: rozhraní není závislé jen na CDN Bootstrapu. */
+*,*::before,*::after{box-sizing:border-box}
+.container{width:100%;padding-left:12px;padding-right:12px;margin-left:auto;margin-right:auto}
+.row{--bs-gutter-x:1.5rem;--bs-gutter-y:0;display:flex;flex-wrap:wrap;margin-top:calc(-1*var(--bs-gutter-y));margin-right:calc(-.5*var(--bs-gutter-x));margin-left:calc(-.5*var(--bs-gutter-x))}
+.row>*{flex-shrink:0;width:100%;max-width:100%;padding-left:calc(.5*var(--bs-gutter-x));padding-right:calc(.5*var(--bs-gutter-x));margin-top:var(--bs-gutter-y)}
+.row.g-4{--bs-gutter-x:1.5rem;--bs-gutter-y:1.5rem}
+.row.g-3{--bs-gutter-x:1rem;--bs-gutter-y:1rem}
+.row.g-2{--bs-gutter-x:.5rem;--bs-gutter-y:.5rem}
+.row>.col-4{width:33.33333333%}
+.row>.col-5{width:41.66666667%}
+.row>.col-6{width:50%}
+.row>.col-7{width:58.33333333%}
+.row>.col-8{width:66.66666667%}
+.row>.col-12{width:100%}
+@media(min-width:768px){.row>.col-md-6{width:50%}}
+@media(min-width:992px){.row>.col-lg-5{width:41.66666667%}.row>.col-lg-7{width:58.33333333%}}
+.form-control,.form-select{display:block;width:100%;appearance:auto}
+.form-label{display:inline-block}
+.form-text{font-size:10.5px;color:#78879a}
+.input-group{display:flex;width:100%;align-items:stretch}
+.input-group>.form-control{flex:1 1 auto;min-width:0;border-radius:8px 0 0 8px}
+.input-group>.btn{flex:none}
+button,.btn{cursor:pointer;font:inherit}
+.btn{display:inline-flex;justify-content:center;align-items:center;gap:6px;line-height:1.35;border:1px solid #d7e0e8;background:#fff;border-radius:8px;padding:9px 12px;color:#38516b}
+.btn-success{background:#94c11f;border-color:#94c11f;color:#1a3700}
+.btn-success:hover{background:#7fa518;border-color:#7fa518}
+.btn-light{background:#f7f9fb;color:#40546a}
+.d-none{display:none!important}.d-flex{display:flex!important}.flex-wrap{flex-wrap:wrap!important}.align-items-center{align-items:center!important}
+.justify-content-between{justify-content:space-between!important}.justify-content-end{justify-content:flex-end!important}
+.gap-2{gap:.5rem!important}.gap-3{gap:1rem!important}.w-100{width:100%!important}
+.mb-1{margin-bottom:.25rem!important}.mb-2{margin-bottom:.5rem!important}.mb-3{margin-bottom:1rem!important}.mb-4{margin-bottom:1.5rem!important}.mb-5{margin-bottom:3rem!important}
+.mt-1{margin-top:.25rem!important}.mt-2{margin-top:.5rem!important}.mt-3{margin-top:1rem!important}.mt-4{margin-top:1.5rem!important}
+.ps-3{padding-left:1rem!important}.p-3{padding:1rem!important}.border-top{border-top:1px solid #dfe6ec!important}.pt-3{padding-top:1rem!important}
+.rounded{border-radius:8px!important}.border{border:1px solid #e1e8ee!important}.bg-white{background-color:#fff!important}
+.text-muted{color:#7b8b9d!important}.small{font-size:11px!important}.fw-bold{font-weight:750!important}.fw-semibold{font-weight:650!important}
+.text-uppercase{text-transform:uppercase!important}.text-end{text-align:right!important}.font-monospace{font-family:ui-monospace,monospace!important}
+.fs-3{font-size:19px!important}.fs-6{font-size:13px!important}.shadow-sm{box-shadow:0 1px 2px #11213308}
+.text-decoration-underline{text-decoration:underline!important}
+.company-select-wrapper{display:flex!important}
+@media(max-width:620px){.container{padding-left:14px;padding-right:14px}.row>.col-6,.row>.col-7,.row>.col-5{width:100%}.row>.col-4{width:50%}}
+
+/* =======================================================================
+   KOMPAKTNÍ PROFESIONÁLNÍ VZHLED – vrstvené CSS, bez změny obchodní logiky
+   ======================================================================= */
+:root{
+  --brand-color:#94c11f;
+  --brand-hover:#789d18;
+  --text-dark:#203146;
+  --bg-input:#ffffff;
+  --radius-main:14px;
+  --radius-input:9px;
+  --border:#e3eaf0;
+  --ink-muted:#75869a;
+  --surface:#f8fafb;
+  --surface-brand:#f3f8e9;
+  --shadow-soft:0 6px 25px rgba(24,43,61,.04);
+}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:#fff;color:var(--text-dark);padding-bottom:38px;font-size:13px;line-height:1.55}
+.container{max-width:1480px}
+.application-header{background:#fff;border-bottom:1px solid var(--border);padding:15px 0;margin-bottom:23px}
+.app-brand{display:flex;align-items:center;gap:12px;min-height:37px}
+.app-brand-icon{display:grid;place-items:center;flex:none;width:38px;height:38px;color:#60831b;background:#f0f8e2;border-radius:10px;font-size:19px}
+.app-brand-copy{display:flex;flex-direction:column;gap:2px}
+.app-brand-eyebrow{color:#8493a2;font-size:9px;letter-spacing:.11em;font-weight:800}
+.app-brand-title{color:#203146;font-weight:800;font-size:17px;line-height:1.25;letter-spacing:-.025em}
+.app-brand-status{margin-left:auto;padding:6px 10px;background:#f8fafb;border:1px solid var(--border);border-radius:7px;color:#63768a;font-weight:700;font-size:10px}
+.app-content{max-width:1480px}
+.intro-section{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:23px}
+.intro-left{max-width:930px}
+.intro-kicker{font-size:10px;letter-spacing:.1em;color:#64871b;font-weight:800}
+.intro-section h1{font-size:clamp(20px,2.15vw,28px);font-weight:800;letter-spacing:-.042em;line-height:1.28;margin:7px 0 7px;color:#1b2c41}
+.intro-section p{font-size:11.6px;line-height:1.7;color:#718297;margin:0;max-width:900px}
+.intro-pills{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end;flex:none;margin-top:8px}
+.intro-pills span{white-space:nowrap;font-size:10.2px;font-weight:750;color:#607184;background:#f7f9fa;border:1px solid var(--border);border-radius:7px;padding:7px 9px}
+.intro-pills i{color:#779d23;margin-right:4px}
+#notarForm > .row{--bs-gutter-x:20px;--bs-gutter-y:16px;align-items:start}
+@media(min-width:992px){
+ #notarForm > .row > .wizard-column{width:45.5%}
+ #notarForm > .row > .result-column{width:54.5%}
+}
+.card-custom{border:1px solid #e2e9ef;border-radius:13px;box-shadow:var(--shadow-soft);padding:20px;margin-bottom:15px;background:#fff}
+.card-custom.step-section{min-height:0}
+.progress-container{margin-bottom:12px!important;border:1px solid var(--border);border-radius:10px;padding:12px 14px 13px;background:#fff}
+.progress-container .small{font-size:10.5px!important}
+#step-indicator{color:#253c53;font-weight:800}
+#step-name{color:#718297;font-weight:600}
+.progress-bar-custom{height:5px;margin-top:9px;background:#edf2f5;border-radius:99px}
+.progress-fill{background:linear-gradient(90deg,#8db921,#a8cf4a);border-radius:99px}
+h2.section-title{font-family:Inter,system-ui,sans-serif;font-size:14px;font-weight:800;line-height:1.42;letter-spacing:-.02em;color:#263950;margin-bottom:17px;gap:4px}
+.step-number{background:#f0f8e2;color:#597c19;width:23px;height:23px;font-weight:850;font-size:11px;margin-right:6px}
+.step-section .row.g-3{--bs-gutter-x:12px;--bs-gutter-y:14px}
+.form-label{font-size:11.2px;color:#506279;font-weight:700;margin-bottom:6px;line-height:1.3}
+.form-control,.form-select{font-size:12px;font-weight:500;line-height:1.42;background:#fff;border:1px solid #dbe3ea;border-radius:9px;min-height:41px;padding:9px 12px;color:#24364b;box-shadow:none;transition:background .15s,border-color .15s,box-shadow .15s}
+.form-control::placeholder{color:#a0abb8;font-weight:400}
+.form-control:focus,.form-select:focus{background:#fff;border-color:#94c11f;box-shadow:0 0 0 3px rgba(148,193,31,.12)}
+.form-control.is-invalid,.form-select.is-invalid{border-color:#d96262;background:#fff}
+.form-control:disabled{background:#f7f9fa}
+.form-control.form-control-sm{min-height:37px;padding:8px 9px;font-size:11px}
+input[type=date]{color-scheme:light}
+.step-section hr{border-color:#e8edf1;opacity:1}
+.company-select-wrapper{gap:10px;margin-bottom:0}
+.company-card{border:1px solid #dce4eb;border-radius:9px;padding:12px 10px;background:#fff;box-shadow:none!important;min-height:84px;display:flex;align-items:center;justify-content:center;gap:9px;text-align:left}
+.company-card:hover{border-color:#b5c999;background:#fafdf6}
+.company-card .fs-3{font-size:18px!important;margin:0!important;line-height:1}
+.company-card h5{font-size:12px!important;font-weight:750!important;white-space:normal}
+.company-card .check-icon{top:8px;right:9px;font-size:12px}
+#spol_epet:checked+.company-card{border:1.5px solid #94c11f;background:#f4fae8}
+#spol_de:checked+.company-card{border:1.5px solid #f4a73b;background:#fff7ed}
+.company-card-label input:focus-visible + .company-card{outline:3px solid rgba(148,193,31,.4);outline-offset:2px}
+.company-card-label input[type=radio]{position:absolute;opacity:0;width:1px;height:1px;display:block!important}
+.btn-nav{border-radius:9px;min-height:39px;padding:9px 15px;font-weight:750;font-size:11.5px;transition:background .15s,box-shadow .15s,transform .15s;gap:8px}
+.btn-next,.btn-submit-final{background:#94c11f;color:#1b3500}
+.btn-next:hover,.btn-submit-final:hover{background:#82aa1d;box-shadow:0 4px 12px rgba(148,193,31,.16);color:#fff}
+.btn-prev{background:#f3f6f8;color:#53657a;border:1px solid #e3e9ef}
+.btn-prev:hover{background:#eaf0f4}
+.btn-nav:focus-visible{outline:3px solid #c5e48b;outline-offset:2px}
+#step-3 .btn-outline-secondary,.btn-light.border{font-size:11.5px;border:1px dashed #ccd7e1!important;background:#fff;color:#516a7b;border-radius:9px;min-height:39px}
+#step-3 .btn-light.border:hover{border-color:#94c11f!important;background:#f5faed}
+.contract-row{background:#fbfcfd;border:1px solid #e3eaf0;border-radius:10px;padding:15px 12px 12px;margin-bottom:10px}
+.contract-row label{font-size:10.2px;font-weight:700;color:#687c90;margin-bottom:5px}
+.btn-remove-row{color:#bd4b53;top:10px;right:10px;border-radius:6px;padding:3px 6px}
+.btn-remove-row:hover{background:#fff1f1}
+/* PDF jako volitelný, ale snadno dostupný krok */
+.pdf-import-disclosure{border:1px solid #dde9c7;border-radius:12px;background:#fff;box-shadow:var(--shadow-soft);overflow:hidden}
+.pdf-import-toggle{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;padding:13px 15px;background:#fbfdf8}
+.pdf-import-toggle::-webkit-details-marker{display:none}
+.pdf-import-toggle::marker{content:""}
+.pdf-import-glyph{width:34px;height:34px;flex:none;border-radius:9px;display:grid;place-items:center;background:#eef6de;color:#638819;font-size:16px}
+.pdf-import-title{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1}
+.pdf-import-title strong{font-size:12px;color:#304353;font-weight:800}
+.pdf-import-title small{font-size:10px;color:#788b9a}
+.pdf-import-arrow{font-size:12px;color:#77915b;transition:transform .18s}
+.pdf-import-disclosure[open] .pdf-import-arrow{transform:rotate(180deg)}
+.pdf-import-fields{padding:15px;border-top:1px solid #e7eeda}
+.pdf-import-fields p{font-size:11px;line-height:1.65}
+#pdf-import-button{font-size:11.5px;font-weight:750;min-height:37px;border-radius:8px;background:#86b51c;border:0;color:#173100;padding:8px 12px}
+#pdf-import-button:hover{background:#719c13;color:#fff}
+.pdf-privacy{font-size:10px;line-height:1.6;color:#7b8a9b!important}
+.pdf-import-status{font-size:11px;border-radius:8px;margin-top:10px}
+.pdf-autofilled{border-color:#90bd37!important;background:#f8fcef!important}
+/* Náhled formou čistého úředního dokumentu */
+.preview-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 11px}
+.preview-eyebrow{color:#8594a3;letter-spacing:.09em;font-size:9px;font-weight:850;line-height:1.25}
+.preview-heading h2{font-family:Inter,sans-serif;color:#293c53;font-size:15px;line-height:1.35;font-weight:800;letter-spacing:-.02em;margin:3px 0 0}
+.live-indicator{white-space:nowrap;font-size:10px;color:#74879a;display:inline-flex;gap:7px;align-items:center}
+.live-indicator span{width:7px;height:7px;border-radius:50%;background:#96c321;box-shadow:0 0 0 3px #edf7e4}
+.preview-box{background:#fff;border:1px solid #e0e6ec;border-radius:12px;box-shadow:0 8px 30px rgba(23,40,56,.045);padding:clamp(27px,4vw,49px);min-height:690px;font-family:"Noto Serif",Georgia,serif;font-size:10.7pt;line-height:1.62;color:#222}
+.preview-box table{width:100%;border-collapse:collapse}
+.preview-box .preview-table td{padding-top:5px;padding-bottom:5px;font-size:10.4pt}
+.preview-box .bullet-list li::before{color:#87aa3c}
+.preview-box p{margin-bottom:15px}
+.preview-box p:last-child{margin-bottom:0}
+/* Datová schránka / odeslání e-mailem */
+.dispatch-card{background:#fff!important;border:1px solid #e3eaf0!important;padding:19px 20px}
+.dispatch-heading{display:flex;align-items:center;gap:10px;margin-bottom:17px}
+.dispatch-icon{display:grid;place-items:center;width:35px;height:35px;border-radius:9px;background:#eef5e3;color:#67861e;font-size:17px;flex:none}
+.dispatch-heading h3{font-family:Inter,sans-serif;font-size:14px;line-height:1.4;font-weight:800;margin:3px 0 0;color:#273d51}
+.dispatch-card .bg-white.p-3.rounded.border{border-color:#e5ebf1!important;border-radius:10px!important;background:#fbfcfd!important;padding:15px!important;font-size:11.5px}
+.dispatch-card .btn-primary,.dispatch-card .btn-success{font-size:11.5px;font-weight:750;border-radius:8px;padding:9px 13px}
+.dispatch-card .btn-primary{background:#f4f7fa;color:#43596e;border:1px solid #dfe7ed}
+.dispatch-card .btn-primary:hover{background:#e9eff4;color:#243b50}
+.dispatch-card .btn-success{background:#94c11f;color:#1b3500;border:1px solid #94c11f}
+.dispatch-card .btn-success:hover{background:#80a91a;color:#fff}
+.dispatch-card .form-label{font-size:11px}
+.dispatch-card .input-group .btn{font-size:11px;border-radius:0 8px 8px 0;border-color:#b9d28b;color:#597c19;background:#f8fbf2}
+.dispatch-card #subject-output{overflow-wrap:anywhere}
+#message-box{font-size:11.5px;border-radius:8px}
+#loader{background:rgba(255,255,255,.94);backdrop-filter:blur(3px)}
+#loader .spinner-border{color:#94c11f!important}
+@media(min-width:992px){.result-column{min-width:0}.wizard-column{min-width:0}}
+@media(max-width:991.98px){.intro-section{margin-bottom:18px}.result-column{padding-top:5px}.preview-box{min-height:600px}}
+@media(max-width:620px){.app-brand-status{display:none}.intro-section{flex-direction:column;gap:10px}.intro-pills{justify-content:flex-start;margin-top:0}.application-header{margin-bottom:18px}.step-section .col-6,.step-section .col-5,.step-section .col-7{width:100%}.step-section .contract-row .col-4{width:100%}.card-custom{padding:16px}.preview-box{min-height:520px;padding:24px 19px;font-size:10pt}.preview-box table td{word-break:break-word}.live-indicator{font-size:9px}.dispatch-card{padding:16px}.intro-section h1{font-size:21px}}
+@media(prefers-reduced-motion:reduce){.step-section{animation:none!important}*,*:before,*:after{transition:none!important;scroll-behavior:auto!important}}
+
+
+/* Potvrzení kopírování: nezmění výšku sekce a zůstává viditelné i ve vložené stránce. */
+#message-box.copy-feedback {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    min-height: 39px;
+    margin: 11px 0 0;
+    padding: 8px 12px;
+    font-size: 11.5px;
+    font-weight: 700;
+    line-height: 1.5;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    background: transparent;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .15s ease, visibility .15s ease;
+}
+#message-box.copy-feedback.is-visible {opacity: 1; visibility: visible;}
+#message-box.copy-feedback.is-success {color:#365f20;background:#f1f9e8;border-color:#c9e2ae;}
+#message-box.copy-feedback.is-warning {color:#93611a;background:#fff9ef;border-color:#f0d3a7;}
+#message-box.copy-feedback.is-info {color:#365270;background:#f3f8fd;border-color:#d9e7f4;}
+.copy-toast {
+    position: fixed;
+    right: 21px;
+    bottom: 23px;
+    z-index: 1080;
+    width: max-content;
+    max-width: min(390px, calc(100vw - 30px));
+    display: flex;
+    align-items: center;
+    padding: 13px 17px;
+    border-radius: 11px;
+    border: 1px solid #d1e5bd;
+    box-shadow: 0 10px 30px rgba(19, 39, 30, .18);
+    background: #2f4e2b;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.45;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
+}
+.copy-toast.is-visible {opacity: 1; visibility: visible; transform: translateY(0);}
+.copy-toast.is-warning {background:#80551e;border-color:#e7c89b;}
+.copy-toast.is-info {background:#3f5d75;border-color:#b4c9d9;}
+@media(max-width:620px){.copy-toast{right:12px;bottom:13px;left:12px;width:auto;max-width:none;}}
+@media(prefers-reduced-motion:reduce){.copy-toast,#message-box.copy-feedback{transition:none;}}
+
+
+/* Tato varianta má odlišný způsob zobrazení stavu generování a datumu dopisu. */
+.status-panel{font-size:11px;line-height:1.6;padding:12px 14px;border-radius:10px}
+.status-panel.success{color:#2d6331;background:#f1f9ed;border-color:#cce7ba}
+.status-panel.warning{color:#875717;background:#fff8e9;border-color:#f2d7aa}
+.status-panel.error{color:#953f3f;background:#fff5f4;border-color:#f0c3c3}
+.preview-box .contract-list-item{font-size:10.2pt;line-height:1.55}
+.dispatch-card #message-box.copy-feedback{display:flex!important}
+@media(max-width:620px){.company-card{min-height:69px}.step-section .row.g-3{--bs-gutter-y:12px}}
+
+
+
+/* Specifické prvky generátoru s evidovaným nedoplatkem */
+.contract-row .c-ned{font-weight:750;font-variant-numeric:tabular-nums}
+.contract-row .debt-input-label{color:#6e3e27;font-weight:750}
+.positive-debt-note{display:flex;align-items:flex-start;gap:8px;font-size:10.5px;line-height:1.6;color:#6d7c8d;padding-top:9px}
+.positive-debt-note i{color:#739a24;font-size:13px}
+.preview-box #p_veta_faktura{padding:12px 14px;border-left:3px solid #94c11f;background:#f8fbf4;border-radius:0 8px 8px 0}
+@media(max-width:620px){.preview-box #p_veta_faktura{padding:10px 12px}}
+
+</style>
+  <!-- Jednotne stylovani a UX vrstva Znalostky -->
+  <link rel="stylesheet" href="../assets/theme.css">
+</head>
+<body>
+
+  <div id="loader">
+    <div class="spinner-border text-success" role="status"></div>
+    <div class="mt-3 fw-medium">Generuji dokument, chvilku strpení...</div>
+  </div>
+
+  <header class="application-header">
+    <div class="container">
+      <div class="app-brand">
+        <span class="app-brand-icon" aria-hidden="true"><i class="bi bi-file-earmark-text"></i></span>
+        <div class="app-brand-copy"><span class="app-brand-eyebrow">ZNALOSTKA / KORESPONDENCE</span><span class="app-brand-title">Odpověď notáři</span></div>
+        <span class="app-brand-status">Generátor dokumentu</span>
+      </div>
+    </div>
+  </header>
+  <div class="container app-content">
+    <section class="intro-section" aria-label="Informace o generátoru">
+      <div class="intro-left">
+        <span class="intro-kicker">DĚDICKÉ ŘÍZENÍ / VYÚČTOVÁNÍ</span>
+        <h1>Informace pro notáře – evidovaný nedoplatek</h1>
+        <p>Generátor odpovědi k ukončeným smlouvám, u nichž je evidován nedoplatek. Doplňte údaje notáře, zůstavitele a jednotlivých smluv; připravený dokument můžete vyexportovat a text průvodního e-mailu rovnou zkopírovat.</p>
+      </div>
+      <div class="intro-pills"><span><i class="bi bi-list-check" aria-hidden="true"></i> 3 kroky</span><span><i class="bi bi-file-earmark-arrow-down" aria-hidden="true"></i> PDF / Word</span></div>
+    </section>
+    <form id="notarForm">
+      <div class="row g-4">
+        
+        <div class="col-lg-5 wizard-column">
+          <div class="progress-container mb-3" aria-label="Průběh vyplňování">
+            <div class="d-flex align-items-center justify-content-between small text-muted"><span id="step-indicator">Krok 1 ze 3</span><span id="step-name">Notář a společnost</span></div>
+            <div class="progress-bar-custom"><div class="progress-fill" id="progress-fill"></div></div>
+          </div>
+
+          <details class="pdf-import-disclosure mb-3" id="pdfImportPanel">
+            <summary class="pdf-import-toggle" aria-label="Zobrazit načtení údajů z PDF">
+              <span class="pdf-import-glyph"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i></span>
+              <span class="pdf-import-title"><strong>Načíst údaje z PDF</strong><small>Volitelné předvyplnění formuláře</small></span>
+              <span class="pdf-import-arrow"><i class="bi bi-chevron-down" aria-hidden="true"></i></span>
+            </summary>
+            <div class="pdf-import-fields">
+              <p class="small text-muted mb-3">Nahrajte písemnost od notáře. Z údajů, které PDF skutečně obsahuje, se předvyplní odpovídající pole. Chybějící údaje zůstanou beze změny k ručnímu doplnění.</p>
+              <label class="form-label" for="pdf-file-upload">PDF od notáře</label>
+              <input type="file" id="pdf-file-upload" class="form-control" accept=".pdf,application/pdf">
+              <button type="button" id="pdf-import-button" class="btn btn-success mt-3" onclick="importPdfToForm()"><i class="bi bi-magic me-1"></i>Načíst PDF a předvyplnit</button>
+              <div id="pdf-import-status" class="pdf-import-status" role="status" aria-live="polite"></div>
+              <div class="small text-muted mt-3 pdf-privacy"><i class="bi bi-shield-lock me-1"></i>PDF se zpracuje lokálně ve Vašem prohlížeči; neodesílá se do generátoru. Funguje u PDF s textovou vrstvou (nikoliv u čistého skenu). Údaje před odesláním vždy zkontrolujte.</div>
+            </div>
+          </details>
+
+          <div class="card-custom step-section active" id="step-1">
+            <h2 class="section-title"><span class="step-number">1</span> Notář a společnost</h2>
+            <div class="row g-3">
+              
+              <div class="col-12 mb-2">
+                <label class="form-label required">Společnost</label>
+                <div class="company-select-wrapper">
+                  <label class="company-card-label">
+                    <input type="radio" name="spolecnost" id="spol_epet" value="epet" checked onchange="updatePreview()">
+                    <div class="company-card shadow-sm">
+                      <i class="bi bi-check-circle-fill check-icon"></i>
+                      <div class="fs-3 mb-1" style="color: #94C11F;"><i class="bi bi-lightning-charge"></i></div>
+                      <h5 class="mb-0 fs-6">EPET</h5>
+                    </div>
+                  </label>
+                  <label class="company-card-label">
+                    <input type="radio" name="spolecnost" id="spol_de" value="de" onchange="updatePreview()">
+                    <div class="company-card shadow-sm">
+                      <i class="bi bi-check-circle-fill check-icon"></i>
+                      <div class="fs-3 mb-1" style="color: #F99F1C;"><i class="bi bi-sun"></i></div>
+                      <h5 class="mb-0 fs-6">Dobrá Energie</h5>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-6"><label class="form-label required">Jméno notáře</label><input type="text" class="form-control" name="jmeno_notar" required></div>
+              <div class="col-6"><label class="form-label required">Příjmení notáře</label><input type="text" class="form-control" name="prijmeni_notar" required></div>
+              <div class="col-12"><label class="form-label required">Oslovení</label>
+                <select class="form-select" name="osloveni_notare_formalne" id="osloveniSel" required>
+                  <option value="" disabled selected>Vyberte...</option>
+                  <option>Vážený pane magistře</option>
+                  <option>Vážená paní magistro</option>
+                  <option>Vážený pane doktore</option>
+                  <option>Vážená paní doktorko</option>
+                  <option value="__custom">Vlastní...</option>
+                </select>
+                <input class="form-control mt-2 d-none" id="osloveniCustom" placeholder="Např. Vážený pane notáři">
+              </div>
+              <div class="col-12"><label class="form-label required">Ulice a č.p.</label><input type="text" class="form-control" name="ulice_sidlo" required></div>
+              <div class="col-7"><label class="form-label required">Město</label><input type="text" class="form-control" name="mesto_sidlo" required></div>
+              <div class="col-5"><label class="form-label required">PSČ</label><input type="text" class="form-control" name="psc_sidlo" id="psc_sidlo" placeholder="110 00" required></div>
+            </div>
+            <div class="d-flex justify-content-end mt-4"><button type="button" class="btn-nav btn-next" onclick="nextStep(1)">Pokračovat <i class="bi bi-arrow-right"></i></button></div>
+          </div>
+
+          <div class="card-custom step-section" id="step-2">
+            <h2 class="section-title"><span class="step-number">2</span> Spisové značky a zůstavitel</h2>
+            <div class="row g-3">
+              <div class="col-6"><label class="form-label required">Vaše značka (ND)</label><input type="text" class="form-control" name="spis_ND" required></div>
+              <div class="col-6"><label class="form-label required">Soudní značka (D)</label><input type="text" class="form-control" name="spis_D" required></div>
+              <div class="col-12"><label class="form-label required">Datum přijetí žádosti</label><input type="date" class="form-control" name="datum_prijeti" required></div>
+              <div class="col-12">
+                <label class="form-label required">Pohlaví zákazníka</label>
+                <select class="form-select" name="pohlavi_zakaznika" id="pohlavi_zakaznika" required>
+                  <option value="male">Muž (zákazník)</option>
+                  <option value="female">Žena (zákaznice)</option>
+                </select>
+              </div>
+              <div class="col-6"><label class="form-label required">Jméno zůst.</label><input type="text" class="form-control" name="jmeno_zemreleho" required></div>
+              <div class="col-6"><label class="form-label required">Příjmení zůst.</label><input type="text" class="form-control" name="prijmeni_zemreleho" required></div>
+              <div class="col-12"><label class="form-label required">Poslední bydliště</label><input type="text" class="form-control" name="bydliste_zemreleho" required></div>
+            </div>
+            <div class="d-flex justify-content-between mt-4">
+              <button type="button" class="btn-nav btn-prev" onclick="prevStep(2)"><i class="bi bi-arrow-left"></i> Zpět</button>
+              <button type="button" class="btn-nav btn-next" onclick="nextStep(2)">Pokračovat <i class="bi bi-arrow-right"></i></button>
+            </div>
+          </div>
+
+          <div class="card-custom step-section" id="step-3">
+            <h2 class="section-title"><span class="step-number">3</span> Smlouvy a vytvoření dopisu</h2>
+            
+            <div class="row g-3 mb-3">
+              <div class="col-6">
+                <label class="form-label">Komodita</label>
+                <select class="form-select" name="komodita" onchange="updatePreview()">
+                  <option value="elektřiny">elektřiny</option>
+                  <option value="plynu">plynu</option>
+                  <option value="elektřiny i plynu">elektřiny i plynu</option>
+                </select>
+              </div>
+              
+              <div class="col-6">
+                <label class="form-label">Formát ke stažení</label>
+                <select class="form-select" name="format_souboru" id="formatSouboru">
+                  <option value="pdf" selected>PDF dokument</option>
+                  <option value="doc">Word (Docx)</option>
+                </select>
+              </div>
+            </div>
+
+            <div id="contracts-container"></div>
+            <div class="positive-debt-note"><i class="bi bi-info-circle" aria-hidden="true"></i><span>U každé smlouvy uvádějte pouze evidovaný nedoplatek. Částky se v náhledu automaticky sečtou.</span></div>
+            <button type="button" class="btn btn-light border w-100 mt-2" onclick="addNewContract()">+ Přidat další smlouvu</button>
+            
+            <div class="d-flex justify-content-between mt-4">
+              <button type="button" class="btn-nav btn-prev" onclick="prevStep(3)"><i class="bi bi-arrow-left"></i> Zpět</button>
+              <button type="submit" class="btn-nav btn-submit-final"><i class="bi bi-file-earmark-arrow-down"></i> Vygenerovat soubor</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7 result-column">
+          
+          <div class="preview-heading">
+            <div><span class="preview-eyebrow">VÝSTUP GENERÁTORU</span><h2>Živý náhled dopisu</h2></div>
+            <span class="live-indicator"><span aria-hidden="true"></span> Automaticky se aktualizuje</span>
+          </div>
+          <div class="preview-box mb-4">
+            <div class="mb-5 d-flex justify-content-end">
+              <div style="white-space: nowrap; text-align: left;">
+                <div id="p_notar_cele" class="fw-bold">...</div>
+                <div id="p_notar_ulice">...</div>
+                <div id="p_notar_mesto">...</div>
+                <div id="p_notar_psc">...</div>
+              </div>
+            </div>
+            
+            <div class="text-end mb-5">V Praze dne <span id="p_dnes">...</span></div>
+            <div class="mb-4">
+              <div>Vaše značka: <span id="p_spisND">...</span></div>
+              <div>Soudní značka: <span id="p_spisD">...</span></div>
+            </div>
+            <div class="fw-bold text-decoration-underline mb-4">Věc: Dědické řízení</div>
+            <div id="p_osloveni">...</div>
+            <p class="mt-4">
+              reagujeme na žádost přijatou dne <span id="p_datum_prijeti">...</span> pro sdělení informací po <span id="p_pohl_dat">zákazníkovi</span>: <span id="p_zemrely_dat" class="fw-bold">...</span>, posledně bytem <span id="p_bydliste">...</span>.
+            </p>
+            <p>
+              Informace ke Smlouvě o sdružených službách dodávky <span id="p_komodita">...</span> číslo <span id="p_cisla_smluv" class="fw-bold">...</span> (dále jako „Smlouva“):
+            </p>
+            <div class="mb-4">
+              <div>Datum podpisu Smlouvy:</div>
+              <div id="p_data_podpisu" class="ps-3">...</div>
+              <div class="mt-2">Datum zahájení dodávek:</div>
+              <div id="p_data_zahajeni" class="ps-3">...</div>
+              <div class="mt-2">Doba trvání Smlouvy:</div>
+              <div id="p_data_trvani" class="ps-3">...</div>
+              <div class="mt-2">Ukončení (technické info):</div>
+              <div id="p_veta_smlouva" class="ps-3 small text-muted">...</div>
+            </div>
+            
+            <p id="p_veta_faktura">...</p>
+            
+            <p>Po ukončení dědického řízení Vás tímto zdvořile žádáme o sdělení jeho výsledku, abychom mohli posoudit další postup při vypořádání evidovaného nedoplatku.</p>
+            
+            <p class="small mt-4" id="p_footer_text">
+              Prosíme o zaslání informací do datové schránky E5KGTT5...
+            </p>
+          </div>
+
+          <div class="card-custom dispatch-card">
+            <div class="dispatch-heading"><span class="dispatch-icon"><i class="bi bi-envelope-paper" aria-hidden="true"></i></span><div><span class="preview-eyebrow">NAVAZUJÍCÍ KOMUNIKACE</span><h3>Šablona pro odeslání do datové schránky</h3></div></div>
+            
+            <div class="row g-3 mb-4">
+              <div class="col-md-6">
+                <label class="form-label fw-bold">Příjmení a jméno zákazníka (pro předmět):</label>
+                <input type="text" class="form-control" id="fullname-input" placeholder="Např. Novák Tomáš" oninput="updateSubject()">
+                <div class="form-text small">Automaticky se vyplňuje z kroku 2.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-bold">Kód datové schránky:</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" id="data-box-input" placeholder="Např. abc1234">
+                  <button class="btn btn-outline-primary" type="button" onclick="addDataBoxCode()">Vložit kód</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white p-3 rounded border mb-3">
+              <div class="mb-3 border-bottom pb-2">
+                <span class="fw-bold text-muted small text-uppercase">Předmět:</span><br>
+                <span id="subject-output" class="font-monospace fw-bold">30_USNESENÍ (Příjmení a jména zákazníka)</span>
+              </div>
+              <div>
+                <span class="fw-bold text-muted small text-uppercase">Text:</span>
+                <div id="email-content" class="mt-1" style="font-family: Arial, sans-serif; line-height: 1.5; color: #000;">
+                  <p>Ahoj,</p>
+                  <p>
+                    prosím o zaslání dopisu notáři do datové schránky:<br>
+                    <strong id="datova-schranka" style="font-size: 1.1em; color: #0d6efd;">[Zde bude kód datové schránky]</strong>
+                  </p>
+                  <p>Děkuji</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex gap-2 flex-wrap">
+              <button type="button" class="btn btn-primary" onclick="copySubject()"><i class="bi bi-files me-1"></i>Kopírovat předmět</button>
+              <button type="button" class="btn btn-success" onclick="copyEmailText()"><i class="bi bi-clipboard-check me-1"></i>Kopírovat text e-mailu</button>
+            </div>
+            
+            <div id="message-box" class="copy-feedback" role="status" aria-live="polite" aria-atomic="true"></div>
+            <div id="copy-toast" class="copy-toast" role="status" aria-live="polite" aria-atomic="true"></div>
+          </div>
+          </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- PDF.js načítá text z nahraného PDF přímo v prohlížeči -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    let currentStep = 1;
+    let contractCounter = 0;
+
+    // PSČ VALIDÁTOR
+    document.getElementById('psc_sidlo').addEventListener('input', function(e) {
+      let v = e.target.value.replace(/\D/g, '');
+      if (v.length > 5) v = v.slice(0, 5);
+      if (v.length > 3) v = v.slice(0, 3) + ' ' + v.slice(3);
+      e.target.value = v;
+      updatePreview();
+    });
+    
+    function sklonujJmenoDativ(jmeno, gender) {
+       if (!jmeno) return ''; const jm = jmeno.trim();
+       if (gender === 'male') {
+         if (jm.endsWith('í')) return jm + 'mu';
+         if (jm.endsWith('áš')) return jm + 'ovi';
+         if (jm.endsWith('ek')) return jm.replace(/ek$/, 'kovi');
+         if (/[bcčdďfghjklmnňpqrřsštťvwxzž]$/i.test(jm)) return jm + 'ovi';
+         return jm + 'ovi';
+       }
+       if (gender === 'female') {
+         if (jm.endsWith('ka')) return jm.replace(/ka$/, 'ce');
+         if (jm.endsWith('a')) return jm.slice(0, -1) + 'ě';
+         return jm;
+       }
+       return jm;
+    }
+
+   function sklonujPrijmeniDativ(prijmeni, gender) {
+       if (!prijmeni) return ''; let p = prijmeni.trim();
+       
+       if (gender === 'female') {
+         if (p.endsWith('ová')) return p.slice(0, -3) + 'ové';
+         if (p.endsWith('á')) return p.slice(0, -1) + 'é';
+         return p;
+       }
+       
+       if (gender === 'male') {
+         if (p.toLowerCase().endsWith('a')) return p.slice(0, -1) + 'ovi'; 
+         if (p.endsWith('ý')) return p.slice(0, -1) + 'ému';
+         if (/[bcčdďfghjklmnňpqrřsštťvwxzž]$/i.test(p)) return p + 'ovi';
+         return p + 'ovi';
+       }
+       return p;
+    }
+
+    function updateStepUI() {
+      document.querySelectorAll('.step-section').forEach(el => el.classList.remove('active'));
+      document.getElementById(`step-${currentStep}`).classList.add('active');
+      document.getElementById('progress-fill').style.width = (currentStep / 3 * 100) + '%';
+      document.getElementById('step-indicator').textContent = `Krok ${currentStep} ze 3`;
+      document.getElementById('step-name').textContent = ['Notář a společnost','Spisové značky a zůstavitel','Smlouvy a výstup'][currentStep - 1];
+    }
+
+    function nextStep(step) {
+      const sect = document.getElementById(`step-${step}`);
+      let valid = true;
+      sect.querySelectorAll('[required]').forEach(i => { if(!i.value) { i.classList.add('is-invalid'); valid = false; } else { i.classList.remove('is-invalid'); }});
+      if(valid) { currentStep++; updateStepUI(); }
+    }
+
+    function prevStep() { currentStep--; updateStepUI(); }
+
+    function addNewContract() {
+      contractCounter++;
+      const container = document.getElementById('contracts-container');
+      const div = document.createElement('div');
+      div.className = 'contract-row';
+      div.id = `contract-${contractCounter}`;
+      div.innerHTML = `
+        <button type="button" class="btn-remove-row" onclick="removeContract(${contractCounter})"><i class="bi bi-trash"></i></button>
+        <div class="row g-2">
+          <div class="col-12"><label class="small text-muted">Číslo Smlouvy</label><input type="text" class="form-control form-control-sm c-cislo" required oninput="updatePreview()"></div>
+          <div class="col-6"><label class="small text-muted">Datum podpisu</label><input type="date" class="form-control form-control-sm c-podpis" oninput="updatePreview()"></div>
+          <div class="col-6"><label class="small text-muted">Zahájení dodávek</label><input type="date" class="form-control form-control-sm c-zahajeni" oninput="updatePreview()"></div>
+          <div class="col-6"><label class="small text-muted">Datum ukončení</label><input type="date" class="form-control form-control-sm c-trvani" oninput="updatePreview()"></div>
+          <div class="col-6"><label class="small text-muted">Stav</label><select class="form-select form-select-sm c-stav" onchange="updatePreview()"><option value="ukončena" selected>Ukončena</option></select></div>
+          <div class="col-12"><label class="small text-muted debt-input-label">Evidovaný nedoplatek (Kč)</label><input type="number" class="form-control form-control-sm c-ned" value="0" min="0" step="0.01" inputmode="decimal" oninput="updatePreview()"></div>
+        </div>`;
+      container.appendChild(div);
+      updatePreview();
+    }
+
+    function removeContract(id) { document.getElementById(`contract-${id}`).remove(); updatePreview(); }
+
+    function fD(v) { if(!v) return "..."; return v.split('-').reverse().join('.'); }
+
+    function formatArrayWithAnd(arr) {
+        if (arr.length === 0) return "...";
+        if (arr.length === 1) return arr[0];
+        const items = [...arr];
+        const last = items.pop();
+        const others = items.join(', ');
+        return `${others} a ${last}`;
+    }
+
+    function generateBigSentence(fd, rows) {
+      const datumPrijetiRaw = fd.get('datum_prijeti');
+      const datumPrijetiFormatted = fD(datumPrijetiRaw);
+      const gender = fd.get('pohlavi_zakaznika');
+      
+      let terminationDates = [];
+      let celkemNed = 0;
+
+      rows.forEach(row => {
+        const d = row.querySelector('.c-trvani').value;
+        if(d) terminationDates.push(fD(d));
+        celkemNed += Math.max(0,parseFloat(row.querySelector('.c-ned').value) || 0);
+      });
+
+      const part1 = `Informace o stavu závazku uvádíme k datu <b>${new Date().toLocaleDateString('cs-CZ')}</b>.`;
+
+      const uniqueDates = [...new Set(terminationDates)];
+      const datesString = formatArrayWithAnd(uniqueDates);
+      let part2 = "";
+      
+      if (rows.length === 1) {
+          part2 = `Dne <b>${datesString}</b> došlo k ukončení smlouvy.`;
+      } else if (rows.length > 1) {
+          part2 = `Dne <b>${datesString}</b> došlo k ukončení smluv.`;
+      } else {
+          part2 = `Dne <b>...</b> došlo k ukončení smlouvy.`;
+      }
+
+      const genderSuffix = (gender === 'female') ? 'pozůstalé' : 'pozůstalém';
+      const castkaNedoplatku = celkemNed.toLocaleString('cs-CZ',{minimumFractionDigits:2,maximumFractionDigits:2});
+      const part3 = `Aktuálně evidujeme po ${genderSuffix} nedoplatek v celkové výši <b>${castkaNedoplatku} Kč</b>.`;
+
+      const attachment = (rows.length > 1) ? 'Kopie faktur přikládáme' : 'Kopii faktury přikládáme';
+      const part4 = `${attachment} do přílohy tohoto dopisu.`;
+
+      return `${part1} ${part2} ${part3} ${part4}`;
+    }
+
+    function getOriginalVetaSmlouve(rows) {
+        let listCisla = [];
+        let listTrvaniRaw = [];
+        
+        rows.forEach(row => {
+            listCisla.push(row.querySelector('.c-cislo').value || '...');
+            const d = row.querySelector('.c-trvani').value;
+            if(d) listTrvaniRaw.push(fD(d));
+        });
+
+        const contractString = listCisla.join(', ');
+        const uniqueDates = [...new Set(listTrvaniRaw)];
+        const dateString = formatArrayWithAnd(uniqueDates);
+
+        if (rows.length === 1) {
+            return `Smlouva číslo <b>${contractString}</b> byla ke dni <b>${dateString}</b> ukončena.`;
+        } else if (rows.length > 1) {
+            const denSlovo = uniqueDates.length > 1 ? "k datům" : "ke dni";
+            return `Smlouvy číslo <b>${contractString}</b> byly ${denSlovo} <b>${dateString}</b> ukončeny.`;
+        }
+        return "...";
+    }
+
+    function updatePreview() {
+      const fd = new FormData(document.getElementById('notarForm'));
+      const gender = fd.get('pohlavi_zakaznika');
+      const spolecnost = fd.get('spolecnost');
+      const rows = document.querySelectorAll('.contract-row');
+
+      if (spolecnost === 'epet') {
+        document.getElementById('p_footer_text').innerHTML = "Prosíme o zaslání informací do datové schránky <b>E5KGTT5</b>, případně na adresu společnosti <b>EP ENERGY TRADING, Klimentská 46, 110 00 Praha 1</b> nebo na e-mail <b>info@epet.cz</b>.";
+      } else {
+        document.getElementById('p_footer_text').innerHTML = "Prosíme o zaslání informací do datové schránky <b>P5JH5H6</b>, případně na adresu společnosti <b>Dobrá Energie, s. r. o., Klimentská 46, 110 00 Praha 1</b> nebo na e-mail <b>info@dobra-energie.cz</b>.";
+      }
+
+      document.getElementById('p_notar_cele').textContent = `${fd.get('jmeno_notar') || ''} ${fd.get('prijmeni_notar') || ''}`.trim() || '[Notář]';
+      document.getElementById('p_notar_ulice').textContent = fd.get('ulice_sidlo') || '[Ulice]';
+      document.getElementById('p_notar_mesto').textContent = fd.get('mesto_sidlo') || '[Město]';
+      document.getElementById('p_notar_psc').textContent = fd.get('psc_sidlo') || '[PSČ]';
+      document.getElementById('p_dnes').textContent = new Date().toLocaleDateString('cs-CZ');
+      document.getElementById('p_spisND').textContent = fd.get('spis_ND') || '...';
+      document.getElementById('p_spisD').textContent = fd.get('spis_D') || '...';
+
+      let osl = fd.get('osloveni_notare_formalne');
+      if(osl === '__custom') osl = document.getElementById('osloveniCustom').value;
+      document.getElementById('p_osloveni').textContent = (osl ? osl + ',' : '...');
+
+      document.getElementById('p_datum_prijeti').textContent = fD(fd.get('datum_prijeti'));
+      document.getElementById('p_pohl_dat').textContent = (gender === 'female' ? 'zákaznici' : 'zákazníkovi');
+      const jD = sklonujJmenoDativ(fd.get('jmeno_zemreleho'), gender);
+      const pD = sklonujPrijmeniDativ(fd.get('prijmeni_zemreleho'), gender);
+      document.getElementById('p_zemrely_dat').textContent = `${jD} ${pD}` || '...';
+      document.getElementById('p_bydliste').textContent = fd.get('bydliste_zemreleho') || '...';
+      document.getElementById('p_komodita').textContent = fd.get('komodita');
+
+      let listCisla = [], listPodpisy = [], listZahajeni = [], listTrvani = [];
+
+      rows.forEach(row => {
+        const c = row.querySelector('.c-cislo').value || '...';
+        const tF = fD(row.querySelector('.c-trvani').value);
+        
+        listCisla.push(c);
+        listPodpisy.push(`<div class="contract-list-item">${c}: ${fD(row.querySelector('.c-podpis').value)}</div>`);
+        listZahajeni.push(`<div class="contract-list-item">${c}: ${fD(row.querySelector('.c-zahajeni').value)}</div>`);
+        listTrvani.push(`<div class="contract-list-item">${c}: ${tF}</div>`);
+      });
+
+      document.getElementById('p_cisla_smluv').textContent = listCisla.join(', ');
+      document.getElementById('p_data_podpisu').innerHTML = listPodpisy.join('') || '...';
+      document.getElementById('p_data_zahajeni').innerHTML = listZahajeni.join('') || '...';
+      document.getElementById('p_data_trvani').innerHTML = listTrvani.join('') || '...';
+
+      document.getElementById('p_veta_faktura').innerHTML = generateBigSentence(fd, rows);
+      document.getElementById('p_veta_smlouva').innerHTML = getOriginalVetaSmlouve(rows);
+
+      // --- AUTOMATICKÉ PROPSÁNÍ DO E-MAILU ---
+      const jmenoZesnuleho = fd.get('jmeno_zemreleho') || '';
+      const prijmeniZesnuleho = fd.get('prijmeni_zemreleho') || '';
+      const celeJmeno = `${prijmeniZesnuleho} ${jmenoZesnuleho}`.trim();
+      if(celeJmeno) {
+        document.getElementById('fullname-input').value = celeJmeno;
+      }
+      updateSubject();
+    }
+
+    document.getElementById('osloveniSel').addEventListener('change', function() {
+      document.getElementById('osloveniCustom').classList.toggle('d-none', this.value !== '__custom');
+      updatePreview();
+    });
+
+    function pdfImportStatus(type, message) {
+      const status = document.getElementById('pdf-import-status');
+      status.className = 'pdf-import-status ' + type;
+      status.textContent = message;
+    }
+
+    function pdfClean(value) {
+      return String(value || '').replace(/\u00a0/g, ' ').replace(/\s+/g, ' ').trim();
+    }
+
+    async function pdfReadTextLines(file) {
+      if (!window.pdfjsLib) throw new Error('Knihovnu pro čtení PDF se nepodařilo načíst. Ověřte připojení k internetu nebo povolení externích skriptů v Google Sites.');
+      const pdfjs = window.pdfjsLib;
+      pdfjs.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+      const bytes = new Uint8Array(await file.arrayBuffer());
+      const task = pdfjs.getDocument({ data: bytes, useSystemFonts: true });
+      const pdf = await task.promise;
+      const allLines = [];
+      try {
+        const pages = Math.min(pdf.numPages, 12);
+        for (let p = 1; p <= pages; p++) {
+          const page = await pdf.getPage(p);
+          const text = await page.getTextContent();
+          const ordered = (text.items || []).filter(x => x && typeof x.str === 'string' && x.str.trim()).map(x => ({
+            text: x.str,
+            x: x.transform ? x.transform[4] : 0,
+            y: x.transform ? x.transform[5] : 0
+          })).sort((a,b) => b.y - a.y || a.x - b.x);
+          const groups = [];
+          for (const item of ordered) {
+            let line = groups.find(g => Math.abs(g.y - item.y) <= 2.2);
+            if (!line) { line = { y: item.y, parts: [] }; groups.push(line); }
+            line.parts.push(item);
+          }
+          groups.sort((a,b) => b.y-a.y);
+          for (const g of groups) {
+            g.parts.sort((a,b) => a.x-b.x);
+            const line = pdfClean(g.parts.map(x => x.text).join(' '));
+            if (line) allLines.push(line);
+          }
+        }
+      } finally {
+        if (typeof pdf.destroy === 'function') await pdf.destroy();
+      }
+      return allLines;
+    }
+
+    function extractNotaryPdfData(rawLines) {
+      const lines = rawLines.map(pdfClean).filter(Boolean);
+      const txt = lines.join('\n');
+      const result = {};
+      if (!txt.trim()) return result;
+
+      // Přesné spisové značky; "Naše značka" v dopise notáře odpovídá
+      // poli "Vaše značka" v naší odpovědi.
+      let m = txt.match(/NAŠE\s+ZNAČKA\s*:\s*(Nd\s*\d+\s*\/\s*\d{4})/i);
+      if (m) result.spis_ND = pdfClean(m[1]);
+      m = txt.match(/SOUDNÍ\s+ZNAČKA\s*:\s*((?:\d+\s*)?D\s*\d+\s*\/\s*\d{4})/i)
+          || txt.match(/sp\.?\s*zn\.?\s*:\s*((?:\d+\s*)?D\s*\d+\s*\/\s*\d{4})/i);
+      if (m) result.spis_D = pdfClean(m[1]);
+
+      // Rozpoznání adresáta z hlavičky dokumentu (nikoliv z libovolné zmínky v těle).
+      const header = lines.slice(0, Math.min(22, lines.length)).join(' ');
+      const de = /Dobrá\s+Energie\s*,?\s*s\.?\s*r\.?\s*o\.?/i.test(header);
+      const epet = /(?:EP\s+ENERGY\s+TRADING|epet\s+energie\s*a\.?\s*s\.?)\b/i.test(header);
+      if (de !== epet) result.spolecnost = de ? 'de' : 'epet';
+
+      // Notář a sídlo: hledáme výslovnou identifikaci typu "JUDr. ... , notář".
+      const ni = lines.findIndex(line => /notář(?:ka)?\s+(?:se\s+sídlem|v\s+)/i.test(line));
+      if (ni >= 0) {
+        const row = lines[ni];
+        const nm = row.match(/((?:(?:JUDr|Mgr|PhDr|Ing|Ph\.D)\.\s*)?[\p{Lu}][\p{L}’'\-]+(?:\s+[\p{Lu}][\p{L}’'\-]+){1,3})\s*,?\s*notář(?:ka)?/iu);
+        if (nm) {
+          let parts = pdfClean(nm[1]).split(/\s+/);
+          let title = '';
+          if (/^(?:JUDr|Mgr|PhDr|Ing|Ph\.D)\.$/i.test(parts[0])) title = parts.shift();
+          if (parts.length >= 2) {
+            result.prijmeni_notar = parts.pop();
+            result.jmeno_notar = (title ? title + ' ' : '') + parts.join(' ');
+            const female = /notářka/i.test(row);
+            if (/^(?:JUDr|PhDr)\./i.test(title)) result.osloveni_notare_formalne = female ? 'Vážená paní doktorko' : 'Vážený pane doktore';
+            else if (/^Mgr\./i.test(title)) result.osloveni_notare_formalne = female ? 'Vážená paní magistro' : 'Vážený pane magistře';
+          }
+        }
+        // Přímé pokračování hlavičky – nehledáme adresu odesílajícího dodavatele.
+        const nearby = lines.slice(ni+1, ni+5);
+        for (const line of nearby) {
+          const addr = line.match(/^(.+?\d+(?:\s*\/\s*\d+)?(?:\s*[A-Za-z])?)\s*,\s*(\d{3}\s?\d{2})\s+(.+?)\s*$/u);
+          if (addr && !/^(?:tel\.|e-mail|IDDS)/i.test(addr[1])) {
+            result.ulice_sidlo = pdfClean(addr[1]);
+            result.psc_sidlo = pdfClean(addr[2]).replace(/\s/g,'').replace(/^(\d{3})(\d{2})$/,'$1 $2');
+            result.mesto_sidlo = pdfClean(addr[3]).replace(/[,.]$/,'');
+            break;
+          }
+        }
+      }
+
+      // Jméno zůstavitele pouze ze sekce "Zůstavitel", nikoli jméno dalšího dědice.
+      const zi = lines.findIndex(line => /\bZŮSTAVITEL(?:KA)?\s*:/i.test(line));
+      if (zi >= 0) {
+        const nameLine = lines[zi].match(/ZŮSTAVITEL(?:KA)?\s*:\s*([\p{Lu}][\p{L}'\-]+(?:\s+[\p{Lu}][\p{L}'\-]+){1,3})/iu);
+        if (nameLine) {
+          const parts = pdfClean(nameLine[1]).split(/\s+/);
+          if (parts.length >= 2) {
+            result.prijmeni_zemreleho = parts.pop();
+            result.jmeno_zemreleho = parts.join(' ');
+          }
+        }
+        for (let i=zi; i<Math.min(zi+8,lines.length); i++) {
+          const bydl = lines[i].match(/posledně\s+(?:trvale\s+)?bytem\s+(.+)$/i);
+          if (!bydl) continue;
+          let address = bydl[1];
+          for (let j=i+1; j<Math.min(i+3,lines.length); j++) {
+            if (/\b(?:zemřel|narozen|Vážení|S\s+pozdravem|ZŮSTAVITEL)\w*/i.test(lines[j])) break;
+            address += ' ' + lines[j];
+          }
+          result.bydliste_zemreleho = pdfClean(address).replace(/[,;]\s*$/,'');
+          break;
+        }
+      }
+
+      // Číslo smlouvy lze doplnit jen tehdy, je-li výslovně uvedeno a jednoznačné.
+      const explicitContracts = Array.from(txt.matchAll(/(?:číslo\s+smlouvy|smlouva\s+číslo)\s*[:č.]?\s*([0-9][0-9\/-]{5,})/gi), x=>x[1]);
+      const uniqueContracts = [...new Set(explicitContracts)];
+      if (uniqueContracts.length === 1) result.contractNumber = uniqueContracts[0];
+      // Datum odeslání/na písemnosti není datum přijetí žádosti – nevyplňovat!
+      // Neukládat do formuláře datum narození/úmrtí ani jiné nesouvisející údaje.
+      return result;
+    }
+
+
+    async function importPdfToForm() {
+      const picker = document.getElementById('pdf-file-upload');
+      const button = document.getElementById('pdf-import-button');
+      const file = picker.files && picker.files[0];
+      if (!file) { pdfImportStatus('warning', 'Nejdříve vyberte PDF soubor.'); return; }
+      if (!/\.pdf$/i.test(file.name) && file.type !== 'application/pdf') {
+        pdfImportStatus('error', 'Vyberte soubor ve formátu PDF.'); return;
+      }
+      if (file.size > 20 * 1024 * 1024) {
+        pdfImportStatus('error', 'Soubor je příliš velký (maximum 20 MB).'); return;
+      }
+      button.disabled = true;
+      pdfImportStatus('warning', 'Načítám PDF a vyhledávám údaje...');
+      try {
+        const lines = await pdfReadTextLines(file);
+        if (lines.join('').trim().length < 25) {
+          pdfImportStatus('warning', 'V PDF nebyla nalezena čitelná textová vrstva. U naskenovaného dokumentu doplňte údaje ručně.');
+          return;
+        }
+        const found = extractNotaryPdfData(lines);
+        const labels = {
+          spolecnost:'společnost', jmeno_notar:'jméno notáře', prijmeni_notar:'příjmení notáře',
+          osloveni_notare_formalne:'oslovení', ulice_sidlo:'ulice notáře', mesto_sidlo:'město notáře',
+          psc_sidlo:'PSČ notáře', spis_ND:'značka ND', spis_D:'soudní značka D',
+          jmeno_zemreleho:'jméno zůstavitele', prijmeni_zemreleho:'příjmení zůstavitele',
+          bydliste_zemreleho:'poslední bydliště', contractNumber:'číslo smlouvy'
+        };
+        const changed = [];
+        const form = document.getElementById('notarForm');
+        // Vyplňují se pouze údaje, které jsou doloženy v konkrétním PDF.
+        for (const [key, value] of Object.entries(found)) {
+          if (!value) continue;
+          if (key === 'spolecnost') {
+            const radio = document.getElementById(value === 'de' ? 'spol_de' : 'spol_epet');
+            if (radio) { radio.checked = true; changed.push(labels[key]); }
+            continue;
+          }
+          if (key === 'contractNumber') {
+            let contractNumber = document.querySelector('.contract-row .c-cislo');
+            if (!contractNumber) {
+              addNewContract();
+              contractNumber = document.querySelector('.contract-row .c-cislo');
+            }
+            // Nepřepisujeme dříve ručně zadanou smlouvu.
+            if (contractNumber && !contractNumber.value.trim()) {
+              contractNumber.value = value;
+              contractNumber.classList.add('pdf-autofilled');
+              changed.push(labels[key]);
+            }
+            continue;
+          }
+          const field = form.elements.namedItem(key);
+          if (!field || !('value' in field)) continue;
+          if (field.tagName === 'SELECT' && ![...field.options].some(o => o.value === value)) continue;
+          field.value = value;
+          field.classList.add('pdf-autofilled');
+          changed.push(labels[key] || key);
+        }
+        // Změna ženského rodu jen při výslovném označení ZŮSTAVITELKA.
+        if (lines.some(line => /\bZŮSTAVITELKA\s*:/i.test(line))) {
+          const field = form.elements.namedItem('pohlavi_zakaznika');
+          if (field) {
+            field.value = 'female';
+            field.classList.add('pdf-autofilled');
+            changed.push('pohlaví zůstavitelky');
+          }
+        }
+        if (changed.length) {
+          updatePreview();
+          pdfImportStatus('success', 'Předvyplněno ' + changed.length + ' položek: ' + changed.join(', ') + '. Zkontrolujte načtené údaje. Datum přijetí žádosti, datum odpovědi, finanční částky a data smluv nebyly odhadovány. Všechny nenalezené údaje zůstaly beze změny.');
+        } else {
+          pdfImportStatus('warning', 'PDF bylo načteno, ale nebyly nalezeny jednoznačné údaje pro tento formulář. Pole zůstala beze změny.');
+        }
+      } catch (error) {
+        console.error('PDF import:', error);
+        pdfImportStatus('error', 'PDF se nepodařilo načíst: ' + (error && error.message ? error.message : 'neznámá chyba') + '. Ostatní funkce generátoru jsou nadále dostupné.');
+      } finally { button.disabled = false; }
+    }
+
+    document.getElementById('notarForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('loader').style.display = 'flex';
+      const fd = new FormData(this);
+      const gender = fd.get('pohlavi_zakaznika');
+      const rows = document.querySelectorAll('.contract-row');
+      
+      const url_epet = 'https://script.google.com/macros/s/AKfycby03JZ0CjaW029O2WsUJnEv2usdQ5mU30iEHUbedNzk1QVFUsFFHjm_-7in6zELr8xw/exec';
+      const url_de = 'https://script.google.com/macros/s/AKfycbyvZCfXzoPIYMxZjdY6hf-2Cs2edYZ9_ciKkVXET14KktHmcMQPnUPDbuax4LeSQ697Mg/exec';
+      const TARGET_URL = fd.get('spolecnost') === 'de' ? url_de : url_epet;
+      
+      let listCisla = [], listPodpisy = [], listZahajeni = [], listTrvani = [];
+      
+      rows.forEach(row => {
+        const c = row.querySelector('.c-cislo').value;
+        const tF = fD(row.querySelector('.c-trvani').value);
+        listCisla.push(c);
+        listPodpisy.push(`${c}: ${fD(row.querySelector('.c-podpis').value)}`);
+        listZahajeni.push(`${c}: ${fD(row.querySelector('.c-zahajeni').value)}`);
+        listTrvani.push(`${c}: ${tF}`);
+      });
+
+      const finalSentenceFinance = generateBigSentence(fd, rows);
+      const finalSentenceSmlouva = getOriginalVetaSmlouve(rows);
+      const celeJmenoNotare = `${fd.get('jmeno_notar')} ${fd.get('prijmeni_notar')}`.replace(/ /g, '\u00A0');
+
+      const data = {
+        format_souboru: fd.get('format_souboru'), 
+        notar_cele_jmeno: celeJmenoNotare, 
+        jmeno_notar: fd.get('jmeno_notar'),
+        prijmeni_notar: fd.get('prijmeni_notar'),
+        ulice_sidlo: fd.get('ulice_sidlo'),
+        mesto_sidlo: fd.get('mesto_sidlo'), 
+        psc_sidlo: fd.get('psc_sidlo'),     
+        datum: new Date().toLocaleDateString('cs-CZ'),
+        spis_ND: fd.get('spis_ND'),
+        spis_D: fd.get('spis_D'),
+        osloveni_notare_formalne: fd.get('osloveni_notare_formalne') === '__custom' ? document.getElementById('osloveniCustom').value : fd.get('osloveni_notare_formalne'),
+        datum_prijeti: fD(fd.get('datum_prijeti')),
+        pohlavi_zakaznika_dat: (gender === 'female' ? 'zákaznici' : 'zákazníkovi'),
+        jmeno_zemreleho_dat: sklonujJmenoDativ(fd.get('jmeno_zemreleho'), gender),
+        prijmeni_zemreleho_dat: sklonujPrijmeniDativ(fd.get('prijmeni_zemreleho'), gender),
+        jmeno_zemreleho: fd.get('jmeno_zemreleho'), 
+        prijmeni_zemreleho: fd.get('prijmeni_zemreleho'),
+        bydliste_zemreleho: fd.get('bydliste_zemreleho'),
+        komodita: fd.get('komodita'),
+        cislo_smlouvy: listCisla.join(', '),
+        datum_podpisu: listPodpisy.join('\n'),
+        datum_zahajeni: listZahajeni.join('\n'),
+        datum_trvani: listTrvani.join('\n'),
+        
+        veta_o_smlouve: finalSentenceSmlouva,
+        veta_o_fakture: finalSentenceFinance
+      };
+
+      fetch(TARGET_URL, { method: 'POST', body: new URLSearchParams(data) })
+      .then(r => r.json())
+      .then(res => {
+        document.getElementById('loader').style.display = 'none';
+        if(res.status === 'success') window.open(res.url, '_blank');
+        else alert('Chyba: ' + res.message);
+      })
+      .catch(err => {
+        document.getElementById('loader').style.display = 'none';
+        alert('Chyba spojení: ' + err.message);
+      });
+    });
+
+    // ==========================================
+    // FUNKCE PRO E-MAILOVOU ŠABLONU
+    // ==========================================
+    function normalizeSpaces(str) {
+      return str.replace(/\s+/g, ' ').trim();
+    }
+
+    function buildSubject() {
+      const full = normalizeSpaces(document.getElementById("fullname-input").value || "");
+      const names = full ? full : "Příjmení a jména zákazníka";
+      return `30_USNESENÍ (${names})`;
+    }
+
+    function updateSubject() {
+      document.getElementById("subject-output").textContent = buildSubject();
+    }
+
+    function addDataBoxCode() {
+      const dataBoxCode = document.getElementById("data-box-input").value.trim();
+      const target = document.getElementById("datova-schranka");
+      if (dataBoxCode) {
+        target.textContent = dataBoxCode;
+        showMsg("Kód datové schránky byl vložen.");
+      } else {
+        showMsg("Nejprve zadejte kód datové schránky.", "warning");
+      }
+    }
+
+    // --- KOPÍROVÁNÍ BEZ POSKAKOVÁNÍ STRÁNKY ---
+    async function copyToClipboardSafe(text) {
+      const value = String(text || '');
+      if (!value.trim()) return false;
+
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(value);
+          return true;
+        } catch (err) {
+          console.warn('Clipboard API není dostupné, použiji náhradní kopírování:', err);
+        }
+      }
+
+      const previousFocus = document.activeElement;
+      const scrollX = window.scrollX, scrollY = window.scrollY;
+      const textarea = document.createElement('textarea');
+      textarea.value = value;
+      textarea.setAttribute('readonly', '');
+      textarea.setAttribute('aria-hidden','true');
+      textarea.style.cssText = 'position:fixed;left:-10000px;top:-10000px;width:1px;height:1px;opacity:0;pointer-events:none;';
+      document.body.appendChild(textarea);
+      let success = false;
+      try {
+        textarea.focus({preventScroll: true});
+        textarea.select();
+        textarea.setSelectionRange(0, textarea.value.length);
+        success = document.execCommand('copy') === true;
+      } catch (err) {
+        console.warn('Náhradní kopírování není v tomto prohlížeči dostupné:', err);
+      } finally {
+        textarea.remove();
+        if(previousFocus && previousFocus.isConnected && typeof previousFocus.focus==='function') {
+          try {previousFocus.focus({preventScroll:true});} catch (err) {}
+        }
+        if (Math.abs(window.scrollX-scrollX)>1 || Math.abs(window.scrollY-scrollY)>1) {
+          window.scrollTo(scrollX,scrollY);
+        }
+      }
+      return success;
+    }
+
+    async function copyEmailText() {
+      const text = document.getElementById('email-content').innerText;
+      const copied = await copyToClipboardSafe(text);
+      showMsg(copied ? 'Text e-mailu byl zkopírován do schránky.' : 'Kopírování bylo zablokováno. Označte text a použijte Ctrl+C.', copied ? 'success' : 'warning');
+    }
+
+    async function copySubject() {
+      const text = document.getElementById('subject-output').textContent;
+      const copied = await copyToClipboardSafe(text);
+      showMsg(copied ? 'Předmět byl zkopírován do schránky.' : 'Kopírování předmětu bylo zablokováno. Označte jej a použijte Ctrl+C.', copied ? 'success' : 'warning');
+    }
+
+    let copyFeedbackTimer;
+    function showMsg(message,type='success') {
+      const box=document.getElementById('message-box');
+      const toast=document.getElementById('copy-toast');
+      const state=['success','warning','info'].includes(type) ? type : 'success';
+      clearTimeout(copyFeedbackTimer);
+      for (const el of [box,toast]) {
+        if (!el) continue;
+        el.textContent=message;
+        el.classList.remove('is-success','is-warning','is-info');
+        el.classList.add('is-'+state,'is-visible');
+      }
+      copyFeedbackTimer=setTimeout(()=>{
+        for (const el of [box,toast]) {if(el) el.classList.remove('is-visible');}
+      },4000);
+    }
+
+    // Inicializace při načtení stránky
+    window.onload = function() {
+        addNewContract();
+        updateSubject();
+    };
+    document.getElementById('notarForm').addEventListener('input', updatePreview);
+  </script>
+  <script src="../assets/ui.js" defer></script>
+</body>
+</html>
