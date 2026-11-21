@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>Změna sazby z C na D u SVJ – Pracovní postup</title><style>
+:root{--epet:#94C11F;--green:#638719;--deep:#425b10;--orange:#F99F1C;--navy:#20354a;--ink:#29394c;--muted:#68798a;--line:#e1e9ef;--soft:#f7f9f5;--shadow:0 14px 35px rgba(28,48,72,.06)}
+*,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);padding:12px 12px 34px;font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:15px;line-height:1.69;-webkit-font-smoothing:antialiased}button{font:inherit}a{overflow-wrap:anywhere}.site-wrap{max-width:1200px;min-width:0;margin:auto}.svg-icon,.icon-inline{display:inline-block;flex:none;vertical-align:middle;width:19px;height:19px}.icon-inline{width:20px;height:20px;color:#6e902b;margin:0 6px 0 0}
+.breadcrumb-nav{padding:10px 15px;border:1px solid var(--line);border-radius:13px;margin-bottom:15px;background:#fff}.breadcrumb{display:flex;align-items:center;flex-wrap:wrap;list-style:none;gap:0;font-size:.83rem;padding:0;margin:0}.breadcrumb-item{color:#6b7b8b;display:flex;align-items:center;min-width:0}.breadcrumb-item:not(:first-child)::before{content:'›';font-size:1.08rem;font-weight:500;color:#a5b0bb;margin:0 11px}.breadcrumb-item a{color:var(--green);font-weight:750;text-decoration:none}.breadcrumb-item a:hover{text-decoration:underline}.breadcrumb-item a .icon-inline{width:15px;height:15px}.breadcrumb-item.active{font-weight:750;color:#3e5267}
+.hero-banner{position:relative;isolation:isolate;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;margin-bottom:19px;padding:33px 36px;border-radius:23px;min-height:185px;color:#fff;background:radial-gradient(430px 260px at 92% 16%,rgba(255,255,255,.17),transparent 70%),linear-gradient(125deg,#94c11f 0%,#789d20 48%,#354c0e 100%);box-shadow:var(--shadow);overflow:visible}
+.hero-banner::before{content:"";position:absolute;right:31%;top:24px;width:135px;height:135px;border:1px solid rgba(255,255,255,.13);border-radius:50%;pointer-events:none;z-index:-1}.hero-banner::after{content:"";position:absolute;right:33%;top:36px;width:90px;height:90px;border:1px solid rgba(255,255,255,.13);border-radius:50%;pointer-events:none;z-index:-1}.hero-main{min-width:0;flex:1 1 490px}.hero-banner h1{font-size:clamp(1.54rem,2.7vw,2.18rem);font-weight:800;line-height:1.25;letter-spacing:-.034em;margin:0 0 11px;max-width:760px}.hero-banner p{margin:0;color:rgba(255,255,255,.9);font-size:.92rem;font-weight:500}
+.download-disclosure{position:relative;z-index:10;max-width:100%}.download-disclosure summary{display:flex;align-items:center;gap:10px;border-radius:40px;background:white;color:var(--deep);padding:11px 17px;box-shadow:0 5px 16px rgba(22,41,19,.16);font-size:.88rem;font-weight:800;cursor:pointer;list-style:none;user-select:none}.download-disclosure summary::-webkit-details-marker{display:none}.download-disclosure summary::after{content:'';width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-3px);margin-left:6px;transition:.18s}.download-disclosure[open] summary::after{transform:rotate(225deg) translateY(-1px)}.download-options{position:absolute;right:0;top:calc(100% + 9px);max-width:min(365px,calc(100vw - 35px));width:330px;background:#fff;border:1px solid var(--line);border-radius:15px;padding:8px;box-shadow:0 17px 37px rgba(28,42,61,.21)}.download-options a{display:flex;align-items:center;gap:11px;color:var(--ink);text-decoration:none;font-size:.89rem;font-weight:700;padding:12px;border-radius:10px;line-height:1.35}.download-options a:hover{background:#f4fae9;color:var(--green)}.download-options .svg-icon{color:#c94f50}
+.book-container{display:grid;grid-template-columns:273px minmax(0,1fr);align-items:start;gap:19px}.mobile-shell{min-width:0}.mobile-nav-summary{display:none}.book-tabs{position:sticky;top:12px;display:flex;flex-direction:column;gap:5px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:13px;box-shadow:0 7px 24px rgba(28,48,72,.042)}.book-tabs::before{content:"";display:block;height:5px;border-radius:10px;margin:0 9px 9px;background:linear-gradient(90deg,var(--epet),#d3eaa6)}.nav-tab{display:flex;gap:12px;align-items:center;text-align:left;width:100%;padding:12px 13px;line-height:1.42;font-size:.90rem;font-weight:720;border-radius:12px;border:1px solid transparent;background:transparent;color:#55667b;cursor:pointer;transition:background .16s,color .16s,transform .16s}.nav-tab .svg-icon{color:#8693a1;width:20px;height:20px}.nav-tab:hover,.nav-tab:focus-visible{background:#f7faef;color:var(--deep);transform:translateX(2px)}.nav-tab.active{background:#f0f9dd;border-color:#d8e9b6;color:#405d12;font-weight:800}.nav-tab.active .svg-icon{color:#587d19}.nav-tab.test-tab{border-top:1px solid var(--line);margin-top:5px;border-radius:0 0 12px 12px}.nav-tab.test-tab.active{border:1px solid #e8daf4;background:#f6f0fc;color:#794caf}.nav-tab.test-tab.active .svg-icon{color:#794caf}
+.book-page{background:#fff;min-width:0;border:1px solid var(--line);border-radius:22px;padding:30px 31px 35px;min-height:530px;box-shadow:var(--shadow)}.content-section{display:none;min-width:0;animation:show .22s ease}.content-section.active{display:block}@keyframes show{from{opacity:.25;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}.section-title{display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line);padding:0 0 19px;margin:0 0 23px;font-size:clamp(1.24rem,2.15vw,1.58rem);font-weight:800;letter-spacing:-.026em;line-height:1.35;color:var(--green)}.section-number{flex:none;display:inline-flex;align-items:center;justify-content:center;min-width:43px;height:43px;padding:0 6px;border-radius:50%;background:var(--epet);color:#fff;font-size:1rem;font-weight:850}.section-title-icon{flex:none;display:inline-block;width:42px;height:42px;padding:10px;border-radius:12px;background:#f1f8e2;color:var(--green)}.book-page h3{font-size:1.08rem;font-weight:800;color:#34495c;margin:18px 0 12px}.book-page h4{font-size:1.12rem;font-weight:800;margin:15px 0 10px}.book-page p{margin:0 0 13px;line-height:1.72;color:#364a5c}.book-page ul{padding-left:24px;margin:11px 0 15px}.book-page li{line-height:1.7;margin-bottom:9px}.book-page li::marker{color:#74982d}.book-page a{color:var(--green);font-weight:750;text-decoration:none;border-bottom:2px solid #d6e5b3}.book-page a:hover{background:#f5fae9;border-bottom-color:var(--epet)}.book-page b,.book-page strong{font-weight:800;color:#3f581e}.book-page em{color:#526578}.book-page blockquote{margin:18px 0;padding:16px 20px;border-left:4px solid var(--epet);background:#f8fbf2;border-radius:0 12px 12px 0}.book-page blockquote p:last-child{margin-bottom:0}
+.training-card,.email-card{background:#fff;border:1px solid var(--line);border-radius:18px;margin:0 0 16px;padding:21px 22px;box-shadow:0 6px 21px rgba(36,58,79,.04)}.intro-panel{padding:25px 24px;border-top:5px solid var(--epet);background:linear-gradient(180deg,#fff,#fbfdf7)}.intro-panel>p{font-size:1.03rem;color:#34485b;margin-bottom:21px}.intro-panel h3{margin-top:15px;padding-top:18px;border-top:1px solid #e7eee0}.abbrev-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.abbrev-item{display:flex;align-items:center;gap:7px;border:1px solid #e1ebd4;background:#fff;border-radius:12px;padding:12px 13px;min-height:56px;font-size:.91rem;line-height:1.5}.abbrev-item b{color:var(--green)}
+.steps-holder{padding:0;margin:0;border:0;box-shadow:none}.step-panel,.example-panel{border:1px solid var(--line);border-radius:17px;padding:20px 21px;margin:0 0 16px;background:#fff;box-shadow:0 7px 20px rgba(28,48,72,.045)}.step-panel{border-left:4px solid var(--epet)}.step-panel p:last-child,.example-panel p:last-child{margin-bottom:0}.step-panel .step-badge{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--epet);color:white;font-weight:800;margin-right:10px;vertical-align:middle;box-shadow:0 0 0 4px #f2f8e5}.step-panel>p:first-child{margin:0 0 14px}.distributor-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:0!important;list-style:none;margin:6px 0 0!important}.distributor-card{border:1px solid #e5eaf0;border-radius:12px;background:#f9fbfd;padding:14px 13px;font-size:.88rem;line-height:1.55!important;margin:0!important;min-width:0}.distributor-card strong{display:inline-block;margin-bottom:8px;color:var(--green)}.example-panel{background:#f6faff;border-color:#dce8f4}.example-panel p>strong{color:#385c83}.example-panel ul{margin-bottom:0}.gs-quote{margin:0 0 13px!important;padding:18px 20px!important;position:relative;background:#f7fbf1!important;border:1px solid #dbeac5!important;border-left:5px solid var(--epet)!important;border-radius:13px!important}.gs-quote cite{display:block;margin-top:11px;font-style:normal;color:#6f7f86;font-size:.82rem}
+.email-card{padding:17px;background:#f7fafc}.outlook-window{max-width:100%;overflow:hidden;border:1px solid #dce4ec;background:#fff;border-radius:16px;box-shadow:0 12px 28px rgba(30,45,70,.09)}.outlook-header{display:flex;align-items:center;gap:9px;background:linear-gradient(90deg,#0b72c8,#248bd4);color:white;font-size:.85rem;font-weight:800;padding:12px 17px}.outlook-header-title{font-size:.85rem;letter-spacing:.02em}.outlook-header .icon-inline{color:#fff;width:18px;height:18px}.window-controls{display:flex;gap:6px;margin-left:auto}.window-controls::after{content:'●   ●   ●';font-size:.60rem;letter-spacing:3px;color:#dbecfa}.outlook-meta{padding:17px 20px 12px;background:#fbfcfd;border-bottom:1px solid #e4eaf0}.meta-row{display:grid;grid-template-columns:76px minmax(0,1fr);gap:11px;align-items:start;padding:7px 0;font-size:.86rem}.meta-label{color:#7c8794;font-weight:650}.meta-value{color:#34485b;font-weight:600;overflow-wrap:anywhere}.meta-value.blue{color:#1175c2}.outlook-attachments{background:#fff;padding:12px 20px;border-bottom:1px solid #e4eaf0}.outlook-attachments .attachment-box{display:inline-flex;align-items:center;gap:10px;padding:9px 12px;background:#fff9f9;border:1px solid #efdada;border-radius:11px;color:#465165;font-size:.84rem;font-weight:700;max-width:100%;text-decoration:none}.attachment-box .attachment-info{display:flex;flex-direction:column;min-width:0}.attachment-name{max-width:250px;white-space:normal;line-height:1.4}.attachment-size{color:#9a7280;font-size:.75rem;font-weight:500}.attachment-icon{color:#c95a58}.outlook-body{padding:27px 30px 25px;background:#fff;color:#334455;font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:.92rem;line-height:1.7}.outlook-body p{color:#34475a;margin-bottom:15px}.outlook-body ul{margin:11px 0 17px}.outlook-signature{margin-top:24px;border-top:1px solid #e2e8ef;padding-top:17px;color:#526479;font-size:.85rem;line-height:1.7}.outlook-signature a{font-weight:700}.outlook-body i.icon-inline{width:16px;height:16px}.book-page .email-card strong{background:transparent}
+.empty-media{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:325px;padding:40px 30px;border:1px dashed #d7e4cf;border-radius:18px;background:radial-gradient(170px 150px at 50% 10%,#eaf5d9,transparent 90%),linear-gradient(#fff,#fbfcf9)}.empty-media>div:first-child{margin-bottom:13px!important;color:#7e9c55;font-size:2.5rem!important}.empty-media .icon-inline{width:48px;height:48px;color:#8eaa62}.empty-media h4{font-size:1.13rem;color:#526b2d;margin:0 0 11px}.empty-media p{margin:0;max-width:460px;color:#697b8e}.empty-media br{display:block}.book-page .email-card a{word-break:break-word}
+.site-footer{margin-top:19px;height:7px;background:linear-gradient(90deg,#273b50 0 65%,#94c11f 65% 86%,#f99f1c 86% 100%);border-radius:50px}
+@media(max-width:1030px){.book-container{grid-template-columns:minmax(0,1fr)}.mobile-nav-summary{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border:1px solid #d7e5c0;border-radius:13px;background:#f6fbea;color:#536f23;font-weight:800;cursor:pointer;margin-bottom:10px;list-style:none}.mobile-nav-summary::after{content:'⌄';font-size:23px;line-height:1}.mobile-shell[open] .mobile-nav-summary::after{transform:rotate(180deg)}.mobile-shell:not([open]) .book-tabs{display:none}.book-tabs{position:static;max-height:440px;overflow-y:auto;margin-bottom:14px}.book-page{padding:27px 26px}}
+@media(max-width:700px){body{padding:8px 8px 30px}.hero-banner{padding:25px 21px;gap:16px;border-radius:19px;min-height:0}.hero-banner h1{font-size:1.46rem}.book-page{padding:20px 16px;border-radius:18px}.section-title{align-items:flex-start;font-size:1.23rem;gap:10px}.section-number{min-width:40px;height:40px;font-size:.85rem}.training-card{padding:17px 16px}.intro-panel{padding:19px 15px}.abbrev-grid,.distributor-grid{grid-template-columns:1fr}.step-panel,.example-panel{padding:17px 15px}.email-card{padding:9px}.outlook-meta{padding:12px 13px}.meta-row{grid-template-columns:60px minmax(0,1fr);gap:8px}.outlook-body{padding:22px 17px;font-size:.87rem}.outlook-attachments{padding:10px 13px}.download-options{right:auto;left:0}.empty-media{min-height:270px;padding:30px 17px}.book-page ul{padding-left:21px}}
+@media(prefers-reduced-motion:reduce){.content-section{animation:none}.nav-tab{transition:none}}@media print{body{padding:0}.hero-banner{box-shadow:none}.book-container{display:block}.mobile-shell{display:none}.book-page{box-shadow:none;border:none;padding:0}.content-section{display:block!important;break-inside:auto;margin-bottom:30px}.site-footer{display:none}}
+</style></head><body><div class="site-wrap"><nav aria-label="Drobečková navigace" class="breadcrumb-nav">
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+<a href="https://sites.google.com/view/znalostka/"><svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m3 10 9-7 9 7v11H3zM9 21v-8h6v8"></path></svg> Znalostní
+                    báze</a>
+</li>
+<li class="breadcrumb-item">
+<a href="https://sites.google.com/view/znalostka/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat">Školení
+                    ZIS</a>
+</li>
+<li class="breadcrumb-item">
+<a href="https://sites.google.com/view/znalostka/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat/6-den">6.
+                    den</a>
+</li>
+<li aria-current="page" class="breadcrumb-item active">
+                Změna sazby z C na D u SVJ
+            </li>
+</ol>
+</nav>
+<header class="hero-banner"><div class="hero-main"><h1>Pracovní postup: Změna sazby z C na D u SVJ</h1><p>Znalostní databáze epet | Dokumentace a přílohy</p></div><details class="download-disclosure"><summary><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"/></svg> Dokumenty ke stažení</summary><div class="download-options"><a href="https://drive.google.com/file/d/1b6GEU6iftKMTqeEHLf8bJNgMbJohG-zQ/view?usp=drive_link" target="_blank" rel="noopener noreferrer"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"/></svg><span>Změna sazby z C na D u SVJ (PDF)</span></a></div></details></header>
+<main class="book-container"><details class="mobile-shell" open><summary class="mobile-nav-summary">Pracovní postup</summary><nav class="book-tabs" role="tablist" aria-label="Navigace školením"><button type="button" role="tab" id="nav-page-intro" data-target="page-intro" aria-controls="page-intro" aria-selected="true" class="nav-tab active"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 5h7a3 3 0 0 1 3 3v13H6a3 3 0 0 0-3 0zm10 3a3 3 0 0 1 3-3h5v16a3 3 0 0 0-3 0h-5"/></svg><span>Pracovní postup</span></button><button type="button" role="tab" id="nav-page-nastaveni" data-target="page-nastaveni" aria-controls="page-nastaveni" aria-selected="false" class="nav-tab"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.6 5.6l2.2 2.2m8.4 8.4 2.2 2.2M18.4 5.6l-2.2 2.2m-8.4 8.4-2.2 2.2"/><circle cx="12" cy="12" r="4"/></svg><span>Nastavení v ZIS a informování zákazníka</span></button><button type="button" role="tab" id="nav-page-vyzadani" data-target="page-vyzadani" aria-controls="page-vyzadani" aria-selected="false" class="nav-tab"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg><span>Vzor e-mailu zákazníkovi – vyžádání dokumentů pro změnu
+                distribuční sazby</span></button><button type="button" role="tab" id="nav-page-ukol" data-target="page-ukol" aria-controls="page-ukol" aria-selected="false" class="nav-tab"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="5" width="14" height="16" rx="2"/><path d="M9 5V3h6v2M9 11h6M9 15h6"/></svg><span>Založení úkolu ze strany FO pro změnu distribuční sazby</span></button><button type="button" role="tab" id="nav-page-potvrzeni" data-target="page-potvrzeni" aria-controls="page-potvrzeni" aria-selected="false" class="nav-tab"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg><span>Vzor e-mailu zákazníkovi – potvrzení změny distribuční sazby</span></button><button type="button" role="tab" id="nav-page-video" data-target="page-video" aria-controls="page-video" aria-selected="false" class="nav-tab"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="m10 8 5 4-5 4z"/></svg><span>Video návod</span></button><button type="button" role="tab" id="nav-page-test" data-target="page-test" aria-controls="page-test" aria-selected="false" class="nav-tab test-tab"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="5" width="14" height="16" rx="2"/><path d="M9 5V3h6v2M9 11h6M9 15h6"/></svg><span>Opakovací test</span></button></nav></details>
+<div class="book-page"><div aria-labelledby="nav-page-intro" class="content-section active" id="page-intro" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">1.</span> Pracovní postup</h2>
+<!-- Pracovní postup -->
+<div class="training-card intro-panel">
+<p class="mb-3">
+                        V některých případech může Společenství vlastníků jednotek požádat o změnu distribuční
+                        sazby z C (firma) na D (domácnost). Je nutné žádost předat na distributora, a pokud změnu
+                        schválí, je nutné upravit nastavení v ZIS.
+                        Jde o případy, kdy se na daném OM odebírá elektřina pouze pro potřeby správy a provozu
+                        společných částí domu sloužících pouze pro společné užívání vlastníkům nebo uživatelům
+                        bytů.
+                    </p>
+<h3>Zkratky:</h3>
+<div class="abbrev-grid">
+<div class="abbrev-item">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="18" rx="2" width="16" x="4" y="3"></rect><path d="M8 7h2m4 0h2M8 11h2m4 0h2M8 15h2m4 0h2M10 21v-4h4v4"></path></svg>
+<b>SVJ</b> = Společenství vlastníků jednotek
+                        </div>
+<div class="abbrev-item">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-5 3.5-7 8-7s8 2 8 7"></path></svg>
+<b>ZK</b> = zákazník
+                        </div>
+<div class="abbrev-item">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"></path></svg>
+<b>ČP</b> = čestné prohlášení
+                        </div>
+<div class="abbrev-item">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+<b>OM</b> = odběrné místo
+                        </div>
+<div class="abbrev-item">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"></path></svg>
+<b>ŽOP</b> = Žádost o připojení
+                        </div>
+<div class="abbrev-item">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"></path></svg>
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M10 14a5 5 0 0 0 7.1 0l2.2-2.2a5 5 0 0 0-7.1-7.1l-1.2 1.2M14 10a5 5 0 0 0-7.1 0l-2.2 2.2a5 5 0 0 0 7.1 7.1l1.2-1.2"></path></svg>
+<b>ŽSOP</b> = Žádost – Smlouva o připojení
+                        </div>
+<div class="abbrev-item">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m8 12 3 3 5-6"></path></svg>
+<b>SOP</b> = Smlouva o připojení
+                        </div>
+<div class="abbrev-item">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="16" rx="2" width="14" x="5" y="5"></rect><path d="M9 5V3h6v2M9 11h6M9 15h6"></path></svg>
+<b>RZ</b> = revizní zpráva (platnost revizní zprávy je 6 měsíců od data vystavení)
+                        </div>
+</div>
+</div>
+</div><div aria-labelledby="nav-page-nastaveni" class="content-section" id="page-nastaveni" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">2.</span> Nastavení v ZIS a informování zákazníka</h2>
+<!-- Nastavení v ZIS a informování zákazníka -->
+<!-- KARTA: ZMĚNA DISTRIBUČNÍ SAZBY – POSTUP -->
+<div class="steps-holder"><div class="step-panel"><p class="mb-3">
+<span class="step-badge">1</span>
+<strong>FO přijme od ZK požadavek na změnu typu distribuční sazby.</strong>
+</p></div><div class="step-panel"><p class="mb-3">
+<span class="step-badge">2</span>
+                        FO si od ZK <strong>vyžádá potřebné dokumenty</strong> a upozorní ho na možnou
+                        <strong>změnu ceny dle Ceníku</strong>:
+                    </p><ul class="distributor-grid">
+<li class="distributor-card">
+<strong>a) Distribuce ČEZ:</strong><br/>
+<a href="https://www.cezdistribuce.cz/file/edee/distribuce/formulare/cestneprohlaseni_web.pdf" rel="noopener noreferrer" target="_blank">ČP ČEZ</a>
+                            (případně
+                            <a href="https://drive.google.com/file/d/14JwJ2-7d3FtTbm8Q6xGzQ0PU4yu39-et/view?usp=drive_link" rel="noopener noreferrer" target="_blank">Čestné prohlášení epet</a>)
+                            + ostatní podklady dle
+                            <a href="https://sites.google.com/view/znalostka/%C5%A1ablony/distribu%C4%8Dn%C3%AD-zm%C4%9Bny/tarifomat" rel="noopener noreferrer" target="_blank">Podmínek pro přiznání DI sazby</a>.
+                        </li>
+<li class="distributor-card">
+<strong>b) Distribuce EG.D:</strong><br/>
+<a href="https://drive.google.com/file/d/14JwJ2-7d3FtTbm8Q6xGzQ0PU4yu39-et/view?usp=drive_link" rel="noopener noreferrer" target="_blank">Čestné prohlášení epet</a>
+                            + ostatní podklady dle
+                            <a href="https://sites.google.com/view/znalostka/%C5%A1ablony/distribu%C4%8Dn%C3%AD-zm%C4%9Bny/tarifomat" rel="noopener noreferrer" target="_blank">Podmínek pro přiznání DI sazby</a>.
+                        </li>
+<li class="distributor-card">
+<strong>c) Distribuce PRE:</strong><br/>
+<a href="https://drive.google.com/file/d/14JwJ2-7d3FtTbm8Q6xGzQ0PU4yu39-et/view?usp=drive_link" rel="noopener noreferrer" target="_blank">Čestné prohlášení epet</a>
+                            + ostatní podklady dle
+                            <a href="https://sites.google.com/view/znalostka/%C5%A1ablony/distribu%C4%8Dn%C3%AD-zm%C4%9Bny/tarifomat" rel="noopener noreferrer" target="_blank">Podmínek pro přiznání DI sazby</a>.
+                        </li>
+</ul></div><div class="example-panel"><p class="mb-2"><strong>Příklad:</strong></p><ul>
+<li>
+                            Pokud budeme řešit pouze <strong>změnu z C na D u jednotarifu</strong> nebo příbuzných sazeb,
+                            stačí doložit <strong>ČP</strong>.
+                        </li>
+<li>
+                            Pokud budeme řešit změnu např. <strong>z C01D na D57D</strong>, musí ZK doložit dokument
+                            <strong>ŽOP</strong> a následně <strong>protokol TČ</strong> a
+                            <strong>tepelné ztráty</strong>.
+                        </li>
+</ul></div><blockquote class="gs-quote">
+<p>
+                            Stále vycházíme z tabulky
+                            <a href="https://sites.google.com/view/znalostka/%C5%A1ablony/distribu%C4%8Dn%C3%AD-zm%C4%9Bny/tarifomat" rel="noopener noreferrer" target="_blank">„Dokumenty k DI požadavkům PDS“</a>
+                            a z pracovního postupu
+                            <a href="https://sites.google.com/view/znalostka/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat/6-den/zm%C4%9Bna-sazby-a-jisti%C4%8De-na-odb%C4%9Brn%C3%A9m-m%C3%ADst%C4%9B?authuser=0" rel="noopener noreferrer" target="_blank">„Změna distribučních náležitostí“</a>.
+                        </p>
+<cite>Interní poznámka / metodika</cite>
+</blockquote></div>
+</div><div aria-labelledby="nav-page-vyzadani" class="content-section" id="page-vyzadani" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">3.</span> Vzor e-mailu zákazníkovi – vyžádání dokumentů pro změnu</h2>
+<!-- KROK 1 -->
+<div class="email-card">
+<div aria-label="Vzor e-mailu" class="outlook-window" role="group">
+<div class="outlook-header">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="2" width="19" x="2.5" y="5"></rect><path d="m3.5 7 8.5 6 8.5-6"></path></svg>
+<span class="outlook-header-title">Nový e-mail</span>
+<div class="window-controls"></div>
+</div>
+<div class="outlook-meta">
+<div class="meta-row">
+<span class="meta-label">Komu:</span>
+<span class="meta-value blue">zakaznik@seznam.cz</span>
+</div>
+<div class="meta-row">
+<span class="meta-label">Kopie:</span>
+<span class="meta-value"></span>
+</div>
+<div class="meta-row" style="border-bottom: none;">
+<span class="meta-label">Předmět:</span>
+<span class="meta-value"><strong>Úprava distribuční sazby na sazbu pro domácnosti, zákaznický účet XXXXXX</strong></span>
+</div>
+</div>
+<div class="outlook-attachments">
+<a class="attachment-box" href="https://drive.google.com/file/d/14JwJ2-7d3FtTbm8Q6xGzQ0PU4yu39-et/view" title="Klikněte pro stažení">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"></path></svg>
+<div class="attachment-info">
+<span class="attachment-name">ČP z PO - Pro změnu sazby z Firmy na DOM</span>
+<span class="attachment-size">319 kB</span>
+</div>
+</a>
+</div>
+<div class="outlook-body">
+<p>Dobrý den, pane XXX, paní YYY, </p>
+<p>abychom mohli zažádat o změnu typu sazby u distributora, prosíme o vyplnění a zaslání potřebných dokumentů:</p>
+<ul style="margin: 15px 0;">
+<li><strong>Čestné prohlášení</strong></li>
+</ul>
+<p>Rádi bychom Vás upozornili, že v důsledku změny distribuční sazby dojde ke změně ceny za regulované a
+                                neregulované položky související s provedenou změnou.</p>
+<p>Zároveň bychom Vás chtěli informovat, že technik distributora si na místě ověří, že se skutečně jedná o společné
+                                prostory domu. V opačném případě nebude změna provedena.</p>
+<p>Všechny potřebné dokumenty k vyplnění zasíláme v příloze tohoto e-mailu.</p>
+<p>Rádi bychom Vás také informovali, že požadavky můžete řešit i přes náš Zákaznický portál. Na něm můžete najít
+                                faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete
+                                prostřednictvím následujícího odkazu <a href="https://zakaznici.epet.cz/login" rel="noopener noreferrer" target="_blank">Zákaznický portál</a></p>
+<p>Děkuji a přeji pěkný den.</p>
+<div class="outlook-signature">
+<strong style="color: #000;">Jan Novák</strong><br/>
+                                Specialista péče o zákazníky<br/>
+<span style="color: #94c11f; font-weight: bold; font-size: 15px;">epet</span> | EP ENERGY TRADING,
+                                a.s.<br/>
+<a href="https://www.epet.cz" style="color: #0563C1; text-decoration: none;">www.epet.cz</a>
+</div>
+</div>
+</div>
+</div></div><div aria-labelledby="nav-page-ukol" class="content-section" id="page-ukol" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">4.</span> Založení úkolu ze strany FO pro změnu distribuční sazby</h2>
+<!-- KARTA: PŘEDÁNÍ ÚKOLU NA EK A NASTAVENÍ SAZBY -->
+<div class="steps-holder"><div class="step-panel"><p class="mb-3">
+<span class="step-badge">1</span>
+<strong>Po přijetí všech potřebných dokumentů FO úkol předává na EK</strong>:
+                    </p><ul class="mb-3">
+<li class="mb-2">
+                            nastaví stav úkolu na <strong>Nový</strong>,
+                        </li>
+<li class="mb-2">
+                            doplní do úkolu následující popis:
+                            <blockquote class="border-start ps-3 mt-2">
+<strong>EAN:</strong> 859182400XXXXXXX – zákazník požaduje změnu distribuční sazby
+                                z <strong>C02d</strong> na <strong>D02d</strong> od <strong>XX.XX.XXXX</strong>
+                                z důvodu odběru elektřiny pouze pro potřeby
+                                <strong>správy a provozu společných částí domu</strong>.<br/>
+                                Potřebné dokumenty jsou přiloženy v příloze.<br/>
+                                Prosím o předání na DI. Děkuji.
+                            </blockquote>
+</li>
+<li class="mb-2">
+                            do přílohy úkolu nahraje veškeré doložené dokumenty od zákazníka.
+                        </li>
+</ul></div><div class="step-panel"><p class="mb-3">
+<span class="step-badge">2</span>
+<strong>Po potvrzení od EK</strong>, že je možné danou sazbu upravit:
+                    </p><ul>
+<li class="mb-2">
+                            FO dle informací v úkolu <strong>nastaví novou distribuční sazbu v ZIS</strong>,
+                        </li>
+<li class="mb-0">
+                            informuje zákazníka <svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="2" width="19" x="2.5" y="5"></rect><path d="m3.5 7 8.5 6 8.5-6"></path></svg> e-mailem o potvrzení změny sazby.
+                        </li>
+</ul></div></div>
+</div><div aria-labelledby="nav-page-potvrzeni" class="content-section" id="page-potvrzeni" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">5.</span> Vzor e-mailu zákazníkovi – potvrzení změny distribuční sazby</h2>
+<!-- KROK 1 -->
+<div class="email-card">
+<div aria-label="Vzor e-mailu" class="outlook-window" role="group">
+<div class="outlook-header">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="2" width="19" x="2.5" y="5"></rect><path d="m3.5 7 8.5 6 8.5-6"></path></svg>
+<span class="outlook-header-title">Nový e-mail</span>
+<div class="window-controls"></div>
+</div>
+<div class="outlook-meta">
+<div class="meta-row">
+<span class="meta-label">Komu:</span>
+<span class="meta-value blue">zakaznik@seznam.cz</span>
+</div>
+<div class="meta-row">
+<span class="meta-label">Kopie:</span>
+<span class="meta-value"></span>
+</div>
+<div class="meta-row" style="border-bottom: none;">
+<span class="meta-label">Předmět:</span>
+<span class="meta-value"><strong>Potvrzení distribuční sazby na sazbu pro domácnosti, zákaznický účet XXXXXX</strong></span>
+</div>
+</div>
+<div class="outlook-body">
+<p>Dobrý den, pane XXX, paní YYY, </p>
+<p>informujeme Vás, že na základě Vaší žádosti došlo dne <b>XXXXXXX</b> ke změně typu sazby z <b>C01d</b> na <b>D01d</b> u odběrného místa <b>EAN XXXXXXXX</b>, na adrese <b>XXXXXXX</b>.</p>
+<p>V příloze tohoto e-mailu Vám zasíláme nový Ceník, který obsahuje ceny pro sazby v kategorii D. <i>(větu použijeme jen pokud již nebyl Ceník zaslán s dodatkem ze strany BO)</i></p>
+<p>Rádi bychom Vás také informovali, že požadavky můžete řešit i přes náš Zákaznický portál. Na něm můžete najít
+                                faktury, platební kalendář, zadat samoodečet nebo upravit výši zálohových plateb. Přihlásit se do něj můžete
+                                prostřednictvím následujícího odkazu <a href="https://zakaznici.epet.cz/login" rel="noopener noreferrer" target="_blank">Zákaznický portál</a></p>
+<p>Děkuji a přeji pěkný den.</p>
+<div class="outlook-signature">
+<strong style="color: #000;">Jan Novák</strong><br/>
+                                Specialista péče o zákazníky<br/>
+<span style="color: #94c11f; font-weight: bold; font-size: 15px;">epet</span> | EP ENERGY TRADING,
+                                a.s.<br/>
+<a href="https://www.epet.cz" style="color: #0563C1; text-decoration: none;">www.epet.cz</a>
+</div>
+</div>
+</div>
+</div></div><div aria-labelledby="nav-page-video" class="content-section" id="page-video" role="tabpanel" tabindex="0">
+<h2 class="section-title"><svg aria-hidden="true" class="section-title-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="16" rx="3" width="18" x="3" y="4"></rect><path d="m10 8 5 4-5 4z"></path></svg>Video tutoriál</h2>
+<div class="empty-media">
+<div class="mb-3" style="font-size: 3rem; color: #ced4da;">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="16" rx="3" width="18" x="3" y="4"></rect><path d="m10 8 5 4-5 4z"></path></svg>
+</div>
+<h4 class="fw-bold text-secondary">Video je v přípravě</h4>
+<p class="text-muted">Právě pro vás stříháme aktuální verzi návodu.<br/>Jakmile bude hotová, najdete ji
+                    přímo zde.</p>
+</div></div><div aria-labelledby="nav-page-test" class="content-section" id="page-test" role="tabpanel" tabindex="0">
+<h2 class="section-title" style="color: var(--epet-purple);"><svg aria-hidden="true" class="section-title-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="16" rx="2" width="14" x="5" y="5"></rect><path d="M9 5V3h6v2M9 11h6M9 15h6"></path></svg>Ověření znalostí</h2>
+<div class="empty-media">
+<div class="mb-3" style="font-size: 3.5rem; color: #ced4da;">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"></path></svg>
+</div>
+<h4 class="fw-bold text-secondary">Manuál a test jsou v přípravě</h4>
+<p class="text-muted">
+            Právě pro vás připravujeme aktuální verzi manuálu a navazující test.<br/>
+            Jakmile budou materiály hotové, možnost ověření znalostí se zobrazí přímo zde.
+        </p>
+</div>
+</div></div></main><div class="site-footer" aria-hidden="true"></div></div><script>(() => {
+  const tabs = Array.from(document.querySelectorAll('.nav-tab[data-target]'));
+  const sections = Array.from(document.querySelectorAll('.content-section'));
+  const mobileShell = document.querySelector('.mobile-shell');
+  const switchTo = (target, scroll=true) => {
+    const section = document.getElementById(target);
+    if (!section) return;
+    sections.forEach(s => s.classList.toggle('active',s === section));
+    tabs.forEach(b => { const active = b.dataset.target === target; b.classList.toggle('active',active); b.setAttribute('aria-selected',String(active)); b.tabIndex = active ? 0 : -1; });
+    const activeTab = tabs.find(b => b.dataset.target === target);
+    const mobileSummary = document.querySelector('.mobile-nav-summary');
+    if (mobileSummary && activeTab) mobileSummary.textContent = activeTab.textContent.trim();
+    if (window.matchMedia('(max-width:1030px)').matches && mobileShell) mobileShell.open = false;
+    if (scroll) document.querySelector('.book-container')?.scrollIntoView({block:'start',behavior:'instant'});
+  };
+  tabs.forEach((b,index) => {
+    b.addEventListener('click',() => switchTo(b.dataset.target));
+    b.addEventListener('keydown',event => {
+      let j;
+      if (event.key==='ArrowDown'||event.key==='ArrowRight') j=(index+1)%tabs.length;
+      else if(event.key==='ArrowUp'||event.key==='ArrowLeft') j=(index-1+tabs.length)%tabs.length;
+      else if(event.key==='Home')j=0;
+      else if(event.key==='End')j=tabs.length-1;
+      else return;
+      event.preventDefault();tabs[j].focus();switchTo(tabs[j].dataset.target,false);
+    });
+  });
+  document.addEventListener('click',event => {
+    const d=document.querySelector('.download-disclosure');
+    if(d && d.open && !d.contains(event.target))d.open=false;
+  });
+})();</script></body></html>

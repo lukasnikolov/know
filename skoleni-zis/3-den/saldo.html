@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Saldo – Pracovní postup</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
+
+
+
+<style>/* ZNALOSTKA – HTML ŠKOLENÍ | Jednotný firemní vizuální standard */
+:root{
+  --epet:#94c11f; --epet-dark:#60781a; --epet-deep:#34470b;
+  --purple:#9362d6; --blue:#2563eb; --cyan:#0891b2;
+  --orange:#f59e0b; --red:#d9414f;
+  --ink:#1e293b; --muted:#64748b; --line:#e2e8f0;
+  --soft:#f8fafc; --card:#fff;
+  --shadow:0 14px 34px rgba(15,23,42,.075);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; padding:10px 12px 34px; background:transparent; color:var(--ink);
+  font-family:"Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,Arial,sans-serif;
+  font-size:15px;line-height:1.64;-webkit-font-smoothing:antialiased;
+}
+body>.breadcrumb-nav,body>.hero-banner,body>.book-container{
+  width:100%;max-width:1180px;margin-left:auto;margin-right:auto;
+}
+/* Ostrá a jednotná ikonografie SVG, nezávislá na síťovém načtení ikonového fontu. */
+i.bi::before{display:none!important}
+.svg-icon{width:19px;height:19px;vertical-align:middle;display:inline-block;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.breadcrumb .svg-icon{width:15px;height:15px}
+.btn-download .svg-icon{width:18px;height:18px}
+.video-card .svg-icon{width:20px;height:20px}
+.list-group .svg-icon{width:17px;height:17px}
+.glossary .bg-primary{background:var(--blue)!important;color:#fff}
+.glossary .bg-success{background:var(--epet-dark)!important;color:#fff}
+.glossary .bg-warning{background:#fff0ba!important;color:#664300}
+.glossary .bg-info{background:#d7f6fa!important;color:#155a70}
+/* Drobečková navigace */
+.breadcrumb-nav{
+  margin-bottom:14px;padding:10px 14px;background:rgba(255,255,255,.92);
+  border:1px solid var(--line);border-radius:14px;backdrop-filter:blur(8px);
+}
+.breadcrumb{display:flex;flex-wrap:wrap;list-style:none;padding:0;margin:0;font-size:.85rem}
+.breadcrumb-item{display:flex;align-items:center;color:#6b7280}
+.breadcrumb-item a{color:var(--epet-dark);text-decoration:none;font-weight:700}
+.breadcrumb-item a:hover{color:var(--purple)}
+.breadcrumb-item+.breadcrumb-item::before{
+  content:"›";font-family:inherit;font-size:1.1rem;
+  padding:0 9px;color:#94a3b8;
+}
+.breadcrumb-item.active{color:#475569;font-weight:720}
+/* Firemní gradientový hero */
+.hero-banner{
+  position:relative;isolation:isolate;overflow:visible;
+  display:flex!important;align-items:center!important;justify-content:space-between!important;
+  gap:25px;flex-wrap:wrap;margin-bottom:18px;min-height:184px;
+  border-radius:24px;padding:35px 33px;color:#fff;
+  background:
+    radial-gradient(900px 360px at 92% 20%,rgba(255,255,255,.24),transparent 62%),
+    linear-gradient(135deg,var(--epet) 0%,var(--epet-dark) 52%,#2f3f0f 100%);
+  box-shadow:var(--shadow);
+}
+.hero-banner::before{
+  content:"";z-index:-1;position:absolute;right:18px;bottom:0;
+  width:190px;height:140px;border-radius:100% 60% 0 0;
+  background:linear-gradient(135deg,rgba(255,255,255,.025),rgba(255,255,255,.09));
+  pointer-events:none;
+}
+.hero-banner::after{
+  content:"";position:absolute;z-index:-1;right:105px;top:16px;
+  width:130px;height:130px;border:1px solid rgba(255,255,255,.14);border-radius:50%;pointer-events:none;
+}
+.hero-banner>div{position:relative;z-index:1}
+.hero-banner>div:first-child{flex:1 1 480px;min-width:0}
+.hero-banner h1{
+  margin:0 0 10px!important;color:white!important;
+  font-size:clamp(1.56rem,2.75vw,2.18rem)!important;
+  letter-spacing:-.034em;line-height:1.16;font-weight:850!important;
+}
+.hero-banner p{margin:0!important;color:rgba(255,255,255,.91)!important;font-size:.95rem}
+.btn-download{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  border:1px solid rgba(255,255,255,.45);border-radius:999px;
+  padding:11px 19px;background:#fff;color:var(--epet-dark)!important;
+  font-weight:820;text-decoration:none;white-space:nowrap;
+  box-shadow:0 8px 18px rgba(15,23,42,.12);transition:transform .18s ease,box-shadow .18s ease;
+}
+.btn-download:hover,.btn-download:focus-visible{transform:translateY(-2px);box-shadow:0 11px 24px rgba(15,23,42,.17)}
+.hero-banner .dropdown{z-index:80}
+.hero-banner .dropdown-menu{
+  display:none!important;position:absolute;list-style:none;margin:0;
+  min-width:340px;max-width:min(440px,calc(100vw - 24px));
+  background:#fff;color:var(--ink);padding:9px;border:1px solid var(--line)!important;border-radius:16px!important;
+  box-shadow:0 18px 38px rgba(15,23,42,.2)!important;z-index:9999;
+}
+.hero-banner .dropdown.open>.dropdown-menu{display:block!important;position:absolute;top:calc(100% + 8px);right:0;left:auto}
+.hero-banner .dropdown-item{
+  display:flex;align-items:center;gap:8px;padding:11px 12px!important;border-radius:10px;
+  color:#334155;font-weight:680;font-size:.91rem;white-space:normal;text-decoration:none;
+}
+.hero-banner .dropdown-item:hover{background:#f1f8e3;color:var(--epet-dark)}
+.hero-banner .dropdown-toggle::after{margin-left:5px}
+/* Navigace a pravý obsahový panel */
+.book-container{
+  display:grid!important;grid-template-columns:270px minmax(0,1fr);
+  align-items:start;gap:18px;min-height:0;overflow:visible;background:transparent;border:0;
+}
+.book-tabs{
+  position:sticky;top:12px;width:auto!important;min-width:0;
+  display:flex!important;flex-direction:column!important;gap:5px;
+  padding:12px;border:1px solid var(--line);border-radius:22px;
+  background:#fff;box-shadow:0 10px 28px rgba(15,23,42,.055);
+}
+.book-tabs::before{
+  content:"";display:block;height:5px;margin:0 8px 9px;
+  border-radius:999px;background:linear-gradient(90deg,var(--epet),#cce88a);
+}
+.tab-item{
+  display:flex;align-items:center;gap:11px;min-width:0;
+  padding:12px 13px;margin:0;border-radius:14px;
+  background:transparent;border:1px solid transparent!important;
+  color:#475569;font-size:.925rem;font-weight:700;line-height:1.4;
+  cursor:pointer;outline:0;transition:background .18s,color .18s,transform .18s,box-shadow .18s;
+}
+.tab-item i{width:20px;flex:0 0 20px;text-align:center;font-size:1.1rem;color:#718096}
+.tab-item:hover,.tab-item:focus-visible{background:var(--soft);color:var(--epet-dark);transform:translateX(2px)}
+.tab-item.active{
+  background:#f1fccf;color:#435f00;font-weight:850;
+  border-color:rgba(148,193,31,.28)!important;
+  box-shadow:inset 0 0 0 1px rgba(148,193,31,.09);
+}
+.tab-item.active i{color:var(--epet-dark)}
+.tab-item.tab-purple{margin-top:6px;border-top:1px solid var(--line)!important}
+.tab-item.tab-purple.active{color:#7048a6;background:#f6efff;border-color:rgba(147,98,214,.25)!important}
+.tab-item.tab-purple.active i{color:var(--purple)}
+.book-page{
+  position:relative;min-width:0;min-height:430px;overflow:visible;
+  background:#fff;padding:27px 27px 32px;border:1px solid var(--line);
+  border-radius:24px;box-shadow:var(--shadow);
+}
+.content-section{display:none;animation:fadeIn .25s ease}
+.content-section.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.content-section>h2{
+  display:flex;align-items:center;gap:11px;min-width:0;
+  margin:0 0 19px!important;padding:0 0 18px;border-bottom:1px solid var(--line);
+  font-size:clamp(1.22rem,2.05vw,1.55rem);line-height:1.35;
+  letter-spacing:-.025em;color:var(--epet-dark)!important;font-weight:850!important;
+}
+.section-number{
+  display:inline-flex;align-items:center;justify-content:center;flex:0 0 41px;
+  width:41px;height:41px;border-radius:50%;background:var(--epet);color:#fff;
+  font-size:1rem;font-weight:850;letter-spacing:0;
+  box-shadow:0 5px 12px rgba(148,193,31,.16);
+}
+#page-video>h2::before,#page-test>h2::before{
+  content:"";display:block;flex:0 0 5px;width:5px;min-height:30px;
+  border-radius:99px;background:var(--epet);
+}
+#page-test>h2{color:var(--purple)!important}
+#page-test>h2::before{background:var(--purple)}
+/* Úvodní shrnutí, významové zkratky */
+.overview-card{
+  position:relative;overflow:hidden;border:1px solid #dfebd4;
+  padding:26px 28px 26px;border-radius:21px;
+  background:radial-gradient(280px 220px at 100% 100%,rgba(148,193,31,.1),transparent 75%),
+             linear-gradient(140deg,#fff,#f9fcf3);
+  box-shadow:0 9px 22px rgba(15,23,42,.046);
+}
+.overview-card::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:var(--epet)}
+.overview-card>p{font-size:1.065rem;line-height:1.82;margin:0 0 23px;color:#2f473e}
+.glossary{border-top:1px solid #dfeada;padding-top:20px;margin:0!important}
+.glossary h5{font-size:.89rem;letter-spacing:.065em;color:var(--muted);font-weight:850;margin:0 0 13px}
+.glossary h5 strong{color:var(--epet-dark)}
+.glossary p{margin:0;line-height:2.4;color:#475569;font-weight:580}
+.glossary .badge{
+  margin-right:5px;vertical-align:middle;padding:8px 10px;border-radius:9px;
+  font-size:.81rem;letter-spacing:.01em;line-height:1;font-weight:850;
+}
+/* Pracovní postup tvoří série navazujících karet. */
+.content-steps{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;
+  padding:0!important;margin:0!important;border:0!important;background:transparent!important;box-shadow:none!important}
+.step-card{
+  position:relative;overflow:hidden;min-width:0;
+  background:linear-gradient(180deg,#fff,#fbfcfd);
+  padding:21px 23px 23px;border:1px solid var(--line);
+  border-radius:20px;box-shadow:0 8px 22px rgba(15,23,42,.05);
+}
+.step-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--epet)}
+.content-steps>.step-card:nth-child(3n+2)::before{background:var(--cyan)}
+.content-steps>.step-card:nth-child(3n+3)::before{background:var(--purple)}
+.step-card>p{margin:0 0 13px!important;color:#334155;line-height:1.74}
+.step-card>p:last-child{margin-bottom:0!important}
+.step-card>p:first-child{font-size:1rem}
+.step-card .step-badge{
+  display:inline-flex;align-items:center;justify-content:center;
+  vertical-align:middle;width:35px;height:35px;min-width:35px;
+  margin:0 10px 2px 0;border-radius:50%;background:var(--epet);
+  box-shadow:0 5px 12px rgba(148,193,31,.16);
+  color:#fff;font-size:.95rem;font-weight:850;
+}
+.content-steps>.step-card:nth-child(3n+2) .step-badge{background:var(--cyan)}
+.content-steps>.step-card:nth-child(3n+3) .step-badge{background:var(--purple)}
+.step-card img.img-thumbnail{
+  display:block;width:auto;max-width:100%;height:auto;
+  object-fit:contain;margin:17px auto!important;padding:6px;
+  border:1px solid var(--line);border-radius:15px;
+  background:#fff;box-shadow:0 8px 20px rgba(15,23,42,.08);
+}
+/* Významové položky do přehledných mřížek */
+.step-card ul.list-group{
+  display:grid;grid-template-columns:minmax(0,1fr);gap:8px;
+  list-style:none;margin:14px 0 13px!important;padding:0;border:0;border-radius:0;background:transparent;
+}
+.step-card ul.privacy-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.step-card .list-group-item{
+  min-width:0;display:block;margin:0!important;padding:12px 14px!important;
+  background:#fafcfe;border:1px solid var(--line)!important;border-radius:12px!important;
+  color:#334155;line-height:1.55;font-size:.93rem;
+}
+.step-card .privacy-grid .list-group-item{
+  text-align:center;display:flex;align-items:center;justify-content:center;
+  min-height:54px;background:#fff7ed;color:#81500f;border-color:#f4dba8!important;font-weight:720;
+}
+.step-card .task-fields{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.step-card .task-fields .list-group-item{background:linear-gradient(180deg,#fff,#f8fafc);padding:14px 15px!important}
+.step-card .task-fields .list-group-item:nth-child(5){grid-column:1/-1}
+.step-card .task-fields .list-group-item i.bi{color:var(--epet-dark)}
+.step-card .task-fields .list-group-item b{color:var(--ink)}
+.step-card .critical-note{
+  margin:15px 0!important;padding:15px 18px;
+  border:1px solid #f3bec7!important;border-left:5px solid var(--red)!important;
+  border-radius:15px;background:#fff4f5;color:#8e2430;line-height:1.68;
+}
+.step-card .critical-note strong{color:inherit}
+/* Textové odkazy a zvýraznění */
+.book-page strong,.book-page b{font-weight:800}
+.book-page p,.book-page li{line-height:1.68}
+.book-page a:not(.btn){
+  color:var(--epet-dark);text-decoration:none;font-weight:770;
+  border-bottom:2px solid rgba(148,193,31,.31);padding:0 2px;
+}
+.book-page a:not(.btn):hover{background:#f4fae6;border-bottom-color:var(--epet)}
+.book-page a[target="_blank"]::after{
+  content:"↗";font-family:inherit;font-size:.77rem;
+  margin-left:5px;vertical-align:super;opacity:.7;
+}
+.book-page i:not(.bi),.book-page em{color:var(--purple)}
+.book-page u{text-decoration:none;border-bottom:2px dotted var(--epet);padding-bottom:1px}
+/* Videa a opakovací test */
+#page-video>p{color:var(--muted)!important;line-height:1.7;margin-bottom:21px!important}
+#page-video>.row{
+  display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;margin:0!important;
+}
+#page-video>.row>.col{padding:0!important;width:auto;max-width:none;flex:none;margin:0}
+.video-card{
+  height:100%;overflow:hidden;padding:16px!important;
+  background:linear-gradient(180deg,#fff,#f8fafc)!important;
+  border:1px solid var(--line)!important;border-radius:20px!important;
+  box-shadow:0 8px 22px rgba(15,23,42,.05)!important;
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+}
+.video-card:hover{transform:translateY(-3px);border-color:var(--epet)!important;
+  box-shadow:0 12px 25px rgba(15,23,42,.1)!important}
+.video-card h6{
+  min-height:44px;display:flex;align-items:center;gap:6px;margin:0 0 12px!important;
+  color:var(--epet-dark);font-size:.98rem;line-height:1.45;font-weight:850!important;
+}
+.video-card h6 i{font-size:1.2rem}
+.video-card .ratio{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:13px!important}
+.video-card iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+#page-test>p{
+  margin:0 0 20px!important;padding:17px 19px;
+  border-left:4px solid var(--purple);border-radius:15px;
+  background:#faf7ff;color:#475569;line-height:1.7;
+}
+#page-test>div{overflow:hidden;border:1px solid var(--line)!important;
+  border-radius:19px!important;box-shadow:0 8px 22px rgba(15,23,42,.05)!important}
+#page-test iframe{display:block;width:100%;height:600px;border:0}
+/* Responzivní tablet/mobile; nevynucuje horizontální scroll dokumentu. */
+@media(max-width:1020px){
+  .book-container{grid-template-columns:1fr}
+  .book-tabs{position:static;flex-direction:row!important;overflow-x:auto;white-space:nowrap;padding:9px;gap:5px}
+  .book-tabs::before{display:none}
+  .tab-item{flex:0 0 auto;min-width:max-content;padding:10px 12px}
+  .tab-item:hover{transform:none}
+  .tab-item.tab-purple{margin-top:0;border-top:1px solid transparent!important}
+}
+@media(max-width:690px){
+  body{padding:7px 6px 26px;font-size:14.5px}
+  .breadcrumb-nav{padding:9px 11px;margin-bottom:10px}
+  .breadcrumb{font-size:.79rem}
+  .breadcrumb-item+.breadcrumb-item::before{padding:0 5px}
+  .hero-banner{padding:26px 21px;gap:18px;min-height:160px;border-radius:20px;margin-bottom:13px}
+  .hero-banner h1{font-size:1.62rem!important}
+  .hero-banner .dropdown{width:100%}
+  .btn-download{padding:10px 15px;white-space:normal;text-align:center}
+  .hero-banner .dropdown-menu{min-width:0;max-width:100%;width:100%;right:auto;left:0}
+  .book-container{gap:12px}
+  .book-tabs{border-radius:17px}
+  .book-page{padding:19px 15px 24px;min-height:0;border-radius:20px}
+  .content-section>h2{align-items:flex-start;gap:9px;font-size:1.2rem}
+  .section-number{flex-basis:35px;width:35px;height:35px;font-size:.86rem}
+  .overview-card{padding:20px 19px 21px}
+  .overview-card>p{font-size:1rem}
+  .step-card{padding:17px 16px 19px;border-radius:17px}
+  .step-card ul.privacy-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .step-card .task-fields{grid-template-columns:1fr}
+  .step-card .task-fields .list-group-item:nth-child(5){grid-column:auto}
+  #page-video>.row{grid-template-columns:1fr}
+  .video-card h6{min-height:0}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+
+/* Dokumenty ke stažení: stabilní nativní rozbalení bez Bootstrap JS */
+.hero-banner{z-index:5}
+.hero-banner .download-container{position:relative;z-index:8;min-width:0;flex:0 1 auto}
+.download-disclosure{position:relative;width:100%}
+.download-disclosure>summary{list-style:none;cursor:pointer;user-select:none;display:inline-flex;align-items:center}
+.download-disclosure>summary::-webkit-details-marker{display:none}
+.download-disclosure>summary::marker{content:''}
+.download-disclosure>summary::after{
+  content:'';width:8px;height:8px;margin-left:7px;display:inline-block;
+  border-right:2px solid currentColor;border-bottom:2px solid currentColor;
+  transform:translateY(-2px) rotate(45deg);transition:transform .2s ease;
+}
+.download-disclosure[open]>summary::after{transform:translateY(2px) rotate(225deg)}
+.download-disclosure>summary:focus-visible{outline:3px solid #fff9bb;outline-offset:3px}
+.download-options{margin-top:10px;padding:8px;background:#fff;color:var(--ink);
+  border:1px solid var(--line);border-radius:16px;box-shadow:0 10px 26px rgba(15,23,42,.16);
+  width:370px;max-width:min(440px,calc(100vw - 36px));}
+.download-link{display:flex;align-items:center;gap:9px;border-radius:11px;
+  padding:12px;color:#334155!important;font-weight:720;font-size:.91rem;
+  line-height:1.4;text-decoration:none!important;overflow-wrap:anywhere}
+.download-link i{color:#cf3347}
+.download-link:hover,.download-link:focus-visible{background:#f1f8e3;color:var(--epet-dark)!important}
+@media(max-width:690px){
+  .hero-banner .download-container{width:100%;flex-basis:100%}
+  .download-disclosure>summary{width:100%;justify-content:center}
+  .download-options{width:100%;max-width:none}
+}
+
+/* Saldo – tematické sjednocení školení Znalostka. Veškeré texty a odkazy pocházejí ze zdroje. */
+:root{--epet-green:var(--epet);--epet-green-dark:var(--epet-dark);--epet-purple:var(--purple)}
+.svg-icon{max-width:100%}
+i.bi::before{display:none!important}
+.book-tabs .tab-item{white-space:normal}
+#page-intro .overview-card{margin:0;padding:27px 27px 24px;max-width:none}
+#page-intro .overview-card>p{max-width:770px;margin-bottom:20px}
+#page-intro .overview-card h6{font-size:.93rem;color:var(--epet-dark);font-weight:850;letter-spacing:.02em}
+#page-intro .overview-card .d-flex.flex-wrap{gap:10px!important}
+#page-intro .overview-card .d-flex.flex-wrap>.d-flex{align-items:center;gap:4px;min-width:140px;padding:12px 15px;border:1px solid #e1ead5;border-radius:13px;background:#fff;box-shadow:0 4px 10px rgba(15,23,42,.03)}
+#page-intro .overview-card .d-flex.flex-wrap i.bi{color:var(--epet-dark)}
+/* Důvěryhodné významové definice ve dvou sloupcích. */
+.concept-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin:0;padding:0;background:transparent;border:0}
+.concept-card{position:relative;min-width:0;padding:21px 22px 20px;border:1px solid var(--line);border-radius:19px;background:linear-gradient(155deg,#fff,#f9fbfd);box-shadow:0 8px 22px rgba(15,23,42,.04);overflow:hidden}
+.concept-card::before{content:"";height:4px;position:absolute;top:0;left:0;right:0;background:var(--epet)}
+.concept-card:nth-child(3n+2)::before{background:var(--cyan)}
+.concept-card:nth-child(3n+3)::before{background:var(--purple)}
+.concept-card h6{margin:0 0 11px!important;font-size:1.04rem;font-weight:850;color:var(--ink)!important;line-height:1.4}
+.concept-card p{margin:0 0 13px;line-height:1.7;color:#475569}
+.concept-card ul{list-style:disc;margin:12px 0 0;padding-left:20px;color:#475569}
+.concept-card li{margin-bottom:7px}
+.concept-card .alert{margin:14px 0;padding:13px 15px;border-radius:13px}
+.concept-card .alert:last-child,.concept-card p:last-child{margin-bottom:0}
+/* Card hierarchy for saldo, detailed invoices and advances. */
+.saldo-panel,.finance-panel{padding:24px!important;border:1px solid var(--line)!important;border-radius:21px!important;background:#fff!important;box-shadow:0 8px 24px rgba(15,23,42,.05)!important;margin-bottom:17px!important;overflow:hidden}
+.saldo-panel:nth-of-type(2n)::before{background:var(--purple)}
+.saldo-panel{position:relative}
+.saldo-panel::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--epet)}
+.saldo-panel>h5,.finance-panel>h5{display:flex;align-items:center;gap:7px;margin:0 0 15px!important;padding:0 0 12px;border-bottom:1px solid var(--line);font-size:1.16rem;font-weight:820;color:var(--epet-dark)}
+.saldo-panel>h5 i{color:var(--epet-dark)}
+.saldo-panel>p,.finance-panel>p{line-height:1.76;color:#475569;margin-bottom:17px}
+.saldo-panel>ul,.finance-panel>ul{padding-left:22px;color:#475569;line-height:1.8}
+.saldo-panel li,.finance-panel li{margin-bottom:4px}
+.saldo-panel .row{margin:18px 0!important;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.saldo-panel .row>.col{padding:0!important;width:auto;max-width:100%;flex:none}
+.balance-item>div{height:100%;padding:17px 17px 18px!important;background:#f9fbf5!important;border-radius:15px!important;border:1px solid #e5ecd9;box-shadow:none!important}
+.balance-item:nth-child(2) >div{background:#fff5f6!important;border-color:#f5d5da}
+.balance-item:nth-child(3) >div{background:#fff9eb!important;border-color:#f3e4b9}
+.balance-item:nth-child(4) >div{background:#f4f8ff!important;border-color:#dce8fd}
+.balance-item:nth-child(5) >div{background:#f0fbfd!important;border-color:#d6edf0}
+.balance-item h6{font-size:.94rem;color:#344256;font-weight:850;margin:0 0 8px}
+.balance-item p{font-size:.87rem!important;color:#4f6073!important;margin:0;line-height:1.6}
+.saldo-panel img.knowledge-shot,.finance-panel img.knowledge-shot{max-height:520px}
+.saldo-panel .text-danger,.finance-panel .text-danger{color:#bd2334!important}
+#page-Saldo .saldo-panel p.text-danger{border-left:5px solid var(--red);background:#fff4f5;padding:17px 18px;border-radius:13px;margin:16px 0 0!important}
+/* Workflows for incoming/outgoing and payment checks. */
+.finance-panel>h6{display:flex;align-items:center;gap:5px;margin:23px 0 12px;font-size:1rem;color:var(--epet-dark);font-weight:850}
+.finance-panel>hr{border:0;border-top:1px solid var(--line);opacity:1}
+.finance-panel>ul.list-group{list-style:none;margin:12px 0;padding:0;display:grid;gap:10px}
+.finance-panel .list-group-item{padding:13px 15px!important;border:1px solid var(--line)!important;border-radius:12px!important;background:linear-gradient(180deg,#fff,#f9fbfd);color:#475569}
+.finance-panel img{display:block;margin:18px auto!important;padding:7px;max-width:100%;height:auto;object-fit:contain;border:1px solid var(--line);border-radius:15px;box-shadow:0 6px 18px rgba(15,23,42,.055);background:#fff}
+/* All original alerts retain text, improving warning semantics. */
+.book-page .alert{border:1px solid #d5e8f0;border-left:5px solid var(--cyan);border-radius:15px;padding:17px 18px;background:#f1faff;color:#28556e;line-height:1.69;box-shadow:none!important}
+.book-page .alert-danger{background:#fff3f5;color:#90313b;border:1px solid #f4cbd2;border-left:5px solid var(--red)}
+.book-page .alert-warning{background:#fff9ec;color:#7a5117;border:1px solid #f3e1b8;border-left:5px solid var(--orange)}
+.book-page .alert-success{background:#f4faec;color:#41631a;border:1px solid #dbe7be;border-left:5px solid var(--epet)}
+.book-page .alert-secondary{background:#f6f8fb;color:#465569;border:1px solid var(--line);border-left:5px solid #8a9bad}
+.book-page .alert .knowledge-shot{background:#fff}
+/* Diagnostika nesrovnalostí: tematicky odlišené karty. */
+.errors-grid{display:grid;grid-template-columns:1fr;gap:16px;background:transparent;border:0;padding:0;margin:0}
+.issue-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:21px;padding:23px 25px;box-shadow:0 8px 23px rgba(15,23,42,.05);min-width:0;overflow:hidden}
+.issue-card::before{position:absolute;left:0;top:0;right:0;height:4px;content:"";background:var(--epet)}
+.issue-card:nth-child(2)::before{background:var(--cyan)}
+.issue-card:nth-child(3)::before{background:var(--purple)}
+.issue-card>h4,.issue-card>h5{margin:0 0 18px!important;color:var(--ink);font-size:1.15rem;font-weight:850;line-height:1.4}
+.issue-card>p{color:#475569;line-height:1.75}
+.issue-card>img{max-height:540px}
+.issue-card ul{padding-left:23px;color:#475569}
+.issue-card li{padding:5px 0;line-height:1.72}
+.issue-card .alert{margin:18px 0}
+.issue-card>hr{border:0;border-top:1px solid var(--line)}
+/* Unified image treatment across all pages. */
+.book-page img.knowledge-shot{display:block;max-width:100%;height:auto;object-fit:contain;margin:19px auto!important;padding:7px;border-radius:15px;border:1px solid var(--line);background:#fff;box-shadow:0 8px 20px rgba(15,23,42,.06)}
+#page-video>.row{grid-template-columns:repeat(2,minmax(0,1fr))}
+#page-video>.row>.col{max-width:none}
+#page-video .video-card{min-width:0}
+/* Consistent word wrapping and keyboard-visible focus. */
+.book-page{overflow-wrap:break-word}
+.book-tabs .tab-item:focus-visible{outline:3px solid #94c11f;outline-offset:2px}
+@media(max-width:1020px){.book-tabs .tab-item{white-space:nowrap;max-width:none}}
+@media(max-width:790px){.concept-grid,.saldo-panel .row{grid-template-columns:1fr}}
+@media(max-width:690px){.concept-card,.saldo-panel,.finance-panel,.issue-card{padding:18px 17px!important;border-radius:18px!important}.balance-item>div{padding:15px!important}#page-video>.row{grid-template-columns:1fr}}
+
+#page-intro .overview-card .d-flex.flex-wrap{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px!important}
+#page-intro .overview-card .d-flex.flex-wrap>.d-flex{display:flex!important;min-width:0}
+@media(max-width:690px){#page-intro .overview-card .d-flex.flex-wrap{grid-template-columns:1fr}}
+</style></head>
+<body>
+<!-- Drobečková navigace -->
+<nav aria-label="breadcrumb" class="breadcrumb-nav">
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+<a href="https://sites.google.com/view/znalostka/"><i class="bi bi-house-door-fill"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 10.5 12 3l9 7.5V21h-6v-7H9v7H3z"></path></svg></i> Znalostní
+                    báze</a>
+</li>
+<li class="breadcrumb-item">
+<a href="https://sites.google.com/view/znalostka/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat">Školení
+                    ZIS</a>
+</li>
+<li class="breadcrumb-item">
+<a href="https://sites.google.com/view/znalostka/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat/3-den">3.
+                    den</a>
+</li>
+<li aria-current="page" class="breadcrumb-item active">
+                Saldo
+            </li>
+</ol>
+</nav>
+<!-- Název školení -->
+<div class="hero-banner d-flex justify-content-between align-items-center">
+<div>
+<h1 class="h2 fw-bold mb-1">Pracovní postup: Saldo</h1>
+<p class="mb-0 opacity-75">Znalostní databáze epet | Dokumentace a přílohy</p>
+</div>
+<!-- Stáhnutí PDF -->
+<div class="download-container"><details class="download-disclosure"><summary class="btn-download">
+<i class="bi bi-file-earmark-pdf-fill"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 16h6M9 13h5"></path></svg></i> Dokumenty ke stažení
+            </summary><div class="download-options"><a class="download-link" href="https://drive.google.com/file/d/1jxgjSMLOnIq572-Ynf2a05SglIQcFtKj/view" rel="noopener noreferrer" target="_blank">
+<i class="bi bi-file-pdf text-danger me-2"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 13h6M9 17h6"></path></svg></i> Saldo (PDF)
+                    </a></div></details></div>
+</div>
+<!-- Navigace -->
+<div class="book-container">
+<div class="book-tabs">
+<div aria-controls="page-intro" aria-selected="true" class="tab-item active" onclick="openPage(event, 'page-intro')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" role="tab" tabindex="0">
+<i class="bi bi-book"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 5.5c3.8-1.6 6.8-1.2 9 1 2.2-2.2 5.2-2.6 9-1V20c-3.8-1.6-6.8-1.2-9 1-2.2-2.2-5.2-2.6-9-1zM12 6.5V21"></path></svg></i> Pracovní postup
+            </div>
+<div aria-controls="page-zaklady" aria-selected="false" class="tab-item" onclick="openPage(event, 'page-zaklady')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" role="tab" tabindex="0">
+<i class="bi bi-bar-chart-steps"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 20V12h4v8M10 20V8h4v12M16 20V4h4v16M2 20h20"></path></svg></i> Základní pojmy
+            </div>
+<div aria-controls="page-Saldo" aria-selected="false" class="tab-item" onclick="openPage(event, 'page-Saldo')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" role="tab" tabindex="0">
+<i class="bi bi-cash-coin"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9"></circle><path d="M14.7 8.5c-1.3-1.3-4-.9-4 1 0 2.1 4.5 1.2 4.5 3.7 0 2.1-3.5 3-5.5 1.3M12 6v12"></path></svg></i> Saldo
+            </div>
+<div aria-controls="page-prijate" aria-selected="false" class="tab-item" onclick="openPage(event, 'page-prijate')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" role="tab" tabindex="0">
+<i class="bi bi-cash"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M2 7h20v11H2zM5 9c1.6 0 2 1.5 2 3.5S6.6 16 5 16M19 9c-1.6 0-2 1.5-2 3.5s.4 3.5 2 3.5"></path><circle cx="12" cy="12.5" r="2.5"></circle></svg></i> Příchozí platby
+            </div>
+<div aria-controls="page-odchozi" aria-selected="false" class="tab-item" onclick="openPage(event, 'page-odchozi')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" role="tab" tabindex="0">
+<i class="bi bi-box-arrow-left"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11 4H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6M15 8l-5 4 5 4M10 12h11"></path></svg></i> Odchozí platby
+            </div>
+<div aria-controls="page-inkaso" aria-selected="false" class="tab-item" onclick="openPage(event, 'page-inkaso')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" role="tab" tabindex="0">
+<i class="bi bi-paypal"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 19 9.7 4H17c4 0 5.5 2.6 4.5 5.4-1 2.9-3 4.1-6.7 4.1H11L10 19zM5 22l2.7-14H9"></path></svg></i> Inkaso
+            </div>
+<div aria-controls="page-chyby" aria-selected="false" class="tab-item" onclick="openPage(event, 'page-chyby')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" role="tab" tabindex="0">
+<i class="bi bi-bug-fill"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 7c1.3-2 6.7-2 8 0v11c-1 3-7 3-8 0zM9 5 7 3M15 5l2-2M4 9h4M16 9h4M4 15h4M16 15h4"></path></svg></i> Chyby při zpracování
+            </div>
+<div aria-controls="page-video" aria-selected="false" class="tab-item" onclick="openPage(event, 'page-video')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" role="tab" tabindex="0">
+<i class="bi bi-play-circle-fill"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9"></circle><path d="m10 8 6 4-6 4z"></path></svg></i> Video návod
+            </div>
+<div aria-controls="page-test" aria-selected="false" class="tab-item tab-purple" onclick="openPage(event, 'page-test')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" role="tab" tabindex="0">
+<i class="bi bi-clipboard-check"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect height="17" rx="2" width="14" x="5" y="4"></rect><path d="M9 4V2h6v2M8 12l2.5 2.5 5-5"></path></svg></i> Opakovací test
+            </div>
+</div>
+<div class="book-page">
+<div aria-hidden="false" class="content-section active" id="page-intro" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4 text-success"><span class="section-number">1.</span> Pracovní postup</h2>
+<!-- KARTA: ÚČETNICTVÍ ZÁKAZNÍKA – ÚVOD -->
+<div class="card border-0 bg-light p-3 mb-4 overview-card">
+<p class="mb-3">
+<span class="step-badge">1</span>
+<strong>Pracovní postup</strong> popisuje, jak se vyznat v
+                        <strong>účetnictví zákazníka</strong> co se týče
+                        <strong>příchozích a odchozích plateb, faktur a záloh</strong>.
+                        Dále jsou popsány případy a postupy,
+                        <strong>co se může na účtu zákazníka stát</strong>.
+                    </p>
+<h6 class="fw-bold mb-2">
+<i class="bi bi-journal-text me-2"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 3h15v18H5zM2 5v14M8 7h9M8 11h9M8 15h7"></path></svg></i>Zkratky
+                    </h6>
+<div class="d-flex flex-wrap gap-4">
+<div class="d-flex align-items-center">
+<i class="bi bi-person-circle text-primary me-1"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="9" r="3"></circle><path d="M5.5 18c2-4.3 11-4.3 13 0"></path></svg></i>
+<b>ZK</b> = zákazník
+                        </div>
+<div class="d-flex align-items-center">
+<i class="bi bi-receipt text-success me-1"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 3h14v18l-3-2-3 2-3-2-2 2-3-2zM8 8h8M8 12h7M8 16h4"></path></svg></i>
+<b>FA</b> = faktura
+                        </div>
+<div class="d-flex align-items-center">
+<i class="bi bi-list-check text-warning me-1"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m3 7 2 2 3-3m3 2h10M3 14l2 2 3-3m3 2h10"></path></svg></i>
+<b>RZ</b> = rozpis záloh
+                        </div>
+<div class="d-flex align-items-center">
+<i class="bi bi-geo-alt-fill text-danger me-1"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 22S5 14 5 9a7 7 0 1 1 14 0c0 5-7 13-7 13z"></path><circle cx="12" cy="9" r="2.5"></circle></svg></i>
+<b>OM</b> = odběrné místo
+                        </div>
+</div>
+</div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-zaklady" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4 text-success"><span class="section-number">2.</span> Základní pojmy</h2>
+<!-- KARTA: 1. ZÁKLADNÍ POJMY -->
+<div class="concept-grid">
+<div class="concept-card"><h6 class="mt-3 text-secondary">Akontace / Otevřené platby</h6>
+<p>
+                        Mimořádná platba uhrazena navíc zákazníkem, která nemá předepsaný doklad v ZIS
+                        (PK/FA/SPK...), a proto je přiřazena na smluvním účtu (zákaznickém účtu)
+                        jako mimořádná platba navíc. Akontace se vyúčtuje v řádné faktuře při prvním
+                        zúčtování u jakéhokoliv odběrného místa daného smluvního účtu.
+                        Akontace vzniká i v případě, že ZK např. uhradí platbu podle předpisu PK,
+                        ale uhradí ji víc než <b>15 dní před</b> splatností dokladu.
+                    </p>
+</div><div class="concept-card"><h6 class="text-secondary">Pohledávka</h6>
+<p>Jakýkoliv předpis k úhradě (záloh/faktur), nemusí být nutně po splatnosti.</p>
+</div><div class="concept-card"><h6 class="text-secondary">Vratka / splátka</h6>
+<p>Vrácená platba zákazníkovi.</p>
+</div><div class="concept-card"><h6 class="text-secondary">Odesílané platby epet</h6>
+<p>
+                        Přeplatky, vrácené platby, neidentifikovatelné platby, duplicitní platby
+                        (termín odesílání 1× týdně v pondělí).
+                    </p>
+</div><div class="concept-card"><h6 class="text-secondary">Přeplatek</h6>
+<p>
+                        Nemůže být nikdy ponechán v akontaci, musí být vrácen zákazníkovi nebo použit
+                        na zálohy. Provede se zápočet. Přeplatek vzniká z řádné faktury nebo dobropisu.
+                    </p>
+</div><div class="concept-card"><h6 class="text-secondary">Inkaso</h6>
+<p>
+                        Bankovní příkaz, který je podáván epet na účet příjemce.
+                        Strhneme si platbu z bankovního účtu zákazníka.
+                        Zákazník musí mít inkaso s epet povoleno ve své bance = souhlas s inkasem /
+                        povolení k inkasu a v SAPu na SÚ záložka Platby/Daně musí mít nastaveno způsob
+                        plateb Inkaso a vyplněný BÚ pro inkaso.
+                        Inkasujeme průběžně celý měsíc – záleží od splatnosti inkasovaného dokladu.
+                    </p>
+<div class="alert alert-danger">
+<i class="bi bi-exclamation-triangle-fill me-2"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12 3 10 18H2zM12 9v5M12 18v.2"></path></svg></i>
+<strong>POZOR:</strong>
+                        Č. BÚ je možné měnit, ale změna se promítne až na nejbližším platebním příkazu –
+                        ne v již otevřeném. Není možné o inkaso žádat mimo termín (opakovaně).
+                    </div>
+</div><div class="concept-card"><h6 class="text-secondary">Povolení k inkasu / souhlas s inkasem</h6>
+<ul>
+<li>Číslo b.ú. epet: <strong>9960227/0100</strong></li>
+<li>Dostatečná výše limitu (nebo bez limitu)</li>
+<li>Bez uvedení variabilního symbolu (VS)</li>
+<li>
+                            Pokud zákazník požaduje inkasování PK i FA, může být v jednom měsíci
+                            staženo více plateb → musí být povolení k více inkasům
+                        </li>
+<li>Neuvádět konstantní symbol (KS) ani specifický symbol (SS)</li>
+</ul>
+</div><div class="concept-card"><h6 class="text-secondary">SIPO (Soustředěné inkaso plateb obyvatelstva)</h6>
+<p>
+                        Služba České pošty. Umožňuje sdružit více pravidelných plateb do jedné.
+                        Není možné přes SIPO hradit nedoplatky vyúčtování.
+                        Slouží pouze pro zálohy.
+                    </p>
+<p>
+                        Žádáme o SIPO mezi <strong>20.–25. dnem v měsíci</strong>.
+                        Obdržíme nejpozději cca do 45 dnů.
+                    </p>
+<div class="alert alert-info">
+<strong>Příklad:</strong><br/>
+                        20.10.–25.10. žádost o zálohu za listopad (splatná k 15.11.)
+                        → obdržíme nejpozději 5.12.
+                    </div>
+<ul>
+<li>
+<strong>Spojovací číslo = specifický symbol</strong> –
+                            10místné číslo (pravý horní roh SIPO lístku, 2. řádek)
+                        </li>
+<li>
+<strong>Číslo org. epet = 1111</strong> –
+                            identifikátor platby na SIPO lístku
+                        </li>
+</ul>
+</div><div class="concept-card"><h6 class="text-secondary">Párování plateb</h6>
+<p>Probíhá automaticky podle:</p>
+<ul>
+<li>Variabilního symbolu</li>
+<li>Spojovacího čísla SIPO</li>
+<li>Čísla platebního příkazu</li>
+</ul>
+</div><div class="concept-card"><h6 class="text-secondary">Variabilní symbol (VS)</h6>
+<ul>
+<li>
+<strong>VS záloh</strong> – párování od nejstaršího neuhrazeného dokladu,
+                            max. 15 dní do budoucna
+                        </li>
+<li>
+<strong>VS faktury</strong> – platba přímo na konkrétní doklad,
+                            přebytek do akontace
+                        </li>
+<li>
+<strong>VS upomínky</strong> – jako zálohy, přebytek do akontace
+                        </li>
+</ul>
+</div><div class="concept-card"><h6 class="text-secondary">Spojovací číslo SIPO</h6>
+<p>Po přijetí platby:</p>
+<ul>
+<li>Dohledání OP dle spojovacího čísla</li>
+<li>Storno starých aktivních PP s nižším datem splatnosti</li>
+<li>Párování záloh od nejstaršího předpisu</li>
+</ul>
+</div><div class="concept-card"><h6 class="text-secondary">Platební příkaz (inkaso, přeplatek)</h6>
+<p>
+                        Po přijetí platby se vyrovná doklad se shodným číslem příkazu.
+                    </p>
+</div></div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-Saldo" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4 text-success"><span class="section-number">3.</span> Saldo</h2>
+<!-- ===================== -->
+<!-- SALDO A POHLEDÁVKY -->
+<!-- ===================== -->
+<div class="card border-0 bg-light p-4 mb-4 saldo-panel">
+<p>
+                        Zobrazení <strong>aktuálního salda</strong>, tedy <strong>stavu účtu</strong> a konkrétně
+                        <strong>pohledávek</strong> můžeme přímo ve <u>Stručném přehledu</u>,
+                        na záložce <u>Upomínky</u>.
+                    </p>
+<img alt="Saldo" class="img-thumbnail d-block mx-auto mt-3 mb-4 knowledge-shot" decoding="async" loading="lazy" src="https://i.postimg.cc/hjVyg0ww/SALDO.png"/>
+<!-- KARTY SALDA -->
+<div class="row row-cols-1 row-cols-md-2 g-3 mb-4">
+<div class="col balance-item">
+<div class="p-3 rounded shadow-sm bg-light h-100">
+<h6><i class="bi bi-cash-coin me-2"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9"></circle><path d="M14.7 8.5c-1.3-1.3-4-.9-4 1 0 2.1 4.5 1.2 4.5 3.7 0 2.1-3.5 3-5.5 1.3M12 6v12"></path></svg></i>Celková částka k úhradě</h6>
+<p class="mb-0 small">
+                                    To, co by měl ZK zaplatit
+                                    (Dluhy po splatnosti + Nezaplacené zálohy po splatnosti + Zálohy do splatnosti).
+                                </p>
+</div>
+</div>
+<div class="col balance-item">
+<div class="p-3 rounded shadow-sm bg-danger-subtle h-100">
+<h6><i class="bi bi-exclamation-circle me-2"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v6M12 17h.1"></path></svg></i>Dluhy po splatnosti</h6>
+<p class="mb-0 small">Faktury po splatnosti.</p>
+</div>
+</div>
+<div class="col balance-item">
+<div class="p-3 rounded shadow-sm bg-warning-subtle h-100">
+<h6><i class="bi bi-clock-history me-2"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9"></circle><path d="M12 6v6l4 2"></path></svg></i>Nezaplacené zálohy po splatnosti</h6>
+<p class="mb-0 small">Zálohy po splatnosti.</p>
+</div>
+</div>
+<div class="col balance-item">
+<div class="p-3 rounded shadow-sm bg-primary-subtle h-100">
+<h6><i class="bi bi-hourglass-split me-2"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 3h14M5 21h14M7 3v4l5 5 5-5V3M7 21v-4l5-5 5 5v4"></path></svg></i>Zaplacené nevyúčtované zálohy</h6>
+<p class="mb-0 small">
+                                    Zaplacené zálohy, které čekají na zúčtování do faktury.
+                                </p>
+</div>
+</div>
+<div class="col balance-item">
+<div class="p-3 rounded shadow-sm bg-info-subtle h-100">
+<h6><i class="bi bi-calendar2-event me-2"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect height="16" rx="2" width="18" x="3" y="5"></rect><path d="M7 2v5M17 2v5M3 10h18M8 14h3v3H8z"></path></svg></i>Zálohy do splatnosti</h6>
+<p class="mb-0 small">
+                                    Zálohy splatné daný měsíc a jsou neuhrazené.
+                                </p>
+</div>
+</div>
+</div>
+<p>
+                        Zde však <strong>není vidět, za co konkrétní částky (měsíce) jsou</strong>.
+                        Do podrobného detailu musíme jít do záložky
+                        <u>Vyúčtování a předpisy</u>.
+                    </p>
+<img alt="Rozpad salda" class="img-thumbnail d-block mx-auto mt-3 mb-4 knowledge-shot" decoding="async" loading="lazy" src="https://i.postimg.cc/05dWBc7K/rozpad.png"/>
+</div>
+<!-- ===================== -->
+<!-- PŘEDPISY A ZÁLOHY -->
+<!-- ===================== -->
+<div class="card border-0 p-4 mb-4 saldo-panel">
+<h5 class="fw-bold mb-3">
+<i class="bi bi-receipt-cutoff me-2"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 3h14v18l-3-2-3 2-3-2-2 2-3-2zM8 8h8M8 12h7M8 16h4"></path></svg></i>
+                        Vyúčtování a předpisy
+                    </h5>
+<p>
+                        V této záložce máme podzáložku <u>Předpisy a zálohy</u>.
+                        Zde vidíme souhrn <strong>vystavených faktur a záloh</strong> a
+                        <strong>zda jsou uhrazené či nikoliv</strong>, případně zda
+                        <strong>čekají na svoji splatnost</strong>.
+                    </p>
+<ul>
+<li><strong>Typ</strong> – faktura, obecná faktura, záloha</li>
+<li><strong>Variabilní symbol</strong></li>
+<li><strong>Vystavení</strong></li>
+<li><strong>Datum splatnosti</strong></li>
+<li><strong>Částka</strong></li>
+<li><strong>Zůstatek k úhradě</strong></li>
+<li><strong>Účetní perioda</strong></li>
+</ul>
+<p>
+                        Každá z položek má <strong>barevné označení</strong>:
+                    </p>
+<ul>
+<li><span class="text-dark">Černé písmo</span> – vše v pořádku</li>
+<li><span class="text-danger">Červené písmo</span> – dluh</li>
+<li><span class="text-success">Zelené písmo</span> – přeplatek</li>
+<li><span class="text-primary">Modré písmo</span> – obecná faktura</li>
+</ul>
+<p>
+<strong>Přeškrtnutá data</strong> značí <strong>zrušený doklad</strong>
+                        (storno záloh).
+                    </p>
+<p>
+<strong>Doporučujeme</strong> seřadit doklady dle splatnosti
+                        <u>dvojklikem na Datum splatnosti</u>.
+                    </p>
+<img alt="Seřazení" class="img-thumbnail d-block mx-auto mt-3 mb-4 knowledge-shot" decoding="async" loading="lazy" src="https://i.postimg.cc/Rh26xkkc/srovnani.png"/>
+</div>
+<!-- ===================== -->
+<!-- FAKTURY -->
+<!-- ===================== -->
+<div class="card border-0 bg-light p-4 mb-4 saldo-panel">
+<h5 class="fw-bold mb-3">
+<i class="bi bi-file-earmark-text me-2"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"></path></svg></i>
+                        Zobrazení faktur
+                    </h5>
+<p>
+                        Zobrazení čistě <strong>faktur</strong> provedeme klikem na
+                        <u>Předpisy</u>.
+                    </p>
+<img alt="Předpisy" class="img-thumbnail d-block mx-auto mt-3 mb-4 knowledge-shot" decoding="async" loading="lazy" src="https://i.postimg.cc/sDZG42WK/p-edpisy.png"/>
+<ul>
+<li><strong>Typ předpisu</strong></li>
+<li><strong>V. Symbol</strong></li>
+<li><strong>Vystavení</strong></li>
+<li><strong>Odeslání</strong></li>
+<li><strong>Splatnost</strong></li>
+<li><strong>Odklad platby</strong></li>
+<li><strong>DUZP</strong></li>
+<li><strong>Částka</strong></li>
+<li><strong>Stav</strong></li>
+<li>
+<strong>Zůstatek</strong> –
+                            bez mínusu = nedoplatek, s mínusem = přeplatek
+                        </li>
+</ul>
+<p>
+                        Na konci vidíme i <strong>uhrazené zálohy</strong>.
+                    </p>
+<img alt="Uhrazené zálohy" class="img-thumbnail d-block mx-auto mt-3 mb-3 knowledge-shot" decoding="async" loading="lazy" src="https://i.postimg.cc/fk4LrxdC/uhrazene.png"/>
+</div>
+<!-- ===================== -->
+<!-- ZÁLOHY -->
+<!-- ===================== -->
+<div class="card border-0 p-4 mb-4 saldo-panel">
+<h5 class="fw-bold mb-3">
+<i class="bi bi-calendar-check me-2"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect height="16" rx="2" width="18" x="3" y="5"></rect><path d="M7 2v6M17 2v6M3 10h18M8 15l2 2 5-5"></path></svg></i>
+                        Zálohy
+                    </h5>
+<p>
+                        Pro detail <strong>vystavených záloh</strong> přejdeme na záložku
+                        <u>Zálohy</u>.
+                    </p>
+<img alt="Zálohy" class="img-thumbnail d-block mx-auto mt-3 mb-4 knowledge-shot" decoding="async" loading="lazy" src="https://i.postimg.cc/gc1HWQqS/PK.png"/>
+<ul>
+<li><strong>Smlouva</strong></li>
+<li><strong>Období od / do</strong></li>
+<li><strong>EAN</strong></li>
+<li><strong>VS pro platbu</strong></li>
+<li><strong>Datum splatnosti</strong></li>
+<li><strong>Částka</strong></li>
+<li><strong>Zůstatek</strong></li>
+<li><strong>K zahrnutí</strong></li>
+</ul>
+<p>
+<strong>Přeškrtlé položky</strong> značí deaktivovaný nebo vyúčtovaný rozpis.
+                    </p>
+<img alt="Zálohy detail" class="img-thumbnail d-block mx-auto mt-3 mb-3 knowledge-shot" decoding="async" loading="lazy" src="https://i.postimg.cc/L8pkqPWj/PK-2.png"/>
+<p class="text-danger fw-bold">
+                        POZOR: Zákazník hradí vždy zálohy za aktuální měsíc.
+                        Záloha je splatná vždy k <strong>15. dni v měsíci</strong>
+                        a <strong>nelze toto  datum měnit</strong>.
+                    </p>
+</div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-prijate" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4 text-success"><span class="section-number">4.</span> Příchozí platby </h2>
+<!-- KARTA: Příchozí platby -->
+<div class="card border-0 bg-light p-3 mb-4 finance-panel">
+<p>
+                        Ve <u>Stručném přehledu</u>, na záložce <u>Platby</u>, můžeme vidět
+                        <strong>zákazníkem zaslané platby</strong>.
+                    </p>
+<img alt="Platby" class="img-thumbnail d-block mx-auto mt-3 mb-4 knowledge-shot" decoding="async" loading="lazy" src="https://i.postimg.cc/Y2Fm19YR/platby.png"/>
+<h6 class="fw-semibold">
+<i class="bi bi-list-ul me-2"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 6h13M8 12h13M8 18h13M3 6h.1M3 12h.1M3 18h.1"></path></svg></i>
+                        Základní informace o platbě
+                    </h6>
+<ul>
+<li><strong>Datum úhrady</strong> – datum přijetí platby na náš účet</li>
+<li><strong>VS</strong> – zákazníkem uvedený variabilní symbol</li>
+<li><strong>Částka</strong> – kolik ZK poslal</li>
+<li><strong>Název plátce</strong> – jméno majitele účtu</li>
+<li><strong>Bankovní účet a kód banky</strong> – účet, ze kterého platba přišla</li>
+</ul>
+<hr class="my-4"/>
+<h6 class="fw-semibold">
+<i class="bi bi-plus-square me-2"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect height="18" rx="2" width="18" x="3" y="3"></rect><path d="M12 7v10M7 12h10"></path></svg></i>
+                        Rozbalení detailu platby
+                    </h6>
+<p>
+                        Pokud potřebujeme přehled, <strong>jak byla platba použita</strong>,
+                        <strong>klikneme před datem úhrady na plus</strong>
+                        a tím dojde k <strong>rozbalení informací</strong>.
+                    </p>
+<img alt="Rozbalení platby" class="img-thumbnail d-block mx-auto mt-3 mb-4 knowledge-shot" decoding="async" loading="lazy" src="https://i.postimg.cc/X70Bxbgb/plusko.png"/>
+<p>
+                        Následně vidíme, jaká částka byla zaúčtována:
+                    </p>
+<ul>
+<li>na jaké <strong>odběrné místo</strong></li>
+<li>na jaký <strong>EAN/EIC</strong></li>
+<li>na jaké <strong>období zálohy</strong></li>
+<li>s jakou <strong>splatností</strong></li>
+</ul>
+<hr class="my-4"/>
+<h6 class="fw-semibold">
+<i class="bi bi-arrow-repeat me-2"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m20 7-3-3-3 3M17 4v5c0 2-2 4-5 4H5M4 17l3 3 3-3M7 20v-5c0-2 2-4 5-4h7"></path></svg></i>
+                        Zpětné párování platby
+                    </h6>
+<p>
+                        Zákazník může mít <strong>2 odběrná místa</strong> na jednom
+                        zákaznickém účtu.
+                    </p>
+<p>
+                        Platba ve výši <strong>1 260 Kč</strong>
+                        ze dne <strong>2. 1. 2023</strong>
+                        byla párována následovně:
+                    </p>
+<img alt="Zpětné párování" class="img-thumbnail d-block mx-auto mt-3 mb-3 knowledge-shot" decoding="async" loading="lazy" src="https://i.postimg.cc/sgTBVZCj/zpet.png"/>
+<p>
+                        V tomto případě dochází ke <strong>zpětnému párování</strong>.
+                    </p>
+<div class="alert alert-danger mt-4">
+<i class="bi bi-exclamation-triangle-fill me-2"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12 3 10 18H2zM12 9v5M12 18v.2"></path></svg></i>
+<strong>POZOR:</strong>
+<strong>Datum úhrady</strong> musí být shodné s
+                        <strong>datem splatnosti</strong>.
+                        Pokud nesouhlasí, <strong>ZK hradí špatně</strong>.
+                    </div>
+</div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-odchozi" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4 text-success"><span class="section-number">5.</span> Odchozí platby </h2>
+<!-- KARTA: Odchozí platby -->
+<div class="card border-0 bg-light p-3 mb-4 finance-panel">
+<p>
+                        Na záložce <strong>Vratky</strong> vidíme peníze zasílané zákazníkovi, tedy
+                        <strong>přeplatky</strong>.
+                    </p>
+<img alt="Vratky" class="img-thumbnail d-block mx-auto mt-3 mb-4 knowledge-shot" decoding="async" loading="lazy" src="https://i.postimg.cc/bJyz8NYj/p-eplatky.png"/>
+<h6 class="fw-semibold mt-3">
+<i class="bi bi-card-list me-2 text-secondary"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect height="16" rx="2" width="20" x="2" y="4"></rect><path d="M7 9h2M12 9h7M7 14h2M12 14h7"></path></svg></i>
+                        Zobrazené informace:
+                    </h6>
+<ul class="mb-4">
+<li><strong>Způsob realizace</strong> – jak je přeplatek vyplacen (účet, složenka)</li>
+<li><strong>Částka</strong></li>
+<li><strong>Stav</strong> – zda byl přeplatek vyplacen, nebo čeká na vyplacení</li>
+<li><strong>Číslo účtu</strong> – na jaký účet bude přeplatek vrácen</li>
+</ul>
+<div class="alert alert-danger d-flex align-items-start gap-2 mt-4">
+<i class="bi bi-exclamation-triangle-fill mt-1"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12 3 10 18H2zM12 9v5M12 18v.2"></path></svg></i>
+<div>
+<strong>Chyby</strong>
+</div>
+</div>
+<p class="mb-2">
+<strong>Zákazník neobdržel přeplatek v datu splatnosti:</strong>
+</p>
+<ul class="list-group mb-0">
+<li class="list-group-item">
+<i class="bi bi-currency-exchange me-2 text-muted"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 8h16M4 8l4-4M4 8l4 4M20 16H4M20 16l-4-4M20 16l-4 4"></path></svg></i>
+                            Má dluh na zálohách – <em>ověřit splatnost záloh</em>
+</li>
+<li class="list-group-item">
+<i class="bi bi-receipt-cutoff me-2 text-muted"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 3h14v18l-3-2-3 2-3-2-2 2-3-2zM8 8h8M8 12h7M8 16h4"></path></svg></i>
+                            Přeplatek byl použit na dluhy – <em>zkontrolovat fakturu viz. PP Faktury</em>
+</li>
+<li class="list-group-item">
+<i class="bi bi-bug-fill me-2 text-muted"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 7c1.3-2 6.7-2 8 0v11c-1 3-7 3-8 0zM9 5 7 3M15 5l2-2M4 9h4M16 9h4M4 15h4M16 15h4"></path></svg></i>
+                            Mohlo dojít k technické chybě – <em>úkol na ověření na finance</em>
+</li>
+<li class="list-group-item">
+<i class="bi bi-mailbox me-2 text-muted"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 9a7 7 0 0 1 14 0v11H3V9zM10 20V9h11v11M17 12h4M17 5h4"></path></svg></i>
+                            Nepřišla složenka – <em>úkolem požádat finance o podací znaky</em>
+</li>
+<li class="list-group-item">
+<i class="bi bi-clock-history me-2 text-muted"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9"></circle><path d="M12 6v6l4 2"></path></svg></i>
+                            Nestihl si přeplatek na složence vyzvednout –
+                            <em>čekat 4–6 týdnů na vrácení platby, domluvit zaslání platby po vrácení na účet. Nastavit účet a
+                                předat úkol na finance.</em>
+</li>
+</ul>
+</div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-inkaso" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4 text-success"><span class="section-number">6.</span> Inkaso </h2>
+<!-- KARTA: Inkaso -->
+<div class="card border-0 bg-light p-3 mb-4 finance-panel">
+<p>
+                        Na záložce <strong>Inkasa</strong> vidíme, zda jsme si žádali o inkaso –
+                        <strong>strhnutí platby z účtu</strong> a nebo <strong>SIPO příkaz</strong>.
+                    </p>
+<img alt="Inkasa" class="img-thumbnail d-block mx-auto mt-3 mb-4 knowledge-shot" decoding="async" loading="lazy" src="https://i.postimg.cc/MTp8NPt6/inkaso.png"/>
+<h6 class="fw-semibold mt-3">
+<i class="bi bi-card-list me-2 text-secondary"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect height="16" rx="2" width="20" x="2" y="4"></rect><path d="M7 9h2M12 9h7M7 14h2M12 14h7"></path></svg></i>
+                        Zobrazené informace:
+                    </h6>
+<ul class="mb-4">
+<li><strong>Způsob realizace</strong> – Spořitelna / SIPO – zda si strháváme z banky nebo SIPO</li>
+<li><strong>Částka</strong> – kolik</li>
+<li><strong>Stav</strong> – zda jsme si požádali nebo je jen daný požadavek, který nebyl ještě zrealizován
+                        </li>
+<li><strong>Datum inkasa</strong> – kdy byl požadavek odeslán</li>
+</ul>
+<div class="alert alert-info d-flex align-items-start gap-2 mt-4">
+<i class="bi bi-receipt mt-1"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 3h14v18l-3-2-3 2-3-2-2 2-3-2zM8 8h8M8 12h7M8 16h4"></path></svg></i>
+<div>
+                            Dále vidíme, co se inkasovalo –
+                            <strong>zda záloha nebo faktura</strong>.
+                        </div>
+</div>
+<h6 class="fw-semibold text-secondary mt-4">
+                        Inkaso
+                    </h6>
+<p>
+                        Bankovní příkaz, který je podáván epet na účet příjemce. Strhneme si platbu z
+                        bankovního účtu zákazníka. Zákazník musí mít inkaso s epet povoleno ve své bance
+                        = souhlas s inkasem/povolení k inkasu a v ZIS na ZÚ musí mít nastaveno způsob plateb
+                        Inkaso a vyplněný BÚ pro inkaso. Inkasujeme průběžně celý měsíc – záleží od splatnosti
+                        inkasovaného dokladu.
+                    </p>
+<div class="alert alert-danger d-flex align-items-start gap-2 mt-4">
+<i class="bi bi-exclamation-triangle-fill mt-1"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12 3 10 18H2zM12 9v5M12 18v.2"></path></svg></i>
+<div>
+<strong>POZOR:</strong>
+                            Č. BÚ je možné měnit, ale změna se promítne až na nejbližším platebním příkazu –
+                            ne v již otevřeném. Není možné o inkaso žádat mimo termín (opakovaně).
+                        </div>
+</div>
+<h6 class="fw-semibold text-secondary mt-4">
+                        Povolení k inkasu / souhlas s inkasem
+                    </h6>
+<ul class="mb-0">
+<li>Číslo b.ú. epet: <strong>9960227/0100</strong></li>
+<li>Dostatečná výše limitu (nebo bez limitu)</li>
+<li>Bez uvedení variabilního symbolu (VS)</li>
+<li>
+                            Pokud zákazník požaduje inkasování PK i FA, může být v jednom měsíci staženo více
+                            plateb → musí být povolení k více inkasům
+                        </li>
+<li>Neuvádět konstantní symbol (KS) ani specifický symbol (SS)</li>
+</ul>
+</div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-chyby" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4 text-success"><span class="section-number">7.</span> Chyby při zpracování </h2>
+<!-- KARTA: Chyby -->
+<div class="errors-grid">
+<div class="issue-card"><h4 class="mt-1 fw-bold">
+<i class="bi bi-link-45deg me-2 text-primary"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l2-2"></path></svg></i>
+                            Párování zpětně, ZK nehradí jak má
+                        </h4>
+<p>
+                            Pokud nám nesouhlasí datum přijetí platby s datem splatnosti, <strong>ZK nehradí, jak má</strong>.
+                            Zde vidíme <strong>leden párovaný na listopad</strong>.
+                        </p>
+<img alt="Párování zpětně" class="img-thumbnail d-block mx-auto mt-3 mb-4 knowledge-shot" decoding="async" loading="lazy" src="https://i.postimg.cc/fRH4XjD1/zp-t.png"/>
+<div class="alert alert-success">
+                            ✅ Zde vidíme, jak to vypadá, když ZK hradí správně – tedy platba v prosinci a párování je v prosinci.
+                            <div class="text-center mt-3">
+<img alt="Párování správně" class="img-thumbnail d-inline-block knowledge-shot" decoding="async" loading="lazy" src="https://i.postimg.cc/pdywBhdr/spravne.png"/>
+</div>
+</div>
+<p>
+                            Pokud tedy dochází k <strong>párování zpětně</strong>, je zapotřebí se podívat, jaká je předepsaná
+                            záloha a kolik ZK hradí. S velkou pravděpodobností si ZK nevšiml a <strong>neupravil výši zálohy</strong>.
+                            ZK musí <strong>dohradit dluh a změnit si příkaz</strong>.
+                        </p>
+<hr class="my-4"/>
+</div><div class="issue-card"><h5 class="mt-2 fw-semibold">
+<i class="bi bi-plus-circle text-secondary me-2"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v10M7 12h10"></path></svg></i>
+                            ZK hradí navíc
+                        </h5>
+<p>
+                            Může se stát, že se ZK sníží záloha, ale on nám stejně posílá stejnou částku, nebo si sám částku upraví,
+                            aniž by nás informoval. V případě, že ZK hradí víc než je předepsaná částka, dochází k
+                            <strong>párování plateb dopředu</strong>.
+                        </p>
+<div class="alert alert-info">
+                            💡 V našem případě vidíme, že část platby z prosince se párovala na leden, tedy do budoucna.
+                            <div class="text-center mt-3">
+<img alt="Párování dopředu" class="img-thumbnail d-inline-block knowledge-shot" decoding="async" loading="lazy" src="https://i.postimg.cc/Pxw0BgYk/navic.png"/>
+</div>
+</div>
+<h6 class="mt-3 fw-semibold">ZK v takovém případě upozorníme, jak má hradit – existují dvě možnosti nápravy:
+                        </h6>
+<ul class="mb-0">
+<li><i class="bi bi-arrow-down-circle me-1 text-success"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9"></circle><path d="M12 6v12m-5-5 5 5 5-5"></path></svg></i>O rozdíl nám příští měsíc zašle menší zálohu
+                            </li>
+<li><i class="bi bi-arrow-return-left me-1 text-danger"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 7 3 11l4 4M3 11h11c4 0 6 2 6 6"></path></svg></i>Necháme platbu na financích vrátit zpět na účet
+                                ZK – ZK tak musí v lednu zaplatit předepsanou částku</li>
+</ul>
+<div class="alert alert-warning mt-4">
+<strong>POZOR:</strong> Platby uhrazené navíc, které ZK nevidí ve faktuře, často vedou k reklamacím.
+                            <br/><br/>
+                            Například ZK hradí více než má, v prosinci uhradil platbu, ale ta byla <strong>párována na období leden až
+                                duben</strong>.
+                            ZK má fakturu za období září až prosinec a <strong>nevidí tam prosincovou platbu</strong>. Nemůže ji vidět,
+                            jelikož
+                            peníze přijaté v prosinci byly použity na úhradu záloh za jiné období (leden–duben). Tato platba bude
+                            zohledněna
+                            až v další faktuře.
+                        </div>
+<div class="alert alert-secondary">
+                            🧾 ZK často zapomínají na <strong>posun v zálohách (splatnost vs. období zálohy – hradí dopředu)</strong>,
+                            a proto reklamují faktury. Je zapotřebí ZK upozornit, že hradí dopředu a daná platba bude ve
+                            <strong>faktuře následujícího období</strong>.
+                        </div>
+<hr class="my-4"/>
+</div><div class="issue-card"><h5 class="mt-2 fw-semibold">
+<i class="bi bi-exclamation-circle text-danger me-2"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v6M12 17h.1"></path></svg></i>
+                            Špatně používaný VS
+                        </h5>
+<p><strong>ZK musí dodržovat VS dle předepsaných dokladů.</strong></p>
+<ul>
+<li><i class="bi bi-x-circle me-1 text-danger"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9"></circle><path d="m9 9 6 6m0-6-6 6"></path></svg></i>Pokud zašle platbu za fakturu pod VS záloh → platba se
+                                přiřadí na zálohy (faktura zůstane neuhrazená)</li>
+<li><i class="bi bi-x-circle me-1 text-danger"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9"></circle><path d="m9 9 6 6m0-6-6 6"></path></svg></i>Pokud pošle zálohu pod VS faktury → bude uhrazena
+                                faktura, nikoliv záloha</li>
+</ul>
+<p class="mb-0">
+                            V případě, že pošle peníze na FA, která je již uhrazena, <strong>finance buď přepárují, nebo založí úkol, co
+                                se má s platbou udělat</strong>.
+                        </p>
+</div></div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-video" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4 text-primary">Video tutoriály</h2>
+<p class="text-muted mb-4">Vyberte si konkrétní téma, které vás zajímá. Pro zvětšení videa využijte ikonu čtverečku
+                    v pravém horním rohu přehrávače.</p>
+<div class="row row-cols-1 row-cols-xl-2 g-4">
+<div class="col">
+<div class="video-card p-3 rounded-4 shadow-sm bg-light h-100">
+<h6 class="fw-bold mb-2"><i class="bi bi-play-circle me-2"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9"></circle><path d="m10 8 6 4-6 4z"></path></svg></i>Saldo</h6>
+<div class="ratio ratio-16x9 rounded-3 overflow-hidden shadow-sm bg-black">
+<iframe allow="autoplay; fullscreen" allowfullscreen="" src="https://drive.google.com/file/d/1QwYFle1slreHr3Eeh07M-9LP5LQjdNvp/preview"></iframe>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-test" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4" style="color: var(--epet-purple);">Ověření znalostí</h2>
+<p>Po prostudování manuálu prosím vyplňte tento opakovací test. Výsledky budou automaticky
+                    zaznamenány.
+                </p>
+<div class="shadow-sm rounded-3 overflow-hidden" style="border: 1px solid #eee;">
+<iframe allowfullscreen="" frameborder="0" height="600px" marginheight="0" marginwidth="0" mozallowfullscreen="" msallowfullscreen="" src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__abHlldUMlZMVFA5NFgxWU9ZVVRNNURKNTNRUlBOOC4u" style="border: none; max-width:100%; max-height:100vh" webkitallowfullscreen="" width="100%">
+</iframe>
+</div>
+</div>
+</div>
+</div>
+
+<script>function openPage(evt,pageId){
+  const dest=document.getElementById(pageId);if(!dest)return;
+  document.querySelectorAll('.content-section').forEach(sec=>{const on=sec.id===pageId;sec.classList.toggle('active',on);sec.setAttribute('aria-hidden',String(!on));});
+  document.querySelectorAll('.book-tabs .tab-item').forEach(tab=>{const on=tab===evt.currentTarget;tab.classList.toggle('active',on);tab.setAttribute('aria-selected',String(on));});
+  const pane=document.querySelector('.book-page');if(pane)pane.scrollTop=0;
+}</script></body>
+</html>

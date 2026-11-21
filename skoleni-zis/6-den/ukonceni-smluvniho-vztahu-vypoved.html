@@ -1,0 +1,1611 @@
+<!DOCTYPE html><html lang="cs"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Ukončení smluvního vztahu (výpověď) – Pracovní postup</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/><style>
+:root{--epet:#94c11f;--epet-dark:#60781a;--epet-deep:#35460f;--navy:#20354a;--orange:#f99f1c;--red:#db4050;--purple:#8457c7;--text:#243448;--muted:#66758a;--line:#e0e7ee;--shadow:0 13px 32px rgba(31,51,76,.07)}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;padding:12px 12px 38px;background:#fff;color:var(--text);font:15.3px/1.67 "Segoe UI",Inter,system-ui,-apple-system,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+button{font:inherit}
+.site-wrap{max-width:1210px;margin:auto;min-width:0}
+.svg-icon{width:20px;height:20px;display:inline-block;flex:none;vertical-align:middle}
+.breadcrumb-nav{padding:10px 15px;border:1px solid var(--line);border-radius:13px;margin-bottom:14px;background:#fff}
+.breadcrumb{display:flex;flex-wrap:wrap;gap:0;align-items:center;list-style:none;margin:0;padding:0;font-size:.84rem}
+.breadcrumb-item{display:flex;gap:4px;align-items:center;color:var(--muted)}
+.breadcrumb-item:not(:first-child)::before{content:'›';color:#9ba6b6;margin:0 11px;font-size:1.12rem;font-weight:400}
+.breadcrumb-item a{color:var(--epet-dark);text-decoration:none;font-weight:700}
+.breadcrumb-item a:hover{text-decoration:underline}
+.breadcrumb-item .svg-icon{width:15px;height:15px;margin-right:3px}
+.breadcrumb-item.active{font-weight:700;color:#3d4c60}
+.hero-banner{isolation:isolate;position:relative;overflow:visible;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;padding:31px 32px;min-height:166px;margin-bottom:17px;color:#fff;border-radius:23px;background:radial-gradient(520px 230px at 92% 22%,rgba(255,255,255,.2),transparent 70%),linear-gradient(128deg,#94c11f 0%,#749b1f 49%,#35460f 100%);box-shadow:var(--shadow)}
+.hero-banner::after{content:'';z-index:-1;pointer-events:none;position:absolute;top:15px;right:180px;width:145px;height:145px;border-radius:50%;border:1px solid rgba(255,255,255,.17)}
+.hero-main{min-width:0;flex:1 1 480px}
+.hero-banner h1{font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:850;letter-spacing:-.032em;line-height:1.21;margin:0 0 12px}
+.hero-banner p{font-size:.94rem;color:rgba(255,255,255,.88);margin:0}
+.download-container{flex:0 1 auto;z-index:10;position:relative}
+.download-disclosure{position:relative;max-width:100%}
+.download-disclosure summary{cursor:pointer;user-select:none;list-style:none;display:flex;align-items:center;justify-content:center;gap:10px;color:var(--epet-dark);background:#fff;padding:11px 17px;border-radius:50px;font-size:.9rem;font-weight:800;box-shadow:0 5px 18px rgba(0,0,0,.12);outline-offset:3px}
+.download-disclosure summary::-webkit-details-marker{display:none}
+.download-disclosure summary::after{content:'';width:8px;height:8px;border-bottom:2px solid currentColor;border-right:2px solid currentColor;transform:rotate(45deg) translateY(-3px);margin:0 3px;transition:transform .2s}
+.download-disclosure[open] summary::after{transform:rotate(225deg) translateY(-1px)}
+.download-options{position:absolute;right:0;top:calc(100% + 8px);width:320px;max-width:min(320px,calc(100vw - 40px));padding:8px;background:#fff;border-radius:14px;border:1px solid var(--line);box-shadow:0 12px 32px rgba(20,40,65,.2)}
+.download-options a{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;border-radius:10px;padding:12px 13px;font-weight:700;font-size:.92rem;overflow-wrap:anywhere}
+.download-options a:hover{background:#f1f8e4;color:var(--epet-dark)}
+.download-options .svg-icon{color:var(--red)}
+.book-container{display:grid;grid-template-columns:270px minmax(0,1fr);align-items:start;gap:18px}
+.book-tabs{position:sticky;top:12px;display:flex;flex-direction:column;gap:5px;padding:12px;border:1px solid var(--line);border-radius:21px;background:#fff;box-shadow:0 9px 23px rgba(30,50,74,.045)}
+.book-tabs::before{content:'';height:5px;border-radius:90px;background:linear-gradient(90deg,var(--epet),#cfe795);margin:0 8px 10px}
+.tab-item{display:flex;align-items:center;gap:11px;width:100%;text-align:left;min-width:0;cursor:pointer;background:transparent;border:1px solid transparent;color:#536378;border-radius:12px;font-size:.93rem;font-weight:700;line-height:1.43;padding:12px 13px;transition:background .18s,color .18s,transform .18s}
+.tab-item>.svg-icon{width:20px;height:20px;color:#8290a2}
+.tab-item:hover,.tab-item:focus-visible{color:var(--epet-dark);background:#f7f9f3;transform:translateX(2px)}
+.tab-item.active{color:#415e11;background:#eff9d8;border-color:#dbe9b5;font-weight:850}
+.tab-item.active>.svg-icon{color:#60781a}
+.tab-purple{margin-top:7px;border-top:1px solid #e2e8f0;border-radius:11px}
+.tab-purple.active{background:#f4edfd;color:#7a43b2;border-color:#e6d4f6}
+.nav-text{min-width:0;flex:1}
+.nav-group{min-width:0}
+.nav-group>.tab-item .chevron-icon{width:15px;height:15px;margin-left:auto;transition:transform .2s}
+.nav-group.open>.tab-item .chevron-icon{transform:rotate(180deg)}
+.sub-tabs{display:none;flex-direction:column;gap:2px;margin:4px 0 5px 19px;border-left:1px solid #dfe9c9;padding-left:9px}
+.nav-group.open .sub-tabs{display:flex}
+.tab-item.sub{padding:9px 10px;font-size:.88rem;border-radius:10px;border-left:3px solid transparent}
+.tab-item.sub .svg-icon{width:17px;height:17px}
+.tab-item.sub.active{border-left-color:var(--epet);background:#f5faec}
+.book-page{min-width:0;min-height:460px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:27px 27px 34px;box-shadow:var(--shadow)}
+.content-section{display:none;animation:fade .28s ease}
+.content-section.active{display:block}
+@keyframes fade{from{opacity:.25;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.section-title{display:flex;align-items:center;gap:10px;line-height:1.32;letter-spacing:-.021em;font-size:clamp(1.25rem,2.1vw,1.55rem);margin:0 0 22px;padding-bottom:17px;border-bottom:1px solid var(--line);color:var(--epet-dark);font-weight:850}
+.section-number{display:inline-flex;justify-content:center;align-items:center;min-width:42px;height:42px;flex:0 0 auto;border-radius:99px;padding:0 5px;color:#fff;background:var(--epet);font-size:.92rem;font-weight:850;letter-spacing:-.02em}
+#page-pravidlo1 .section-number,#page-pravidlo2 .section-number,#page-pravidlo3 .section-number{min-width:44px}
+.book-page h3{font-size:1.08rem;font-weight:800;color:#334b37}
+.book-page p{line-height:1.77;color:#34475b}
+.book-page ul{margin-bottom:0;padding-left:21px}
+.book-page li{line-height:1.7;margin-bottom:8px}
+.book-page strong,.book-page b{font-weight:800}
+.book-page em,.book-page i:not(.bi){color:#7353b1}
+.book-page .card{background:#fff!important;border:1px solid var(--line)!important;border-radius:19px!important;box-shadow:0 7px 20px rgba(30,50,74,.045)!important;padding:21px 24px!important;margin:0 0 16px!important}
+.book-page .intro-card{border-top:5px solid var(--epet)!important;padding:27px!important;background:radial-gradient(300px 170px at 95% 95%,rgba(148,193,31,.12),transparent),linear-gradient(180deg,#fff,#fbfdf7)!important}
+.book-page .intro-card p{font-size:1.12rem;color:#3c5337;margin:0}
+.book-page .types-card{border-left:5px solid var(--epet)!important;padding:27px!important}
+.book-page .types-card p{margin:0;font-size:1.13rem;font-weight:750;color:#395425}
+#page-pravidlo1 .card,#page-pravidlo2 .card,#page-pravidlo3 .card{padding:21px!important}
+#page-pravidlo1 .card>ul,#page-pravidlo2 .card>ul,#page-pravidlo3 .card>ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:10px;margin:0}
+#page-pravidlo1 .card>ul>li,#page-pravidlo2 .card>ul>li,#page-pravidlo3 .card>ul>li{padding:15px 18px 15px 20px;margin:0;border-radius:13px;background:#fafcf8;border:1px solid #e7ecd9;border-left:4px solid var(--epet)}
+#page-pravidlo2 .card>ul>li,#page-pravidlo3 .card>ul>li{background:#f9fbfd;border-color:#e5eaf0;border-left-color:var(--orange)}
+#page-pravidlo2 .card>ul>li:first-child,#page-pravidlo3 .card>ul>li:first-child{background:#f9fcf4;border-left-color:var(--epet)}
+#page-pravidlo2 .card h3,#page-pravidlo3 .card h3{margin:24px 0 15px;text-align:left;font-size:1.08rem;letter-spacing:-.01em}
+.book-page blockquote.gs-quote{position:relative;overflow:hidden;background:#f8fbf4;border:1px solid #deead0;border-left:5px solid var(--epet);border-radius:15px;padding:18px 19px;margin:16px 0;color:#3f4c5a}
+.book-page blockquote.gs-quote::after{content:'“';position:absolute;right:12px;top:-18px;font:68px Georgia,serif;color:rgba(148,193,31,.17);pointer-events:none}
+.book-page blockquote.gs-quote ul{list-style:disc;padding-left:19px;margin-bottom:9px}
+.book-page blockquote.gs-quote p{margin:0 0 9px}
+.book-page blockquote.gs-quote li{padding:0;margin:0 0 9px;line-height:1.66}
+.book-page blockquote.gs-quote cite{display:block;font-size:.78rem;font-style:normal;color:#77866e;font-weight:750;margin-top:12px;letter-spacing:.01em}
+#__unused_old_condition_id .condition-card{position:relative;border-top:4px solid var(--epet)!important;padding:16px 21px!important;margin-bottom:12px!important;box-shadow:0 6px 15px rgba(30,50,74,.035)!important}
+#__unused_old_condition_id .condition-card:nth-child(3n+2){border-top-color:var(--orange)!important}
+#__unused_old_condition_id .condition-card:nth-child(3n){border-top-color:#49a7a7!important}
+#__unused_old_condition_id .condition-card p{display:flow-root;margin:0;line-height:1.65;font-size:.99rem;min-height:37px}
+#__unused_old_condition_id .condition-card .step-badge{float:left;margin:0 13px 0 0!important}
+.step-badge{display:inline-flex;align-items:center;justify-content:center;width:37px;height:37px;min-width:37px;border-radius:50%;background:var(--epet);color:white;font-weight:850;line-height:1.1;box-shadow:0 5px 11px rgba(148,193,31,.2);flex:none;margin:0!important}
+#__unused_old_condition_id .condition-card:nth-child(3n+2) .step-badge{background:var(--orange)}
+#__unused_old_condition_id .condition-card:nth-child(3n) .step-badge{background:#49a7a7}
+#page-zpracovatel .ops-card{border-top:4px solid var(--epet)!important}
+#page-zpracovatel .ops-card>.card{border:none!important;box-shadow:none!important;margin:0!important;padding:0!important}
+#page-zpracovatel .ops-card li{border-left:4px solid var(--orange);background:#fff9ed;padding:14px 17px;margin:13px 0;border-radius:11px;list-style:none}
+#page-zpracovatel .ops-card ul{list-style:none;padding:0}
+#page-zpracovatel blockquote.gs-quote{margin-top:13px}
+#page-termin .term-card{border-top:5px solid var(--epet)!important;background:#fafdF5!important;padding:25px 27px!important}
+#page-termin .term-card p{margin:0;font-size:1.06rem;line-height:1.81}
+#page-termin .term-card b{color:var(--epet-dark);font-size:1.24em;white-space:nowrap}
+#page-video .video-pending{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;text-align:center!important;min-height:305px;border:2px dashed #d6e1d4;border-radius:20px;background:linear-gradient(160deg,#fff,#f9fcf5);padding:35px 26px!important}
+#page-video .video-pending>div i{color:var(--epet)!important}
+#page-video .video-pending h4{color:#395329!important;font-weight:800;font-size:1.2rem}
+#page-video .video-pending p{max-width:440px;line-height:1.7;color:var(--muted)}
+#page-test>p{padding:17px 19px;background:#fbf7ff;border-radius:13px;border-left:4px solid var(--purple);color:#57677b}
+#page-test iframe{width:100%;height:600px;border:0;display:block}
+#page-test>.shadow-sm{border:1px solid var(--line)!important;border-radius:16px!important;overflow:hidden;box-shadow:0 8px 20px rgba(30,50,74,.04)!important}
+@media(max-width:900px){.book-container{grid-template-columns:1fr}.book-tabs{position:static;flex-direction:row;flex-wrap:wrap;gap:6px}.book-tabs::before{display:none}.book-tabs>.tab-item,.book-tabs>.nav-group{flex:1 1 210px}.tab-item{width:100%}.nav-group.open{flex-basis:100%}.nav-group.open .sub-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}.tab-item:hover{transform:none}}
+@media(max-width:620px){body{padding:7px 6px 25px;font-size:14.6px}.hero-banner{padding:26px 21px;border-radius:19px;min-height:156px}.hero-banner h1{font-size:1.62rem}.download-container{flex:1 1 100%}.download-disclosure summary{width:100%}.download-options{width:100%;max-width:none}.breadcrumb-nav{padding:9px 10px}.breadcrumb{font-size:.77rem}.breadcrumb-item:not(:first-child)::before{margin:0 6px}.book-container{gap:12px}.book-tabs{padding:10px;border-radius:17px;flex-direction:column}.book-tabs>.tab-item,.book-tabs>.nav-group{flex:1 1 auto;width:100%}.book-page{padding:20px 15px;border-radius:19px}.section-title{gap:9px;font-size:1.23rem}.section-number{min-width:36px;height:36px}.book-page .card{padding:19px 16px!important}.book-page .intro-card,.book-page .types-card{padding:21px!important}.nav-group.open .sub-tabs{grid-template-columns:1fr}.book-page blockquote.gs-quote{padding:16px 14px}.book-page .intro-card p{font-size:1.05rem}.book-page li{overflow-wrap:anywhere}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+
+/* Odstoupení – školicí design a funkční vnořený rozhodovací strom */
+body{background:#fff!important}
+.book-page .step-card{border:1px solid var(--line)!important;border-top:4px solid var(--epet)!important;background:linear-gradient(180deg,#fff,#fbfcfd)!important;margin:0 0 13px!important;padding:18px 22px!important}
+.book-page .step-card:nth-of-type(3n+2){border-top-color:#3aa6b2!important}
+.book-page .step-card:nth-of-type(3n+3){border-top-color:var(--orange)!important}
+.book-page .step-card.warning-step{border-top-color:var(--red)!important;background:#fff8f6!important}
+.book-page .step-card>p:first-child{margin-bottom:0!important;color:#32455a;font-size:.98rem}
+.book-page .step-card .step-badge{float:left;margin:0 11px 4px 0!important;width:36px;height:36px;min-width:36px;font-weight:850}
+.book-page .step-card>p{display:flow-root;min-height:35px}
+.book-page .step-card ul{margin:12px 0 0;padding:12px 16px 12px 31px;background:#f8fafc;border:1px solid #e6ebf0;border-radius:13px}
+.book-page .step-card li:last-child{margin-bottom:0}
+.book-page .step-card .gs-quote{margin:16px 0 0!important}
+.book-page .intro-card{background:linear-gradient(160deg,#fff,#f8fcf0)!important;border-top:5px solid var(--epet)!important}
+.book-page .intro-card>p{font-size:1.1rem}
+.book-page a[target="_blank"]{overflow-wrap:anywhere}
+.book-page .card>p strong,.book-page .card>p b{color:#4c681a}
+#page-video>.row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:0}
+#page-video>.row>.col{width:auto;max-width:none;padding:0;margin:0;flex:none;min-width:0}
+#page-video .video-card{height:100%;padding:16px!important;background:#fff!important;border-radius:17px!important;border:1px solid var(--line)!important}
+#page-video .video-card h6{display:flex;align-items:center;gap:8px;font-size:.96rem;line-height:1.45;min-height:60px;margin-bottom:12px!important;color:#506d1b;font-weight:800}
+#page-video .ratio{position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;width:100%}
+#page-video .ratio iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+#page-test>p{padding:16px 19px;background:#faf7ff;border-left:4px solid var(--purple);border-radius:12px;color:#475569}
+#page-test iframe{width:100%;height:600px;border:0;display:block}
+#page-test>.shadow-sm{border:1px solid var(--line)!important;border-radius:16px!important;overflow:hidden}
+/* Samostatný strom – zachovává filtry, kalkulačky a veškerý text původního modulu */
+.law-tree-host{min-width:0}
+.law-tree-module{max-width:100%;min-width:0;margin:0;padding:0}
+.law-tree-module .brand,.law-tree-module .link-brand{color:var(--epet-dark)!important}
+.law-tree-module>header{padding:19px 21px;margin-bottom:16px!important;background:#f7fbf1;border:1px solid #e1ebd4;border-radius:15px;text-align:left!important}
+.law-tree-module>header h1{font-weight:850;font-size:1.22rem;line-height:1.4;letter-spacing:-.015em;color:#425d17;margin:0 0 6px!important}
+.law-tree-module>header p{margin:0!important;color:#64748b}
+.law-tree-module .toolbar-sticky{position:relative;top:auto;z-index:2;background:#fff;border:1px solid #dce7d0;border-radius:16px;padding:14px!important;box-shadow:0 6px 17px rgba(20,44,62,.04);margin:0 0 16px!important}
+.law-tree-module .toolbar-sticky>.d-flex{display:flex;flex-wrap:wrap;align-items:center;gap:12px!important}
+.law-tree-module .toolbar-sticky .btn-group{display:inline-flex;flex-wrap:wrap;gap:5px}
+.law-tree-module .btn-check{position:absolute;opacity:0;pointer-events:none}
+.law-tree-module .seg-chip{display:inline-flex;gap:5px;align-items:center;border:1px solid #d8e5c2;border-radius:10px;padding:8px 10px;background:#fff;color:#536477;font-weight:730;font-size:.82rem;cursor:pointer;white-space:nowrap}
+.law-tree-module .btn-check:checked+.seg-chip{background:#eaf6d1;color:#49661b;border-color:var(--epet)!important;box-shadow:inset 0 0 0 1px #d9ebac}
+.law-tree-module .btn-check:focus-visible+.seg-chip{outline:3px solid #d2e9a5}
+.law-tree-module .form-check{display:flex;gap:7px;align-items:center;min-width:0}
+.law-tree-module .form-check-input{appearance:auto;width:17px;height:17px;cursor:pointer;accent-color:var(--epet-dark);margin:0;flex:0 0 auto}
+.law-tree-module .form-check-label{font-size:.85rem;line-height:1.3;color:#4c5f72;cursor:pointer}
+.law-tree-module .legend-dot{height:9px;width:9px;border-radius:50%;display:inline-block;margin-right:5px}
+.law-tree-module .dot-eligible{background:var(--epet)}
+.law-tree-module .dot-ineligible{background:#a2adb7}
+.law-tree-module .tree{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.law-tree-module .tree>li{min-width:0;border:1px solid #dfe7ee;border-radius:19px;background:#fff;padding:17px 17px 18px;margin:0;box-shadow:0 7px 17px rgba(18,40,60,.045);border-top:4px solid var(--epet)}
+.law-tree-module .tree>li:nth-child(3n+2){border-top-color:#36a6ad}
+.law-tree-module .tree>li:nth-child(3n+3){border-top-color:var(--orange)}
+.law-tree-module .tree>li>div:first-child{display:flex;align-items:flex-start;gap:13px}
+.law-tree-module .tree>li>div:first-child>.icon{flex:0 0 43px}
+.law-tree-module .tree>li>div:first-child>div:last-child{flex:1;min-width:0}
+.law-tree-module .tree h2{font-size:1.05rem;font-weight:820;letter-spacing:-.015em;color:#344960;line-height:1.49;margin:0 0 7px!important}
+.law-tree-module .tree .small-note{font-size:.9rem;line-height:1.67;color:#56677a;margin:0 0 7px}
+.law-tree-module .tree>.tree>li{border:1px solid red}
+.law-tree-module .tree .icon{display:inline-flex;justify-content:center;align-items:center;width:42px;height:42px;border-radius:12px;background:#f2f9e9;border:1px solid #d9e8c6;color:#5c8019;flex:0 0 42px}
+.law-tree-module .tree .icon .svg-icon{width:21px;height:21px}
+.law-tree-module .tree .children{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:17px 0 0!important;padding:0;min-width:0}
+.law-tree-module .tree .children>li{min-width:0;padding:0;list-style:none;position:relative;display:block}
+.law-tree-module .tree .children>li::before{display:none}
+.law-tree-module .node-card{position:relative;display:flex;flex-direction:column;min-width:0;height:100%;border:1px solid #e2e8f0;border-radius:15px;background:#f9fbfd;padding:15px 15px!important;box-shadow:0 4px 12px rgba(18,40,60,.022)}
+.law-tree-module .node-card.eligible{background:#f8fcf2;outline:1px solid #cfe8aa;border-color:#d6e6c6}
+.law-tree-module .node-card.ineligible{background:#fafafa;opacity:1;color:#64748b;border-color:#e3e6eb}
+.law-tree-module .node-card.ineligible .ribbon{display:block;position:absolute;top:5px;right:5px;color:#6b7280;font-size:.65rem;font-weight:800;letter-spacing:.025em;background:#f0f2f4;padding:3px 7px;border:1px solid #e0e5e8;border-radius:7px;transform:none;box-shadow:none}
+.law-tree-module .node-card h3{font-size:.91rem;font-weight:830;color:#334155;line-height:1.42;margin:0}
+.law-tree-module .node-card>.d-flex:first-child{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.law-tree-module .node-card .icon{width:31px;height:31px;flex-basis:31px;border-radius:9px}
+.law-tree-module .node-card .icon .svg-icon{width:16px;height:16px}
+.law-tree-module .badge{display:inline-flex;align-items:center;padding:4px 8px;border-radius:6px;font-size:.72rem;font-weight:760;white-space:nowrap}
+.law-tree-module .badge.text-bg-success{background:#e0f3c8!important;color:#3d6517!important}
+.law-tree-module .badge.text-bg-secondary{background:#e9edf1!important;color:#5f6b79!important}
+.law-tree-module .node-card p{font-size:.9rem;line-height:1.63;margin-bottom:8px}
+.law-tree-module .node-card .form-label{display:block;font-size:.8rem;font-weight:700;color:#465a6c;margin-bottom:5px;line-height:1.45}
+.law-tree-module .node-card .form-control{width:100%;max-width:100%;min-width:0;background:#fff;border:1px solid #d2dfca;border-radius:9px;padding:9px 10px;line-height:1.35;font:inherit;font-size:.86rem;min-height:39px;color:#334155}
+.law-tree-module .node-card .form-control[readonly]{background:#f4f7f4;color:#4c5e71}
+.law-tree-module .node-card .form-text{color:#758298;font-size:.76rem;margin-top:5px}
+.law-tree-module .node-card .row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:8px 0 0}
+.law-tree-module .node-card .row>.col-12{width:100%;max-width:none;padding:0;margin:0}
+.law-tree-module .node-card .row>.col-md-4{grid-column:auto}
+.law-tree-module .node-card .row>.col-md-6{grid-column:auto}
+.law-tree-module .node-card .row:has(.col-md-4){grid-template-columns:repeat(3,minmax(0,1fr))}
+.law-tree-module .node-card .btn{display:inline-flex;justify-content:center;align-items:center;gap:6px;font:inherit;font-size:.82rem;line-height:1.25;font-weight:730;white-space:normal;border-radius:9px;cursor:pointer;padding:9px 11px;min-height:35px;border:1px solid #cfd9c5;background:#fff;color:#4d5b6e}
+.law-tree-module .node-card .btn.btn-brand{background:var(--epet-dark);border-color:var(--epet-dark);color:#fff}
+.law-tree-module .node-card .btn.btn-brand:hover{background:#4f6614}
+.law-tree-module .node-card .btn.btn-outline-secondary:hover{background:#edf0f3}
+.law-tree-module .node-card .mt-3.d-flex{display:flex;flex-wrap:wrap;gap:8px!important;margin-top:14px!important}
+.law-tree-module details{margin:7px 0!important}
+.law-tree-module details summary{color:#5c7b28;cursor:pointer;font-weight:750;font-size:.84rem}
+.law-tree-module details div{font-size:.87rem;color:#526579;line-height:1.7}
+.law-tree-module #notAvailableWrap[hidden]{display:none!important}
+.law-tree-module #notAvailableWrap>.alert{margin:12px 0 0!important;padding:11px 13px!important;border-radius:11px;border:1px solid #dee5eb;background:#f8fafc;color:#596878}
+.law-tree-module footer{font-size:.76rem!important;color:#94a3b8!important;margin-top:12px}
+.law-tree-module .compact .node-card{padding:10px!important}
+.law-tree-module.compact .node-card{padding:10px!important}
+/* remove the original bootstrap radius/shadows that have duplicate output styles */
+@media(max-width:1130px){.law-tree-module .node-card .row:has(.col-md-4){grid-template-columns:1fr}}
+@media(max-width:900px){.law-tree-module .tree .children{grid-template-columns:1fr}.law-tree-module .node-card .row:has(.col-md-4){grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:680px){#page-video>.row{grid-template-columns:1fr}#page-video .video-card h6{min-height:0}.book-page .step-card{padding:16px!important}.law-tree-module>header{padding:16px}.law-tree-module .tree>li{padding:14px}.law-tree-module .tree .children{grid-template-columns:1fr}.law-tree-module .node-card .row,.law-tree-module .node-card .row:has(.col-md-4){grid-template-columns:1fr}.law-tree-module .toolbar-sticky{padding:12px!important}.law-tree-module .toolbar-sticky .btn-group{width:100%}.law-tree-module .seg-chip{flex:1 1 auto;justify-content:center}.law-tree-module .node-card{padding:14px!important}.law-tree-module .tree>li>div:first-child{gap:8px}.law-tree-module .tree>li>div:first-child>.icon{flex-basis:33px;width:33px;height:33px}}
+
+
+/* Rozšíření jednotného školicího designu: výpovědi, demontáže, přepisy, OTE */
+#page-intro .step-card{border-top:3px solid #c6e68b!important}
+#page-demontaz .step-card:nth-of-type(3n){border-left:4px solid var(--orange)!important}
+#page-prepis .step-card:has(ol){border-top:4px solid #48a6ac!important}
+#page-pravidlo1 .step-card:has(.distributor-columns){border-top:4px solid var(--orange)!important}
+.book-page .note-card{padding:0!important;overflow:hidden;border:1px solid #d9e4ee!important;border-radius:18px!important;box-shadow:0 6px 22px rgba(30,50,74,.035)!important}
+.book-page .note-card>.card-header{display:flex;align-items:center;padding:15px 21px!important;font-size:1.02rem;font-weight:800;border:0;background:#eff6fd!important;color:#225c8e!important}
+.book-page .note-card>.card-header .step-badge{background:#367fa5;margin-right:12px}
+.book-page .note-card>.card-body{padding:20px 22px!important;background:#fbfdff}
+.book-page .note-card.note-success>.card-header{background:#eaf6dc!important;color:#4b6f20!important}
+.book-page .note-card.note-success>.card-header .step-badge{background:var(--epet-dark)}
+.book-page .note-card.note-success>.card-body{background:#fbfdf8}
+.book-page .note-card.note-warn>.card-header{background:#fff2df!important;color:#85510f!important}
+.book-page .note-card.note-warn>.card-body{background:#fffcf7}
+.book-page .distributor-columns{margin:14px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+.book-page .distributor-columns>.col-md-6{width:auto;min-width:0;padding:19px!important;border-radius:15px;border:1px solid #e1e9eb;background:#fafcfd}
+.book-page .distributor-columns>.col-md-6:first-child{border-top:4px solid var(--epet);background:#fbfdf8}
+.book-page .distributor-columns>.col-md-6:last-child{border-top:4px solid #4198be;background:#f9fcff}
+.book-page .distributor-columns h4{color:#365d79;font-size:1.12rem;font-weight:850;letter-spacing:-.018em;margin:0 0 18px}
+.book-page .distributor-columns>.col-md-6:first-child h4{color:#587720}
+.book-page .distributor-columns h6{font-weight:850;font-size:.83rem;letter-spacing:.03em;color:#3b556b;background:#edf3f6;border-radius:8px;padding:8px 11px;margin:16px 0 9px}
+.book-page .distributor-columns>.col-md-6:first-child h6{color:#567521;background:#eef7e0}
+.book-page .distributor-columns ul{border-left:2px solid #dde5eb;margin:0 0 12px 8px;padding:0 0 0 19px}
+.book-page .distributor-columns li{font-size:.9rem;margin-bottom:5px;color:#3b4e63}
+.book-page .distributor-columns p{font-size:.88rem;border-radius:10px;border:1px solid #dde8d0;background:#fff;padding:11px;margin-top:14px}
+#page-pravidlo2 .step-card:nth-of-type(5){border-top:4px solid var(--orange)!important}
+.book-page .step-card ul>li::marker{color:#87aa36}
+.book-page .step-card .gs-quote{margin:14px 0!important}
+#page-prepis .step-card>ol{display:grid;gap:12px;padding-left:22px;margin:15px 0 0!important}
+#page-prepis .step-card>ol>li{padding:14px 15px 11px 8px;border:1px solid #e2e9f0;background:#fafcff;border-radius:11px}
+#page-prepis .step-card>ol>li::marker{font-weight:850;color:#6b9228}
+#page-zmena .step-card:nth-of-type(3),#page-zmena .step-card:nth-of-type(4){border-left:4px solid var(--orange)!important}
+#page-zmena .step-card:has(.svg-icon){background:#fbfdf8!important}
+.book-page a[href^="https://"]{overflow-wrap:anywhere}
+.book-page .gs-quote cite{color:#6a7d6b}
+/* Old source uses nested Bootstrap grid classes; these adapt without changing content. */
+.book-page .step-card .container{padding:0!important;max-width:100%;margin:10px 0!important}
+#page-prepis .note-card li{padding-left:2px}
+#page-pravidlo1 .card ul li{background:transparent}
+#page-OZE .law-tree-host{min-width:0;padding:0!important;box-shadow:none!important;border:0!important;background:transparent!important}
+#page-OZE .law-tree-module{padding:0!important;max-width:100%}
+#page-video .video-card{box-shadow:0 7px 22px rgba(32,53,74,.07)!important}
+@media(max-width:1000px){.book-page .distributor-columns{grid-template-columns:1fr}}
+@media(max-width:680px){.book-page .distributor-columns>.col-md-6{padding:15px!important}.book-page .note-card>.card-body{padding:15px!important}.book-page .note-card>.card-header{padding:12px 14px!important}#page-prepis .step-card>ol>li{padding:10px 12px 10px 5px}}
+</style></head><body><div class="site-wrap"><nav class="breadcrumb-nav" aria-label="Drobečková navigace"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="https://sites.google.com/view/znalostka/"><svg aria-hidden="true" focusable="false" class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v11H3z"/><path d="M9 21v-8h6v8"/></svg>Znalostní
+                    báze</a></li><li class="breadcrumb-item"><a href="https://sites.google.com/view/znalostka/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat">Školení
+                    ZIS</a></li><li class="breadcrumb-item"><a href="https://sites.google.com/view/znalostka/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat/6-den">6.
+                    den</a></li><li class="breadcrumb-item active" aria-current="page">Ukončení smluvního vztahu (Výpověď)</li></ol></nav><header class="hero-banner"><div class="hero-main"><h1>Pracovní postup: Ukončení smluvního vztahu (výpověď)</h1><p>Znalostní databáze epet | Dokumentace a přílohy</p></div><div class="download-container"><details class="download-disclosure"><summary><svg aria-hidden="true" focusable="false" class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"/></svg> Dokumenty ke stažení</summary><div class="download-options"><a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/uc?export=download&amp;id=1vJdkNw2wpMDteq8nSzyO_Zva-vdYTfbd"><svg aria-hidden="true" focusable="false" class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"/></svg> Změna dodavatele (výpověď) (PDF)</a><a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/uc?export=download&amp;id=14TE7B9Imw0gnGSnTy4NHg_3SKPct5SDs"><svg aria-hidden="true" focusable="false" class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"/></svg> Přepisy OM (PDF)</a><a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/uc?export=download&amp;id=1zeXYZcT7DllAkN6Kq_pmjeKjmCFQWNEw"><svg aria-hidden="true" focusable="false" class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"/></svg> Výpovědi (PDF)</a></div></details></div></header><main class="book-container"><nav class="book-tabs" aria-label="Navigace školením" role="tablist"><button type="button" class="tab-item active" data-target="page-intro" role="tab" aria-controls="page-intro" aria-selected="true"><svg aria-hidden="true" focusable="false" class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h7a3 3 0 0 1 3 3v13H6a3 3 0 0 0-3 0zm10 3a3 3 0 0 1 3-3h5v16a3 3 0 0 0-3 0h-5"/></svg><span class="nav-text">Pracovní postup</span></button><button type="button" class="tab-item" data-target="page-demontaz" role="tab" aria-controls="page-demontaz" aria-selected="false"><svg aria-hidden="true" focusable="false" class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 11a5 5 0 0 1 10 0M12 11l3-3M7 16h10"/></svg><span class="nav-text">Demontáž</span></button><div class="nav-group" data-navgroup="prepis"><button type="button" class="tab-item" data-target="page-prepis" role="tab" aria-controls="page-prepis" aria-selected="false"><svg aria-hidden="true" focusable="false" class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h17l-4-4m4 4-4 4M21 17H4l4-4m-4 4 4 4"/></svg><span class="nav-text">Přepis odběrného místa</span><svg aria-hidden="true" focusable="false" class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 9 7 7 7-7"/></svg></button><div class="sub-tabs" aria-label="Typy přepisu"><button type="button" class="tab-item sub" data-target="page-pravidlo1" role="tab" aria-controls="page-pravidlo1" aria-selected="false"><svg aria-hidden="true" focusable="false" class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 3l9 7v11H3zM9 21v-8h6v8"/></svg><span class="nav-text">Přepis v rámci</span></button><button type="button" class="tab-item sub" data-target="page-pravidlo2" role="tab" aria-controls="page-pravidlo2" aria-selected="false"><svg aria-hidden="true" focusable="false" class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-7-7 7 7-7 7"/></svg><span class="nav-text">Přepis se změnou dodavatele</span></button></div></div><button type="button" class="tab-item" data-target="page-zmena" role="tab" aria-controls="page-zmena" aria-selected="false"><svg aria-hidden="true" focusable="false" class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7V3h-4M4 17v4h4M20 11a8 8 0 0 0-14-5L4 8M4 13a8 8 0 0 0 14 5l2-2"/></svg><span class="nav-text">Změna dodavatele</span></button><button type="button" class="tab-item" data-target="page-OZE" role="tab" aria-controls="page-OZE" aria-selected="false"><svg aria-hidden="true" focusable="false" class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"/></svg><span class="nav-text">LEX OZE III - Výpovědi a odstoupení</span></button><button type="button" class="tab-item" data-target="page-video" role="tab" aria-controls="page-video" aria-selected="false"><svg aria-hidden="true" focusable="false" class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3z"/></svg><span class="nav-text">Video návod</span></button><button type="button" class="tab-item tab-purple" data-target="page-test" role="tab" aria-controls="page-test" aria-selected="false"><svg aria-hidden="true" focusable="false" class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="17" rx="2"/><path d="M9 3h6v4H9zm0 12 2 2 4-4"/></svg><span class="nav-text">Opakovací test</span></button></nav><article class="book-page"><div aria-hidden="false" class="content-section active" id="page-intro" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">1.</span> Pracovní postup</h2>
+<!-- KROK 1 -->
+<div class="card step-card">
+<p class="mb-0">
+<span class="step-badge">1</span>
+                        Výpověď musí být vždy <strong>písemná</strong>.
+                        Může však být zaslána <strong>naskenovaná na náš e-mail</strong>.
+                    </p>
+</div>
+<!-- KROK 2 -->
+<div class="card step-card">
+<p class="mb-0">
+<span class="step-badge">2</span>
+                        Výpověď musí obsahovat
+                        <strong>identifikaci zákazníka</strong>
+                        a <strong>odběrného místa</strong>.
+                    </p>
+</div>
+<!-- KROK 3 -->
+<div class="card step-card">
+<p class="mb-0">
+<span class="step-badge">3</span>
+                        Musí být uveden
+                        <strong>typ výpovědi (důvod)</strong>.
+                    </p>
+</div>
+<!-- KROK 4 -->
+<div class="card step-card">
+<p class="mb-0">
+<span class="step-badge">4</span>
+                        Výpověď musí být <strong>podepsána oprávněnou osobou</strong>.
+                        Případně je možné doložit <strong>plnou moc (PM)</strong>,
+                        která třetí osobu opravňuje k ukončení smluvního vztahu.
+                        <strong>Plná moc musí být podepsaná oprávněnou osobou</strong>
+                        (osobou, na kterou je odběrné místo napsáno).
+                    </p>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-demontaz" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">2.</span> Demontáž</h2>
+<!-- KROK 1 -->
+<div class="card step-card">
+<p class="mb-2">
+<span class="step-badge">1</span>
+                        Musí být vyplněn <strong>epet formulář „Žádost o ukončení smlouvy“</strong>,
+                        který je rozdělen dle segmentu
+                        (<strong>domácnost</strong> / <strong>firma</strong>).
+                    </p>
+<p class="mb-2"><strong>Formuláře naleznete zde:</strong></p>
+<ul class="mb-0">
+<li>
+<a data-bs-placement="top" data-bs-toggle="tooltip" href="https://drive.google.com/file/d/10OtoVJApxNBiA_L8C0G2qjxaK22VNczx/view?usp=drive_link" rel="noopener noreferrer" target="_blank" title="Stáhnout PDF">
+                                Žádost o ukončení – Elektřina – Domácnost
+                            </a>
+</li>
+<li>
+<a data-bs-placement="top" data-bs-toggle="tooltip" href="https://drive.google.com/file/d/10JeFNEaS7DDUMCGt3c0o1o25iHUd00z7/view?usp=drive_link" rel="noopener noreferrer" target="_blank" title="Stáhnout PDF">
+                                Žádost o ukončení – Elektřina – Firma
+                            </a>
+</li>
+<li>
+<a data-bs-placement="top" data-bs-toggle="tooltip" href="https://drive.google.com/file/d/10DdFgk1KL9NBIYUv3tpcMvVjEFurYSJV/view?usp=drive_link" rel="noopener noreferrer" target="_blank" title="Stáhnout PDF">
+                                Žádost o ukončení – Plyn – Domácnost
+                            </a>
+</li>
+<li>
+<a data-bs-placement="top" data-bs-toggle="tooltip" href="https://drive.google.com/file/d/107d2e5AsO-8YueDmW5V4ia1tNLKF8V9k/view?usp=drive_link" rel="noopener noreferrer" target="_blank" title="Stáhnout PDF">
+                                Žádost o ukončení – Plyn – Firma
+                            </a>
+</li>
+</ul>
+</div>
+<!-- KROK 2 -->
+<div class="card step-card">
+<p class="mb-0">
+<span class="step-badge">2</span>
+                        Jedná se o <strong>výpověď dohodou</strong>.
+                        <strong>Nehrozí za ni žádné sankce.</strong>
+</p>
+</div>
+<!-- KROK 3 -->
+<div class="card step-card">
+<p class="mb-0">
+<span class="step-badge">3</span>
+                        Tento typ požadavku <strong>standardně zpracováváme z e-mailu</strong>.
+                        <strong>Nikam jej nepředáváme</strong>, ale
+                        <strong>zadáváme úkol na EK</strong>.
+                    </p>
+</div>
+<!-- KROK 4 -->
+<div class="card step-card">
+<p class="mb-2">
+<span class="step-badge">4</span>
+                        Pokud zadáváme <strong>demontáž elektroměru na území ČEZ</strong>,
+                        je nutné ověřit, zda se jedná o
+                        <strong>trvalou demontáž</strong> nebo
+                        <strong>demontáž dočasnou</strong>
+                        (např. z důvodu rekonstrukce).
+                    </p>
+<p class="mb-2">
+                        V tomto případě je nutné k žádosti <i>epet</i>
+                        doložit také <strong>žádost o ukončení smlouvy pro ČEZ</strong>.
+                    </p>
+<p class="mb-2"><strong>Formuláře ČEZ:</strong></p>
+<ul class="mb-0">
+<li>
+<a data-bs-placement="top" data-bs-toggle="tooltip" href="https://drive.google.com/file/d/17jVzJYN7fq_zsdPM3SSoU4upzVz8AK3p/view?usp=drive_link" rel="noopener noreferrer" target="_blank" title="Stáhnout PDF">
+                                ČEZ – Demontáž trvalá
+                            </a>
+</li>
+<li>
+<a data-bs-placement="top" data-bs-toggle="tooltip" href="https://drive.google.com/file/d/1coOnCqNHkVovGnPAdDy1HrhN4ZpKxFW0/view?usp=drive_link" rel="noopener noreferrer" target="_blank" title="Stáhnout PDF">
+                                ČEZ – Demontáž dočasná
+                            </a>
+</li>
+</ul>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-prepis" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">3.</span> Přepis odběrného místa</h2>
+<!-- KROK 1 -->
+<div class="card step-card">
+<p class="mb-2">
+<span class="step-badge">1</span>
+                        K přepisu dochází z důvodu <strong>stěhování</strong> nebo <strong>prodeje nemovitosti</strong>.
+                    </p>
+</div>
+<!-- KROK 2 -->
+<div class="card step-card">
+<p class="mb-2">
+<span class="step-badge">2</span>
+                        Musí být vyplněn <strong>náš formulář</strong>, kde zákazník zvolí,
+                        zda <strong>nový zákazník bude / nebude u epet</strong>.
+                    </p>
+<p class="mb-2"><strong>Formuláře k dispozici:</strong></p>
+<ul class="mb-0">
+<li>
+<a href="https://drive.google.com/file/d/10OtoVJApxNBiA_L8C0G2qjxaK22VNczx/view?usp=drive_link" rel="noopener noreferrer" target="_blank">
+                                Žádost o ukončení – Elektřina – Domácnost
+                            </a>
+</li>
+<li>
+<a href="https://drive.google.com/file/d/10JeFNEaS7DDUMCGt3c0o1o25iHUd00z7/view?usp=drive_link" rel="noopener noreferrer" target="_blank">
+                                Žádost o ukončení – Elektřina – Firma
+                            </a>
+</li>
+<li>
+<a href="https://drive.google.com/file/d/10DdFgk1KL9NBIYUv3tpcMvVjEFurYSJV/view?usp=drive_link" rel="noopener noreferrer" target="_blank">
+                                Žádost o ukončení – Plyn – Domácnost
+                            </a>
+</li>
+<li>
+<a href="https://drive.google.com/file/d/107d2e5AsO-8YueDmW5V4ia1tNLKF8V9k/view?usp=drive_link" rel="noopener noreferrer" target="_blank">
+                                Žádost o ukončení – Plyn – Firma
+                            </a>
+</li>
+</ul>
+</div>
+<!-- KROK 3 -->
+<div class="card step-card">
+<p class="mb-0">
+<span class="step-badge">3</span>
+                        Jedná se o <strong>dohodu</strong>.
+                    </p>
+</div>
+<!-- KROK 4 -->
+<div class="card step-card">
+<p class="mb-2">
+<span class="step-badge">4</span>
+                        Zákazník musí doložit <strong>vztah k nemovitosti</strong>, např.:
+                    </p>
+<ul class="mb-2">
+<li>výpis z katastru,</li>
+<li>ukončení nájemní smlouvy,</li>
+<li>u nekontaktní osoby vyplní nový zákazník <strong>čestné prohlášení</strong>
+                            (nahrazuje výpověď).</li>
+</ul>
+<p class="mb-0">
+<strong>Doporučujeme</strong> doložit <strong>předávací protokol se stavy měřidla</strong>.
+                    </p>
+</div>
+<!-- KROK 5 -->
+<div class="card step-card">
+<p class="mb-0">
+<span class="step-badge">5</span>
+                        Pokud zákazník <strong>nepodá výpověď</strong> a odběrné místo je jiným dodavatelem
+                        <strong>„ukradeno“</strong>, vzniká zákazníkovi <strong>sankce</strong>.
+                    </p>
+</div>
+<!-- KROK 6 -->
+<div class="card step-card">
+<p class="mb-0">
+<span class="step-badge">6</span>
+                        Pokud žádost o přepis přijde <strong>e-mailem</strong>,
+                        <strong>předáváme ji na Garanta → Ukončení smlouvy</strong>.
+                        <strong>Na e-mail nereagujeme.</strong>
+</p>
+</div>
+<!-- KROK 7 -->
+<div class="card step-card contains-note">
+<p class="mb-2">
+<span class="step-badge">7</span>
+                        Pokud je žádost o přepis řešena <strong>telefonicky</strong>, máme dvě možnosti:
+                    </p>
+<ol class="mb-2">
+<li>
+<strong>Možnost 1</strong> – dohodneme se se zákazníkem, že mu
+                            <strong>zašleme e-mailem odkaz na online formulář</strong> k přepisu OM.
+                            <blockquote class="gs-quote">
+<p>
+                                    Šablonu e-mailu naleznete
+                                    <a href="https://sites.google.com/view/znalostka/%C5%A1ablony/%C5%A1ablona-na-e-maily" rel="noopener noreferrer" target="_blank">
+                                        zde
+                                    </a>
+                                    (Přepisy → Přepis odběrného místa – zaslání odkazu)
+                                </p>
+<cite>Interní poznámka / metodika</cite>
+</blockquote>
+</li>
+<li>
+<strong>Možnost 2</strong> – domluvit se se zákazníkem na
+                            <strong>zaslání podkladů e-mailem</strong> (preferovaná varianta),
+                            případně <strong>korespondenčně</strong>
+                            (<strong>proaktivně nenabízet</strong>).
+                            <br/>
+                            V tomto případě je nutné <strong>založit úkol v ZIS</strong>,
+                            kde řešitelem je <strong>BO_CC</strong>.
+                             <blockquote class="gs-quote">
+<p>
+                                    Šablonu úkolu naleznete
+                                    <a href="https://sites.google.com/view/znalostka/%C5%A1ablony/%C5%A1ablona-%C3%BAkoly" rel="noopener noreferrer" target="_blank">
+                                        zde
+                                    </a>
+                                    (Kategorie: Přepis)
+                                </p>
+<cite>Interní poznámka / metodika</cite>
+</blockquote>
+</li>
+</ol>
+</div>
+<!-- KROK 8 – Nestandardní situace -->
+<div class="card note-card note-info">
+<div class="card-header bg-primary text-white">
+<span class="step-badge">8</span> Nestandardní situace
+                    </div>
+<div class="card-body">
+<ul>
+<li>
+                                Smlouvu na původního zákazníka můžeme ukončit dříve než budou zaslány podklady pro přepis od nového
+                                zákazníka, například z důvodu ukončení nájmu původního zákazníka a nastěhování nového zákazníka. Původní
+                                zákazník doloží Žádost o ukončení a doklad, že na dané adrese již nebydlí, například kupní smlouva,
+                                výpověď z nájmu, ukončení nájmu. Po doložení Žádosti o ukončení a dokladu o vztahu k nemovitosti bude
+                                původní smlouva ukončena do 30 dnů od přijetí dokumentů. V případě zaslání podkladů od nového zákazníka
+                                bude proveden přepis v nejbližším možném termínu. Pokud evidujeme kontakt na nového zákazníka, bude z
+                                naší strany zaslána informace o datu ukončení a žádost na dodání podkladů pro přepis do data ukončení,
+                                aby se vyhnuli neoprávněnému odběru nebo demontáži měřidla.
+                            </li>
+<li>
+                                V případě, že nový zákazník původního nezná a nemá možnost jej kontaktovat pro vyplnění plné moci a žádosti o
+                                ukončení - vyplní Čestné prohlášení původní neznámý a doloží zbývající dokumenty k přepisu, dle příslušného
+                                distributora.
+                            </li>
+<li>
+                                Pokud majitel nemovitosti zůstává stejný a požaduje pouze přepsat smlouvu na někoho jiného - vyplní Čestné
+                                prohlášení „Souhlas vlastníka nemovitosti“ s převodem a doloží zbývající doklad, dle distributora.
+                            </li>
+</ul>
+</div>
+</div>
+<!-- KROK 9 – Další informace -->
+<div class="card note-card note-success">
+<div class="card-header bg-success text-white">
+<span class="step-badge">9</span> Další informace
+                    </div>
+<div class="card-body">
+<ul>
+<li>Přepis odběrného místa bude proveden po doložení kompletních požadovaných dokumentů k nejbližšímu
+                                možnému termínu.
+                            </li>
+<li>Informace o přepisu uvedeny u nového zákazníka v KO 1/05 - Přepis, u původního zákazníka v KO 2/01 -
+                                Výpověď přijata. V případě chybějící dokumentace uvedeno v KO, které doklady požadujeme. V případě
+                                distributora GASNET uvedena v KO informace, zda byl předán požadavek na distributora pro vystavení SOP
+                                nebo již SOP evidujeme.</li>
+<li>Firmy mohou požadovat zařazení pod Závěrkový list nebo pod stávající smlouvu. Při přepisu je potřeba
+                                doložit dokumenty, dle příslušného distributora. Přidání pod Závěrkový list nebo stávající smlouvu
+                                schvaluje obchodní oddělení na základě informací, které zákazník doloží - spotřeba, jistič, sazba.
+                                Předání na obchodní oddělení, odeslání dodatku a podkladů pro přepis řeší BO. Na BO předat KO s
+                                informací, že zákazník požaduje přidání pod závěrkový list nebo stávající smlouvu.</li>
+</ul>
+</div>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-pravidlo1" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">3.1</span> Přepis v rámci</h2>
+<!-- KROK 1 -->
+<div class="card step-card">
+<p class="mb-0">
+<span class="step-badge">1</span>
+                        Odběrné místo <strong>zůstává u epet</strong> – původní zákazník u nás končí
+                        a <strong>nový zákazník bude odebírat u epet</strong>.
+                    </p>
+</div>
+<!-- KROK 2 -->
+<div class="card step-card">
+<p class="mb-2">
+<span class="step-badge">2</span>
+                        Požadavek řešíme dle situací výše:
+                    </p>
+<ul class="mb-0">
+<li>
+                            Pokud informaci obdržíme <strong>e-mailem</strong>,
+                            <strong>předáváme na garanta Ukončení smlouvy</strong>.
+                        </li>
+<li>
+                            Pokud informaci obdržíme <strong>telefonicky</strong>,
+                            zasíláme <strong>odkaz na online přepis</strong>
+                            nebo <strong>zakládáme úkol</strong> s řešitelem <strong>BO_CC</strong>.
+                        </li>
+</ul>
+</div>
+<!-- KROK 3 -->
+<div class="card step-card">
+<p class="mb-2">
+<span class="step-badge">3</span>
+<strong>Úkol musí vždy obsahovat:</strong>
+</p>
+<ul class="mb-0">
+<li>Odběrné místo – <strong>EAN / EIC</strong></li>
+<li><strong>Datum narození / IČ</strong></li>
+<li><strong>Adresa trvalého bydliště / sídlo firmy</strong></li>
+<li><strong>E-mail</strong></li>
+<li><strong>Telefonní číslo</strong></li>
+<li><strong>Počáteční výše a četnost záloh</strong></li>
+<li><strong>Platnost smlouvy</strong> (12 / 24 / 36 měsíců)</li>
+<li>
+<strong>Způsob úhrady záloh</strong>
+                            (SIPO – spojovací číslo / převodní nebo inkasní příkaz – číslo účtu)
+                        </li>
+<li>
+<strong>Způsob vrácení přeplatků</strong>
+                            (složenka / převodní příkaz)
+                        </li>
+<li><strong>Kontakt</strong>, kam poslat podklady (e-mail / adresa)</li>
+<li>
+<strong>Varianta přepisu</strong>:
+                            domácnost × domácnost, firma × firma,
+                            domácnost × firma, firma × domácnost
+                        </li>
+</ul>
+</div>
+<!-- KROK 4 -->
+<div class="card step-card">
+<p class="mb-0">
+<span class="step-badge">4</span>
+                        Uvedení varianty přepisu je <strong>zásadní</strong> pro zaslání
+                        <strong>správných podkladů</strong>.
+                    </p>
+</div>
+<!-- KROK 5 -->
+<div class="card step-card">
+<p class="mb-0">
+<span class="step-badge">5</span>
+                        U <strong>elektřiny</strong> se při variantách
+                        <strong>domácnost × firma</strong> nebo <strong>firma × domácnost</strong>
+                        dokládá příslušné <strong>Čestné prohlášení</strong>
+                        (ČP z PO na FO / z FO na PO).
+                    </p>
+</div>
+<!-- KROK 6 -->
+<div class="card step-card">
+<p class="mb-0">
+<span class="step-badge">6</span>
+                        Čestné prohlášení se dokládá distributorovi z důvodu
+                        <strong>změny typu odběru elektřiny</strong>,
+                        dochází ke <strong>změně distribuční sazby</strong>.
+                    </p>
+</div>
+<!-- KROK 7 -->
+<div class="card step-card distributor-step">
+<p class="mb-3">
+<span class="step-badge">7</span>
+<strong>Podklady pro přepis dle distributora:</strong>
+</p>
+<div class="row distributor-columns">
+<!-- ELEKTŘINA -->
+<div class="col-md-6">
+<h4>ELEKTŘINA</h4>
+<h6>ČEZ</h6>
+<ul>
+<li>Žádost o ukončení</li>
+<li>Plná moc – původní zákazník</li>
+<li>Plná moc – nový zákazník</li>
+<li>Smlouva o dodávce</li>
+<li>Doklad o vztahu k nemovitosti</li>
+<li>Plná moc pro dodavatele</li>
+</ul>
+<p>
+                                Plné moci slouží pro vystavení <strong>Smlouvy o připojení</strong> u distributora.
+                            </p>
+<h6>EON</h6>
+<ul>
+<li>Žádost o ukončení</li>
+<li>Plná moc – nový zákazník</li>
+<li>Smlouva o dodávce</li>
+<li>Doklad o vztahu k nemovitosti</li>
+</ul>
+<h6>PRE</h6>
+<ul>
+<li>Žádost o ukončení</li>
+<li>Smlouva o dodávce</li>
+<li>Podklady pro uzavření SOP</li>
+<li>Doklad o vztahu k nemovitosti</li>
+</ul>
+<h6>LDS</h6>
+<ul>
+<li>Smlouva o dodávce</li>
+<li>Žádost o ukončení</li>
+<li>Doklad o vztahu k nemovitosti</li>
+</ul>
+<p>
+                                V případě <strong>úmrtí</strong> není potřeba Žádost o ukončení –
+                                postačí <strong>úmrtní list</strong> a Čestné prohlášení.
+                            </p>
+</div>
+<!-- PLYN -->
+<div class="col-md-6">
+<h4>PLYN</h4>
+<h6>GASNET</h6>
+<ul>
+<li>Žádost o ukončení</li>
+<li>Smlouva o dodávce</li>
+<li>Žádost o připojení (SOP)</li>
+<li>Plná moc – nový zákazník</li>
+</ul>
+<h6>EON</h6>
+<ul>
+<li>Žádost o ukončení</li>
+<li>Smlouva o dodávce</li>
+<li>Plná moc – nový zákazník</li>
+<li>Doklad o vztahu k nemovitosti</li>
+</ul>
+<h6>PPD</h6>
+<ul>
+<li>Žádost o ukončení</li>
+<li>Smlouva o dodávce</li>
+<li>
+                                    Předávací protokol – pokud není uveden konečný stav
+                                    na Žádosti o ukončení
+                                </li>
+</ul>
+<h6>LDS</h6>
+<ul>
+<li>Žádost o ukončení</li>
+<li>Smlouva o dodávce</li>
+<li>Doklad o vztahu k nemovitosti</li>
+</ul>
+<p>
+                                V případě <strong>úmrtí</strong> postačí <strong>úmrtní list</strong>.
+                            </p>
+</div>
+</div>
+</div>
+<blockquote class="gs-quote">
+<p>
+                        U plynu a žádosti o SOP (smlouva o připojení) platí, že Smlouva o připojení může být zajišťována z naší
+                        strany na základě doložené plné moci. V tomto případě má <b>GASNET</b> lhůtu na vystavení <b>30 dnů</b> od
+                        podání požadavku. Pokud by zákazník potřeboval přepis zajistit v nejbližším termínu například z důvodu
+                        neoprávněného odběru, doporučíme uzavřít Smlouvu o připojení k distribuční soustavě přímo na nejbližší
+                        pobočce innogy (RWE), smlouva je uzavřena na počkání. O smlouvu o připojení je také možné zažádat skrz
+                        webový portál společnosti innogy (RWE), a to na <a data-bs-placement="top" data-bs-toggle="tooltip" href="https://dpo.gasnet.cz/zadost-o-pripojeni/duvod-zadosti/" rel="noopener noreferrer" target="_blank" title="Žádost o připojení"> adrese </a>. Smlouva o připojení by měla být
+                        doručena do několika pracovních dní na zákazníkovu e-mailovou adresu. Zaslaný dokument je potřeba ze strany
+                        zákazníka podepsat a <b>zaslat doporučeně společnosti innogy (RWE)</b>. Sken Smlouvy o připojení zašle
+                        zákazník na naši e-mailovou adresu <b>info@epet.cz</b>
+</p>
+<cite>Interní poznámka / metodika</cite>
+</blockquote>
+</div><div aria-hidden="true" class="content-section" id="page-pravidlo2" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">3.2</span> Přepis se změnou dodavatele</h2>
+<!-- Přepis se změnou dodavatele -->
+<!-- KROK 1 -->
+<div class="card step-card">
+<p class="mb-0">
+<span class="step-badge">1</span>
+                        Když odběrné místo bude u jiného <b>dodavatele</b>
+                        (jednoduše řečeno původní zákazník u nás končí a nový zákazník nebude chtít odebírat u <i>epet</i>)
+                    </p>
+</div>
+<!-- KROK 2 -->
+<div class="card step-card">
+<p class="mb-0">
+<span class="step-badge">2</span>
+                        Požadavek řešíme dle situací výše – pokud dostáváme info <b>e-mailem</b>,
+                        předáváme na garanta <b>Ukončení smlouvy</b>. Pokud info dostáváme telefonicky,
+                        zasíláme <b>Žádost o ukončení odběrného místa</b>.
+                    </p>
+</div>
+<!-- KROK 3 -->
+<div class="card step-card">
+<p class="mb-2">
+<span class="step-badge">3</span>
+                        Pokud dostáváme info telefonicky s tím, že by zákazník od jiného dodavatele chtěl přejít k nám,
+                        ale smlouva je u původního dodavatele na někoho jiného, zakládáme úkol, kde řešitelem bude <b>BO_CC</b>.
+                    </p>
+<p class="mb-2"><strong>Úkol musí vždy obsahovat:</strong></p>
+<ul class="mb-0">
+<li>Odběrné místo – EAN/EIC</li>
+<li>Datum narození / IČ</li>
+<li>Adresa trvalého bydliště / Sídlo firmy</li>
+<li>E-mail</li>
+<li>Telefonní číslo</li>
+<li>Počáteční výše a četnost záloh</li>
+<li>Platnost smlouvy: 12 nebo 24 měsíců nebo 36 měsíců</li>
+<li>Způsob úhrady záloh (SIPO – uveďte spojovací číslo / převodní či inkasní příkaz – uveďte číslo
+                            bankovního účtu)</li>
+<li>Způsob vrácení přeplatků (složenka / převodní příkaz)</li>
+<li>Kontakt, kam poslat podklady – e-mail, adresa</li>
+<li>Varianta přepisu – domácnost × domácnost, firma × firma, domácnost × firma, firma × domácnost</li>
+<li><b>Stávající dodavatel</b></li>
+<li><b>Informace, zda byla již podána u stávajícího dodavatele výpověď</b></li>
+</ul>
+</div>
+<!-- KROK 4 -->
+<div class="card step-card">
+<p class="mb-0">
+<span class="step-badge">4</span>
+                        Uvedení varianty je důležité pro zaslání správných podkladů pro přepis.
+                    </p>
+</div>
+<!-- KROK 5 -->
+<div class="card step-card">
+<p class="mb-3">
+<span class="step-badge">5</span>
+<strong>U všech distributorů vyžadována:</strong>
+</p>
+<div class="container my-2">
+<ul class="mb-3">
+<li>Smlouva o dodávce</li>
+<li>Plná moc nový zákazník</li>
+<li>Plná moc původní zákazník</li>
+<li>Doklad o vztahu k nemovitosti</li>
+<li>U distributora <b>ČEZ</b> – plná moc pro dodavatele</li>
+<li>U distributora <b>GASNET</b> – žádost o Smlouvu o připojení (platí stejné lhůty a pravidla jako při
+                                přepisu v rámci)</li>
+<li>U distributora <b>PRE</b> – podklady pro vystavení SOP</li>
+</ul>
+<p class="mb-2">
+                            V případě neznámého původního majitele odběrného místa, požadujeme doložit
+                            Čestné prohlášení původní neznámý.
+                        </p>
+<p class="mb-0">
+                            Plné moci a doklad o vztahu k nemovitosti jsou požadovány pro vystavení smlouvy o připojení
+                            a zaslání výpovědi současnému dodavateli. Dokladem o vztahu k nemovitosti může být
+                            <b>nájemní smlouva, kupní smlouva, výpis z katastru</b>. Doklad o vztahu k nemovitosti prokazuje
+                            změnu majitele na adrese odběrného místa.
+                        </p>
+</div>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-zmena" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">4.</span> Změna dodavatele</h2>
+<!-- Změna dodavatele -->
+<!-- KROK 1 -->
+<div class="card step-card">
+<p class="mb-0">
+<span class="step-badge">1</span>
+                        Zákazník může k datu výročí podat výpověď a změnit dodavatele energií.
+                    </p>
+</div>
+<!-- KROK 2 -->
+<div class="card step-card">
+<p class="mb-0">
+<span class="step-badge">2</span>
+                        Změna dodavatele může být i s přepisem.
+                    </p>
+</div>
+<!-- KROK 3 -->
+<div class="card step-card">
+<p class="mb-0">
+<span class="step-badge">3</span>
+<svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m12 3 10 18H2zM12 9v5m0 3v.5"></path></svg>
+                        Při změně dodavatele ani přepisu nejdou zároveň dělat technické změny na odběrném místě.
+                    </p>
+</div>
+<!-- KROK 4 -->
+<div class="card step-card">
+<p class="mb-0">
+<span class="step-badge">4</span>
+<svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m12 3 10 18H2zM12 9v5m0 3v.5"></path></svg>
+                        Zákazník musí mít uzavřenou smlouvu s epet.
+                    </p>
+</div>
+<!-- KROK 5 -->
+<div class="card step-card">
+<p class="mb-0">
+<span class="step-badge">5</span>
+                        V případě, že neuvede datum, sdělíme ho my.
+                    </p>
+</div>
+<!-- KROK 6 -->
+<div class="card step-card">
+<p class="mb-0">
+<span class="step-badge">6</span>
+                        Domácnosti + živnostníci mohou <b>20 dní</b> před datem prolongace podat výpověď (nesouhlas s prolongací).
+                    </p>
+</div>
+<!-- KROK 7 -->
+<div class="card step-card">
+<p class="mb-0">
+<span class="step-badge">7</span>
+                        Firmy mohou <b>3 měsíce</b> před datem prolongace podat výpověď (nesouhlas s prolongací).
+                    </p>
+</div>
+<!-- KROK 8 -->
+<div class="card step-card">
+<p class="mb-0">
+<span class="step-badge">8</span>
+                        Výpověď vždy běží od prvního dne následujícího měsíce.
+                    </p>
+</div>
+<!-- KROK 9 -->
+<div class="card step-card">
+<p class="mb-0">
+<span class="step-badge">9</span>
+                        V případě, že je místo ukradeno bez výpovědi, dostane pokutu. Pokud by se ZK vrátil do měsíce zpět, je mu
+                        pokuta odpuštěna,
+                        vrací se ale za podmínek nové smlouvy. Vždy nutné ověřit přes úkol s SA. Založíme úkol na řešitele
+                        <b>SAUSER</b>.
+                    </p>
+</div>
+<!-- KROK 10 -->
+<div class="card step-card">
+<p class="mb-0">
+<span class="step-badge">10</span>
+                        E-mail – předáváme na garanta <b>UKONČENÍ SMLOUVY</b>.
+                    </p>
+</div>
+<!-- KROK 11 -->
+<div class="card step-card">
+<p class="mb-0">
+<span class="step-badge">11</span>
+                        Zákazník si může vypovědět stávající smlouvu u stávajícího dodavatele sám, případně nám může udělat plnou
+                        moc.
+                        Musí nám však sdělit do kdy má uzavřenou stávající smlouvu a jaká je výpovědní lhůta.
+                    </p>
+</div>
+<!-- KROK 12 -->
+<div class="card step-card">
+<p class="mb-0">
+<span class="step-badge">12</span>
+                        Dále musíme za zákazníka na základě plné moci uzavřít Smlouvu o připojení.
+                    </p>
+</div>
+<!-- KROK 13 -->
+<div class="card step-card">
+<p class="mb-0">
+<span class="step-badge">13</span>
+                        Jakmile máme splněné podmínky, zakládáme místo do ZIS a žádáme si u OTE.
+                    </p>
+</div>
+<!-- ZACHOVANÝ BLOK: Změna dodavatele – proces OTE -->
+<div class="container my-4">
+<div class="card note-card note-warn">
+<div class="card-header bg-warning text-dark">
+                            Změna dodavatele – proces OTE
+                        </div>
+<div class="card-body">
+<p>OTE poptá distributora, zda je uzavřena Smlouva o připojení. Dále se OTE dotazuje původního
+                                dodavatele, zda se změnou souhlasí. Pokud všichni souhlasí, přechází zákazník k epet.</p>
+<ul>
+<li>V případě, že původní dodavatel vznese námitku (nesouhlasí s ukončením, platná smlouva
+                                    tedy nevypovězená a nebo vypovězená ale k jinému datu) předávají KO kolegové na front,
+                                    aby situaci ověřili se zákazníkem. V případě obchodního zástupce se obrací na obchodního
+                                    zástupce k řešení.</li>
+<li>Buď provedeme opravu a žádáme si ke správnému datu, nebo je podán od obchodního
+                                    zástupce Souhlas se změnou dodavatele. Tímto souhlasem přebijeme námitku původního
+                                    dodavatele a odběrné místo si krademe. U původního dodavatele hrozí pokuta (v případě OZ
+                                    může nárokovat po něm, pokud nedisponuje písemným souhlasem).</li>
+<li>V případě firem, pokud uzavřel smlouvu s více dodavateli a přešel nakonec k někomu jinému,
+                                    dostává pokutu od nás, nedodržel podmínky smlouvy a to že bude odebírat energie od nás
+                                    (dělo se za pádu BEE kdy podepisovali kde se dalo).</li>
+<li>Pokud si o zákazníka žádá více dodavatelů, OTE místo přeregistruje tomu, kdo si vnese
+                                    požadavek na OM jako poslední, nikoliv první.</li>
+</ul>
+</div>
+</div>
+</div>
+<br/>
+</div><div aria-hidden="true" class="content-section" id="page-OZE" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">5.</span> LEX OZE III - Výpovědi a odstoupení</h2>
+<!-- KARTA: LEX OZE III - Výpovědi a odstoupení -->
+<!-- KROK 1 -->
+<div class="law-tree-host"><div class="law-tree-module">
+<header class="mb-3 text-center">
+<h1 class="h3 mb-1">Rozcestník: <span class="brand">Typy odstoupení / výpovědí</span></h1>
+<p class="text-muted mb-0">Navigace formou stromu.</p>
+</header>
+<!-- SEGMENT & VISIBILITY TOOLBAR -->
+<div class="toolbar-sticky p-2 mb-3">
+<div class="d-flex flex-wrap align-items-center gap-3">
+<div class="d-flex align-items-center gap-2">
+<span class="small text-muted">Segment:</span>
+<div aria-label="Segment filter" class="btn-group" role="group">
+<input autocomplete="off" checked="" class="btn-check" id="seg-all" name="seg" type="radio"/>
+<label class="btn btn-sm seg-chip" for="seg-all">Vše</label>
+<input autocomplete="off" class="btn-check" id="seg-dom" name="seg" type="radio"/>
+<label class="btn btn-sm seg-chip" for="seg-dom"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 10 12 3l9 7v11H3zM9 21v-8h6v8"></path></svg>Domácnost</label>
+<input autocomplete="off" class="btn-check" id="seg-osvc" name="seg" type="radio"/>
+<label class="btn btn-sm seg-chip" for="seg-osvc"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="7"></rect><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"></path></svg>OSVČ</label>
+<input autocomplete="off" class="btn-check" id="seg-firma" name="seg" type="radio"/>
+<label class="btn btn-sm seg-chip" for="seg-firma"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 21V6l9-3v18m0-14 9 3v11M6 9h2m-2 4h2m-2 4h2m7-5h2m-2 4h2"></path></svg>Firma</label>
+</div>
+</div>
+<div class="form-check form-switch">
+<input class="form-check-input" id="onlyEligible" role="switch" type="checkbox"/>
+<label class="form-check-label small" for="onlyEligible">Zobrazit jen dostupné (skrýt „nemá nárok“)</label>
+</div>
+<div class="form-check form-switch">
+<input class="form-check-input" id="compactMode" role="switch" type="checkbox"/>
+<label class="form-check-label small" for="compactMode">Kompaktní režim</label>
+</div>
+<div class="ms-auto small text-muted">
+<span class="legend-dot dot-eligible"></span>dostupné   <span class="legend-dot dot-ineligible"></span>bez nároku
+        </div>
+</div>
+</div>
+<section class="mb-4">
+<ul class="tree">
+<li>
+<div class="d-flex flex-wrap align-items-start gap-3">
+<div aria-hidden="true" class="icon"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"></path></svg></div>
+<div>
+<h2 class="h5 mb-1">§ 1829 občanského zákoníku (odstoupení)</h2>
+<p class="mb-2 small-note">Smlouva uzavřená <strong>mimo prostory dodavatele</strong>. <span class="brand">Možnost odstoupit do 14 dní</span> od podpisu smlouvy (pouze spotřebitel – domácnost). Vztahuje se i na <b>prodloužení smlouvy (prodlužku)</b> - zde ale odstupuje pouze od dodatku, pokud chce ukončit smlouvy, musí  poslat <b>odstoupení + řádnou výpověď</b></p>
+<details class="mb-2">
+<summary class="link-brand">Zobrazit plný popis</summary>
+<div class="pt-2 small-note">
+                  U spotřebitelských smluv uzavřených mimo obchodní prostory má spotřebitel právo odstoupit bez udání důvodu do 14 dnů ode dne uzavření smlouvy. Podnikatelé (vč. OSVČ) toto právo dle § 1829 OZ nemají.
+                </div>
+</details>
+</div>
+</div>
+<ul class="children mt-3" data-children="true">
+<!-- DOMÁCNOST -->
+<li>
+<div class="node-card p-3 eligible" data-eligible="1" data-segment="dom">
+<div class="d-flex align-items-center justify-content-between mb-2">
+<div class="d-flex align-items-center gap-2">
+<div class="icon"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 10 12 3l9 7v11H3zM9 21v-8h6v8"></path></svg></div>
+<h3 class="h6 mb-0">Segment: Domácnost</h3>
+</div>
+<span class="badge text-bg-success">má právo odstoupit</span>
+</div>
+<p class="mb-3">Spotřebitel může <strong>odstoupit do 14 dnů</strong> od podpisu smlouvy.</p>
+<div class="row g-2 align-items-end">
+<div class="col-12 col-md-6">
+<label class="form-label" for="signDate">Datum podpisu smlouvy</label>
+<input class="form-control border-brand" id="signDate" type="date">
+<div class="form-text">Zadejte datum uzavření, vypočítáme poslední den lhůty.</div>
+</input></div>
+<div class="col-12 col-md-6">
+<label class="form-label">Odstoupit lze do</label>
+<input class="form-control" id="untilDate" placeholder="—" readonly="" type="text">
+</input></div>
+</div>
+<div class="mt-3 d-flex flex-wrap gap-2">
+<button class="btn btn-brand btn-sm" id="calcBtn"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="20" rx="2" width="14" x="5" y="2"></rect><path d="M8 6h8M8 11h2m4 0h2M8 15h2m4 0h2M8 19h2m4 0h2"></path></svg> Spočítat 14 dní</button>
+<button class="btn btn-outline-secondary btn-sm" id="clearBtn"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M20 7V3h-4M4 17v4h4M20 11a8 8 0 0 0-14-5L4 8M4 13a8 8 0 0 0 14 5l2-2"></path></svg> Vymazat</button>
+</div>
+</div>
+</li>
+<!-- FIRMA -->
+<li>
+<div class="node-card p-3 ineligible" data-eligible="0" data-segment="firma">
+<div class="d-flex align-items-center justify-content-between mb-2">
+<div class="d-flex align-items-center gap-2">
+<div class="icon"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 21V6l9-3v18m0-14 9 3v11M6 9h2m-2 4h2m-2 4h2m7-5h2m-2 4h2"></path></svg></div>
+<h3 class="h6 mb-0">Segment: Firma (právnická osoba)</h3>
+</div>
+<span class="badge text-bg-secondary">nemá právo</span>
+</div>
+<p class="mb-0 muted">Ustanovení § 1829 OZ se nepoužije, <strong>právo odstoupit do 14 dnů nevzniká</strong>.</p>
+</div>
+</li>
+<!-- OSVČ -->
+<li>
+<div class="node-card p-3 ineligible" data-eligible="0" data-segment="osvc">
+<div class="d-flex align-items-center justify-content-between mb-2">
+<div class="d-flex align-items-center gap-2">
+<div class="icon"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="7"></rect><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"></path></svg></div>
+<h3 class="h6 mb-0">Segment: OSVČ</h3>
+</div>
+<span class="badge text-bg-secondary">nemá právo</span>
+</div>
+<p class="mb-0 muted">Jako podnikatel (i když fyzická osoba) <strong>nemá právo odstoupit do 14 dnů</strong> dle § 1829 OZ.</p>
+</div>
+</li>
+</ul>
+</li>
+<!-- § 11a EZ – výpověď (Domácnost, OSVČ ano; Firma ne) -->
+<li>
+<div class="d-flex flex-wrap align-items-start gap-3">
+<div aria-hidden="true" class="icon"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="5" rx="1" width="18" x="3" y="4"></rect><rect height="5" rx="1" width="18" x="3" y="10"></rect><rect height="5" rx="1" width="18" x="3" y="16"></rect></svg></div>
+<div>
+<h2 class="h5 mb-1">§ 11a energetického zákona – Odstoupení od smlouvy, pokud nemá dodavatel zajištěno minimálně 70 % indexu (nakoupeno)
+
+
+</h2>
+<p class="mb-2 small-note">Domácnost a OSVČ <span class="brand">mají právo vypovědět</span>. Výpovědní doba končí <strong>posledním dnem kalendářního měsíce následujícího</strong> po doručení výpovědi. Firma: <strong>nemá právo</strong>.</p>
+</div>
+</div>
+<ul class="children mt-3" data-children="true">
+<li>
+<div class="node-card p-3 eligible" data-eligible="1" data-segment="dom">
+<div class="d-flex align-items-center justify-content-between mb-2">
+<div class="d-flex align-items-center gap-2"><div class="icon"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 10 12 3l9 7v11H3zM9 21v-8h6v8"></path></svg></div><h3 class="h6 mb-0">Domácnost</h3></div>
+<span class="badge text-bg-success">má právo</span>
+</div>
+<div class="row g-2 align-items-end">
+<div class="col-12 col-md-6">
+<label class="form-label">Datum doručení výpovědi</label>
+<input class="form-control border-brand" id="a11aDoru" type="date">
+<div class="form-text">Vypočítáme poslední den následujícího měsíce.</div>
+</input></div>
+<div class="col-12 col-md-6">
+<label class="form-label">Konec výpovědní doby</label>
+<input class="form-control" id="a11aKonec" placeholder="—" readonly="" type="text">
+</input></div>
+</div>
+<div class="mt-3 d-flex gap-2"><button class="btn btn-brand btn-sm" id="a11aCalc"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="20" rx="2" width="14" x="5" y="2"></rect><path d="M8 6h8M8 11h2m4 0h2M8 15h2m4 0h2M8 19h2m4 0h2"></path></svg>Spočítat</button><button class="btn btn-outline-secondary btn-sm" id="a11aClear"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M20 7V3h-4M4 17v4h4M20 11a8 8 0 0 0-14-5L4 8M4 13a8 8 0 0 0 14 5l2-2"></path></svg>Vymazat</button></div>
+</div>
+</li>
+<li>
+<div class="node-card p-3 eligible" data-eligible="1" data-segment="osvc">
+<div class="d-flex align-items-center justify-content-between mb-2">
+<div class="d-flex align-items-center gap-2"><div class="icon"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="7"></rect><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"></path></svg></div><h3 class="h6 mb-0">OSVČ</h3></div>
+<span class="badge text-bg-success">má právo</span>
+</div>
+<p class="mb-0">Stejné pravidlo jako domácnost: konec poslední den měsíce následujícího po doručení výpovědi.</p>
+</div>
+</li>
+<li>
+<div class="node-card p-3 ineligible" data-eligible="0" data-segment="firma">
+<div class="d-flex align-items-center justify-content-between mb-2">
+<div class="d-flex align-items-center gap-2"><div class="icon"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 21V6l9-3v18m0-14 9 3v11M6 9h2m-2 4h2m-2 4h2m7-5h2m-2 4h2"></path></svg></div><h3 class="h6 mb-0">Firma</h3></div>
+<span class="badge text-bg-secondary">nemá právo</span>
+</div>
+<p class="mb-0 muted">Dle podkladů se firma nemůže dovolávat § 11a EZ ve smyslu uvedené výpovědi.</p>
+</div>
+</li>
+</ul>
+</li>
+<!-- § 11b EZ – od podpisu do 15. dne po zahájení dodávky (jen domácnost) -->
+<li>
+<div class="d-flex flex-wrap align-items-start gap-3">
+<div aria-hidden="true" class="icon"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m13 2-8 12h7l-1 8 8-12h-7z"></path></svg></div>
+<div>
+<h2 class="h5 mb-1">§ 11b energetického zákona – Odstoupení do 15 dní od zahájení dodávek, mimo prostory a jen při ZD, je jedno, kdo to podepíše</h2>
+<p class="mb-2 small-note">Domácnost může vypovědět <strong>od podpisu až do 15. dne po zahájení dodávek</strong>. Výpovědní doba je <strong>15 dní</strong> a běží <strong>od prvního dne následujícího měsíce</strong>. OSVČ/Firma: <strong>nemá nárok</strong>.</p>
+</div>
+</div>
+<ul class="children mt-3" data-children="true">
+<li>
+<div class="node-card p-3 eligible" data-eligible="1" data-segment="dom">
+<div class="row g-2 align-items-end">
+<div class="col-12 col-md-4">
+<label class="form-label">Datum podpisu</label>
+<input class="form-control border-brand" id="a11bPodpis" type="date">
+</input></div>
+<div class="col-12 col-md-4">
+<label class="form-label">Zahájení dodávky</label>
+<input class="form-control border-brand" id="a11bStart" type="date">
+</input></div>
+<div class="col-12 col-md-4">
+<label class="form-label">Okno pro podání</label>
+<input class="form-control" id="a11bOkno" placeholder="—" readonly="" type="text"/>
+</div>
+</div>
+<div class="row g-2 align-items-end mt-1">
+<div class="col-12 col-md-6">
+<label class="form-label">Datum doručení výpovědi</label>
+<input class="form-control border-brand" id="a11bDoru" type="date"/>
+</div>
+<div class="col-12 col-md-6">
+<label class="form-label">Konec 15denní výpovědi</label>
+<input class="form-control" id="a11bKonec" placeholder="—" readonly="" type="text"/>
+</div>
+</div>
+<div class="mt-3 d-flex gap-2"><button class="btn btn-brand btn-sm" id="a11bCalc">Spočítat</button><button class="btn btn-outline-secondary btn-sm" id="a11bClear">Vymazat</button></div>
+</div>
+</li>
+<li>
+<div class="node-card p-3 ineligible" data-eligible="0" data-segment="osvc">
+<div class="d-flex align-items-center justify-content-between mb-2"><div class="d-flex align-items-center gap-2"><div class="icon"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="7"></rect><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"></path></svg></div><h3 class="h6 mb-0">OSVČ</h3></div><span class="badge text-bg-secondary">nemá nárok</span></div>
+<p class="mb-0 muted">Ustanovení § 11b není pro OSVČ dostupné. Před LEX OZE III byla tato možnost dostupná i pro OSVČ, nově na ni však nárok nemají.</p>
+</div>
+</li>
+<li>
+<div class="node-card p-3 ineligible" data-eligible="0" data-segment="firma">
+<div class="d-flex align-items-center justify-content-between mb-2"><div class="d-flex align-items-center gap-2"><div class="icon"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 21V6l9-3v18m0-14 9 3v11M6 9h2m-2 4h2m-2 4h2m7-5h2m-2 4h2"></path></svg></div><h3 class="h6 mb-0">Firma</h3></div><span class="badge text-bg-secondary">nemá nárok</span></div>
+<p class="mb-0 muted">Ustanovení § 11b není pro firmy dostupné.</p>
+</div>
+</li>
+</ul>
+</li>
+<!-- § 11c EZ – prolongace (jen domácnost) -->
+<li>
+<div class="d-flex flex-wrap align-items-start gap-3">
+<div aria-hidden="true" class="icon"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M20 7V3h-4M4 17v4h4M20 11a8 8 0 0 0-14-5L4 8M4 13a8 8 0 0 0 14 5l2-2"></path></svg></div>
+<div>
+<h2 class="h5 mb-1">§ 11c energetického zákona – Nesouhlas s prolongací</h2>
+<p class="mb-2 small-note">Dodavatel musí informovat <strong>30 dní před prolongací</strong>. Domácnost může vypovědět <strong>nejpozději 20 dní před datem prolongace</strong>. Pokud dodavatel neinformuje včas dle § 11c/2, smlouva přechází na dobu neurčitou s <strong>tříměsíční výpovědní lhůtou</strong> (od 1. dne následujícího měsíce) za cenu platnou k poslednímu dni původní doby. OSVČ/Firma: <strong>nemá nárok</strong>.</p>
+</div>
+</div>
+<ul class="children mt-3" data-children="true">
+<li>
+<div class="node-card p-3 eligible" data-eligible="1" data-segment="dom">
+<div class="row g-2 align-items-end">
+<div class="col-12 col-md-6">
+<label class="form-label">Datum prolongace</label>
+<input class="form-control border-brand" id="a11cProlong" type="date"/>
+</div>
+<div class="col-12 col-md-6">
+<label class="form-label">Deadline pro výpověď (−20 dní)</label>
+<input class="form-control" id="a11cDeadline" placeholder="—" readonly="" type="text"/>
+</div>
+</div>
+<div class="form-check mt-2">
+<input class="form-check-input" id="a11cNoNotice" type="checkbox"/>
+<label class="form-check-label" for="a11cNoNotice">Dodavatel neinformoval včas</label>
+</div>
+<div class="row g-2 align-items-end mt-1">
+<div class="col-12 col-md-6">
+<label class="form-label">Datum doručení výpovědi (pro neurčito)</label>
+<input class="form-control border-brand" id="a11cDoru" type="date">
+</input></div>
+<div class="col-12 col-md-6">
+<label class="form-label">Konec 3měsíční výpovědi</label>
+<input class="form-control" id="a11cKonec" placeholder="—" readonly="" type="text"/>
+</div>
+</div>
+<div class="mt-3 d-flex gap-2"><button class="btn btn-brand btn-sm" id="a11cCalc">Spočítat</button><button class="btn btn-outline-secondary btn-sm" id="a11cClear">Vymazat</button></div>
+</div>
+</li>
+<li>
+<div class="node-card p-3 ineligible" data-eligible="0" data-segment="osvc">
+<div class="d-flex align-items-center justify-content-between mb-2"><div class="d-flex align-items-center gap-2"><div class="icon"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="7"></rect><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"></path></svg></div><h3 class="h6 mb-0">OSVČ</h3></div><span class="badge text-bg-secondary">nemá nárok</span></div>
+<p class="mb-0 muted">§ 11c EZ je koncipován pro spotřebitele – OSVČ zde obvykle <strong>nemá nárok</strong>. Dle tohoto paragrafu nemá OSVČ nárok na ukončení smlouvy, nicméně to akceptujeme a platí zde pravidlo <b>tříměsíční výpovědní lhůty</b> </p>
+</div>
+</li>
+<li>
+<div class="node-card p-3 ineligible" data-eligible="0" data-segment="firma">
+<div class="d-flex align-items-center justify-content-between mb-2"><div class="d-flex align-items-center gap-2"><div class="icon"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 21V6l9-3v18m0-14 9 3v11M6 9h2m-2 4h2m-2 4h2m7-5h2m-2 4h2"></path></svg></div><h3 class="h6 mb-0">Firma</h3></div><span class="badge text-bg-secondary">nemá nárok</span></div>
+<p class="mb-0 muted">Dle tohoto paragrafu nemá firma nárok na ukončení smlouvy, nicméně to akceptujeme a platí zde pravidlo <b>tříměsíční výpovědní lhůty</b></p>
+</div>
+</li>
+</ul>
+</li>
+<!-- § 11ca EZ – domácnost 1 měsíc od 1. dne následujícího měsíce -->
+<li>
+<div class="d-flex flex-wrap align-items-start gap-3">
+<div aria-hidden="true" class="icon"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l4 2"></path></svg></div>
+<div>
+<h2 class="h5 mb-1">§ 11ca energetického zákona – Dynamická cena (spot)</h2>
+<p class="mb-2 small-note">Domácnost: výpovědní lhůta <strong>1 měsíc</strong> od <strong>1. dne následujícího měsíce</strong>. OSVČ/Firma: <strong>nemá nárok</strong>.</p>
+</div>
+</div>
+<ul class="children mt-3" data-children="true">
+<li>
+<div class="node-card p-3 eligible" data-eligible="1" data-segment="dom">
+<div class="row g-2 align-items-end">
+<div class="col-12 col-md-6">
+<label class="form-label">Datum doručení výpovědi</label>
+<input class="form-control border-brand" id="a11caDoru" type="date"/>
+</div>
+<div class="col-12 col-md-6">
+<label class="form-label">Konec 1měsíční výpovědi</label>
+<input class="form-control" id="a11caKonec" placeholder="—" readonly="" type="text"/>
+</div>
+</div>
+<div class="mt-3 d-flex gap-2"><button class="btn btn-brand btn-sm" id="a11caCalc">Spočítat</button><button class="btn btn-outline-secondary btn-sm" id="a11caClear">Vymazat</button></div>
+</div>
+</li>
+<li>
+<div class="node-card p-3 ineligible" data-eligible="0" data-segment="osvc">
+<div class="d-flex align-items-center justify-content-between mb-2"><div class="d-flex align-items-center gap-2"><div class="icon"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="7"></rect><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"></path></svg></div><h3 class="h6 mb-0">OSVČ</h3></div><span class="badge text-bg-secondary">nemá nárok</span></div>
+<p class="mb-0 muted">OSVČ nemá možnost ukončit smlouvu u spotu podle tohoto paragrafu. Musí využít jinou možnost ukončení nejlépe dohodou – zde platí <b>30denní výpovědní lhůta</b>. A nebo <b>§ 11c odst. 4 </b> – smlouva na dobu neurčitou: standardně tříměsíční výpovědní doba (pokud smlouva neumožňuje kratší).,<b>§ 11a odst. 6 </b> zvýšení neregulované části ceny / změna smluvních podmínek ze strany dodavatele. A nebo <b> § 11e </b> ztráta vlastnického nebo užívacího práva k odběrnému místu. </p>
+</div>
+</li>
+<li>
+<div class="node-card p-3 ineligible" data-eligible="0" data-segment="firma">
+<div class="d-flex align-items-center justify-content-between mb-2"><div class="d-flex align-items-center gap-2"><div class="icon"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 21V6l9-3v18m0-14 9 3v11M6 9h2m-2 4h2m-2 4h2m7-5h2m-2 4h2"></path></svg></div><h3 class="h6 mb-0">Firma</h3></div><span class="badge text-bg-secondary">nemá nárok</span></div>
+<p class="mb-0 muted">Právnické osoby (firmy) nemají možnost ukončit smlouvu u spotu podle tohoto paragrafu. Musí využít jinou možnost ukončení nejlépe dohodou – zde platí <b>30denní výpovědní lhůta</b>.A nebo <b>§ 11c odst. 4 </b> – smlouva na dobu neurčitou: standardně tříměsíční výpovědní doba (pokud smlouva neumožňuje kratší).,<b>§ 11a odst. 6 </b> zvýšení neregulované části ceny / změna smluvních podmínek ze strany dodavatele. A nebo <b> § 11e </b> ztráta vlastnického nebo užívacího práva k odběrnému místu. </p>
+</div>
+</li>
+</ul>
+</li>
+<!-- § 11a odst. 4 EZ – zvýšení ceny dodavatele -->
+<li>
+<div class="d-flex flex-wrap align-items-start gap-3">
+<div aria-hidden="true" class="icon"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M4 12h16m-7-7 7 7-7 7"></path></svg></div>
+<div>
+<h2 class="h5 mb-1">§ 11a odst. 4 energetického zákona – Zvýšení ceny dodavatele (ne když zvyšuje stát poplatky nebo DI), a změna se nevztahuje na snížení cen - zde nárok není</h2>
+<p class="mb-2 small-note">Dodavatel musí informovat <strong>nejpozději 30 dní před účinností</strong> změny. Domácnost/OSVČ může vypovědět <strong>nejpozději 10 dní před účinností</strong>. Firma: podle VOPD; pokud zašle oznámení dle § 11a, akceptujeme i to.</p>
+</div>
+</div>
+<ul class="children mt-3" data-children="true">
+<li>
+<div class="node-card p-3 eligible" data-eligible="1" data-segment="dom">
+<div class="row g-2 align-items-end">
+<div class="col-12 col-md-6">
+<label class="form-label">Datum účinnosti změny ceny</label>
+<input class="form-control border-brand" id="a11a4Ucinnost" type="date"/>
+</div>
+<div class="col-12 col-md-6">
+<label class="form-label">Nejzazší den pro výpověď (−10 dní)</label>
+<input class="form-control" id="a11a4Deadline" placeholder="—" readonly="" type="text"/>
+</div>
+</div>
+<div class="mt-3 d-flex gap-2"><button class="btn btn-brand btn-sm" id="a11a4Calc">Spočítat</button><button class="btn btn-outline-secondary btn-sm" id="a11a4Clear">Vymazat</button></div>
+</div>
+</li>
+<li>
+<div class="node-card p-3 eligible" data-eligible="1" data-segment="osvc">
+<div class="d-flex align-items-center justify-content-between mb-2"><div class="d-flex align-items-center gap-2"><div class="icon"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="7"></rect><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"></path></svg></div><h3 class="h6 mb-0">OSVČ</h3></div><span class="badge text-bg-success">má právo</span></div>
+<p class="mb-0">OSVČ může vypovědět nejpozději <strong>10 dní před účinností</strong> oznámené změny ceny.</p>
+</div>
+</li>
+<li>
+<div class="node-card p-3 eligible" data-eligible="1" data-segment="firma">
+<div class="d-flex align-items-center justify-content-between mb-2"><div class="d-flex align-items-center gap-2"><div class="icon"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 21V6l9-3v18m0-14 9 3v11M6 9h2m-2 4h2m-2 4h2m7-5h2m-2 4h2"></path></svg></div><h3 class="h6 mb-0">Firma</h3></div><span class="badge text-bg-success">má právo</span></div>
+<p class="mb-0 muted">U firem se řídíme především <strong>VOPD</strong>; zákonné právo dle § 11a/4 obvykle nedopadá. Nicméně pokud firma zašle výpověď dle §11a, tak akceptujeme i to   </p>
+</div>
+</li>
+</ul>
+</li>
+<!-- § 11e EZ – 15 dní od 1. dne násl. měsíce (firma nemůže) -->
+<li>
+<div class="d-flex flex-wrap align-items-start gap-3">
+<div aria-hidden="true" class="icon"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l4 2"></path></svg></div>
+<div>
+<h2 class="h5 mb-1">§ 11e energetického zákona – Přepis OM</h2>
+<p class="mb-2 small-note">Domácnost/OSVČ: výpovědní doba <strong>15 dní</strong> a počíná <strong>1. dnem následujícího měsíce</strong>. Firma: <strong>nemůže využít</strong>.</p>
+</div>
+</div>
+<ul class="children mt-3" data-children="true">
+<li>
+<div class="node-card p-3 eligible" data-eligible="1" data-segment="dom">
+<div class="row g-2 align-items-end">
+<div class="col-12 col-md-6">
+<label class="form-label">Datum doručení výpovědi</label>
+<input class="form-control border-brand" id="a11eDoru" type="date"/>
+</div>
+<div class="col-12 col-md-6">
+<label class="form-label">Konec 15denní výpovědi</label>
+<input class="form-control" id="a11eKonec" placeholder="—" readonly="" type="text"/>
+</div>
+</div>
+<div class="mt-3 d-flex gap-2"><button class="btn btn-brand btn-sm" id="a11eCalc">Spočítat</button><button class="btn btn-outline-secondary btn-sm" id="a11eClear">Vymazat</button></div>
+</div>
+</li>
+<li>
+<div class="node-card p-3 eligible" data-eligible="1" data-segment="osvc">
+<div class="d-flex align-items-center justify-content-between mb-2"><div class="d-flex align-items-center gap-2"><div class="icon"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="7"></rect><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"></path></svg></div><h3 class="h6 mb-0">OSVČ</h3></div><span class="badge text-bg-success">má právo</span></div>
+<p class="mb-0">Výpovědní doba <strong>15 dní</strong> a běží od <strong>1. dne následujícího měsíce</strong>.</p>
+</div>
+</li>
+<li>
+<div class="node-card p-3 ineligible" data-eligible="0" data-segment="firma">
+<div class="d-flex align-items-center justify-content-between mb-2"><div class="d-flex align-items-center gap-2"><div class="icon"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 21V6l9-3v18m0-14 9 3v11M6 9h2m-2 4h2m-2 4h2m7-5h2m-2 4h2"></path></svg></div><h3 class="h6 mb-0">Firma</h3></div><span class="badge text-bg-secondary">nemůže</span></div>
+<p class="mb-0 muted">Jedná se o ukončení smlouvy dohodou s klasickou 30denní výpovědní lhůtou.</p>
+</div>
+</li>
+</ul>
+</li>
+<!-- § 11o EZ – do 15. dne po zahájení dodávky (domácnost) -->
+<li>
+<div class="d-flex flex-wrap align-items-start gap-3">
+<div aria-hidden="true" class="icon"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="16" rx="2" width="18" x="3" y="5"></rect><path d="M7 3v4m10-4v4M3 10h18m-12 4h3v3H9z"></path></svg></div>
+<div>
+<h2 class="h5 mb-1">§ 11o energetického zákona – do 15. dne po zahájení dodávky (Smlouva uzavřená přes zprostředkovatele, platí i při prodloužení dodávek. Smlouva není podepsána přímo ZK.)</h2>
+<p class="mb-2 small-note">Domácnost může kdykoliv <strong>do 15. dne po zahájení dodávky</strong> (včetně prolongace). Výpovědní doba <strong>15 dní</strong> od 1. dne následujícího měsíce. OSVČ/Firma: <strong>nemá nárok</strong>.</p>
+</div>
+</div>
+<ul class="children mt-3" data-children="true">
+<li>
+<div class="node-card p-3 eligible" data-eligible="1" data-segment="dom">
+<div class="row g-2 align-items-end">
+<div class="col-12 col-md-6">
+<label class="form-label">Zahájení dodávky</label>
+<input class="form-control border-brand" id="a11oStart" type="date"/>
+<div class="form-text">Okno trvá do 15. dne po startu.</div>
+</div>
+<div class="col-12 col-md-6">
+<label class="form-label">Okno pro podání</label>
+<input class="form-control" id="a11oOkno" placeholder="—" readonly="" type="text"/>
+</div>
+</div>
+<div class="row g-2 align-items-end mt-1">
+<div class="col-12 col-md-6">
+<label class="form-label">Datum doručení výpovědi</label>
+<input class="form-control border-brand" id="a11oDoru" type="date"/>
+</div>
+<div class="col-12 col-md-6">
+<label class="form-label">Konec 15denní výpovědi</label>
+<input class="form-control" id="a11oKonec" placeholder="—" readonly="" type="text"/>
+</div>
+</div>
+<div class="mt-3 d-flex gap-2"><button class="btn btn-brand btn-sm" id="a11oCalc">Spočítat</button><button class="btn btn-outline-secondary btn-sm" id="a11oClear">Vymazat</button></div>
+</div>
+</li>
+<li>
+<div class="node-card p-3 ineligible" data-eligible="0" data-segment="osvc">
+<div class="d-flex align-items-center justify-content-between mb-2"><div class="d-flex align-items-center gap-2"><div class="icon"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="7"></rect><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"></path></svg></div><h3 class="h6 mb-0">OSVČ</h3></div><span class="badge text-bg-secondary">nemá nárok</span></div>
+<p class="mb-0 muted">Okno do 15. dne po startu je vyhrazeno pro domácnosti (spotřebitele).</p>
+</div>
+</li>
+<li>
+<div class="node-card p-3 ineligible" data-eligible="0" data-segment="firma">
+<div class="d-flex align-items-center justify-content-between mb-2"><div class="d-flex align-items-center gap-2"><div class="icon"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 21V6l9-3v18m0-14 9 3v11M6 9h2m-2 4h2m-2 4h2m7-5h2m-2 4h2"></path></svg></div><h3 class="h6 mb-0">Firma</h3></div><span class="badge text-bg-secondary">nemá nárok</span></div>
+<p class="mb-0 muted">Právnické osoby musí postupovat dle smlouvy/VOP; zákonné okno zde <strong>není</strong>.</p>
+</div>
+</li>
+</ul>
+</li>
+<!-- § 1829a OZ – 30denní odstoupení (jen domácnost) -->
+<li>
+<div class="d-flex flex-wrap align-items-start gap-3">
+<div aria-hidden="true" class="icon"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="17" rx="2" width="16" x="4" y="5"></rect><path d="M9 3h6v4H9zm0 12 2 2 4-4"></path></svg></div>
+<div>
+<h2 class="h5 mb-1">§ 1829a občanského zákoníku – Smlouva mimo prostory během organizované prodejní akce.</h2>
+<p class="mb-2 small-note">Domácnost: právo <strong>odstoupit do 30 dnů</strong>. OSVČ/Firma: <strong>nemá nárok</strong>.</p>
+</div>
+</div>
+<ul class="children mt-3" data-children="true">
+<li>
+<div class="node-card p-3 eligible" data-eligible="1" data-segment="dom">
+<div class="row g-2 align-items-end">
+<div class="col-12 col-md-6">
+<label class="form-label">Datum podpisu smlouvy</label>
+<input class="form-control border-brand" id="oz1829aPodpis" type="date"/>
+</div>
+<div class="col-12 col-md-6">
+<label class="form-label">Odstoupit lze do</label>
+<input class="form-control" id="oz1829aDo" placeholder="—" readonly="" type="text"/>
+</div>
+</div>
+<div class="mt-3 d-flex gap-2"><button class="btn btn-brand btn-sm" id="oz1829aCalc">Spočítat 30 dní</button><button class="btn btn-outline-secondary btn-sm" id="oz1829aClear">Vymazat</button></div>
+</div>
+</li>
+<li>
+<div class="node-card p-3 ineligible" data-eligible="0" data-segment="osvc">
+<div class="d-flex align-items-center justify-content-between mb-2"><div class="d-flex align-items-center gap-2"><div class="icon"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="7"></rect><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"></path></svg></div><h3 class="h6 mb-0">OSVČ</h3></div><span class="badge text-bg-secondary">nemá nárok</span></div>
+<p class="mb-0 muted">Ustanovení § 1829a OZ je spotřebitelské – OSVČ <strong>bez nároku</strong>.</p>
+</div>
+</li>
+<li>
+<div class="node-card p-3 ineligible" data-eligible="0" data-segment="firma">
+<div class="d-flex align-items-center justify-content-between mb-2"><div class="d-flex align-items-center gap-2"><div class="icon"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 21V6l9-3v18m0-14 9 3v11M6 9h2m-2 4h2m-2 4h2m7-5h2m-2 4h2"></path></svg></div><h3 class="h6 mb-0">Firma</h3></div><span class="badge text-bg-secondary">nemá nárok</span></div>
+<p class="mb-0 muted">Právnické osoby nejsou spotřebiteli – <strong>bez nároku</strong>.</p>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- Dynamicky doplňovaný přehled nedostupných větví pro zvolený segment -->
+<div class="mt-3" hidden="" id="notAvailableWrap">
+<div class="alert alert-secondary py-2 px-3 mb-0">
+<strong class="me-2"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m8 12 3 3 5-6"></path></svg> Pro zvolený segment nejsou dostupné:</strong>
+<span class="small" id="notAvailableList"></span>
+</div>
+</div>
+<footer class="pt-2 small text-center text-muted">
+      UIX maketa • Stromový rozcestník • 
+</footer>
+</section></div></div></div><div aria-hidden="true" class="content-section" id="page-video" role="tabpanel" tabindex="0">
+<h2 class="section-title section-plain">Video tutoriály</h2>
+<p class="text-muted mb-4">Vyberte si konkrétní téma, které vás zajímá. Pro zvětšení videa využijte ikonu čtverečku
+        v pravém horním rohu přehrávače.</p>
+<div class="row row-cols-1 row-cols-xl-2 g-4">
+<div class="col">
+<div class="video-card">
+<h6 class="fw-bold mb-2"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="m10 9 5 3-5 3z"></path></svg>Rozdíl mezi smlouvou a dodatkem, kdy lze tedy podat výpověď a kdy odstoupení</h6>
+<div class="ratio ratio-16x9 rounded-3 overflow-hidden shadow-sm bg-black">
+<iframe allow="autoplay; fullscreen" allowfullscreen="" src="https://drive.google.com/file/d/1LfpoHBYlgjq4SwIkpZ2R4ZhxEEi4YKAW/preview"></iframe>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="video-card">
+<h6 class="fw-bold mb-2"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="m10 9 5 3-5 3z"></path></svg>LEX OZE III - Výpovědi a odstoupení</h6>
+<div class="ratio ratio-16x9 rounded-3 overflow-hidden shadow-sm bg-black">
+<iframe allow="autoplay; fullscreen" allowfullscreen="" src="https://drive.google.com/file/d/1PzTbU5MJ9yFycFwJSGAD-wBepkpzrv0O/preview"></iframe>
+</div>
+</div>
+</div>
+</div></div><div aria-hidden="true" class="content-section" id="page-test" role="tabpanel" tabindex="0">
+<h2 class="section-title section-plain" style="color: var(--epet-purple);">Ověření znalostí</h2>
+<p>Po prostudování manuálu prosím vyplňte tento opakovací test. Výsledky budou automaticky
+                    zaznamenány.
+                </p>
+<div class="shadow-sm rounded-3 overflow-hidden" style="border: 1px solid #eee;">
+<iframe allowfullscreen="" frameborder="0" height="600px" marginheight="0" marginwidth="0" mozallowfullscreen="" msallowfullscreen="" src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__abHlldUMlcyUkU2QjNaR0VLVFNZUEw1TEVORU9XSS4u" style="border: none; max-width:100%; max-height:100vh" webkitallowfullscreen="" width="100%">
+</iframe>
+</div>
+</div></article></main></div><script>(function(){'use strict';const root=document.querySelector('.book-container');if(!root)return;const buttons=[...root.querySelectorAll('.book-tabs [data-target]')],pages=[...root.querySelectorAll('.content-section')],group=root.querySelector('[data-navgroup="prepis"]');function show(id){const target=pages.find(p=>p.id===id);if(!target)return;pages.forEach(p=>{const a=p===target;p.classList.toggle('active',a);p.setAttribute('aria-hidden',String(!a))});buttons.forEach(b=>{const a=b.dataset.target===id;b.classList.toggle('active',a);b.setAttribute('aria-selected',String(a));b.tabIndex=a?0:-1});if(group){const sub=!!group.querySelector('.sub-tabs [data-target="'+id+'"]');if(sub)group.classList.add('open');const main=group.querySelector(':scope > [data-target]');if(main)main.setAttribute('aria-expanded',String(group.classList.contains('open')))}}buttons.forEach(b=>{b.addEventListener('click',()=>{if(group&&b===group.querySelector(':scope > [data-target]'))group.classList.toggle('open');show(b.dataset.target)});b.addEventListener('keydown',e=>{if(!['ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.key))return;e.preventDefault();const visible=buttons.filter(x=>x.getClientRects().length);const i=visible.indexOf(b),step=['ArrowRight','ArrowDown'].includes(e.key)?1:-1,n=visible[(i+step+visible.length)%visible.length];if(n){n.focus();show(n.dataset.target)}})});const hash=(location.hash||'').slice(1);show(pages.some(p=>p.id===hash)?hash:'page-intro')})();</script><script>
+    const signDate = document.getElementById('signDate');
+    const untilDate = document.getElementById('untilDate');
+    const calcBtn = document.getElementById('calcBtn');
+    const clearBtn = document.getElementById('clearBtn');
+
+    function formatCZ(d){
+      return d.toLocaleDateString('cs-CZ', { day:'2-digit', month:'2-digit', year:'numeric' });
+    }
+    function addDays(dateStr, days){
+      const d = new Date(dateStr);
+      if(Number.isNaN(d.getTime())) return null;
+      d.setDate(d.getDate() + days);
+      return d;
+    }
+    calcBtn?.addEventListener('click', () => {
+      if(!signDate.value){ untilDate.value = 'Zadejte datum podpisu'; return; }
+      // 14 kalendářních dnů od podpisu – poslední den lhůty
+      const end = addDays(signDate.value, 14);
+      untilDate.value = end ? formatCZ(end) : 'Neplatné datum';
+    });
+    clearBtn?.addEventListener('click', () => {
+      signDate.value = '';
+      untilDate.value = '';
+    });
+      // ==== Helpers for new calculators ====
+    function endOfMonth(d){ const t=new Date(d.getFullYear(), d.getMonth()+1, 0); return t; }
+    function endOfNextMonthFrom(dateStr){ const d=new Date(dateStr); if(Number.isNaN(d.getTime())) return null; const next=new Date(d.getFullYear(), d.getMonth()+2, 0); return next; }
+    function firstDayNextMonth(dateStr){ const d=new Date(dateStr); if(Number.isNaN(d.getTime())) return null; return new Date(d.getFullYear(), d.getMonth()+1, 1); }
+    function addMonths(date, m){ const d=new Date(date); d.setMonth(d.getMonth()+m); return d; }
+
+    // §11a
+    document.getElementById('a11aCalc')?.addEventListener('click', ()=>{
+      const v=document.getElementById('a11aDoru').value; const end=endOfNextMonthFrom(v); document.getElementById('a11aKonec').value=end?formatCZ(end):'Neplatné datum';
+    });
+    document.getElementById('a11aClear')?.addEventListener('click', ()=>{['a11aDoru','a11aKonec'].forEach(id=>document.getElementById(id).value='');});
+
+    // §11b
+    document.getElementById('a11bCalc')?.addEventListener('click', ()=>{
+      const podpis=document.getElementById('a11bPodpis').value; const start=document.getElementById('a11bStart').value; const doru=document.getElementById('a11bDoru').value;
+      if(start){ const startD=new Date(start); const oknoEnd=new Date(startD); oknoEnd.setDate(oknoEnd.getDate()+15); document.getElementById('a11bOkno').value = `${podpis?formatCZ(new Date(podpis)):'(od podpisu)'} – ${formatCZ(oknoEnd)}`; }
+      if(doru){ const first=firstDayNextMonth(doru); const end=addDays(first.toISOString().slice(0,10),15); document.getElementById('a11bKonec').value=end?formatCZ(end):'—'; }
+    });
+    document.getElementById('a11bClear')?.addEventListener('click', ()=>{['a11bPodpis','a11bStart','a11bOkno','a11bDoru','a11bKonec'].forEach(id=>document.getElementById(id).value='');});
+
+    // §11c
+    document.getElementById('a11cCalc')?.addEventListener('click', ()=>{
+      const prol=document.getElementById('a11cProlong').value; const noNotice=document.getElementById('a11cNoNotice').checked; const doru=document.getElementById('a11cDoru').value;
+      if(prol){ const d=new Date(prol); d.setDate(d.getDate()-20); document.getElementById('a11cDeadline').value=formatCZ(d); }
+      if(noNotice && doru){ const first=firstDayNextMonth(doru); const end=addMonths(first,3); end.setDate(end.getDate()-1); document.getElementById('a11cKonec').value=formatCZ(end); }
+    });
+    document.getElementById('a11cClear')?.addEventListener('click', ()=>{['a11cProlong','a11cDeadline','a11cNoNotice','a11cDoru','a11cKonec'].forEach(id=>{ const el=document.getElementById(id); if(!el) return; if(el.type==='checkbox') el.checked=false; else el.value=''; });});
+
+    // §11ca
+    document.getElementById('a11caCalc')?.addEventListener('click', ()=>{
+      const doru=document.getElementById('a11caDoru').value; if(!doru){document.getElementById('a11caKonec').value='—'; return;}
+      const first=firstDayNextMonth(doru); const end=addMonths(first,1); end.setDate(end.getDate()-1); document.getElementById('a11caKonec').value=formatCZ(end);
+    });
+    document.getElementById('a11caClear')?.addEventListener('click', ()=>{['a11caDoru','a11caKonec'].forEach(id=>document.getElementById(id).value='');});
+
+    // §11a/4 – změna ceny
+    document.getElementById('a11a4Calc')?.addEventListener('click', ()=>{
+      const eff=document.getElementById('a11a4Ucinnost').value; if(!eff){document.getElementById('a11a4Deadline').value='—'; return;}
+      const d=new Date(eff); d.setDate(d.getDate()-10); document.getElementById('a11a4Deadline').value=formatCZ(d);
+    });
+    document.getElementById('a11a4Clear')?.addEventListener('click', ()=>{['a11a4Ucinnost','a11a4Deadline'].forEach(id=>document.getElementById(id).value='');});
+
+    // §11e
+    document.getElementById('a11eCalc')?.addEventListener('click', ()=>{
+      const doru=document.getElementById('a11eDoru').value; if(!doru){document.getElementById('a11eKonec').value='—'; return;}
+      const first=firstDayNextMonth(doru); const end=addDays(first.toISOString().slice(0,10),15); document.getElementById('a11eKonec').value=end?formatCZ(end):'—';
+    });
+    document.getElementById('a11eClear')?.addEventListener('click', ()=>{['a11eDoru','a11eKonec'].forEach(id=>document.getElementById(id).value='');});
+
+    // §11o
+    document.getElementById('a11oCalc')?.addEventListener('click', ()=>{
+      const start=document.getElementById('a11oStart').value; const doru=document.getElementById('a11oDoru').value;
+      if(start){ const s=new Date(start); const endWindow=new Date(s); endWindow.setDate(endWindow.getDate()+15); document.getElementById('a11oOkno').value=`do ${formatCZ(endWindow)}`; }
+      if(doru){ const first=firstDayNextMonth(doru); const end=addDays(first.toISOString().slice(0,10),15); document.getElementById('a11oKonec').value=end?formatCZ(end):'—'; }
+    });
+    document.getElementById('a11oClear')?.addEventListener('click', ()=>{['a11oStart','a11oOkno','a11oDoru','a11oKonec'].forEach(id=>document.getElementById(id).value='');});
+
+    // §1829a OZ
+    document.getElementById('oz1829aCalc')?.addEventListener('click', ()=>{
+      const podpis=document.getElementById('oz1829aPodpis').value; const end=addDays(podpis,30); document.getElementById('oz1829aDo').value=end?formatCZ(end):'—';
+    });
+    document.getElementById('oz1829aClear')?.addEventListener('click', ()=>{['oz1829aPodpis','oz1829aDo'].forEach(id=>document.getElementById(id).value='');});
+    // === SEGMENT FILTERING, ELIGIBILITY LABELLING ===
+  (function(){
+    // Tag segment + eligibility by reading headings and badges
+    const map = { 'Domácnost':'dom', 'OSVČ':'osvc', 'Firma':'firma' };
+    document.querySelectorAll('.children[data-children] > li .node-card').forEach(card=>{
+      const title = card.querySelector('h3.h6')?.textContent?.trim()||'';
+      for(const [k,v] of Object.entries(map)){
+        if(title.includes(k)){ card.dataset.segment = v; break; }
+      }
+      const hasRight = card.querySelector('.badge.text-bg-success');
+      const badgeNo = card.querySelector('.badge.text-bg-secondary');
+      if(hasRight){ card.dataset.eligible='1'; card.classList.add('eligible'); }
+      if(badgeNo){ card.dataset.eligible='0'; card.classList.add('ineligible'); if(!card.querySelector('.ribbon')){ const r=document.createElement('div'); r.className='ribbon'; r.textContent='NEMÁ NÁROK'; card.appendChild(r);} }
+    });
+
+    const radios = {
+      all: document.getElementById('seg-all'),
+      dom: document.getElementById('seg-dom'),
+      osvc: document.getElementById('seg-osvc'),
+      firma: document.getElementById('seg-firma')
+    };
+    const onlyEligible = document.getElementById('onlyEligible');
+    const compactMode = document.getElementById('compactMode');
+    const notWrap = document.getElementById('notAvailableWrap');
+    const notList = document.getElementById('notAvailableList');
+
+    function currentSeg(){
+      if(radios.dom.checked) return 'dom';
+      if(radios.osvc.checked) return 'osvc';
+      if(radios.firma.checked) return 'firma';
+      return 'all';
+    }
+
+    function applyFilters(){
+      const seg = currentSeg();
+      const onlyOk = !!onlyEligible.checked;
+      const hiddenUnavailable = [];
+
+      document.querySelectorAll('.children[data-children] > li .node-card').forEach(card=>{
+        const isSeg = seg==='all' || card.dataset.segment===seg;
+        const ok = card.dataset.eligible==='1';
+        let visible = isSeg && (!onlyOk || ok);
+        card.closest('li').style.display = visible ? '' : 'none';
+        if(isSeg && !ok){ // track ineligible of current segment
+          const h2 = card.closest('li')?.closest('ul')?.previousElementSibling?.querySelector('h2')?.textContent?.trim();
+          if(h2 && !hiddenUnavailable.includes(h2)) hiddenUnavailable.push(h2);
+        }
+      });
+
+      if(seg!=='all' && hiddenUnavailable.length){
+        notWrap.hidden = false;
+        notList.textContent = hiddenUnavailable.join(' • ');
+      } else {
+        notWrap.hidden = true;
+        notList.textContent = '';
+      }
+
+      document.querySelector('.law-tree-module')?.classList.toggle('compact', !!compactMode.checked);
+    }
+
+    Object.values(radios).forEach(r=>r.addEventListener('change', applyFilters));
+    onlyEligible.addEventListener('change', applyFilters);
+    compactMode.addEventListener('change', applyFilters);
+
+    applyFilters();
+  })();
+
+  </script></body></html>

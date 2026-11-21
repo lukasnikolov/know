@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<html lang="cs">
+<head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="light" name="color-scheme"/><title>Zranitelný zákazník – Pracovní postup</title><style>
+:root{--epet:#94C11F;--green:#638719;--deep:#425b10;--orange:#F99F1C;--navy:#20354a;--ink:#29394c;--muted:#68798a;--line:#e1e9ef;--soft:#f7f9f5;--shadow:0 14px 35px rgba(28,48,72,.06)}
+*,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);padding:12px 12px 34px;font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:15px;line-height:1.69;-webkit-font-smoothing:antialiased}button{font:inherit}a{overflow-wrap:anywhere}.site-wrap{max-width:1200px;min-width:0;margin:auto}.svg-icon,.icon-inline{display:inline-block;flex:none;vertical-align:middle;width:19px;height:19px}.icon-inline{width:20px;height:20px;color:#6e902b;margin:0 6px 0 0}
+.breadcrumb-nav{padding:10px 15px;border:1px solid var(--line);border-radius:13px;margin-bottom:15px;background:#fff}.breadcrumb{display:flex;align-items:center;flex-wrap:wrap;list-style:none;gap:0;font-size:.83rem;padding:0;margin:0}.breadcrumb-item{color:#6b7b8b;display:flex;align-items:center;min-width:0}.breadcrumb-item:not(:first-child)::before{content:'›';font-size:1.08rem;font-weight:500;color:#a5b0bb;margin:0 11px}.breadcrumb-item a{color:var(--green);font-weight:750;text-decoration:none}.breadcrumb-item a:hover{text-decoration:underline}.breadcrumb-item a .icon-inline{width:15px;height:15px}.breadcrumb-item.active{font-weight:750;color:#3e5267}
+.hero-banner{position:relative;isolation:isolate;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;margin-bottom:19px;padding:33px 36px;border-radius:23px;min-height:185px;color:#fff;background:radial-gradient(430px 260px at 92% 16%,rgba(255,255,255,.17),transparent 70%),linear-gradient(125deg,#94c11f 0%,#789d20 48%,#354c0e 100%);box-shadow:var(--shadow);overflow:visible}
+.hero-banner::before{content:"";position:absolute;right:31%;top:24px;width:135px;height:135px;border:1px solid rgba(255,255,255,.13);border-radius:50%;pointer-events:none;z-index:-1}.hero-banner::after{content:"";position:absolute;right:33%;top:36px;width:90px;height:90px;border:1px solid rgba(255,255,255,.13);border-radius:50%;pointer-events:none;z-index:-1}.hero-main{min-width:0;flex:1 1 490px}.hero-banner h1{font-size:clamp(1.54rem,2.7vw,2.18rem);font-weight:800;line-height:1.25;letter-spacing:-.034em;margin:0 0 11px;max-width:760px}.hero-banner p{margin:0;color:rgba(255,255,255,.9);font-size:.92rem;font-weight:500}
+.download-disclosure{position:relative;z-index:10;max-width:100%}.download-disclosure summary{display:flex;align-items:center;gap:10px;border-radius:40px;background:white;color:var(--deep);padding:11px 17px;box-shadow:0 5px 16px rgba(22,41,19,.16);font-size:.88rem;font-weight:800;cursor:pointer;list-style:none;user-select:none}.download-disclosure summary::-webkit-details-marker{display:none}.download-disclosure summary::after{content:'';width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-3px);margin-left:6px;transition:.18s}.download-disclosure[open] summary::after{transform:rotate(225deg) translateY(-1px)}.download-options{position:absolute;right:0;top:calc(100% + 9px);max-width:min(365px,calc(100vw - 35px));width:330px;background:#fff;border:1px solid var(--line);border-radius:15px;padding:8px;box-shadow:0 17px 37px rgba(28,42,61,.21)}.download-options a{display:flex;align-items:center;gap:11px;color:var(--ink);text-decoration:none;font-size:.89rem;font-weight:700;padding:12px;border-radius:10px;line-height:1.35}.download-options a:hover{background:#f4fae9;color:var(--green)}.download-options .svg-icon{color:#c94f50}
+.book-container{display:grid;grid-template-columns:273px minmax(0,1fr);align-items:start;gap:19px}.mobile-shell{min-width:0}.mobile-nav-summary{display:none}.book-tabs{position:sticky;top:12px;display:flex;flex-direction:column;gap:5px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:13px;box-shadow:0 7px 24px rgba(28,48,72,.042)}.book-tabs::before{content:"";display:block;height:5px;border-radius:10px;margin:0 9px 9px;background:linear-gradient(90deg,var(--epet),#d3eaa6)}.nav-tab{display:flex;gap:12px;align-items:center;text-align:left;width:100%;padding:12px 13px;line-height:1.42;font-size:.90rem;font-weight:720;border-radius:12px;border:1px solid transparent;background:transparent;color:#55667b;cursor:pointer;transition:background .16s,color .16s,transform .16s}.nav-tab .svg-icon{color:#8693a1;width:20px;height:20px}.nav-tab:hover,.nav-tab:focus-visible{background:#f7faef;color:var(--deep);transform:translateX(2px)}.nav-tab.active{background:#f0f9dd;border-color:#d8e9b6;color:#405d12;font-weight:800}.nav-tab.active .svg-icon{color:#587d19}.nav-tab.test-tab{border-top:1px solid var(--line);margin-top:5px;border-radius:0 0 12px 12px}.nav-tab.test-tab.active{border:1px solid #e8daf4;background:#f6f0fc;color:#794caf}.nav-tab.test-tab.active .svg-icon{color:#794caf}
+.book-page{background:#fff;min-width:0;border:1px solid var(--line);border-radius:22px;padding:30px 31px 35px;min-height:530px;box-shadow:var(--shadow)}.content-section{display:none;min-width:0;animation:show .22s ease}.content-section.active{display:block}@keyframes show{from{opacity:.25;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}.section-title{display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line);padding:0 0 19px;margin:0 0 23px;font-size:clamp(1.24rem,2.15vw,1.58rem);font-weight:800;letter-spacing:-.026em;line-height:1.35;color:var(--green)}.section-number{flex:none;display:inline-flex;align-items:center;justify-content:center;min-width:43px;height:43px;padding:0 6px;border-radius:50%;background:var(--epet);color:#fff;font-size:1rem;font-weight:850}.section-title-icon{flex:none;display:inline-block;width:42px;height:42px;padding:10px;border-radius:12px;background:#f1f8e2;color:var(--green)}.book-page h3{font-size:1.08rem;font-weight:800;color:#34495c;margin:18px 0 12px}.book-page h4{font-size:1.12rem;font-weight:800;margin:15px 0 10px}.book-page p{margin:0 0 13px;line-height:1.72;color:#364a5c}.book-page ul{padding-left:24px;margin:11px 0 15px}.book-page li{line-height:1.7;margin-bottom:9px}.book-page li::marker{color:#74982d}.book-page a{color:var(--green);font-weight:750;text-decoration:none;border-bottom:2px solid #d6e5b3}.book-page a:hover{background:#f5fae9;border-bottom-color:var(--epet)}.book-page b,.book-page strong{font-weight:800;color:#3f581e}.book-page em{color:#526578}.book-page blockquote{margin:18px 0;padding:16px 20px;border-left:4px solid var(--epet);background:#f8fbf2;border-radius:0 12px 12px 0}.book-page blockquote p:last-child{margin-bottom:0}
+.training-card,.email-card{background:#fff;border:1px solid var(--line);border-radius:18px;margin:0 0 16px;padding:21px 22px;box-shadow:0 6px 21px rgba(36,58,79,.04)}.intro-panel{padding:25px 24px;border-top:5px solid var(--epet);background:linear-gradient(180deg,#fff,#fbfdf7)}.intro-panel>p{font-size:1.03rem;color:#34485b;margin-bottom:21px}.intro-panel h3{margin-top:15px;padding-top:18px;border-top:1px solid #e7eee0}.abbrev-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.abbrev-item{display:flex;align-items:center;gap:7px;border:1px solid #e1ebd4;background:#fff;border-radius:12px;padding:12px 13px;min-height:56px;font-size:.91rem;line-height:1.5}.abbrev-item b{color:var(--green)}
+.steps-holder{padding:0;margin:0;border:0;box-shadow:none}.step-panel,.example-panel{border:1px solid var(--line);border-radius:17px;padding:20px 21px;margin:0 0 16px;background:#fff;box-shadow:0 7px 20px rgba(28,48,72,.045)}.step-panel{border-left:4px solid var(--epet)}.step-panel p:last-child,.example-panel p:last-child{margin-bottom:0}.step-panel .step-badge{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--epet);color:white;font-weight:800;margin-right:10px;vertical-align:middle;box-shadow:0 0 0 4px #f2f8e5}.step-panel>p:first-child{margin:0 0 14px}.distributor-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:0!important;list-style:none;margin:6px 0 0!important}.distributor-card{border:1px solid #e5eaf0;border-radius:12px;background:#f9fbfd;padding:14px 13px;font-size:.88rem;line-height:1.55!important;margin:0!important;min-width:0}.distributor-card strong{display:inline-block;margin-bottom:8px;color:var(--green)}.example-panel{background:#f6faff;border-color:#dce8f4}.example-panel p>strong{color:#385c83}.example-panel ul{margin-bottom:0}.gs-quote{margin:0 0 13px!important;padding:18px 20px!important;position:relative;background:#f7fbf1!important;border:1px solid #dbeac5!important;border-left:5px solid var(--epet)!important;border-radius:13px!important}.gs-quote cite{display:block;margin-top:11px;font-style:normal;color:#6f7f86;font-size:.82rem}
+.email-card{padding:17px;background:#f7fafc}.outlook-window{max-width:100%;overflow:hidden;border:1px solid #dce4ec;background:#fff;border-radius:16px;box-shadow:0 12px 28px rgba(30,45,70,.09)}.outlook-header{display:flex;align-items:center;gap:9px;background:linear-gradient(90deg,#0b72c8,#248bd4);color:white;font-size:.85rem;font-weight:800;padding:12px 17px}.outlook-header-title{font-size:.85rem;letter-spacing:.02em}.outlook-header .icon-inline{color:#fff;width:18px;height:18px}.window-controls{display:flex;gap:6px;margin-left:auto}.window-controls::after{content:'●   ●   ●';font-size:.60rem;letter-spacing:3px;color:#dbecfa}.outlook-meta{padding:17px 20px 12px;background:#fbfcfd;border-bottom:1px solid #e4eaf0}.meta-row{display:grid;grid-template-columns:76px minmax(0,1fr);gap:11px;align-items:start;padding:7px 0;font-size:.86rem}.meta-label{color:#7c8794;font-weight:650}.meta-value{color:#34485b;font-weight:600;overflow-wrap:anywhere}.meta-value.blue{color:#1175c2}.outlook-attachments{background:#fff;padding:12px 20px;border-bottom:1px solid #e4eaf0}.outlook-attachments .attachment-box{display:inline-flex;align-items:center;gap:10px;padding:9px 12px;background:#fff9f9;border:1px solid #efdada;border-radius:11px;color:#465165;font-size:.84rem;font-weight:700;max-width:100%;text-decoration:none}.attachment-box .attachment-info{display:flex;flex-direction:column;min-width:0}.attachment-name{max-width:250px;white-space:normal;line-height:1.4}.attachment-size{color:#9a7280;font-size:.75rem;font-weight:500}.attachment-icon{color:#c95a58}.outlook-body{padding:27px 30px 25px;background:#fff;color:#334455;font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:.92rem;line-height:1.7}.outlook-body p{color:#34475a;margin-bottom:15px}.outlook-body ul{margin:11px 0 17px}.outlook-signature{margin-top:24px;border-top:1px solid #e2e8ef;padding-top:17px;color:#526479;font-size:.85rem;line-height:1.7}.outlook-signature a{font-weight:700}.outlook-body i.icon-inline{width:16px;height:16px}.book-page .email-card strong{background:transparent}
+.empty-media{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:325px;padding:40px 30px;border:1px dashed #d7e4cf;border-radius:18px;background:radial-gradient(170px 150px at 50% 10%,#eaf5d9,transparent 90%),linear-gradient(#fff,#fbfcf9)}.empty-media>div:first-child{margin-bottom:13px!important;color:#7e9c55;font-size:2.5rem!important}.empty-media .icon-inline{width:48px;height:48px;color:#8eaa62}.empty-media h4{font-size:1.13rem;color:#526b2d;margin:0 0 11px}.empty-media p{margin:0;max-width:460px;color:#697b8e}.empty-media br{display:block}.book-page .email-card a{word-break:break-word}
+.site-footer{margin-top:19px;height:7px;background:linear-gradient(90deg,#273b50 0 65%,#94c11f 65% 86%,#f99f1c 86% 100%);border-radius:50px}
+@media(max-width:1030px){.book-container{grid-template-columns:minmax(0,1fr)}.mobile-nav-summary{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border:1px solid #d7e5c0;border-radius:13px;background:#f6fbea;color:#536f23;font-weight:800;cursor:pointer;margin-bottom:10px;list-style:none}.mobile-nav-summary::after{content:'⌄';font-size:23px;line-height:1}.mobile-shell[open] .mobile-nav-summary::after{transform:rotate(180deg)}.mobile-shell:not([open]) .book-tabs{display:none}.book-tabs{position:static;max-height:440px;overflow-y:auto;margin-bottom:14px}.book-page{padding:27px 26px}}
+@media(max-width:700px){body{padding:8px 8px 30px}.hero-banner{padding:25px 21px;gap:16px;border-radius:19px;min-height:0}.hero-banner h1{font-size:1.46rem}.book-page{padding:20px 16px;border-radius:18px}.section-title{align-items:flex-start;font-size:1.23rem;gap:10px}.section-number{min-width:40px;height:40px;font-size:.85rem}.training-card{padding:17px 16px}.intro-panel{padding:19px 15px}.abbrev-grid,.distributor-grid{grid-template-columns:1fr}.step-panel,.example-panel{padding:17px 15px}.email-card{padding:9px}.outlook-meta{padding:12px 13px}.meta-row{grid-template-columns:60px minmax(0,1fr);gap:8px}.outlook-body{padding:22px 17px;font-size:.87rem}.outlook-attachments{padding:10px 13px}.download-options{right:auto;left:0}.empty-media{min-height:270px;padding:30px 17px}.book-page ul{padding-left:21px}}
+@media(prefers-reduced-motion:reduce){.content-section{animation:none}.nav-tab{transition:none}}@media print{body{padding:0}.hero-banner{box-shadow:none}.book-container{display:block}.mobile-shell{display:none}.book-page{box-shadow:none;border:none;padding:0}.content-section{display:block!important;break-inside:auto;margin-bottom:30px}.site-footer{display:none}}
+
+
+
+
+/* Zranitelný zákazník / jednotný vizuální standard školicích manuálů */
+.book-page .training-card{margin-bottom:20px}
+.book-page .intro-panel{padding:28px 26px;background:linear-gradient(125deg,#ffffff 0%,#f8fbf2 100%)}
+.book-page .intro-panel p{font-size:1.03rem;line-height:1.8;margin:0}
+.nav-tab{align-items:flex-start}.nav-tab .svg-icon{margin-top:1px}
+.nav-subgroup{display:none;border-left:2px solid #d6e8bd;margin:0 8px 8px 19px;padding:3px 0 3px 9px}
+.nav-subgroup.expanded{display:flex;flex-direction:column;gap:4px}
+.nav-subgroup .sub-nav-tab{font-size:.80rem;padding:10px 8px 10px 11px;border-radius:10px;gap:8px;line-height:1.35;font-weight:670}
+.nav-subgroup .sub-nav-tab .svg-icon{width:16px;height:16px;margin-top:2px}
+.nav-subgroup .sub-nav-tab.active{background:#f0f9df}
+.definition-container{display:flex;flex-direction:column;gap:18px}
+.definition-group{background:#fff;border:1px solid var(--line);border-radius:17px;padding:22px 23px;box-shadow:0 6px 18px rgba(29,50,70,.04);min-width:0}
+.definition-heading,.phase-heading{display:flex;align-items:center;gap:11px;color:#4d6c23!important;font-size:1.11rem!important;font-weight:820!important;border-bottom:1px solid #e2ebd6;padding-bottom:13px;margin:0 0 16px!important;line-height:1.45}
+.definition-heading::before,.phase-heading::before{content:'';display:block;flex:none;width:8px;height:25px;background:var(--epet);border-radius:5px}
+.definition-step,.work-step,.workflow-step{display:flow-root;padding:12px 13px;border-radius:11px;background:#fbfdf8;border:1px solid #eef2e8;margin:0 0 9px!important;line-height:1.66!important;min-width:0}
+.definition-step .step-badge,.work-step .step-badge,.workflow-step .step-badge{float:left;margin:0 12px 4px 0!important;display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:#94c11f;box-shadow:0 0 0 3px #eff7db;color:#fff;font-weight:850;font-size:.85rem;line-height:1}
+.definition-group .notice{margin:12px 0}
+.definition-group.condition-grid .definition-heading{grid-column:1/-1}
+.definition-group.condition-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.condition-grid .definition-step{height:100%;margin:0!important}
+.book-page .acceptance-card{padding:24px 24px;border-top:5px solid #94c11f}
+.acceptance-card>h5{font-weight:820;font-size:1.15rem;color:#516b2a;border-left:5px solid var(--epet);padding:9px 0 10px 17px;margin:24px 0 16px}
+.acceptance-card>h6{font-weight:800;font-size:1rem;color:var(--navy);margin:24px 0 11px}
+.book-page .nested-training-card{padding:19px 19px;border:1px solid #dfebd4;border-radius:15px;background:#fafff6;margin:14px 0 20px}
+.book-page .task-fields-card{border:1px solid #e0e8f0;border-radius:15px;background:#fff;overflow:hidden;padding:0;margin:0 0 19px}
+.task-fields{margin:0!important;padding:0!important;list-style:none}
+.task-field{padding:13px 17px;margin:0!important;border-bottom:1px solid #e7edf2;display:flex;align-items:flex-start;gap:6px;flex-wrap:wrap;line-height:1.5!important}
+.task-field:last-child{border-bottom:0}.task-field:nth-child(even){background:#fafcf9}.task-field .image-frame{width:100%;margin:7px 0}
+.notice{border:1px solid #d6e5f3;border-left:5px solid #5b9bd6;background:#f3f8ff;border-radius:13px;padding:15px 17px;margin:15px 0 17px;color:#30475e;line-height:1.65}
+.notice p:last-child{margin-bottom:0}.notice-warning{border-color:#f1ddc3;border-left-color:#F99F1C;background:#fff8ee;color:#794911}
+.notice-danger{border-color:#efd1d6;border-left-color:#c95461;background:#fff1f3;color:#803a43}
+.notice-note{border-color:#d6e5f3;border-left-color:#5488bd;background:#f4f8fc}
+.notice-secondary{border-color:#e2e7ea;border-left-color:#8494a4;background:#f8fafb}
+.notice .step-badge{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;margin-right:8px;vertical-align:middle;flex:none;border-radius:50%;background:#f99f1c;color:#fff;font-weight:800}
+.notice a{white-space:normal}.notice a:hover{background:#e7f0ff}
+.workflow-container{display:flex;flex-direction:column;gap:16px}
+.workflow-phase{border:1px solid var(--line);border-radius:17px;background:#fff;padding:20px 23px;box-shadow:0 6px 21px rgba(36,58,79,.04);min-width:0}
+.workflow-phase:nth-child(1){border-top:4px solid #94c11f}
+.workflow-phase.success-phase{border-left:5px solid #94c11f;background:#fbfdf8}
+.workflow-phase.danger-phase{border-left:5px solid #ce5963;background:#fffafa}
+.workflow-phase.danger-phase .phase-heading{color:#a54c57!important}
+.workflow-phase.danger-phase .phase-heading::before{background:#ce5963}
+.workflow-phase>ul{border:1px solid #e3eaf0;padding:12px 17px 12px 33px;border-radius:13px;background:#f9fbfc;margin-top:9px}
+.workflow-phase>ul li{margin-bottom:6px}
+.workflow-step{background:#fff}
+.workflow-phase .badge{display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:.8rem;font-weight:780;border:1px solid #e0e7ef;background:#eff4f9;color:#345268;vertical-align:baseline}
+.workflow-phase .bg-danger{background:#fff0f1;color:#9b4654;border-color:#f2d7d9}
+.workflow-phase .bg-warning{background:#fff2dc;color:#986214;border-color:#f5e1bb}
+.workflow-phase .bg-success{background:#eef8df;color:#4e7427;border-color:#d7e8bd}
+.workflow-phase .bg-info{background:#e8f3ff;color:#2e6d91;border-color:#cee4f7}
+.copy-template{display:inline-flex;align-items:center;gap:10px;border:1px solid #cfe1b0;border-radius:12px;background:#eff7e2;color:#4d7117;font-size:.88rem;font-weight:800;padding:10px 15px;margin:0 0 13px;cursor:pointer}
+.copy-template:hover,.copy-template:focus-visible{background:#dff0be;outline-color:#739c27}
+.copy-card{border-left:5px solid #94c11f!important;background:#fff!important;padding:23px 25px!important}
+.copy-card p{margin-bottom:17px}.copy-card p:last-child{margin-bottom:0}
+.image-frame{display:block;margin:17px 0 23px;padding:9px;border-radius:15px;background:#f7f9fc;border:1px solid #e0e7ef;text-align:center;overflow:hidden}
+.manual-screenshot{max-width:100%;height:auto;display:block;margin:0 auto;border-radius:10px;object-fit:contain;box-shadow:0 6px 20px rgba(18,38,60,.08);cursor:zoom-in}
+.image-frame img:focus-visible{outline:3px solid #94c11f;outline-offset:3px}
+.responsive-video{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:#17273d;border-radius:15px}
+.responsive-video iframe{position:absolute;inset:0;border:0;width:100%;height:100%}
+.video-card{padding:19px;background:#fff;border:1px solid #e1e9ee;border-radius:17px;box-shadow:0 8px 23px rgba(22,40,58,.06)}
+.video-card h6{font-size:1.08rem;font-weight:820;color:#4f701d;margin:0 0 14px}
+.video-card .icon-inline{margin-right:8px}
+.book-page .empty-media{min-height:290px}
+.empty-media .icon-inline{width:48px;height:48px}
+.image-lightbox{max-width:min(95vw,1350px);max-height:92vh;padding:33px 14px 14px;border-radius:16px;border:1px solid #e0e7ee;box-shadow:0 20px 75px rgba(10,20,39,.4);background:#fff}
+.image-lightbox::backdrop{background:rgba(11,24,37,.76)}.lightbox-image{max-width:100%;max-height:80vh;object-fit:contain;display:block;margin:auto}.lightbox-close{position:absolute;right:9px;top:5px;border:0;background:#eef4e3;color:#3a5517;font-size:24px;font-weight:800;cursor:pointer;border-radius:7px;line-height:1;padding:4px 9px}
+@media(max-width:700px){.definition-group{padding:17px 15px}.definition-group.condition-grid{grid-template-columns:1fr}.book-page .acceptance-card{padding:17px 15px}.book-page .nested-training-card{padding:15px 12px}.workflow-phase{padding:17px 14px}.copy-card{padding:18px 15px!important}.notice{padding:13px 12px}.definition-step,.work-step,.workflow-step{padding:10px}.task-field{padding:12px}.image-frame{padding:5px;margin:12px 0 19px}}
+</style></head><body><div class="site-wrap"><nav aria-label="Drobečková navigace" class="breadcrumb-nav">
+<ol class="breadcrumb"><li class="breadcrumb-item"><a href="https://sites.google.com/view/znalostka/"><svg aria-hidden="true" class="icon-inline" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v11H3zM9 21v-8h6v8"></path></svg>Znalostní báze</a></li><li class="breadcrumb-item"><a href="https://sites.google.com/view/znalostka/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat">Školení ZIS</a></li><li class="breadcrumb-item"><a href="https://sites.google.com/view/znalostka/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat/minimanu%C3%A1ly">Minimanuály</a></li><li aria-current="page" class="breadcrumb-item active">Zranitelný zákazník</li></ol>
+</nav>
+<header class="hero-banner"><div class="hero-main"><h1>Pracovní postup:  Zranitelný zákazník</h1><p>Znalostní databáze epet | Dokumentace a přílohy</p></div><details class="download-disclosure"><summary><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"></path></svg> Dokumenty ke stažení</summary><div class="download-options"><a href="https://drive.google.com/file/d/18YPPzkF8cpBw_H4N1bGyMI0hn_yEDNoP/view" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"></path></svg><span>Zranitelný zákazník
+ (PDF)</span></a></div></details></header>
+<main class="book-container"><details class="mobile-shell" open=""><summary class="mobile-nav-summary">Pracovní postup</summary><nav aria-label="Navigace školením" class="book-tabs" role="tablist"><button aria-controls="page-intro" aria-selected="true" class="nav-tab active" data-target="page-intro" id="nav-page-intro" role="tab" tabindex="0" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 5h7a3 3 0 0 1 3 3v13H6a3 3 0 0 0-3 0zm10 3a3 3 0 0 1 3-3h5v16a3 3 0 0 0-3 0h-5"></path></svg><span>Pracovní postup</span></button><button aria-controls="page-definice" aria-selected="false" class="nav-tab" data-target="page-definice" id="nav-page-definice" role="tab" tabindex="-1" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 2 20 5v7c0 5-3 8-8 10-5-2-8-5-8-10V5zM8.5 12l2.5 2.5 4.5-5"></path></svg><span>Definice zranitelné osoby a zranitelného zákazníka</span></button><button aria-controls="page-prijeti" aria-selected="false" class="nav-tab" data-target="page-prijeti" id="nav-page-prijeti" role="tab" tabindex="-1" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M4 4h16v13H4zM4 12h4l2 3h4l2-3h4"></path></svg><span>Přijetí informace o zranitelném zákazníkovi</span></button><div class="nav-subgroup" data-parent="page-prijeti"><button aria-controls="page-prijeti-1" aria-selected="false" class="nav-tab sub-nav-tab" data-target="page-prijeti-1" id="nav-page-prijeti-1" role="tab" tabindex="-1" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 3h14v18H5zM8 8h8M8 12h8M8 16h5"></path></svg><span>Popis řešení (dopisujeme do úkolu) - Zákazník je zároveň zranitelnou osobou</span></button><button aria-controls="page-prijeti-2" aria-selected="false" class="nav-tab sub-nav-tab" data-target="page-prijeti-2" id="nav-page-prijeti-2" role="tab" tabindex="-1" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 3h14v18H5zM8 8h8M8 12h8M8 16h5"></path></svg><span>Popis řešení (dopisujeme do úkolu) - Zákazník není zranitelná osoba, ale bydlí u něj</span></button><button aria-controls="page-prijeti-3" aria-selected="false" class="nav-tab sub-nav-tab" data-target="page-prijeti-3" id="nav-page-prijeti-3" role="tab" tabindex="-1" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 3h14v18H5zM8 8h8M8 12h8M8 16h5"></path></svg><span>Popis řešení (dopisuje EK do úkolu) - Zákazník je zároveň zranitelnou osobou</span></button></div><button aria-controls="page-ukol" aria-selected="false" class="nav-tab" data-target="page-ukol" id="nav-page-ukol" role="tab" tabindex="-1" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 6h18v15H3zM3 10h18M7 3v6M17 3v6M8 14h3M8 18h3"></path></svg><span>Termínování úkolů a hlídání platnosti potvrzení</span></button><button aria-controls="page-video" aria-selected="false" class="nav-tab" data-target="page-video" id="nav-page-video" role="tab" tabindex="-1" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 4h18v16H3zM10 8l6 4-6 4z"></path></svg><span>Video návod</span></button><button aria-controls="page-test" aria-selected="false" class="nav-tab test-tab" data-target="page-test" id="nav-page-test" role="tab" tabindex="-1" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 5h14v16H5zM9 5V3h6v2M9 10h6M9 14h6"></path></svg><span>Opakovací test</span></button></nav></details>
+<div class="book-page"><div aria-labelledby="nav-page-intro" class="content-section active" id="page-intro" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">1.</span> Pracovní postup</h2>
+<div class="training-card intro-panel">
+<p>
+                        Tento minimanuál popisuje, jak řešit ze strany Front Office případy, kdy obdržíme informaci o tom, že na našem odběrném místě máme zranitelného zákazníka.
+                    </p>
+</div>
+</div><div aria-labelledby="nav-page-definice" class="content-section" id="page-definice" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">2.</span> Definice zranitelné osoby a zranitelného zákazníka</h2>
+<!-- KARTA: Definice -->
+<div class="definition-container"><div class="definition-group"><h5 class="definition-heading">
+<strong>Definice</strong>
+</h5><p class="definition-step">
+<span class="step-badge">1</span>
+                        S novelou energetického zákona se objevily nové pojmy
+                        <strong>zranitelná osoba</strong> a <strong>zranitelný zákazník</strong>.
+                    </p><p class="definition-step">
+<span class="step-badge">2</span>
+<strong>Zranitelná osoba</strong> je člověk, který ve svém bydlišti provozuje
+                        speciální přístroj zajišťující jeho základní životní funkce a k jeho fungování
+                        potřebuje nepřetržitou dodávku elektřiny.
+                    </p></div><div class="definition-group"><h5 class="definition-heading">
+<strong>Zranitelný zákazník</strong>
+</h5><p class="definition-step">
+<span class="step-badge">3</span>
+                        Zákazník, který s námi sjednal smlouvu o sdružených službách dodávky elektřiny
+                        (nebo smlouvu o dodávce elektřiny) a sám je zranitelnou osobou dle definice výše.
+                    </p><p class="definition-step">
+<span class="step-badge">4</span>
+                        Zákazník, který s námi sjednal smlouvu o sdružených službách dodávky elektřiny
+                        (nebo smlouvu o dodávce elektřiny) a na jeho odběrném místě elektřiny bydlí
+                        zranitelná osoba. On sám ale zranitelnou osobou není.
+                    </p></div><div class="definition-group"><h5 class="definition-heading">
+<strong>Doklady a potvrzení</strong>
+</h5><p class="definition-step">
+<span class="step-badge">5</span>
+                        To, že je zákazník zranitelnou osobou, musí prokázat doložením potvrzení od jeho
+                        ošetřujícího lékaře – toto speciální potvrzení musí obsahovat následující
+                        náležitosti:
+                    </p><p class="definition-step">
+<span class="step-badge">6</span>
+                        Kontaktní a identifikační údaje zranitelného zákazníka a zranitelné osoby,
+                        pokud není zároveň zranitelným zákazníkem.
+                    </p><p class="definition-step">
+<span class="step-badge">7</span>
+                        Určení prostředku pro terapii nebo pro kompenzaci onemocnění.
+                    </p><p class="definition-step">
+<span class="step-badge">8</span>
+                        EAN odběrného místa, kde zranitelná osoba žije a provozuje ono zařízení.
+                    </p><p class="definition-step">
+<span class="step-badge">9</span>
+                        Adresu odběrného místa, kde zranitelná osoba žije a provozuje ono zařízení.
+                    </p><p class="definition-step">
+<span class="step-badge">10</span>
+                        Prohlášení, že zranitelný zákazník nebo zranitelná osoba, která není
+                        zranitelným zákazníkem, využívá některý z prostředků pro terapii nebo pro
+                        kompenzaci onemocnění a má bydliště a zdržuje se v místě, ve kterém se určené
+                        odběrné místo nachází.
+                    </p><div class="notice notice-warning">
+<strong>POZOR:</strong>
+                        Potvrzení je platné nejdéle po dobu dvou let, poté je nutné poslat nové potvrzení,
+                        jinak zákazník o status přijde.
+                    </div></div><div class="definition-group"><h5 class="definition-heading">
+<strong>Další potřebné dokumenty</strong>
+</h5><p class="definition-step">
+<span class="step-badge">11</span>
+                        Pokud navíc zranitelný zákazník, který s námi sjednal SOSSD nebo SOD elektřiny,
+                        není zranitelnou osobou, ale na jeho odběrném místě pouze zranitelná osoba
+                        bydlí, musí k výše doloženému potvrzení doložit ještě dohodu mezi ním a
+                        zranitelnou osobou, a to v podobě písemné dohody o výkonu práv a povinností
+                        zranitelné osoby prostřednictvím zákazníka.
+                    </p><p class="definition-step">
+<span class="step-badge">12</span>
+                        Vzor potvrzení máme k dispozici pro zákazníky k vyplnění a potvrzení ze strany
+                        jejich lékaře také my na odkaze
+                        <a href="https://drive.google.com/file/d/1Rr0z6GtwfeIQVrOxI3Xs4sDvhOHab-iG/view?usp=drive_link" rel="noopener noreferrer" target="_blank">
+                            ZDE
+                        </a>.
+                    </p><p class="definition-step">
+<span class="step-badge">13</span>
+                        Vzor dohody máme k dispozici pro zákazníky k vyplnění a podepsání ze strany
+                        zranitelné osoby a zranitelného zákazníka na odkaze
+                        <a href="https://drive.google.com/file/d/1avwpwVno5JGkclc9UZWf94ibwkEklhCK/view?usp=drive_link" rel="noopener noreferrer" target="_blank">
+                            ZDE
+                        </a>.
+                    </p></div><div class="definition-group condition-grid"><h5 class="definition-heading">
+<strong>Podmínky pro chráněnou dodávku</strong>
+</h5><p class="definition-step">
+<span class="step-badge">14</span>
+                        Status se váže vždy pouze na jedno odběrné místo – jeden a tentýž zranitelný
+                        zákazník tedy může mít v tomto režimu jen jedno OM.
+                    </p><p class="definition-step">
+<span class="step-badge">15</span>
+                        Na OM musí zranitelná osoba bydlet, ale nemusí jít o její trvalé bydliště.
+                    </p><p class="definition-step">
+<span class="step-badge">16</span>
+                        Musí jít o OM elektřiny z hladiny NN.
+                    </p><p class="definition-step">
+<span class="step-badge">17</span>
+                        Plánovaná roční spotřeba nesmí přesáhnout 30 MWh.
+                    </p></div><div class="definition-group"><h5 class="definition-heading">
+<strong>Práva zranitelného zákazníka</strong>
+</h5><p class="definition-step">
+<span class="step-badge">18</span>
+                        Zranitelný zákazník má pak specifická práva, která se vážou zejména k
+                        problematice dlužných částek za energie a otázce odpojení, což řeší oddělení
+                        financí.
+                    </p><p class="definition-step">
+<span class="step-badge">19</span>
+                        Dále jsme povinni v případě, že obdržíme výše uvedené dokumenty, o tom informovat
+                        PDS.
+                    </p></div></div>
+</div><div aria-labelledby="nav-page-prijeti" class="content-section" id="page-prijeti" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">3.</span> Přijetí informace o zranitelném zákazníkovi</h2>
+<!-- ===================== -->
+<!-- Přijetí informace o zranitelném zákazníkovi -->
+<!-- ===================== -->
+<div class="task-fields-card">
+<p class="work-step">
+<span class="step-badge">1</span>
+                        Zde se postup mírně liší v tom, zda informaci obdrží oddělení FO přímo od zákazníka
+                        nebo informaci obdrží oddělení Komunikace od OTE. V prvním případě postupujeme dle
+                        kapitoly <span class="badge bg-secondary">2.1</span> Informaci o zranitelném
+                        zákazníkovi obdrží FO. V druhém dle kapitoly
+                        <span class="badge bg-secondary">2.3</span> Informaci o zranitelném zákazníkovi
+                        obdrží oddělení EK od OTE.
+                    </p>
+<h5 class="mt-4 mb-3">
+<strong>2.1. Informaci o zranitelném zákazníkovi obdrží FO</strong>
+</h5>
+<p class="work-step">
+<span class="step-badge">2</span>
+                        V případě, že oddělení FO obdrží informaci, že máme sjednanou smlouvu elektřiny se
+                        zranitelným zákazníkem, je třeba od klienta vyžádat doložení potvrzení od
+                        ošetřujícího lékaře viz kapitola 1.
+                        <span class="text-decoration-underline">
+                            Definice zranitelné osoby a zranitelného zákazníka
+                        </span>.
+                    </p>
+<div class="notice notice-info">
+<span class="step-badge">3</span>
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 3h14v18H5zM8 8h8M8 12h8M8 16h5"></path></svg>
+                        Pokud zákazník potvrzení dosud nemá, lze mu zaslat vzor k vyplnění na odkaze
+                        <a class="link-primary" href="https://drive.google.com/file/d/1Rr0z6GtwfeIQVrOxI3Xs4sDvhOHab-iG/view?usp=drive_link" rel="noopener noreferrer" target="_blank">
+                            ZDE  pro EPET
+                        </a> /
+                        <a class="link-primary" href="https://drive.google.com/file/d/1KX3v2YzBc-CgC9sp3GDqau5zHelUlSj8/view?usp=sharing" rel="noopener noreferrer" target="_blank">
+                            ZDE pro  Dobrá Energie
+                        </a>.
+                    </div>
+<p class="work-step">
+<span class="step-badge">4</span>
+                        Dále FO zjistí, zda je zákazník současně zranitelnou osobou – pokud nikoli a
+                        zranitelná osoba u něj pouze bydlí, je třeba, aby ještě doložil dohodu mezi ním a
+                        zranitelnou osobou o převodu práv viz kapitola 1.
+                    </p>
+<div class="notice notice-info">
+<span class="step-badge">5</span>
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 3h14v18H5zM8 8h8M8 12h8M8 16h5"></path></svg>
+                        Pokud zákazník dohodu dosud nemá, lze mu zaslat vzor k vyplnění na
+                        <a class="link-primary" href="https://drive.google.com/file/d/1avwpwVno5JGkclc9UZWf94ibwkEklhCK/view?usp=drive_link" rel="noopener noreferrer" target="_blank">
+                            ZDE  pro EPET
+                        </a> / 
+                         <a class="link-primary" href="https://drive.google.com/file/d/1Jyjlsh93WAnP0oRE3vZxupE8-Kcr0nm2/view?usp=sharing" rel="noopener noreferrer" target="_blank">
+                            ZDE pro  Dobrá Energie
+                        </a>.
+                    </div>
+<p class="work-step">
+<span class="step-badge">6</span>
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 2 20 5v7c0 5-3 8-8 10-5-2-8-5-8-10V5zM8.5 12l2.5 2.5 4.5-5"></path></svg>
+                        Pokud je zákazník přímo zranitelnou osobou, dohodu samozřejmě dokládat nemusí.
+                    </p>
+<p class="work-step">
+<span class="step-badge">7</span>
+                        Jakmile zákazník doloží potřebné dokumenty, založí si oddělení FO úkol s
+                        následujícími parametry:
+                    </p>
+<h6 class="mt-4 mb-3">
+<strong>Parametry úkolu</strong>
+</h6>
+<div class="task-fields-card">
+<div class="card-body">
+<ul class="task-fields">
+<li class="task-field">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 3h14v18H5zM8 8h8M8 12h8M8 16h5"></path></svg>
+<b>Věc a popis úkolu:</b> Zranitelný zákazník EAN XXXXXX
+                                </li>
+<li class="task-field">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 2 20 5v7c0 5-3 8-8 10-5-2-8-5-8-10V5zM8.5 12l2.5 2.5 4.5-5"></path></svg>
+<b>Dodavatel:</b> Vyplníme příslušného obchodníka
+                                </li>
+<li class="task-field">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 3h14v18H5zM8 8h8M8 12h8M8 16h5"></path></svg>
+<b>Hladina 1:</b> Smlouva
+                                </li>
+<li class="task-field">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 3h14v18H5zM8 8h8M8 12h8M8 16h5"></path></svg>
+<b>Hladina 2:</b> Chráněný zákazník
+                                </li>
+<li class="task-field">
+<figure class="image-frame"><img alt="Zranitelný zákazník – nastavení" class="manual-screenshot" decoding="async" loading="lazy" src="https://i.postimg.cc/prxfmmC0/zranitelny1.png"/></figure>
+</li>
+<li class="task-field">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 2 20 5v7c0 5-3 8-8 10-5-2-8-5-8-10V5zM8.5 12l2.5 2.5 4.5-5"></path></svg>
+<b>Řešitel:</b> dáme na login <b>EK</b>
+</li>
+<li class="task-field">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 6h18v15H3zM3 10h18M7 3v6M17 3v6M8 14h3M8 18h3"></path></svg>
+<b>Termín pro vyřešení:</b> Stanovíme v logice D+2
+                                </li>
+<li class="task-field">
+<figure class="image-frame"><img alt="Zranitelný zákazník – detail" class="manual-screenshot" decoding="async" loading="lazy" src="https://i.postimg.cc/VLZt8GxZ/zranitelny2.png"/></figure>
+</li>
+</ul>
+</div>
+</div>
+<h5 class="fw-bold mb-4">2.2. Nastavení na zákaznickém účtu</h5>
+<div class="training-card acceptance-card">
+<p class="work-step">
+<span class="step-badge">1</span>
+                            Nyní je třeba ze strany FO provést nastavení na zákaznickém účtu.
+                            Otevřeme formulář <strong>Zákaznický účet</strong> a pomocí vyhledávací masky
+                            (<strong>CTRL + M</strong>) dohledáme zákaznický účet, pod kterým se odběrné místo
+                            aktuálně nachází.
+                        </p>
+<p class="work-step">
+<span class="step-badge">2</span>
+                            Následně klikneme na <strong>Opravit zákaznický účet</strong>.
+                        </p>
+<figure class="image-frame"><img alt="Oprava zákaznického účtu" class="manual-screenshot" decoding="async" loading="lazy" src="https://i.postimg.cc/nhMPFWCX/oprava.png"/></figure>
+<p class="work-step">
+<span class="step-badge">3</span>
+                            V sekci <strong>Vlastnosti účtu</strong> vybereme přes mřížku v poli
+                            <strong>Způsob vymáhání pohledávek</strong> hodnotu
+                            <strong>Zranitelný zákazník</strong>.
+                        </p>
+<figure class="image-frame"><img alt="Vlastnosti účtu" class="manual-screenshot" decoding="async" loading="lazy" src="https://i.postimg.cc/3RQSZJ9G/vlastnosti.png"/></figure>
+<p class="work-step">
+<span class="step-badge">4</span>
+                            Změnu potvrdíme tlačítkem <strong>Zapsat změny</strong>.
+                        </p>
+<p class="work-step">
+<span class="step-badge">5</span>
+                            Následně postupujeme dle kapitoly
+                            <strong>3. Termínování úkolů a hlídání platnosti potvrzení</strong>.
+                        </p>
+</div>
+<h5 class="mt-4">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 2 20 5v7c0 5-3 8-8 10-5-2-8-5-8-10V5zM8.5 12l2.5 2.5 4.5-5"></path></svg>
+                        2.3. Informaci o zranitelném zákazníkovi obdrží oddělení EK od OTE
+                    </h5>
+<div class="task-fields-card">
+<p class="work-step">
+<span class="step-badge">1</span>
+                            Informaci o zranitelném zákazníkovi se může oddělení Komunikace dozvědět
+                            přímo od <strong>OTE</strong>.
+                        </p>
+<p class="work-step">
+<span class="step-badge">2</span>
+                            V takovém případě je nutné založit <strong>Úkol</strong> s následujícími parametry:
+                        </p>
+<ul class="task-fields">
+<li class="task-field">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 3h14v18H5zM8 8h8M8 12h8M8 16h5"></path></svg>
+<strong>Věc a popis úkolu:</strong> Zranitelný zákazník EAN XXXXXX
+                            </li>
+<li class="task-field">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 2 20 5v7c0 5-3 8-8 10-5-2-8-5-8-10V5zM8.5 12l2.5 2.5 4.5-5"></path></svg>
+<strong>Dodavatel:</strong> Vyplníme příslušného obchodníka
+                            </li>
+<li class="task-field">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 3h14v18H5zM8 8h8M8 12h8M8 16h5"></path></svg>
+<strong>Hladina 1:</strong> Smlouva
+                            </li>
+<li class="task-field">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 3h14v18H5zM8 8h8M8 12h8M8 16h5"></path></svg>
+<strong>Hladina 2:</strong> Chráněný zákazník
+                            </li>
+<li class="task-field">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 2 20 5v7c0 5-3 8-8 10-5-2-8-5-8-10V5zM8.5 12l2.5 2.5 4.5-5"></path></svg>
+<strong>Řešitel:</strong> login <strong>CCUSER</strong>
+</li>
+</ul>
+<figure class="image-frame"><img alt="Zranitelný zákazník – úkol" class="manual-screenshot" decoding="async" loading="lazy" src="https://i.postimg.cc/prxfmmC0/zranitelny1.png"/></figure>
+<p class="work-step">
+<span class="step-badge">1</span>
+                            Úkol je <strong>předán ve stavu Nový</strong>.
+                        </p>
+<p class="work-step">
+<span class="step-badge">2</span>
+                            Oddělení <strong>FO</strong> následně <strong>kontaktuje zákazníka</strong>
+                            a ohlídá si <strong>doložení potvrzení</strong>.
+                        </p>
+<p class="work-step">
+<span class="step-badge">3</span>
+                            Jakmile je potvrzení doloženo, <strong>FO jej přiloží k Úkolu</strong>.
+                        </p>
+<p class="work-step">
+<span class="step-badge">4</span>
+                            Současně <strong>provede nastavení na Zákaznickém účtu</strong>
+                            a pokračuje bodem <strong>2.2. Nastavení na zákaznickém účtu</strong>.
+                        </p>
+</div>
+</div>
+</div><div aria-labelledby="nav-page-prijeti-1" class="content-section" id="page-prijeti-1" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-title-icon"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 5h14v16H5zM9 5V3h6v2M9 10h6M9 14h6"></path></svg></span> 3. 1 Popis řešení (dopisujeme do úkolu) - Zákazník je zároveň zranitelnou
+                    osobou</h2>
+<!-- ===================== -->
+<!-- Popis řešení (dopisujeme do úkolu) - Zákazník je zároveň zranitelnou osobou
+                            <!-- ===================== -->
+<button class="copy-template" data-copy-target="page-prijeti-1" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 3h14v18H5zM8 8h8M8 12h8M8 16h5"></path></svg><span>Kopírovat zápis do úkolu</span></button><div class="training-card copy-card copy-source" data-copy-text="true">
+<p>
+        Zákazník dokládá potvrzení od lékaře, že spadá do kategorie
+        <strong>zranitelného zákazníka</strong>.
+        Potvrzení pro <strong>EAN XXXXX</strong> má platnost do roku <strong>XXXXX</strong>.
+    </p>
+<p>
+        Na zákaznickém účtu je nastaven
+        <strong>způsob vymáhání pohledávek</strong>.
+    </p>
+<p>
+        Prosím o <strong>předání informace na DI</strong>.
+        Úkol prosím <strong>vrátit zpět</strong>.
+    </p>
+</div>
+</div><div aria-labelledby="nav-page-prijeti-2" class="content-section" id="page-prijeti-2" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-title-icon"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 5h14v16H5zM9 5V3h6v2M9 10h6M9 14h6"></path></svg></span> 3. 2 Popis řešení (dopisujeme do úkolu) - Zákazník není zranitelná osoba, ale
+                    bydlí u něj</h2>
+<!-- ===================== -->
+<!-- Popis řešení (dopisujeme do úkolu) - Zákazník není zranitelná osoba, ale bydlí u něj
+                                        <!-- ===================== -->
+<button class="copy-template" data-copy-target="page-prijeti-2" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 3h14v18H5zM8 8h8M8 12h8M8 16h5"></path></svg><span>Kopírovat zápis do úkolu</span></button><div class="training-card copy-card copy-source" data-copy-text="true">
+<p>
+                        Zákazník dokládá potvrzení od lékaře, že u něj bydlí osoba spadající do kategorie
+                        <strong>zranitelného zákazníka</strong>.
+                        Potvrzení pro <strong>EAN XXXXX</strong> má platnost do roku <strong>XXXXX</strong>.
+                    </p>
+<p>
+                        Dále dokládá <strong>dohodu mezi ním a zranitelnou osobou o převodu práv</strong>.
+                    </p>
+<p>
+                        Na zákaznickém účtu je nastaven
+                        <strong>způsob vymáhání pohledávek</strong>.
+                    </p>
+<p>
+                        Prosím o <strong>předání informace na DI</strong>.
+                        Úkol prosím <strong>vrátit zpět</strong>.
+                    </p>
+</div>
+</div><div aria-labelledby="nav-page-prijeti-3" class="content-section" id="page-prijeti-3" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-title-icon"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 5h14v16H5zM9 5V3h6v2M9 10h6M9 14h6"></path></svg></span> 3. 3 Popis řešení (dopisuje EK do úkolu) - Zákazník je zároveň zranitelnou
+                    osobou</h2>
+<!-- ===================== -->
+<!--Popis řešení (dopisuje EK do úkolu) - Zákazník je zároveň zranitelnou osobou
+                                                    <!-- ===================== -->
+<button class="copy-template" data-copy-target="page-prijeti-3" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 3h14v18H5zM8 8h8M8 12h8M8 16h5"></path></svg><span>Kopírovat zápis do úkolu</span></button><div class="training-card copy-card copy-source" data-copy-text="true">
+<p>
+                        Obdrželi jsme informaci od <strong>OTE/PDS</strong>, že na odběrném místě
+                        <strong>EAN XXXXX</strong> se nachází
+                        <strong>zranitelný zákazník XXXXX</strong>, se kterým máme sjednanou smlouvu elektřiny.
+                    </p>
+<p>
+                        Prosíme o <strong>kontaktování zákazníka</strong> a vyžádání
+                        <strong>potvrzení od lékaře</strong>.
+                        Pokud zákazník není současně zranitelnou osobou, je nutné vyžádat také
+                        <strong>dohodu o převodu práv</strong>.
+                    </p>
+<p>
+                        Doložené dokumenty prosím <strong>přiložte k úkolu</strong> z důvodu evidence.
+                    </p>
+<p>
+                        Zároveň prosíme o <strong>nastavení způsobu vymáhání</strong> a
+                        <strong>termínování hlídání platnosti potvrzení</strong>.
+                    </p>
+</div>
+</div><div aria-labelledby="nav-page-ukol" class="content-section" id="page-ukol" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">4.</span> Termínování úkolů a hlídání platnosti potvrzení</h2>
+<!-- KARTA: Termínování úkolů a hlídání platnosti potvrzení -->
+<div class="workflow-container"><div class="workflow-phase"><p class="workflow-step">
+<span class="step-badge">1</span>
+                    Pokud se Úkol předával na oddělení EK, viz kapitola
+                    <strong>2.1. Informaci o zranitelném zákazníkovi obdrží FO</strong>,
+                    oddělení Komunikace ho po potvrzení od OTE vrátí na login
+                    <span class="badge bg-info text-dark">CCUSER</span>
+                    s termínem dořešení v logice <strong>D+2</strong>.
+                </p><p class="workflow-step">
+<span class="step-badge">2</span>
+                    Pokud se Úkol zpět na EK nepředával, viz kapitola
+                    <strong>2.3. Informaci o zranitelném zákazníkovi obdrží oddělení EK od OTE</strong>,
+                    má už na sobě Úkol <span class="badge bg-info text-dark">CCUSER</span> rovnou.
+                </p><div class="notice notice-warning">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 2 20 5v7c0 5-3 8-8 10-5-2-8-5-8-10V5zM8.5 12l2.5 2.5 4.5-5"></path></svg>
+                    V této fázi je třeba Úkol <strong>natermínovat</strong> za účelem hlídání
+                    konce platnosti potvrzení a tím i statusu Zranitelného zákazníka.
+                </div><p class="workflow-step">
+<span class="step-badge">3</span>
+<span class="badge bg-info text-dark">CCUSER</span> úkol přepne na řešitele
+                    <span class="badge bg-secondary">DINHE</span> a nastaví
+                    <strong>Termín pro vyřešení</strong> v logice
+                    <strong>−3 měsíce</strong> před koncem platnosti potvrzení.
+                    Potvrzení je platné nejdéle <strong>2 roky</strong> od vystavení.
+                </p><div class="notice notice-note">
+                    ✏️ <strong>Poznámka v Úkolu:</strong><br/>
+                    Úkol byl přetermínován do data v podobě tří měsíců před koncem platnosti
+                    potvrzení, které končí k datu <code>XX.XX.XXXX</code>.
+                </div><p class="mb-4">
+<strong>Stav úkolu:</strong>
+<span class="badge bg-warning text-dark">Čekající na termín</span>
+</p></div><div class="workflow-phase"><h6 class="phase-heading"><svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 2 20 5v7c0 5-3 8-8 10-5-2-8-5-8-10V5zM8.5 12l2.5 2.5 4.5-5"></path></svg>Pravidelná kontrola TL</h6><p class="workflow-step">
+<span class="step-badge">4</span>
+                    Team Leader pravidelně (1× týdně až 1× měsíčně) kontroluje login
+                    <span class="badge bg-secondary">DINHE</span>.
+                </p><p class="workflow-step">
+<span class="step-badge">5</span>
+                    Pokud se přiblíží termín pro vyřešení Úkolu
+                    <em>Zranitelný zákazník EAN XXXXXX</em>, upraví ho takto:
+                </p><ul class="mb-3">
+<li>Předá úkol na login jím vybraného operátora</li>
+<li>Změní stav na <span class="badge bg-success">Nový</span></li>
+<li>Do poznámky uvede:
+                        <ul>
+<li>že se blíží konec platnosti potvrzení</li>
+<li>pokud je status nadále platný, žádá o doložení nového potvrzení</li>
+</ul>
+</li>
+</ul></div><div class="workflow-phase"><h6 class="phase-heading"><svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M4 4h16v13H4zM4 12h4l2 3h4l2-3h4"></path></svg>Kontaktování zákazníka</h6><p class="workflow-step">
+<span class="step-badge">6</span>
+                    Operátor kontaktuje zákazníka pomocí šablony v Došlé poště:
+                    <br/>
+<strong>FO → Zranitelný zákazník → Zranitelný zákazník – konec platnosti potvrzení</strong>
+</p><p class="workflow-step">
+<span class="step-badge">7</span>
+                    Do Úkolu zapíše, že zákazníka informoval, přiloží odchozí poštu a upraví
+                    termín vyřešení dle platnosti potvrzení. Úkol si ponechává na sobě.
+                </p><div class="notice notice-secondary">
+                    🔁 Dále se postup liší podle toho, zda zákazník nové potvrzení dodá, nebo ne.
+                </div></div><div class="workflow-phase success-phase"><h5 class="phase-heading"><svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 3h14v18H5zM8 8h8M8 12h8M8 16h5"></path></svg>3.1. Zákazník pošle nové
+                    potvrzení</h5><p class="workflow-step">
+<span class="step-badge">8</span>
+                    Pokud zákazník pošle nové potvrzení od lékaře platné pro další období:
+                </p><ul class="mb-3">
+<li><span class="badge bg-info text-dark">FO</span> předá úkol zpět na login <strong>EK</strong></li>
+<li>Přiloží nové potvrzení</li>
+<li>Nastaví termín v logice <strong>D+2</strong></li>
+</ul><p class="workflow-step">
+<span class="step-badge">9</span>
+                    Oddělení <strong>EK</strong> po potvrzení od PDS vrací Úkol na
+                    <strong>CCUSER</strong>. Dále se pokračuje jako v bodě <strong>3</strong>.
+                </p><p class="workflow-step">
+<span class="step-badge">10</span>
+                    Oddělení <strong>FO</strong> ověří nastavení typu vymáhání na zákaznickém
+                    účtu. Pokud není správné, upraví dle bodu
+                    <strong>2.2. Nastavení na ZU</strong>.
+                </p></div><div class="workflow-phase danger-phase"><h5 class="phase-heading"><svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 2 20 5v7c0 5-3 8-8 10-5-2-8-5-8-10V5zM8.5 12l2.5 2.5 4.5-5"></path></svg>3.2. Zákazník nedodá nové potvrzení</h5><p class="workflow-step">
+<span class="step-badge">11</span>
+                    Pokud zákazník:
+                </p><ul class="mb-3">
+<li>potvrzení nedoloží,</li>
+<li>uvede, že status nadále nesplňuje,</li>
+<li>nebo nekomunikuje,</li>
+</ul><p class="workflow-step">
+<span class="step-badge">12</span>
+                    Úkol se předává na login
+                    <span class="badge bg-danger">FINANCE</span>
+                    s informací, že zákazníkovi skončil status zranitelného zákazníka.
+                </p><div class="notice notice-danger">
+                    💼 <strong>Současně operátor požádá FINANCE:</strong><br/>
+                    o nastavení standardního upomínání na ZU a dořešení případných pohledávek.
+                </div></div></div>
+</div><div aria-labelledby="nav-page-video" class="content-section" id="page-video" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-title-icon"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 4h18v16H3zM10 8l6 4-6 4z"></path></svg></span> Video tutoriály</h2>
+<p class="text-muted mb-4">Vyberte si konkrétní téma, které vás zajímá. Pro zvětšení videa využijte ikonu čtverečku
+        v pravém horním rohu přehrávače.</p>
+<div class="row row-cols-1 row-cols-xl-2 g-4">
+<div class="col">
+<div class="video-card">
+<h6 class="fw-bold mb-2"><svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 4h18v16H3zM10 8l6 4-6 4z"></path></svg>Zranitelný zákazník</h6>
+<div class="responsive-video">
+<iframe allow="autoplay; fullscreen" allowfullscreen="" src="https://drive.google.com/file/d/1_BELvANY1t3rEU3vM0ddOkViqAJBG13J/preview"></iframe>
+</div>
+</div>
+</div>
+</div>
+</div><div aria-labelledby="nav-page-test" class="content-section" id="page-test" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-title-icon"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 5h14v16H5zM9 5V3h6v2M9 10h6M9 14h6"></path></svg></span> Ověření znalostí</h2>
+<div class="empty-media">
+<div class="mb-3" style="font-size: 3rem; color: #ced4da;">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 5h14v16H5zM9 5V3h6v2M9 10h6M9 14h6"></path></svg>
+</div>
+<h4 class="fw-bold text-secondary">Opakovací test není k dispozici</h4>
+<p class="text-muted">Momentálně připravujeme novou sadu otázek pro ověření vašich znalostí.<br/>
+            Jakmile bude test připraven, budete jej moci spustit přímo z tohoto místa.
+        </p>
+</div>
+</div></div></main><div aria-hidden="true" class="site-footer"></div><dialog aria-label="Zvětšený náhled obrázku" class="image-lightbox"><button aria-label="Zavřít náhled" class="lightbox-close" type="button">×</button><img alt="" class="lightbox-image"/></dialog></div><script>(() => {
+  const tabs = Array.from(document.querySelectorAll('.nav-tab[data-target]'));
+  const sections = Array.from(document.querySelectorAll('.content-section'));
+  const mobileShell=document.querySelector('.mobile-shell');
+  const navMedia=window.matchMedia('(max-width:1030px)');
+  if(mobileShell) mobileShell.open=!navMedia.matches;
+  navMedia.addEventListener?.('change',event=>{if(mobileShell) mobileShell.open=!event.matches;});
+  const activate=(target,shouldScroll=true)=>{
+    const page=document.getElementById(target);if(!page)return;
+    sections.forEach(s=>s.classList.toggle('active',s===page));
+    tabs.forEach(b=>{const active=b.dataset.target===target;b.classList.toggle('active',active);b.setAttribute('aria-selected',String(active));b.tabIndex=active?0:-1;});
+    const active=tabs.find(b=>b.dataset.target===target);
+    const mobileLabel=document.querySelector('.mobile-nav-summary');
+    if(mobileLabel&&active)mobileLabel.textContent=active.textContent.trim();
+    const subgroup=document.querySelector('.nav-subgroup');
+    if(subgroup)subgroup.classList.toggle('expanded',target.startsWith('page-prijeti'));
+    if(navMedia.matches&&mobileShell)mobileShell.open=false;
+    if(shouldScroll)document.querySelector('.book-container')?.scrollIntoView({block:'start',behavior:'instant'});
+  };
+  tabs.forEach((b,index)=>{
+    b.addEventListener('click',()=>activate(b.dataset.target));
+    b.addEventListener('keydown',event=>{
+      let i;if(event.key==='ArrowDown'||event.key==='ArrowRight')i=(index+1)%tabs.length;
+      else if(event.key==='ArrowUp'||event.key==='ArrowLeft')i=(index-1+tabs.length)%tabs.length;
+      else if(event.key==='Home')i=0;
+      else if(event.key==='End')i=tabs.length-1;
+      else return;
+      event.preventDefault();const t=tabs[i];if(t.closest('.nav-subgroup'))t.closest('.nav-subgroup').classList.add('expanded');t.focus();activate(t.dataset.target,false);
+    });
+  });
+  document.addEventListener('click',event=>{const d=document.querySelector('.download-disclosure');if(d?.open && !d.contains(event.target)) d.open=false;});
+  const dialog=document.querySelector('.image-lightbox');
+  const preview=dialog?.querySelector('.lightbox-image');
+  document.querySelectorAll('.image-frame img').forEach(img=>{
+    img.tabIndex=0;img.setAttribute('role','button');img.setAttribute('aria-label','Zvětšit snímek obrazovky: '+(img.alt||''));
+    const show=()=>{if(!dialog||!preview)return;preview.src=img.src;preview.alt=img.alt;dialog.showModal();};
+    img.addEventListener('click',show);
+    img.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();show();}});
+  });
+  dialog?.querySelector('.lightbox-close')?.addEventListener('click',()=>dialog.close());
+  dialog?.addEventListener('click',event=>{if(event.target===dialog)dialog.close();});
+  const copy=(text)=>{
+    if(navigator.clipboard&&window.isSecureContext)return navigator.clipboard.writeText(text);
+    const field=document.createElement('textarea');field.value=text;field.style.position='fixed';field.style.left='-9999px';document.body.append(field);field.select();
+    const success=document.execCommand('copy');field.remove();return success?Promise.resolve():Promise.reject(new Error('Nelze kopírovat'));
+  };
+  document.querySelectorAll('.copy-template').forEach(btn=>btn.addEventListener('click',()=>{
+    const source=document.getElementById(btn.dataset.copyTarget)?.querySelector('.copy-source');if(!source)return;
+    const text=source.innerText.replace(/\n{3,}/g,'\n\n').trim();
+    copy(text).then(()=>{const label=btn.querySelector('span');const old=label.textContent;label.textContent='Zkopírováno';setTimeout(()=>label.textContent=old,1900);})
+    .catch(()=>{const label=btn.querySelector('span');label.textContent='Zkopírování se nezdařilo';});
+  }));
+})();</script></body></html>

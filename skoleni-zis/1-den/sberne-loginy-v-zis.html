@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html lang="cs">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sběrné Loginy v ZIS</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
+
+<style>/* ZNALOSTKA · HTML ŠKOLENÍ · společný firemní vizuální styl
+   Poznámka: Veškeré texty, odkazy i jejich pořadí jsou převzaty 1:1 ze zdroje. */
+:root {
+  --epet:#94c11f; --epet-dark:#60781a;
+  --purple:#9362d6; --blue:#2563eb; --cyan:#0891b2;
+  --orange:#f59e0b; --ink:#1e293b; --muted:#64748b;
+  --line:#e2e8f0; --soft:#f8fafc; --white:#ffffff;
+  --shadow:0 14px 34px rgba(15,23,42,.075);
+}
+*,*::before,*::after {box-sizing:border-box}
+html {scroll-behavior:smooth}
+body {
+  margin:0;padding:10px 12px 44px;
+  color:var(--ink);background:transparent;
+  font-family:"Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,Arial,sans-serif;
+  font-size:15px;line-height:1.64;-webkit-font-smoothing:antialiased;
+}
+.training-shell {width:100%;max-width:1180px;margin:0 auto;padding:0}
+/* Drobečková navigace shodná s ostatními školeními. */
+.breadcrumb-nav {
+  margin:0 0 14px;padding:10px 14px;
+  border:1px solid var(--line);border-radius:14px;
+  background:rgba(255,255,255,.91);backdrop-filter:blur(8px);
+}
+.breadcrumb {display:flex;flex-wrap:wrap;gap:0;list-style:none;margin:0;padding:0;font-size:.86rem}
+.breadcrumb-item {display:flex;align-items:center;color:#6b7280}
+.breadcrumb-item a {color:var(--epet-dark);font-weight:720;text-decoration:none}
+.breadcrumb-item a:hover,.breadcrumb-item a:focus-visible {color:var(--purple)}
+.breadcrumb-item+.breadcrumb-item::before {
+  content:"\F285";font-family:"bootstrap-icons";font-size:.72rem;
+  color:#94a3b8;padding:0 9px;font-weight:400;
+}
+.breadcrumb-item.active {font-weight:720;color:#475569}
+.breadcrumb .bi {margin-right:5px}
+/* Hlavička: identické proporce, zelená gradace a geometrie jako v INDIV. */
+.hero-banner {
+  position:relative;isolation:isolate;overflow:hidden;
+  margin:0 0 19px;padding:35px 33px 37px;border-radius:24px;
+  background:radial-gradient(900px 360px at 92% 20%,rgba(255,255,255,.24),transparent 62%),
+             linear-gradient(135deg,var(--epet) 0%,var(--epet-dark) 52%,#2f3f0f 100%);
+  box-shadow:var(--shadow);color:#fff;min-height:163px;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.hero-banner::before {
+  content:"";position:absolute;z-index:-1;right:-80px;bottom:-125px;
+  width:330px;height:330px;border-radius:50%;background:rgba(255,255,255,.11);
+}
+.hero-banner::after {
+  content:"";position:absolute;z-index:-1;right:100px;top:-190px;
+  width:300px;height:300px;border-radius:50%;border:1px solid rgba(255,255,255,.17);
+}
+.hero-banner h1 {
+  color:#fff;margin:0 0 8px!important;
+  font-size:clamp(1.65rem,2.7vw,2.18rem)!important;
+  font-weight:850!important;letter-spacing:-.035em;line-height:1.18;
+}
+.hero-banner p {margin:0!important;color:rgba(255,255,255,.92);font-size:.98rem}
+/* Dvousloupcová pracovní plocha. Vlevo zdrojový panel dokumentů,
+   vpravo přehled loginů. Žádné duplicitní nebo vymyšlené popisky. */
+.training-layout {
+  display:grid;grid-template-columns:270px minmax(0,1fr);gap:18px;
+  align-items:start;
+}
+.download-card {
+  position:sticky;top:12px;display:flex;flex-direction:column;gap:0;
+  padding:20px 18px 18px;margin:0;
+  border:1px solid var(--line);border-radius:22px;background:#fff;
+  box-shadow:0 10px 28px rgba(15,23,42,.06);
+}
+.download-card::before {
+  content:"";display:block;height:5px;margin:0 1px 17px;
+  border-radius:10px;background:linear-gradient(90deg,var(--epet),#cce88a);
+}
+.download-card-icon {
+  width:57px;height:57px;display:flex;align-items:center;justify-content:center;
+  color:var(--epet-dark);font-size:1.6rem;border-radius:16px;
+  background:linear-gradient(135deg,#f1facf,#e7f3b6);
+  border:1px solid rgba(148,193,31,.25);
+  margin:0 0 18px;
+}
+.download-card-icon i {display:none}
+.download-card-icon::after {
+  content:"";display:block;width:25px;height:30px;border:2px solid var(--epet-dark);
+  border-radius:4px 8px 4px 4px;
+  background:
+    linear-gradient(var(--epet-dark),var(--epet-dark)) 5px 12px/12px 2px no-repeat,
+    linear-gradient(var(--epet-dark),var(--epet-dark)) 5px 18px/12px 2px no-repeat,
+    linear-gradient(var(--epet-dark),var(--epet-dark)) 5px 24px/8px 2px no-repeat;
+  opacity:.9;
+}
+.download-card-content {min-width:0;margin:0 0 17px}
+.download-card-content h2 {
+  color:var(--ink);font-size:1.16rem;font-weight:850;line-height:1.32;
+  letter-spacing:-.018em;margin:0 0 8px;
+}
+.download-card-content p {color:var(--muted);font-size:.89rem;line-height:1.63;margin:0}
+.download-actions {
+  display:grid;grid-template-columns:1fr;gap:10px;
+  border-top:1px solid var(--line);padding-top:15px;
+}
+.download-actions a {
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  min-width:0;width:100%;padding:12px 13px;
+  border:1px solid transparent;border-radius:999px;
+  font-weight:800;font-size:.88rem;text-decoration:none;
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease;
+}
+.download-actions a:hover,.download-actions a:focus-visible {transform:translateY(-2px)}
+.btn-pdf-download {
+  background:var(--epet-dark);color:white!important;
+  box-shadow:0 7px 15px rgba(96,120,26,.16);
+}
+.btn-pdf-download:hover {background:#4c6710;box-shadow:0 10px 20px rgba(96,120,26,.22)}
+.btn-pdf-preview {
+  color:var(--epet-dark)!important;background:#f6f9ef;
+  border-color:#dbe7c6!important;
+}
+.btn-pdf-preview:hover {background:#eff6df}
+.download-actions a i {font-size:1.06rem}
+/* Vpravo datové karty. Tabulka v DOM zůstává původní a ve stejném pořadí. */
+.book-page {
+  min-width:0;margin:0;padding:25px 25px 27px;
+  background:#fff;border:1px solid var(--line);border-radius:24px;
+  box-shadow:var(--shadow);
+}
+.custom-table {width:100%;margin:0;border:0;border-collapse:separate;border-spacing:0}
+.custom-table thead {display:block;margin:0 1px 15px}
+.custom-table thead tr {
+  display:grid;grid-template-columns:minmax(170px,27%) minmax(0,1fr);gap:0;
+  border-bottom:1px solid var(--line);padding:0 10px 14px;
+}
+.custom-table th {
+  padding:0 13px;background:transparent;border:0;
+  font-size:.73rem;line-height:1.4;font-weight:850;
+  color:var(--epet-dark);text-transform:uppercase;letter-spacing:.075em;
+}
+.custom-table tbody {display:grid;grid-template-columns:minmax(0,1fr);gap:11px}
+.custom-table tbody tr {
+  position:relative;isolation:isolate;overflow:hidden;
+  display:grid;grid-template-columns:minmax(170px,27%) minmax(0,1fr);
+  border:1px solid var(--line);border-radius:18px;
+  background:linear-gradient(180deg,#fff,#fdfefe);
+  box-shadow:0 5px 16px rgba(15,23,42,.04);
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+}
+.custom-table tbody tr::before {
+  content:"";position:absolute;z-index:2;top:0;left:0;bottom:0;
+  width:5px;background:var(--epet);border-radius:18px 0 0 18px;
+}
+.custom-table tbody tr:nth-child(3n+2)::before {background:var(--cyan)}
+.custom-table tbody tr:nth-child(3n+3)::before {background:var(--purple)}
+.custom-table tbody tr:hover {
+  border-color:#cdd9b5;box-shadow:0 10px 26px rgba(15,23,42,.09);transform:translateY(-2px);
+}
+.custom-table td {
+  border:0!important;padding:19px 20px;vertical-align:middle;
+  color:#354356;font-size:.95rem;line-height:1.67;
+  background:transparent;
+  overflow-wrap:anywhere;
+}
+.custom-table td:first-child {
+  display:flex;align-items:center;justify-content:flex-start;
+  padding:20px 14px 20px 22px;
+  background:linear-gradient(100deg,#f6faed,#fbfdf8 93%);
+  border-right:1px solid #edf2e3!important;
+}
+.custom-table tbody tr:nth-child(3n+2) td:first-child {
+  background:linear-gradient(100deg,#f1fafc,#f8fcfd 93%);border-right-color:#e4f0f3!important;
+}
+.custom-table tbody tr:nth-child(3n+3) td:first-child {
+  background:linear-gradient(100deg,#f9f5fe,#fcfaff 93%);border-right-color:#eee8f7!important;
+}
+.custom-table td:last-child {padding:19px 23px;min-width:0}
+.login-badge {
+  display:inline-flex;align-items:center;
+  max-width:100%;min-width:0;overflow-wrap:anywhere;
+  padding:9px 12px;border-radius:11px;
+  color:#4d6c14;background:#fff;
+  font-weight:850;font-size:.83rem;letter-spacing:.004em;
+  border:1px solid #dfebc9;box-shadow:0 3px 9px rgba(15,23,42,.035);
+  font-family:"Segoe UI",system-ui,sans-serif;
+}
+.custom-table tbody tr:nth-child(3n+2) .login-badge {color:#0a7896;border-color:#d2edf2}
+.custom-table tbody tr:nth-child(3n+3) .login-badge {color:#7c4fb1;border-color:#e9ddf5}
+.custom-table td i:not(.bi),.custom-table td em {font-style:italic;color:var(--purple)}
+.custom-table td b,.custom-table td strong {font-weight:800;color:var(--ink)}
+.book-page a {
+  color:var(--epet-dark);text-decoration:none;font-weight:750;
+  border-bottom:2px solid rgba(148,193,31,.33);padding-bottom:1px;
+}
+.book-page a:hover,.book-page a:focus-visible {border-color:var(--epet);color:#3c550c}
+.book-page a[target="_blank"]::after {
+  content:"\F391";font-family:"bootstrap-icons";font-size:.72em;
+  margin-left:5px;vertical-align:super;color:#809363;opacity:.82;
+}
+a:focus-visible {outline:3px solid rgba(8,145,178,.55);outline-offset:3px}
+@media (max-width:1010px) {
+  .training-layout {grid-template-columns:240px minmax(0,1fr);gap:14px}
+  .custom-table thead tr,.custom-table tbody tr {grid-template-columns:minmax(125px,29%) minmax(0,1fr)}
+  .custom-table td:first-child {padding-left:17px}
+  .custom-table td:last-child {padding:17px}
+  .book-page {padding:20px}
+}
+@media (max-width:760px) {
+  body {padding:7px 9px 28px}
+  .hero-banner {padding:27px 24px 29px;min-height:140px;border-radius:21px}
+  .training-layout {grid-template-columns:minmax(0,1fr)}
+  .download-card {position:static;display:grid;grid-template-columns:54px minmax(0,1fr);column-gap:13px;row-gap:9px;padding:17px}
+  .download-card::before {grid-column:1/-1;margin-bottom:4px}
+  .download-card-icon {margin:0;width:54px;height:54px}
+  .download-card-content {margin:0}
+  .download-actions {grid-column:1/-1;grid-template-columns:repeat(2,minmax(0,1fr));padding-top:13px}
+  .book-page {padding:17px;border-radius:21px}
+  .custom-table td {font-size:.92rem}
+}
+@media (max-width:570px) {
+  .breadcrumb {font-size:.77rem}
+  .breadcrumb-item+.breadcrumb-item::before {padding:0 6px}
+  .hero-banner h1 {font-size:1.64rem!important}
+  .download-actions {grid-template-columns:1fr}
+  .custom-table thead tr {grid-template-columns:1fr 1fr;padding:0 9px 11px}
+  .custom-table th {font-size:.70rem;padding:0 7px}
+  .custom-table tbody {gap:12px}
+  .custom-table tbody tr {grid-template-columns:minmax(0,1fr)}
+  .custom-table td:first-child {border-right:0!important;border-bottom:1px solid #edf2e3!important;padding:13px 17px 12px 20px}
+  .custom-table td:last-child {padding:14px 18px 17px 20px}
+  .login-badge {font-size:.87rem;padding:7px 11px}
+  .book-page {padding:13px}
+}
+@media (prefers-reduced-motion:reduce) {
+  *,*::before,*::after {transition:none!important;animation:none!important;scroll-behavior:auto!important}
+}
+</style></head>
+<body>
+<div class="training-shell">
+<nav aria-label="breadcrumb" class="breadcrumb-nav">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="https://sites.google.com/view/znalostka/"><i class="bi bi-house-door-fill"></i> Znalostní báze</a></li>
+<li class="breadcrumb-item"><a href="https://sites.google.com/view/znalostka/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat">Školení ZIS</a></li>
+<li class="breadcrumb-item"><a href="https://sites.google.com/view/znalostka/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat/1-den">1. den</a></li>
+<li aria-current="page" class="breadcrumb-item active">Sběrné loginy v ZIS</li>
+</ol>
+</nav>
+<div class="hero-banner">
+<h1 class="h2 fw-bold mb-1">Sběrné loginy v ZIS</h1>
+<p class="mb-0 opacity-75">Přehled oddělení a účelů předávání požadavků</p>
+</div>
+<div class="training-layout"><div class="download-card">
+<div class="download-card-icon">
+<i class="bi bi-file-earmark-pdf-fill"></i>
+</div>
+<div class="download-card-content">
+<h2>PDF dokument ke stažení</h2>
+<p>Stáhněte si přehled sběrných loginů v ZIS ve formátu PDF.</p>
+</div>
+<div class="download-actions">
+<a class="btn-pdf-download" href="https://drive.google.com/uc?export=download&amp;id=1NkeCMoPqKnU865IvUQDDFyzCedbGSm1W" rel="noopener" target="_blank">
+<i class="bi bi-download"></i>
+            Stáhnout PDF
+        </a>
+<a class="btn-pdf-preview" href="https://drive.google.com/file/d/1NkeCMoPqKnU865IvUQDDFyzCedbGSm1W/view?usp=drive_link" rel="noopener" target="_blank">
+<i class="bi bi-eye"></i>
+            Zobrazit náhled
+        </a>
+</div>
+</div><div class="book-page">
+<table class="custom-table">
+<thead>
+<tr>
+<th style="width: 25%;">Oddělení</th>
+<th>Popis účelu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="login-badge">BO_CC</span></td>
+<td>Slouží k předávání požadavků prodeje a péče na zpracování - zejm. nové smlouvy a dodatky, výpovědi a přepisy, dále pak chyby ze zadání k opravě.</td>
+</tr>
+<tr>
+<td><span class="login-badge">CCUSER</span></td>
+<td>Slouží jako sběrný login pro požadavky směrem k FO, pokud je potřeba kontaktovat zákazníka, zákaznické požadavky.</td>
+</tr>
+<tr>
+<td><span class="login-badge">DINHE</span></td>
+<td>Slouží jako sběrný login pro zpracovatele dědického řízení</td>
+</tr>
+<tr>
+<td><span class="login-badge">FAKTURACE</span></td>
+<td>Slouží pro dotaz nebo urgenci na fakturu, reklamaci faktur, samoodečty + konečné stavy, doložení výměny elektroměru, požadavku na vystavení smluvní pokuty</td>
+</tr>
+<tr>
+<td><span class="login-badge">FINANCE</span></td>
+<td>Slouží pro kontakty týkající se finančních operací na saldě smluv párování, dohledání,..zákazníků (zápočty, přepárování plateb, dohledání plateb, splátkové kalendáře...) i jejich účetních a daňových dopadů jak na epet, tak na zákazníka. Dále pak kontakty týkajících se upomínání, ukončování smluv o sdružených službách dodávky energií z důvodu neplacení a insolvence a vymáhání. Sběrný login pro pohledávky + účtárnu.</td>
+</tr>
+<tr>
+<td><span class="login-badge">KAUSER</span></td>
+<td>Slouží pro zákaznické požadavky, které se týkají zákazníků připojených na VVN/VN u EE a VO/SO u ZP</td>
+</tr>
+<tr>
+<td><span class="login-badge">NABÍDKY</span></td>
+<td>Slouží k předávání kontaktů především z BO a FO (z BO, když obdržíme výpověď od zákazníka či jiného obchodníka a z FO, pokud má zákazník dotaz ohledně cenové nabídky, vyjádření)</td>
+</tr>
+<tr>
+<td><span class="login-badge">EK</span></td>
+<td>Slouží k předávání požadavku (elektřiny/plyn) na energetické komunikace (např. prodloužení, technické změny - např. přepisy, nové odběry, demontáže, změny údajů zákazníka) = to vše V případech, kdy je třeba komunikovat s distributory a/nebo OTE.</td>
+</tr>
+<tr>
+<td><span class="login-badge">SAUSER</span></td>
+<td>Slouží jako sběrný login pro oddělení SA individuální cenové nabídky...</td>
+</tr>
+<tr>
+<td><span class="login-badge">SLOVENSKO</span></td>
+<td>Slouží jako sběrný login pro veškeré požadavky organizační složky na Slovensku</td>
+</tr>
+<tr>
+<td><span class="login-badge">INDIVIDUAL (FO/BO)</span></td>
+<td>Slouží jako sběrný login pro individuální zákazníky, na tento login se předávávají úkoly, u zk. kteří spadají pod INDIV</td>
+</tr>
+<tr>
+<td><span class="login-badge">Akvizice_epet</span></td>
+<td>Jedná se o sběrný login, pro nového zákazníka Epet, požadavky z webu(=e-maily), tel. číslo 255 70 70 99, řeší ext. callcentrum Scomi, v <i>ZIS</i> přepojím na linku <i>ID 3001</i></td>
+</tr>
+<tr>
+<td><span class="login-badge">Retence_epet</span></td>
+<td>Jedná se o sběrný login, pro zákazníka Epet, který vyhrožuje výpovědí, pokud nedostane lepší cenovou nabídku produktu.</td>
+</tr>
+<tr>
+<td><span class="login-badge">Reklamace</span></td>
+<td>Jedná se o sběrný login, kam předáváme úkoly týkající se reklamací - dle manuálu <a href="https://sites.google.com/view/znalostka/smlouvy-kontaktn%C3%AD-%C3%BAdaje/reklamace?authuser=0" target="_blank">Reklamace</a></td>
+</tr>
+</tbody>
+</table>
+</div></div>
+
+</div>
+</body>
+</html>

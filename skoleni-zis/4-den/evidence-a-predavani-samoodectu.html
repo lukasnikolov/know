@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="cs"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><title>Evidence a předávání samoodečtů – Pracovní postup</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+<style>/* ZNALOSTKA – HTML ŠKOLENÍ | Jednotný firemní vizuální standard */
+:root{
+  --epet:#94c11f; --epet-dark:#60781a; --epet-deep:#34470b;
+  --purple:#9362d6; --blue:#2563eb; --cyan:#0891b2;
+  --orange:#f59e0b; --red:#d9414f;
+  --ink:#1e293b; --muted:#64748b; --line:#e2e8f0;
+  --soft:#f8fafc; --card:#fff;
+  --shadow:0 14px 34px rgba(15,23,42,.075);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; padding:10px 12px 34px; background:transparent; color:var(--ink);
+  font-family:"Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,Arial,sans-serif;
+  font-size:15px;line-height:1.64;-webkit-font-smoothing:antialiased;
+}
+body>.breadcrumb-nav,body>.hero-banner,body>.book-container{
+  width:100%;max-width:1180px;margin-left:auto;margin-right:auto;
+}
+/* Ostrá a jednotná ikonografie SVG, nezávislá na síťovém načtení ikonového fontu. */
+/* Bootstrap Icons stay visible in original in-content examples */
+.svg-icon{width:19px;height:19px;vertical-align:middle;display:inline-block;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.breadcrumb .svg-icon{width:15px;height:15px}
+.btn-download .svg-icon{width:18px;height:18px}
+.video-card .svg-icon{width:20px;height:20px}
+.list-group .svg-icon{width:17px;height:17px}
+.glossary .bg-primary{background:var(--blue)!important;color:#fff}
+.glossary .bg-success{background:var(--epet-dark)!important;color:#fff}
+.glossary .bg-warning{background:#fff0ba!important;color:#664300}
+.glossary .bg-info{background:#d7f6fa!important;color:#155a70}
+/* Drobečková navigace */
+.breadcrumb-nav{
+  margin-bottom:14px;padding:10px 14px;background:rgba(255,255,255,.92);
+  border:1px solid var(--line);border-radius:14px;backdrop-filter:blur(8px);
+}
+.breadcrumb{display:flex;flex-wrap:wrap;list-style:none;padding:0;margin:0;font-size:.85rem}
+.breadcrumb-item{display:flex;align-items:center;color:#6b7280}
+.breadcrumb-item a{color:var(--epet-dark);text-decoration:none;font-weight:700}
+.breadcrumb-item a:hover{color:var(--purple)}
+.breadcrumb-item+.breadcrumb-item::before{
+  content:"›";font-family:inherit;font-size:1.1rem;
+  padding:0 9px;color:#94a3b8;
+}
+.breadcrumb-item.active{color:#475569;font-weight:720}
+/* Firemní gradientový hero */
+.hero-banner{
+  position:relative;isolation:isolate;overflow:visible;
+  display:flex!important;align-items:center!important;justify-content:space-between!important;
+  gap:25px;flex-wrap:wrap;margin-bottom:18px;min-height:184px;
+  border-radius:24px;padding:35px 33px;color:#fff;
+  background:
+    radial-gradient(900px 360px at 92% 20%,rgba(255,255,255,.24),transparent 62%),
+    linear-gradient(135deg,var(--epet) 0%,var(--epet-dark) 52%,#2f3f0f 100%);
+  box-shadow:var(--shadow);
+}
+.hero-banner::before{
+  content:"";z-index:-1;position:absolute;right:18px;bottom:0;
+  width:190px;height:140px;border-radius:100% 60% 0 0;
+  background:linear-gradient(135deg,rgba(255,255,255,.025),rgba(255,255,255,.09));
+  pointer-events:none;
+}
+.hero-banner::after{
+  content:"";position:absolute;z-index:-1;right:105px;top:16px;
+  width:130px;height:130px;border:1px solid rgba(255,255,255,.14);border-radius:50%;pointer-events:none;
+}
+.hero-banner>div{position:relative;z-index:1}
+.hero-banner>div:first-child{flex:1 1 480px;min-width:0}
+.hero-banner h1{
+  margin:0 0 10px!important;color:white!important;
+  font-size:clamp(1.56rem,2.75vw,2.18rem)!important;
+  letter-spacing:-.034em;line-height:1.16;font-weight:850!important;
+}
+.hero-banner p{margin:0!important;color:rgba(255,255,255,.91)!important;font-size:.95rem}
+.btn-download{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  border:1px solid rgba(255,255,255,.45);border-radius:999px;
+  padding:11px 19px;background:#fff;color:var(--epet-dark)!important;
+  font-weight:820;text-decoration:none;white-space:nowrap;
+  box-shadow:0 8px 18px rgba(15,23,42,.12);transition:transform .18s ease,box-shadow .18s ease;
+}
+.btn-download:hover,.btn-download:focus-visible{transform:translateY(-2px);box-shadow:0 11px 24px rgba(15,23,42,.17)}
+.hero-banner .dropdown{z-index:80}
+.hero-banner .dropdown-menu{
+  display:none!important;position:absolute;list-style:none;margin:0;
+  min-width:340px;max-width:min(440px,calc(100vw - 24px));
+  background:#fff;color:var(--ink);padding:9px;border:1px solid var(--line)!important;border-radius:16px!important;
+  box-shadow:0 18px 38px rgba(15,23,42,.2)!important;z-index:9999;
+}
+.hero-banner .dropdown.open>.dropdown-menu{display:block!important;position:absolute;top:calc(100% + 8px);right:0;left:auto}
+.hero-banner .dropdown-item{
+  display:flex;align-items:center;gap:8px;padding:11px 12px!important;border-radius:10px;
+  color:#334155;font-weight:680;font-size:.91rem;white-space:normal;text-decoration:none;
+}
+.hero-banner .dropdown-item:hover{background:#f1f8e3;color:var(--epet-dark)}
+.hero-banner .dropdown-toggle::after{margin-left:5px}
+/* Navigace a pravý obsahový panel */
+.book-container{
+  display:grid!important;grid-template-columns:270px minmax(0,1fr);
+  align-items:start;gap:18px;min-height:0;overflow:visible;background:transparent;border:0;
+}
+.book-tabs{
+  position:sticky;top:12px;width:auto!important;min-width:0;
+  display:flex!important;flex-direction:column!important;gap:5px;
+  padding:12px;border:1px solid var(--line);border-radius:22px;
+  background:#fff;box-shadow:0 10px 28px rgba(15,23,42,.055);
+}
+.book-tabs::before{
+  content:"";display:block;height:5px;margin:0 8px 9px;
+  border-radius:999px;background:linear-gradient(90deg,var(--epet),#cce88a);
+}
+.tab-item{
+  display:flex;align-items:center;gap:11px;min-width:0;
+  padding:12px 13px;margin:0;border-radius:14px;
+  background:transparent;border:1px solid transparent!important;
+  color:#475569;font-size:.925rem;font-weight:700;line-height:1.4;
+  cursor:pointer;outline:0;transition:background .18s,color .18s,transform .18s,box-shadow .18s;
+}
+.tab-item i{width:20px;flex:0 0 20px;text-align:center;font-size:1.1rem;color:#718096}
+.tab-item:hover,.tab-item:focus-visible{background:var(--soft);color:var(--epet-dark);transform:translateX(2px)}
+.tab-item.active{
+  background:#f1fccf;color:#435f00;font-weight:850;
+  border-color:rgba(148,193,31,.28)!important;
+  box-shadow:inset 0 0 0 1px rgba(148,193,31,.09);
+}
+.tab-item.active i{color:var(--epet-dark)}
+.tab-item.tab-purple{margin-top:6px;border-top:1px solid var(--line)!important}
+.tab-item.tab-purple.active{color:#7048a6;background:#f6efff;border-color:rgba(147,98,214,.25)!important}
+.tab-item.tab-purple.active i{color:var(--purple)}
+.book-page{
+  position:relative;min-width:0;min-height:430px;overflow:visible;
+  background:#fff;padding:27px 27px 32px;border:1px solid var(--line);
+  border-radius:24px;box-shadow:var(--shadow);
+}
+.content-section{display:none;animation:fadeIn .25s ease}
+.content-section.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.content-section>h2{
+  display:flex;align-items:center;gap:11px;min-width:0;
+  margin:0 0 19px!important;padding:0 0 18px;border-bottom:1px solid var(--line);
+  font-size:clamp(1.22rem,2.05vw,1.55rem);line-height:1.35;
+  letter-spacing:-.025em;color:var(--epet-dark)!important;font-weight:850!important;
+}
+.section-number{
+  display:inline-flex;align-items:center;justify-content:center;flex:0 0 41px;
+  width:41px;height:41px;border-radius:50%;background:var(--epet);color:#fff;
+  font-size:1rem;font-weight:850;letter-spacing:0;
+  box-shadow:0 5px 12px rgba(148,193,31,.16);
+}
+#page-video>h2::before,#page-test>h2::before{
+  content:"";display:block;flex:0 0 5px;width:5px;min-height:30px;
+  border-radius:99px;background:var(--epet);
+}
+#page-test>h2{color:var(--purple)!important}
+#page-test>h2::before{background:var(--purple)}
+/* Úvodní shrnutí, významové zkratky */
+.overview-card{
+  position:relative;overflow:hidden;border:1px solid #dfebd4;
+  padding:26px 28px 26px;border-radius:21px;
+  background:radial-gradient(280px 220px at 100% 100%,rgba(148,193,31,.1),transparent 75%),
+             linear-gradient(140deg,#fff,#f9fcf3);
+  box-shadow:0 9px 22px rgba(15,23,42,.046);
+}
+.overview-card::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:var(--epet)}
+.overview-card>p{font-size:1.065rem;line-height:1.82;margin:0 0 23px;color:#2f473e}
+.glossary{border-top:1px solid #dfeada;padding-top:20px;margin:0!important}
+.glossary h5{font-size:.89rem;letter-spacing:.065em;color:var(--muted);font-weight:850;margin:0 0 13px}
+.glossary h5 strong{color:var(--epet-dark)}
+.glossary p{margin:0;line-height:2.4;color:#475569;font-weight:580}
+.glossary .badge{
+  margin-right:5px;vertical-align:middle;padding:8px 10px;border-radius:9px;
+  font-size:.81rem;letter-spacing:.01em;line-height:1;font-weight:850;
+}
+/* Pracovní postup tvoří série navazujících karet. */
+.content-steps{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;
+  padding:0!important;margin:0!important;border:0!important;background:transparent!important;box-shadow:none!important}
+.step-card{
+  position:relative;overflow:hidden;min-width:0;
+  background:linear-gradient(180deg,#fff,#fbfcfd);
+  padding:21px 23px 23px;border:1px solid var(--line);
+  border-radius:20px;box-shadow:0 8px 22px rgba(15,23,42,.05);
+}
+.step-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--epet)}
+.content-steps>.step-card:nth-child(3n+2)::before{background:var(--cyan)}
+.content-steps>.step-card:nth-child(3n+3)::before{background:var(--purple)}
+.step-card>p{margin:0 0 13px!important;color:#334155;line-height:1.74}
+.step-card>p:last-child{margin-bottom:0!important}
+.step-card>p:first-child{font-size:1rem}
+.step-card .step-badge{
+  display:inline-flex;align-items:center;justify-content:center;
+  vertical-align:middle;width:35px;height:35px;min-width:35px;
+  margin:0 10px 2px 0;border-radius:50%;background:var(--epet);
+  box-shadow:0 5px 12px rgba(148,193,31,.16);
+  color:#fff;font-size:.95rem;font-weight:850;
+}
+.content-steps>.step-card:nth-child(3n+2) .step-badge{background:var(--cyan)}
+.content-steps>.step-card:nth-child(3n+3) .step-badge{background:var(--purple)}
+.step-card img.img-thumbnail{
+  display:block;width:auto;max-width:100%;height:auto;
+  object-fit:contain;margin:17px auto!important;padding:6px;
+  border:1px solid var(--line);border-radius:15px;
+  background:#fff;box-shadow:0 8px 20px rgba(15,23,42,.08);
+}
+/* Významové položky do přehledných mřížek */
+.step-card ul.list-group{
+  display:grid;grid-template-columns:minmax(0,1fr);gap:8px;
+  list-style:none;margin:14px 0 13px!important;padding:0;border:0;border-radius:0;background:transparent;
+}
+.step-card ul.privacy-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.step-card .list-group-item{
+  min-width:0;display:block;margin:0!important;padding:12px 14px!important;
+  background:#fafcfe;border:1px solid var(--line)!important;border-radius:12px!important;
+  color:#334155;line-height:1.55;font-size:.93rem;
+}
+.step-card .privacy-grid .list-group-item{
+  text-align:center;display:flex;align-items:center;justify-content:center;
+  min-height:54px;background:#fff7ed;color:#81500f;border-color:#f4dba8!important;font-weight:720;
+}
+.step-card .task-fields{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.step-card .task-fields .list-group-item{background:linear-gradient(180deg,#fff,#f8fafc);padding:14px 15px!important}
+.step-card .task-fields .list-group-item:nth-child(5){grid-column:1/-1}
+.step-card .task-fields .list-group-item i.bi{color:var(--epet-dark)}
+.step-card .task-fields .list-group-item b{color:var(--ink)}
+.step-card .critical-note{
+  margin:15px 0!important;padding:15px 18px;
+  border:1px solid #f3bec7!important;border-left:5px solid var(--red)!important;
+  border-radius:15px;background:#fff4f5;color:#8e2430;line-height:1.68;
+}
+.step-card .critical-note strong{color:inherit}
+/* Textové odkazy a zvýraznění */
+.book-page strong,.book-page b{font-weight:800}
+.book-page p,.book-page li{line-height:1.68}
+.book-page a:not(.btn){
+  color:var(--epet-dark);text-decoration:none;font-weight:770;
+  border-bottom:2px solid rgba(148,193,31,.31);padding:0 2px;
+}
+.book-page a:not(.btn):hover{background:#f4fae6;border-bottom-color:var(--epet)}
+.book-page a[target="_blank"]::after{
+  content:"↗";font-family:inherit;font-size:.77rem;
+  margin-left:5px;vertical-align:super;opacity:.7;
+}
+.book-page i:not(.bi),.book-page em{color:var(--purple)}
+.book-page u{text-decoration:none;border-bottom:2px dotted var(--epet);padding-bottom:1px}
+/* Videa a opakovací test */
+#page-video>p{color:var(--muted)!important;line-height:1.7;margin-bottom:21px!important}
+#page-video>.row{
+  display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;margin:0!important;
+}
+#page-video>.row>.col{padding:0!important;width:auto;max-width:none;flex:none;margin:0}
+.video-card{
+  height:100%;overflow:hidden;padding:16px!important;
+  background:linear-gradient(180deg,#fff,#f8fafc)!important;
+  border:1px solid var(--line)!important;border-radius:20px!important;
+  box-shadow:0 8px 22px rgba(15,23,42,.05)!important;
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+}
+.video-card:hover{transform:translateY(-3px);border-color:var(--epet)!important;
+  box-shadow:0 12px 25px rgba(15,23,42,.1)!important}
+.video-card h6{
+  min-height:44px;display:flex;align-items:center;gap:6px;margin:0 0 12px!important;
+  color:var(--epet-dark);font-size:.98rem;line-height:1.45;font-weight:850!important;
+}
+.video-card h6 i{font-size:1.2rem}
+.video-card .ratio{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:13px!important}
+.video-card iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+#page-test>p{
+  margin:0 0 20px!important;padding:17px 19px;
+  border-left:4px solid var(--purple);border-radius:15px;
+  background:#faf7ff;color:#475569;line-height:1.7;
+}
+#page-test>div{overflow:hidden;border:1px solid var(--line)!important;
+  border-radius:19px!important;box-shadow:0 8px 22px rgba(15,23,42,.05)!important}
+#page-test iframe{display:block;width:100%;height:600px;border:0}
+/* Responzivní tablet/mobile; nevynucuje horizontální scroll dokumentu. */
+@media(max-width:1020px){
+  .book-container{grid-template-columns:1fr}
+  .book-tabs{position:static;flex-direction:row!important;overflow-x:auto;white-space:nowrap;padding:9px;gap:5px}
+  .book-tabs::before{display:none}
+  .tab-item{flex:0 0 auto;min-width:max-content;padding:10px 12px}
+  .tab-item:hover{transform:none}
+  .tab-item.tab-purple{margin-top:0;border-top:1px solid transparent!important}
+}
+@media(max-width:690px){
+  body{padding:7px 6px 26px;font-size:14.5px}
+  .breadcrumb-nav{padding:9px 11px;margin-bottom:10px}
+  .breadcrumb{font-size:.79rem}
+  .breadcrumb-item+.breadcrumb-item::before{padding:0 5px}
+  .hero-banner{padding:26px 21px;gap:18px;min-height:160px;border-radius:20px;margin-bottom:13px}
+  .hero-banner h1{font-size:1.62rem!important}
+  .hero-banner .dropdown{width:100%}
+  .btn-download{padding:10px 15px;white-space:normal;text-align:center}
+  .hero-banner .dropdown-menu{min-width:0;max-width:100%;width:100%;right:auto;left:0}
+  .book-container{gap:12px}
+  .book-tabs{border-radius:17px}
+  .book-page{padding:19px 15px 24px;min-height:0;border-radius:20px}
+  .content-section>h2{align-items:flex-start;gap:9px;font-size:1.2rem}
+  .section-number{flex-basis:35px;width:35px;height:35px;font-size:.86rem}
+  .overview-card{padding:20px 19px 21px}
+  .overview-card>p{font-size:1rem}
+  .step-card{padding:17px 16px 19px;border-radius:17px}
+  .step-card ul.privacy-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .step-card .task-fields{grid-template-columns:1fr}
+  .step-card .task-fields .list-group-item:nth-child(5){grid-column:auto}
+  #page-video>.row{grid-template-columns:1fr}
+  .video-card h6{min-height:0}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+
+/* Dokumenty ke stažení: stabilní nativní rozbalení bez Bootstrap JS */
+.hero-banner{z-index:5}
+.hero-banner .download-container{position:relative;z-index:8;min-width:0;flex:0 1 auto}
+.download-disclosure{position:relative;width:100%}
+.download-disclosure>summary{list-style:none;cursor:pointer;user-select:none;display:inline-flex;align-items:center}
+.download-disclosure>summary::-webkit-details-marker{display:none}
+.download-disclosure>summary::marker{content:''}
+.download-disclosure>summary::after{
+  content:'';width:8px;height:8px;margin-left:7px;display:inline-block;
+  border-right:2px solid currentColor;border-bottom:2px solid currentColor;
+  transform:translateY(-2px) rotate(45deg);transition:transform .2s ease;
+}
+.download-disclosure[open]>summary::after{transform:translateY(2px) rotate(225deg)}
+.download-disclosure>summary:focus-visible{outline:3px solid #fff9bb;outline-offset:3px}
+.download-options{margin-top:10px;padding:8px;background:#fff;color:var(--ink);
+  border:1px solid var(--line);border-radius:16px;box-shadow:0 10px 26px rgba(15,23,42,.16);
+  width:370px;max-width:min(440px,calc(100vw - 36px));}
+.download-link{display:flex;align-items:center;gap:9px;border-radius:11px;
+  padding:12px;color:#334155!important;font-weight:720;font-size:.91rem;
+  line-height:1.4;text-decoration:none!important;overflow-wrap:anywhere}
+.download-link i{color:#cf3347}
+.download-link:hover,.download-link:focus-visible{background:#f1f8e3;color:var(--epet-dark)!important}
+@media(max-width:690px){
+  .hero-banner .download-container{width:100%;flex-basis:100%}
+  .download-disclosure>summary{width:100%;justify-content:center}
+  .download-options{width:100%;max-width:none}
+}
+
+
+
+
+/* Znalostka — Daňové doklady: detailní vizuální zpracování, text zachován. */
+:root{--orange:#F99F1C;--epet-green:#94C11F;--epet-green-dark:#60781a;--epet-purple:#9362d6;--navy:#172b44}
+/* Icons in the original text remain available via the same Bootstrap Icons stylesheet. */
+i.bi::before{display:inline-block!important}
+.book-container{grid-template-columns:245px minmax(0,1fr)!important;gap:18px!important}
+.book-tabs{padding:12px!important}
+.book-tabs .nav-icon{flex:0 0 20px;width:20px;height:20px;display:flex;align-items:center;justify-content:center;color:#64748b}
+.book-tabs .nav-icon svg{width:20px;height:20px}
+.book-tabs button.tab-item{width:100%;text-align:left;font-family:inherit}
+.book-tabs button.tab-item.active .nav-icon{color:var(--epet-dark)}
+.book-tabs button.tab-item:hover{border-color:#e6efdd!important}
+.book-page .overview-card{min-height:0;padding:28px 27px;border-radius:19px;box-shadow:0 8px 21px rgba(28,45,58,.045)}
+.book-page .overview-card>p{font-size:1.02rem;line-height:1.77;margin:0 0 18px;color:#344253}
+.book-page .overview-card>p:first-child{font-size:1.055rem}
+.book-page .overview-card>p:last-child{margin-bottom:0}
+.book-page .overview-card>p:nth-child(2){display:inline-flex;align-items:center;gap:7px;
+ background:#f1f8df;border:1px solid #dbeab7;border-radius:10px;padding:8px 12px;color:#4e691f;font-size:.91rem}
+.book-page .overview-card>p:nth-child(2) i{color:#4e691f}
+/* Long tutorial: each original step is its own material card, including its own screenshot. */
+.book-page .procedure-step{position:relative;margin:0 0 15px;padding:20px 23px 21px!important;border:1px solid #e4eaf0!important;
+ border-radius:18px;background:linear-gradient(160deg,#fff 0%,#fbfcfd 100%)!important;box-shadow:0 6px 17px rgba(15,23,42,.048)!important;overflow:hidden}
+.book-page .procedure-step::before{content:'';display:block;height:4px;position:absolute;top:0;left:0;right:0;background:var(--epet)}
+.book-page .procedure-step:nth-of-type(3n+2)::before{background:#F99F1C}
+.book-page .procedure-step:nth-of-type(3n+3)::before{background:#0891b2}
+.book-page .procedure-step>p{margin:0!important;font-size:1rem;color:#36465a;line-height:1.77}
+.book-page .procedure-step .step-badge{display:inline-grid;place-items:center;vertical-align:middle;min-width:36px;width:36px;height:36px;
+ margin:0 11px 3px 0;background:var(--epet);border-radius:50%;color:#fff;font-weight:850;font-size:.95rem}
+.book-page .procedure-step:nth-of-type(3n+2) .step-badge{background:var(--orange)}
+.book-page .procedure-step:nth-of-type(3n+3) .step-badge{background:#0891b2}
+.book-page .procedure-step img{display:block;max-width:100%;width:auto;height:auto;margin:17px auto 0!important;
+ padding:7px;background:#fff;border:1px solid #e2e8f0;border-radius:15px;box-shadow:0 5px 18px rgba(23,43,68,.07)}
+/* Content-heavy sections use the same typography and pace as working procedures. */
+.book-page .sheet-card{padding:26px 26px 25px;background:#fff;border:1px solid var(--line);border-radius:20px;
+ box-shadow:0 7px 22px rgba(15,23,42,.046);overflow-wrap:anywhere}
+.book-page .sheet-card>p{margin:0 0 17px;line-height:1.79;color:#37465b}
+.book-page .sheet-card>p:last-child{margin-bottom:0}
+.book-page .sheet-card>p:has(>strong:first-child):first-child{padding:14px 17px;background:#f2f9e5;
+ border-left:4px solid var(--epet);border-radius:10px;color:#385817}
+.book-page .sheet-card img{display:block;max-width:100%;height:auto;margin:18px auto 24px!important;padding:7px;
+ background:#fff;border:1px solid #dde7ed;border-radius:15px;box-shadow:0 7px 19px rgba(15,23,42,.07)}
+.book-page .sheet-card ul{margin:10px 0 22px;padding-left:21px;color:#45556b}
+.book-page .sheet-card li{margin-bottom:8px}
+.book-page .sheet-card>p .badge{font-size:.75rem;line-height:1.4;border-radius:7px;padding:6px 9px}
+.book-page .sheet-card .card.shadow-sm{border:1px solid #dce6ee!important;border-radius:17px!important;background:#f9fbfd;
+ box-shadow:0 6px 18px rgba(15,23,42,.035)!important;margin-top:18px}
+.book-page .sheet-card .card-body{padding:19px 21px}
+.book-page .sheet-card .card-title{font-size:1.05rem;color:#30465f;font-weight:780}
+.book-page .sheet-card .card-body>p{margin:0 0 11px}
+.book-page .sheet-card .card-body>p:last-child{margin-bottom:0}
+/* CRM example is still a readable, realistic mockup — not a screenshot. */
+.crm-viewport{max-width:100%;overflow-x:auto;margin:22px 0;border-radius:18px;border:1px solid #e0e7ed;background:#f7fafc;padding:14px 14px 12px}
+.crm-window{min-width:570px;width:100%;margin:0;box-shadow:0 10px 24px rgba(23,43,68,.12);border:1px solid #b9c3cf;
+ border-radius:10px;overflow:hidden;background:#f3f5f8;color:#243449;font-family:'Segoe UI',Arial,sans-serif;font-size:12px}
+.crm-header{padding:8px 8px 0;background:linear-gradient(180deg,#f3f5f8,#e7ecf2);border-bottom:1px solid #bfcbd4}
+.crm-tabs{display:flex;gap:4px;padding:0;white-space:nowrap}
+.crm-tab{padding:8px 11px;background:#e6ebf1;border:1px solid #c7d2dc;border-radius:7px 7px 0 0;color:#607084;font-weight:670}
+.crm-tab.active{position:relative;top:1px;background:#fff;color:#2b475d;border-bottom:1px solid #fff;font-weight:840}
+.crm-body{background:#fff;padding:19px 18px 20px;border:7px solid #f4f6f8}
+.crm-group-title{padding:8px 11px;border-radius:8px;background:#eef4ed;border:1px solid #dee9dc;
+ margin:17px 0 13px;font-size:12px;font-weight:850;color:#496523}
+.crm-group-title:first-child{margin-top:0}
+.crm-label{display:block;font-size:11px;font-weight:650;color:#637083;margin-bottom:4px}
+.crm-input{min-height:32px;padding:8px 10px;border:1px solid #d4dde6;border-radius:7px;background:#fbfcfd;font-size:12px;overflow-wrap:anywhere;line-height:1.42}
+.crm-textarea{min-height:93px;white-space:normal;padding:12px 13px;background:#fffdf8;border:1px solid #f6cd93;
+ border-radius:9px;line-height:1.7;overflow-wrap:anywhere}
+.pink-bg{background:#fce9f3!important;color:#733958;font-weight:800}
+.blue-bg{background:#e5f2ff!important;color:#2c5674}
+#page-video .video-card{padding:18px!important}
+#page-video .video-card h6{color:var(--epet-dark)!important}
+#page-test iframe{min-height:630px;max-height:none!important;width:100%;height:660px}
+.book-page{overflow-wrap:break-word}
+.book-page .sheet-card i.bi:not(:empty){color:var(--epet-dark)}
+@media(max-width:1020px){.book-container{display:block!important}.book-tabs{position:relative;top:auto;display:flex!important;flex-direction:row!important;
+ width:100%!important;overflow-x:auto;gap:7px;white-space:nowrap;margin-bottom:14px}.book-tabs::before{display:none}
+ .book-tabs button.tab-item{flex:0 0 auto;min-width:165px;max-width:225px}}
+@media(max-width:690px){body{padding:7px 7px 26px}.hero-banner{padding:26px 20px!important}
+ .book-tabs{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:7px!important;
+ overflow:visible!important;align-items:stretch;padding:10px!important;white-space:normal!important}
+ .book-tabs button.tab-item{min-width:0!important;width:100%!important;max-width:none!important;white-space:normal!important;font-size:.83rem;padding:10px 9px;gap:7px;line-height:1.3}
+ .book-tabs .nav-icon{flex-basis:18px;width:18px;height:18px}
+ .book-tabs .nav-icon svg{width:17px;height:17px}
+ .book-page{padding:18px 15px!important}
+ .book-page .procedure-step{padding:17px 16px 19px!important}
+ .book-page .sheet-card{padding:19px 16px}
+ .book-page .overview-card{padding:21px 17px}
+ .crm-viewport{padding:9px}
+ .sheet-card .badge{margin:3px 0!important}
+ #page-video>.row{grid-template-columns:1fr!important}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* ===== Zakázková typografie a panely: Evidence a předávání samoodečtů ===== */
+:root{--de-orange:#F99F1C;--de-ink:#23354b;--soft-green:#eff7df}
+.book-container{grid-template-columns:275px minmax(0,1fr)}
+.book-tabs .tab-group{border-radius:14px;min-width:0;display:flex;flex-direction:column}
+.book-tabs .tab-group>.tab-item{width:100%;text-align:left}
+.book-tabs .tab-group>.tab-item .nav-chevron{margin-left:auto;flex:0 0 auto;font-size:15px;color:#6c7f46;transition:transform .2s}
+.book-tabs .tab-group.open>.tab-item .nav-chevron{transform:rotate(180deg)}
+.book-tabs .sub-tabs{display:none;flex-direction:column;gap:3px;padding:3px 0 5px 16px;margin:0 0 5px 13px;border-left:2px solid #e5edda}
+.book-tabs .tab-group.open .sub-tabs{display:flex}
+.book-tabs .sub-tabs .tab-item{font-size:.85rem;min-height:41px;padding:9px 8px 9px 11px;line-height:1.3}
+.book-tabs .sub-tabs .nav-icon{width:17px;height:17px;flex-basis:17px}
+.book-tabs .sub-tabs .nav-icon svg{width:16px;height:16px}
+.book-tabs .tab-group.parent-active{background:#fcfff7}
+.book-tabs .tab-group.parent-active>.tab-item{color:var(--epet-dark)}
+.book-page .section-kicker{font-weight:820;color:#789b20;text-transform:uppercase;letter-spacing:.12em;font-size:.7rem;margin-bottom:8px}
+.book-page .content-section>h2:not(:first-child){margin-top:0}
+.book-page .content-section h3,.book-page .content-section h4,.book-page .content-section h5{color:#2a4259;line-height:1.35}
+.book-page .content-section p,.book-page .content-section li{overflow-wrap:break-word}
+.book-page a{overflow-wrap:anywhere}
+.book-page .sheet-card,.book-page .overview-card,.book-page .guide-card{
+ border:1px solid #dfe7ee!important;background:#fff!important;border-radius:20px!important;
+ box-shadow:0 7px 23px rgba(15,23,42,.048)!important;padding:23px 26px!important;
+}
+.book-page .overview-card{border-color:#dceacb!important;background:linear-gradient(145deg,#fff,#f8fcf0)!important}
+.book-page .guide-card>p,.book-page .sheet-card>p{margin:0 0 16px;color:#35485e;line-height:1.76}
+.book-page .guide-card>p:last-child,.book-page .sheet-card>p:last-child{margin-bottom:0}
+.book-page .gs-quote,.book-page blockquote.gs-quote,.book-page blockquote:not(.gs-quote){
+ opacity:1!important;transform:none!important;animation:none!important;
+ margin:17px 0 18px;padding:17px 19px;border-radius:14px;
+ background:linear-gradient(135deg,#fff,#f8fbf3);border:1px solid #e1ead7;border-left:5px solid #94c11f;
+ box-shadow:0 5px 18px rgba(24,48,37,.035);color:#34465b;font-style:normal
+}
+.book-page .gs-quote::after{font-size:50px;right:14px;top:-7px}
+.book-page .gs-quote::before{display:none}
+.book-page .gs-quote cite{font-size:12px;color:#6b7b86}
+.book-page .gs-quote p{line-height:1.72;margin:0 0 7px;color:#374960}
+.book-page .gs-quote li{margin:8px 0}
+.book-page .overview-card>p{font-size:1rem;line-height:1.8;margin-bottom:15px}
+.book-page .glossary{border-top:1px solid #dce8d1;margin:17px 0 0;padding-top:15px}
+.book-page .glossary h3{font-size:1rem;margin:5px 0 15px;color:var(--epet-dark)}
+.book-page .glossary .d-flex.flex-wrap{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px!important}
+.book-page .glossary .d-flex.align-items-center{min-height:59px;padding:11px 13px;border-radius:12px;border:1px solid #e5ebef;background:#fff;gap:9px;font-size:.92rem;color:#42536a}
+.book-page .glossary i.bi{min-width:21px;margin:0!important}
+/* Rychlý rozcestník zůstává skutečný třísloupcový přehled. */
+.quick-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-bottom:18px}
+.quick-card,.type-card{height:100%;min-height:0;padding:19px 20px;background:#fff;border:1px solid #dee7ed;border-radius:17px;box-shadow:0 6px 18px rgba(15,23,42,.042);position:relative;overflow:hidden}
+.quick-card::before{content:'';position:absolute;left:0;top:0;right:0;width:auto;height:4px;background:var(--epet)}
+.quick-card.warning::before{background:var(--de-orange)}.quick-card.danger::before{background:#db4451}.quick-card.info::before{background:#418db5}
+.quick-card h3,.type-card h3{margin:0 0 11px;font-size:1.01rem;font-weight:850;color:#314258}
+.quick-card ul{margin:0;padding-left:18px;font-size:.93rem;color:#4b5970;line-height:1.62}
+.quick-card li{margin:0 0 8px}.quick-card li:last-child{margin-bottom:0}
+.quick-icon{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:12px;background:#edf7d9;color:#567816;font-size:1.13rem;margin-bottom:11px}
+.quick-card.warning .quick-icon{background:#fff2db;color:#b66f0d}
+.quick-card.danger .quick-icon{background:#ffedf0;color:#b82435}
+.quick-card.info .quick-icon{background:#e3f3ff;color:#19658d}
+.decision-flow{border:1px solid #dce8ef;border-radius:20px;padding:22px 22px 23px;margin:18px 0 21px;background:linear-gradient(135deg,#fff,#f7fafb);box-shadow:0 7px 22px rgba(15,23,42,.04)}
+.decision-flow>h3{font-size:1.2rem;margin-bottom:15px;font-weight:850}
+.flow-row{display:grid;grid-template-columns:1fr 32px 1fr 32px 1fr;gap:6px;align-items:stretch}
+.flow-node{padding:17px 15px;border:1px solid #d9e4eb;border-radius:14px;background:#fff;font-size:.9rem;color:#4a5e72;line-height:1.58}
+.flow-node strong{display:block!important;font-weight:850!important;margin-bottom:9px;color:#3f5d17!important}
+.flow-arrow{align-self:center;text-align:center;color:#789d23;font-size:1.35rem}
+.type-card{padding:20px}.type-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:#94c11f}
+.type-card p{line-height:1.7;font-size:.95rem;color:#4b5e72;min-height:85px;margin:0 0 13px}
+.type-card .btn{border:1px solid #8bad5c!important;color:#436f19!important;border-radius:999px!important;font-weight:740;padding:7px 14px}
+.type-card .btn:hover,.type-card .btn:focus-visible{background:#edf5de!important}
+/* Termíny elektřiny a plynu: dvě paralelní srovnávací karty. */
+.term-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin:0!important}
+.term-grid>.term-panel{min-width:0;border:1px solid #dde5ed;border-radius:17px;background:#fff;padding:20px 18px;box-shadow:0 6px 16px rgba(15,23,42,.035)}
+.term-grid>.term-panel:first-child{border-top:5px solid #94c11f}
+.term-grid>.term-panel:nth-child(2){border-top:5px solid #F99F1C}
+.term-panel>h2{font-size:1.27rem!important;margin:0 0 14px;font-weight:840;color:#314f25}
+.term-panel:nth-child(2)>h2{color:#b06e14}
+.term-panel .list-group{border:1px solid #e1e8ed;border-radius:12px;overflow:hidden;margin:0 0 18px}
+.term-panel .list-group-item{padding:12px 12px;border:0;border-bottom:1px solid #e8eef1;color:#43536b;line-height:1.65;font-size:.91rem}
+.term-panel .list-group-item:last-child{border-bottom:0}
+.term-panel .badge{display:inline-block;font-size:.77rem;padding:5px 9px;border-radius:8px;line-height:1.4;white-space:normal;margin-right:4px}
+.term-panel .highlight{font-weight:720;color:#4e6b11}
+.term-panel ul:not(.list-group){padding-left:19px;margin:10px 0 17px}
+.term-panel ul:not(.list-group)>li{margin-bottom:12px;line-height:1.75;color:#42536b}
+.term-panel blockquote{margin:13px 0!important}
+.term-panel .gs-quote p{font-size:.94rem}
+/* Samostatně řešená zamítnutí a copy šablony. */
+.rejection-card{position:relative;border:1px solid #e1e7ed!important;border-radius:19px!important;background:#fff!important;
+ padding:21px 24px!important;margin:0 0 15px!important;box-shadow:0 7px 20px rgba(15,23,42,.045);overflow:hidden}
+.rejection-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:#db4451}
+.rejection-card:nth-of-type(2n)::before{background:#f4a01c}
+.rejection-card>p:first-child{font-size:1.06rem;color:#243b55;font-weight:780}
+.rejection-card .step-badge{display:inline-grid;place-items:center;flex:0 0 37px;min-width:37px;width:37px;height:37px;font-weight:870;font-size:.96rem;border-radius:50%;background:#db4451;color:#fff;margin-right:10px}
+.rejection-card>h5{font-size:.95rem;font-weight:850;color:#4c641b;margin:20px 0 8px}
+.rejection-card>p,.rejection-card li{line-height:1.7;color:#41536d}
+.rejection-card ul{margin:9px 0 13px;padding-left:21px}
+.rejection-card li{margin-bottom:7px}
+.copy-template{margin:0 0 15px;border-radius:17px;border:1px solid #dce6eb;background:#fff;box-shadow:0 5px 18px rgba(15,23,42,.038);overflow:hidden}
+.copy-template-header{padding:14px 17px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;background:#f7fafb;border-bottom:1px solid #e1e9ee}
+.copy-template-title{font-weight:800;color:#263c53;font-size:.94rem;flex:1 1 280px}
+.copy-template pre{margin:0;padding:17px 20px;font-family:'Segoe UI',system-ui,Arial,sans-serif;font-size:.925rem;line-height:1.68;white-space:pre-wrap;overflow-wrap:anywhere;color:#475569;background:#fff}
+.copy-btn{display:inline-flex;align-items:center;gap:6px;border:0;border-radius:999px;padding:8px 14px;font-size:.83rem;font-weight:800;background:#94c11f;color:#243600;cursor:pointer;white-space:nowrap}
+.copy-btn:hover{background:#779d16;color:#fff}
+#copyToast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,10px);z-index:99999;pointer-events:none;border-radius:999px;background:#213448;color:#fff;
+ padding:11px 19px;font-weight:730;font-size:.88rem;box-shadow:0 12px 26px rgba(15,23,42,.16);opacity:0;transition:opacity .17s,transform .17s}
+#copyToast.show{opacity:1;transform:translate(-50%,0)}
+/* Schéma zůstává přirozeně vodorovné na počítači, ale přechází na svislé na telefonu. */
+@media(max-width:1120px){.quick-grid{grid-template-columns:1fr}.term-grid{grid-template-columns:1fr}.flow-row{grid-template-columns:1fr 24px 1fr 24px 1fr}}
+@media(max-width:1020px){.book-tabs .tab-group{flex:0 0 auto}.book-tabs .sub-tabs{white-space:normal}.quick-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:730px){.quick-grid,.term-grid{grid-template-columns:1fr}.flow-row{grid-template-columns:1fr;gap:4px}.flow-arrow{transform:rotate(90deg);height:22px}
+ .book-page .sheet-card,.book-page .overview-card,.book-page .guide-card{padding:19px 17px!important}
+ .book-page .glossary .d-flex.flex-wrap{grid-template-columns:1fr}
+ .decision-flow{padding:17px}.rejection-card{padding:17px!important}
+ .type-card p{min-height:0}
+ .book-tabs .tab-group{grid-column:span 2}.book-tabs .tab-group>.tab-item{width:100%!important;max-width:none!important}
+ .book-tabs .sub-tabs{display:none;flex-direction:column!important;max-width:none;white-space:normal!important;margin-left:7px}
+ .book-tabs .tab-group.open .sub-tabs{display:flex!important}
+ .book-tabs .sub-tabs button{min-width:0!important;max-width:none!important}
+ .hero-banner h1{font-size:1.57rem!important}
+}
+</style></head><body><nav aria-label="breadcrumb" class="breadcrumb-nav">
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+<a href="https://sites.google.com/view/znalostka/"><svg aria-hidden="true" class="svg-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><path d="M3 11 12 4l9 7v9H3z"></path><path d="M9 20v-7h6v7"></path></svg> Znalostní
+                    báze</a>
+</li>
+<li class="breadcrumb-item">
+<a href="https://sites.google.com/view/znalostka/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat">Školení
+                    ZIS</a>
+</li>
+<li class="breadcrumb-item">
+<a href="https://sites.google.com/view/znalostka/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat/4-den">4.
+                    den</a>
+</li>
+<li aria-current="page" class="breadcrumb-item active">
+                Evidence a předávání samoodečtů
+            </li>
+</ol>
+</nav><header class="hero-banner d-flex justify-content-between align-items-center"><div><h1 class="h2 fw-bold mb-1">Pracovní postup: Evidence a předávání samoodečtů</h1><p class="mb-0 opacity-75">Znalostní databáze epet | Dokumentace a přílohy</p></div><div class="download-container"><details class="download-disclosure"><summary class="btn-download"><svg aria-hidden="true" class="svg-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><path d="M6 3h9l4 4v14H6z"></path><path d="M15 3v5h4M9 12h7M9 16h5"></path></svg> Dokumenty ke stažení</summary><div class="download-options"><a class="download-link" href="https://drive.google.com/file/d/1ZNMOirWDIhbM_NjCcJZVJNwSeRIHgZ5E/view?usp=drive_link" rel="noopener noreferrer" target="_blank">Evidence a předávání samoodečtů (PDF)</a><a class="download-link" href="https://drive.google.com/file/d/1N63m-JUW_ZkdTHVNbqSUZhoH6FcSD8-i/view?usp=sharing" rel="noopener noreferrer" target="_blank">Procesní manuál na zadávání samoodečtů
+                        prostřednictvím
+                        AF 180 (PDF)</a><a class="download-link" href="https://drive.google.com/file/d/1MG3t2yV3ZZd4JXmecm3mjeuT5_jeXYgN/view?usp=drive_link" rel="noopener noreferrer" target="_blank">Pavouk na práci se zamítnutými samoodečty (PDF)</a></div></details></div></header><div class="book-container"><nav aria-label="Navigace školením" class="book-tabs"><button aria-controls="page-quick" aria-current="false" class="tab-item" data-target="page-quick" type="button"><span aria-hidden="true" class="nav-icon"><svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><rect height="8" rx="1" width="8" x="3" y="3"></rect><rect height="8" rx="1" width="8" x="13" y="3"></rect><rect height="8" rx="1" width="8" x="3" y="13"></rect><rect height="8" rx="1" width="8" x="13" y="13"></rect></svg></span><span class="nav-label">Rychlý přehled</span></button><button aria-controls="page-intro" aria-current="false" class="tab-item" data-target="page-intro" type="button"><span aria-hidden="true" class="nav-icon"><svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><rect height="18" rx="2" width="16" x="4" y="3"></rect><path d="M8 8h8M8 12h8M8 16h6"></path></svg></span><span class="nav-label">Pracovní postup</span></button><div class="tab-group" id="group-typy"><button aria-controls="page-typy" aria-current="false" class="tab-item" data-target="page-typy" type="button"><span aria-hidden="true" class="nav-icon"><svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><path d="M5 16a8 8 0 1 1 14 0"></path><path d="m12 13 4-4"></path><path d="M5 17h14M9 21h6"></path></svg></span><span class="nav-label">Typy samoodečtů</span></button><div class="sub-tabs"><button aria-controls="page-pravidlo1" aria-current="false" class="tab-item sub" data-target="page-pravidlo1" type="button"><span aria-hidden="true" class="nav-icon"><svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><path d="M9 8 4 12l5 4M4 12h12a4 4 0 0 0 4-4"></path></svg></span><span class="nav-label">Kontrolní odečet</span></button><button aria-controls="page-pravidlo2" aria-current="false" class="tab-item sub" data-target="page-pravidlo2" type="button"><span aria-hidden="true" class="nav-icon"><svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><path d="M9 8 4 12l5 4M4 12h12a4 4 0 0 0 4-4"></path></svg></span><span class="nav-label">Fakturační / mimořádný odečet</span></button><button aria-controls="page-pravidlo3" aria-current="false" class="tab-item sub" data-target="page-pravidlo3" type="button"><span aria-hidden="true" class="nav-icon"><svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><path d="M9 8 4 12l5 4M4 12h12a4 4 0 0 0 4-4"></path></svg></span><span class="nav-label">Konečný odečet</span></button></div></div><button aria-controls="page-terminy" aria-current="false" class="tab-item" data-target="page-terminy" type="button"><span aria-hidden="true" class="nav-icon"><svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><rect height="16" rx="2" width="18" x="3" y="5"></rect><path d="M7 3v4M17 3v4M3 10h18M8 14h3M13 14h3"></path></svg></span><span class="nav-label">Termíny samoodečtů</span></button><button aria-controls="page-Evidence" aria-current="false" class="tab-item" data-target="page-Evidence" type="button"><span aria-hidden="true" class="nav-icon"><svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><rect height="18" rx="2" width="14" x="5" y="3"></rect><path d="M9 2h6v4H9zM8 11h8M8 15h7"></path></svg></span><span class="nav-label">Evidence v ZIS</span></button><button aria-controls="page-zamitnuti" aria-current="false" class="tab-item" data-target="page-zamitnuti" type="button"><span aria-hidden="true" class="nav-icon"><svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><path d="m12 3 10 18H2L12 3z"></path><path d="M12 9v5M12 18h.01"></path></svg></span><span class="nav-label">Zamítnuté samoodečty</span></button><button aria-controls="page-sablony" aria-current="false" class="tab-item" data-target="page-sablony" type="button"><span aria-hidden="true" class="nav-icon"><svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><rect height="13" rx="2" width="13" x="8" y="8"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg></span><span class="nav-label">Šablony úkolů</span></button><button aria-controls="page-video" aria-current="false" class="tab-item" data-target="page-video" type="button"><span aria-hidden="true" class="nav-icon"><svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><rect height="14" rx="3" width="18" x="3" y="5"></rect><path d="m10 9 6 3-6 3z"></path></svg></span><span class="nav-label">Video návody</span></button><button aria-controls="page-test" aria-current="false" class="tab-item tab-purple" data-target="page-test" type="button"><span aria-hidden="true" class="nav-icon"><svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><rect height="17" rx="2" width="14" x="5" y="5"></rect><path d="M8 4h8M9 3h6v3H9zM9 14l2 2 4-4"></path></svg></span><span class="nav-label">Opakovací test</span></button></nav><main class="book-page"><div aria-hidden="false" class="content-section active" id="page-quick" tabindex="-1">
+<div class="section-kicker">Rychlý pracovní rozcestník</div>
+<h2 class="fw-bold mb-3 text-success">Evidence a předávání samoodečtů</h2>
+<p class="text-muted mb-4">
+                    Nejrychlejší orientace: co smíme zaevidovat, co neevidujeme a kdy požadavek předáváme dál.
+                    Detailní metodiku najdete v dalších záložkách vlevo.
+                </p>
+<div class="quick-grid">
+<div class="quick-card">
+<div class="quick-icon"><svg aria-hidden="true" class="svg-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><circle cx="12" cy="12" r="9"></circle><path d="m8 12 3 3 5-6"></path></svg></div>
+<h3>Evidovat můžeme</h3>
+<ul>
+<li>odběrné místo s měřením typu <b>C</b>,</li>
+<li>přímé měření,</li>
+<li>stav vyšší než poslední evidovaný odečet,</li>
+<li>pouze celá čísla.</li>
+</ul>
+</div>
+<div class="quick-card danger">
+<div class="quick-icon"><svg aria-hidden="true" class="svg-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><path d="m8 3 8 0 5 5v8l-5 5H8l-5-5V8z"></path><path d="m9 9 6 6M15 9l-6 6"></path></svg></div>
+<h3>Neevidujeme</h3>
+<ul>
+<li>měření typu <b>B</b>,</li>
+<li>odběrná místa v <b>LDS</b>,</li>
+<li>nižší stav než předchozí evidovaný odečet,</li>
+<li>počáteční odečet při přechodu k epet.</li>
+</ul>
+</div>
+<div class="quick-card warning">
+<div class="quick-icon"><svg aria-hidden="true" class="svg-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><path d="m3 4 18 8-18 8 4-8-4-8zM7 12h8"></path><path d="M19 3v4M19 9h.01"></path></svg></div>
+<h3>Předáváme dál</h3>
+<ul>
+<li>duplicitní datum odečtu,</li>
+<li>zamítnutý samoodečet,</li>
+<li>opravu již zadaného stavu,</li>
+<li>požadavek na MIMFA / KFA.</li>
+</ul>
+</div>
+</div>
+<div class="decision-flow">
+<div class="section-kicker">Rozhodovací strom</div>
+<h3 class="fw-bold mb-3">Jak se rozhodnout při hlášení samoodečtu</h3>
+<div class="flow-row">
+<div class="flow-node">
+<strong>1. Zákazník hlásí samoodečet</strong>
+                            Ověř EAN/EIC, typ měření, datum odečtu a poslední evidovaný stav.
+                        </div>
+<div class="flow-arrow"><svg aria-hidden="true" class="svg-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><circle cx="12" cy="12" r="9"></circle><path d="M7 12h10m-4-4 4 4-4 4"></path></svg></div>
+<div class="flow-node">
+<strong>2. Splňuje podmínky?</strong>
+                            Typ C, nejde o LDS, stav je vyšší a termín odpovídá pravidlům.
+                        </div>
+<div class="flow-arrow"><svg aria-hidden="true" class="svg-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><circle cx="12" cy="12" r="9"></circle><path d="M7 12h10m-4-4 4 4-4 4"></path></svg></div>
+<div class="flow-node">
+<strong>3. Zadat / předat</strong>
+                            Pokud splňuje, eviduj přes AF 180 / tabulku. Pokud ne, použij šablonu úkolu.
+                        </div>
+</div>
+</div>
+<div class="row g-3">
+<div class="col-md-6">
+<div class="quick-card info h-100">
+<div class="quick-icon"><svg aria-hidden="true" class="svg-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><rect height="17" rx="2" width="14" x="5" y="5"></rect><path d="M8 4h8M9 3h6v3H9zM9 14l2 2 4-4"></path></svg></div>
+<h3>Co musí být v úkolu</h3>
+<ul>
+<li>EAN/EIC,</li>
+<li>datum odečtu,</li>
+<li>stav měřidla VT / NT / m³,</li>
+<li>typ odečtu: kontrolní / mimořádný / konečný,</li>
+<li>důvod předání.</li>
+</ul>
+</div>
+</div>
+<div class="col-md-6">
+<div class="quick-card warning h-100">
+<div class="quick-icon"><svg aria-hidden="true" class="svg-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><path d="M8 16c0-3-3-3-3-7a7 7 0 0 1 14 0c0 4-3 4-3 7zM8 20h8M9 23h6"></path></svg></div>
+<h3>Praktický tip</h3>
+<ul>
+<li>U sporných nebo zamítnutých stavů vždy vyžádej fotografii měřidla.</li>
+<li>U plynu hlídej, zda jde o kontrolní nebo mimořádný odečet.</li>
+<li>U mimořádného odečtu ověř případný poplatek.</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-intro" tabindex="-1">
+<h2 aria-label="1. Pracovní postup" class="fw-bold mb-4 text-success"><span aria-hidden="true" class="section-number">1</span><span>Pracovní postup</span></h2>
+<div class="overview-card">
+<p>Samoodečet je odečet měřidla (elektroměru / plynoměru) realizovaný zákazníkem.</p>
+<p>
+                        Zákazník nám může odečet nahlásit <i>telefonicky</i> prostřednictvím zákaznické linky,
+                        zaslat <i>e-mailem</i> na adresu: info@epet.cz, nebo zadat prostřednictvím zákaznického portálu:
+                        <a data-bs-placement="top" href="https://zakaznici.epet.cz/login" target="_blank" title="Odkaz na zákaznický portál">Zákaznický portál</a>
+</p>
+<p><svg aria-hidden="true" class="svg-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><circle cx="12" cy="12" r="9"></circle><path d="m8 12 3 3 5-6"></path></svg>
+                        Odečty <b>můžeme evidovat</b> pouze u odběrných míst s měřením typu <b>C</b> – přímé měření,
+                        které jsou vyšší než poslední evidované odečty.
+                    </p>
+<p><svg aria-hidden="true" class="svg-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><circle cx="12" cy="12" r="9"></circle><path d="m8 12 3 3 5-6"></path></svg>
+                        Evidujeme pouze celá čísla
+                        <i>(Př. 5 803,23 kWh → 5 803 kWh; 6 906,87 kWh → 6 907 kWh)</i>
+</p>
+<p><svg aria-hidden="true" class="svg-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><circle cx="12" cy="12" r="9"></circle><path d="m9 9 6 6M15 9l-6 6"></path></svg>
+                        U odběrných míst s měřením typu <b>B</b> – nepřímé měření, <u>není možné</u> samoodečty
+                        evidovat.
+                    </p>
+<p><svg aria-hidden="true" class="svg-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><circle cx="12" cy="12" r="9"></circle><path d="m9 9 6 6M15 9l-6 6"></path></svg>
+                        Není možné evidovat samoodečty ani u <b>LDS</b>
+</p>
+<p><svg aria-hidden="true" class="svg-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><circle cx="12" cy="12" r="9"></circle><path d="m9 9 6 6M15 9l-6 6"></path></svg>
+                        Není možné evidovat samoodečty nižší než předchozí evidovaný odečet.
+                    </p>
+<div class="mb-3 glossary">
+<h3><strong>Zkratky:</strong></h3>
+<div class="d-flex flex-wrap gap-4">
+<div class="d-flex align-items-center">
+<svg aria-hidden="true" class="svg-icon text-primary fs-4 me-2" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><path d="M5 16a8 8 0 0 1 14 0M6 20h12M12 13l4-4"></path></svg>
+<b>SAM</b> = samoodečet = odečet = stav měřidla
+                            </div>
+<div class="d-flex align-items-center">
+<svg aria-hidden="true" class="svg-icon text-primary fs-4 me-2" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><path d="M5 16a8 8 0 0 1 14 0M6 20h12M12 13l4-4"></path></svg>
+<b>KSAM</b> = konečný samoodečet
+                            </div>
+<div class="d-flex align-items-center">
+<svg aria-hidden="true" class="svg-icon text-success fs-4 me-2" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><path d="M5 3h14v18l-3-2-4 2-4-2-3 2zM8 8h8M8 12h7M8 16h5"></path></svg>
+<b>MIMFA</b> = mimořádná faktura
+                            </div>
+<div class="d-flex align-items-center">
+<svg aria-hidden="true" class="svg-icon text-success fs-4 me-2" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><path d="M5 3h14v18l-3-2-4 2-4-2-3 2zM8 8h8M8 12h7M8 16h5"></path></svg>
+<b>KFA / KV</b> = konečná faktura / konečné vyúčtování
+                            </div>
+<div class="d-flex align-items-center">
+<svg aria-hidden="true" class="svg-icon text-info fs-4 me-2" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><rect height="14" rx="2" width="18" x="3" y="7"></rect><path d="M8 7V4h8v3M3 12h18M10 12v2h4v-2"></path></svg>
+<b>PD</b> = pracovní den
+                            </div>
+<div class="d-flex align-items-center">
+<svg aria-hidden="true" class="svg-icon text-info fs-4 me-2" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><rect height="16" rx="2" width="18" x="3" y="5"></rect><path d="M7 3v4M17 3v4M3 10h18M8 14h3M13 14h3"></path></svg>
+<b>KD</b> = kalendářní den
+                            </div>
+<div class="d-flex align-items-center">
+<svg aria-hidden="true" class="svg-icon text-warning fs-4 me-2" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><rect height="18" rx="1" width="16" x="4" y="3"></rect><path d="M8 7h2M14 7h2M8 11h2M14 11h2M8 15h2M14 15h2M10 21v-4h4v4"></path></svg>
+<b>DI</b> = distributor = <b>PDS</b> = provozovatel distribuční soustavy
+                            </div>
+<div class="d-flex align-items-center">
+<svg aria-hidden="true" class="svg-icon text-warning fs-4 me-2" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><rect height="4" rx="1" width="4" x="10" y="3"></rect><rect height="4" rx="1" width="5" x="2" y="17"></rect><rect height="4" rx="1" width="5" x="10" y="17"></rect><rect height="4" rx="1" width="5" x="18" y="17"></rect><path d="M12 7v5M4 17v-5h16v5M12 12v5"></path></svg>
+<b>LDS</b> = lokální provozovatel distribuční soustavy
+                            </div>
+<div class="d-flex align-items-center">
+<svg aria-hidden="true" class="svg-icon text-dark fs-4 me-2" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><path d="M9 3 6 21M18 3l-3 18M4 9h17M3 15h17"></path></svg>
+<b>č. př. / č. el.</b> = číslo přístroje (číslo měřidla) / číslo elektroměru
+                            </div>
+<div class="d-flex align-items-center">
+<svg aria-hidden="true" class="svg-icon text-danger fs-4 me-2" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><path d="m13 2-9 12h7l-1 8 10-13h-7z"></path></svg>
+<b>VT</b> = vysoký tarif (také T1)
+                            </div>
+<div class="d-flex align-items-center">
+<svg aria-hidden="true" class="svg-icon text-secondary fs-4 me-2" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><path d="M20 14a8 8 0 0 1-10-10A8 8 0 1 0 20 14z"></path></svg>
+<b>NT</b> = nízký tarif (také T2)
+                            </div>
+<div class="d-flex align-items-center">
+<svg aria-hidden="true" class="svg-icon text-primary fs-4 me-2" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><circle cx="12" cy="7" r="4"></circle><path d="M5 21a7 7 0 0 1 14 0"></path></svg>
+<b>ZK</b> = zákazník
+                            </div>
+</div>
+</div>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-typy" tabindex="-1">
+<div class="section-kicker">Přehled typů</div>
+<h2 aria-label="2. Typy samoodečtů" class="fw-bold mb-4 text-success"><span aria-hidden="true" class="section-number">2</span><span>Typy samoodečtů</span></h2>
+<p class="text-muted mb-4">Každý typ samoodečtu má jiný účel. Nejdůležitější je poznat, zda jde pouze o informativní stav, požadavek na vyúčtování, nebo konečný stav při změně dodavatele.</p>
+<div class="row g-3">
+<div class="col-lg-4">
+<div class="type-card">
+<div class="quick-icon"><svg aria-hidden="true" class="svg-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"></path><circle cx="12" cy="12" r="3"></circle></svg></div>
+<h3>Kontrolní odečet</h3>
+<p>Informativní stav měřidla. Nevede k vystavení vyúčtování, zohlední se až při periodickém vyúčtování.</p>
+<button class="btn btn-sm btn-outline-success mt-3" onclick="openPageById('page-pravidlo1')">Zobrazit detail</button>
+</div>
+</div>
+<div class="col-lg-4">
+<div class="type-card">
+<div class="quick-icon"><svg aria-hidden="true" class="svg-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><path d="M5 3h14v18l-3-2-4 2-4-2-3 2zM8 8h8M8 12h7M8 16h5"></path></svg></div>
+<h3>Fakturační / mimořádný odečet</h3>
+<p>Stav měřidla pro vystavení mimořádného vyúčtování. Je nutné hlídat termín a případný poplatek.</p>
+<button class="btn btn-sm btn-outline-success mt-3" onclick="openPageById('page-pravidlo2')">Zobrazit detail</button>
+</div>
+</div>
+<div class="col-lg-4">
+<div class="type-card">
+<div class="quick-icon"><svg aria-hidden="true" class="svg-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><path d="M3 8h18l-4-4M21 16H3l4 4"></path></svg></div>
+<h3>Konečný odečet</h3>
+<p>Odečet při ukončení dodávky, přepisu nebo změně dodavatele. Pokud není nahlášen, stav stanoví distributor.</p>
+<button class="btn btn-sm btn-outline-success mt-3" onclick="openPageById('page-pravidlo3')">Zobrazit detail</button>
+</div>
+</div>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-pravidlo1" tabindex="-1">
+<h2 aria-label="2.1 Kontrolní odečet" class="fw-bold mb-4 text-success"><span aria-hidden="true" class="section-number">2.1</span><span>Kontrolní odečet</span></h2>
+<!-- KARTA: Kontrolní odečet -->
+<div class="sheet-card">
+<p>
+                        Informační odečet hlášený zákazníkem na základě kterého <b>nedojde</b> k
+                        <b>vystavení vyúčtování</b>. Hodnota kontrolního odečtu se zohlední až při
+                        periodickém vyúčtování.
+                    </p>
+<blockquote class="gs-quote">
+<p>
+                            (Př. Zákazník může nahlásit kontrolní odečet při změně ceny. Při periodickém vyúčtování je následně
+                            přesně vyúčtována původní a nová cena za dodávku, v návaznosti na samoodečet).
+                        </p>
+<cite>Interní poznámka / metodika</cite>
+</blockquote>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-pravidlo2" tabindex="-1">
+<h2 aria-label="2.2 Fakturační (Mimořádný) odečet" class="fw-bold mb-4 text-success"><span aria-hidden="true" class="section-number">2.2</span><span>Fakturační (Mimořádný) odečet</span></h2>
+<!-- KARTA: Fakturační -->
+<div class="sheet-card">
+<p>
+                        Odečet hlášený zákazníkem <b>pro vystavení mimořádného vyúčtování</b> . Na základě odečtu dojde k
+                        <b>vystavení vyúčtování</b>.
+                    </p>
+<blockquote class="gs-quote">
+<p>
+                            (Př. Zákazník může nahlásit odečet pro mimořádné vyúčtování, pokud požaduje, aby došlo u odběrného místa
+                            k mimořádnému zúčtování za uplynulé období).
+                        </p>
+<cite>Interní poznámka / metodika</cite>
+</blockquote>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-pravidlo3" tabindex="-1">
+<h2 aria-label="2.3 Odečet při změně dodavatele (konečný odečet)" class="fw-bold mb-4 text-success"><span aria-hidden="true" class="section-number">2.3</span><span>Odečet při změně dodavatele (konečný odečet)</span></h2>
+<!-- KARTA: Odečet při změně dodavatele (konečný odečet) -->
+<div class="sheet-card">
+<p>
+                        Odečet hlášený zákazníkem při přechodu k <b>epet</b> nebo při odchodu od <b>epet.</b>
+</p>
+<ul>
+<li>
+<b>Při přechodu k epet:</b> - Pokud zákazník přechází k naší společnosti,
+                            odečet <b>nemůžeme</b> evidovat, je opravdu nezbytné, aby odečet zákazník
+                            nahlásil původnímu dodavateli ke dni ukončení smlouvy
+                            (datum přihlášení u <b>epet</b> – 1 den) a to nejpozději v den ukončení smlouvy,
+                            popř. do 2 pracovních dnů od data ukončení.
+                        </li>
+</ul>
+<blockquote class="gs-quote">
+<p>
+                            Původní dodavatel zaeviduje odečet → předá jej distribuci → distributor (během dodávky <b>epet</b>,
+                            popř. při fakturaci) odečet postoupí novému dodavateli, tedy nám.
+                        </p>
+<cite>Interní poznámka / metodika</cite>
+</blockquote>
+<ul>
+<li>
+<b>Při odchodu od epet:</b> - Doporučujeme, aby nám zákazník při ukončení
+                            smluvního vztahu nahlásil konečný stav měřidla ke dni ukončení.
+                            V případě, že tak neučiní do 5 dní, dojde k vystavení konečného vyúčtování
+                            <b>dle odečtu distribuce.</b>
+</li>
+</ul>
+<blockquote class="gs-quote">
+<p>
+                            (Pozn. Elektřina: Distributor stanovuje konečný stav buď odhadem nebo opravdu jede na odběrné místo
+                            měřidlo fyzicky odečíst, např. pokud se blíží termín periodického odečtu, ale to zjistíme jedině
+                            odesláním dotazu na distribuci, a proto sdělujeme zákazníkům, že dojde k vystavení konečného vyúčtování
+                            dle odečtu distribuce.)
+                        </p>
+<cite>Interní poznámka / metodika</cite>
+</blockquote>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-terminy" tabindex="-1">
+<h2 aria-label="3. Termíny samoodečtů" class="fw-bold mb-4 text-success"><span aria-hidden="true" class="section-number">3</span><span>Termíny samoodečtů</span></h2>
+<!-- KARTA: Termíny Samoodečtů -->
+<div class="sheet-card term-wrapper">
+<div class="term-grid">
+<!-- ================= ELEKTŘINA ================= -->
+<div class="term-panel">
+<h2 class="alert-heading">
+<svg aria-hidden="true" class="svg-icon section-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><path d="m13 2-9 12h7l-1 8 10-13h-7z"></path></svg>Elektřina
+                            </h2>
+<ul class="list-group list-group-flush mb-3">
+<li class="list-group-item"><span class="badge bg-info badge-type">Kontrolní</span> <span class="highlight">k jakémukoliv datu</span>, nahlášení do <b>20 KD</b> (30 KD)</li>
+<li class="list-group-item"><span class="badge bg-success badge-type">Mimořádné
+                                        (Fakturační)</span> <span class="highlight">k jakémukoliv datu</span>, nahlášení do
+                                    <b>20 KD</b> (30 KD)
+                                </li>
+<li class="list-group-item"><span class="badge bg-danger badge-type">Konečné – ZD</span> <span class="highlight">k datu ukončení</span>, nahlášení do <b>5 KD</b> dle VOP (5 PD dle DI)
+                                </li>
+<li class="list-group-item"><span class="badge bg-danger badge-type">Přepis se ZD</span> <span class="highlight">k datu ukončení</span>, nahlášení do <b>5 KD</b> dle VOP (5 PD dle DI)
+                                </li>
+<li class="list-group-item"><span class="badge bg-warning text-dark badge-type">Přepis na jiné
+                                        OP</span>
+                                    (hlášen DI) <span class="highlight">k datu ukončení</span>, nahlášení do <b>5 PD</b></li>
+<li class="list-group-item"><span class="badge bg-warning text-dark badge-type">Přepis stejné
+                                        OP, jiné
+                                        SÚ</span> např. OM pod jiný SÚ stejného zákazníka – <b>k datu ukončení</b>, nahlášení do
+                                    <span class="highlight">5 KD (30 KD)</span>
+</li>
+</ul>
+<ul>
+<li>U všech hlavních distributorů elektřiny v ČR (ČEZ Distribuce, a.s., PREdistribuce, a.s.,
+                                    EG.D, a.s.)
+                                    platí stejné termíny pro evidenci odečtů, nicméně kontrolujte v ZIS odběrná místa, zda se
+                                    nejedná o LDS
+                                    či měření typu B.</li>
+<li><b>KONTROLNÍ</b>: požadujeme nahlášení do <b>20 kalendářních dní</b> od data odečtu (lze
+                                    evidovat do 30
+                                    KD). Místo máme stále v registraci u OTE, a.s. – dodávka není ukončena. Platí pro všechna
+                                    distribuční
+                                    území. Služba je bez poplatku. Odečet může být nahlášen k jakémukoliv dni v roce.</li>
+<blockquote class="gs-quote">
+<p>
+                                        Př. Kontrolní odečet zákazníka ke dni 30. 9. 2018, který nemá dodávku ukončenou, můžeme
+                                        zaevidovat
+                                        do 30. 10.
+                                        20XX, nicméně požadujeme nahlášení do 20. 10. 20XX.
+                                    </p>
+<cite>Interní poznámka / metodika</cite>
+</blockquote>
+<li><b>MIMOŘÁDNÉ</b>: požadujeme nahlášení do <b>20 kalendářních dní</b> od data odečtu (lze
+                                    evidovat do 30
+                                    KD). Místo máme stále v registraci u OTE, a.s. – dodávka není ukončena. Služba je ke dni
+                                    <b>31.12.</b>
+                                    bez poplatku, k jinému datu je poplatek <i>41,32 Kč</i> bez DPH za 1 OM (viz. <a href="https://drive.google.com/file/d/1ZDjlRa46xLYATP871SP_ttYJN3s8OECc/view?usp=drive_link" target="_blank">Ceník vybraných služeb</a>), pokud nemá zákazník sjednáno ve smlouvě
+                                    jinak. Odečet
+                                    může být nahlášen k jakémukoliv dni v roce
+                                </li>
+<blockquote class="gs-quote">
+<p>
+                                        Př. Mimořádný odečet zákazníka ke dni 30. 3. 20XX, který nemá dodávku ukončenou, můžeme
+                                        zaevidovat
+                                        do 30. 3.
+                                        20XX, nicméně požadujeme nahlášení do 20. 3. 20XX. </p>
+<p>
+</p><li>Pozn. ODDĚLENÍ FAKTURACE: „Termíny pro zaevidování SAM u ELE pro fakturaci je 30 dnů (v
+                                            ZIS
+                                            nastaveno 20 dnů
+                                            pro běžnou evidenci, proto je lepší, když nám jej zákazník zašle do oněch 20 dnů).
+                                            Pak se setkáváte s chybou: „Datum odečtu není v intervalu 7 dní dopředu a 20 dní po datu
+                                            odečtu“.
+                                    
+                                    </li>
+<p>
+</p><li>Na DI je
+                                            však možné odečet zaevidovat do 30 dnů. Jedná se o naši lhůtu, abychom byli schopni
+                                            odečty
+                                            zpracovat. Odečet pro fakturaci může být k jakémukoliv dni v měsíci.</li>
+<cite>Interní poznámka / metodika</cite>
+</blockquote>
+<li><b>KONEČNÉ</b>: požadujeme nahlášení do <b>5 kalendářních dní</b> od data ukončení smlouvy s
+                                    epet (na DI
+                                    lze evidovat nejpozději do 5 PD). Služba je bez poplatku. Odečet může být nahlášen ke dni
+                                    ukončení
+                                    smluvního vztahu. Pokud zákazník konečný stav nenahlásí, stanoví jej distributor odhadem.
+                                </li>
+<blockquote class="gs-quote">
+<p>
+                                        Př. Ke dni 30. 9. 20XX má zákazník s EPET ukončenou smlouvu. Do 5. 10. 20XX nám může
+                                        nahlásit
+                                        konečný stav měřidla.
+                                    </p>
+<cite>Interní poznámka / metodika</cite>
+</blockquote>
+</ul>
+</div>
+<!-- ================= PLYN ================= -->
+<div class="term-panel">
+<h2 class="alert-heading">
+<svg aria-hidden="true" class="svg-icon section-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><path d="M12 22c5 0 8-4 8-8 0-4-3-7-5-8 0 3-1 5-3 6 0-4-3-7-5-10 0 5-3 8-3 13 0 4 3 7 8 7z"></path><path d="M12 21c2-2 3-3 2-6-2 1-3 3-4 5"></path></svg>Plyn
+                            </h2>
+<ul class="list-group list-group-flush mb-3">
+<li class="list-group-item"><span class="badge bg-info badge-type">Kontrolní</span> <span class="highlight">k jakémukoliv datu</span>, nahlášení do <b>14 KD</b> (30 KD)</li>
+<li class="list-group-item"><span class="badge bg-success badge-type">Mimořádné
+                                        (Fakturační)</span> <span class="highlight">k poslednímu dni v měsíci</span>, nahlášení
+                                    do <b>5 KD</b> (30 KD)</li>
+<li class="list-group-item"><span class="badge bg-danger badge-type">Konečné – ZD</span> <span class="highlight">k datu ukončení</span>, nahlášení do <b>5 KD</b> dle VOP (5 PD dle DI)
+                                </li>
+<li class="list-group-item"><span class="badge bg-danger badge-type">Přepis se ZD</span> <span class="highlight">k datu ukončení</span>, nahlášení do <b>5 KD</b> dle VOP (5 PD dle DI)
+                                </li>
+<li class="list-group-item"><span class="badge bg-warning text-dark badge-type">Přepis na jiné
+                                        OP</span>
+                                    (hlášen DI) <span class="highlight">k datu ukončení</span>, nahlášení do <b>5 PD</b></li>
+<li class="list-group-item"><span class="badge bg-warning text-dark badge-type">Přepis stejné
+                                        OP, jiné
+                                        SÚ</span> např. OM pod jiný SÚ stejného zákazníka – <span class="highlight">k datu
+                                        ukončení</span>,
+                                    nahlášení do <b>14 KD</b></li>
+</ul>
+<ul>
+<li>záleží na tom, o jaké distribuční území se jedná (GasNet, s.r.o., Pražská plynárenská, a.s., EG.D,
+                                    a.s.),
+                                    protože termíny pro evidenci odečtů se mohou lišit</li>
+<li><b>KONTROLNÍ</b>: lze evidovat k jakémukoliv dni v měsíci, při nahlášení odečtu nejpozději
+                                    do <b>14
+                                        kalendářních</b> od data realizace. Služba je bez poplatku.</li>
+<blockquote class="gs-quote">
+<p>
+                                        Př. Kontrolní odečet zákazníka ke dni 25. 1. 20XX, který nemá dodávku ukončenou, můžeme
+                                        zaevidovat
+                                        do 8. 2. 20XX
+                                    </p>
+<cite>Interní poznámka / metodika</cite>
+</blockquote>
+<li><b>MIMOŘÁDNÉ</b>: lze evidovat pouze k poslednímu dni v měsíci, a to nejpozději do <b>5
+                                        pracovních</b>
+                                    dní do 16:00 (doporučeno do 5 KD). K jinému datu je poplatek <i>41,32 Kč</i> bez DPH za 1 OM
+                                    (viz. <a href="https://drive.google.com/file/d/1ZDjlRa46xLYATP871SP_ttYJN3s8OECc/view?usp=drive_link" target="_blank">Ceník vybraných služeb</a>), pokud nemá zákazník sjednáno ve smlouvě
+                                    jinak.</li>
+<blockquote class="gs-quote">
+<p>
+                                        Př. Mimořádný odečet zákazníka ke dni 30. 9. 20XX, který nemá dodávku ukončenou, můžeme
+                                        zaevidovat
+                                        do 06. 10. 20XX.
+                                    </p>
+<cite>Interní poznámka / metodika</cite>
+</blockquote>
+<li><b>KONEČNÉ</b>: požadujeme nahlášení do <b>5 kalendářních dní</b> od data ukončení smlouvy s
+                                    epet (na DI
+                                    do 5 PD). Služba je bez poplatku.</li>
+<blockquote class="gs-quote">
+<p>
+                                        Př. Ke dni 30. 9. 20XX má zákazník s EPET ukončenou smlouvu. Do 5. 10. 20XX nám může
+                                        nahlásit
+                                        konečný stav měřidla
+                                    </p>
+<cite>Interní poznámka / metodika</cite>
+</blockquote>
+</ul>
+<blockquote class="gs-quote">
+<p>
+                                    Pozn. Termín na nahlášení mimořádných odečtů k přelomu kalendářního roku upřesní odd.
+                                    Fakturací v prosinci, jestli nedošlo ke změně
+                                </p>
+<cite>Interní poznámka / metodika</cite>
+</blockquote>
+</div>
+</div>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-Evidence" tabindex="-1">
+<h2 aria-label="4. Evidence samoodečtů" class="fw-bold mb-4 text-success"><span aria-hidden="true" class="section-number">4</span><span>Evidence samoodečtů</span></h2>
+<div class="sheet-card">
+<p>
+                        Zákazník nám může odečet nahlásit <i>telefonicky</i> prostřednictvím zákaznické linky,
+                        zaslat <i>e-mailem</i> na adresu: <u>info@epet.cz</u>, nebo zadat prostřednictvím
+                        zákaznického portálu:
+                        <a data-bs-placement="top" href="https://zakaznici.epet.cz/login" target="_blank" title="Odkaz na zákaznický portál">Zákaznický portál</a>
+</p>
+<p>
+                        Samoodečet se zadává do aktivního formuláře v ZIS s označením
+                        <b>AF 180 Samoodečet</b>
+</p>
+<p>
+                        Pro evidenci samoodečtu prostřednictvím <b>E-mailu</b> slouží evidenční tabulka →
+                        <a data-bs-placement="top" href="https://docs.google.com/spreadsheets/d/13wHIPy047lL1JOVuEX1phxT_JqE22cHPscAZj9iF1cQ/edit?gid=197074618#gid=197074618" target="_blank" title="Evidenční tabulka pro evidenci samoodečtů přijatých e-mailem">
+                            stáhnout zde
+                        </a>
+</p>
+<p>
+                        Pro evidenci samoodečtu prostřednictvím <b>Portálu</b> slouží evidenční tabulka →
+                        <a data-bs-placement="top" href="https://docs.google.com/spreadsheets/d/1sIB4lRLeYM4HlgxTEkPjxNKA5B3ruKweGZDDM-MMh7s/edit?gid=1283439519#gid=1283439519" target="_blank" title="Evidenční tabulka pro evidenci samoodečtů pro portál">
+                            stáhnout zde
+                        </a>
+</p>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-zamitnuti" tabindex="-1">
+<h2 aria-label='5. Práce s úkoly "Zamítnutí samoodečtu"' class="fw-bold mb-4 text-success"><span aria-hidden="true" class="section-number">5</span><span>Práce s úkoly "Zamítnutí samoodečtu"</span></h2>
+<!-- 1. Zamítnutí odečtu – nenavazující stavy -->
+<div class="rejection-card">
+<p class="mb-2">
+<span class="step-badge">1</span>
+<strong>Zamítnutí odečtu z důvodu nenavazujících stavů</strong>
+</p>
+<h5>Situace 1</h5>
+<p>DI má stav špatně, ZK hlásí skutečný stav nebo náš hlášený stav je nižší, než eviduje DI</p>
+<ul>
+<li>Nové AF nezakládáme.</li>
+<li>V původním úkolu se zamítnutým odečtem:
+                            <ul>
+<li>Doplníme úkol o fotografii měřidla (vyžádáme od ZK)</li>
+<li>Předáme na <strong>FAKTURACE</strong> – ve stejném úkolu uvedeme poznámku:<br/>
+<i>
+                                        EAN/EIC – Zákazník dokládá fotografii měřidla se stavem XXX VT XXX NT (XXX m³)
+                                        a žádá o zaevidování odečtů dle těchto stavů pro (MV / kontrolní / konečný stav).
+                                    </i>
+</li>
+</ul>
+</li>
+</ul>
+<h5>Situace 2</h5>
+<p>Zákazník se spletl – hlásí opravený stav</p>
+<ul>
+<li>Založíme nové AF.</li>
+<li><strong>a) Vyskočí duplicita:</strong>
+<ul>
+<li>Potvrdíme a postupujeme jako u duplicitního samoodečtu</li>
+<li>Úkol přehodíme na <strong>FAKTURACE</strong> s poznámkou:<br/>
+<i>
+                                        Zákazník omylem chybně zadal samoodečet pro OM EIC/EAN XXXXX.
+                                        Správný stav je XXXX (AF XXXXX).
+                                        Původní AF je XXXXX – nutné dotáhnout.
+                                    </i>
+</li>
+</ul>
+</li>
+<li><strong>b) Duplicita nevyskočí:</strong>
+<ul>
+<li>Úkol na zamítnutí rovnou zavřeme s poznámkou, že bylo založeno nové AF.</li>
+</ul>
+</li>
+</ul>
+</div>
+<!-- 2. Zamítnutí odečtu – neodpovídající spotřeba -->
+<div class="rejection-card">
+<p class="mb-2">
+<span class="step-badge">2</span>
+<strong>Zamítnutí odečtu z důvodu neodpovídající spotřeby</strong>
+</p>
+<h5>Situace 1</h5>
+<p>DI má stav špatně, ZK hlásí skutečný stav nebo náš hlášený stav je nižší / vyšší, než eviduje DI</p>
+<ul>
+<li>Nové AF nezakládáme.</li>
+<li>Doplníme fotografii měřidla a úkol předáme na <strong>FAKTURACE</strong> se stejnou poznámkou jako u
+                            bodu 1.</li>
+</ul>
+<h5>Situace 2</h5>
+<p>Zákazník se spletl – hlásí opravený stav</p>
+<ul>
+<li>Založíme nové AF.</li>
+<li><strong>a) Duplicita:</strong> postup jako u duplicitního samoodečtu</li>
+<li><strong>b) Bez duplicity:</strong> úkol uzavřeme s poznámkou o novém AF</li>
+</ul>
+</div>
+<!-- 3. Odečet již eviduje PDS -->
+<div class="rejection-card">
+<p class="mb-2">
+<span class="step-badge">3</span>
+<strong>Důvod: Odečet již eviduje PDS</strong>
+</p>
+<ul>
+<li>Ověříme u ZK, zda odečet nehlásil i přímo PDS</li>
+<li>Vyžádáme fotografii měřidla</li>
+<li>Nové AF nezakládáme</li>
+<li>Do původního úkolu doplníme typ požadovaného odečtu</li>
+<li>Úkol vracíme zpět na <strong>FAKTURACE</strong></li>
+</ul>
+<p><strong>Typ odečtu:</strong></p>
+<ul>
+<li>kontrolní</li>
+<li>mimořádný</li>
+<li>konečný</li>
+</ul>
+<blockquote>
+                        Dobrý den, pane/paní XXXX,<br/>
+                        je nám líto, ale Váš požadavek na evidenci počátečního odečtového stavu není možné zpracovat.
+                        Tento údaj je nutné sdělit původnímu dodavateli.
+                        Při nejbližší fakturaci na tento stav navážeme.
+                    </blockquote>
+</div>
+<!-- 4. Chybí vztah k zákazníkovi -->
+<div class="rejection-card">
+<p class="mb-2">
+<span class="step-badge">4</span>
+<strong>Zamítnutí z důvodu „chybí vztah k zákazníkovi“</strong>
+</p>
+<ul>
+<li>Zakládáme zcela nové AF</li>
+<li>Původní úkol zavíráme s komentářem, že vztah byl doplněn v novém AF</li>
+</ul>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-sablony" tabindex="-1">
+<div class="section-kicker">Praktické použití</div>
+<h2 aria-label="6. Šablony úkolů ke kopírování" class="fw-bold mb-4 text-success"><span aria-hidden="true" class="section-number">6</span><span>Šablony úkolů ke kopírování</span></h2>
+<p class="text-muted mb-4">Níže uvedené texty může operátor rychle zkopírovat a doplnit do úkolu. Slouží hlavně pro situace, kdy samoodečet nejde standardně zaevidovat nebo je potřeba předání na Fakturaci.</p>
+<div class="copy-template">
+<div class="copy-template-header">
+<div class="copy-template-title"><svg aria-hidden="true" class="svg-icon text-success me-2" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><path d="M3 8h4l2-3h6l2 3h4v12H3z"></path><circle cx="12" cy="14" r="4"></circle></svg>Zamítnutí – nenavazující stavy / skutečný stav dle fotografie</div>
+<button class="copy-btn" onclick="copyTemplate('tpl1')"><svg aria-hidden="true" class="svg-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><rect height="17" rx="2" width="14" x="5" y="5"></rect><path d="M8 4h8M9 3h6v3H9zM9 12h6M9 16h6"></path></svg> Kopírovat</button>
+</div>
+<pre id="tpl1">EAN/EIC: XXXXX
+Zákazník dokládá fotografii měřidla se stavem:
+VT: XXXXX
+NT: XXXXX
+m³: XXXXX
+
+Žádá o zaevidování odečtu dle uvedených stavů jako kontrolní / mimořádný / konečný stav.
+Prosím o prověření a další zpracování.</pre>
+</div>
+<div class="copy-template">
+<div class="copy-template-header">
+<div class="copy-template-title"><svg aria-hidden="true" class="svg-icon text-warning me-2" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><path d="m12 3 10 18H2zM12 9v5M12 17h.01"></path></svg>Oprava chybně zadaného samoodečtu / duplicita</div>
+<button class="copy-btn" onclick="copyTemplate('tpl2')"><svg aria-hidden="true" class="svg-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><rect height="17" rx="2" width="14" x="5" y="5"></rect><path d="M8 4h8M9 3h6v3H9zM9 12h6M9 16h6"></path></svg> Kopírovat</button>
+</div>
+<pre id="tpl2">EAN/EIC: XXXXX
+Zákazník omylem chybně zadal samoodečet pro výše uvedené OM.
+Správný stav je: XXXXX
+Původní AF: XXXXX
+Nové AF: XXXXX
+
+Prosím o dotažení původního úkolu a zaevidování správného stavu.</pre>
+</div>
+<div class="copy-template">
+<div class="copy-template-header">
+<div class="copy-template-title"><svg aria-hidden="true" class="svg-icon text-success me-2" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><path d="M5 3h14v18l-3-2-4 2-4-2-3 2zM8 8h8M8 12h7M8 16h5"></path></svg>Požadavek na mimořádné vyúčtování</div>
+<button class="copy-btn" onclick="copyTemplate('tpl3')"><svg aria-hidden="true" class="svg-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><rect height="17" rx="2" width="14" x="5" y="5"></rect><path d="M8 4h8M9 3h6v3H9zM9 12h6M9 16h6"></path></svg> Kopírovat</button>
+</div>
+<pre id="tpl3">EAN/EIC: XXXXX
+Zákazník žádá o mimořádné vyúčtování k datu: XX.XX.XXXX
+Stav měřidla:
+VT: XXXXX
+NT: XXXXX
+m³: XXXXX
+
+Zákazník byl informován o případném poplatku dle ceníku vybraných služeb.
+Prosím o zpracování.</pre>
+</div>
+<div class="copy-template">
+<div class="copy-template-header">
+<div class="copy-template-title"><svg aria-hidden="true" class="svg-icon text-primary me-2" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><path d="M3 8h18l-4-4M21 16H3l4 4"></path></svg>Konečný odečet při ukončení / odchodu od epet</div>
+<button class="copy-btn" onclick="copyTemplate('tpl4')"><svg aria-hidden="true" class="svg-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><rect height="17" rx="2" width="14" x="5" y="5"></rect><path d="M8 4h8M9 3h6v3H9zM9 12h6M9 16h6"></path></svg> Kopírovat</button>
+</div>
+<pre id="tpl4">EAN/EIC: XXXXX
+Zákazník hlásí konečný stav měřidla ke dni ukončení smlouvy: XX.XX.XXXX
+Stav měřidla:
+VT: XXXXX
+NT: XXXXX
+m³: XXXXX
+
+Prosím o zaevidování konečného odečtu / předání k dalšímu zpracování.</pre>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-video" tabindex="-1">
+<h2 class="fw-bold mb-4 text-primary">Video tutoriály</h2>
+<p class="text-muted mb-4">Vyberte si konkrétní téma, které vás zajímá. Pro zvětšení videa využijte
+                    ikonu čtverečku
+                    v pravém horním rohu přehrávače.</p>
+<div class="row row-cols-1 row-cols-xl-2 g-4">
+<div class="col">
+<div class="video-card p-3 rounded-4 shadow-sm bg-light h-100">
+<h6 class="fw-bold mb-2"><svg aria-hidden="true" class="svg-icon me-2" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><circle cx="12" cy="12" r="9"></circle><path d="m10 8 6 4-6 4z"></path></svg> Evidence samoodečtů v ZIS
+                            </h6>
+<div class="ratio ratio-16x9 rounded-3 overflow-hidden shadow-sm bg-black">
+<iframe allow="autoplay; fullscreen" allowfullscreen="" src="https://drive.google.com/file/d/1br5UNaV7W-JBS8jDWaFhuGgOn5ZeD3w8/preview"></iframe>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="video-card p-3 rounded-4 shadow-sm bg-light h-100">
+<h6 class="fw-bold mb-2"><svg aria-hidden="true" class="svg-icon me-2" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><circle cx="12" cy="12" r="9"></circle><path d="m10 8 6 4-6 4z"></path></svg> Jak zadám samoodečet pro přidružený elektroměr/plynoměr?
+                            </h6>
+<div class="ratio ratio-16x9 rounded-3 overflow-hidden shadow-sm bg-black">
+<iframe allow="autoplay; fullscreen" allowfullscreen="" src="https://drive.google.com/file/d/1GFKfPcMXQrxZw5ucnWYaLghI4kDn89F_/preview"></iframe>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="video-card p-3 rounded-4 shadow-sm bg-light h-100">
+<h6 class="fw-bold mb-2"><svg aria-hidden="true" class="svg-icon me-2" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><circle cx="12" cy="12" r="9"></circle><path d="m10 8 6 4-6 4z"></path></svg> Jak si ověřím, zda v daném období byl samoodečet opravdu zadán?
+                            </h6>
+<div class="ratio ratio-16x9 rounded-3 overflow-hidden shadow-sm bg-black">
+<iframe allow="autoplay; fullscreen" allowfullscreen="" src="https://drive.google.com/file/d/1xticAAvP7NFn0ugv8XjYS03rH1L3fkgu/preview"></iframe>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="video-card p-3 rounded-4 shadow-sm bg-light h-100">
+<h6 class="fw-bold mb-2"><svg aria-hidden="true" class="svg-icon me-2" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="20"><circle cx="12" cy="12" r="9"></circle><path d="m10 8 6 4-6 4z"></path></svg> Práce s duplicitními samoodečty
+                            </h6>
+<div class="ratio ratio-16x9 rounded-3 overflow-hidden shadow-sm bg-black">
+<iframe allow="autoplay; fullscreen" allowfullscreen="" src="https://drive.google.com/file/d/17_5AIfCePORyqTkctPKh5Aj8MJpD5KiQ/preview"></iframe>
+</div>
+</div>
+</div>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-test" tabindex="-1">
+<h2 class="fw-bold mb-4" style="color: var(--epet-purple);">Ověření znalostí</h2>
+<p>Po prostudování manuálu prosím vyplňte tento opakovací test. Výsledky budou automaticky
+                    zaznamenány.
+                </p>
+<div class="shadow-sm rounded-3 overflow-hidden" style="border: 1px solid #eee;">
+<iframe allowfullscreen="" frameborder="0" height="600px" marginheight="0" marginwidth="0" mozallowfullscreen="" msallowfullscreen="" src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__abHlldURTUzS1gwMjlHQU01TFdBVUpTT1RRSTIzTC4u" style="border: none; max-width:100%; max-height:100vh" webkitallowfullscreen="" width="100%">
+</iframe>
+</div>
+</div></main><div aria-live="polite" id="copyToast" role="status">Zkopírováno do schránky</div></div><script>(function(){
+'use strict';
+const root=document.querySelector('.book-container');
+if(!root)return;
+const buttons=[...root.querySelectorAll('.book-tabs button[data-target]')];
+const sections=[...root.querySelectorAll('.book-page .content-section')];
+const groups=[...root.querySelectorAll('.book-tabs .tab-group')];
+let copyTimer=null;
+function activate(id,updateHash=true){
+ const sec=sections.find(s=>s.id===id);if(!sec)return false;
+ for(const s of sections){let yes=s===sec;s.classList.toggle('active',yes);s.setAttribute('aria-hidden',String(!yes));}
+ for(const b of buttons){let yes=b.dataset.target===id;b.classList.toggle('active',yes);b.setAttribute('aria-current',yes?'page':'false');}
+ for(const g of groups){if(g.querySelector('button.sub[data-target="'+id+'"]'))g.classList.add('open');g.classList.toggle('parent-active',!!g.querySelector('button.active'))}
+ if(updateHash){try{history.replaceState(null,'','#'+id)}catch(e){}}
+ return true;
+}
+buttons.forEach(b=>b.addEventListener('click',()=>{
+  let g=b.closest('.tab-group');
+  if(g&&!b.classList.contains('sub'))g.classList.toggle('open');
+  activate(b.dataset.target,true);
+}));
+window.openPageById=function(id){if(activate(id,true)){
+ const nav=buttons.find(b=>b.dataset.target===id);
+ if(nav && window.matchMedia('(max-width:1020px)').matches){nav.scrollIntoView({block:'nearest',inline:'nearest',behavior:'smooth'});}
+ }};
+function toast(message){const t=document.getElementById('copyToast');if(!t)return;t.textContent=message;t.classList.add('show');clearTimeout(copyTimer);copyTimer=setTimeout(()=>t.classList.remove('show'),2200)}
+function oldCopy(text){let box=document.createElement('textarea');box.value=text;box.setAttribute('readonly','');box.style.position='fixed';box.style.left='-10000px';document.body.appendChild(box);box.select();let ok=false;
+ try{ok=document.execCommand('copy')}catch(e){}box.remove();return ok;}
+window.copyTemplate=async function(id){let src=document.getElementById(id);if(!src)return;let text=src.textContent.trim();let ok=false;
+ try{if(navigator.clipboard && window.isSecureContext){await navigator.clipboard.writeText(text);ok=true}else{ok=oldCopy(text)}}catch(e){ok=oldCopy(text)}
+ if(ok){toast('Šablona zkopírována')}else{toast('Kopírování bylo zablokováno prohlížečem. Označte text a zkopírujte ručně.');src.focus?.();}
+};
+// Source detail buttons call the global openPageById handler directly.
+// Keep source click handlers on detail cards; they call openPageById above.
+const hash=decodeURIComponent(location.hash.slice(1));activate(sections.some(s=>s.id===hash)?hash:'page-quick',false);
+document.addEventListener('click',e=>document.querySelectorAll('.download-disclosure[open]').forEach(d=>{if(!d.contains(e.target))d.removeAttribute('open')}));
+})();</script></body></html>

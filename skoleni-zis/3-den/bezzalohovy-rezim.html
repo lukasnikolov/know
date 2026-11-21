@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="cs"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><title>Bezzálohový režim – Pracovní postup</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/><style>/* ZNALOSTKA – HTML ŠKOLENÍ | Jednotný firemní vizuální standard */
+:root{
+  --epet:#94c11f; --epet-dark:#60781a; --epet-deep:#34470b;
+  --purple:#9362d6; --blue:#2563eb; --cyan:#0891b2;
+  --orange:#f59e0b; --red:#d9414f;
+  --ink:#1e293b; --muted:#64748b; --line:#e2e8f0;
+  --soft:#f8fafc; --card:#fff;
+  --shadow:0 14px 34px rgba(15,23,42,.075);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; padding:10px 12px 34px; background:transparent; color:var(--ink);
+  font-family:"Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,Arial,sans-serif;
+  font-size:15px;line-height:1.64;-webkit-font-smoothing:antialiased;
+}
+body>.breadcrumb-nav,body>.hero-banner,body>.book-container{
+  width:100%;max-width:1180px;margin-left:auto;margin-right:auto;
+}
+/* Ostrá a jednotná ikonografie SVG, nezávislá na síťovém načtení ikonového fontu. */
+i.bi::before{display:none!important}
+.svg-icon{width:19px;height:19px;vertical-align:middle;display:inline-block;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.breadcrumb .svg-icon{width:15px;height:15px}
+.btn-download .svg-icon{width:18px;height:18px}
+.video-card .svg-icon{width:20px;height:20px}
+.list-group .svg-icon{width:17px;height:17px}
+.glossary .bg-primary{background:var(--blue)!important;color:#fff}
+.glossary .bg-success{background:var(--epet-dark)!important;color:#fff}
+.glossary .bg-warning{background:#fff0ba!important;color:#664300}
+.glossary .bg-info{background:#d7f6fa!important;color:#155a70}
+/* Drobečková navigace */
+.breadcrumb-nav{
+  margin-bottom:14px;padding:10px 14px;background:rgba(255,255,255,.92);
+  border:1px solid var(--line);border-radius:14px;backdrop-filter:blur(8px);
+}
+.breadcrumb{display:flex;flex-wrap:wrap;list-style:none;padding:0;margin:0;font-size:.85rem}
+.breadcrumb-item{display:flex;align-items:center;color:#6b7280}
+.breadcrumb-item a{color:var(--epet-dark);text-decoration:none;font-weight:700}
+.breadcrumb-item a:hover{color:var(--purple)}
+.breadcrumb-item+.breadcrumb-item::before{
+  content:"›";font-family:inherit;font-size:1.1rem;
+  padding:0 9px;color:#94a3b8;
+}
+.breadcrumb-item.active{color:#475569;font-weight:720}
+/* Firemní gradientový hero */
+.hero-banner{
+  position:relative;isolation:isolate;overflow:visible;
+  display:flex!important;align-items:center!important;justify-content:space-between!important;
+  gap:25px;flex-wrap:wrap;margin-bottom:18px;min-height:184px;
+  border-radius:24px;padding:35px 33px;color:#fff;
+  background:
+    radial-gradient(900px 360px at 92% 20%,rgba(255,255,255,.24),transparent 62%),
+    linear-gradient(135deg,var(--epet) 0%,var(--epet-dark) 52%,#2f3f0f 100%);
+  box-shadow:var(--shadow);
+}
+.hero-banner::before{
+  content:"";z-index:-1;position:absolute;right:18px;bottom:0;
+  width:190px;height:140px;border-radius:100% 60% 0 0;
+  background:linear-gradient(135deg,rgba(255,255,255,.025),rgba(255,255,255,.09));
+  pointer-events:none;
+}
+.hero-banner::after{
+  content:"";position:absolute;z-index:-1;right:105px;top:16px;
+  width:130px;height:130px;border:1px solid rgba(255,255,255,.14);border-radius:50%;pointer-events:none;
+}
+.hero-banner>div{position:relative;z-index:1}
+.hero-banner>div:first-child{flex:1 1 480px;min-width:0}
+.hero-banner h1{
+  margin:0 0 10px!important;color:white!important;
+  font-size:clamp(1.56rem,2.75vw,2.18rem)!important;
+  letter-spacing:-.034em;line-height:1.16;font-weight:850!important;
+}
+.hero-banner p{margin:0!important;color:rgba(255,255,255,.91)!important;font-size:.95rem}
+.btn-download{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  border:1px solid rgba(255,255,255,.45);border-radius:999px;
+  padding:11px 19px;background:#fff;color:var(--epet-dark)!important;
+  font-weight:820;text-decoration:none;white-space:nowrap;
+  box-shadow:0 8px 18px rgba(15,23,42,.12);transition:transform .18s ease,box-shadow .18s ease;
+}
+.btn-download:hover,.btn-download:focus-visible{transform:translateY(-2px);box-shadow:0 11px 24px rgba(15,23,42,.17)}
+.hero-banner .dropdown{z-index:80}
+.hero-banner .dropdown-menu{
+  display:none!important;position:absolute;list-style:none;margin:0;
+  min-width:340px;max-width:min(440px,calc(100vw - 24px));
+  background:#fff;color:var(--ink);padding:9px;border:1px solid var(--line)!important;border-radius:16px!important;
+  box-shadow:0 18px 38px rgba(15,23,42,.2)!important;z-index:9999;
+}
+.hero-banner .dropdown.open>.dropdown-menu{display:block!important;position:absolute;top:calc(100% + 8px);right:0;left:auto}
+.hero-banner .dropdown-item{
+  display:flex;align-items:center;gap:8px;padding:11px 12px!important;border-radius:10px;
+  color:#334155;font-weight:680;font-size:.91rem;white-space:normal;text-decoration:none;
+}
+.hero-banner .dropdown-item:hover{background:#f1f8e3;color:var(--epet-dark)}
+.hero-banner .dropdown-toggle::after{margin-left:5px}
+/* Navigace a pravý obsahový panel */
+.book-container{
+  display:grid!important;grid-template-columns:270px minmax(0,1fr);
+  align-items:start;gap:18px;min-height:0;overflow:visible;background:transparent;border:0;
+}
+.book-tabs{
+  position:sticky;top:12px;width:auto!important;min-width:0;
+  display:flex!important;flex-direction:column!important;gap:5px;
+  padding:12px;border:1px solid var(--line);border-radius:22px;
+  background:#fff;box-shadow:0 10px 28px rgba(15,23,42,.055);
+}
+.book-tabs::before{
+  content:"";display:block;height:5px;margin:0 8px 9px;
+  border-radius:999px;background:linear-gradient(90deg,var(--epet),#cce88a);
+}
+.tab-item{
+  display:flex;align-items:center;gap:11px;min-width:0;
+  padding:12px 13px;margin:0;border-radius:14px;
+  background:transparent;border:1px solid transparent!important;
+  color:#475569;font-size:.925rem;font-weight:700;line-height:1.4;
+  cursor:pointer;outline:0;transition:background .18s,color .18s,transform .18s,box-shadow .18s;
+}
+.tab-item i{width:20px;flex:0 0 20px;text-align:center;font-size:1.1rem;color:#718096}
+.tab-item:hover,.tab-item:focus-visible{background:var(--soft);color:var(--epet-dark);transform:translateX(2px)}
+.tab-item.active{
+  background:#f1fccf;color:#435f00;font-weight:850;
+  border-color:rgba(148,193,31,.28)!important;
+  box-shadow:inset 0 0 0 1px rgba(148,193,31,.09);
+}
+.tab-item.active i{color:var(--epet-dark)}
+.tab-item.tab-purple{margin-top:6px;border-top:1px solid var(--line)!important}
+.tab-item.tab-purple.active{color:#7048a6;background:#f6efff;border-color:rgba(147,98,214,.25)!important}
+.tab-item.tab-purple.active i{color:var(--purple)}
+.book-page{
+  position:relative;min-width:0;min-height:430px;overflow:visible;
+  background:#fff;padding:27px 27px 32px;border:1px solid var(--line);
+  border-radius:24px;box-shadow:var(--shadow);
+}
+.content-section{display:none;animation:fadeIn .25s ease}
+.content-section.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.content-section>h2{
+  display:flex;align-items:center;gap:11px;min-width:0;
+  margin:0 0 19px!important;padding:0 0 18px;border-bottom:1px solid var(--line);
+  font-size:clamp(1.22rem,2.05vw,1.55rem);line-height:1.35;
+  letter-spacing:-.025em;color:var(--epet-dark)!important;font-weight:850!important;
+}
+.section-number{
+  display:inline-flex;align-items:center;justify-content:center;flex:0 0 41px;
+  width:41px;height:41px;border-radius:50%;background:var(--epet);color:#fff;
+  font-size:1rem;font-weight:850;letter-spacing:0;
+  box-shadow:0 5px 12px rgba(148,193,31,.16);
+}
+#page-video>h2::before,#page-test>h2::before{
+  content:"";display:block;flex:0 0 5px;width:5px;min-height:30px;
+  border-radius:99px;background:var(--epet);
+}
+#page-test>h2{color:var(--purple)!important}
+#page-test>h2::before{background:var(--purple)}
+/* Úvodní shrnutí, významové zkratky */
+.overview-card{
+  position:relative;overflow:hidden;border:1px solid #dfebd4;
+  padding:26px 28px 26px;border-radius:21px;
+  background:radial-gradient(280px 220px at 100% 100%,rgba(148,193,31,.1),transparent 75%),
+             linear-gradient(140deg,#fff,#f9fcf3);
+  box-shadow:0 9px 22px rgba(15,23,42,.046);
+}
+.overview-card::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:var(--epet)}
+.overview-card>p{font-size:1.065rem;line-height:1.82;margin:0 0 23px;color:#2f473e}
+.glossary{border-top:1px solid #dfeada;padding-top:20px;margin:0!important}
+.glossary h5{font-size:.89rem;letter-spacing:.065em;color:var(--muted);font-weight:850;margin:0 0 13px}
+.glossary h5 strong{color:var(--epet-dark)}
+.glossary p{margin:0;line-height:2.4;color:#475569;font-weight:580}
+.glossary .badge{
+  margin-right:5px;vertical-align:middle;padding:8px 10px;border-radius:9px;
+  font-size:.81rem;letter-spacing:.01em;line-height:1;font-weight:850;
+}
+/* Pracovní postup tvoří série navazujících karet. */
+.content-steps{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;
+  padding:0!important;margin:0!important;border:0!important;background:transparent!important;box-shadow:none!important}
+.step-card{
+  position:relative;overflow:hidden;min-width:0;
+  background:linear-gradient(180deg,#fff,#fbfcfd);
+  padding:21px 23px 23px;border:1px solid var(--line);
+  border-radius:20px;box-shadow:0 8px 22px rgba(15,23,42,.05);
+}
+.step-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--epet)}
+.content-steps>.step-card:nth-child(3n+2)::before{background:var(--cyan)}
+.content-steps>.step-card:nth-child(3n+3)::before{background:var(--purple)}
+.step-card>p{margin:0 0 13px!important;color:#334155;line-height:1.74}
+.step-card>p:last-child{margin-bottom:0!important}
+.step-card>p:first-child{font-size:1rem}
+.step-card .step-badge{
+  display:inline-flex;align-items:center;justify-content:center;
+  vertical-align:middle;width:35px;height:35px;min-width:35px;
+  margin:0 10px 2px 0;border-radius:50%;background:var(--epet);
+  box-shadow:0 5px 12px rgba(148,193,31,.16);
+  color:#fff;font-size:.95rem;font-weight:850;
+}
+.content-steps>.step-card:nth-child(3n+2) .step-badge{background:var(--cyan)}
+.content-steps>.step-card:nth-child(3n+3) .step-badge{background:var(--purple)}
+.step-card img.img-thumbnail{
+  display:block;width:auto;max-width:100%;height:auto;
+  object-fit:contain;margin:17px auto!important;padding:6px;
+  border:1px solid var(--line);border-radius:15px;
+  background:#fff;box-shadow:0 8px 20px rgba(15,23,42,.08);
+}
+/* Významové položky do přehledných mřížek */
+.step-card ul.list-group{
+  display:grid;grid-template-columns:minmax(0,1fr);gap:8px;
+  list-style:none;margin:14px 0 13px!important;padding:0;border:0;border-radius:0;background:transparent;
+}
+.step-card ul.privacy-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.step-card .list-group-item{
+  min-width:0;display:block;margin:0!important;padding:12px 14px!important;
+  background:#fafcfe;border:1px solid var(--line)!important;border-radius:12px!important;
+  color:#334155;line-height:1.55;font-size:.93rem;
+}
+.step-card .privacy-grid .list-group-item{
+  text-align:center;display:flex;align-items:center;justify-content:center;
+  min-height:54px;background:#fff7ed;color:#81500f;border-color:#f4dba8!important;font-weight:720;
+}
+.step-card .task-fields{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.step-card .task-fields .list-group-item{background:linear-gradient(180deg,#fff,#f8fafc);padding:14px 15px!important}
+.step-card .task-fields .list-group-item:nth-child(5){grid-column:1/-1}
+.step-card .task-fields .list-group-item i.bi{color:var(--epet-dark)}
+.step-card .task-fields .list-group-item b{color:var(--ink)}
+.step-card .critical-note{
+  margin:15px 0!important;padding:15px 18px;
+  border:1px solid #f3bec7!important;border-left:5px solid var(--red)!important;
+  border-radius:15px;background:#fff4f5;color:#8e2430;line-height:1.68;
+}
+.step-card .critical-note strong{color:inherit}
+/* Textové odkazy a zvýraznění */
+.book-page strong,.book-page b{font-weight:800}
+.book-page p,.book-page li{line-height:1.68}
+.book-page a:not(.btn){
+  color:var(--epet-dark);text-decoration:none;font-weight:770;
+  border-bottom:2px solid rgba(148,193,31,.31);padding:0 2px;
+}
+.book-page a:not(.btn):hover{background:#f4fae6;border-bottom-color:var(--epet)}
+.book-page a[target="_blank"]::after{
+  content:"↗";font-family:inherit;font-size:.77rem;
+  margin-left:5px;vertical-align:super;opacity:.7;
+}
+.book-page i:not(.bi),.book-page em{color:var(--purple)}
+.book-page u{text-decoration:none;border-bottom:2px dotted var(--epet);padding-bottom:1px}
+/* Videa a opakovací test */
+#page-video>p{color:var(--muted)!important;line-height:1.7;margin-bottom:21px!important}
+#page-video>.row{
+  display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;margin:0!important;
+}
+#page-video>.row>.col{padding:0!important;width:auto;max-width:none;flex:none;margin:0}
+.video-card{
+  height:100%;overflow:hidden;padding:16px!important;
+  background:linear-gradient(180deg,#fff,#f8fafc)!important;
+  border:1px solid var(--line)!important;border-radius:20px!important;
+  box-shadow:0 8px 22px rgba(15,23,42,.05)!important;
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+}
+.video-card:hover{transform:translateY(-3px);border-color:var(--epet)!important;
+  box-shadow:0 12px 25px rgba(15,23,42,.1)!important}
+.video-card h6{
+  min-height:44px;display:flex;align-items:center;gap:6px;margin:0 0 12px!important;
+  color:var(--epet-dark);font-size:.98rem;line-height:1.45;font-weight:850!important;
+}
+.video-card h6 i{font-size:1.2rem}
+.video-card .ratio{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:13px!important}
+.video-card iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+#page-test>p{
+  margin:0 0 20px!important;padding:17px 19px;
+  border-left:4px solid var(--purple);border-radius:15px;
+  background:#faf7ff;color:#475569;line-height:1.7;
+}
+#page-test>div{overflow:hidden;border:1px solid var(--line)!important;
+  border-radius:19px!important;box-shadow:0 8px 22px rgba(15,23,42,.05)!important}
+#page-test iframe{display:block;width:100%;height:600px;border:0}
+/* Responzivní tablet/mobile; nevynucuje horizontální scroll dokumentu. */
+@media(max-width:1020px){
+  .book-container{grid-template-columns:1fr}
+  .book-tabs{position:static;flex-direction:row!important;overflow-x:auto;white-space:nowrap;padding:9px;gap:5px}
+  .book-tabs::before{display:none}
+  .tab-item{flex:0 0 auto;min-width:max-content;padding:10px 12px}
+  .tab-item:hover{transform:none}
+  .tab-item.tab-purple{margin-top:0;border-top:1px solid transparent!important}
+}
+@media(max-width:690px){
+  body{padding:7px 6px 26px;font-size:14.5px}
+  .breadcrumb-nav{padding:9px 11px;margin-bottom:10px}
+  .breadcrumb{font-size:.79rem}
+  .breadcrumb-item+.breadcrumb-item::before{padding:0 5px}
+  .hero-banner{padding:26px 21px;gap:18px;min-height:160px;border-radius:20px;margin-bottom:13px}
+  .hero-banner h1{font-size:1.62rem!important}
+  .hero-banner .dropdown{width:100%}
+  .btn-download{padding:10px 15px;white-space:normal;text-align:center}
+  .hero-banner .dropdown-menu{min-width:0;max-width:100%;width:100%;right:auto;left:0}
+  .book-container{gap:12px}
+  .book-tabs{border-radius:17px}
+  .book-page{padding:19px 15px 24px;min-height:0;border-radius:20px}
+  .content-section>h2{align-items:flex-start;gap:9px;font-size:1.2rem}
+  .section-number{flex-basis:35px;width:35px;height:35px;font-size:.86rem}
+  .overview-card{padding:20px 19px 21px}
+  .overview-card>p{font-size:1rem}
+  .step-card{padding:17px 16px 19px;border-radius:17px}
+  .step-card ul.privacy-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .step-card .task-fields{grid-template-columns:1fr}
+  .step-card .task-fields .list-group-item:nth-child(5){grid-column:auto}
+  #page-video>.row{grid-template-columns:1fr}
+  .video-card h6{min-height:0}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+
+/* Dokumenty ke stažení: stabilní nativní rozbalení bez Bootstrap JS */
+.hero-banner{z-index:5}
+.hero-banner .download-container{position:relative;z-index:8;min-width:0;flex:0 1 auto}
+.download-disclosure{position:relative;width:100%}
+.download-disclosure>summary{list-style:none;cursor:pointer;user-select:none;display:inline-flex;align-items:center}
+.download-disclosure>summary::-webkit-details-marker{display:none}
+.download-disclosure>summary::marker{content:''}
+.download-disclosure>summary::after{
+  content:'';width:8px;height:8px;margin-left:7px;display:inline-block;
+  border-right:2px solid currentColor;border-bottom:2px solid currentColor;
+  transform:translateY(-2px) rotate(45deg);transition:transform .2s ease;
+}
+.download-disclosure[open]>summary::after{transform:translateY(2px) rotate(225deg)}
+.download-disclosure>summary:focus-visible{outline:3px solid #fff9bb;outline-offset:3px}
+.download-options{margin-top:10px;padding:8px;background:#fff;color:var(--ink);
+  border:1px solid var(--line);border-radius:16px;box-shadow:0 10px 26px rgba(15,23,42,.16);
+  width:370px;max-width:min(440px,calc(100vw - 36px));}
+.download-link{display:flex;align-items:center;gap:9px;border-radius:11px;
+  padding:12px;color:#334155!important;font-weight:720;font-size:.91rem;
+  line-height:1.4;text-decoration:none!important;overflow-wrap:anywhere}
+.download-link i{color:#cf3347}
+.download-link:hover,.download-link:focus-visible{background:#f1f8e3;color:var(--epet-dark)!important}
+@media(max-width:690px){
+  .hero-banner .download-container{width:100%;flex-basis:100%}
+  .download-disclosure>summary{width:100%;justify-content:center}
+  .download-options{width:100%;max-width:none}
+}
+
+
+
+/* SPK – Splátkový kalendář | Design Znalostka, stejné znění 1:1 */
+:root{--epet-green:var(--epet);--epet-green-dark:var(--epet-dark);--epet-purple:var(--purple)}
+.book-tabs .tab-item{white-space:normal}
+.book-page{overflow-wrap:break-word}
+#page-intro .spk-intro{margin:0!important;max-width:none;padding:30px!important}
+#page-intro .spk-intro>p{font-size:1.08rem;line-height:1.9;max-width:690px;margin:0 0 25px}
+#page-intro .spk-intro>.alert-info{margin:0;max-width:720px;border-radius:14px;padding:20px 22px;background:rgba(8,145,178,.065);border-color:rgba(8,145,178,.24);color:#18526b}
+#page-intro .spk-intro>.alert-info strong{color:var(--epet-dark)}
+/* Original condition text is regrouped into separate reading areas, in source order. */
+.spk-condition-layout{display:grid;gap:16px;background:transparent;border:0;margin:0;padding:0}
+.spk-condition-card{min-width:0;position:relative;overflow:hidden;background:linear-gradient(165deg,#fff,#fafbfd);border:1px solid var(--line);border-radius:21px;padding:24px 27px;box-shadow:0 8px 23px rgba(15,23,42,.048)}
+.spk-condition-card::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--epet)}
+.spk-condition-card:nth-child(2)::before{background:var(--cyan)}
+.spk-condition-card:nth-child(3)::before{background:var(--purple)}
+.spk-condition-card>p{color:#405168;line-height:1.77;margin:0 0 17px}
+.spk-condition-card>p:last-child{margin-bottom:0}
+.spk-condition-card>h6{font-size:1.04rem;font-weight:850;line-height:1.4;color:var(--ink);margin:22px 0 11px}
+.spk-condition-card>h5{font-size:1.17rem;font-weight:850;line-height:1.4;color:var(--epet-dark);margin:2px 0 17px;padding-bottom:13px;border-bottom:1px solid var(--line)}
+.spk-condition-card>h5 i{color:var(--epet-dark)}
+.spk-condition-card>ul{margin:11px 0 18px;padding-left:20px;color:#42526a;line-height:1.77}
+.spk-condition-card>ul.list-group{display:grid;gap:9px;list-style:none;padding:0}
+.spk-condition-card .list-group-item{border:1px solid #dfebd1;border-radius:13px!important;padding:15px 17px;background:#f8fbf2;color:#364b42;line-height:1.65}
+.spk-condition-card .list-group-item i{color:var(--epet-dark)!important;margin-right:9px}
+.spk-condition-card .alert{margin:19px 0}
+.spk-eligibility>.alert:first-child{margin-top:0}
+.spk-speaking{background:linear-gradient(135deg,#fff,#f9fcf3);border-color:#dae6cd}
+.spk-speaking .border-start{padding:18px 21px!important;border:1px solid #dcecc8!important;border-left:5px solid var(--epet)!important;border-radius:14px;background:#fff}
+.spk-speaking .border-start p{margin:0 0 14px;line-height:1.75;color:#43546a}
+.spk-speaking .border-start ul{padding-left:22px;margin:3px 0 15px;color:#405166}
+.spk-speaking .border-start ul li{margin-bottom:7px}
+.spk-speaking .border-start p:last-child{margin-bottom:0}
+/* Workflow cards: each original KROK stays in the same position and includes all screenshots. */
+.spk-workflow{display:grid;grid-template-columns:1fr;gap:17px;margin:0;padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important}
+.spk-step-card{position:relative;overflow:hidden;min-width:0;padding:24px 25px 22px;border:1px solid var(--line);border-radius:21px;background:linear-gradient(175deg,#fff,#fafdff);box-shadow:0 8px 23px rgba(15,23,42,.055)}
+.spk-step-card::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--epet)}
+.spk-step-card:nth-of-type(3n+2)::before{background:var(--cyan)}
+.spk-step-card:nth-of-type(3n+3)::before{background:var(--purple)}
+.spk-step-card>.badge{display:inline-flex;align-items:center;margin:0 0 12px!important;padding:9px 13px;border-radius:999px;background:#edf8d4!important;color:#496b0d;font-size:.76rem;letter-spacing:.065em;font-weight:870}
+.spk-step-card>p{display:block!important;margin:0 0 13px!important;line-height:1.75;color:#3a4b61}
+.spk-step-card>p:last-child{margin-bottom:0!important}
+.spk-step-card>h6{margin:1px 0 14px;font-size:1.1rem;line-height:1.43;font-weight:850;color:#334155}
+.spk-step-card>.list-group{display:grid;gap:9px;padding:0;margin:14px 0;list-style:none;border:0}
+.spk-step-card .list-group-item{min-width:0;overflow-wrap:anywhere;background:#f9fbfd;border:1px solid var(--line)!important;border-radius:12px!important;padding:13px 16px!important;line-height:1.68;color:#46556b}
+.spk-step-card .list-group-item i{margin-right:3px;color:var(--cyan)}
+.spk-step-card>ul:not(.list-group){padding-left:21px;margin:14px 0 8px;color:#475569;line-height:1.7}
+.spk-step-card li{margin-bottom:6px}
+.spk-step-card>img.knowledge-shot{max-height:490px}
+.spk-between-alert{margin:0!important;grid-column:1/-1;box-shadow:0 5px 15px rgba(15,23,42,.027)!important}
+.spk-separator{border:0;border-top:1px solid var(--line);margin:0!important;opacity:1}
+/* Visible, consistent warnings (the original wording is unchanged). */
+.book-page .spk-callout{border:1px solid #d5e8f0;border-left:5px solid var(--cyan);border-radius:15px;padding:17px 19px;background:#f1faff;color:#28556e;line-height:1.7;box-shadow:none!important}
+.book-page .alert-danger{background:#fff4f5;color:#90313b;border:1px solid #f4cbd2;border-left:5px solid var(--red)}
+.book-page .alert-warning{background:#fff9ec;color:#815516;border:1px solid #f3e1b8;border-left:5px solid var(--orange)}
+.book-page .alert-info{background:#f0faff;color:#28556e;border:1px solid #cde8f0;border-left:5px solid var(--cyan)}
+.book-page img.knowledge-shot{display:block;max-width:100%;height:auto;object-fit:contain;margin:18px auto!important;padding:7px;border-radius:16px;border:1px solid var(--line);background:#fff;box-shadow:0 8px 22px rgba(15,23,42,.07)}
+.spk-video-placeholder{min-height:300px;border:2px dashed #dbe3ed!important;border-radius:20px!important;padding:38px 22px!important;background:linear-gradient(140deg,#f8fafc,#f6f9f1)!important}
+.spk-video-placeholder>div:first-child{display:flex;align-items:center;justify-content:center;width:76px;height:76px;margin:0 auto 16px!important;border-radius:20px;background:#e8edf1;font-size:2rem!important;color:#8796a7!important}
+.spk-video-placeholder h4{color:#344257!important;font-size:1.14rem;font-weight:820}
+.spk-video-placeholder p{max-width:520px;margin:0 auto;color:#687b91!important;line-height:1.7}
+#page-test>.shadow-sm{border-radius:18px!important;border:1px solid var(--line)!important;overflow:hidden;box-shadow:0 9px 25px rgba(15,23,42,.05)!important}
+#page-test iframe{min-height:620px;display:block;width:100%;max-height:none!important;background:#fff}
+.book-page a{overflow-wrap:anywhere}
+@media(max-width:1020px){.book-tabs .tab-item{white-space:nowrap;max-width:none}}
+@media(max-width:690px){
+ .spk-condition-card,.spk-step-card{padding:20px 17px;border-radius:18px}
+ #page-intro .spk-intro{padding:21px 18px!important}
+ .spk-speaking .border-start{padding:15px!important}
+ .spk-step-card .list-group-item{padding:12px!important}
+ .spk-video-placeholder{min-height:265px;padding:30px 18px!important}
+}
+
+/* ===== BZ A KAUCE - POMOCNÍK (SCOPED PRO GOOGLE SITES) ===== */
+    .bz-helper {
+      --bz-bg: #ffffff;
+      --bz-card: #ffffff;
+      --bz-ink: #172033;
+      --bz-muted: #667085;
+      --bz-cream: #fff2cc;
+      --bz-danger: #e10600;
+      --bz-warning: #ffbf00;
+      --bz-blue: #2563eb;
+      --bz-soft-blue: #eaf2ff;
+      --bz-green: #16a34a;
+      --bz-shadow: 0 8px 24px rgba(15, 23, 42, .06);
+      --bz-radius: 18px;
+      color: var(--bz-ink);
+      line-height: 1.45;
+    }
+
+    .bz-helper * {
+      box-sizing: border-box;
+    }
+
+    .bz-helper .bz-page {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .bz-helper .bz-hero {
+      background: linear-gradient(135deg, #fff7df 0%, #ffffff 52%, #eef5ff 100%);
+      border: 1px solid #ead9a2;
+      border-radius: var(--bz-radius);
+      box-shadow: var(--bz-shadow);
+      padding: 22px 24px;
+      margin-bottom: 18px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bz-helper .bz-hero::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      right: -80px;
+      top: -120px;
+      background: rgba(37, 99, 235, .08);
+    }
+
+    .bz-helper .bz-eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #fff;
+      color: #7a5300;
+      border: 1px solid #f1d382;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .bz-helper .bz-hero h3 {
+      margin: 0 0 8px;
+      font-size: clamp(25px, 3vw, 38px);
+      letter-spacing: -.03em;
+      font-weight: 800;
+      position: relative;
+      z-index: 1;
+    }
+
+    .bz-helper .bz-subtitle {
+      margin: 0;
+      max-width: 880px;
+      color: #475467;
+      font-size: 15px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .bz-helper .bz-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .bz-helper .bz-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      border-radius: 999px;
+      padding: 7px 11px;
+      font-size: 13px;
+      font-weight: 700;
+      background: #fff;
+      border: 1px solid #e4e7ec;
+      color: #344054;
+    }
+
+    .bz-helper .bz-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .bz-helper .bz-dot.red {
+      background: var(--bz-danger);
+    }
+
+    .bz-helper .bz-dot.yellow {
+      background: var(--bz-warning);
+    }
+
+    .bz-helper .bz-dot.blue {
+      background: var(--bz-blue);
+    }
+
+    .bz-helper .bz-dot.green {
+      background: var(--bz-green);
+    }
+
+    .bz-helper .bz-card {
+      background: var(--bz-card);
+      border: 1px solid #e4e7ec;
+      border-radius: var(--bz-radius);
+      box-shadow: var(--bz-shadow);
+      overflow: hidden;
+      margin-bottom: 18px;
+    }
+
+    .bz-helper .bz-card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px 18px;
+      border-bottom: 1px solid #e4e7ec;
+      background: #fff;
+    }
+
+    .bz-helper .bz-card-title {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -.02em;
+    }
+
+    .bz-helper .bz-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+      border: 1px solid transparent;
+    }
+
+    .bz-helper .bz-badge.blue {
+      background: #eff6ff;
+      color: #1d4ed8;
+      border-color: #bfdbfe;
+    }
+
+    .bz-helper .bz-badge.yellow {
+      background: #fffbeb;
+      color: #b45309;
+      border-color: #fde68a;
+    }
+
+    .bz-helper .bz-table-wrap {
+      overflow-x: auto;
+    }
+
+    .bz-helper .bz-decision-table {
+      width: 100%;
+      min-width: 980px;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 14px;
+    }
+
+    .bz-helper .bz-decision-table thead th {
+      text-align: left;
+      background: var(--bz-cream);
+      color: #101828;
+      padding: 11px 13px;
+      border-bottom: 1px solid #d4c48c;
+      font-size: 15px;
+    }
+
+    .bz-helper .bz-decision-table thead th:first-child {
+      width: 61%;
+    }
+
+    .bz-helper .bz-decision-table thead th:last-child {
+      width: 39%;
+    }
+
+    .bz-helper .bz-decision-table tbody td {
+      vertical-align: top;
+      padding: 12px 13px;
+      border-bottom: 1px solid #edf0f4;
+      border-right: 1px solid #edf0f4;
+      background: #fff;
+    }
+
+    .bz-helper .bz-decision-table tbody tr:hover td {
+      background: #fbfdff;
+    }
+
+    .bz-helper .bz-decision-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .bz-helper .bz-decision-table tbody td:last-child {
+      border-right: none;
+    }
+
+    .bz-helper .bz-red-text {
+      color: var(--bz-danger);
+      font-weight: 800;
+    }
+
+    .bz-helper .bz-yellow-text {
+      color: #c27a00;
+      font-weight: 800;
+    }
+
+    .bz-helper .bz-muted {
+      color: var(--bz-muted);
+    }
+
+    .bz-helper .bz-flow {
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      font-weight: 800;
+    }
+
+    .bz-helper .bz-step {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 26px;
+      height: 24px;
+      border-radius: 7px;
+      padding: 0 8px;
+      background: var(--bz-soft-blue);
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+      font-size: 12px;
+    }
+
+    .bz-helper .bz-arrow {
+      color: #1d4ed8;
+      font-weight: 900;
+    }
+
+    .bz-helper .bz-note-strip {
+      margin: 14px 18px 18px;
+      border-radius: 14px;
+      background: #fff8e6;
+      border: 1px solid #f1d382;
+      padding: 13px 15px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: #5b3b00;
+      font-size: 14px;
+    }
+
+    .bz-helper .bz-mockup {
+      padding: 16px;
+      background: #f2f4f7;
+    }
+
+    .bz-helper .bz-zis-window {
+      border: 1px solid #aeb6c2;
+      background: #d7dce4;
+      box-shadow: 0 12px 24px rgba(16, 24, 40, .18);
+      max-width: 940px;
+      overflow: hidden;
+    }
+
+    .bz-helper .bz-zis-tabs {
+      display: flex;
+      align-items: flex-end;
+      gap: 4px;
+      padding: 8px 8px 0;
+      background: linear-gradient(#e6ebf2, #cad1db);
+      overflow-x: auto;
+    }
+
+    .bz-helper .bz-zis-tab {
+      padding: 7px 12px;
+      border-radius: 8px 8px 0 0;
+      border: 1px solid #98a3b3;
+      border-bottom: none;
+      background: linear-gradient(#f9fbff, #d7dee8);
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+      color: #1f2937;
+    }
+
+    .bz-helper .bz-zis-tab.active {
+      background: linear-gradient(#dbeafe, #93c5fd);
+      color: #0f3b7a;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .55);
+    }
+
+    .bz-helper .bz-zis-body {
+      background: #eef1f5;
+      border-top: 1px solid #98a3b3;
+      padding: 8px;
+    }
+
+    .bz-helper .bz-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+
+    .bz-helper .bz-tool-label {
+      font-weight: 800;
+    }
+
+    .bz-helper .bz-tool-check {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .bz-helper .bz-tool-btn {
+      border: 2px solid #1684ff;
+      background: #fff;
+      color: #064e9b;
+      font-weight: 800;
+      padding: 5px 10px;
+      border-radius: 2px;
+    }
+
+    .bz-helper .bz-zis-table {
+      width: 100%;
+      min-width: 850px;
+      border-collapse: collapse;
+      font-size: 12px;
+      background: #fff;
+    }
+
+    .bz-helper .bz-zis-table th {
+      background: #d1d5db;
+      border: 1px solid #9ca3af;
+      padding: 5px 6px;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .bz-helper .bz-zis-table td {
+      border: 1px solid #aeb6c2;
+      padding: 5px 6px;
+      white-space: nowrap;
+    }
+
+    .bz-helper .bz-zis-table tr.cyan td {
+      background: #bff7f4;
+    }
+
+    .bz-helper .bz-zis-table tr.yellow td {
+      background: #ffe100;
+    }
+
+    .bz-helper .bz-strike {
+      text-decoration: line-through;
+      color: #5b677a;
+    }
+
+    .bz-helper .bz-source-col {
+      outline: 4px solid #ef1b1b;
+      outline-offset: -4px;
+      font-weight: 800;
+      background: #ffd900 !important;
+    }
+
+    .bz-helper .bz-source-head {
+      outline: 4px solid #ef1b1b;
+      outline-offset: -4px;
+      background: #d1d5db !important;
+      color: #111827;
+    }
+
+    .bz-helper .bz-quick-cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      padding: 16px 18px 18px;
+    }
+
+    .bz-helper .bz-quick-card {
+      border: 1px solid #e4e7ec;
+      border-radius: 16px;
+      padding: 14px;
+      background: #fff;
+    }
+
+    .bz-helper .bz-quick-card h4 {
+      margin: 0 0 7px;
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .bz-helper .bz-quick-card p {
+      margin: 0;
+      color: #475467;
+      font-size: 13px;
+    }
+
+    
+
+/* ===============================
+   Bezzálohový režim | firemní školicí nadstavba
+   =============================== */
+:root{--de-orange:#F99F1C;--darknavy:#152943}
+body{background:#fff!important}
+body>.breadcrumb-nav,body>.hero-banner,body>.book-container{max-width:1290px}
+.breadcrumb-nav{padding:10px 12px!important}
+.hero-banner{min-height:160px!important}
+.hero-banner h1{max-width:770px}
+.download-disclosure{min-width:235px}
+.download-disclosure>summary{gap:9px;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+.download-disclosure>summary::before{content:'▤';font-size:19px;line-height:1}
+.download-options{min-width:280px!important;max-width:380px}
+.book-container{align-items:flex-start!important}
+.book-tabs{position:sticky;top:12px;max-height:calc(100vh - 25px);overflow-y:auto;scrollbar-width:thin;scrollbar-color:#d2e1b2 #fff}
+.book-tabs .tab-item{font-family:inherit;text-align:left;cursor:pointer;width:100%;display:flex;align-items:center;gap:11px;appearance:none;justify-content:flex-start}
+.nav-icon{flex:0 0 22px;width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center}
+.nav-icon svg{display:block;width:19px;height:19px;stroke:currentColor}
+.nav-label{display:block;white-space:normal}
+.book-page i.bi .inline-content-icon{display:inline-block;width:18px;height:18px;vertical-align:-3px;margin-right:4px}
+.book-page i.bi::before{display:none!important}
+.book-tabs .tab-item.active .nav-icon{color:#62851a}
+.book-tabs .tab-item:focus-visible{outline:3px solid #b6db69;outline-offset:1px}
+.book-page{min-width:0;flex:1 1 0;width:auto}
+.content-section{min-width:0}
+.content-section>h2{color:#527a12!important;border-bottom:1px solid #e9f0dc;padding:0 0 17px!important;margin-bottom:22px!important;letter-spacing:-.025em}
+.content-section>h2::before{content:'';display:block;width:7px;background:#94C11F;border-radius:5px;align-self:stretch;margin-right:8px}
+.content-section h3,.content-section h4,.content-section h5{letter-spacing:-.015em;color:#203348}
+.content-section .sheet-card{position:relative;background:#fff;border:1px solid #e5eaf0!important;border-radius:19px;box-shadow:0 7px 23px rgba(16,36,51,.048);margin-bottom:17px!important;padding:22px 24px!important;overflow:visible}
+.content-section .sheet-card>.procedure-step{margin:0 0 13px!important}
+.content-section .sheet-card>.procedure-step:last-child{margin-bottom:0!important}
+.content-section .procedure-step{position:relative;padding:16px 17px 16px 57px!important;background:#f9fbfd;border:1px solid #e5ebf0;border-radius:14px;min-height:64px;line-height:1.7}
+.content-section .procedure-step>.step-badge{position:absolute;left:14px;top:16px;display:flex;align-items:center;justify-content:center;float:none;width:29px;height:29px;line-height:1;font-size:.83rem;font-weight:800;margin:0;background:#94c11f;color:#fff;border-radius:50%;box-shadow:0 3px 0 rgba(87,127,13,.12)}
+.content-section .procedure-step:nth-of-type(3n+2)>.step-badge{background:#e59a20}
+.content-section .procedure-step:nth-of-type(3n+3)>.step-badge{background:#40869c}
+.content-section .sheet-card>p:not(.procedure-step){margin:0 0 15px}
+.content-section .sheet-card>p:last-child{margin-bottom:0}
+.content-section .sheet-card img.knowledge-shot{display:block;max-width:100%;width:auto;height:auto;object-fit:contain;margin:12px auto 23px!important;padding:8px;background:#fff;border:1px solid #e5eaf0;border-radius:16px;box-shadow:0 4px 13px rgba(19,32,52,.055)}
+.content-section .sheet-card img.knowledge-shot:last-child{margin-bottom:0!important}
+.content-section .sheet-card .alert{margin-top:16px;border-radius:14px;padding:17px 18px!important;line-height:1.66;box-shadow:none!important}
+.content-section .sheet-card .alert-danger{background:#fff5f5;border:1px solid #f4cbcf;border-left:5px solid #db4b4b;color:#7c2b34}
+.content-section .sheet-card .alert-info{background:#eef8fe;border:1px solid #cde7f1;border-left:5px solid #1589a6;color:#24566a}
+.content-section .sheet-card .alert-success{background:#f2f8e7;border:1px solid #cde6a2;border-left:5px solid #94c11f;color:#345515}
+.content-section .sheet-card ul{padding-left:23px;margin:14px 0}
+.content-section .sheet-card li{margin:6px 0;line-height:1.66}
+.content-section strong,.content-section b{color:#324d17}
+.content-section a:not(.tab-item){color:#477413;text-decoration:none;border-bottom:1px solid #a4c66f;overflow-wrap:anywhere}
+.content-section a:hover{background:#f2f8e7}
+.content-section a[target="_blank"]::after{content:'↗';font-size:.78rem;vertical-align:super;opacity:.6;margin-left:3px}
+.content-section .sheet-card .d-flex.flex-wrap.gap-4{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px!important}
+.content-section .sheet-card .d-flex.flex-wrap.gap-4>.d-flex{border:1px solid #e8efd8;border-radius:12px;padding:11px 13px;background:#f9fcf4;font-size:.9rem;min-width:0}
+/* Decision tables retain their original rectangular grid and source wording. */
+.bz-helper{--bz-radius:16px;line-height:1.59}
+.bz-helper .bz-hero{background:linear-gradient(123deg,#f7fbeb 0%,#fff 55%,#f1f8ed 100%);border:1px solid #dce9ca;box-shadow:0 7px 18px rgba(15,32,42,.06)}
+.bz-helper .bz-hero::after{background:rgba(148,193,31,.10)}
+.bz-helper .bz-eyebrow{background:#f5fbe8;border-color:#d1e5ab;color:#527a12}
+.bz-helper .bz-hero h3{color:#253f18;font-size:clamp(23px,2.6vw,32px)}
+.bz-helper .bz-card{border-color:#e6ebee;box-shadow:0 7px 20px rgba(15,32,42,.045)}
+.bz-helper .bz-card-title{color:#24364b}
+.bz-helper .bz-card-head{background:#fff}
+.bz-helper .bz-decision-table{min-width:850px}
+.bz-helper .bz-decision-table thead th{background:#eff6e5;color:#263e1f;border-bottom-color:#cfdfa9}
+.bz-helper .bz-note-strip{background:#fff9ed}
+.bz-helper .bz-flow{white-space:normal}
+.bz-helper .bz-mockup{background:#f6f8f8}
+.bz-helper .bz-zis-window{margin:auto;max-width:100%}
+.bz-helper .bz-zis-table{min-width:790px}
+.bz-helper .bz-toolbar{line-height:1.45}
+.bz-helper a{border-bottom:0}
+.bz-helper .bz-quick-card{background:#fcfdfa}
+/* Distinguish process alternatives and protect the source's original alert wording. */
+#page-alerty .sheet-card:nth-of-type(2){border-left:5px solid #dd6d51!important}
+#page-alerty .sheet-card:nth-of-type(3){border-left:5px solid #3e9bbb!important}
+#page-alerty .border-success{background:#f7fbf1!important}
+#page-alerty .border-danger{background:#fff7f8!important}
+#page-formular .sheet-card>p:last-of-type{background:#fafcf6;border:1px solid #e6edd9;border-radius:12px;padding:15px;line-height:2}
+#page-video .rounded-4{border-radius:18px!important;background:#f8fafc!important}
+#page-test iframe{width:100%;height:600px;min-height:480px;border:0;border-radius:14px}
+#page-test .shadow-sm{border-radius:16px!important}
+@media(max-width:1050px){
+ .book-container{display:block!important}
+ .book-tabs{position:static;display:flex!important;flex-direction:row!important;max-height:none;max-width:100%;overflow-x:auto;overflow-y:hidden;gap:7px;padding:9px 5px 13px;scrollbar-width:thin}
+ .book-tabs .tab-item{flex:0 0 auto;width:auto!important;min-width:165px!important;max-width:240px;white-space:normal!important;border-radius:13px}
+ .book-page{width:100%}
+}
+@media(max-width:720px){
+ body{padding:7px 9px 26px!important}
+ .hero-banner{padding:24px 20px!important}
+ .book-page{padding:17px 15px 24px!important}
+ .content-section .sheet-card{padding:17px 14px!important}
+ .content-section .procedure-step{padding:15px 11px 15px 51px!important}
+ .content-section .procedure-step>.step-badge{left:11px;top:15px}
+ .content-section .sheet-card .d-flex.flex-wrap.gap-4{grid-template-columns:1fr}
+ .bz-helper .bz-card-head{flex-direction:column;align-items:flex-start}
+ .bz-helper .bz-quick-cards{grid-template-columns:1fr}
+ .bz-helper .bz-decision-table{min-width:740px}
+ .bz-helper .bz-zis-table{min-width:750px}
+ .content-section>h2{font-size:1.24rem!important}
+}
+</style></head><body><nav aria-label="breadcrumb" class="breadcrumb-nav">
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+<a href="https://sites.google.com/view/znalostka/"><i class="bi bi-house-door-fill"></i> Znalostní
+                    báze</a>
+</li>
+<li class="breadcrumb-item">
+<a href="https://sites.google.com/view/znalostka/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat">Školení
+                    ZIS</a>
+</li>
+<li class="breadcrumb-item">
+<a href="https://sites.google.com/view/znalostka/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat/3-den">3.
+                    den</a>
+</li>
+<li aria-current="page" class="breadcrumb-item active">
+               Bezzálohový režim    
+            </li>
+</ol>
+</nav><header class="hero-banner d-flex justify-content-between align-items-center"><div>
+<h1 class="h2 fw-bold mb-1">Pracovní postup: Bezzálohový režim</h1>
+<p class="mb-0 opacity-75">Znalostní databáze epet | Dokumentace a přílohy</p>
+</div><div class="download-container"><details class="download-disclosure"><summary class="btn-download">Dokumenty ke stažení</summary><div class="download-options"><a class="download-link" href="https://drive.google.com/file/d/1aEMG9QI1jjNzsqTgoiUwN-npmvChYBMe/view?usp=drive_link" rel="noopener noreferrer" target="_blank">Bezzálohový režim (PDF)</a></div></details></div></header><div class="book-container"><nav aria-label="Navigace školením" class="book-tabs"><button aria-controls="page-intro" aria-current="page" class="tab-item active" data-target="page-intro" type="button"><span aria-hidden="true" class="nav-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><rect height="18" rx="2" width="16" x="4" y="3"></rect><path d="M8 9h8M8 13h8M8 17h5"></path></svg></span><span class="nav-label">Pracovní postup</span></button><button aria-controls="page-podminky" aria-current="false" class="tab-item" data-target="page-podminky" type="button"><span aria-hidden="true" class="nav-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><rect height="18" rx="2" width="16" x="4" y="3"></rect><path d="M8 9h8M8 13h8M8 17h5"></path></svg></span><span class="nav-label">Podmínky</span></button><button aria-controls="page-pomocnik" aria-current="false" class="tab-item" data-target="page-pomocnik" type="button"><span aria-hidden="true" class="nav-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><rect height="18" rx="2" width="16" x="4" y="3"></rect><path d="M8 9h8M8 13h8M8 17h5"></path></svg></span><span class="nav-label">BZ a kauce - pomocník</span></button><button aria-controls="page-overeni" aria-current="false" class="tab-item" data-target="page-overeni" type="button"><span aria-hidden="true" class="nav-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"></path><circle cx="12" cy="12" r="9"></circle></svg></span><span class="nav-label">Ověření</span></button><button aria-controls="page-ukol" aria-current="false" class="tab-item" data-target="page-ukol" type="button"><span aria-hidden="true" class="nav-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle></svg></span><span class="nav-label">Založení úkolu</span></button><button aria-controls="page-formular" aria-current="false" class="tab-item" data-target="page-formular" type="button"><span aria-hidden="true" class="nav-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><rect height="18" rx="2" width="16" x="4" y="3"></rect><path d="M8 9h8M8 13h8M8 17h5"></path></svg></span><span class="nav-label">Zaslání formuláře</span></button><button aria-controls="page-blokace" aria-current="false" class="tab-item" data-target="page-blokace" type="button"><span aria-hidden="true" class="nav-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"></path><circle cx="12" cy="12" r="9"></circle></svg></span><span class="nav-label">Nastavení blokací</span></button><button aria-controls="page-uhrada" aria-current="false" class="tab-item" data-target="page-uhrada" type="button"><span aria-hidden="true" class="nav-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M15.5 9c-.7-1-1.8-1.5-3.3-1.5-1.6 0-2.8.9-2.8 2.2 0 3 5.7 1.3 5.7 4.5 0 1.3-1.1 2.3-3 2.3-1.4 0-2.5-.4-3.4-1.5M12 5v14"></path></svg></span><span class="nav-label">Úhrada kauce a nastavení příznaku kauce</span></button><button aria-controls="page-zruseni" aria-current="false" class="tab-item" data-target="page-zruseni" type="button"><span aria-hidden="true" class="nav-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"></path><circle cx="12" cy="12" r="9"></circle></svg></span><span class="nav-label">Zrušení blokací</span></button><button aria-controls="page-potvrzeni" aria-current="false" class="tab-item" data-target="page-potvrzeni" type="button"><span aria-hidden="true" class="nav-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M15.5 9c-.7-1-1.8-1.5-3.3-1.5-1.6 0-2.8.9-2.8 2.2 0 3 5.7 1.3 5.7 4.5 0 1.3-1.1 2.3-3 2.3-1.4 0-2.5-.4-3.4-1.5M12 5v14"></path></svg></span><span class="nav-label">Zrušení záloh a potvrzení ZK</span></button><button aria-controls="page-alerty" aria-current="false" class="tab-item" data-target="page-alerty" type="button"><span aria-hidden="true" class="nav-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 3 2 20h20L12 3ZM12 9v5M12 17h.01"></path></svg></span><span class="nav-label">Alerty</span></button><button aria-controls="page-video" aria-current="false" class="tab-item" data-target="page-video" type="button"><span aria-hidden="true" class="nav-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><rect height="14" rx="3" width="18" x="3" y="5"></rect><path d="m10 9 5 3-5 3z"></path></svg></span><span class="nav-label">Video návod</span></button><button aria-controls="page-test" aria-current="false" class="tab-item" data-target="page-test" type="button"><span aria-hidden="true" class="nav-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><rect height="18" rx="2" width="14" x="5" y="3"></rect><path d="M9 3h6M8 11l2 2 4-4M8 17h8"></path></svg></span><span class="nav-label">Opakovací test</span></button></nav><main class="book-page"><div aria-hidden="false" class="content-section active" id="page-intro" tabindex="-1">
+<h2 class="fw-bold mb-4 text-success">1. Pracovní postup</h2>
+<div class="card sheet-card">
+<p>
+            Pracovní postup popisuje, jak zákazníkovi nastavíme bezzálohový režim, při kterém nemusí hradit měsíční zálohy.
+            Zákazník hradí pouze faktury za skutečně odebranou elektřinu. U plynu bezzálohový režim nenastavujeme,
+            nemáme měsíční fakturaci. Postup dále řeší případy ukončení smlouvy a následnou práci s
+            kaucí.
+          </p>
+<div class="mb-3">
+<h5><strong>ZKRATKY:</strong></h5>
+<div class="d-flex flex-wrap gap-4">
+<div class="d-flex align-items-center">
+<i class="bi bi-house-fill me-1"><svg aria-hidden="true" class="inline-content-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 10 12 3l9 7v11h-7v-7h-4v7H3z"></path></svg></i>
+<strong>BZ</strong> – bezzálohový režim
+              </div>
+<div class="d-flex align-items-center">
+<i class="bi bi-person-fill-check me-1"><svg aria-hidden="true" class="inline-content-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="10" cy="8" r="4"></circle><path d="M3 21v-2a7 7 0 0 1 12-5M16 19l2 2 4-5"></path></svg></i>
+<strong>ZK</strong> – zákazník
+              </div>
+</div>
+</div>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-podminky" tabindex="-1">
+<h2 class="fw-bold mb-4 text-success">2. Podmínky bezzálohového režimu</h2>
+<!-- KARTA: Podmínky -->
+<div class="card sheet-card">
+<p class="mb-2 procedure-step">
+<span class="step-badge">1</span>
+            Firemní zákazník s IČO (neplatí pro fyzické osoby podnikající).
+          </p>
+<p class="mb-2 procedure-step">
+<span class="step-badge">2</span>
+            Zákazník nesmí mít dluhy.
+          </p>
+<p class="mb-2 procedure-step">
+<span class="step-badge">3</span>
+            Platí pouze pro elektřinu.
+          </p>
+<p class="mb-2 procedure-step">
+<span class="step-badge">4</span>
+            ZK má <b>B</b> nebo <b>C1</b> měření, tedy každý měsíc je mu vystavována faktura na základě dat od
+            distribuce.
+          </p>
+<p class="mb-2 procedure-step">
+<span class="step-badge">5</span>
+            Nutná kauce ve výši jedné měsíční zálohy.
+          </p>
+<p class="mb-3 procedure-step">
+<span class="step-badge">6</span>
+            Doložená žádost o BZ.
+          </p>
+<div class="alert alert-danger mb-3 training-alert">
+<strong>POZOR:</strong>
+            BZ nesmí být nastaven u C4 měření, neexistuje kontrolní mechanismus, zda si ZK zasílá odečty pro fakturaci.
+            Z tohoto důvodu je povolen pouze B nebo C1 měření.
+          </div>
+<p class="mb-0">
+            V případě, že po schválení a nastavení bezzálohového režimu ZK přestane hradit měsíční faktury, BZ mu bude zrušen a
+            kauce je použita na úhradu dluhu. Dále mu budou nastaveny měsíční zálohy a na BZ do budoucna ztrácí nárok.
+          </p>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-pomocnik" tabindex="-1">
+<h2 class="fw-bold mb-4 text-success">BZ a kauce - pomocník</h2>
+<div class="bz-helper">
+<div class="bz-page">
+<section class="bz-hero">
+<div class="bz-eyebrow">📋 Interní tahák pro operátory</div>
+<h3>BZ a kauce</h3>
+<p class="bz-subtitle">
+                Přehled rozhodování, kdy řeší BZ back office, kdy se ozvat zákazníkovi a kdy požadavek předat na SA /
+                BO.
+              </p>
+</section>
+<section class="bz-card">
+<div class="bz-card-head">
+<h3 class="bz-card-title">Rozhodovací tabulka</h3>
+<span class="bz-badge blue">1:1 podle dodaného podkladu</span>
+</div>
+<div class="bz-table-wrap">
+<table aria-label="Tahák pro operátory BZ a kauce" class="bz-decision-table">
+<thead>
+<tr>
+<th>Situace (pokud…)</th>
+<th>Akce operátora (tak…)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BZ je přímo ve smlouvě</td>
+<td>BO nastaví BZ. My neřešíme, že bez kauce <span class="bz-muted">(není náš problém)</span>.
+                      </td>
+</tr>
+<tr>
+<td><span class="bz-red-text">Nová smlouva</span> <span class="bz-red-text">(ne dodatek
+                          přes</span> <span class="bz-yellow-text">Import přesmluvnění</span><span class="bz-red-text">)</span></td>
+<td><strong>NESMÍ</strong> mít hned BZ, BO musí nastavit <span class="bz-flow"><span class="bz-step">PK</span><span class="bz-arrow">➡</span><span class="bz-step">kauce</span><span class="bz-arrow">➡</span><span class="bz-step">BZ</span></span></td>
+</tr>
+<tr>
+<td>Zákazník u nové smlouvy <span class="bz-muted">(ne přes Import přesmluvnění)</span> chce zpět
+                        BZ</td>
+<td>Musí se ozvat/požádat, <span class="bz-flow"><span class="bz-step">PK</span><span class="bz-arrow">➡</span><span class="bz-step">kauce</span><span class="bz-arrow">➡</span><span class="bz-step">BZ</span></span></td>
+</tr>
+<tr>
+<td>Zákazník odmítá kauci <span class="bz-muted">(že to prý hlásil – OZ někdy dá jen poznámku v
+                          CRM, ale ne na smlouvu)</span></td>
+<td><span class="bz-red-text">Nepředávat na SA ani BO – standardní postup</span><br/>Musí se
+                        ozvat/požádat, <span class="bz-flow"><span class="bz-step">PK</span><span class="bz-arrow">➡</span><span class="bz-step">kauce</span><span class="bz-arrow">➡</span><span class="bz-step">BZ</span></span></td>
+</tr>
+<tr>
+<td><span class="bz-red-text">Totéž, jako v řádku výše platí i pro OZ</span> <span class="bz-muted">(např. KUPET) – nelze bez vědomí ZK jen na přání OZ nastavit
+                          BZ</span><br/><span class="bz-muted">(Kupetu bude vysvětleno Petrem Uhrem)</span></td>
+<td><span class="bz-red-text">Nepředávat na SA ani BO – standardní postup</span><br/>Musí se
+                        ozvat/požádat, <span class="bz-flow"><span class="bz-step">PK</span><span class="bz-arrow">➡</span><span class="bz-step">kauce</span><span class="bz-arrow">➡</span><span class="bz-step">BZ</span></span></td>
+</tr>
+<tr>
+<td>Požadavek na BZ z jiného oddělení</td>
+<td>Předat na SA. Neprověřujeme, rovnou předáváme.</td>
+</tr>
+<tr>
+<td><span class="bz-red-text">DODATEK, tzv. bez zásahu lidské ruky</span><br/><strong>Sml. a
+                          odběrné místo</strong> <span class="bz-arrow">➡</span> <strong>Tarify</strong> <span class="bz-arrow">➡</span> <strong>Zobrazit dodatky</strong> <span class="bz-arrow">➡</span>
+<strong>sloupec Zdroj dodatku</strong> <span class="bz-arrow">➡</span> <span class="bz-yellow-text">Import přesmluvnění</span></td>
+<td>Jedná se o navazující dodatky, kt. se rovnou propadají do ZIS <span class="bz-arrow">➡</span>
+<strong>POKRAČUJÍ V BZ automaticky</strong> a my s nimi nic neděláme.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="bz-note-strip">
+<strong>⚠️ Pozor:</strong>
+<span>U nové smlouvy není možné nastavit BZ rovnou. Standardní cesta je vždy přes požadavek zákazníka a
+                  návaznost <strong>PK → kauce → BZ</strong>. Výjimkou jsou navazující dodatky přes <strong>Import
+                    přesmluvnění</strong>.</span>
+</div>
+</section>
+<section class="bz-card">
+<div class="bz-card-head">
+<h3 class="bz-card-title">Kde ověřit zdroj dodatku v ZIS</h3>
+<span class="bz-badge yellow">Sml. a odběrné místo → Tarify</span>
+</div>
+<div class="bz-mockup">
+<div aria-label="Ukázka kontroly zdroje dodatku v ZIS" class="bz-zis-window" role="img">
+<div class="bz-zis-tabs">
+<span class="bz-zis-tab active">Tarify</span>
+<span class="bz-zis-tab">Základní údaje OPM</span>
+<span class="bz-zis-tab">CDS Evidence</span>
+<span class="bz-zis-tab">Přerušení dodávky</span>
+<span class="bz-zis-tab">Blokace</span>
+<span class="bz-zis-tab">Odečty</span>
+<span class="bz-zis-tab">Další fakturované položky</span>
+<span class="bz-zis-tab">Diagramy</span>
+<span class="bz-zis-tab">Kalkulační listy</span>
+</div>
+<div class="bz-zis-body">
+<div class="bz-toolbar">
+<span class="bz-tool-label">Tarify</span>
+<span class="bz-tool-check">☑ Zobrazovat algoritmy k vybranému OM</span>
+<span>📄 Tranše</span>
+<span class="bz-tool-btn">Zobrazit dodatky</span>
+</div>
+<div class="bz-table-wrap">
+<table class="bz-zis-table">
+<thead>
+<tr>
+<th>MM</th>
+<th>Algoritmus</th>
+<th>Tarifní skupina</th>
+<th>Od</th>
+<th>Do</th>
+<th>Název ceníku</th>
+<th class="bz-source-head">Zdroj dodatku</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cyan">
+<td>859182400407420963</td>
+<td>Distribuce NN</td>
+<td>C02d ČEZ Distribuce, a. s.</td>
+<td>01.02.2024</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="cyan">
+<td>859182400407420963</td>
+<td>Obchod NN</td>
+<td>FIX 24 10/2023 - Jednotarif - M</td>
+<td>01.02.2024</td>
+<td></td>
+<td>FIX 24 10/2023</td>
+<td></td>
+</tr>
+<tr class="cyan">
+<td class="bz-strike">859182400407420963</td>
+<td class="bz-strike">Obchod NN</td>
+<td class="bz-strike">STANDARD ele - Jednotarif - M</td>
+<td class="bz-strike">01.02.2026</td>
+<td></td>
+<td class="bz-strike">STANDARD ELE...</td>
+<td></td>
+</tr>
+<tr class="yellow">
+<td>859182400407420963</td>
+<td>Obchod NN</td>
+<td>EP FIX 24 varianta SPOLU20 ELE - J...</td>
+<td>01.02.2026</td>
+<td>31.01.2028</td>
+<td></td>
+<td class="bz-source-col">Import přesmluvnění</td>
+</tr>
+<tr class="yellow">
+<td>859182400407420963</td>
+<td>Obchod NN</td>
+<td>STANDARD ele - Jednotarif - M</td>
+<td>01.02.2028</td>
+<td></td>
+<td></td>
+<td>Následný produkt</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="bz-quick-cards">
+<div class="bz-quick-card">
+<h4>1. Otevři tarify</h4>
+<p>Sml. a odběrné místo → Tarify → Zobrazit dodatky.</p>
+</div>
+<div class="bz-quick-card">
+<h4>2. Zkontroluj sloupec</h4>
+<p>Ve sloupci <strong>Zdroj dodatku</strong> hledej hodnotu <strong>Import přesmluvnění</strong>.</p>
+</div>
+<div class="bz-quick-card">
+<h4>3. Rozhodni postup</h4>
+<p>Pokud jde o importovaný navazující dodatek, BZ pokračuje automaticky a nic nepředáváme.</p>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-overeni" tabindex="-1">
+<h2 class="fw-bold mb-4 text-success">3. Ověření</h2>
+<!-- ===================== -->
+<!-- Ověření -->
+<!-- ===================== -->
+<div class="card sheet-card">
+<p class="mb-3">
+            Ověřujeme typ měření v systému:
+          </p>
+<p class="mb-2 procedure-step">
+<span class="step-badge">1</span>
+            V případě, že ZK chce BZ, ověříme si nejdříve, zda má B měření.
+            To provedeme proklikem na EAN ve stručném přehledu na záložce
+            Smlouva a odběrné místo.
+          </p>
+<img alt="Ukázka pracovního postupu v ZIS" class="knowledge-shot" loading="lazy" src="https://i.postimg.cc/XvdtHLZf/01.png"/>
+<p class="mb-2 procedure-step">
+<span class="step-badge">2</span>
+            Následně se nám otevře nová záložka Odběrné místo, kde v otevřeném
+            okně zvolíme možnost vyhledat dle Odběrného místa.
+          </p>
+<img alt="Ukázka pracovního postupu v ZIS" class="knowledge-shot" loading="lazy" src="https://i.postimg.cc/FFD8B7KB/02.png"/>
+<p class="mb-2 procedure-step">
+<span class="step-badge">3</span>
+            Po pravé straně klikneme na záložku OPM elektro, kde vidíme Typ měření.
+          </p>
+<img alt="Ukázka pracovního postupu v ZIS" class="knowledge-shot" loading="lazy" src="https://i.postimg.cc/T3Ws10Jz/03.png"/>
+<p class="mb-0 procedure-step">
+<span class="step-badge">4</span>
+            V případě, že vidíme C nebo C4 měření, nelze BZ režim nastavit. ZK tak musí i nadále hradit zálohy.
+          </p>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-ukol" tabindex="-1">
+<h2 class="fw-bold mb-4 text-success"> 4. Založení úkolu </h2>
+<!-- KARTA: Založení úkolu -->
+<div class="card sheet-card">
+<p class="mb-2 procedure-step">
+<span class="step-badge">1</span>
+            Pokud na odběrném místě vidíme B měření, informujeme zákazníka o nutnosti
+            vyplnění a zaslání formuláře a složení kauce ve výši jedné měsíční zálohy.
+            V případě, že zákazník souhlasí, zakládáme úkol a hlídáme úhradu kauce
+            a doložení vyplněného formuláře.
+          </p>
+<img alt="Ukázka pracovního postupu v ZIS" class="knowledge-shot" loading="lazy" src="https://i.postimg.cc/7hWBYJGP/04.png"/>
+<p class="mb-2 procedure-step">
+<span class="step-badge">2</span>
+            Zakládáme úkol s následujícími parametry:
+          </p>
+<ul class="mb-3">
+<li><strong>Věc a popis úkolu:</strong> Bezzáloh režim</li>
+<li><strong>Zdroj:</strong> Došlá pošta / volná událost</li>
+<li>
+<strong>Popis zadání:</strong>
+              EAN: xxxxx – Zk žádá o bezzáloh režim, má B měření,
+              Zk informován o nutnosti složení kauce a doložení formuláře,
+              čekáme na úhradu.
+            </li>
+<li><strong>Řešitel:</strong> daný operátor, který hlídá složení kauce</li>
+<li><strong>Do:</strong> D+5</li>
+</ul>
+<p class="mb-2 procedure-step">
+<span class="step-badge">3</span>
+            Do připojení dáme daný EAN.
+          </p>
+<p class="mb-4 procedure-step">
+<span class="step-badge">4</span>
+            Úkol si nechává operátor na sobě přidělený a hlídá úhradu kauce
+            a doložení formuláře.
+          </p>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-formular" tabindex="-1">
+<!-- 5 ZASLÁNÍ FORMULÁŘE -->
+<h2 class="fw-bold mb-4 text-success">5. Zaslání formuláře</h2>
+<div class="card sheet-card">
+<p class="mb-2 procedure-step">
+<span class="step-badge">5</span>
+            Formulář mu zašleme dle vzoru a zasíláme na jeho kontaktní e-mail.
+          </p>
+<p class="mb-2 procedure-step">
+<span class="step-badge">6</span>
+<strong>POZOR:</strong>
+            formulář zasíláme dle toho, jaké má ZK podepsané obchodní podmínky.
+            Setkat se můžeme s verzí 2022 a 2024 (v názvu formuláře).
+            Ověření verze obchodních podmínek provedeme na
+            Stručném přehledu – Smlouva a smluvní podmínky –
+            Smluvní podmínky a OPM – Smlouva.
+          </p>
+<img alt="Ukázka pracovního postupu v ZIS" class="knowledge-shot" loading="lazy" src="https://i.postimg.cc/1XkpjGVF/05.png"/>
+<p class="mb-0">
+<a href="https://drive.google.com/file/d/1EhfSImShMh7soopf2KBDLK05C3Q7_6c1/view?usp=drive_link" target="_blank">
+              ŽÁDOST O BEZZÁLOHOVÝ REŽIM – DLE VOPD 2022 - EPET
+            </a>
+            /
+            <a href="https://drive.google.com/file/d/1vUBov6r4JO_0g9Mn86irAAjcVkHhZXyv/view?usp=drive_link" target="_blank">
+              ŽÁDOST O BEZZÁLOHOVÝ REŽIM – DLE VOPD 2024 - EPET
+            </a>
+
+            /
+            <a href="https://drive.google.com/file/d/1YsGBG28zBYV4jpnxVqfKKOv-pOHs4qE1/view?usp=drive_link" target="_blank">
+              ŽÁDOST O BEZZÁLOHOVÝ REŽIM – DLE VOPD 2025 - Epet
+            </a>
+            /
+            <a href="https://drive.google.com/file/d/1Ra71idB4LDOBGFBkPCqEGeEllg-xzrxE/view?usp=drive_link" target="_blank">
+              ŽÁDOST O BEZZÁLOHOVÝ REŽIM – DLE VOPD 2022 - Dobrá Energie
+            </a>
+            /
+            <a href="https://drive.google.com/file/d/1UVYglvcpd8IynJFot1amG9IEIs1m1Xix/view?usp=drive_link" target="_blank">
+              ŽÁDOST O BEZZÁLOHOVÝ REŽIM – DLE VOPD 2024 - Dobrá Energie
+            </a>
+
+            /
+            <a href="https://drive.google.com/file/d/1S_b479xrvkw25Cy5tabYq_AYaX87LStE/view?usp=drive_link" target="_blank">
+              ŽÁDOST O BEZZÁLOHOVÝ REŽIM – DLE VOPD 2025 - Dobrá Energie
+            </a>
+</p>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-blokace" tabindex="-1">
+<h2 class="fw-bold mb-4 text-success"> 6. Nastavení blokací </h2>
+<!-- KARTA: Blokace -->
+<div class="card sheet-card">
+<p class="mb-2 procedure-step">
+<span class="step-badge">1</span>
+            Dále je nutné nastavit blokace párování plateb, aby se nám uhrazená
+            kauce nepřiřadila na zálohu. To nastavíme na záložce
+            <strong>Stručný přehled</strong>, kde proklikneme
+            <strong>Zákaznický účet</strong> a zvolíme:
+          </p>
+<img alt="Ukázka pracovního postupu v ZIS" class="knowledge-shot" loading="lazy" src="https://i.postimg.cc/rwL1G9kX/06.png"/>
+<p class="mb-2 procedure-step">
+<span class="step-badge">2</span>
+            Na záložce <strong>Blokace a ostatní údaje</strong> zvolíme
+            <strong>zelené plus</strong>.
+          </p>
+<img alt="Ukázka pracovního postupu v ZIS" class="knowledge-shot" loading="lazy" src="https://i.postimg.cc/Dzx1Tkbn/07.png"/>
+<p class="mb-2 procedure-step">
+<span class="step-badge">3</span>
+            V poli <strong>Typ</strong> přes <strong>kostičky</strong>
+            vybereme druh blokace.
+          </p>
+<img alt="Ukázka pracovního postupu v ZIS" class="knowledge-shot" loading="lazy" src="https://i.postimg.cc/h4f0C43S/08.png"/>
+<p class="mb-2 procedure-step">
+<span class="step-badge">4</span>
+            Nastavíme <strong>MORAT</strong>, zvolíme <strong>Použít</strong>
+            a dáme <strong>Zapsat změny</strong>.
+          </p>
+<img alt="Ukázka pracovního postupu v ZIS" class="knowledge-shot" loading="lazy" src="https://i.postimg.cc/htb8JXh0/09.png"/>
+<p class="mb-2 procedure-step">
+<span class="step-badge">5</span>
+            Dáme <strong>Použít</strong> a uložení provedeme přes tlačítko:
+          </p>
+<img alt="Ukázka pracovního postupu v ZIS" class="knowledge-shot" loading="lazy" src="https://i.postimg.cc/TwhnHQ0k/10.png"/>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-uhrada" tabindex="-1">
+<h2 class="fw-bold mb-4 text-success">7. Úhrada kauce a nastavení příznaku kauce </h2>
+<!-- KARTA: Úhrada kauce a nastavení příznaku kauce -->
+<div class="card sheet-card">
+<p class="mb-2 procedure-step">
+<span class="step-badge">1</span>
+            Jakmile zákazník uhradí kauci (hlídáme v platbách),
+            předáváme založený úkol na <strong>Finance</strong>,
+            aby platbu přepárovali jako kauci.
+          </p>
+<p class="mb-2 procedure-step">
+<span class="step-badge">2</span>
+            Jakmile se nám úkol z finančního oddělení vrátí s informací,
+            že bylo provedeno přepárování, musíme v systému
+            <strong>nastavit kauci</strong>.
+          </p>
+<p class="mb-2 procedure-step">
+<span class="step-badge">3</span>
+            Na záložce <strong>Smlouva a odběrné místo</strong>
+            proklikneme <strong>smlouvu</strong>.
+          </p>
+<img alt="Ukázka pracovního postupu v ZIS" class="knowledge-shot" loading="lazy" src="https://i.postimg.cc/0NySbZT8/11.png"/>
+<p class="mb-2 procedure-step">
+<span class="step-badge">4</span>
+            Následně se nám otevře nová transakce
+            <strong>Smlouva El. Energie</strong>, kde na záložce
+            <strong>Smluvní podmínky</strong>, dále na záložce
+            <strong>Zálohy</strong> klikneme na tlačítko:
+          </p>
+<img alt="Ukázka pracovního postupu v ZIS" class="knowledge-shot" loading="lazy" src="https://i.postimg.cc/66vv28mG/12.png"/>
+<p class="mb-2 procedure-step">
+<span class="step-badge">5</span>
+            Zaškrtneme pole <strong>Složená kauce</strong>,
+            kde se nám následně zpřístupní pole
+            <strong>Výše kauce</strong>, kam napíšeme částku –
+            výši složené kauce zákazníkem.
+          </p>
+<img alt="Ukázka pracovního postupu v ZIS" class="knowledge-shot" loading="lazy" src="https://i.postimg.cc/bwNrTr3g/13.png"/>
+<img alt="Ukázka pracovního postupu v ZIS" class="knowledge-shot" loading="lazy" src="https://i.postimg.cc/FKYKMqtJ/14.png"/>
+<p class="mb-2 procedure-step">
+<span class="step-badge">6</span>
+            Následně dáme:
+          </p>
+<img alt="Ukázka pracovního postupu v ZIS" class="knowledge-shot" loading="lazy" src="https://i.postimg.cc/Hn9W01MF/15.png"/>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-zruseni" tabindex="-1">
+<h2 class="fw-bold mb-4 text-success">8. Zrušení blokací </h2>
+<div class="card sheet-card">
+<p class="mb-2 procedure-step">
+<span class="step-badge">1</span>
+            Jako poslední krok je potřeba zrušit <strong>blokace párování plateb</strong>.
+          </p>
+<p class="mb-2 procedure-step">
+<span class="step-badge">2</span>
+            Na zákaznickém účtu, v záložce
+            <strong>Blokace a ostatní údaje</strong> dáme:
+          </p>
+<img alt="Ukázka pracovního postupu v ZIS" class="knowledge-shot" loading="lazy" src="https://i.postimg.cc/Z5RYNg5D/16.png"/>
+<p class="mb-2 procedure-step">
+<span class="step-badge">3</span>
+            Označíme si řádek s blokací <strong>MORAT</strong>
+            a dáme <strong>křížek</strong>.
+          </p>
+<img alt="Ukázka pracovního postupu v ZIS" class="knowledge-shot" loading="lazy" src="https://i.postimg.cc/FzNNHC6p/17.png"/>
+<p class="mb-2 procedure-step">
+<span class="step-badge">4</span>
+            Následně dáme:
+          </p>
+<img alt="Ukázka pracovního postupu v ZIS" class="knowledge-shot" loading="lazy" src="https://i.postimg.cc/Hn9W01MF/15.png"/>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-potvrzeni" tabindex="-1">
+<h2 class="fw-bold mb-4 text-success">9. Zrušení záloh a potvrzení ZK </h2>
+<!-- KARTA: Zrušení záloh a potvrzení ZK -->
+<div class="card sheet-card">
+<p class="mb-2 procedure-step">
+<span class="step-badge">1</span>
+            Jako poslední po nastavení <strong>BZ</strong> stornujeme <strong>RZ</strong>.
+          </p>
+<p class="mb-2 procedure-step">
+<span class="step-badge">2</span>
+            Uzavíráme <strong>úkol</strong>.
+          </p>
+<p class="mb-0 procedure-step">
+<span class="step-badge">3</span>
+            Zasíláme informaci na <strong>e-mail</strong>, že <strong>BZ byl zpracován</strong>.
+          </p>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-alerty" tabindex="-1">
+<h2 class="fw-bold mb-4 text-success">10. Alerty</h2>
+<div class="card sheet-card">
+<h5 class="fw-bold mb-3"><i class="bi bi-gear-fill text-secondary me-2"><svg aria-hidden="true" class="inline-content-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="m10 2-.5 2.4-2 1.1L5 4.5 3 8l2 1.5v3L3 14l2 4 2.5-1 2 1.2.5 2.8h4l.5-2.8 2-1.2 2.5 1 2-4-2-1.5v-3L21 8l-2-3.5-2.5 1-2-1.1L14 2z"></path></svg></i>Spouštění plánované úlohy</h5>
+<p class="mb-2">
+            Tato úloha běží každý den a tvoří úkol u smluv, kde je nastavena <strong>kauce</strong> a zároveň došlo k
+            jedné z těchto situací:
+          </p>
+<ul class="mb-3">
+<li><strong>Ukončena smlouva</strong></li>
+<li><strong>Přesmluvnění</strong> <span class="text-muted">(nefunguje u ručních přesmluvnění do minulosti,
+                toto hlídá BO)</span></li>
+</ul>
+<p class="mb-0 procedure-step">
+<span class="step-badge">1</span>
+            Úkol se vytvoří na loginu <strong>BO_CC</strong>, kde BO prověří, zda došlo k ukončení dodávek nebo k
+            přesmluvnění. Informaci poznačí do úkolu a předá jej dále dle níže uvedené matice.
+          </p>
+</div>
+<div class="card sheet-card">
+<h5 class="fw-bold text-danger mb-3">a) Ukončené dodávky</h5>
+<p class="mb-2 procedure-step">
+<span class="step-badge">1</span>
+            BO předá úkol na <strong>FINANCE</strong>.
+          </p>
+<p class="mb-0 procedure-step">
+<span class="step-badge">2</span>
+            Kolegové z financí počkají na konečnou fakturu (KOFA) a její úhradu. V případě neuhrazení <strong>použijí
+              kauci k zaplacení</strong>.
+          </p>
+</div>
+<div class="card sheet-card">
+<h5 class="fw-bold text-primary mb-3">b) Přesmluvnění</h5>
+<p class="mb-2 procedure-step">
+<span class="step-badge">1</span>
+    BO předá úkol na <strong>CCUSER</strong>, kde FO provede ověření se zákazníkem (ZK),
+    zda chce i nadále pokračovat v <strong>BZ režimu</strong>.
+  </p>
+<p class="mb-3 procedure-step">
+<span class="step-badge">2</span>
+    Zákazníka zkontaktujeme a ověříme, zda si přeje v BZ režimu pokračovat také na nové smlouvě. Zároveň ho informujeme, že pro pokračování v tomto režimu je potřeba pouze znovu podepsat <strong>novou žádost o BZ</strong>.
+  </p>
+<div class="p-3 bg-white rounded border border-success mb-3 shadow-sm">
+<strong class="text-success">
+<i class="bi bi-check-circle-fill me-1"><svg aria-hidden="true" class="inline-content-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m7 12 3.2 3.2L17 8.5"></path></svg></i> Pokud ZK novou žádost o BZ podepíše:
+    </strong>
+<ul class="mb-0 mt-2">
+<li>Zákazníkovi <strong>poděkujeme</strong> za doložení podepsané žádosti.</li>
+<li>Podepsanou žádost <strong>nahrajeme do ZIS</strong>.</li>
+<li>Úkol <strong>uzavřeme</strong>.</li>
+<li>
+        Úkol již <strong>nepředáváme na Finance</strong>, protože kauce je účetně vedena na
+        <strong>ZÚ</strong>.
+      </li>
+</ul>
+</div>
+<div class="p-3 bg-white rounded border border-danger shadow-sm">
+<strong class="text-danger">
+<i class="bi bi-x-circle-fill me-1"><svg aria-hidden="true" class="inline-content-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m9 9 6 6m0-6-6 6"></path></svg></i> Pokud ZK novou žádost o BZ nepodepíše / nechce podepsat:
+    </strong>
+<ul class="mb-0 mt-2">
+<li>Úkol předáme zpět na <strong>BO</strong>.</li>
+<li>BO následně předá požadavek na <strong>Finance</strong>.</li>
+<li>Finance zajistí <strong>vrácení kauce</strong>.</li>
+<li>Zároveň dojde k <strong>nastavení záloh</strong>, protože podmínka pro pokračování v BZ nebyla splněna.</li>
+</ul>
+</div>
+<div class="alert alert-info d-flex align-items-start mt-3 mb-0 training-alert" role="alert">
+<i class="bi bi-info-circle-fill me-2 mt-1"><svg aria-hidden="true" class="inline-content-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v6M12 7h.01"></path></svg></i>
+<div>
+<strong>Shrnutí:</strong>
+      Pokud ZK podepíše novou žádost o BZ, pouze ji nahrajeme do ZIS a úkol zavřeme.
+      Pokud ji podepsat nechce, úkol jde na BO a následně na Finance kvůli vrácení kauce
+      a nastavení záloh.
+    </div>
+</div>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-video" tabindex="-1">
+<h2 class="fw-bold mb-4 text-primary">Video tutoriál</h2>
+<div class="d-flex flex-column align-items-center justify-content-center text-center p-5 rounded-4" style="background: #f8f9fa; border: 2px dashed #dee2e6; min-height: 300px;">
+<div class="mb-3" style="font-size: 3rem; color: #ced4da;">
+<i class="bi bi-camera-video-off"><svg aria-hidden="true" class="inline-content-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><rect height="12" rx="2" width="13" x="3" y="6"></rect><path d="m16 10 5-3v10l-5-3M3 3l18 18"></path></svg></i>
+</div>
+<h4 class="fw-bold text-secondary">Video je v přípravě</h4>
+<p class="text-muted">Právě pro vás stříháme aktuální verzi návodu.<br/>Jakmile bude hotová, najdete ji
+            přímo zde.</p>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-test" tabindex="-1">
+<h2 class="fw-bold mb-4" style="color: var(--epet-purple);">Ověření znalostí</h2>
+<p>Po prostudování manuálu prosím vyplňte tento opakovací test. Výsledky budou automaticky
+          zaznamenány.
+        </p>
+<div class="shadow-sm rounded-3 overflow-hidden" style="border: 1px solid #eee;">
+<iframe allowfullscreen="" frameborder="0" height="600px" marginheight="0" marginwidth="0" mozallowfullscreen="" msallowfullscreen="" src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__abHlldUNDBDWlBMVkw1MzNYSEhXVE82SERHVFQxWS4u&amp;embed=true" style="border: none; max-width:100%; max-height:100vh" webkitallowfullscreen="" width="100%">
+</iframe>
+</div>
+</div></main></div><script>
+(function(){
+  const buttons = Array.from(document.querySelectorAll('.book-tabs [data-target]'));
+  const sections = Array.from(document.querySelectorAll('.book-page .content-section'));
+  function activate(id, writeHash){
+    if(!sections.some(s=>s.id===id))return;
+    buttons.forEach(b=>{const current=b.dataset.target===id;b.classList.toggle('active',current);b.setAttribute('aria-current',current?'page':'false');});
+    sections.forEach(s=>{const current=s.id===id;s.classList.toggle('active',current);s.setAttribute('aria-hidden',current?'false':'true');});
+    if(writeHash && history.replaceState)history.replaceState(null,'','#'+id);
+  }
+  buttons.forEach(button=>button.addEventListener('click',()=>activate(button.dataset.target,true)));
+  const initial=decodeURIComponent(location.hash.replace('#',''));
+  if(initial)activate(initial,false);
+})();
+</script></body></html>

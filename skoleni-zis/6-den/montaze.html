@@ -1,0 +1,295 @@
+<!DOCTYPE html><html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Montáže – Pracovní postup</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"><style>
+:root{--epet:#94c11f;--epet-dark:#60781a;--epet-deep:#35460f;--navy:#20354a;--orange:#f99f1c;--red:#db4050;--purple:#8457c7;--text:#243448;--muted:#66758a;--line:#e0e7ee;--shadow:0 13px 32px rgba(31,51,76,.07)}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;padding:12px 12px 38px;background:#fff;color:var(--text);font:15.3px/1.67 "Segoe UI",Inter,system-ui,-apple-system,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+button{font:inherit}
+.site-wrap{max-width:1210px;margin:auto;min-width:0}
+.svg-icon{width:20px;height:20px;display:inline-block;flex:none;vertical-align:middle}
+.breadcrumb-nav{padding:10px 15px;border:1px solid var(--line);border-radius:13px;margin-bottom:14px;background:#fff}
+.breadcrumb{display:flex;flex-wrap:wrap;gap:0;align-items:center;list-style:none;margin:0;padding:0;font-size:.84rem}
+.breadcrumb-item{display:flex;gap:4px;align-items:center;color:var(--muted)}
+.breadcrumb-item:not(:first-child)::before{content:'›';color:#9ba6b6;margin:0 11px;font-size:1.12rem;font-weight:400}
+.breadcrumb-item a{color:var(--epet-dark);text-decoration:none;font-weight:700}
+.breadcrumb-item a:hover{text-decoration:underline}
+.breadcrumb-item .svg-icon{width:15px;height:15px;margin-right:3px}
+.breadcrumb-item.active{font-weight:700;color:#3d4c60}
+.hero-banner{isolation:isolate;position:relative;overflow:visible;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;padding:31px 32px;min-height:166px;margin-bottom:17px;color:#fff;border-radius:23px;background:radial-gradient(520px 230px at 92% 22%,rgba(255,255,255,.2),transparent 70%),linear-gradient(128deg,#94c11f 0%,#749b1f 49%,#35460f 100%);box-shadow:var(--shadow)}
+.hero-banner::after{content:'';z-index:-1;pointer-events:none;position:absolute;top:15px;right:180px;width:145px;height:145px;border-radius:50%;border:1px solid rgba(255,255,255,.17)}
+.hero-main{min-width:0;flex:1 1 480px}
+.hero-banner h1{font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:850;letter-spacing:-.032em;line-height:1.21;margin:0 0 12px}
+.hero-banner p{font-size:.94rem;color:rgba(255,255,255,.88);margin:0}
+.download-container{flex:0 1 auto;z-index:10;position:relative}
+.download-disclosure{position:relative;max-width:100%}
+.download-disclosure summary{cursor:pointer;user-select:none;list-style:none;display:flex;align-items:center;justify-content:center;gap:10px;color:var(--epet-dark);background:#fff;padding:11px 17px;border-radius:50px;font-size:.9rem;font-weight:800;box-shadow:0 5px 18px rgba(0,0,0,.12);outline-offset:3px}
+.download-disclosure summary::-webkit-details-marker{display:none}
+.download-disclosure summary::after{content:'';width:8px;height:8px;border-bottom:2px solid currentColor;border-right:2px solid currentColor;transform:rotate(45deg) translateY(-3px);margin:0 3px;transition:transform .2s}
+.download-disclosure[open] summary::after{transform:rotate(225deg) translateY(-1px)}
+.download-options{position:absolute;right:0;top:calc(100% + 8px);width:320px;max-width:min(320px,calc(100vw - 40px));padding:8px;background:#fff;border-radius:14px;border:1px solid var(--line);box-shadow:0 12px 32px rgba(20,40,65,.2)}
+.download-options a{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;border-radius:10px;padding:12px 13px;font-weight:700;font-size:.92rem;overflow-wrap:anywhere}
+.download-options a:hover{background:#f1f8e4;color:var(--epet-dark)}
+.download-options .svg-icon{color:var(--red)}
+.book-container{display:grid;grid-template-columns:270px minmax(0,1fr);align-items:start;gap:18px}
+.book-tabs{position:sticky;top:12px;display:flex;flex-direction:column;gap:5px;padding:12px;border:1px solid var(--line);border-radius:21px;background:#fff;box-shadow:0 9px 23px rgba(30,50,74,.045)}
+.book-tabs::before{content:'';height:5px;border-radius:90px;background:linear-gradient(90deg,var(--epet),#cfe795);margin:0 8px 10px}
+.tab-item{display:flex;align-items:center;gap:11px;width:100%;text-align:left;min-width:0;cursor:pointer;background:transparent;border:1px solid transparent;color:#536378;border-radius:12px;font-size:.93rem;font-weight:700;line-height:1.43;padding:12px 13px;transition:background .18s,color .18s,transform .18s}
+.tab-item>.svg-icon{width:20px;height:20px;color:#8290a2}
+.tab-item:hover,.tab-item:focus-visible{color:var(--epet-dark);background:#f7f9f3;transform:translateX(2px)}
+.tab-item.active{color:#415e11;background:#eff9d8;border-color:#dbe9b5;font-weight:850}
+.tab-item.active>.svg-icon{color:#60781a}
+.tab-purple{margin-top:7px;border-top:1px solid #e2e8f0;border-radius:11px}
+.tab-purple.active{background:#f4edfd;color:#7a43b2;border-color:#e6d4f6}
+.nav-text{min-width:0;flex:1}
+.nav-group{min-width:0}
+.nav-group>.tab-item .chevron-icon{width:15px;height:15px;margin-left:auto;transition:transform .2s}
+.nav-group.open>.tab-item .chevron-icon{transform:rotate(180deg)}
+.sub-tabs{display:none;flex-direction:column;gap:2px;margin:4px 0 5px 19px;border-left:1px solid #dfe9c9;padding-left:9px}
+.nav-group.open .sub-tabs{display:flex}
+.tab-item.sub{padding:9px 10px;font-size:.88rem;border-radius:10px;border-left:3px solid transparent}
+.tab-item.sub .svg-icon{width:17px;height:17px}
+.tab-item.sub.active{border-left-color:var(--epet);background:#f5faec}
+.book-page{min-width:0;min-height:460px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:27px 27px 34px;box-shadow:var(--shadow)}
+.content-section{display:none;animation:fade .28s ease}
+.content-section.active{display:block}
+@keyframes fade{from{opacity:.25;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.section-title{display:flex;align-items:center;gap:10px;line-height:1.32;letter-spacing:-.021em;font-size:clamp(1.25rem,2.1vw,1.55rem);margin:0 0 22px;padding-bottom:17px;border-bottom:1px solid var(--line);color:var(--epet-dark);font-weight:850}
+.section-number{display:inline-flex;justify-content:center;align-items:center;min-width:42px;height:42px;flex:0 0 auto;border-radius:99px;padding:0 5px;color:#fff;background:var(--epet);font-size:.92rem;font-weight:850;letter-spacing:-.02em}
+#page-pravidlo1 .section-number,#page-pravidlo2 .section-number,#page-pravidlo3 .section-number{min-width:44px}
+.book-page h3{font-size:1.08rem;font-weight:800;color:#334b37}
+.book-page p{line-height:1.77;color:#34475b}
+.book-page ul{margin-bottom:0;padding-left:21px}
+.book-page li{line-height:1.7;margin-bottom:8px}
+.book-page strong,.book-page b{font-weight:800}
+.book-page em,.book-page i:not(.bi){color:#7353b1}
+.book-page .card{background:#fff!important;border:1px solid var(--line)!important;border-radius:19px!important;box-shadow:0 7px 20px rgba(30,50,74,.045)!important;padding:21px 24px!important;margin:0 0 16px!important}
+.book-page .intro-card{border-top:5px solid var(--epet)!important;padding:27px!important;background:radial-gradient(300px 170px at 95% 95%,rgba(148,193,31,.12),transparent),linear-gradient(180deg,#fff,#fbfdf7)!important}
+.book-page .intro-card p{font-size:1.12rem;color:#3c5337;margin:0}
+.book-page .types-card{border-left:5px solid var(--epet)!important;padding:27px!important}
+.book-page .types-card p{margin:0;font-size:1.13rem;font-weight:750;color:#395425}
+#page-pravidlo1 .card,#page-pravidlo2 .card,#page-pravidlo3 .card{padding:21px!important}
+#page-pravidlo1 .card>ul,#page-pravidlo2 .card>ul,#page-pravidlo3 .card>ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:10px;margin:0}
+#page-pravidlo1 .card>ul>li,#page-pravidlo2 .card>ul>li,#page-pravidlo3 .card>ul>li{padding:15px 18px 15px 20px;margin:0;border-radius:13px;background:#fafcf8;border:1px solid #e7ecd9;border-left:4px solid var(--epet)}
+#page-pravidlo2 .card>ul>li,#page-pravidlo3 .card>ul>li{background:#f9fbfd;border-color:#e5eaf0;border-left-color:var(--orange)}
+#page-pravidlo2 .card>ul>li:first-child,#page-pravidlo3 .card>ul>li:first-child{background:#f9fcf4;border-left-color:var(--epet)}
+#page-pravidlo2 .card h3,#page-pravidlo3 .card h3{margin:24px 0 15px;text-align:left;font-size:1.08rem;letter-spacing:-.01em}
+.book-page blockquote.gs-quote{position:relative;overflow:hidden;background:#f8fbf4;border:1px solid #deead0;border-left:5px solid var(--epet);border-radius:15px;padding:18px 19px;margin:16px 0;color:#3f4c5a}
+.book-page blockquote.gs-quote::after{content:'“';position:absolute;right:12px;top:-18px;font:68px Georgia,serif;color:rgba(148,193,31,.17);pointer-events:none}
+.book-page blockquote.gs-quote ul{list-style:disc;padding-left:19px;margin-bottom:9px}
+.book-page blockquote.gs-quote p{margin:0 0 9px}
+.book-page blockquote.gs-quote li{padding:0;margin:0 0 9px;line-height:1.66}
+.book-page blockquote.gs-quote cite{display:block;font-size:.78rem;font-style:normal;color:#77866e;font-weight:750;margin-top:12px;letter-spacing:.01em}
+#page-podmínky .condition-card{position:relative;border-top:4px solid var(--epet)!important;padding:16px 21px!important;margin-bottom:12px!important;box-shadow:0 6px 15px rgba(30,50,74,.035)!important}
+#page-podmínky .condition-card:nth-child(3n+2){border-top-color:var(--orange)!important}
+#page-podmínky .condition-card:nth-child(3n){border-top-color:#49a7a7!important}
+#page-podmínky .condition-card p{display:flow-root;margin:0;line-height:1.65;font-size:.99rem;min-height:37px}
+#page-podmínky .condition-card .step-badge{float:left;margin:0 13px 0 0!important}
+.step-badge{display:inline-flex;align-items:center;justify-content:center;width:37px;height:37px;min-width:37px;border-radius:50%;background:var(--epet);color:white;font-weight:850;line-height:1.1;box-shadow:0 5px 11px rgba(148,193,31,.2);flex:none;margin:0!important}
+#page-podmínky .condition-card:nth-child(3n+2) .step-badge{background:var(--orange)}
+#page-podmínky .condition-card:nth-child(3n) .step-badge{background:#49a7a7}
+#page-zpracovatel .ops-card{border-top:4px solid var(--epet)!important}
+#page-zpracovatel .ops-card>.card{border:none!important;box-shadow:none!important;margin:0!important;padding:0!important}
+#page-zpracovatel .ops-card li{border-left:4px solid var(--orange);background:#fff9ed;padding:14px 17px;margin:13px 0;border-radius:11px;list-style:none}
+#page-zpracovatel .ops-card ul{list-style:none;padding:0}
+#page-zpracovatel blockquote.gs-quote{margin-top:13px}
+#page-termin .term-card{border-top:5px solid var(--epet)!important;background:#fafdF5!important;padding:25px 27px!important}
+#page-termin .term-card p{margin:0;font-size:1.06rem;line-height:1.81}
+#page-termin .term-card b{color:var(--epet-dark);font-size:1.24em;white-space:nowrap}
+#page-video .video-pending{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;text-align:center!important;min-height:305px;border:2px dashed #d6e1d4;border-radius:20px;background:linear-gradient(160deg,#fff,#f9fcf5);padding:35px 26px!important}
+#page-video .video-pending>div i{color:var(--epet)!important}
+#page-video .video-pending h4{color:#395329!important;font-weight:800;font-size:1.2rem}
+#page-video .video-pending p{max-width:440px;line-height:1.7;color:var(--muted)}
+#page-test>p{padding:17px 19px;background:#fbf7ff;border-radius:13px;border-left:4px solid var(--purple);color:#57677b}
+#page-test iframe{width:100%;height:600px;border:0;display:block}
+#page-test>.shadow-sm{border:1px solid var(--line)!important;border-radius:16px!important;overflow:hidden;box-shadow:0 8px 20px rgba(30,50,74,.04)!important}
+@media(max-width:900px){.book-container{grid-template-columns:1fr}.book-tabs{position:static;flex-direction:row;flex-wrap:wrap;gap:6px}.book-tabs::before{display:none}.book-tabs>.tab-item,.book-tabs>.nav-group{flex:1 1 210px}.tab-item{width:100%}.nav-group.open{flex-basis:100%}.nav-group.open .sub-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}.tab-item:hover{transform:none}}
+@media(max-width:620px){body{padding:7px 6px 25px;font-size:14.6px}.hero-banner{padding:26px 21px;border-radius:19px;min-height:156px}.hero-banner h1{font-size:1.62rem}.download-container{flex:1 1 100%}.download-disclosure summary{width:100%}.download-options{width:100%;max-width:none}.breadcrumb-nav{padding:9px 10px}.breadcrumb{font-size:.77rem}.breadcrumb-item:not(:first-child)::before{margin:0 6px}.book-container{gap:12px}.book-tabs{padding:10px;border-radius:17px;flex-direction:column}.book-tabs>.tab-item,.book-tabs>.nav-group{flex:1 1 auto;width:100%}.book-page{padding:20px 15px;border-radius:19px}.section-title{gap:9px;font-size:1.23rem}.section-number{min-width:36px;height:36px}.book-page .card{padding:19px 16px!important}.book-page .intro-card,.book-page .types-card{padding:21px!important}.nav-group.open .sub-tabs{grid-template-columns:1fr}.book-page blockquote.gs-quote{padding:16px 14px}.book-page .intro-card p{font-size:1.05rem}.book-page li{overflow-wrap:anywhere}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style></head><body><div class="site-wrap"><nav class="breadcrumb-nav" aria-label="Drobečková navigace"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="https://sites.google.com/view/znalostka/"><svg aria-hidden="true" class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v11H3z"/><path d="M9 21v-8h6v8"/></svg>Znalostní
+                    báze</a></li><li class="breadcrumb-item"><a href="https://sites.google.com/view/znalostka/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat">Školení
+                    ZIS</a></li><li class="breadcrumb-item"><a href="https://sites.google.com/view/znalostka/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat/6-den">6.
+                    den</a></li><li class="breadcrumb-item active" aria-current="page">Montáže</li></ol></nav><header class="hero-banner"><div class="hero-main"><h1>Pracovní postup: Montáže</h1><p>Znalostní databáze epet | Dokumentace a přílohy</p></div><div class="download-container"><details class="download-disclosure"><summary><svg aria-hidden="true" class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"/></svg> Dokumenty ke stažení</summary><div class="download-options"><a href="https://drive.google.com/file/d/10mIFk7hXJfb1pevWsgtaS88RXkJ_XUwD/view?usp=drive_link" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"/></svg> Montáže (PDF)</a></div></details></div></header><main class="book-container"><nav class="book-tabs" aria-label="Navigace školením" role="tablist"><button type="button" class="tab-item active" data-target="page-intro" role="tab" aria-selected="true" aria-controls="page-intro"><svg aria-hidden="true" class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h7a3 3 0 0 1 3 3v13H6a3 3 0 0 0-3 0zm10 3a3 3 0 0 1 3-3h5v16a3 3 0 0 0-3 0h-5"/></svg><span class="nav-text">Pracovní postup</span></button><div class="nav-group" data-navgroup="typy"><button type="button" class="tab-item" data-target="page-typy" role="tab" aria-selected="false" aria-controls="page-typy"><svg aria-hidden="true" class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="5" rx="1"/><rect x="3" y="10" width="18" height="5" rx="1"/><rect x="3" y="16" width="18" height="5" rx="1"/></svg><span class="nav-text">Typy připojení OM</span><svg aria-hidden="true" class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 9 7 7 7-7"/></svg></button><div class="sub-tabs" aria-label="Typy připojení"><button type="button" class="tab-item sub" data-target="page-pravidlo1" role="tab" aria-selected="false" aria-controls="page-pravidlo1"><svg aria-hidden="true" class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v5m8-5v5M6 8h12v4a6 6 0 0 1-12 0zM12 18v3"/></svg><span class="nav-text">Trvalý odběr</span></button><button type="button" class="tab-item sub" data-target="page-pravidlo2" role="tab" aria-selected="false" aria-controls="page-pravidlo2"><svg aria-hidden="true" class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m14 3 7 7-3 3-7-7zM12 10 4 18m-2 4 6-6M7 4l6-2 3 3-6 2"/></svg><span class="nav-text">Krátkodobé (staveništní) připojení</span></button><button type="button" class="tab-item sub" data-target="page-pravidlo3" role="tab" aria-selected="false" aria-controls="page-pravidlo3"><svg aria-hidden="true" class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7V3h-4M4 17v4h4M20 11a8 8 0 0 0-14-5L4 8M4 13a8 8 0 0 0 14 5l2-2"/></svg><span class="nav-text">Znovupřipojení OM</span></button></div></div><button type="button" class="tab-item" data-target="page-podmínky" role="tab" aria-selected="false" aria-controls="page-podmínky"><svg aria-hidden="true" class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="18" rx="2"/><path d="m8 10 1.5 1.5L12 9m2 1h3m-9 6 1.5 1.5L12 15m2 1h3"/></svg><span class="nav-text">Podmínky k připojení OM</span></button><button type="button" class="tab-item" data-target="page-zpracovatel" role="tab" aria-selected="false" aria-controls="page-zpracovatel"><svg aria-hidden="true" class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20v-3a6 6 0 0 1 12 0v3M16 5a3 3 0 0 1 0 6m2 9v-3a6 6 0 0 0-3-5"/></svg><span class="nav-text">Kdo zpracovává montáže?</span></button><button type="button" class="tab-item" data-target="page-termin" role="tab" aria-selected="false" aria-controls="page-termin"><svg aria-hidden="true" class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 10h18m-12 4h3v3H9z"/></svg><span class="nav-text">Termín montáže</span></button><button type="button" class="tab-item" data-target="page-video" role="tab" aria-selected="false" aria-controls="page-video"><svg aria-hidden="true" class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3z"/></svg><span class="nav-text">Video návod</span></button><button type="button" class="tab-item tab-purple" data-target="page-test" role="tab" aria-selected="false" aria-controls="page-test"><svg aria-hidden="true" class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="17" rx="2"/><path d="M9 3h6v4H9zm0 12 2 2 4-4"/></svg><span class="nav-text">Opakovací test</span></button></nav><article class="book-page"><div aria-hidden="false" class="content-section active" id="page-intro" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">1.</span> Pracovní postup</h2>
+<div class="card bg-light border-0 intro-card p-3 mb-4">
+<p>Tento postup je návod pro pracovníky CC, jak správně řešit požadavky zákazníků na nové připojení nebo znovupřipojení odběrného místa. </p>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-typy" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">2.</span> Typy připojení OM</h2>
+<!-- KARTA: Typy samoodečtů -->
+<!-- KROK 1 -->
+<div class="card bg-light border-0 types-card p-3 mb-4">
+<p> Jaké existují typy připojení OM?</p>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-pravidlo1" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">2.1</span> Trvalý odběr</h2>
+<!-- KARTA: Trvalý odběr -->
+<div class="card border-0 bg-light p-3 mb-4">
+<ul>
+<li>
+                            V energetice (a hlavně v oblasti plynu a elektřiny) se pojem trvalý odběr používá
+                            pro odběrné místo, kde:
+                            <i>zákazník odebírá energii dlouhodobě, opakovaně a pravidelně</i>
+                            a není to jednorázový, sezónní nebo dočasný odběr
+                        </li>
+<li>
+                            Trvalý odběr má obvykle jiný tarif, např. výhodnější sazby pro stálý odběr.
+                        </li>
+<li>
+                            Distributor i dodavatel energie počítají s tím, že u trvalého odběru zákazník platí
+                            stálou měsíční platbu (stálý plat), i když máš minimální spotřebu.
+                        </li>
+</ul>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-pravidlo2" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">2.2</span> Krátkodobé (staveništní) připojení</h2>
+<!-- KARTA: Krátkodobé (staveništní) připojení -->
+<div class="card border-0 bg-light p-3 mb-4">
+<ul>
+<li>
+                            Je to specifický typ odběru elektřiny nebo plynu, který
+                            je <b>časově omezený</b> (zpravidla max. 1 rok) – typicky na dobu stavby,
+                            montáže, rekonstrukce, kulturní akce (poutě, městské slavnosti, festivaly)
+                            nebo sportovní akce (vleky).
+                            Není určený pro trvalý provoz, ale slouží jen k dočasnému zajištění energií
+                            tam, kde ještě nefunguje běžná síť.
+                        </li>
+</ul>
+<center>
+<h3>Praktický příklad</h3>
+</center>
+<blockquote class="gs-quote">
+<ul>
+<li>Stavební firma staví dům. Potřebuje elektřinu na pohon míchaček, světla nebo nářadí.</li>
+<li>Pro tyto účely se zřídí staveništní přípojka, která má svůj elektroměr (nebo plynoměr).</li>
+<li>Po dokončení stavby se staveništní připojení ukončí a nahradí ho trvalý odběr
+                                (pro domácnost/firmu, která se nastěhuje).</li>
+</ul>
+<cite>Interní poznámka / metodika</cite>
+</blockquote>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-pravidlo3" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">2.3</span> Znovupřipojení OM</h2>
+<!-- KARTA: Znovupřipojení OM -->
+<div class="card border-0 bg-light p-3 mb-4">
+<ul>
+<li>
+                            Znovupřipojení je nové zajištění dodávky energie pro odběrné místo,
+                            které bylo v minulosti odpojeno (zpravidla v posledních 12 měsících)
+                            a měřidlo bylo demontováno (např. z důvodu pohledávek).
+                        </li>
+<li>
+                            Je potřeba zkontrolovat pohledávky, podepsat novou smlouvu
+                            a nechat distributora provést fyzickou montáž.
+                        </li>
+</ul>
+<center>
+<h3>Kdy k tomu typicky dochází?</h3>
+</center>
+<blockquote class="gs-quote">
+<ul>
+<li><b>Ukončení pro dluh</b>: Zákazník neuhradil faktury → dodavatel nechá OM odpojit a distributor odmontuje
+                            měřidlo.</li>
+<li><b>Dočasné ukončení</b>: Zákazník dočasně nevyužívá OM (např. chata, sezónní provoz).</li>
+<li><b>Staveniště</b>: Stavba se přeruší a přípojka se zruší → po čase se stavba obnoví.</li>
+<li><b>Změna vlastníka</b>: Nový vlastník chce navázat odběr na původním místě.</li>
+</ul>
+<cite>Interní poznámka / metodika</cite>
+</blockquote>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-podmínky" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">3.</span> Podmínky k připojení OM</h2>
+<!-- KARTA: Podmínky k připojení OM -->
+<!-- KROK 1 -->
+<div class="condition-card card bg-light border-0 p-3 mb-4">
+<p class="mb-0">
+<span class="step-badge">1</span>
+                        Technické a smluvní ujednání
+                    </p>
+</div>
+<!-- KROK 2 -->
+<div class="condition-card card bg-light border-0 p-3 mb-4">
+<p class="mb-0">
+<span class="step-badge">2</span>
+<b>SOP</b> (Smlouva o připojení) musí být oboustranně podepsána
+                        a musí ji evidovat DI
+                    </p>
+</div>
+<!-- KROK 3 -->
+<div class="condition-card card bg-light border-0 p-3 mb-4">
+<p class="mb-0">
+<span class="step-badge">3</span>
+                        Musí zpřístupnit měřidlo
+                    </p>
+</div>
+<!-- KROK 4 -->
+<div class="condition-card card bg-light border-0 p-3 mb-4">
+<p class="mb-0">
+<span class="step-badge">4</span>
+                        Musí mít uzavřenou smlouvu s <b>EPET</b>
+</p>
+</div>
+<!-- KROK 5 -->
+<div class="condition-card card bg-light border-0 p-3 mb-4">
+<p class="mb-0">
+<span class="step-badge">5</span>
+                        Musí zaslat RZ (u plynu i tlakovou zkoušku)
+                    </p>
+</div>
+<!-- KROK 6 -->
+<div class="condition-card card bg-light border-0 p-3 mb-4">
+<p class="mb-0">
+<span class="step-badge">6</span>
+                        Plná moc
+                    </p>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-zpracovatel" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">4.</span> Kdo zpracovává montáže?</h2>
+<div class="ops-card card bg-light border-0 p-3 mb-4">
+<div class="card border-0 bg-light p-3 mb-4">
+<p>
+                            Montáže zpracovává oddělení <b>OPS</b>
+                            (tedy speciální oddělení spadající pod BO_CC)
+                        </p>
+<ul>
+<li>
+                                Pokud obdržíme e-mail, je nutné jej předat na garanta
+                                <b>UKONČENÍ SMLOUVY</b>,
+                                na tento e-mail <b>nereagujeme / neodpovídáme</b>,
+                                a je nutné nastavit správnou <i>kategorii</i> a <i>druh pošty</i>
+</li>
+</ul>
+<blockquote class="gs-quote">
+<p>
+                                Nová montáž
+                            </p>
+<cite>Interní poznámka / metodika</cite>
+</blockquote>
+</div>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-termin" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">5.</span> Termín montáže</h2>
+<!-- Termín montáže -->
+<div class="card bg-light border-0 term-card p-3 mb-4">
+<p>
+                        Po doložení potřebných dokladů, jejich zaevidování do ZIS a podání žádosti o odběrné místo
+                        dochází k montáži obvykle do <b>10 pracovních dnů</b>
+</p>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-video" role="tabpanel" tabindex="0">
+<h2 class="section-title">Video tutoriál</h2>
+<div class="justify-content-center flex-column text-center d-flex rounded-4 align-items-center p-5 video-pending" style="background: #f8f9fa; border: 2px dashed #dee2e6; min-height: 300px;">
+<div class="mb-3" style="font-size: 3rem; color: #ced4da;">
+<i class="bi bi-camera-video-off"></i>
+</div>
+<h4 class="fw-bold text-secondary">Video je v přípravě</h4>
+<p class="text-muted">Právě pro vás stříháme aktuální verzi návodu.<br/>Jakmile bude hotová, najdete ji
+                    přímo zde.</p>
+</div></div><div aria-hidden="true" class="content-section" id="page-test" role="tabpanel" tabindex="0">
+<h2 class="section-title" style="color: var(--epet-purple);">Ověření znalostí</h2>
+<p>Po prostudování manuálu prosím vyplňte tento opakovací test. Výsledky budou automaticky
+                    zaznamenány.
+                </p>
+<div class="shadow-sm rounded-3 overflow-hidden" style="border: 1px solid #eee;">
+<iframe allowfullscreen="" frameborder="0" height="600px" marginheight="0" marginwidth="0" mozallowfullscreen="" msallowfullscreen="" src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__abHlldUN0k5VFdKNVZZUllLRDNWOVgzVzdTOFRMNi4u" style="border: none; max-width:100%; max-height:100vh" webkitallowfullscreen="" width="100%">
+</iframe>
+</div>
+</div></article></main></div><script>(function(){'use strict';const root=document.querySelector('.book-container');const buttons=[...document.querySelectorAll('.book-tabs [data-target]')];const pages=[...document.querySelectorAll('.book-page .content-section')];const group=document.querySelector('[data-navgroup="typy"]');function show(id){if(!pages.some(p=>p.id===id))return;pages.forEach(p=>{const active=p.id===id;p.classList.toggle('active',active);p.setAttribute('aria-hidden',String(!active))});buttons.forEach(b=>{const active=b.dataset.target===id;b.classList.toggle('active',active);b.setAttribute('aria-selected',String(active))});if(group){const isSub=!!group.querySelector('.sub-tabs [data-target="'+id+'"]');if(isSub)group.classList.add('open');const parent=group.querySelector(':scope > [data-target]');if(parent)parent.setAttribute('aria-expanded',String(group.classList.contains('open')))}}buttons.forEach(b=>{b.addEventListener('click',()=>{if(group&&b===group.querySelector(':scope > [data-target]'))group.classList.toggle('open');show(b.dataset.target)});b.addEventListener('keydown',ev=>{if(ev.key!=='ArrowRight'&&ev.key!=='ArrowLeft'&&ev.key!=='ArrowUp'&&ev.key!=='ArrowDown')return;ev.preventDefault();const visible=buttons.filter(x=>x.getClientRects().length);const i=visible.indexOf(b);const step=(ev.key==='ArrowRight'||ev.key==='ArrowDown')?1:-1;const next=visible[(i+step+visible.length)%visible.length];if(next){next.focus();show(next.dataset.target)}})});show('page-intro')})();</script></body></html>

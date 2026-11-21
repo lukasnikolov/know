@@ -1,0 +1,2448 @@
+<!DOCTYPE html><html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Změna sazby a jističe na odběrném místě – Pracovní postup</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><style>
+
+:root{--epet:#94C11F;--epet-dark:#60781a;--epet-deep:#384b11;--orange:#F99F1C;--red:#d64747;--navy:#20354a;--purple:#8056ba;--ink:#29384b;--muted:#66758a;--line:#e2e8ee;--shadow:0 14px 35px rgba(28,48,72,.065)}
+*,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:#fff;color:var(--ink);font:15px/1.7 "Segoe UI",Inter,system-ui,-apple-system,Arial,sans-serif;-webkit-font-smoothing:antialiased;margin:0;padding:12px 12px 38px}
+button{font:inherit}a{overflow-wrap:anywhere}.site-wrap{max-width:1210px;margin:auto;min-width:0}.svg-icon{width:20px;height:20px;display:inline-block;flex:none;vertical-align:middle}
+.breadcrumb-nav{padding:10px 15px;border:1px solid var(--line);border-radius:13px;margin-bottom:14px;background:#fff}.breadcrumb{display:flex;flex-wrap:wrap;gap:0;align-items:center;list-style:none;margin:0;padding:0;font-size:.84rem}
+.breadcrumb-item{display:flex;gap:4px;align-items:center;color:var(--muted)}.breadcrumb-item:not(:first-child)::before{content:'›';color:#9ba6b6;margin:0 11px;font-size:1.12rem;font-weight:400}.breadcrumb-item a{color:var(--epet-dark);text-decoration:none;font-weight:750}.breadcrumb-item a:hover{text-decoration:underline}.breadcrumb-item .svg-icon{width:15px;height:15px;margin-right:3px}.breadcrumb-item.active{font-weight:700;color:#3d4c60}
+.hero-banner{isolation:isolate;position:relative;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:17px;padding:32px 33px;min-height:170px;margin-bottom:19px;border-radius:23px;color:white;background:radial-gradient(520px 230px at 92% 22%,rgba(255,255,255,.2),transparent 70%),linear-gradient(128deg,#94c11f 0%,#759c1f 52%,#35460f 100%);box-shadow:var(--shadow)}.hero-banner::after{content:'';z-index:-1;pointer-events:none;position:absolute;top:15px;right:210px;width:150px;height:150px;border-radius:50%;border:1px solid rgba(255,255,255,.16)}
+.hero-main{min-width:0;flex:1 1 440px}.hero-banner h1{font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:850;letter-spacing:-.034em;line-height:1.22;margin:0 0 11px}.hero-banner p{font-size:.94rem;color:rgba(255,255,255,.9);margin:0}
+.download-container{position:relative;z-index:10}.download-disclosure{position:relative;max-width:100%}.download-disclosure summary{cursor:pointer;user-select:none;list-style:none;display:flex;align-items:center;gap:10px;color:var(--epet-dark);background:#fff;padding:11px 17px;border-radius:50px;font-size:.9rem;font-weight:800;box-shadow:0 5px 18px rgba(0,0,0,.12);outline-offset:4px}.download-disclosure summary::-webkit-details-marker{display:none}.download-disclosure summary::after{content:'';width:8px;height:8px;border-bottom:2px solid currentColor;border-right:2px solid currentColor;transform:rotate(45deg) translateY(-3px);margin:0 4px;transition:transform .2s}.download-disclosure[open] summary::after{transform:rotate(225deg) translateY(-1px)}
+.download-options{position:absolute;right:0;top:calc(100% + 8px);width:365px;max-width:min(365px,calc(100vw - 40px));padding:8px;background:#fff;border-radius:15px;border:1px solid var(--line);box-shadow:0 14px 35px rgba(20,40,65,.21)}.download-options a{display:flex;align-items:center;gap:10px;padding:12px 13px;text-decoration:none;border-radius:10px;color:var(--ink);font-size:.91rem;font-weight:750;line-height:1.4}.download-options a:hover{color:var(--epet-dark);background:#f2f8e6}.download-options .svg-icon{color:#d85356}
+.book-container{display:grid;grid-template-columns:270px minmax(0,1fr);align-items:start;gap:18px}.book-tabs{position:sticky;top:12px;display:flex;flex-direction:column;gap:5px;padding:12px;border:1px solid var(--line);border-radius:21px;background:#fff;box-shadow:0 8px 22px rgba(30,50,74,.045)}.book-tabs::before{content:'';height:5px;border-radius:90px;background:linear-gradient(90deg,var(--epet),#cfe795);margin:0 8px 10px}
+.tab-item{display:flex;align-items:center;gap:11px;width:100%;text-align:left;min-width:0;cursor:pointer;background:transparent;border:1px solid transparent;color:#536378;border-radius:12px;font-size:.91rem;font-weight:700;line-height:1.44;padding:12px 12px;transition:background .17s,color .17s,transform .17s}.tab-item>.svg-icon{width:20px;height:20px;color:#8794a6}.tab-item:hover,.tab-item:focus-visible{color:var(--epet-dark);background:#f7f9f3;transform:translateX(2px)}.tab-item.active{color:#415e11;background:#eff9d8;border-color:#dbe9b5;font-weight:850}.tab-item.active>.svg-icon{color:#60781a}.tab-purple{border-top:1px solid #e2e8f0;margin-top:7px}.tab-purple.active{background:#f5eefc;color:#7a43b2;border-color:#e6d4f6}.tab-featured{color:#6d4a9e}.tab-featured.active{background:#f2effa;color:#6d4a9e;border-color:#e4d9f3}.nav-text{min-width:0;flex:1}
+.book-page{min-width:0;min-height:460px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:29px 30px 35px;box-shadow:var(--shadow)}.content-section{display:none;animation:showPage .25s ease}.content-section.active{display:block}@keyframes showPage{from{opacity:.2;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.section-title{display:flex;align-items:center;gap:11px;line-height:1.35;letter-spacing:-.02em;font-size:clamp(1.27rem,2.1vw,1.56rem);margin:0 0 22px;padding-bottom:17px;border-bottom:1px solid var(--line);color:var(--epet-dark);font-weight:850}.section-number{display:inline-flex;justify-content:center;align-items:center;min-width:43px;height:43px;flex:0 0 auto;border-radius:99px;background:var(--epet);color:#fff;font-size:.92rem;letter-spacing:-.01em;font-weight:850}
+.book-page h3{font-size:1.07rem;font-weight:800;margin:23px 0 12px;color:#34485e}.book-page h4{font-size:1rem;font-weight:800;margin:18px 0 11px}.book-page h5{font-size:1.03rem;font-weight:850;margin:17px 0 12px}.book-page h6{font-size:.97rem;font-weight:800;margin:14px 0 10px}.book-page p{line-height:1.72;color:#34475b;margin:0 0 12px}.book-page ul,.book-page ol{padding-left:24px;margin:10px 0 15px}.book-page li{line-height:1.67;margin-bottom:8px}.book-page strong,.book-page b{font-weight:800}.book-page a:not(.dt-option-card){color:var(--epet-dark);text-decoration:none;font-weight:750;border-bottom:2px solid #dae8b3}.book-page a:not(.dt-option-card):hover{background:#f3f9e7;border-bottom-color:var(--epet)}
+.book-page > .content-section > .card,.book-page .card:not(.dt-option-card){background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;margin:0 0 16px;box-shadow:0 7px 22px rgba(30,50,74,.038)}
+.intro-panel{background:linear-gradient(180deg,#fff,#fbfdf8)!important;border-top:5px solid var(--epet)!important;padding:27px!important}.intro-panel>p{font-size:1.05rem;margin-bottom:18px}.intro-panel h3{margin:13px 0 16px}.abbrev-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.abbrev-item{background:#fff;border:1px solid #e1e9d4;border-radius:13px;padding:12px 13px;display:flex;align-items:center;gap:6px;line-height:1.5;min-height:60px}.abbrev-item .bi{color:var(--epet-dark)!important;font-size:20px;margin-right:5px!important}.abbrev-item b{color:#34485e}
+.steps-holder{border:0!important;background:transparent!important;padding:0!important;box-shadow:none!important;margin:0!important}.step-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:17px;padding:20px 21px 20px 22px;margin:0 0 17px;box-shadow:0 6px 18px rgba(35,54,78,.045)}.step-card>p:first-child,.step-card>h6:first-child{margin-bottom:12px}.step-badge{display:inline-flex;justify-content:center;align-items:center;flex-shrink:0;width:32px;height:32px;vertical-align:middle;margin-right:9px;border-radius:50%;background:var(--epet);color:#fff!important;font-size:.85rem;font-weight:850;line-height:1}
+.step-card p .step-badge{margin-top:-3px}.step-card>img,.step-card>p>img{margin-top:16px}.zis-shot{display:block;max-width:100%;height:auto;width:auto;object-fit:contain;margin:12px auto 10px;padding:7px;border:1px solid #e3e8ef;border-radius:13px;background:#f8fafc;box-shadow:0 6px 20px rgba(30,50,75,.07)}.step-card .zis-shot{max-height:515px}
+#page-vysvetlivky .steps-holder,#page-info-umrti .steps-holder,#page-kanaly .steps-holder{display:grid;gap:13px}#page-vysvetlivky .step-card,#page-info-umrti .step-card,#page-kanaly .step-card{margin:0}#page-kanaly .steps-holder{grid-template-columns:repeat(2,minmax(0,1fr))}#page-kanaly .step-card{display:flex;align-items:center;min-height:98px}
+.gs-quote{position:relative;border:1px solid #dfe9cc;border-left:5px solid var(--epet);border-radius:13px;background:#f9fdf3;padding:18px 19px;margin:18px 0;color:#415333;box-shadow:0 4px 18px rgba(25,45,57,.03)}.gs-quote p{margin:0}.gs-quote cite{font-style:normal;display:block;font-size:.82rem;font-weight:800;letter-spacing:.01em;color:var(--epet-dark);margin-top:9px}#page-vysvetlivky .gs-quote{border-color:#f8d1d0;border-left-color:#e25455;background:#fff7f7}#page-vysvetlivky .gs-quote cite{color:#b73538}
+#page-notare .step-card:nth-child(4),#page-zis .step-card:nth-child(10){border-left:4px solid #9dbe49}#page-notare .step-card ul ul{padding-left:18px;border-left:2px solid #e6eee0;list-style:disc}
+.situation-grid,.payout-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px;align-items:start}.situation-pane,.payout-column{min-width:0}.status-panel{border:1px solid var(--line);border-top:4px solid #e35d54;background:#fff;border-radius:16px;padding:19px 21px;margin:0 0 18px;box-shadow:0 7px 22px rgba(30,50,74,.04)}.status-panel.status-clear{border-top-color:var(--epet)}.status-panel h5{color:#a73b36;margin:0 0 16px;font-size:1.02rem}.status-panel.status-clear h5{color:var(--epet-dark)}.status-panel h5 span{color:inherit!important}.status-panel h3{font-size:1rem;color:var(--navy);margin:19px 0 10px;border-top:1px solid #eef1f4;padding-top:15px}.status-panel h3:first-of-type{margin-top:0;padding-top:0;border:0}.status-panel ul{padding-left:20px}.status-panel>li{margin-left:18px}
+.payout-column{border:1px solid var(--line);padding:22px 22px 10px;border-radius:18px;background:#fff;box-shadow:0 8px 22px rgba(30,50,74,.038)}.payout-column>h5{font-size:1.06rem;line-height:1.45;background:#f6faee;border:1px solid #e1ecce;border-radius:11px;color:#4d6c20;padding:14px 15px;margin:0 0 15px}.payout-column>h5:not(:first-of-type){margin-top:27px}.payout-column h3,.payout-column h4{font-size:1rem;color:var(--navy);margin-top:21px;border-top:1px solid #eff1f4;padding-top:16px}.payout-column li{margin-bottom:13px}.payout-column li li{margin-top:7px}.payout-column a{overflow-wrap:anywhere}
+#page-MBA>.d-flex{padding:12px 17px;background:#f6f9fd;border:1px solid var(--line);border-bottom:0;border-radius:13px 13px 0 0;margin-bottom:0!important}#page-MBA>.alert{padding:21px;border:1px solid var(--line);border-left:5px solid #5394cf;border-radius:0 0 14px 14px;background:#f8fbff;margin:0 0 19px}#page-MBA>.alert h6{margin-top:0;color:var(--navy)}#page-MBA>.alert ul{margin-bottom:0}
+#page-video .d-flex.flex-column{border:2px dashed #d9e4ed!important;background:#fafcfd!important;border-radius:18px;padding:36px!important;min-height:270px!important}#page-test iframe{display:block;width:100%;height:650px;border:0;background:white}#page-test .shadow-sm{border-radius:15px;overflow:hidden;border:1px solid var(--line)}
+/* Decision tree: preserve all original questions, decisions and scripts, upgrade visual hierarchy. */
+.decision-section .section-title{color:var(--purple)}.dt-container{max-width:100%;min-width:0;margin:0}.dt-header{border:1px solid var(--line);background:#fafcfe;border-radius:13px;padding:13px 15px;margin-bottom:19px}.dt-breadcrumb{display:flex;gap:7px;align-items:center;flex-wrap:wrap;font-size:.86rem;color:#637389;min-height:28px}.dt-breadcrumb-item{background:#eff8df;border:1px solid #d8eabb;color:var(--epet-dark);padding:4px 10px;border-radius:99px;font-weight:750}
+.dt-step-container{display:none}.dt-step-container.active{display:block}.dt-question-title{font-size:1.15rem;line-height:1.45;font-weight:850;letter-spacing:-.012em;margin:0 0 17px;color:var(--navy)}.dt-options-grid{display:grid;grid-template-columns:1fr;gap:12px}.dt-option-card{display:flex;text-align:left;align-items:flex-start;gap:13px;padding:17px 18px;background:#fff;border:1px solid #dfe6ed;border-left:5px solid #c7dca2;border-radius:14px;width:100%;cursor:pointer;transition:box-shadow .18s,border-color .18s,transform .18s}.dt-option-card:hover,.dt-option-card:focus-visible{border-color:var(--epet);background:#fafff3;box-shadow:0 8px 18px rgba(25,55,65,.075);transform:translateY(-2px)}.dt-option-icon{width:39px;height:39px;flex-shrink:0;display:grid;place-items:center;background:#eef7e1;border-radius:10px;color:#60781a;font-size:19px}.dt-option-content{flex:1;min-width:0}.dt-option-title{font-size:1rem;font-weight:800;color:#304254;line-height:1.4;margin-bottom:4px}.dt-option-desc{font-size:.9rem;color:#6b778a;margin:0!important}
+.dt-result-box{border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 7px 23px rgba(30,50,74,.055)}.dt-result-header{padding:15px 19px;background:var(--epet);font-weight:850;color:white;font-size:1.06rem}.dt-result-content{padding:23px;background:#fff}.dt-result-content ol,.dt-result-content ul{margin:13px 0}.dt-alert{display:flex;gap:10px;align-items:center;background:#fff9ec;color:#855a07;border:1px solid #f8dfad;border-radius:11px;padding:13px 15px;margin:17px 0;font-weight:750}.dt-example{background:#f7f9fb;border-left:4px solid #a3acb7;border-radius:0 10px 10px 0;padding:13px 16px;margin:14px 0;color:#48566a;font-size:.94rem}.dt-result-content>div[style*="display: flex"]{gap:13px!important}.dt-result-content>div[style*="display: flex"]>div{border-color:var(--line)!important;background:#fbfcfd;border-radius:11px!important}
+.dt-controls{display:flex;gap:10px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:17px;margin-top:20px}.dt-btn-nav{display:inline-flex;gap:9px;align-items:center;padding:10px 15px;background:#fff;color:var(--navy);cursor:pointer;font-weight:800;border:1px solid var(--line);border-radius:10px}.dt-btn-nav:hover{background:#f3f8e8;border-color:#d1e4a7}.dt-result-content a.btn-dark{display:inline-flex;padding:11px 16px;border-radius:10px;color:white!important;border:0!important;background:var(--navy);font-weight:750}
+.site-footer{display:flex;justify-content:space-between;gap:15px;margin-top:23px;border-top:1px solid #e3ebf1;padding:19px 7px;font-size:.78rem;color:#8290a1}.site-footer span:first-child{color:var(--epet-dark);font-weight:800}
+@media(max-width:1050px){.book-container{grid-template-columns:240px minmax(0,1fr)}.book-page{padding:23px}.book-tabs{padding:9px}.tab-item{padding:10px 8px;font-size:.88rem}.situation-grid,.payout-grid{grid-template-columns:1fr}}
+@media(max-width:800px){body{padding:9px 9px 30px}.book-container{grid-template-columns:minmax(0,1fr);gap:13px}.book-tabs{position:static;display:flex;flex-direction:row;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;padding:9px;border-radius:16px;gap:6px}.book-tabs::before{display:none}.tab-item{flex:0 0 auto;width:auto;max-width:235px;padding:10px 13px}.book-page{padding:22px;border-radius:17px}.hero-banner{padding:25px 23px;min-height:140px}.hero-banner::after{display:none}}
+@media(max-width:550px){.hero-banner{border-radius:17px;padding:23px 20px;gap:12px}.hero-banner h1{font-size:1.54rem}.download-container{width:100%}.download-disclosure{width:100%}.download-disclosure summary{width:100%}.download-options{left:0;right:auto;width:100%;max-width:100%}.book-page{padding:17px 14px 26px}.section-title{font-size:1.22rem;gap:9px}.section-number{min-width:35px;height:35px}.step-card{padding:16px 14px}.abbrev-grid,#page-kanaly .steps-holder{grid-template-columns:1fr}.status-panel,.payout-column{padding:17px 15px}.dt-result-content{padding:16px}.dt-option-card{padding:14px 12px}.book-page p,.book-page li{font-size:.95rem}.breadcrumb{font-size:.78rem}.site-footer{flex-direction:column;gap:3px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:0.01ms!important;scroll-behavior:auto!important;transition-duration:0.01ms!important}}
+
+
+/* Native SVG icons remain crisp without externally loaded icon fonts. */
+.content-icon{display:inline-block;width:19px;height:19px;vertical-align:-.22em;flex:none;color:#7b9f2f;margin-right:6px}
+.content-icon.large-icon{width:24px;height:24px}
+.content-icon.red-icon{color:#d85456}.content-icon.orange-icon{color:#d98e18}.content-icon.green-icon{color:#68931c}
+.abbrev-item .content-icon{width:21px;height:21px;margin-right:8px;color:#729827}
+.dt-option-icon .content-icon{width:21px;height:21px;margin:0}
+.dt-result-header .content-icon{color:inherit}
+.book-page .d-flex.align-items-center{display:flex;align-items:center;gap:7px}
+.book-page .justify-content-between{justify-content:space-between}
+.book-page .flex-column{flex-direction:column}.book-page .text-center{text-align:center}
+#page-video .d-flex.flex-column{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+#page-MBA .d-flex.align-items-start{display:flex;align-items:flex-start;gap:9px}
+.bi-chevron-right::before{content:'›';font:700 16px/1 Arial,sans-serif}
+
+
+/* Školení – změny sazeb a jističů. Styl navazuje na DINHE. */
+body{background:#fff}
+.site-wrap{max-width:1370px}
+.book-container{grid-template-columns:300px minmax(0,1fr);gap:19px}
+.book-tabs{max-height:calc(100dvh - 24px);overflow-y:auto;overscroll-behavior:contain;padding:11px 10px;scrollbar-color:#cbd9bc transparent;scrollbar-width:thin}
+.book-tabs::before{flex-shrink:0}
+.tab-item,.distributor-header{display:flex;align-items:flex-start;gap:9px;text-align:left;width:100%;cursor:pointer;border:1px solid transparent;background:transparent;border-radius:11px;line-height:1.42;min-height:41px;padding:11px 10px;color:#55657b;font-size:.85rem;font-weight:700;transition:background .18s,color .18s,border-color .18s}
+.tab-item .svg-icon,.distributor-header .svg-icon{width:18px;height:18px;color:#788ba1;flex:0 0 18px;margin-top:1px}
+.tab-item:hover,.distributor-header:hover{background:#f5f9ec;color:#56741e}
+.tab-item.active,.distributor-header.active{background:#f0f8e2;border-color:#d9e9c0;color:#516d1e;font-weight:850}
+.tab-item.active .svg-icon,.distributor-header.active .svg-icon{color:#60781a}
+.book-tabs .menu-group{display:block;min-width:0}
+.book-tabs .menu-group>.tab-item{width:100%}
+.nav-text{flex:1;min-width:0;overflow-wrap:anywhere}
+.nav-chevron{width:16px!important;height:16px!important;flex:0 0 16px;transition:transform .2s;margin-top:3px!important}
+.menu-group.open>.tab-item .nav-chevron,.menu-group.open>.distributor-header .nav-chevron{transform:rotate(180deg)}
+.book-tabs .sub-tabs{display:none;flex-direction:column;gap:4px;margin:3px 0 7px 10px;padding-left:11px;border-left:2px solid #e1ebd5}
+.book-tabs .menu-group.open>.sub-tabs{display:flex}
+.book-tabs .sub-tabs .tab-item{padding:8px 10px;font-size:.82rem;min-height:37px}
+.book-tabs .sub-tabs .menu-group{width:100%}
+.book-tabs .sub-tabs .sub-tabs{margin-left:7px;padding-left:10px;border-left-color:#dce6ed}
+.book-tabs .distributor-header{background:#f8fafc;color:#586b79;border-color:#edf1f3;padding:9px 10px;font-size:.81rem;min-height:39px}
+.book-tabs .sub-tabs .sub-tabs .tab-item{font-size:.78rem;font-weight:650;padding:9px 7px;line-height:1.36}
+.book-tabs .sub-tabs .sub-tabs .tab-item>.svg-icon{width:15px;height:15px;flex-basis:15px}
+.book-tabs .test-link{border-top:1px solid #eee1f7;margin-top:5px;color:#7c53a4}
+.book-tabs .test-link.active{background:#f6f0fc;border-color:#e9ddf6;color:#7442a1}
+.mobile-shell{display:block;min-width:0}
+.mobile-nav-summary{display:none}
+.book-page{min-width:0}
+.section-title{align-items:center;overflow-wrap:anywhere;gap:12px;font-size:clamp(1.16rem,1.8vw,1.45rem)}
+.section-number{min-width:46px;height:46px;flex-basis:auto;padding:0 7px;white-space:nowrap}
+.book-page .content-section .card.content-card{background:#fff!important;border:1px solid #e3eaf0!important;border-radius:17px!important;padding:20px 22px!important;margin:0 0 16px!important;box-shadow:0 5px 18px rgba(30,50,74,.043)!important;min-width:0}
+.book-page .content-section .card.step-card{border-left:3px solid #a3c55d!important}
+.book-page .content-section .card.content-card:has(h5){border-top:3px solid #a6c84e!important}
+.book-page .content-section .card.content-card:has(img){border-bottom:2px solid #edf2f5!important}
+.book-page .content-section .card.content-card .step-badge{background:#94c11f;box-shadow:0 0 0 4px #f0f7df}
+.book-page .content-section .card.content-card>p:last-child{margin-bottom:0}
+.book-page h3{color:#30485d;font-size:1.04rem}
+.book-page h4{color:#394e62;font-size:1.02rem}
+.book-page h5{font-size:1rem;color:#486524}
+.book-page .content-section>h2:only-child{margin-bottom:0}
+.book-page p, .book-page li{overflow-wrap:anywhere}
+.book-page .content-section .content-card ul,.book-page .content-section .content-card ol{padding-left:25px;margin-top:12px}
+.book-page .content-section .content-card ul>li::marker{color:#7eaa28}
+.book-page .content-section .content-card ol>li::marker{color:#6c8d2b;font-weight:700}
+.book-page .content-section .content-card ul li,.book-page .content-section .content-card ol li{line-height:1.7;margin-bottom:10px}
+.book-page .content-section .content-card>img,.book-page .content-section .content-card img{display:block;max-width:100%;height:auto;object-fit:contain;margin:14px auto;border:1px solid #e3e9ee;border-radius:13px;background:#fbfcfe;padding:7px;box-shadow:0 6px 20px rgba(30,48,70,.07)}
+.book-page .content-section .content-card img{max-height:560px}
+.book-page a.tooltip-wrapper{display:inline;position:relative;outline-offset:2px;overflow-wrap:anywhere}
+.book-page a.tooltip-wrapper .tooltip-text{display:none;position:absolute;bottom:calc(100% + 10px);left:50%;z-index:100;transform:translateX(-50%);max-width:240px;min-width:190px;white-space:normal;background:#20354a;color:#fff;font-size:.77rem;font-weight:600;line-height:1.4;padding:9px 11px;border-radius:8px;box-shadow:0 10px 25px #14273d33;text-align:center}
+.book-page a.tooltip-wrapper:hover .tooltip-text,.book-page a.tooltip-wrapper:focus-visible .tooltip-text{display:block}
+.training-alert{border-radius:14px;padding:17px 18px;display:flex;gap:9px;align-items:flex-start;margin:0 0 16px}
+.training-alert.alert-warning{border:1px solid #f4cccc;border-left:5px solid #d95454;background:#fff7f7;color:#8c3338}
+.training-alert.alert-info{border:1px solid #cce2f7;border-left:5px solid #458dc4;background:#f5faff;color:#38546f}
+.training-alert strong,.training-alert b{color:inherit}
+.training-alert .content-icon{color:inherit!important;flex:0 0 auto}
+.book-page .gs-quote{border:1px solid #dbe8d0;border-left:5px solid var(--epet);background:#f8fcf2;box-shadow:none}
+.content-icon{display:inline-block;width:18px;height:18px;vertical-align:-3px;flex:0 0 auto;margin:0 5px 0 1px;color:#647b8b}
+#page-intro .content-card{background:linear-gradient(180deg,#fff,#fafdf6)!important;border-top:5px solid var(--epet)!important}
+#page-intro .d-flex.flex-wrap.gap-4{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px!important;margin-top:14px}
+#page-intro .d-flex.flex-wrap.gap-4>.d-flex{padding:12px 14px;min-width:0;border:1px solid #e2ecd5;border-radius:11px;background:#fff}
+#page-intro .d-flex.flex-wrap.gap-4 .content-icon{color:#6a8e20}
+#page-dom li strong,#page-firm li strong{color:#45601d;border-radius:7px;background:#eaf6d9;padding:4px 8px;white-space:nowrap}
+#page-dom li,#page-firm li{border-bottom:1px solid #eef2f5;padding-bottom:11px}
+#page-dom li:last-child,#page-firm li:last-child{border-bottom:0;padding-bottom:0}
+.book-page #page-test iframe{height:670px}
+#page-video iframe{width:100%;aspect-ratio:16/9;height:auto;min-height:360px;border:0}
+#page-video .video-card{border:1px solid var(--line)!important;box-shadow:0 7px 22px rgba(30,50,74,.045)!important;border-radius:16px!important;overflow:hidden}
+#page-video .video-wrapper{border-radius:13px;overflow:hidden}
+.book-page .content-section .row.g-4{row-gap:16px}
+@media(min-width:1001px){.book-container{grid-template-columns:300px minmax(0,1fr)}}
+@media(max-width:1000px){.book-container{grid-template-columns:minmax(0,1fr)}.mobile-nav-summary{display:flex;align-items:center;justify-content:space-between;gap:14px;border:1px solid #d7e7c3;border-radius:13px;padding:12px 16px;background:#f5fbea;color:#587522;font-weight:850;cursor:pointer;margin-bottom:10px}.mobile-nav-summary::after{content:'⌄';font-size:24px;line-height:1}.mobile-shell[open] .mobile-nav-summary::after{transform:rotate(180deg)}.mobile-shell:not([open])>.book-tabs{display:none}.book-tabs{position:static;max-height:460px;overflow:auto;margin:0 0 16px;border-radius:16px}.book-page{padding:25px 24px}}
+@media(max-width:640px){body{padding:8px 8px 28px}.hero-banner{padding:26px 22px;min-height:0;gap:15px;border-radius:19px}.hero-banner h1{font-size:1.44rem}.book-page{padding:20px 16px;border-radius:17px}.book-page .content-section .card.content-card{padding:17px 15px!important}.book-page .content-section .card.content-card img{padding:5px}.section-title{align-items:flex-start;font-size:1.17rem;gap:9px}.section-number{min-width:40px;height:40px;padding:0 5px;font-size:.77rem}.hero-banner .download-options{right:auto;left:0}.book-page h3{font-size:1.01rem}#page-intro .d-flex.flex-wrap.gap-4{grid-template-columns:1fr}#page-video iframe{min-height:240px}}
+@media(prefers-reduced-motion:reduce){.content-section{animation:none}}
+</style></head><body><div class="site-wrap"><nav aria-label="Drobečková navigace" class="breadcrumb-nav"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="https://sites.google.com/view/znalostka/"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v11H3zM9 21v-8h6v8"/></svg> Znalostní
+                    báze</a></li><li class="breadcrumb-item"><a href="https://sites.google.com/view/znalostka/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat">Školení
+                    ZIS</a></li><li class="breadcrumb-item"><a href="https://sites.google.com/view/znalostka/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat/6-den">6.
+                    den</a></li><li class="breadcrumb-item active" aria-current="page">Změna sazby a jističe na odběrném místě</li></ol></nav><header class="hero-banner"><div class="hero-main"><h1>Pracovní postup: Změna sazby a jističe na odběrném místě</h1><p>Znalostní databáze epet | Dokumentace a přílohy</p></div><div class="download-container"><details class="download-disclosure"><summary><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"/></svg> Dokumenty ke stažení</summary><div class="download-options"><a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1HLAczE2SM0Wnjuo7-hRXdF7322GogZTu/view?usp=drive_link"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"/></svg> Stáhnout procesní mapu v PDF (PDF)</a><a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1tRk0svn9GpiQ7WfPPRidPfG1nZosA7gD/view?usp=drive_link"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"/></svg> Změna sazby a jističe na odběrném místě(PDF)</a></div></details></div></header><main class="book-container"><details class="mobile-shell" open><summary class="mobile-nav-summary">Pracovní postup</summary><nav aria-label="Navigace školením" class="book-tabs" role="tablist">
+<button aria-controls="page-intro" aria-selected="true" class="tab-item active" data-target="page-intro" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 5h7a3 3 0 0 1 3 3v13H6a3 3 0 0 0-3 0zm10 3a3 3 0 0 1 3-3h5v16a3 3 0 0 0-3 0h-5"></path></svg><span class="nav-text">Pracovní postup</span></button>
+<div class="tab-group menu-group" data-group="group-sazby-prehled" id="group-sazby-prehled">
+<button aria-controls="page-sazby-prehled" aria-expanded="false" aria-selected="false" class="tab-item" data-target="page-sazby-prehled" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M14.7 6.3a5 5 0 0 0-6.4 6.4L3 17.7 6.3 21l5.3-5.3a5 5 0 0 0 6.4-6.4l-3 3-3-3z"></path></svg><span class="nav-text">Přehled distribučních sazeb elektřiny</span><svg aria-hidden="true" class="nav-chevron" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m5 9 7 7 7-7"></path></svg></button>
+<div class="sub-tabs">
+<button aria-controls="page-dom" aria-selected="false" class="tab-item sub-nav" data-target="page-dom" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 10 12 3l9 7v11H3zM9 21v-8h6v8"></path></svg><span class="nav-text">Domácnosti (sazby D)</span></button>
+<button aria-controls="page-firm" aria-selected="false" class="tab-item sub-nav" data-target="page-firm" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="7"></rect><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"></path></svg><span class="nav-text">Firmy (sazby C)</span></button>
+</div>
+</div>
+<div class="tab-group menu-group" data-group="group-zmena-jistice" id="group-zmena-jistice">
+<button aria-controls="page-zmena-jistice" aria-expanded="false" aria-selected="false" class="tab-item" data-target="page-zmena-jistice" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M14.7 6.3a5 5 0 0 0-6.4 6.4L3 17.7 6.3 21l5.3-5.3a5 5 0 0 0 6.4-6.4l-3 3-3-3z"></path></svg><span class="nav-text">Požadavek na změnu hlavního jističe a sazby u jednotlivých distributorů</span><svg aria-hidden="true" class="nav-chevron" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m5 9 7 7 7-7"></path></svg></button>
+<div class="sub-tabs">
+<div class="tab-group nested menu-group" data-group="nested-egd-jistic" id="nested-egd-jistic">
+<button aria-controls="page-nested-egd-jistic" aria-expanded="false" aria-selected="false" class="distributor-header sub-nav" data-target="page-nested-egd-jistic" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m13 2-8 12h7l-1 8 8-12h-7z"></path></svg><span class="nav-text">Distribuční území EG.D</span><svg aria-hidden="true" class="nav-chevron" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m5 9 7 7 7-7"></path></svg></button>
+<div class="sub-tabs">
+<button aria-controls="page-egd-1" aria-selected="false" class="tab-item sub-nav" data-target="page-egd-1" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m13 2-8 12h7l-1 8 8-12h-7z"></path></svg><span class="nav-text">Zajištění smlouvy o
+                                připojení</span></button>
+<button aria-controls="page-egd-2" aria-selected="false" class="tab-item sub-nav" data-target="page-egd-2" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m13 2-8 12h7l-1 8 8-12h-7z"></path></svg><span class="nav-text">Změna charakteru s doklady</span></button>
+<button aria-controls="page-egd-3" aria-selected="false" class="tab-item sub-nav" data-target="page-egd-3" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m13 2-8 12h7l-1 8 8-12h-7z"></path></svg><span class="nav-text">Zamítnutí požadavku</span></button>
+</div>
+</div>
+<div class="tab-group nested menu-group" data-group="nested-pre-jistic" id="nested-pre-jistic">
+<button aria-controls="page-nested-pre-jistic" aria-expanded="false" aria-selected="false" class="distributor-header sub-nav" data-target="page-nested-pre-jistic" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="16" rx="2" width="18" x="3" y="4"></rect><path d="M7 11a5 5 0 0 1 10 0M12 11l3-3M7 16h10"></path></svg><span class="nav-text">Distribuční území PRE</span><svg aria-hidden="true" class="nav-chevron" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m5 9 7 7 7-7"></path></svg></button>
+<div class="sub-tabs">
+<button aria-controls="page-pre-1" aria-selected="false" class="tab-item sub-nav" data-target="page-pre-1" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="16" rx="2" width="18" x="3" y="4"></rect><path d="M7 11a5 5 0 0 1 10 0M12 11l3-3M7 16h10"></path></svg><span class="nav-text">Zajištění smlouvy o
+                                připojení</span></button>
+<button aria-controls="page-pre-2" aria-selected="false" class="tab-item sub-nav" data-target="page-pre-2" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="16" rx="2" width="18" x="3" y="4"></rect><path d="M7 11a5 5 0 0 1 10 0M12 11l3-3M7 16h10"></path></svg><span class="nav-text">Změna charakteru s doklady</span></button>
+<button aria-controls="page-pre-3" aria-selected="false" class="tab-item sub-nav" data-target="page-pre-3" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="16" rx="2" width="18" x="3" y="4"></rect><path d="M7 11a5 5 0 0 1 10 0M12 11l3-3M7 16h10"></path></svg><span class="nav-text">Zamítnutí požadavku</span></button>
+</div>
+</div>
+<div class="tab-group nested menu-group" data-group="nested-cez-jistic" id="nested-cez-jistic">
+<button aria-controls="page-nested-cez-jistic" aria-expanded="false" aria-selected="false" class="distributor-header sub-nav" data-target="page-nested-cez-jistic" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 21V6l9-3v18m0-14 9 3v11M6 9h2m-2 4h2m-2 4h2m7-5h2m-2 4h2"></path></svg><span class="nav-text">Distribuční území ČEZ</span><svg aria-hidden="true" class="nav-chevron" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m5 9 7 7 7-7"></path></svg></button>
+<div class="sub-tabs">
+<button aria-controls="page-cez-1" aria-selected="false" class="tab-item sub-nav" data-target="page-cez-1" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 21V6l9-3v18m0-14 9 3v11M6 9h2m-2 4h2m-2 4h2m7-5h2m-2 4h2"></path></svg><span class="nav-text">Zajištění smlouvy o
+                                připojení</span></button>
+<button aria-controls="page-cez-2" aria-selected="false" class="tab-item sub-nav" data-target="page-cez-2" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 21V6l9-3v18m0-14 9 3v11M6 9h2m-2 4h2m-2 4h2m7-5h2m-2 4h2"></path></svg><span class="nav-text">Změna charakteru s doklady</span></button>
+<button aria-controls="page-cez-3" aria-selected="false" class="tab-item sub-nav" data-target="page-cez-3" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 21V6l9-3v18m0-14 9 3v11M6 9h2m-2 4h2m-2 4h2m7-5h2m-2 4h2"></path></svg><span class="nav-text">Zamítnutí požadavku</span></button>
+</div>
+</div>
+</div>
+</div>
+<div class="tab-group menu-group" data-group="group-sazba-c" id="group-sazba-c">
+<button aria-controls="page-sazba-c" aria-expanded="false" aria-selected="false" class="tab-item" data-target="page-sazba-c" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 7h4c5 0 5 10 10 10h4m-5-4 5 4-5 4M3 17h4c2.5 0 4-3 6-5m2-4c1-.6 3-1 6-1m-5-4 5 4-5 4"></path></svg><span class="nav-text">Změna sazby na C46d / C56d</span><svg aria-hidden="true" class="nav-chevron" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m5 9 7 7 7-7"></path></svg></button>
+<div class="sub-tabs">
+<div class="tab-group nested menu-group" data-group="nested-egd-c" id="nested-egd-c">
+<button aria-controls="page-nested-egd-c" aria-expanded="false" aria-selected="false" class="distributor-header sub-nav" data-target="page-nested-egd-c" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m13 2-8 12h7l-1 8 8-12h-7z"></path></svg><span class="nav-text">Postup u distribuce EG.D</span><svg aria-hidden="true" class="nav-chevron" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m5 9 7 7 7-7"></path></svg></button>
+<div class="sub-tabs">
+<button aria-controls="page-egd-c1" aria-selected="false" class="tab-item sub-nav" data-target="page-egd-c1" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m13 2-8 12h7l-1 8 8-12h-7z"></path></svg><span class="nav-text">Zajištění smlouvy o
+                                připojení</span></button>
+<button aria-controls="page-egd-c2" aria-selected="false" class="tab-item sub-nav" data-target="page-egd-c2" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m13 2-8 12h7l-1 8 8-12h-7z"></path></svg><span class="nav-text">Změna s doloženými doklady</span></button>
+</div>
+</div>
+<div class="tab-group nested menu-group" data-group="nested-pre-c" id="nested-pre-c">
+<button aria-controls="page-nested-pre-c" aria-expanded="false" aria-selected="false" class="distributor-header sub-nav" data-target="page-nested-pre-c" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="16" rx="2" width="18" x="3" y="4"></rect><path d="M7 11a5 5 0 0 1 10 0M12 11l3-3M7 16h10"></path></svg><span class="nav-text">Postup u distribuce PRE</span><svg aria-hidden="true" class="nav-chevron" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m5 9 7 7 7-7"></path></svg></button>
+<div class="sub-tabs">
+<button aria-controls="page-pre-c1" aria-selected="false" class="tab-item sub-nav" data-target="page-pre-c1" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="16" rx="2" width="18" x="3" y="4"></rect><path d="M7 11a5 5 0 0 1 10 0M12 11l3-3M7 16h10"></path></svg><span class="nav-text">Zajištění smlouvy o
+                                připojení</span></button>
+<button aria-controls="page-pre-c2" aria-selected="false" class="tab-item sub-nav" data-target="page-pre-c2" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="16" rx="2" width="18" x="3" y="4"></rect><path d="M7 11a5 5 0 0 1 10 0M12 11l3-3M7 16h10"></path></svg><span class="nav-text">Změna s doloženými doklady</span></button>
+</div>
+</div>
+<div class="tab-group nested menu-group" data-group="nested-cez-c" id="nested-cez-c">
+<button aria-controls="page-nested-cez-c" aria-expanded="false" aria-selected="false" class="distributor-header sub-nav" data-target="page-nested-cez-c" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 21V6l9-3v18m0-14 9 3v11M6 9h2m-2 4h2m-2 4h2m7-5h2m-2 4h2"></path></svg><span class="nav-text">Postup u distribuce ČEZ</span><svg aria-hidden="true" class="nav-chevron" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m5 9 7 7 7-7"></path></svg></button>
+<div class="sub-tabs">
+<button aria-controls="page-cez-c1" aria-selected="false" class="tab-item sub-nav" data-target="page-cez-c1" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 21V6l9-3v18m0-14 9 3v11M6 9h2m-2 4h2m-2 4h2m7-5h2m-2 4h2"></path></svg><span class="nav-text">Zajištění smlouvy o
+                                připojení</span></button>
+<button aria-controls="page-cez-c2" aria-selected="false" class="tab-item sub-nav" data-target="page-cez-c2" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 21V6l9-3v18m0-14 9 3v11M6 9h2m-2 4h2m-2 4h2m7-5h2m-2 4h2"></path></svg><span class="nav-text">Změna s doloženými doklady</span></button>
+</div>
+</div>
+</div>
+</div>
+<div class="tab-group menu-group" data-group="group-zis-sazba" id="group-zis-sazba">
+<button aria-controls="page-zis-sazba" aria-expanded="false" aria-selected="false" class="tab-item" data-target="page-zis-sazba" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 7h4c5 0 5 10 10 10h4m-5-4 5 4-5 4M3 17h4c2.5 0 4-3 6-5m2-4c1-.6 3-1 6-1m-5-4 5 4-5 4"></path></svg><span class="nav-text">Změna sazby v ZIS</span><svg aria-hidden="true" class="nav-chevron" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m5 9 7 7 7-7"></path></svg></button>
+<div class="sub-tabs">
+<button aria-controls="page-zis-sazba-om" aria-selected="false" class="tab-item sub-nav" data-target="page-zis-sazba-om" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 7h4c5 0 5 10 10 10h4m-5-4 5 4-5 4M3 17h4c2.5 0 4-3 6-5m2-4c1-.6 3-1 6-1m-5-4 5 4-5 4"></path></svg><span class="nav-text">Změna na formuláři OM</span></button>
+<button aria-controls="page-zis-sazba-smlouva" aria-selected="false" class="tab-item sub-nav" data-target="page-zis-sazba-smlouva" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 7h4c5 0 5 10 10 10h4m-5-4 5 4-5 4M3 17h4c2.5 0 4-3 6-5m2-4c1-.6 3-1 6-1m-5-4 5 4-5 4"></path></svg><span class="nav-text">Změna na formuláři
+                        Smlouva</span></button>
+</div>
+</div>
+<button aria-controls="page-zis" aria-selected="false" class="tab-item" data-target="page-zis" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="16" rx="2" width="18" x="3" y="4"></rect><path d="M7 11a5 5 0 0 1 10 0M12 11l3-3M7 16h10"></path></svg><span class="nav-text">Změna jističe v ZIS</span></button>
+<button aria-controls="page-video" aria-selected="false" class="tab-item" data-target="page-video" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="m10 9 5 3-5 3z"></path></svg><span class="nav-text">Video návod</span></button>
+<button aria-controls="page-test" aria-selected="false" class="tab-item test-link" data-target="page-test" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="17" rx="2" width="16" x="4" y="5"></rect><path d="M9 3h6v4H9zm0 12 2 2 4-4"></path></svg><span class="nav-text">Opakovací test</span></button>
+</nav></details><article class="book-page"><div aria-hidden="false" class="content-section active" id="page-intro" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">1.</span> Pracovní postup</h2>
+<div class="card content-card">
+<p class="mb-3">
+            
+                        Změna distribučních náležitostí zahrnuje požadavek zákazníka na změnu hlavního jističe před
+                        elektroměrem, nebo změnu distribuční sazby, nebo kombinaci obou požadavků.
+            
+            
+                    <div class="mb-3">
+<h3>Zkratky:</h3>
+<div class="d-flex flex-wrap gap-4">
+<div class="d-flex align-items-center">
+<svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"></path></svg>
+<b>ŽOP</b> = Žádost o připojení
+                            </div>
+<div class="d-flex align-items-center">
+<svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"></path></svg>
+<svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"></path></svg>
+<b>ŽSOP</b> = Žádost – Smlouva o připojení
+                            </div>
+<div class="d-flex align-items-center">
+<svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m8 12 3 3 5-6"></path></svg>
+<b>SOP</b> = Smlouva o připojení
+                            </div>
+<div class="d-flex align-items-center">
+<svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m8 12 3 3 5-6"></path></svg>
+<b>RZ</b> = revizní zpráva (platnost revizní zprávy je 6 měsíců od data vystavení)
+                            </div>
+<div class="d-flex align-items-center">
+<svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m12 3 10 18H2zM12 9v5m0 3v.5"></path></svg>
+<b>OM</b> = odběrné místo
+                            </div>
+<div class="d-flex align-items-center">
+<svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="m10 9 5 3-5 3z"></path></svg>
+<b>ZD</b> = zahájení dodávky (změna dodavatele)
+                            </div>
+<div class="d-flex align-items-center">
+<svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m8 12 3 3 5-6"></path></svg>
+<b>HJ</b> = hlavní jistič
+                            </div>
+<div class="d-flex align-items-center">
+<svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v6m0-10h.01"></path></svg>
+<b>DI</b> = distributor
+                            </div>
+<div class="d-flex align-items-center">
+<svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"></path></svg>
+<b>MO</b> = maloodběr (firma)
+                            </div>
+<div class="d-flex align-items-center">
+<svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 10 12 3l9 7v11H3zM9 21v-8h6v8"></path></svg>
+<b>DOM</b> = domácnost
+                            </div>
+</div>
+</div>
+</p></div>
+</div><div aria-hidden="true" class="content-section" id="page-sazby-prehled" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">2.</span> Distribuční sazby</h2>
+<!-- KARTA: DISTRIBUČNÍ SAZBA -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 1">1</span>
+<strong>Distribuční sazba</strong> elektřiny rozděluje kategorie odběratelů – zákazníků dle jejich spotřeby
+                        elektrické energie a využívaných elektrických spotřebičů na odběrném místě.
+                    </p>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-dom" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">2.1</span> Distribuční sazby - Domácnosti</h2>
+<!-- KARTA: DISTRIBUČNÍ SAZBY – DOMÁCNOSTI (bez kroků) -->
+<div class="card content-card">
+<!-- Seznam sazeb D01d, D02d, ... -->
+<ul class="mb-0">
+<li><strong>D01d</strong> – pro běžně vybavenou domácnost, která elektřinou svítí a napájí
+                            elektrospotřebiče. Má však menší spotřebu.</li>
+<li><strong>D02d</strong> – hodí se pro běžně vybavenou domácnost se střední spotřebou.</li>
+<li><strong>D25d</strong> – v odběrném místě musí být řádně instalován elektrický akumulační
+                            spotřebič pro ohřev užitkové vody.</li>
+<li><strong>D26d</strong> – v odběrném místě musí být řádně instalován elektrický akumulační
+                            spotřebič pro vytápění objektu.</li>
+<li><strong>D27d</strong> – tato sazba je určena pro odběrná místa, u nichž žadatel věrohodným
+                            způsobem doloží vlastnické právo, případně užívací právo (leasing apod.) k elektromobilu.
+                        </li>
+<li><strong>D57d</strong> (dříve D35d, D45d, D56d) – sazba pro domácnosti, které vytápí
+                            přímotopem, hybridním vytápěním nebo tepelným čerpadlem. (Pozn. sazby D35d, D45d a D56d se
+                            od 1.4.2016 již nepřiznávají, výjimku tvoří zákazníci, jimž byla sazba D35d, D45d nebo D56d
+                            přiznána do 31.3.2016.)</li>
+<li><strong>D61d</strong> - sazba vhodná zejména pro chataře či chalupáře. Nízký tarif zde
+                            totiž platí o víkendu, celoročně od pátku od 12 do neděle do 22 hodin</li>
+</ul>
+<!-- konec seznamu sazeb Domácnosti ... -->
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-firm" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">2.2</span> Distribuční sazby - Firmy</h2>
+<!-- KARTA: DISTRIBUČNÍ SAZBY – FIRMY (bez kroků) -->
+<div class="card content-card">
+<ul class="mb-0">
+<li><strong>C01d</strong> – jednotarifová sazba pro malou spotřebu.</li>
+<li><strong>C02d</strong> – jednotarifová sazba pro střední spotřebu.</li>
+<li><strong>C03d</strong> – jednotarifová sazba pro velkou spotřebu.</li>
+<li><strong>C25d</strong> – v odběrném místě musí být řádně instalován elektrický akumulační
+                            spotřebič pro vytápění objektu nebo elektrický akumulační spotřebič pro ohřev užitkové vody.
+                        </li>
+<li><strong>C26d</strong> – v odběrném místě musí být řádně instalován akumulační elektrický
+                            spotřebič pro vytápění objektu.</li>
+<li><strong>C27d</strong> – tato sazba je určena pro odběrná místa, u nichž žadatel věrohodným
+                            způsobem doloží vlastnické právo, případně užívací právo (leasing apod.) k elektromobilu.
+                        </li>
+<li><strong>C45d</strong> – Tato sazba může být od 1. ledna 2020 přiznána pouze pro odběrná
+                            místa určená k vytápění objektu hybridním (smíšeným) elektrickým spotřebičem a tato sazba
+                            nemůže být přiznána po 31. březnu 2017. V odběrném místě musí být nainstalovaný hybridní
+                            (smíšené) elektrické spotřebiče.</li>
+<li><strong>C46d</strong> – (dříve C35d,) – v odběrném místě musí být řádně instalovány
+                            hybridní (smíšené) elektrické spotřebiče nebo přímotopné elektrické spotřebiče pro vytápění
+                            objektu. (Pozn. Sazba C35d se od 1.4.2017 již nepřiznávají, výjimku tvoří zákazníci, jimž
+                            byla sazba C35d přiznána do 31.3.2017.)</li>
+<li><strong>C56d</strong> – (dříve C55d) – sazba je určena pro odběrná místa, u nichž
+                            odběratel distributorovi prokáže, že pro vytápění objektu je v odběrném místě instalováno
+                            hybridní vytápění (smíšené vytápění) s tepelným čerpadlem. (Pozn. Sazba C55d se od 31.3.2005
+                            již nepřiznává). Odběratel je povinen doložit protokol o instalaci a nastavení tepelného
+                            čerpadla a smlouvu s dodavatelem tepla. Tento dokument většinou zajišťuje firma, která
+                            tepelné čerpadlo provádí, popřípadě zajistí elektrikář.</li>
+<li><strong>C60d</strong> – sazba určená pro neměřené odběry.</li>
+<li><strong>C62d</strong> – sazba určená pro účely osvětlení veřejných prostranství.</li>
+</ul>
+<!-- konec seznamu sazeb FIRMY, ... -->
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-zmena-jistice" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">3.</span> Požadavek na změnu hlavního jističe a sazby u jednotlivých distributorů</h2>
+<!-- KARTA: ZMĚNA DISTRIBUČNÍCH NÁLEŽITOSTÍ -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 1">1</span>
+<b>Distribuční sazba</b> elektřiny rozděluje kategorie odběratelů – zákazníků dle jejich spotřeby elektrické energie a využívaných elektrických spotřebičů na odběrném místě.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 2">2</span>
+<b>Hlavní jistič</b> je vypínač, který najdeme před elektroměrem a který omezuje výši maximálního
+                        odebíraného elektrického výkonu v odběrném místě. Jinými slovy v případě, kdy dochází k překročení
+                        nastavené hodnoty odběru, hlavní jistič přeruší dodávku elektrické energie a zabrání tak přetížení vodičů
+                        nebo zkratu.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 3">3</span>
+                        V případě požadavku zákazníka na změnu hlavního jističe nebo distribuční sazby je zapotřebí
+                        nejdříve rozlišit, na jakém distribučním území leží zákazníkovo odběrné místo
+                        <i>viz. mapka distributorů</i> na území ČR
+                    </p>
+</div>
+<img alt="Mapa distribučních území" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/0NCQWYY1/mapa.png" title="Mapa distribučních území"/>
+</div><div aria-hidden="true" class="content-section" id="page-nested-egd-jistic" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">3.1</span> Požadavek na změnu jističe či sazby na distribučním území EG.D</h2>
+<!-- KARTA: DOKLADY KE ZMĚNĚ JISTIČE / SAZBY -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 1">1</span>
+                        Předně je potřeba ověřit, jaké doklady budeme k danému požadavku potřebovat.
+                        Ověříme pomocí
+                        <a class="tooltip-wrapper" href="https://sites.google.com/view/znalostka/%C5%A1ablony/distribu%C4%8Dn%C3%AD-zm%C4%9Bny/tarifomat" rel="noopener noreferrer" style="text-decoration: none; color: #94c11f;" tabindex="0" target="_blank">
+                            Tarifomatu
+                            <span class="tooltip-text">Tarifomat</span>
+</a>
+</p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 2">2</span>
+                        U všech typů požadavků na změnu jističe/sazby od zákazníka vždy vyžadujeme doložit:
+                    </p>
+<ol class="mt-2 mb-0" type="a">
+<li>
+<i>Formulář epet</i> ➜ <b>Změna smlouvy</b> ➜
+                            <a class="tooltip-wrapper" href="https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link" rel="noopener noreferrer" style="text-decoration: none; color: #94c11f;" tabindex="0" target="_blank">
+                                Žádost o změnu smlouvy pro domácnost
+                                <span class="tooltip-text">Žádost o změnu smlouvy pro domácnost</span>
+</a><br/>
+<i>Formulář epet</i> ➜ <b>Změna smlouvy</b> ➜
+                            <a class="tooltip-wrapper" href="https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link" rel="noopener noreferrer" style="text-decoration: none; color: #94c11f;" tabindex="0" target="_blank">
+                                Žádost o změnu smlouvy pro firmu
+                                <span class="tooltip-text">Žádost o změnu smlouvy pro firmu</span>
+</a>
+</li>
+<li>
+<b>Revizní zprávu</b> –
+                            <i>(RZ nepotřebujeme pouze při změně jednotarifní sazby na jinou jednotarifní sazbu
+                                např. z <b>D01d na D02d</b> a naopak nebo z <b>C03d na C02d</b> či <b>C01d</b>)</i>.
+                            RZ zákazníkovi vystaví elektroinstalační firma.
+                        </li>
+</ol>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 3">3</span>
+                        U některých typů požadavků je dále třeba, aby k jejich realizaci disponoval zákazník
+                        smlouvu o připojení.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 4">4</span>
+<b>Smlouva o připojení</b> je vyžadována a u všech typů změny jističe,
+                        vyjma snížení jističe u přímého měření (C měření).
+                    </p>
+<ul class="mt-2 mb-0">
+<li>
+<b>Smlouvu o připojení</b> si může zákazník zajistit sám nebo jej za zákazníka
+                            zajišťujeme ze strany naší společnosti na základě
+                            <a class="tooltip-wrapper" href="https://drive.google.com/file/d/11lbuZv6IW4UO4Jmejzy__ZxKf9v1Ispz/view" rel="noopener noreferrer" style="text-decoration: none; color: #94c11f;" tabindex="0" target="_blank"> žádosti o připojení
+<span class="tooltip-text">Žádost o připojení pro EG.D</span>
+</a>
+                            (ŽOP), kterou můžeme zařídit na základě <b>Plné moci</b> od zákazníka.
+                        </li>
+</ul>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 5">5</span>
+                        U <b>změny distribuční sazby</b> není vyžadována smlouva o připojení
+                    </p>
+</div>
+<div class="training-alert alert-warning" role="alert">
+<svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m12 3 10 18H2zM12 9v5m0 3v.5"></path></svg>
+<div>
+<strong>POZOR!</strong><br/>
+                        V případě <strong>změny jističe</strong> u <strong>nepřímého měření (B měření)</strong>
+                        musí zákazník navíc doložit protokoly
+                        <strong>MTP – měřicí transformátory proudu</strong>
+                        (Používají se v nepřímém měření spotřeby elektřiny, hlavně u velkých odběrů.
+                        Protokol vystavují zpravidla
+                        <i>specializované elektrotechnické firmy</i>, které provádí montáž, ověření a kalibraci
+                        těchto měřicích transformátorů).
+                    </div>
+</div>
+<div class="training-alert alert-warning" role="alert">
+<svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m12 3 10 18H2zM12 9v5m0 3v.5"></path></svg>
+<div>
+<strong>POZOR!</strong><br/>
+                        na <strong>změnu sazby na C46d nebo C56d</strong> postup uveden v samostatné sekci.
+                    </div>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-egd-1" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">3.1.1</span> Zajištění smlouvy o připojení za zákazníka na distribučním území EG.D</h2>
+<!-- KARTA: ZAJIŠTĚNÍ SOP PŘI ZMĚNĚ JISTIČE / SAZBY -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 1">1</span>
+                        V případě, že zákazník nedisponuje <b>smlouvou o připojení</b>, která by
+                        zohledňovala změnu jističe, zajistíme za něj smlouvy o připojení z naší strany.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-2">
+<span class="step-badge" title="Krok 2">2</span>
+<strong>Zákazník z kategorie DOM</strong> nám musí doložit následující doklady:
+                    </p>
+<ol class="mb-0" type="a">
+<li>
+                            Formulář epet ➜
+                            <a data-bs-placement="top" data-bs-toggle="tooltip" href="https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link" rel="noopener noreferrer" target="_blank" title="Žádost o změnu smlouvy pro Domácnost">
+                                Změna smlouvy pro Domácnost
+                            </a>
+                            ➕
+                            <a data-bs-placement="top" data-bs-toggle="tooltip" href="https://drive.google.com/file/d/11mtR4LhEQE-bDlq9_-3jhkx1q6SGXrWo/view?usp=drive_link" rel="noopener noreferrer" target="_blank" title="Žádost o připojeni EGD">
+                                Žádost o připojení EGD
+                            </a>
+                            (dále jen ŽOP)
+                        </li>
+</ol>
+</div>
+<div class="card content-card step-card">
+<p class="mb-2">
+<span class="step-badge" title="Krok 3">3</span>
+<strong>Zákazník z kategorie MO</strong> musí doložit následující doklady:
+                    </p>
+<ol class="mb-0" type="a">
+<li>
+                            Formulář epet ➜
+                            <a data-bs-placement="top" data-bs-toggle="tooltip" href="https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link" rel="noopener noreferrer" target="_blank" title="Žádost o změnu smlouvy pro Firmu">
+                                Změna smlouvy – Firmy
+                            </a>
+                            ➕
+                            <a data-bs-placement="top" data-bs-toggle="tooltip" href="https://drive.google.com/file/d/11lbuZv6IW4UO4Jmejzy__ZxKf9v1Ispz/view" rel="noopener noreferrer" target="_blank" title="Žádost o připojeni EGD">
+                                ŽOP EGD – Firmy
+                            </a>
+                            (dále jen ŽOP)
+                        </li>
+</ol>
+</div>
+<!-- ZMĚNA JISTIČE -->
+<div class="card content-card step-card">
+<h5 class="mb-2">
+<span class="step-badge" title="Krok 4">4</span>
+                        ZMĚNA JISTIČE:
+                    </h5>
+<ul class="mb-0">
+<li>
+                            Po obdržení žádosti o změnu jističe založíme v ZIS úkol, který propojíme s
+                            odběrným místem a do úkolu uvedeme textaci:
+                            <b>
+                                Text: EAN XXXXXXX: Zákazník žádá o navýšení/snížení jističe
+                                [hodnota stávajícího jističe] na hodnotu [počet fází] x [počet ampérů].
+                                Dokumenty v příloze. Žop podána přes stránky distributora. Zákazník informován
+                                že do 30 dnů mu přijde vyjádření – Smlouva o připojení. Čekáme na potvrzení
+                                o podepsání SOP.
+                            </b>
+</li>
+<li>Úkol necháme na svém loginu.</li>
+<li>
+                            Po zadání žádosti na stránkách <b>DI.</b> viz. <i>postup níže</i> informujeme
+                            zákazníka, že mu distributor <b>do 30 dní</b> pošle
+                            <u>smlouvu o připojení</u> (dále jen SOP) k podpisu na korespondenční adresu.
+                            Informaci o podání zapíšeme do úkolu a necháme si ho na svém loginu.
+                            Ve stavu <b>Čeká na zákazníka.</b>
+</li>
+<li>
+                            Zákazník obdrží dva výtisky SOP. Jeden podepsaný originál musí zaslat na EGD a
+                            splnit podmínky uvedené v SOP.
+                        </li>
+<li>
+                            Naší společnosti doručí kopii <b>podepsané SOP</b> a kopii <b>revizní zprávy</b>.
+                        </li>
+<li>
+                            Podklady nahrajeme k úkolu a předáme na řešitele <b>EK</b> se statusem <b>Nový</b>
+                            a informací, že máme potřebné podklady a ať požádají distributora o změnu.
+                            Řešitel EK následně bude informovat o termínu návštěvy technika, který sdělíme
+                            zákazníkovi. Po informování vracíme úkol zpět na řešitele <b>EK</b> do Nový,
+                            aby pohlídali změnu.
+                        </li>
+<li>
+                            Pokud vše proběhne a distributor změní jistič, nastavíme jistič dle informací
+                            v úkolu, který obdržíme od řešitele <b>EK</b>.
+                        </li>
+</ul>
+</div>
+<!-- ZALOŽENÍ SOP NA STRÁNKÁCH DI -->
+<div class="card content-card step-card">
+<h5 class="mb-2">
+<span class="step-badge" title="Krok 5">5</span>
+                        Založení žádosti o Smlouvu o připojení na stránkách distributora:
+                    </h5>
+<ul class="mb-0">
+<li>Po přiložení dokumentů <b>(ŽOP/ŽSOP)</b> si otevřeme stránky distributora <a data-bs-placement="top" data-bs-toggle="tooltip" href="https://www.egd.cz/zadost/zmena-hodnoty-jistice-nizke-napeti" rel="noopener noreferrer" target="_blank" title="Online podání o SOP"> zde</a>. viz.
+                            <i>postup níže</i></li>
+<li>Zvolíme <b>Podat žádost online</b></li>
+<img alt="Podání žádosti o změnu jističe na stránkách EG.D" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/Xv5p0rTQ/podani.png" title="Podání žádosti o změnu jističe na stránkách EG.D"/>
+<li>Vyplníme <b>EAN, Obec</b> (místo kde se odběrné místo nachází), <b>E-mail
+                                zákazníka</b> a dáme načíst.</li>
+<img alt="Udaje zákazníka pro podání žádosti o změnu jističe na stránkách EG.D" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/j2MFddGF/zahajen.png" title="Udaje zákazníka pro podání žádosti o změnu jističe na stránkách EG.D"/>
+<li>Zkontrolujeme Zákaznické údaje, zda je korespondenční adresa stejná. V případě, že
+                            žadatel požaduje změnit korespondenční adresu, stačí odkliknout pole Shodná s
+                            trvalou adresou – je zde možnost vyplnit novou adresu pro zaslání smlouvy</li>
+<img alt="kontrola údajů zákazníka" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/52dR4GG1/zk.png" title="kontrola údajů zákazníka"/>
+<li>Dále zvolíme možnost, zda navyšujeme nebo naopak snižujeme jistič, s tím, že
+                            vyplníme i novou hodnotu jističe.</li>
+<img alt="Nastavení HJ" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/zB69nfdH/OM.png" title="Nastavení HJ"/>
+<li>Dále je nutné vyplnit aspoň jednu hodnotu Charakteru odběru. Stačí vyplnit hodnotu
+                            Ostatní spotřebiče pod 5 kWh.</li>
+<img alt="Charakter odběru" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/kGMfRPCR/charakter.png" title="Charakter odběru"/>
+<li>Dále jako přílohu přiložíme naskenovanou Žádost o připojení a dáme
+                            <b>Pokračovat</b>.
+                        </li>
+<img alt="Příloha" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/1tD3nbBS/prloha.png" title="Příloha"/>
+<li>Zobrazí se nám souhrn údajů a dáme již pouze odeslat. Na další obrazovce se
+                            zobrazí potvrzení o odeslání. Nyní zákazníka kontaktuje distributor s návrhem
+                            smlouvy o připojení (zašle ji do 30 dnů)</li>
+<img alt="potvrzeni" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/HxfcyQbG/potvrzeni.png" title="potvrzeni"/>
+<li>Jakmile zákazník obdrží Smlouvu o připojení, musí ji podepsat a zaslat zpět na
+                            distributora. Kopii podepsané Smlouvy o připojení zasílá na nás. Dále musí zákazník
+                            splnit podmínky uvedené ve Smlouvě o připojení.</li>
+<li>Jakmile zákazník doloží Smlouvu o připojení, Revizní zprávu a epet žádost,
+                            dokumenty přiložíme k úkolu a předáváme na řešitele <b>EK</b> se statusem
+                            <b>Nový.</b>
+</li>
+<li>text úkolu: <b>Text: EAN XXXXXXX: Zákazník žádá o navýšení/snížení jističe
+                                [hodnota stávajícího jističe] na hodnotu [počet fází] x [počet ampérů]. Dokumenty
+                                v příloze. Žop podána přes stránky distributora. Zákazník informován, že do 30 dnů
+                                mu přijde vyjádření – Smlouva o připojení. Čekáme na potvrzení o podepsání
+                                SOP.</b></li>
+
+</ul>
+</div>
+<!-- ZMĚNA SAZBY -->
+<div class="card content-card step-card">
+<h5 class="mb-2">
+<span class="step-badge" title="Krok 6">6</span>
+                        ZMĚNA SAZBY
+                    </h5>
+<p>
+                        Text úkolu:
+                        <i>
+                            EAN XXXXXXX: Zákazník žádá o změnu sazby z xxx na xxxx.
+                            Dokumenty v příloze. Prosím o jejich zaslání na DI
+                        </i>
+</p>
+<img alt="poznámka" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/qBbc7mJN/poznamka.png" title="Napsání poznámky pro distributora"/>
+<ul class="mb-0">
+<li>
+<b>FO musí stejným způsobem, jako žádal o změnu výše hlavního jističe viz. bod výše
+                                zažádat na DI o vystavení SOP</b> s tím, že do poznámky musí napsat:
+                            <i>EAN: XXXXX žádám o změnu sazby z [původní sazba] na [nová sazba]</i>
+</li>
+<li>
+<strong>Zákazníka informujeme</strong>, že mu distributor EGD do 30 dní pošle
+                            smlouvu o připojení (dále jen SOP) k podpisu na korespondenční adresu.
+                        </li>
+<li>
+                            Úkol si dáme do stavu Čeká na zákazníka a budeme čekat, až nás Zk informuje
+                            o podepsání Smlouvy o připojení a odeslání originálu SOP. Po uplynutí měsíce
+                            od informování zákazníka urgujeme, zda smlouvu podepsal a splnil podmínky.
+                        </li>
+<li>
+                            Zákazník obdrží dva výtisky SOP. Jeden podepsaný originál musí zaslat na EGD a
+                            splnit podmínky uvedené v SOP.
+                        </li>
+<li>
+                            Naší společnosti doručí <strong>kopii podepsané SOP a kopii revizní zprávy.</strong>
+</li>
+<li>
+                            Pokud zákazník doloží podepsanou Smlouvu o připojení, zkontrolujeme, zda máme
+                            všechny potřebné doklady (epet žádost, RZ, doklady od tepelného čerpadla…) a
+                            případně urgujeme.
+                        </li>
+<li>
+                            Jakmile máme potřebné podklady, předáváme kontakt na EK do Nový s žádostí
+                            o změnu sazby na distribuci.
+                        </li>
+<li>
+                            EK následně bude informovat o termínu návštěvy technika, který sdělíme
+                            zákazníkovi. Po informování vracíme kontakt zpět na ELE do stavu Nový,
+                            aby pohlídali změnu.
+                        </li>
+<li>
+                            Pokud vše proběhne a distributor změní sazbu, nastavíme sazbu dle informací
+                            v úkolu, který obdržíme od EK
+                        </li>
+</ul>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-egd-2" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">3.1.2</span> Změna charakteru odběru s kompletními doklady na distribučním území EG.D</h2>
+<!-- KARTA: PŘEDÁNÍ PODKLADŮ NA DISTRIBUCI -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 1">1</span>
+                        Jakmile nám zákazník zašle potřebné doklady k realizaci konkrétního požadavku,
+                        vložíme <strong>je do úkolu.</strong>
+</p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 2">2</span>
+                        Po přiložení dokumentů kontakt předáme na kolegy z oddělení Komunikace na jejich
+                        řešitele „EK“ do stavu <strong>Nový</strong> s žádostí o předání dokladů na distribuci.
+                    </p>
+</div>
+<!-- TEXTACE PRO ÚKOL -->
+<div class="card content-card step-card">
+<p class="mb-2">
+<span class="step-badge" title="Krok 3">3</span>
+<strong>U změny jističe:</strong>
+</p>
+<p class="mb-0">
+                        EAN XXXXXXX: Zákazník žádá o navýšení/snížení jističe z
+                        [hodnota stávajícího jističe] na hodnotu [počet fází]x[počet ampérů].
+                        Dokumenty v příloze. Prosím o podání požadavku na DI. Děkuji.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-2">
+<span class="step-badge" title="Krok 4">4</span>
+<strong>U změny sazby:</strong>
+</p>
+<p class="mb-0">
+                        EAN XXXXXXX: Zákazník žádá o změnu distribuční sazby
+                        [hodnota stávající sazby] na hodnotu [distribuční sazba].
+                        Dokumenty v příloze. Prosím o podání požadavku na DI. Děkuji.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 5">5</span>
+                        Jakmile oddělení Komunikace obdrží zprávu od distribuce EGD s termínem pracovního
+                        příkazu, vrátí zpět úkol na řešitele <strong>CCUSER</strong> k informování zákazníka
+                        a nastavení nového jističe či sazby v ZIS.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 6">6</span>
+                        Garant nastaví novou hodnotu jističe či sazby v ZIS od termínu, který je uveden v
+                        úkolu a informuje zákazníka, kdy na odběrné místo přijede technik distribuce
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 7">7</span>
+                        Poté kontakt řešitel EK úkol uzavírá.
+                    </p>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-egd-3" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">3.1.3</span> Zamítnutí požadavku na změnu na distribučním území EG.D</h2>
+<!-- KARTA: ŘEŠENÍ ZÁVAD ZE STRANY DISTRIBUCE -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 1">1</span>
+                        V případě, že distribuce EGD zjistí v RZ nebo na odběrném místě závady, informuje
+                        nás o tom oddělení Komunikace, které doplní bližší informace o závadách do úkolu.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 2">2</span>
+                        Informujeme zákazníka o závadách a požádáme ho o jejich odstranění.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 3">3</span>
+                        Než zákazník závady odstraní, přepínáme kontakt do stavu
+                        <strong>Čeká na zákazníka</strong> na zakladateli kontaktu.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 4">4</span>
+                        Jakmile nás zákazník kontaktuje s tím, že závady odstranil, opětovně předáváme
+                        kontakt na kolegy z oddělení Komunikace na řešitele „EK“ do stavu <strong>Nový</strong>,
+                        aby vyřídili s distribucí EGD nový termín pracovního příkazu a postupujeme stejně
+                        jako výše.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 5">5</span>
+                        V případě, že zákazník nereaguje na naši výzvu, aby odstranil závady, urgujeme ho
+                        pravidelně vždy po <strong>7 dnech</strong>.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 6">6</span>
+                        Zákazníka urgujeme třikrát v intervalu <strong>1× za 7 dní</strong>. První informování
+                        telefonicky i e-mailem, druhý a třetí pokus telefonicky. Urgenci zaznamenáme vždy
+                        v úkolu. Pokud ani po třetí urgenci zákazník na naše výzvy nereaguje, uzavíráme
+                        úkol do stavu <strong>vyřešeno</strong> s informací, že zákazník neposkytl nezbytnou
+                        součinnost pro dořešení požadavku.
+                    </p>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-nested-pre-jistic" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">3.2</span> Požadavek na změnu jističe či sazby na distribučním území PRE</h2>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 1">1</span>
+                        Předně je potřeba ověřit, jaké doklady budeme k danému požadavku potřebovat. Ověříme pomocí
+                        <a class="tooltip-wrapper" href="https://sites.google.com/view/znalostka/%C5%A1ablony/distribu%C4%8Dn%C3%AD-zm%C4%9Bny/tarifomat" rel="noopener noreferrer" tabindex="0" target="_blank">
+                            Tarifomatu
+                            <span class="tooltip-text">Tarifomat</span>
+</a>.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-2">
+<span class="step-badge" title="Krok 2">2</span>
+                        U většiny typů požadavků na změnu jističe/sazby od zákazníka vždy vyžadujeme doložit:
+                    </p>
+<ol class="mb-0 ps-3" type="a">
+<li class="mb-2">
+<i>Formulář epet</i> ➜ <b>Změna smlouvy</b> ➜
+                            <a class="tooltip-wrapper" href="https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link" rel="noopener noreferrer" tabindex="0" target="_blank">
+                                Žádost o změnu smlouvy pro domácnost
+                                <span class="tooltip-text">Žádost o změnu smlouvy pro domácnost</span>
+</a><br/>
+<i>Formulář epet</i> ➜ <b>Změna smlouvy</b> ➜
+                            <a class="tooltip-wrapper" href="https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link" rel="noopener noreferrer" tabindex="0" target="_blank">
+                                Žádost o změnu smlouvy pro firmu
+                                <span class="tooltip-text">Žádost o změnu smlouvy pro firmu</span>
+</a>
+</li>
+<li class="mb-2">
+<b>Revizní zprávu na formuláři</b> ➜
+                            <a class="tooltip-wrapper" href="https://www.pre.cz/cs/domacnosti/sluzby-zakaznikum/dokumenty-ke-stazeni/dokumenty-elektrina/formulare-vztahujici-se-k-prodeji-elektriny/Contents/3/podklady_pro_uzavreni_smlouvy_edit.pdf" rel="noopener noreferrer" tabindex="0" target="_blank">
+<b>Podklady pro uzavření smlouvy na hladině NN</b>
+<span class="tooltip-text">Podklady pro uzavření smlouvy na hladině NN</span>
+</a>
+</li>
+<li>
+<b>Smlouvu o připojení</b> ➜
+                            <a class="tooltip-wrapper" href="https://drive.google.com/file/d/11unN2RyEHVpvPrIy57bLQVpsy0OldIbw/view?usp=drive_link" rel="noopener noreferrer" tabindex="0" target="_blank">
+                                Žádost o smlouvu o připojení
+                                <span class="tooltip-text">Žádost o smlouvu o připojení PRE</span>
+</a>
+                            dále (ŽOP/ŽSOP)
+                        </li>
+</ol>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 3">3</span>
+                        U některých typů požadavků je dále třeba, aby k jejich realizaci disponoval zákazník smlouvu o připojení.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 4">4</span>
+<b>Konečné stavy</b> – pokud je zákazník nedoloží, budou stanoveny odhadem.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 5">5</span>
+                        Výjimku tvoří změna z jednotarifní na jinou jednotarifní sazbu.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 6">6</span>
+<b>Smlouvu o připojení</b> – si může zákazník zajistit sám nebo jej za zákazníka zajišťujeme za strany naší
+                        společnosti na základě žádosti o připojení.
+                    </p>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-pre-1" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">3.2.1</span> Zajištění smlouvy o připojení za zákazníka na distribučním území PRE</h2>
+<!-- KARTA: PRE – DORUČENÍ ORIGINÁLŮ A DALŠÍ POSTUP -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 1">1</span>
+                        Zákazník nám musí doložit <strong>Formulář epet (žádost o změnu smlouvy) a Žádost
+                            o připojení distribuce PRE.</strong>
+</p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 2">2</span>
+                        Tyto formuláře nám zákazník <em>musí doložit korespondenčně</em>, protože PRE
+                        vyžaduje originály podkladů.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-2">
+<span class="step-badge" title="Krok 3">3</span>
+                        Po obdržení dokumentů originál ŽOP zašleme doporučeně na PRE na adresu:
+                    </p>
+<p class="mb-0">
+<em>
+                            Pražská energetika, a. s.<br/>
+                            Na Hroudě 1492/4<br/>
+                            100 05 Praha 10
+                        </em>
+</p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 4">4</span>
+                        Vytvoříme úkol v ZIS, který propojíme s odběrným místem, ve kterém uvedeme:
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-2">
+<span class="step-badge" title="Krok 5">5</span>
+<strong>U změny jističe:</strong>
+<em>
+                            EAN XXXXXXX: Zákazník žádá o navýšení/snížený
+                            jističe [hodnota stávajícího jističe] na hodnotu [počet fází]x[počet ampérů].
+                            Dokumenty v příloze. Zaslány na DI z důvodu vystavení smlouvy o připojení.
+                            Čekáme na doložení vystavené SOP.
+                        </em>
+</p>
+<p class="mb-0">
+<strong>U změny sazby:</strong>
+<em>
+                            EAN XXXXXXX: Zákazník žádá o změnu distribuční
+                            sazby [hodnota stávající sazby] na hodnotu [distribuční sazba].
+                            Dokumenty v příloze. Zaslány na DI z důvodu vystavení smlouvy o připojení.
+                            Čekáme na doložení vystavené SOP.
+                        </em>
+</p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 6">6</span>
+                        Garant si ponechá kontakt ve stavu <strong>Čeká na zákazníka</strong> do doby, než
+                        zákazník doloží veškeré dokumenty.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 7">7</span>
+                        Zákazníka poté <strong>informujeme</strong>, že mu distributor PRE do
+                        <strong>30 dní</strong> pošle smlouvu o připojení (dále jen SOP) k podpisu na
+                        korespondenční adresu.
+                    </p>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-pre-2" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">3.2.2</span> Změna charakteru odběru s kompletními doklady na distribučním území PRE</h2>
+<!-- KARTA: PRE – DORUČENÍ SOP A REVIZNÍ ZPRÁVY -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 1">1</span>
+                        Zákazník obdrží dva výtisky SOP. Jeden podepsaný originál je nutné zaslat zpět
+                        společnosti PRE. Dále naplnit podmínky stanovené smlouvou o připojení a zajistit si
+                        revizní zprávu.
+                    </p>
+</div>
+<div class="training-alert alert-warning" role="alert">
+<svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m12 3 10 18H2zM12 9v5m0 3v.5"></path></svg>
+<div>
+<strong>POZOR!</strong><br/>
+                        Distribuce uznává <b>revizní zprávy</b> vydané pouze od
+                        <a class="tooltip-wrapper" href="https://www.pre.cz/cs/domacnosti/sluzby/elektroinstalacni-prace/" rel="noopener noreferrer" tabindex="0" target="_blank">
+                            revizního technika
+                            <span class="tooltip-text">Objednání revizního technika</span>
+</a>
+                        PRE (popř. si zákazník může vybrat ze
+                        <a class="tooltip-wrapper" href="https://www.predistribuce.cz/cs/kontakt/elektroinstalacni-firmy/" rel="noopener noreferrer" tabindex="0" target="_blank">
+                            seznamu firem
+                            <span class="tooltip-text">Seznam firem</span>
+</a>,
+                        které jsou PRE schváleny), který mu zajistí revizní zprávu na formuláři
+                        <a class="tooltip-wrapper" href="https://www.pre.cz/cs/domacnosti/sluzby-zakaznikum/dokumenty-ke-stazeni/dokumenty-elektrina/formulare-vztahujici-se-k-prodeji-elektriny/Contents/3/podklady_pro_uzavreni_smlouvy_edit.pdf" rel="noopener noreferrer" tabindex="0" target="_blank">
+<b>Podklady pro uzavření smlouvy na hladině NN</b>
+<span class="tooltip-text">Podklady pro uzavření smlouvy na hladině NN</span>
+</a>.
+                        Ta je platná 3 měsíce.
+                    </div>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 2">2</span>
+                        Originál smlouvy o připojení a originál revizní zprávy si může zákazník zaslat na
+                        distribuci sám (v tom případě si od něj vyžádáme kopie emailem) nebo můžeme takto
+                        učinit za něj.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 3">3</span>
+                        Pokud zasíláme podklady z naší strany, musí nám zákazník doručit korespondenčně
+                        originály.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-2">
+<span class="step-badge" title="Krok 4">4</span>
+                        Originál SOP a originál RZ zašleme doporučeně na PRE na adresu:
+                    </p>
+<p class="mb-0">
+<em>
+                            Pražská energetika, a. s.<br/>
+                            Na Hroudě 1492/4,<br/>
+                            100 05 Praha 10
+                        </em>
+</p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-2">
+<span class="step-badge" title="Krok 5">5</span>
+                        Sken SOP a RZ vložíme do úkolu s poznámkou:
+                    </p>
+<p class="mb-0">
+<strong>Text:</strong>
+<em>
+                            ZK doložil originál smlouvy o připojení a RZ, které jsme zaslali PRE, prosíme o
+                            předání na požadavku na PRE / ZK doložil kopie smlouvy o připojení a RZ originál si
+                            zaslal sám, prosíme o předání požadavku na PRE.
+                        </em>
+</p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 6">6</span>
+                        Úkol předáme na kolegy z oddělení Komunikace na jejich řešitele „EK“ ve stavu
+                        <strong>Nový</strong>.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 7">7</span>
+                        Jakmile oddělení Komunikace obdrží zprávu od distribuce PRE s termínem pracovního
+                        příkazu, vrátí zpět kontakt na řešitel CCUSER k informování zákazníka a nastavení
+                        nového jističe v ZIS.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 8">8</span>
+                        Garant nastaví novou hodnotu jističe/sazby v ZIS od termínu, který je uveden v úkolu
+                        [viz postup výše] a informuje zákazníka, kdy na odběrné místo přijede technik
+                        distribuce.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 9">9</span>
+                        Poté řešitel EK úkol uzavírá.
+                    </p>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-pre-3" role="tabpanel" tabindex="0">
+<h2 class="section-title section-plain">3.2.3 Zamítnutí požadavku na změnu na distribučním území
+                    PRE
+                </h2>
+<!-- KARTA: PRE – ZÁVADY ZJIŠTĚNÉ DISTRIBUCÍ -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 1">1</span>
+                        V případě, že distribuce PRE zjistí v RZ nebo na odběrném místě závady, informuje
+                        nás o tom oddělení Komunikace,
+                        které doplní bližší informace o závadách do úkolu.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 2">2</span>
+                        Informujeme zákazníka o závadách a požádáme ho o jejich odstranění.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 3">3</span>
+                        Než zákazník závady odstraní, přepínáme kontakt do stavu
+                        <strong>Čeká na zákazníka</strong> na zakladateli kontaktu.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 4">4</span>
+                        Jakmile nás zákazník kontaktuje s tím, že závady odstranil, opětovně předáváme
+                        kontakt na kolegy z oddělení
+                        Komunikace na řešitele „EK“ do stavu <strong>Nový</strong>, aby vyřídili s distribucí
+                        PRE nový termín pracovního příkazu a
+                        postupujeme stejně jako výše.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 5">5</span>
+                        V případě, že zákazník nereaguje na naši výzvu, aby odstranil závady, urgujeme ho
+                        pravidelně vždy po 7 dnech.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 6">6</span>
+                        Zákazníka urgujeme třikrát v intervalu 1× za 7 dní. První informování telefonicky
+                        i e-mailem, druhý a třetí pokus
+                        telefonicky. Urgenci zaznamenáme vždy v úkolu. Pokud ani po třetí urgenci zákazník
+                        na naše výzvy nereaguje,
+                        uzavíráme úkol do stavu <strong>vyřešeno</strong> s informací, že zákazník neposkytl
+                        nezbytnou součinnost pro dořešení požadavku.
+                    </p>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-nested-cez-jistic" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">3.3</span> Požadavek na změnu jističe či sazby na distribučním území ČEZ</h2>
+<!-- KARTA: DOKLADY KE ZMĚNĚ JISTIČE / SAZBY -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 1">1</span>
+                        Předně je potřeba ověřit, jaké doklady budeme k danému požadavku potřebovat. Ověříme pomocí
+                        <a class="tooltip-wrapper" href="https://sites.google.com/view/znalostka/%C5%A1ablony/distribu%C4%8Dn%C3%AD-zm%C4%9Bny/tarifomat" rel="noopener noreferrer" tabindex="0" target="_blank">
+                            Tarifomatu
+                            <span class="tooltip-text">Tarifomat</span>
+</a>.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-2">
+<span class="step-badge" title="Krok 2">2</span>
+                        U většiny typů požadavků na změnu jističe/sazby od zákazníka vždy vyžadujeme doložit:
+                    </p>
+<ol class="mb-0 ps-4" type="a">
+<li class="mb-2">
+<i>Formulář epet</i> ➜ <b>Změna smlouvy</b> ➜
+                            <a class="tooltip-wrapper" href="https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link" rel="noopener noreferrer" tabindex="0" target="_blank">
+                                Žádost o změnu smlouvy pro domácnost
+                                <span class="tooltip-text">Žádost o změnu smlouvy pro domácnost</span>
+</a><br/>
+<i>Formulář epet</i> ➜ <b>Změna smlouvy</b> ➜
+                            <a class="tooltip-wrapper" href="https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link" rel="noopener noreferrer" tabindex="0" target="_blank">
+                                Žádost o změnu smlouvy pro firmu
+                                <span class="tooltip-text">Žádost o změnu smlouvy pro firmu</span>
+</a>
+</li>
+<li class="mb-2"><b>Revizní zprávu</b></li>
+<li>
+<b>Smlouvu o připojení</b> ➜
+                            <a class="tooltip-wrapper" href="https://drive.google.com/file/d/11paUllX9BSoO14nOeZMg77MbkxGmcJTg/view?usp=drive_link" rel="noopener noreferrer" tabindex="0" target="_blank">
+                                Žádost o smlouvu o připojení
+                                <span class="tooltip-text">Žádost o smlouvu o připojení ČEZ</span>
+</a>
+                            dále (ŽOP/ŽSOP)
+                        </li>
+</ol>
+</div>
+<div class="training-alert alert-warning" role="alert">
+<svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m12 3 10 18H2zM12 9v5m0 3v.5"></path></svg>
+<div>
+<strong>POZOR!</strong><br/>
+                        V případě změny jističe u nepřímého měření (B měření) musí zákazník navíc doložit protokoly
+                        <b>MTP</b> – měřicí transformátory proudu.
+                    </div>
+</div>
+<div class="training-alert alert-warning" role="alert">
+<svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m12 3 10 18H2zM12 9v5m0 3v.5"></path></svg>
+<div>
+<strong>POZOR!</strong><br/>
+                        V případě požadavku na změnu sazby <b>D57d</b> nebo <b>C56d</b>, kde bude zákazník využívat
+                        tepelné čerpadlo, distribuce ČEZ vyžaduje také doložit
+                        <b>výpočet tepelných ztrát</b> (zákazníkovi vystaví stejný technik, který mu vystavil RZ)
+                        a <b>Protokol o instalaci tepelného čerpadla</b>.
+                    </div>
+</div>
+<div class="card content-card">
+<blockquote class="mb-0 gs-quote">
+                        Pozor na změnu sazby na <b>C46d</b> nebo <b>C56d</b> – postup v samostatném bloku níže
+                    </blockquote>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 3">3</span>
+                        Pokud je potřeba pro realizaci požadavku doložení smlouvy o připojení a zákazník vyžaduje
+                        její zajištění ze strany naší společnosti, postupujeme dle návodu níže
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 4">4</span>
+                        V případě, že si zákazník smlouvu o připojení již zajistil nebo není k realizaci daného
+                        požadavku potřeba, pokračujeme bodem
+                        <b>Změna charakteru odběru s kompletními doklady</b>.
+                    </p>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-cez-1" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">3.3.1</span> Zajištění smlouvy o připojení za zákazníka na distribučním území ČEZ</h2>
+<!-- KARTA: ZAJIŠTĚNÍ SOP PŘI ZMĚNĚ JISTIČE / SAZBY -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 1">1</span>
+                        V případě, že zákazník nedisponuje <b>smlouvou o připojení</b>, která by
+                        zohledňovala změnu jističe/sazby, zajistíme za něj smlouvy o připojení z naší strany.
+                    </p>
+</div>
+<div class="card content-card">
+<p><strong>Zákazník z kategorie DOM</strong> nám musí doložit následující doklady:</p>
+<ol class="ps-4 mb-0" type="a">
+<li>
+                            Formulář epet ➜
+                            <a class="tooltip-wrapper" href="https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link" rel="noopener noreferrer" tabindex="0" target="_blank">
+                                Změna smlouvy pro Domácnost
+                                <span class="tooltip-text">Žádost o změnu smlouvy pro Domácnost</span>
+</a>
+                            ➕
+                            <a class="tooltip-wrapper" href="https://drive.google.com/file/d/11paUllX9BSoO14nOeZMg77MbkxGmcJTg/view?usp=drive_link" rel="noopener noreferrer" tabindex="0" target="_blank">
+                                Žádost o připojení ČEZ
+                                <span class="tooltip-text">Žádost o připojení ČEZ</span>
+</a>
+                            (dále jen ŽOP)
+                        </li>
+</ol>
+</div>
+<div class="card content-card">
+<p><strong>Zákazník z kategorie MO</strong> musí doložit následující doklady:</p>
+<ol class="ps-4 mb-0" type="a">
+<li>
+                            Formulář epet ➜
+                            <a class="tooltip-wrapper" href="https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link" rel="noopener noreferrer" tabindex="0" target="_blank">
+                                Změna smlouvy – Firmy
+                                <span class="tooltip-text">Žádost o změnu smlouvy pro Firmu</span>
+</a>
+                            ➕
+                            <a class="tooltip-wrapper" href="https://drive.google.com/file/d/11paUllX9BSoO14nOeZMg77MbkxGmcJTg/view?usp=drive_link" rel="noopener noreferrer" tabindex="0" target="_blank">
+                                Žádost o připojení ČEZ
+                                <span class="tooltip-text">Žádost o připojení ČEZ</span>
+</a>
+                            (dále jen ŽOP)
+                        </li>
+</ol>
+</div>
+<div class="card content-card step-card">
+<p class="mb-2">
+<span class="step-badge" title="Krok 2">2</span>
+                        Po obdržení dokumentů vytvoříme úkol v ZIS, který propojíme s odběrným místem a ve
+                        kterém uvedeme:
+                    </p>
+<p>
+<strong>U změny jističe:</strong>
+<em>EAN XXXXXXX: Zákazník žádá o navýšení/snížení jističe [hodnota stávajícího
+                            jističe] na hodnotu [počet fází]x[počet ampérů]. Dokumenty v příloze. Podána žádost
+                            o vystavení smlouvy o připojení na distribuci ČEZ.</em>
+</p>
+<p class="mb-0">
+<strong>U změny sazby:</strong>
+<em>EAN XXXXXXX: Zákazník žádá o změnu distribuční sazby z [hodnota stávající sazby]
+                            na hodnotu [distribuční sazba]. Dokumenty v příloze. Podána žádost o vystavení
+                            smlouvy o připojení na distribuci ČEZ.</em>
+</p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-2">
+<span class="step-badge" title="Krok 3">3</span>
+                        Poté je nutné zajistit vystavení <strong>smlouvy o připojení</strong> na
+                        <a href="https://dip.cezdistribuce.cz/irj/portal/anonymous/zadost-o-pripojeni/zadost-rozcesntik/#vyber-typu" rel="noopener noreferrer" target="_blank">Distribučním portále ČEZ</a>.
+                    </p>
+<ul class="mb-0 ps-4">
+<li>Zvolíme Změna stávajícího připojení</li>
+</ul>
+<img alt="Změna stávajícího připojení" class="zis-shot" decoding="async" loading="lazy" src="https://i.postimg.cc/J0PNt6KK/adost.png"/>
+<ul class="mb-0 ps-4">
+<li>
+                            Vybereme <b>Žádost o připojení k distr. soust. z napěťové hladiny NN ➜ Změna
+                                sazby/charakteru odběru, jističe, umístění měření</b>
+</li>
+<li>Dále postupujeme s ohledem na výši jističe.</li>
+</ul>
+<img alt="Výběr dle jističe" class="zis-shot" decoding="async" loading="lazy" src="https://i.postimg.cc/W3sqrmdy/jisti.png"/>
+<ul class="mb-0 ps-4">
+<li>
+                            Tedy buďto klikneme na pole <b>Požadovaná hodnota hlavního jističe do 80 A včetně</b>
+                            nebo na pole <b>Požadovaná hodnota hlavního jističe nad 80 A</b>
+</li>
+<li>Klikneme na tlačítko <b>Přejít do formuláře</b></li>
+<li>Objeví se tabulka, do které vložíme číslo <b>EAN kódu</b> a dáme <b>Vyhledat</b>.</li>
+</ul>
+<img alt="EAN formulář" class="zis-shot" decoding="async" loading="lazy" src="https://i.postimg.cc/htqDfDzy/ean.png"/>
+<ul class="mb-0 ps-4">
+<li>Otevře se nám elektronický formulář, kde systém ČEZ automaticky vyplní údaje
+                            zákazníka a adresu odběrného místa.
+                        </li>
+<li>Dle doložené <b>žádosti o připojení</b> vyplníme zbývající povinná pole (označená
+                            hvězdičkou).</li>
+<li>V sekci Osoba podepisující smlouvu musíme zvolit a vyplnit, kdo bude smlouvu
+                            podepisovat. Je nutné rozlišit zda: Žadatel je fyzická osoba (podepisuje přímo
+                            zákazník), Žadatel je právnická osoba (podepisuje přímo zákazník za firmu – např.
+                            jednatel), Zástupce žadatele je fyzická osoba (fyzická osoba na základě plné moci),
+                            Zástupce žadatele je právnická osoba (epet – nutné doložit plnou moc).</li>
+<img alt="Výběr osoby podepisující smlouvu" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/fRBRp4y8/osoba.png" title="Výběr osoby podepisující smlouvu"/>
+<li>Nezapomeneme uvést <b>korespondenční adresu zákazníka</b>, na kterou distributor
+                            zašle návrh smlouvy o připojení v případě, že ji bude vystavovat klasickou cestou
+                            (viz
+                            níže)</li>
+<li>V sekci <b>Technická specifikace odběrného místa</b> vyplníme dle obdržené žádosti
+                            od
+                            zákazníka požadovanou výši jističe (popř. stávající jistič, pokud měníme sazbu);
+                            vypínací charakteristiku; umístění elektroměru; účel odběru a požadované datum
+                            připojení.</li>
+<img alt="Výběr technické specifikace odběrného místa" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/Wz2yQyh7/technicka.png" title="Výběr technické specifikace odběrného místa"/>
+<li>V sekci <b>Připojované elektrické spotřebiče</b> vyplníme dle doložené Žádosti
+                            jednotlivé příkony.</li>
+<img alt="Vyplnění příkonů jednotlivých spotřebičů" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/kG4cNP2L/p-ikony.png" title="Vyplnění příkonů jednotlivých spotřebičů"/>
+<li>Do příloh nahrajeme <b> žádost o smlouvu o připojení</b> a popřípadě <b>plnou
+                                moc.</b></li>
+<li>V dolní sekci pak už jen zaškrtneme čestné prohlášení o správnosti uvedených údajů
+                            a odešleme žádost.</li>
+<li>Zobrazí se nám potvrzení přijetí požadavku a vygeneruje číslo žádosti.</li>
+<li>Úkol v ZIS si řešitel ponechá na svém loginu ve stavu Čeká na zákazníka a doplní
+                            vygenerované číslo požadavku z portálu ČEZ</li>
+<li>To pro nás znamená, že můžeme zákazníka informovat, že do 30 dní obdrží SOP ve
+                            dvojím vyhotovení k podpisu.</li>
+<li>Jeden podepsaný originál SOP musí zákazník zaslat na ČEZ a splnit podmínky uvedené
+                            v SOP a naší společnosti doručí kopii podepsané SOP a kopii revizní zprávy (dále jen
+                            RZ).</li>
+</ul>
+
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 4">4</span>
+                        Úkol v ZIS si řešitel ponechá na svém loginu ve stavu Čeká na zákazníka a doplní
+                        vygenerované číslo požadavku z portálu ČEZ. To pro nás znamená, že můžeme zákazníka
+                        informovat, že do 30 dní obdrží SOP ve dvojím vyhotovení k podpisu.
+                    </p>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-cez-2" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">3.3.2</span> Změna charakteru odběru s kompletními doklady na distribučním území ČEZ</h2>
+<!-- KARTA: Předání dokladů a realizace změny – ČEZ -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 1">1</span>
+                        Jakmile nám zákazník zašle potřebné doklady k realizaci konkrétního požadavku
+                        (a v případě SOP potvrdí, že naplnil podmínky), vložíme
+                        <strong>je do úkolu.</strong>
+</p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 2">2</span>
+                        Po přiložení dokumentů kontakt předáme na kolegy z oddělení Komunikace na jejich
+                        řešitele „EK“ ve statutu <strong>Nový</strong> s žádostí o předání dokladů na
+                        distribuci.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-2">
+<span class="step-badge" title="Krok 3">3</span>
+<strong>U změny jističe:</strong>
+</p>
+<p class="mb-0">
+<em>
+                            EAN XXXXXXX: Zákazník žádá o navýšení/snížení jističe z [hodnota stávajícího
+                            jističe] na hodnotu [počet fází]x[počet ampérů]. Dokumenty v příloze.
+                            Prosím o podání požadavku na DI. Děkuji.
+                        </em>
+</p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-2">
+<span class="step-badge" title="Krok 4">4</span>
+<strong>U změny sazby:</strong>
+</p>
+<p class="mb-0">
+<em>
+                            EAN XXXXXXX: Zákazník žádá o změnu distribuční sazby [hodnota stávající sazby]
+                            na hodnotu [distribuční sazba]. Dokumenty v příloze.
+                            Prosím o podání požadavku na DI. Děkuji.
+                        </em>
+</p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 5">5</span>
+                        Jakmile oddělení Komunikace obdrží zprávu od distribuce ČEZ s termínem pracovního
+                        příkazu, vrátí zpět kontakt na řešitele CCUSER k informování zákazníka a
+                        nastavení nového jističe či sazby v ZIS.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 6">6</span>
+                        Garant nastaví novou hodnotu jističe či sazby v ZIS od termínu, který je uveden
+                        v kontaktu [viz postup výše] a informuje zákazníka, kdy na odběrné místo přijede
+                        technik distribuce.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 7">7</span>
+                        Poté úkol vracíme zpět na řešitele EK, kdy pohlídají, zda změna byla provedena.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 8">8</span>
+                        V případě, že je vše v pořádku, tak úkol uzavře.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 9">9</span>
+                        V případě zamítnutí postupujeme stejně jako u distribuce EG.D.
+                    </p>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-cez-3" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">3.3.3</span> Zamítnutí požadavku na změnu na distribučním území ČEZ</h2>
+<!-- KARTA: Závady zjištěné distribucí ČEZ -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 1">1</span>
+                        V případě, že distribuce ČEZ zjistí v RZ nebo na odběrném místě závady, informuje
+                        nás o tom oddělení Komunikace,
+                        které doplní bližší informace o závadách do úkolu.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 2">2</span>
+                        Informujeme zákazníka o závadách a požádáme ho o jejich odstranění.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 3">3</span>
+                        Než zákazník závady odstraní, přepínáme kontakt do stavu
+                        <strong>Čeká na zákazníka</strong> na zakladateli kontaktu.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 4">4</span>
+                        Jakmile nás zákazník kontaktuje s tím, že závady odstranil, opětovně předáváme
+                        kontakt na kolegy z oddělení
+                        Komunikace na řešitele „EK“ do stavu <strong>Nový</strong>, aby vyřídili s distribucí
+                        PRE nový termín pracovního příkazu a
+                        postupujeme stejně jako výše.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 5">5</span>
+                        V případě, že zákazník nereaguje na naši výzvu, aby odstranil závady, urgujeme ho
+                        pravidelně vždy po 7 dnech.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 6">6</span>
+                        Zákazníka urgujeme třikrát v intervalu 1× za 7 dní. První informování telefonicky
+                        i e-mailem, druhý a třetí pokus
+                        telefonicky. Urgenci zaznamenáme vždy v úkolu. Pokud ani po třetí urgenci zákazník
+                        na naše výzvy nereaguje,
+                        uzavíráme úkol do stavu <strong>vyřešeno</strong> s informací, že zákazník neposkytl
+                        nezbytnou součinnost pro dořešení
+                        požadavku.
+                    </p>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-sazba-c" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">4.</span> Změna sazby na C46d či C56d</h2>
+<!-- KARTA: Změna sazby na C46d či C56d -->
+<div class="card content-card">
+<ul class="mb-0">
+<li>
+                            U sazeb C46d a C56d je výjimka v postupu, protože změnou sazby na C46d nebo na C56d
+                            vzniká zákazníkovi další <b>nové odběrné místo.</b>
+</li>
+<li>
+                            A to z důvodu, že hybridní a přímotopné elektrické spotřebiče včetně akumulačního
+                            spotřebiče pro ohřev užitkové vody nebo tepelné čerpadlo musí být napájeny samostatným
+                            přívodem a měřeny samostatným měřicím zařízením.
+                        </li>
+</ul>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-nested-egd-c" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">4.1</span> Postup u distribuce EGD</h2>
+<!-- KARTA: DOKLADY KE ZMĚNĚ JISTIČE / SAZBY -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 1">1</span>
+                        Zákazník potřebuje k realizaci požadavku dvě smlouvy o připojení. Jednu pro odběrné
+                        místo, kde dochází ke změně sazby, a druhou pro nové odběrné místo, které bude fungovat
+                        jako tzv. ostatní spotřeba.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-2">
+<span class="step-badge" title="Krok 2">2</span>
+<b>Zákazník z kategorie DOM nám musí doložit následující doklady:</b>
+</p>
+<ol class="mb-0" type="a">
+<li class="mb-2">
+                            Formulář epet ➜ Změna smlouvy ➜
+                            <a class="tooltip-wrapper" href="https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link" rel="noopener noreferrer" tabindex="0" target="_blank">
+                                Domácnost
+                                <span class="tooltip-text">Žádost o změnu smlouvy pro Domácnost</span>
+</a>
+</li>
+<li class="mb-2">
+                            Žádost o připojení (dále jen ŽOP) EGD ➜
+                            <a class="tooltip-wrapper" href="https://drive.google.com/file/d/11lbuZv6IW4UO4Jmejzy__ZxKf9v1Ispz/view?usp=drive_link" rel="noopener noreferrer" tabindex="0" target="_blank">
+                                Žádost o připojení EGD
+                                <span class="tooltip-text">Žádost o smlouvu o připojení EG.D</span>
+</a>
+                            (pro stávající OM)
+                        </li>
+<li class="mb-2">
+                            Žádost o trvalé připojení odběrného místa ➜
+                            <a class="tooltip-wrapper" href="https://www.egd.cz/sites/default/files/2024-12/0125_d02.pdf" rel="noopener noreferrer" tabindex="0" target="_blank">
+                                Smlouva o připojení
+                                <span class="tooltip-text">Žádost o trvalé připojení z hladiny nízkého napětí EG.D</span>
+</a>
+                            (pro nové OM)
+                        </li>
+<li>Revizní zpráva – RZ si ZK zajišťuje poté, co mu byla vystavena SOP</li>
+</ol>
+</div>
+<div class="card content-card step-card">
+<p class="mb-2">
+<span class="step-badge" title="Krok 3">3</span>
+<b>Zákazník z kategorie MO musí doložit následující doklady:</b>
+</p>
+<ol class="mb-0" type="a">
+<li class="mb-2">
+                            Formulář epet ➜ Změna smlouvy ➜
+                            <a class="tooltip-wrapper" href="https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link" rel="noopener noreferrer" tabindex="0" target="_blank">
+                                Změna smlouvy – Firmy
+                                <span class="tooltip-text">Žádost o změnu smlouvy pro Firmu</span>
+</a>
+</li>
+<li class="mb-2">
+                            Žádost o připojení (dále jen ŽOP) EGD ➜
+                            <a class="tooltip-wrapper" href="https://drive.google.com/file/d/11lbuZv6IW4UO4Jmejzy__ZxKf9v1Ispz/view?usp=drive_link" rel="noopener noreferrer" tabindex="0" target="_blank">
+                                ŽOP EGD – Firmy
+                                <span class="tooltip-text">Žádost o smlouvu o připojení EG.D</span>
+</a>
+                            (dále jen ŽOP, formulář je stejný jako pro domácnosti)
+                        </li>
+<li class="mb-2">
+                            Žádost o trvalé připojení odběrného místa ➜
+                            <a class="tooltip-wrapper" href="https://www.egd.cz/sites/default/files/2024-12/0125_d02.pdf" rel="noopener noreferrer" tabindex="0" target="_blank">
+                                Smlouva o připojení
+                                <span class="tooltip-text">Žádost o trvalé připojení z hladiny nízkého napětí EG.D</span>
+</a>
+                            (pro nové OM formulář je stejný jako pro domácnosti)
+                        </li>
+<li>Revizní zpráva – RZ si ZK zajišťuje poté, co mu byla vystavena SOP</li>
+</ol>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 4">4</span>
+                        Smlouvu o připojení si může zákazník zajistit sám nebo jej za zákazníka zajišťujeme
+                        ze strany naší společnosti na základě žádosti o připojení.
+                    </p>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-egd-c1" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">4.1.1</span> Zajištění smlouvy o připojení za zákazníka na distribučním území EG.D</h2>
+<!-- KROK 1 -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 1">1</span>
+                        V případě, že zákazník nedisponuje smlouvou o připojení, zajistíme za něj
+                        smlouvy o připojení z naší strany. Zde <b>zde musíme myslet na to, že žádáme o dvě SOP</b>
+</p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-2">
+<span class="step-badge" title="Krok 2">2</span>
+                        Po obdržení žádosti o změnu jističe založíme v ZIS úkol, který propojíme s
+                        odběrným místem a do úkolu uvedeme textaci:
+                    </p>
+<p class="mb-0">
+<b>Text: EAN XXXXXXX: Zákazník žádá o navýšení/snížení jističe [hodnota stávajícího jističe]
+                            na hodnotu [počet fází] x [počet ampérů]. Dokumenty v příloze. Žop podána přes stránky
+                            distributora. Zákazník informován, že do 30 dnů mu přijde vyjádření – Smlouva o připojení.
+                            Čekáme na potvrzení o podepsání SOP.</b>
+</p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 3">3</span>
+                        Úkol necháme na svém loginu.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 4">4</span>
+                        Po zadání žádosti na stránkách <b>DI.</b> viz. <i>postup níže</i> informujeme
+                        zákazníka, že mu distributor EG.D do 30 dní pošle <b>dvě smlouvy o připojení</b>
+                        (dále jen SOP) k podpisu na korespondenční adresu.Informaci o podání zapíšeme do úkolu
+                        a necháme si ho na svém loginu. Ve stavu <b>Čeká na zákazníka.</b>
+</p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 5">5</span>
+                        Zákazník obdrží dva výtisky SOP. Jeden podepsaný originál musí zaslat na EGD a
+                        splnit podmínky uvedené v SOP.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 6">6</span>
+                        Naší společnosti doručí kopii <b>podepsaných SOP</b> a kopii <b>revizní zprávy</b>.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 7">7</span>
+                        Podklady nahrajeme k úkolu a předáme na řešitele <b>EK</b> se statusem <b>Nový</b>
+                        a informací, že máme potřebné podklady a ať požádají distributora o změnu.
+                        Řešitel EK následně bude informovat o termínu návštěvy technika, který sdělíme
+                        zákazníkovi. Po informování vracíme úkol zpět na řešitele <b>EK</b> do Nový,
+                        aby pohlídali změnu.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 8">8</span>
+                        Pokud vše proběhne a distributor změní jistič, nastavíme jistič dle informací
+                        v úkolu, který obdržíme od řešitele <b>EK</b>.
+                    </p>
+</div>
+<h5 class="mb-3 mt-4">Založení žádosti o Smlouvu o připojení na stránkách distributora:</h5>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 9">9</span>
+                        Po přiložení dokumentů <b>(ŽOP/ŽSOP)</b> si otevřeme stránky distributora
+                        <a class="tooltip-wrapper" href="https://www.egd.cz/zadost/zmena-hodnoty-jistice-nizke-napeti" rel="noopener noreferrer" tabindex="0" target="_blank">
+                            zde
+                            <span class="tooltip-text">Online podání o SOP</span>
+</a>. viz. <i>postup níže</i>
+</p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 10">10</span>
+                        Zvolíme <b>Podat žádost online</b>
+<img alt="Podání žádosti o změnu jističe na stránkách EG.D" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/Xv5p0rTQ/podani.png" title="Podání žádosti o změnu jističe na stránkách EG.D"/>
+</p>
+</div>
+<div class="card content-card step-card">
+<p>
+<span class="step-badge" title="Krok 11">11</span>
+                        Vyplníme <b>EAN, Obec</b> (místo kde se odběrné místo nachází), <b>E-mail zákazníka</b>
+                        a dáme načíst.
+                        <img alt="Udaje zákazníka pro podání žádosti o změnu jističe na stránkách EG.D" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/j2MFddGF/zahajen.png" title="Udaje zákazníka pro podání žádosti o změnu jističe na stránkách EG.D"/>
+</p>
+<p>
+<span class="step-badge" title="Krok 12">12</span>
+                        Zkontrolujeme Zákaznické údaje, zda je korespondenční adresa stejná. V případě, že
+                        žadatel požaduje změnit korespondenční adresu, stačí odkliknout pole Shodná s trvalou
+                        adresou – je zde možnost vyplnit novou adresu pro zaslání smlouvy
+                        <img alt="kontrola údajů zákazníka" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/52dR4GG1/zk.png" title="kontrola údajů zákazníka"/>
+</p>
+<p>
+<span class="step-badge" title="Krok 13">13</span>
+                        Dále zvolíme možnost, zda navyšujeme nebo naopak snižujeme jistič, s tím, že vyplníme
+                        i novou hodnotu jističe.
+                         <img alt="Nastavení HJ" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/zB69nfdH/OM.png" title="Nastavení HJ"/>
+</p>
+<p>
+<span class="step-badge" title="Krok 14">14</span>
+                        Dále je nutné vyplnit aspoň jednu hodnotu Charakteru odběru. Stačí vyplnit hodnotu
+                        Ostatní spotřebiče pod 5 kWh.
+                         <img alt="Charakter odběru" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/kGMfRPCR/charakter.png" title="Charakter odběru"/>
+</p>
+<p>
+<span class="step-badge" title="Krok 15">15</span>
+                        Dále jako přílohu přiložíme naskenovanou Žádost o připojení a dáme <b>Pokračovat</b>.
+                        <img alt="Příloha" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/1tD3nbBS/prloha.png" title="Příloha"/>
+</p>
+<p>
+<span class="step-badge" title="Krok 16">16</span>
+                        Zobrazí se nám souhrn údajů a dáme již pouze odeslat. Na další obrazovce se zobrazí
+                        potvrzení o odeslání. Nyní zákazníka kontaktuje distributor s návrhem smlouvy
+                        o připojení (zašle ji do 30 dnů)
+                         <img alt="potvrzeni" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/HxfcyQbG/potvrzeni.png" title="potvrzeni"/>
+</p>
+<p>
+<span class="step-badge" title="Krok 17">17</span>
+                        Jakmile zákazník obdrží Smlouvu o připojení, musí ji podepsat a zaslat zpět na
+                        distributora. Kopii podepsané Smlouvy o připojení zasílá na nás. Dále musí zákazník
+                        splnit podmínky uvedené ve Smlouvě o připojení.
+                    </p>
+<p>
+<span class="step-badge" title="Krok 18">18</span>
+                        Jakmile zákazník doloží Smlouvu o připojení, Revizní zprávu a epet žádost,
+                        dokumenty přiložíme k úkolu a předáváme na řešitele <b>EK</b> se statusem <b>Nový.</b>
+</p>
+<p class="mb-0">
+<b>Text:</b>
+                        EAN XXXXXXX: Zákazník žádá o navýšení/snížení jističe [hodnota stávajícího jističe]
+                        na hodnotu [počet fází] x [počet ampérů]. Dokumenty v příloze. Žop podána přes stránky
+                        distributora. Zákazník informován, že do 30 dnů mu přijde vyjádření – Smlouva o připojení.
+                        Čekáme na potvrzení o podepsání SOP.
+                    </p>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-egd-c2" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">4.1.2</span> Změna sazby s doloženými kompletními doklady na distribučním území EG.D</h2>
+<!-- KROK 1 -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 1">1</span>
+                        Jakmile nám zákazník zašle kopii obou smluv o připojení a kopii revizní
+                        zprávy, vložíme <strong>je do kontaktu</strong>.
+                    </p>
+</div>
+<!-- KROK 2 -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 2">2</span>
+                        Kontakt nyní předáme na řešitele <strong>BO_CC</strong> do stavu Nový s
+                        požadavkem na založení nového odběrného
+                        místa v SAP s typem změny dodavatele R1.
+                    </p>
+</div>
+<!-- KROK 3 -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 3">3</span>
+                        BO předá kontakt na kolegy z oddělení Komunikace na jejich řešitele „EK“ s
+                        žádostí o předání dokladů na
+                        distribuci.
+                    </p>
+</div>
+<!-- KROK 4 -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 4">4</span>
+<strong>Text:</strong>
+<em>
+                            EAN XXXXXXX: Zákazník žádá o změnu distribuční
+                            sazby z [hodnota stávající sazby] na
+                            hodnotu [distribuční sazba]. Dále pro EAN XXXXXXX prosíme o vygenerování
+                            termínu montáže. Dokumenty v příloze.
+                            Prosím o podání na DI. Děkuji.
+                        </em>
+</p>
+</div>
+<!-- KROK 5 -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 5">5</span>
+                        Jakmile oddělení Komunikace obdrží zprávu od distribuce EG.D s termínem
+                        pracovního příkazu, vrátí zpět kontakt na
+                        řešitele <strong>CCUSER</strong> k informování zákazníka a nastavení nového
+                        jističe či sazby v ZIS.
+                    </p>
+</div>
+<!-- KROK 6 -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 6">6</span>
+                        Řešitel nastaví novou hodnotu jističe či sazby v ZIS od termínu, který je
+                        uveden v úkolu [viz postup výše] a
+                        informuje zákazníka, kdy na odběrné místo přijede technik distribuce.
+                    </p>
+</div>
+<!-- KROK 7 -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 7">7</span>
+                        po informování ZK o termínu se vrací na řešitele EK, kteří pohlídají termín a
+                        upraví v ZIS
+                    </p>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-nested-pre-c" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">4.2</span> Postup u distribuce PRE</h2>
+<!-- KARTA: DOKLADY KE ZMĚNĚ JISTIČE / SAZBY -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 1">1</span>
+                        Zákazník potřebuje k realizaci požadavku dvě smlouvy o připojení. Jednu pro
+                        odběrné místo, kde dochází ke změně sazby, a druhou pro nové odběrné místo,
+                        které bude fungovat jako tzv. ostatní spotřeba.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-2">
+<span class="step-badge" title="Krok 2">2</span>
+<b>Zákazník z kategorie DOM nám musí doložit následující doklady:</b>
+</p>
+<ol class="mb-0" type="a">
+<li class="mb-2">
+                            Formulář epet ➜ Změna smlouvy ➜
+                            <a class="tooltip-wrapper" href="https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link" rel="noopener noreferrer" tabindex="0" target="_blank">
+                                Domácnost
+                                <span class="tooltip-text">Žádost o změnu smlouvy pro Domácnost</span>
+</a>
+</li>
+<li class="mb-2">
+                            Žádost o připojení (dále jen ŽOP) PRE ➜
+                            <a class="tooltip-wrapper" href="https://drive.google.com/file/d/11unN2RyEHVpvPrIy57bLQVpsy0OldIbw/view?usp=drive_link" rel="noopener noreferrer" tabindex="0" target="_blank">
+                                Žádost o připojení PRE
+                                <span class="tooltip-text">Žádost o smlouvu o připojení PRE</span>
+</a>
+                            (pro stávající OM)
+                        </li>
+<li class="mb-2">
+                            Žádost o trvalé připojení odběrného místa ➜
+                            <a class="tooltip-wrapper" href="https://drive.google.com/file/d/1r98ha5iPKAv5r9sGUxvmUgJIreDjmFYb/view?usp=drive_link" rel="noopener noreferrer" tabindex="0" target="_blank">
+                                Smlouva o připojení
+                                <span class="tooltip-text">Podklady pro uzavření smlouvy na hladině NN - PRE</span>
+</a>
+                            (pro nové OM)
+                        </li>
+<li>
+                            Revizní zpráva – RZ si ZK zajišťuje poté, co mu byla vystavena SOP
+                        </li>
+</ol>
+</div>
+<div class="card content-card step-card">
+<p class="mb-2">
+<span class="step-badge" title="Krok 3">3</span>
+<b>Zákazník z kategorie MO musí doložit následující doklady:</b>
+</p>
+<ol class="mb-0" type="a">
+<li class="mb-2">
+                            Formulář epet ➜ Změna smlouvy ➜
+                            <a class="tooltip-wrapper" href="https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link" rel="noopener noreferrer" tabindex="0" target="_blank">
+                                Změna smlouvy – Firmy
+                                <span class="tooltip-text">Žádost o změnu smlouvy pro Firmu</span>
+</a>
+</li>
+<li class="mb-2">
+                            Žádost o připojení (dále jen ŽOP) PRE ➜
+                            <a class="tooltip-wrapper" href="https://drive.google.com/file/d/11unN2RyEHVpvPrIy57bLQVpsy0OldIbw/view?usp=drive_link" rel="noopener noreferrer" tabindex="0" target="_blank">
+                                Žádost o připojení PRE
+                                <span class="tooltip-text">Žádost o smlouvu o připojení PRE</span>
+</a>
+                            (pro stávající OM)
+                        </li>
+<li class="mb-2">
+                            Žádost o trvalé připojení odběrného místa ➜
+                            <a class="tooltip-wrapper" href="https://drive.google.com/file/d/1r98ha5iPKAv5r9sGUxvmUgJIreDjmFYb/view?usp=drive_link" rel="noopener noreferrer" tabindex="0" target="_blank">
+                                Smlouva o připojení
+                                <span class="tooltip-text">Podklady pro uzavření smlouvy na hladině NN - PRE</span>
+</a>
+                            (pro nové OM)
+                        </li>
+<li>
+                            Revizní zpráva – RZ si ZK zajišťuje poté, co mu byla vystavena SOP
+                        </li>
+</ol>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 4">4</span>
+                        Smlouvu o připojení si může zákazník zajistit sám nebo jej za zákazníka
+                        zajišťujeme ze strany naší společnosti na základě žádosti o připojení.
+                    </p>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-pre-c1" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">4.2.1</span> Zajištění smlouvy o připojení za zákazníka na distribučním území PRE</h2>
+<!-- KARTA: PRE – DORUČENÍ ORIGINÁLŮ A DALŠÍ POSTUP -->
+<!-- KROK 1 -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 1">1</span>
+                        Zákazník nám musí doložit <strong>Formulář epet</strong> a
+                        <strong>Žádost o připojení distribuce PRE pro obě odběrná místa.</strong>
+</p>
+</div>
+<!-- KROK 2 -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 2">2</span>
+                        Tyto formuláře nám zákazník <em>musí doložit korespondenčně</em>,
+                        protože PRE vyžaduje originály podkladů.
+                    </p>
+</div>
+<!-- KROK 3 -->
+<div class="card content-card step-card">
+<p class="mb-2">
+<span class="step-badge" title="Krok 3">3</span>
+                        Po obdržení dokumentů originály ŽOP zašleme doporučeně na PRE na adresu:
+                    </p>
+<p class="mb-0">
+<em>
+                            Pražská energetika, a. s.<br/>
+                            Na Hroudě 1492/4<br/>
+                            100 05 Praha 10
+                        </em>
+</p>
+</div>
+<!-- KROK 4 -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 4">4</span>
+                        Vytvoříme úkol v ZIS, který propojíme s odběrným místem a ve kterém uvedeme:
+                    </p>
+</div>
+<!-- KROK 5 -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 5">5</span>
+<strong>Text:</strong>
+<em>
+                            EAN XXXXXXX: Zákazník žádá o změnu distribuční sazby
+                            [hodnota stávající sazby] na hodnotu [distribuční sazba].
+                            Dokumenty v příloze. Zaslány na DI z důvodu vystavení smlouvy o připojení.
+                            Čekáme na doložení vystavené SOP od ZK.
+                        </em>
+</p>
+</div>
+<!-- KROK 6 -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 6">6</span>
+                        Garant si ponechá kontakt ve stavu Čeká na zákazníka do doby,
+                        než zákazník doloží veškeré dokumenty.
+                    </p>
+</div>
+<!-- KROK 7 -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 7">7</span>
+                        Zákazníka poté <b>informujeme</b>, že mu distributor PRE do 30 dní pošle
+                        smlouvy o připojení (dále jen SOP) k podpisu na korespondenční adresu.
+                    </p>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-pre-c2" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">4.2.2</span> Změna sazby s doloženými kompletními doklady na distribučním území PRE</h2>
+<!-- KROK 1 -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 1">1</span>
+                        Zákazník obdrží dva výtisky SOP pro každé odběrné místo, celkem tedy čtyři.
+                        Jeden podepsaný originál každé SOP je nutné zaslat zpět společnosti PRE.
+                        Dále naplnit podmínky stanovené smlouvami o připojení a zajistit si revizní zprávu.
+                    </p>
+</div>
+<div class="training-alert alert-warning" role="alert">
+<svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m12 3 10 18H2zM12 9v5m0 3v.5"></path></svg>
+<div>
+<strong>POZOR!</strong><br/>
+                        Distribuce uznává <b>revizní zprávy</b> vydané pouze od
+                        <a class="tooltip-wrapper" href="https://www.pre.cz/cs/domacnosti/sluzby/elektroinstalacni-prace/" rel="noopener noreferrer" tabindex="0" target="_blank">
+                            revizního technika
+                            <span class="tooltip-text">Objednání revizního technika</span>
+</a>
+                        PRE (popř. si zákazník může vybrat ze
+                        <a class="tooltip-wrapper" href="https://www.predistribuce.cz/cs/kontakt/elektroinstalacni-firmy/" rel="noopener noreferrer" tabindex="0" target="_blank">
+                            seznamu firem
+                            <span class="tooltip-text">Seznam firem</span>
+</a>,
+                        které jsou PRE schváleny), který mu zajistí revizní zprávu na formuláři
+                        <a class="tooltip-wrapper" href="https://www.pre.cz/cs/domacnosti/sluzby-zakaznikum/dokumenty-ke-stazeni/dokumenty-elektrina/formulare-vztahujici-se-k-prodeji-elektriny/Contents/3/podklady_pro_uzavreni_smlouvy_edit.pdf" rel="noopener noreferrer" tabindex="0" target="_blank">
+<b>Podklady pro uzavření smlouvy na hladině NN</b>
+<span class="tooltip-text">Podklady pro uzavření smlouvy na hladině NN</span>
+</a>.
+                        Ta je platná 3 měsíce.
+                    </div>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 2">2</span>
+                        Originál smlouvy o připojení a originál revizní zprávy si může zákazník zaslat
+                        na distribuci sám (v tom případě si od něj vyžádáme kopie emailem) nebo můžeme
+                        takto učinit za něj.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 3">3</span>
+                        Pokud zasíláme podklady z naší strany, musí nám zákazník doručit korespondenčně
+                        originály.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-2">
+<span class="step-badge" title="Krok 4">4</span>
+                        Originály SOP a originál RZ zašleme doporučeně na PRE na adresu:
+                    </p>
+<p class="mb-0">
+<em>
+                            Pražská energetika, a. s.<br/>
+                            Na Hroudě 1492/4,<br/>
+                            100 05 Praha 10
+                        </em>
+</p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 5">5</span>
+                        Jakmile jsou ze strany zákazníka nebo z naší strany originály obou smluv o
+                        připojení zaslány na DI, a disponujeme kopií revizní zprávy, vložíme kopie SOP
+                        a RZ <strong>do úkolu</strong>.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 6">6</span>
+                        Kontakt nyní předáme na řešitele <strong>BO_CC</strong> s požadavkem na založení
+                        nového odběrného místa v SAP s typem změny dodavatele R1.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 7">7</span>
+                        BO předá kontakt na kolegy z oddělení Komunikace na jejich řešitele „EK“ s
+                        žádostí o podání požadavku na distribuci.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 8">8</span>
+<strong>Text:</strong>
+<em>
+                            EAN XXXXXXX: Zákazník žádá o změnu distribuční sazby z
+                            [hodnota stávající sazby] na hodnotu [distribuční sazba].
+                            Dále pro EAN XXXXXXX prosíme o vygenerování termínu montáže.
+                            Dokumenty v příloze. Prosím o podání na DI. Děkuji
+                        </em>
+</p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 9">9</span>
+                        Jakmile oddělení Komunikace obdrží zprávu od distribuce PRE s termínem
+                        pracovního příkazu, vrátí zpět kontakt na řešitele
+                        <strong>CCUSER</strong> k informování zákazníka a nastavení nové sazby v ZIS.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 10">10</span>
+                        Řešitel nastaví novou hodnotu sazby v SAP od termínu, který je uveden v kontaktu
+                        [viz postup výše] a informuje zákazníka, kdy na odběrné místo přijede technik
+                        distribuce.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 11">11</span>
+                        Po informování ZK o termínu se vrací úkol na řešitele EK, kteří pohlídají termín
+                        a upraví v ZIS.
+                    </p>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-nested-cez-c" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">4.3</span> Postup u distribuce ČEZ</h2>
+<!-- KARTA: DOKLADY KE ZMĚNĚ JISTIČE / SAZBY -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 1">1</span>
+                        Zákazník potřebuje k realizaci požadavku dvě smlouvy o připojení.
+                        Jednu pro odběrné místo, kde dochází ke změně sazby,
+                        a druhou pro nové odběrné místo, které bude fungovat jako tzv. ostatní spotřeba.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-2">
+<span class="step-badge" title="Krok 2">2</span>
+<b>Zákazník z kategorie DOM nám musí doložit následující doklady:</b>
+</p>
+<ol class="mb-0" type="a">
+<li class="mb-2">
+                            Formulář epet ➜ Změna smlouvy ➜
+                            <a class="tooltip-wrapper" href="https://drive.google.com/file/d/12Eoap_GDC4Xk0AzSHbF_mOwdvFlgRhzR/view?usp=drive_link" rel="noopener noreferrer" tabindex="0" target="_blank">
+                                Domácnost
+                                <span class="tooltip-text">Žádost o změnu smlouvy pro Domácnost</span>
+</a>
+</li>
+<li class="mb-2">
+                            Žádost o připojení (dále jen ŽOP) ČEZ ➜
+                            <a class="tooltip-wrapper" href="https://drive.google.com/file/d/11paUllX9BSoO14nOeZMg77MbkxGmcJTg/view?usp=drive_link" rel="noopener noreferrer" tabindex="0" target="_blank">
+                                Žádost o připojení ČEZ
+                                <span class="tooltip-text">Žádost o smlouvu o připojení ČEZ</span>
+</a>
+                            (pro stávající OM)
+                        </li>
+<li class="mb-2">
+                            Žádost o trvalé připojení odběrného místa ➜
+                            <a class="tooltip-wrapper" href="https://www.cez.cz/edee/content/file/pece-a-podpora/formulare/ele/form_zadost_o_pripojeni_ele_zarizeni_42019.pdf" rel="noopener noreferrer" tabindex="0" target="_blank">
+                                Smlouva o připojení
+                                <span class="tooltip-text">Podklady pro uzavření smlouvy na hladině NN - ČEZ</span>
+</a>
+                            (pro nové OM)
+                        </li>
+<li>Revizní zpráva – RZ si ZK zajišťuje poté, co mu byla vystavena SOP</li>
+</ol>
+</div>
+<div class="card content-card step-card">
+<p class="mb-2">
+<span class="step-badge" title="Krok 3">3</span>
+<b>Zákazník z kategorie MO musí doložit následující doklady:</b>
+</p>
+<ol class="mb-0" type="a">
+<li class="mb-2">
+                            Formulář epet ➜ Změna smlouvy ➜
+                            <a class="tooltip-wrapper" href="https://drive.google.com/file/d/12CT6MT_Gus66fuAu57Wl1ssRwQgsyU1u/view?usp=drive_link" rel="noopener noreferrer" tabindex="0" target="_blank">
+                                Změna smlouvy – Firmy
+                                <span class="tooltip-text">Žádost o změnu smlouvy pro Firmu</span>
+</a>
+</li>
+<li class="mb-2">
+                            Žádost o připojení (dále jen ŽOP) ČEZ ➜
+                            <a class="tooltip-wrapper" href="https://drive.google.com/file/d/11paUllX9BSoO14nOeZMg77MbkxGmcJTg/view?usp=drive_link" rel="noopener noreferrer" tabindex="0" target="_blank">
+                                Žádost o připojení ČEZ
+                                <span class="tooltip-text">Žádost o smlouvu o připojení ČEZ</span>
+</a>
+                            (pro stávající OM)
+                        </li>
+<li class="mb-2">
+                            Žádost o trvalé připojení odběrného místa ➜
+                            <a class="tooltip-wrapper" href="https://www.cez.cz/edee/content/file/pece-a-podpora/formulare/ele/form_zadost_o_pripojeni_ele_zarizeni_42019.pdf" rel="noopener noreferrer" tabindex="0" target="_blank">
+                                Smlouva o připojení
+                                <span class="tooltip-text">Podklady pro uzavření smlouvy na hladině NN - ČEZ</span>
+</a>
+                            (pro nové OM)
+                        </li>
+<li>Revizní zpráva – RZ si ZK zajišťuje poté, co mu byla vystavena SOP</li>
+</ol>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 4">4</span>
+                        Smlouvu o připojení si může zákazník zajistit sám nebo jej za zákazníka
+                        zajišťujeme ze strany naší společnosti na základě žádosti o připojení.
+                    </p>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-cez-c1" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">4.3.1</span> Zajištění smlouvy o připojení za zákazníka na distribučním území ČEZ</h2>
+<!-- KARTA: ZAJIŠTĚNÍ SOP PŘI ZMĚNĚ JISTIČE / SAZBY -->
+<!-- KROK 1 -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 1">1</span>
+                        V případě, že zákazník nedisponuje smlouvou o připojení
+                        (popř. smlouvou o smlouvě budoucí), zajistíme za něj
+                        smlouvy o připojení z naší strany.
+                    </p>
+</div>
+<!-- KROK 2 -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 2">2</span>
+                        Po obdržení dokumentů vytvoříme úkol v ZIS, kdy úkol
+                        propojíme s odběrným místem a ve kterém uvedeme:
+                    </p>
+</div>
+<!-- KROK 3 -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 3">3</span>
+<strong>Text:</strong>
+<em>
+                            EAN XXXXXXX Zákazník žádá o změnu distribuční sazby z
+                            [hodnota stávající sazby] na hodnotu [distribuční sazba].
+                            Dokumenty v příloze. Podána žádost o vystavení smlouvy o
+                            připojení na distribuci ČEZ.
+                        </em>
+</p>
+</div>
+<!-- KROK 4 -->
+<div class="card content-card step-card">
+<p class="mb-2">
+<span class="step-badge" title="Krok 4">4</span>
+<strong>Smlouvu o připojení pro stávající odběrné místo</strong>
+                        následně vystavíme na distribučním portálu ČEZ dle postupu výše.
+                    </p>
+<p class="mb-2">
+<strong>Smlouvu o připojení pro nové odběrné místo</strong>
+                        vystavíme oddělení BO_CC.
+                    </p>
+<p class="mb-0">
+                        V záložce <strong>Přehled požadavků</strong> následně pravidelně
+                        hlídáme stav požadavku pro obě odběrná místa a postupujeme
+                        dle pokynů výše.
+                    </p>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-cez-c2" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">4.3.2</span> Změna sazby s doloženými kompletními doklady na distribučním území ČEZ</h2>
+<!-- KARTA: Předání dokladů a realizace změny – ČEZ -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 1">1</span>
+                        Jakmile nám zákazník zašle kopii obou smluv o připojení a kopii revizní zprávy,
+                        vložíme <strong>je do úkolu</strong>.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 2">2</span>
+                        Kontakt nyní předáme na řešitele <strong>BO_CC</strong> do stavu Nový s požadavkem
+                        na založení nového odběrného místa v ZIS s typem změny dodavatele R1.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 3">3</span>
+                        BO o tomto informujeme na Teamsech.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 4">4</span>
+<span style="color: red;"><strong>POZOR!</strong></span>
+                        V případě, že zákazník doloží u nového odběrného místa smlouvu o smlouvě budoucí,
+                        zajistí řešitel BO_CC vystavení smlouvy o připojení.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 5">5</span>
+                        BO předá kontakt na kolegy z oddělení Komunikace na jejich řešitele „EK“ s žádostí
+                        o předání dokladů na distribuci.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 6">6</span>
+<strong>Text:</strong>
+<em>
+                            EAN XXXXXXX: Zákazník žádá o změnu distribuční sazby z
+                            [hodnota stávající sazby] na hodnotu [distribuční sazba].
+                            Dále pro EAN XXXXXXX prosíme o vygenerování termínu montáže.
+                            Dokumenty v příloze. Prosím o podání na DI. Děkuji.
+                        </em>
+</p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 7">7</span>
+                        Jakmile oddělení Komunikace obdrží zprávu od distribuce ČEZ s termínem pracovního
+                        příkazu, vrátí zpět kontakt na řešitele <strong>CCUSER</strong> k informování
+                        zákazníka a nastavení nové sazby v ZIS.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 8">8</span>
+                        Garant nastaví novou hodnotu sazby v ZIS od termínu, který je uveden v kontaktu
+                        [viz postup výše] a informuje zákazníka, kdy na odběrné místo přijede technik
+                        distribuce.
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 9">9</span>
+                        Po informování ZK o termínu se vrací úkol na řešitele EK, kteří pohlídají termín
+                        a upraví v ZIS.
+                    </p>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-zis-sazba" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">5.</span> Změna sazby v ZIS</h2>
+<!-- KARTA: Změna sazby v ZIS -->
+<div class="card content-card">
+<ul class="mb-0">
+<li>
+                            Provádí se na dvou místech
+                            <ol>
+<li>na formuláři OM (odběrné místo)</li>
+<li>Smlouva el. energie</li>
+</ol>
+</li>
+</ul>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-zis-sazba-om" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">5.</span> 1 Změna na formuláři OM (odběrné místo)</h2>
+<!-- KARTA: Změna na formuláři OM (odběrné místo) -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 1">1</span>
+                        Otevřeme si formulář Odběrné místo
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 2">2</span>
+                        Na 2. listě <b>„OPM elektro“</b> musíme změnit pole „Třída TDD“
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 3">3</span>
+                        Klikneme na opravit OPM
+                    </p>
+<img alt="Záložka odběrné místo" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/dtbNfTF5/odbernemisto.png" title="Záložka odběrné místo"/>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 4">4</span>
+                        V poli <b>„Třída TDD“</b> změníme/vybereme novou třídu TDD
+                    </p>
+<img alt="Záložka Třída TDD" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/Z5PHD7Vq/tdd.png" title="Záložka Třída TDD"/>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 5">5</span>
+                        Dáme
+                    </p>
+<img alt="zapsat změny" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/85cbc1DF/zapsat.png" title="zapsat změny"/>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-zis-sazba-smlouva" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">5.2</span> Změna sazby na formuláři Smlouva el. energie</h2>
+<!-- KARTA: Změna sazby na formuláři Smlouva el. energie -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 1">1</span>
+                        Otevřeme si formulář <b>Smlouva el. Energie</b>, případně je možné se dvojklikem prokliknout číslem smlouvy
+                        na záložce <b>„Smlouva a odběrné místa“</b>
+</p>
+<span class="tooltip-wrapper d-block mx-auto mt-3 mb-3" style="width: fit-content;" tabindex="0">
+<img alt="Záložka Smlouva el. Energie" class="zis-shot" decoding="async" loading="lazy" src="https://i.postimg.cc/Lsbxzqxk/ele-form.png"/>
+<span class="tooltip-text">Záložka Smlouva el. Energie</span>
+</span>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 2">2</span>
+                        Na záložce <b>„Smluvní podmínky“</b> ➜ <b>„Tarify“</b> – musíme ukončit původní a přidat nový časový řez
+                    </p>
+<p class="mb-0 mt-2">
+                        Musíme upravit oba řádky pro sloupec <b>„Algoritmus“</b> - <b>Distribuce NN</b> a <b>Obchod NN</b>
+</p>
+<span class="tooltip-wrapper d-block mx-auto mt-3 mb-3" style="width: fit-content;" tabindex="0"></span>
+<img alt="Záložka Algoritmus" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/v8WvmSwt/algoritmus.png" title="Záložka Algoritmus"/>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 3">3</span>
+                        Přejdeme do změny přes tlačítko <b>„Opravit“</b> v horní liště
+                    </p>
+<span class="tooltip-wrapper d-block mx-auto mt-3 mb-3" style="width: fit-content;" tabindex="0"></span>
+<img alt="opravit změny" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/0yHY4T7P/orpavit.png" title="opravit změny"/>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 4">4</span>
+                        Nejdříve si změníme řádek pro distribuci, protože se nám pak už přednabídnou možnosti
+                        pro obchodní Tarifní skupiny
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 5">5</span>
+                        Pokud je na smlouvě více OM, doporučuji použít – zobrazí se nám pouze dané OM
+                    </p>
+<span class="tooltip-wrapper d-block mx-auto mt-3 mb-3" style="width: fit-content;" tabindex="0"></span>
+<img alt="Zobrazit algoritmy k vybrenému OM" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/rFV5wVJq/vybrane.png" title="Zobrazit algoritmy k vybrenému OM"/>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 6">6</span>
+                        Ukončíme původní distribuční sazbu
+                    </p>
+<span class="tooltip-wrapper d-block mx-auto mt-3 mb-3" style="width: fit-content;" tabindex="0"></span>
+<img alt="Ukončení původní distribuční sazby" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/XYh5Lw0v/ukonceni.png" title="Ukončení původní distribuční sazby"/>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 7">7</span>
+                        Přes plus přidáme nový řádek pro novou sazbu
+                    </p>
+<span class="tooltip-wrapper d-block mx-auto mt-3 mb-3" style="width: fit-content;" tabindex="0"></span>
+<img alt="Přidání nové distribuční sazby" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/d1cyPw3P/pridani.png" title="Přidání nové distribuční sazby"/>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 8">8</span>
+                        Vybereme: <b>Fakturovat od</b>, <b>Algoritmus:</b> Distribuce NN a <b>Skupina:</b> dle nové sazby
+                    </p>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 9">9</span>
+                        To stejné uděláme s řádkem pro Obchod NN (ukončíme původní řádek a založíme přes
+                        + nový, kde vybereme <b>Fakturovat od</b>, <b>Algoritmus:</b> Distribuce NN a <b>Skupina:</b> dle
+                        nového produktu odpovídající sazbě
+                    </p>
+<span class="tooltip-wrapper d-block mx-auto mt-3 mb-3" style="width: fit-content;" tabindex="0"></span>
+<img alt="Výběr nové skupiny" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/02yJqtkQ/skupina.png" title="Výběr nové skupiny"/>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 10">10</span>
+                        Výsledek by měl vypadat takto: (vždy tam musí být 2 řádky pro distribuci i pro obchod)
+                    </p>
+<span class="tooltip-wrapper d-block mx-auto mt-3 mb-3" style="width: fit-content;" tabindex="0"></span>
+<img alt="Výsledek změny sazby" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/vZ1g4c6w/vysledek.png" title="Výsledek změny sazby"/>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 11">11</span>
+                        Dáme
+                    </p>
+<span class="tooltip-wrapper d-block mx-auto mt-3 mb-3" style="width: fit-content;" tabindex="0"></span>
+<img alt="zapsat změny" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/85cbc1DF/zapsat.png" title="zapsat změny"/>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-zis" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">6.</span> Změna jističe v ZIS</h2>
+<!-- KARTA: Změna jističe v ZIS -->
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 1">1</span>
+                        Ve formuláři <b>„Stručný přehled Energie"</b> si nejprve ověříme, zda již nedošlo ke změně jističe
+                        automaticky (můžeme ověřit i přímo na měřícím místě)
+                    </p>
+<img alt="Záložka Smlouva a odběrné místo" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/Y092Ts6B/smlouva.png" title="Záložka Smlouva a odběrné místo"/>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 2">2</span>
+                        Na měřící místo se můžeme prokliknout přímo ze stručného přehledu
+                    </p>
+<img alt="měřící místo" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/NfKf4ZG1/elektro.png" title="měřící místo"/>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 3">3</span>
+                        Nebo si otevřeme formulář <b>„Odběrné místo“</b> a opět dvojklikem přes Měřící místo (Elektro)
+                    </p>
+<img alt="Záložka odběrné místo" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/ZqSbJR8c/OM.png" title="Záložka odběrné místo"/>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 4">4</span>
+                        Otevře se nám formulář <u>Měřící místo</u> – jistič najdeme na záložce
+                        <b>„Naměřené hodnoty“</b> ➜ <b>„Historie osazení“</b>
+</p>
+<img alt="Měřící místo" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/W1Rj73Hv/merici.png" title="Měřící místo"/>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 5">5</span>
+                        V horní liště klikneme na tlačítko <b>„Akce“</b> - Osazení/odebrání přístroje
+                    </p>
+<img alt="akce" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/43BrjNBn/akce.png" title="„Akce“ Osazení/odebrání přístroje"/>
+</div>
+<div class="card content-card step-card">
+<p class="mb-2">
+<span class="step-badge" title="Krok 6">6</span>
+                        Objeví se tabulka, kde vyplním:
+                    </p>
+<ul class="mb-0">
+<li><strong>Datum akce:</strong> datum nového časového řezu</li>
+<li><strong>Odebrání - Přístroj:</strong> musím vybrat aktuální přístroj</li>
+<li><strong>Osazení – Typ přístroje:</strong> vyberu si nový požadovaný jistič</li>
+</ul>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 7">7</span>
+                        Potvrdím „Použít“
+                    </p>
+<img alt="Časový řez" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/2jZCLh0w/casovy.png" title="Časový řez"/>
+</div>
+<div class="card content-card step-card">
+<p class="mb-0">
+<span class="step-badge" title="Krok 8">8</span>
+                        Vytvoříme si v pravé části nový časový řez
+                    </p>
+<img alt="Výsledek změny jističe" class="zis-shot" data-bs-placement="top" data-bs-toggle="tooltip" decoding="async" loading="lazy" src="https://i.postimg.cc/Qd0DZbMX/vysledek.png" title="Výsledek změny jističe"/>
+</div>
+<blockquote class="gs-quote">
+<p>
+<b>pozn.</b> Pokud bychom potřebovali opravit existující jistič (byl chybně zadán),
+                        je potřeba původní smazat, a potom osadit novým správným jističem.
+            
+                    </p>
+<cite>Interní poznámka / metodika</cite>
+</blockquote>
+</div><div aria-hidden="true" class="content-section" id="page-video" role="tabpanel" tabindex="0">
+<h2 class="section-title section-plain">Video tutoriály</h2>
+<p class="text-muted mb-4">Vyberte si konkrétní téma, které vás zajímá. Pro zvětšení videa využijte ikonu čtverečku
+                    v pravém horním rohu přehrávače.</p>
+<div class="row row-cols-1 row-cols-xl-2 g-4">
+<div class="col">
+<div class="video-card p-3 rounded-4 shadow-sm bg-light h-100">
+<h6 class="fw-bold mb-2"><svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="m10 9 5 3-5 3z"></path></svg>Změna distribuční sazby</h6>
+<div class="ratio ratio-16x9 rounded-3 overflow-hidden shadow-sm bg-black">
+<iframe allow="autoplay; fullscreen" allowfullscreen="" loading="lazy" src="https://drive.google.com/file/d/1thTLzkRsLUOkbGDSpkf1oFnGdTN99A07/preview" title="Video návod"></iframe>
+</div>
+</div>
+</div>
+</div>
+</div><div aria-hidden="true" class="content-section" id="page-test" role="tabpanel" tabindex="0">
+<h2 class="section-title section-plain" style="color: var(--epet-purple);">Ověření znalostí</h2>
+<p>Po prostudování manuálu prosím vyplňte tento opakovací test. Výsledky budou automaticky
+                    zaznamenány.
+                </p>
+<div class="shadow-sm rounded-3 overflow-hidden" style="border: 1px solid #eee;">
+<iframe allowfullscreen="" frameborder="0" height="600px" loading="lazy" marginheight="0" marginwidth="0" mozallowfullscreen="" msallowfullscreen="" src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__abHlldUREFBV1VTTjRJRFRRVjMyVlZFMEtWNlBNRS4u" style="border: none; max-width:100%; max-height:100vh" title="Opakovací test" webkitallowfullscreen="" width="100%">
+</iframe>
+</div>
+</div></article></main></div><script>(function(){'use strict';const root=document.querySelector('.book-container');if(!root)return;const shell=document.querySelector('.mobile-shell'),summary=document.querySelector('.mobile-nav-summary'),buttons=[...root.querySelectorAll('.book-tabs [data-target]')],pages=[...root.querySelectorAll('.content-section')],groups=[...root.querySelectorAll('.menu-group')];const label=b=>b.querySelector('.nav-text')?.textContent?.trim()||'Pracovní postup';function show(id){const page=pages.find(p=>p.id===id);if(!page)return;pages.forEach(p=>{const active=p===page;p.classList.toggle('active',active);p.setAttribute('aria-hidden',String(!active))});buttons.forEach(b=>{const active=b.dataset.target===id;b.classList.toggle('active',active);b.setAttribute('aria-selected',String(active));b.tabIndex=active?0:-1});const b=buttons.find(x=>x.dataset.target===id);if(b){for(const g of groups){if(g.contains(b)){g.classList.add('open')}else if(!g.contains(b)&&!b.contains(g)&&!b.closest('.menu-group')?.contains(g)){g.classList.remove('open')}}if(summary)summary.textContent=label(b);const ancestor=b.closest('.menu-group');if(ancestor)ancestor.querySelectorAll(':scope > .tab-item,:scope > .distributor-header').forEach(x=>x.setAttribute('aria-expanded','true'))}groups.forEach(g=>{const direct=g.querySelector(':scope > [data-target]');if(direct)direct.setAttribute('aria-expanded',String(g.classList.contains('open')))});if(matchMedia('(max-width: 1000px)').matches&&shell)shell.open=false}buttons.forEach(b=>{b.addEventListener('click',()=>{const g=b.parentElement?.classList.contains('menu-group')?b.parentElement:null;const open=g?.classList.contains('open');show(b.dataset.target);if(g){g.classList.toggle('open',!open);b.setAttribute('aria-expanded',String(!open))}});b.addEventListener('keydown',ev=>{if(!['ArrowDown','ArrowUp'].includes(ev.key))return;ev.preventDefault();const visible=buttons.filter(x=>x.getClientRects().length);const idx=visible.indexOf(b);const next=visible[(idx+(ev.key==='ArrowDown'?1:-1)+visible.length)%visible.length];if(next)next.focus()})});const hash=(location.hash||'').slice(1);show(pages.some(p=>p.id===hash)?hash:'page-intro');window.matchMedia('(max-width: 1000px)').addEventListener('change',e=>{if(shell)shell.open=!e.matches});window.addEventListener('hashchange',()=>{const id=location.hash.slice(1);if(pages.some(p=>p.id===id))show(id)});})();</script></body></html>

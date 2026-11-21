@@ -1,0 +1,823 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>INDIV - VELKOODBĚR - TOP – Pracovní postup</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --epet:#94c11f;
+      --epet-dark:#60781a;
+      --purple:#9362d6;
+      --blue:#2563eb;
+      --cyan:#0891b2;
+      --orange:#f59e0b;
+      --ink:#1e293b;
+      --muted:#64748b;
+      --line:#e2e8f0;
+      --soft:#f8fafc;
+      --card:#ffffff;
+      --radius:18px;
+      --shadow:0 14px 34px rgba(15,23,42,.08);
+    }
+
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      padding:10px;
+      background:transparent;
+      color:var(--ink);
+      font-family:"Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    .training-shell{max-width:1180px;margin:0 auto;}
+
+    .breadcrumb-nav{
+      margin-bottom:14px;
+      padding:10px 14px;
+      background:rgba(255,255,255,.86);
+      border:1px solid rgba(226,232,240,.95);
+      border-radius:14px;
+      backdrop-filter:blur(8px);
+    }
+    .breadcrumb{margin:0;font-size:.86rem;}
+    .breadcrumb-item{display:flex;align-items:center;color:#6c757d;}
+    .breadcrumb-item a{color:var(--epet-dark);text-decoration:none;font-weight:650;}
+    .breadcrumb-item a:hover{color:var(--purple);}
+    .breadcrumb-item + .breadcrumb-item::before{
+      content:"\F285";
+      font-family:"bootstrap-icons";
+      color:#94a3b8;
+      font-size:.72rem;
+      padding:0 9px;
+    }
+    .breadcrumb-item.active{color:#495057;font-weight:650;}
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      border-radius:24px;
+      color:white;
+      padding:30px;
+      margin-bottom:20px;
+      background:
+        radial-gradient(900px 360px at 92% 20%, rgba(255,255,255,.24), transparent 62%),
+        linear-gradient(135deg, var(--epet) 0%, var(--epet-dark) 52%, #2f3f0f 100%);
+      box-shadow:var(--shadow);
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      right:-80px;
+      bottom:-110px;
+      width:330px;
+      height:330px;
+      border-radius:999px;
+      background:rgba(255,255,255,.12);
+    }
+    .hero-content{position:relative;z-index:1;}
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.18);
+      border:1px solid rgba(255,255,255,.25);
+      font-size:.78rem;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.06em;
+      margin-bottom:12px;
+    }
+    .hero h1{margin:0 0 8px 0;font-weight:850;letter-spacing:-.03em;line-height:1.08;}
+    .hero p{margin:0;opacity:.9;max-width:760px;}
+    .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;}
+    .btn-download{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 18px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.38);
+      background:#fff;
+      color:var(--epet-dark);
+      text-decoration:none;
+      font-weight:750;
+      box-shadow:0 8px 18px rgba(15,23,42,.1);
+      transition:.2s ease;
+    }
+    .btn-download:hover{transform:translateY(-1px);color:var(--epet);}
+
+    .lesson-meta{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      gap:12px;
+      margin-bottom:18px;
+    }
+    .meta-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:14px 16px;
+      box-shadow:0 8px 22px rgba(15,23,42,.05);
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    }
+    .meta-card i{font-size:1.35rem;color:var(--epet-dark);}
+    .meta-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:850;margin-bottom:2px;}
+    .meta-card p{margin:0;font-size:.92rem;line-height:1.45;}
+
+    .layout{
+      display:grid;
+      grid-template-columns:270px minmax(0, 1fr);
+      gap:18px;
+      align-items:start;
+    }
+    .side-nav{
+      position:sticky;
+      top:10px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:12px;
+      box-shadow:0 10px 28px rgba(15,23,42,.06);
+    }
+    .nav-title{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px 12px;
+      font-weight:850;
+      color:var(--ink);
+      border-bottom:1px solid var(--line);
+      margin-bottom:10px;
+    }
+    .tab-btn{
+      width:100%;
+      border:0;
+      background:transparent;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:11px 12px;
+      margin:4px 0;
+      text-align:left;
+      border-radius:14px;
+      color:#475569;
+      font-weight:700;
+      transition:.18s ease;
+      cursor:pointer;
+    }
+    .tab-btn:hover{background:var(--soft);color:var(--epet-dark);}
+    .tab-btn.active{background:#f1fccf;color:#435f00;box-shadow:inset 0 0 0 1px rgba(148,193,31,.28);}
+    .tab-btn i{width:20px;text-align:center;}
+
+    .content-panel{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:24px;
+      box-shadow:var(--shadow);
+      padding:24px;
+      min-height:640px;
+    }
+    .content-section{display:none;animation:fadeIn .28s ease;}
+    .content-section.active{display:block;}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+
+    .section-header{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:18px;
+      margin-bottom:18px;
+      padding-bottom:16px;
+      border-bottom:1px solid var(--line);
+    }
+    .section-header h2{margin:0;font-weight:850;letter-spacing:-.02em;color:var(--epet-dark);}
+    .section-number{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:38px;
+      height:38px;
+      border-radius:999px;
+      background:var(--epet);
+      color:white;
+      font-weight:850;
+      margin-right:10px;
+    }
+
+    .quick-grid{display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:14px;margin-bottom:18px;}
+    .quick-card{
+      position:relative;
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:18px;
+      background:linear-gradient(180deg,#fff,#f8fafc);
+      box-shadow:0 8px 22px rgba(15,23,42,.05);
+    }
+    .quick-card::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:var(--epet);}
+    .quick-card.indiv::before{background:var(--epet);}
+    .quick-card.velko::before{background:var(--cyan);}
+    .quick-card.top::before{background:var(--purple);}
+    .quick-card h3{font-size:1.02rem;font-weight:850;margin:0 0 10px;display:flex;align-items:center;gap:8px;}
+    .quick-card ul{padding-left:1.1rem;margin-bottom:0;}
+    .quick-card li{margin-bottom:6px;line-height:1.45;}
+
+    .decision-card{
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:18px;
+      background:#fff;
+      margin-bottom:18px;
+    }
+    .decision-flow{
+      display:grid;
+      grid-template-columns:1fr auto 1fr auto 1fr;
+      gap:10px;
+      align-items:stretch;
+    }
+    .flow-step{
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:14px;
+      background:var(--soft);
+    }
+    .flow-step .badge-soft{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:5px 9px;
+      border-radius:999px;
+      font-size:.76rem;
+      font-weight:850;
+      background:#fff;
+      border:1px solid var(--line);
+      margin-bottom:8px;
+    }
+    .flow-arrow{display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:1.2rem;}
+
+    .training-card{
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:var(--soft);
+      padding:18px;
+      margin-bottom:18px;
+    }
+    .training-card.white{background:#fff;box-shadow:0 8px 22px rgba(15,23,42,.05);}
+    .training-card h3,.training-card h4,.training-card h5{font-weight:850;color:var(--ink);}
+    .training-card p,.training-card li{line-height:1.62;}
+
+    .highlight-box{
+      border-left:5px solid var(--epet);
+      background:#fbfff0;
+      border-radius:16px;
+      padding:14px 16px;
+      margin:14px 0;
+    }
+    .highlight-box.blue{border-left-color:var(--cyan);background:#f0fdff;}
+    .highlight-box.purple{border-left-color:var(--purple);background:#faf5ff;}
+    .highlight-box.orange{border-left-color:var(--orange);background:#fffbeb;}
+
+    .image-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:14px;}
+    .training-img{
+      width:100%;
+      height:auto;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#fff;
+      box-shadow:0 8px 20px rgba(15,23,42,.06);
+    }
+    .image-grid.single{grid-template-columns:1fr;}
+    .image-grid.single .training-img{max-width:820px;margin:0 auto;display:block;}
+
+    .compare-wrap{overflow-x:auto;margin:14px 0;}
+    .compare-table{
+      width:100%;
+      min-width:760px;
+      border-collapse:separate;
+      border-spacing:0;
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:#fff;
+    }
+    .compare-table th{
+      background:var(--soft);
+      color:#365314;
+      font-weight:850;
+      padding:13px 14px;
+      border-bottom:1px solid var(--line);
+    }
+    .compare-table td{padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top;}
+    .compare-table tr:last-child td{border-bottom:0;}
+
+    .custom-table{width:100%;border-collapse:collapse;text-align:left;font-size:.95rem;background:#fff;}
+    .custom-table thead tr:first-child th{
+      background:var(--soft);
+      color:#3f6212;
+      padding:16px;
+      text-align:center;
+      font-size:1.1rem;
+      font-weight:800;
+      letter-spacing:.5px;
+      border-bottom:2px solid var(--epet);
+    }
+    .custom-table thead tr:nth-child(2) th{
+      background:#fff;
+      color:var(--ink);
+      padding:12px 16px;
+      font-weight:750;
+      border-bottom:2px solid var(--line);
+      text-align:center;
+    }
+    .custom-table td{padding:14px 16px;border:1px solid var(--line);vertical-align:middle;color:#334155;}
+    .sub-cat{background:#fdfdfd;}
+    .table-wrapper{background:#fff;border-radius:16px;box-shadow:0 4px 20px -2px rgba(0,0,0,.05);border:1px solid var(--line);overflow:hidden;}
+    .tables-container{display:flex;flex-wrap:wrap;gap:24px;margin:0 auto;}
+    .tables-container .table-wrapper{flex:1 1 500px;}
+
+    .template-box{
+      background:#0f172a;
+      color:#e2e8f0;
+      border-radius:18px;
+      padding:16px;
+      margin:14px 0;
+      position:relative;
+      overflow:hidden;
+    }
+    .template-box pre{
+      margin:0;
+      white-space:pre-wrap;
+      font-family:"Segoe UI", system-ui, sans-serif;
+      font-size:.92rem;
+      line-height:1.55;
+      color:inherit;
+    }
+    .copy-btn{
+      border:0;
+      border-radius:999px;
+      padding:8px 12px;
+      background:#fff;
+      color:var(--epet-dark);
+      font-weight:800;
+      font-size:.8rem;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      margin-top:10px;
+    }
+
+    .video-card{transition:transform .2s ease, box-shadow .2s ease;border:1px solid var(--line);}
+    .video-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.1)!important;border-color:var(--epet);}
+    .video-card h6{color:var(--epet-dark);}
+
+    .toast-copy{
+      position:fixed;
+      left:50%;
+      top:20px;
+      transform:translateX(-50%);
+      z-index:99999;
+      background:#0f172a;
+      color:white;
+      padding:10px 16px;
+      border-radius:999px;
+      display:none;
+      font-weight:750;
+      box-shadow:0 10px 25px rgba(15,23,42,.24);
+    }
+
+    .book-page a:not(.btn):not(.tab-item):not(.btn-download),
+    .content-panel a:not(.btn):not(.tab-item):not(.btn-download){
+      color:var(--epet-dark);
+      text-decoration:none;
+      font-weight:700;
+      border-bottom:2px solid rgba(148,193,31,.3);
+      padding:0 2px;
+    }
+    .book-page a[target="_blank"]::after,
+    .content-panel a[target="_blank"]::after{
+      content:"\F391";
+      font-family:"bootstrap-icons";
+      font-size:.75rem;
+      margin-left:5px;
+      vertical-align:super;
+      opacity:.6;
+    }
+    strong,b{font-weight:800;}
+    u{text-decoration:none;border-bottom:2px dotted var(--epet);padding-bottom:1px;}
+    i:not(.bi){color:var(--purple);}
+
+    @media (max-width: 992px){
+      .layout{grid-template-columns:1fr;}
+      .side-nav{position:static;display:flex;overflow-x:auto;gap:8px;}
+      .nav-title{display:none;}
+      .tab-btn{width:auto;white-space:nowrap;}
+      .quick-grid,.lesson-meta{grid-template-columns:1fr;}
+      .decision-flow{grid-template-columns:1fr;}
+      .flow-arrow{transform:rotate(90deg);}
+      .image-grid{grid-template-columns:1fr;}
+    }
+    @media (max-width: 576px){
+      body{padding:6px;}
+      .hero{padding:22px;border-radius:20px;}
+      .content-panel{padding:18px;border-radius:20px;}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="training-shell">
+    <nav class="breadcrumb-nav" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="https://sites.google.com/view/znalostn-bze/"><i class="bi bi-house-door-fill"></i> Znalostní báze</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="https://sites.google.com/view/znalostn-bze/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat">Školení ZIS</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="https://sites.google.com/view/znalostn-bze/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat/1-den">1. den</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">INDIV - VELKOODBĚR - TOP</li>
+      </ol>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-content">
+        <div class="eyebrow"><i class="bi bi-mortarboard-fill"></i> Školení ZIS</div>
+        <h1>Pracovní postup: INDIV - VELKOODBĚR - TOP</h1>
+        <p>Znalostní báze epet | Verze 2.0</p>
+        <div class="hero-actions">
+          <a href="https://drive.google.com/file/d/18TktNc8S88LmmoKJRfTzJf7Zuk7LajUF/view?usp=drive_link" target="_blank" class="btn-download">
+            <i class="bi bi-file-pdf-fill"></i> Stáhnout PDF
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div class="lesson-meta">
+      <div class="meta-card">
+        <i class="bi bi-book"></i>
+        <div>
+          <div class="meta-label">Obsah</div>
+          <p>Manuál nám ukazuje jak pracovat se zákazníky spadajícími pod "Závěrkový list" případně spadajícími pod "Velkoodběr"</p>
+        </div>
+      </div>
+      <div class="meta-card">
+        <i class="bi bi-person-lines-fill"></i>
+        <div>
+          <div class="meta-label">Kontakty</div>
+          <p>255 70 70 98 / individual@epet.cz<br>255 70 70 97 / top@epet.cz</p>
+        </div>
+      </div>
+      <div class="meta-card">
+        <i class="bi bi-send-check"></i>
+        <div>
+          <div class="meta-label">Předání</div>
+          <p>INDIVIDUAL / KAUSER / TOP</p>
+        </div>
+      </div>
+    </div>
+
+    <main class="layout">
+      <aside class="side-nav" aria-label="Navigace školením">
+        <div class="nav-title"><i class="bi bi-list-check"></i> Obsah školení</div>
+        <button class="tab-btn active" onclick="openSection(event,'section-overview')"><i class="bi bi-grid-1x2-fill"></i> Pracovní postup</button>
+        <button class="tab-btn" onclick="openSection(event,'section-indiv')"><i class="bi bi-person-badge"></i> Individuální zákazníci</button>
+        <button class="tab-btn" onclick="openSection(event,'section-velko')"><i class="bi bi-building"></i> Velkoodběr</button>
+        <button class="tab-btn" onclick="openSection(event,'section-top')"><i class="bi bi-stars"></i> TOP</button>
+        <button class="tab-btn" onclick="openSection(event,'section-video')"><i class="bi bi-play-circle-fill"></i> Video návod</button>
+        <button class="tab-btn" onclick="openSection(event,'section-test')"><i class="bi bi-clipboard-check"></i> Opakovací test</button>
+      </aside>
+
+      <section class="content-panel">
+        <div id="section-overview" class="content-section active">
+          <div class="section-header">
+            <h2><span class="section-number">1</span>Pracovní postup</h2>
+          </div>
+
+          <div class="training-card white">
+            <p>Manuál nám ukazuje jak pracovat se zákazníky spadajícími pod "Závěrkový list" případně spadajícími pod "Velkoodběr"</p>
+          </div>
+
+          <div class="quick-grid">
+            <div class="quick-card indiv">
+              <h3><i class="bi bi-person-badge"></i> Individuální zákazníci</h3>
+              <ul>
+                <li>V záložce <u>Smlouva a odběrné místo</u> lze v názvu smlouvy identifikovat označení <strong>EL</strong>, <strong>PXE</strong>, <strong>ZL (závěrkový list)</strong>.</li>
+                <li>Úkoly / došlou poštu předáváme na garanta <strong>INDIVIDUAL</strong>.</li>
+              </ul>
+            </div>
+            <div class="quick-card velko">
+              <h3><i class="bi bi-building"></i> Velkoodběr</h3>
+              <ul>
+                <li>V záložce <u>Smlouva a odběrné místo</u> je v <strong>Tarifu</strong> a v <strong>popisku</strong> uvedeno označení <strong>EE</strong>, <strong>VN</strong> nebo <strong>ZP</strong>.</li>
+                <li><strong>ZÚ</strong> začíná číslem <strong>12</strong> nebo <strong>22</strong>.</li>
+                <li><strong>Úkoly</strong> předáváme na <strong>KAUSER</strong>.</li>
+              </ul>
+            </div>
+            <div class="quick-card top">
+              <h3><i class="bi bi-stars"></i> TOP</h3>
+              <ul>
+                <li>Jedná se o zákazníky spadající pod <strong>VN (vysoké napětí)</strong> nebo <strong>VNN (velmi vysoké napětí)</strong>.</li>
+                <li>Zákaznický servis zajišťuje oddělení <strong>TOP</strong>, tel. <strong>255 70 70 97</strong>.</li>
+                <li>E-maily se přeposílají na <strong>top@epet.cz</strong>.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="decision-card">
+            <h3 class="h5 fw-bold mb-3"><i class="bi bi-diagram-3 me-2 text-success"></i>Rychlé rozpoznání</h3>
+            <div class="decision-flow">
+              <div class="flow-step">
+                <span class="badge-soft"><i class="bi bi-search"></i> INDIV</span>
+                <p class="mb-0">V záložce <u>Smlouva a odběrné místo</u> lze v názvu smlouvy identifikovat označení <strong>EL</strong>, <strong>PXE</strong>, <strong>ZL (závěrkový list)</strong>.</p>
+              </div>
+              <div class="flow-arrow"><i class="bi bi-arrow-right"></i></div>
+              <div class="flow-step">
+                <span class="badge-soft"><i class="bi bi-search"></i> Velkoodběr</span>
+                <p class="mb-0">V záložce <u>Smlouva a odběrné místo</u> je v <strong>Tarifu</strong> a v <strong>popisku</strong> uvedeno označení <strong>EE</strong>, <strong>VN</strong> nebo <strong>ZP</strong>.</p>
+              </div>
+              <div class="flow-arrow"><i class="bi bi-arrow-right"></i></div>
+              <div class="flow-step">
+                <span class="badge-soft"><i class="bi bi-search"></i> TOP</span>
+                <p class="mb-0">Tento typ zákazníka poznáme také podle <strong>napěťové úrovně na OM</strong>.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="compare-wrap">
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>Typ</th>
+                  <th>Identifikace</th>
+                  <th>Hovor / došlá pošta</th>
+                  <th>Úkoly</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Individuální zákazníci</strong></td>
+                  <td><strong>EL</strong>, <strong>PXE</strong>, <strong>ZL (závěrkový list)</strong></td>
+                  <td>255 70 70 98 nebo e-mail <i>individual@epet.cz</i></td>
+                  <td><strong>INDIVIDUAL</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>Velkoodběr</strong></td>
+                  <td><strong>EE</strong>, <strong>VN</strong> nebo <strong>ZP</strong>; <strong>ZÚ</strong> začíná číslem <strong>12</strong> nebo <strong>22</strong></td>
+                  <td>255 70 70 97 nebo e-mail <i>top@epet.cz</i></td>
+                  <td><strong>KAUSER</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>TOP</strong></td>
+                  <td><strong>VN</strong>, <strong>VNN</strong>, <strong>VO</strong>; u elektřiny: <strong>12, 16, 19</strong>; u plynu: <strong>22, 26, 29</strong></td>
+                  <td>tel. <strong>255 70 70 97</strong>; <strong>top@epet.cz</strong></td>
+                  <td><strong>TOP</strong> / <strong>OZ (obchodní zástupce)</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="section-indiv" class="content-section">
+          <div class="section-header">
+            <h2><span class="section-number">2</span>Individuální zákazníci</h2>
+          </div>
+
+          <div class="training-card">
+            <p class="mb-2"><strong>STRUČNÝ PŘEHLED ENERGIE</strong></p>
+            <ul class="mb-3">
+              <li>V záložce <u>Smlouva a odběrné místo</u> lze v názvu smlouvy identifikovat označení <strong>EL</strong>, <strong>PXE</strong>, <strong>ZL (závěrkový list)</strong>.</li>
+              <li>Pokud si nejsme jisti, zda je zákazník veden jako <strong>INDIV</strong>, lze ověření provést také <a href="https://sites.google.com/view/znalostn-bze/%C5%A1ablony/INDIV?authuser=0" target="_blank">zde</a>.<br><small class="text-muted">(Někteří zákazníci spadají do INDIV, ale dle čísla smlouvy je nelze jednoznačně poznat.)</small></li>
+            </ul>
+
+            <div class="image-grid">
+              <img src="https://i.postimg.cc/Dw49GTFD/IDNIV.png" alt="INDIV – identifikace" class="training-img">
+              <img src="https://i.postimg.cc/KYnC9D1D/idniv3.png" alt="INDIV – smlouva" class="training-img">
+              <img src="https://i.postimg.cc/gJmQ1LRF/indiv2.png" alt="INDIV – detail" class="training-img">
+              <img src="https://i.postimg.cc/d16pFQm7/indiv4.png" alt="INDIV – přehled" class="training-img">
+            </div>
+          </div>
+
+          <div class="highlight-box">
+            <p class="mb-2"><strong>HOVOR / DOŠLÁ POŠTA</strong></p>
+            <ul class="mb-0">
+              <li>Pokud se nám dovolá zákazník, který spadá pod <strong>INDIV</strong>, hovory <strong>přepojujeme</strong>, případně zákazníkovi sdělíme telefonní číslo <strong>255 70 70 98</strong> nebo e-mail <i>individual@epet.cz</i>.</li>
+              <li>Tyto kontaktní údaje zákazník vždy obdrží v <strong>uvítacím sdělení</strong> po zpracování závěrkového listu.</li>
+              <li><strong>Úkoly / došlou poštu</strong> předáváme na garanta <strong>INDIVIDUAL</strong>.</li>
+            </ul>
+          </div>
+
+          <div class="template-box">
+            <pre>Pokud se nám dovolá zákazník, který spadá pod INDIV, hovory přepojujeme, případně zákazníkovi sdělíme telefonní číslo 255 70 70 98 nebo e-mail individual@epet.cz.
+
+Úkoly / došlou poštu předáváme na garanta INDIVIDUAL.</pre>
+            <button class="copy-btn" onclick="copyTemplate(this)"><i class="bi bi-clipboard"></i> Kopírovat</button>
+          </div>
+        </div>
+
+        <div id="section-velko" class="content-section">
+          <div class="section-header">
+            <h2><span class="section-number">3</span>Velkoodběr</h2>
+          </div>
+
+          <div class="training-card">
+            <p class="mb-2"><strong>STRUČNÝ PŘEHLED ENERGIE</strong></p>
+            <ul class="mb-3">
+              <li>V záložce <u>Smlouva a odběrné místo</u> je v <strong>Tarifu</strong> a v <strong>popisku</strong> uvedeno označení <strong>EE</strong>, <strong>VN</strong> nebo <strong>ZP</strong>.</li>
+              <li><strong>ZÚ</strong> začíná číslem <strong>12</strong> nebo <strong>22</strong>.</li>
+              <li><strong>Úkoly</strong> předáváme na <strong>KAUSER</strong>.</li>
+            </ul>
+            <div class="image-grid single">
+              <img src="https://i.postimg.cc/dtbWzTPH/velko.png" alt="Identifikace EE / VN / ZP" class="training-img">
+            </div>
+          </div>
+
+          <div class="highlight-box blue">
+            <p class="mb-2"><strong>HOVOR / DOŠLÁ POŠTA</strong></p>
+            <ul class="mb-0">
+              <li>Pokud se nám dovolá zákazník, který spadá pod tento typ, hovory <strong>přepojujeme</strong>, případně zákazníkovi sdělíme telefonní číslo <strong>255 70 70 97</strong> nebo e-mail <i>top@epet.cz</i>.</li>
+            </ul>
+          </div>
+
+          <div class="template-box">
+            <pre>V záložce Smlouva a odběrné místo je v Tarifu a v popisku uvedeno označení EE, VN nebo ZP.
+
+ZÚ začíná číslem 12 nebo 22.
+
+Úkoly předáváme na KAUSER.</pre>
+            <button class="copy-btn" onclick="copyTemplate(this)"><i class="bi bi-clipboard"></i> Kopírovat</button>
+          </div>
+        </div>
+
+        <div id="section-top" class="content-section">
+          <div class="section-header">
+            <h2><span class="section-number">4</span>TOP</h2>
+          </div>
+
+          <div class="training-card">
+            <ul class="mb-3">
+              <li>Jedná se o zákazníky spadající pod <strong>VN (vysoké napětí)</strong> nebo <strong>VNN (velmi vysoké napětí)</strong>.</li>
+              <li><strong>ZÚ</strong> začíná:
+                <ul>
+                  <li>u elektřiny: <strong>12, 16, 19</strong></li>
+                  <li>u plynu: <strong>22, 26, 29</strong></li>
+                </ul>
+              </li>
+              <li>V popisku se objevuje označení <strong>VN</strong> nebo <strong>VO</strong>.</li>
+              <li>O zákazníky se stará <strong>OZ (obchodní zástupce)</strong>. Kontaktní údaje nalezneme na smlouvě.</li>
+              <li>Zákaznický servis zajišťuje oddělení <strong>TOP</strong>, tel. <strong>255 70 70 97</strong>.</li>
+              <li>E-maily se přeposílají na <strong>top@epet.cz</strong>.</li>
+              <li>Tento typ zákazníka poznáme také podle <strong>napěťové úrovně na OM</strong>.</li>
+            </ul>
+          </div>
+
+          <div class="tables-container mb-4">
+            <div class="table-wrapper">
+              <table class="custom-table">
+                <thead>
+                  <tr><th colspan="4"><i class="bi bi-lightning-charge-fill me-2"></i> ELEKTŘINA</th></tr>
+                  <tr><th style="width:25%">napětí</th><th style="width:35%">označení</th><th colspan="2" style="width:40%">kategorie</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td rowspan="2">do 1 kV</td><td rowspan="2">NN / nízké napětí</td><td rowspan="2" class="fw-bold text-center" style="width:20%">MO / maloodběr</td><td class="fw-bold sub-cat">domácnost</td></tr>
+                  <tr><td class="fw-bold sub-cat">podnikatel</td></tr>
+                  <tr><td>nad 1 kV do 52 kV</td><td>VN / vysoké napětí</td><td colspan="2" class="fw-bold">VO / velkoodběr</td></tr>
+                  <tr><td>nad 52 kV</td><td>VVN / velmi vysoké napětí</td><td colspan="2" class="fw-bold">VO / velkoodběr</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="table-wrapper">
+              <table class="custom-table">
+                <thead>
+                  <tr><th colspan="3"><i class="bi bi-fire me-2"></i> PLYN</th></tr>
+                  <tr><th style="width:45%">roční odběr</th><th colspan="2" style="width:55%">kategorie</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td rowspan="2">do 630 MWh</td><td rowspan="2" class="fw-bold text-center" style="width:25%">MO / maloodběr</td><td class="fw-bold sub-cat">domácnost</td></tr>
+                  <tr><td class="fw-bold sub-cat">podnikatel</td></tr>
+                  <tr><td>nad 630 MWh do 4 200 MWh</td><td colspan="2" class="fw-bold">SO / středoodběr</td></tr>
+                  <tr><td>nad 4 200 MWh</td><td colspan="2" class="fw-bold">VO / velkoodběr</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="training-card white">
+            <p class="mb-2"><strong>Kde v ZIS najdu napěťovou úroveň zákazníka?</strong></p>
+            <ol class="mb-3">
+              <li>Otevřu záložku <u>Smlouva a odběrné místo</u>.</li>
+              <li>Na <u>Odběrném místě</u> dvakrát kliknu na <strong>EAN / EIC</strong>.</li>
+              <li>Otevře se nová záložka <strong>Odběrné místo</strong>.</li>
+              <li>Na pravé straně zvolím <strong>OPM elektro</strong>.</li>
+              <li>Vyhledám kolonku <strong>Napěťová úroveň</strong>.</li>
+            </ol>
+            <div class="image-grid single">
+              <img src="https://i.postimg.cc/K85HBvw0/nap-ti2.png" alt="Napěťová úroveň – detail" class="training-img">
+            </div>
+            <p class="mb-3 mt-3">Zároveň v záložce <u>Smlouva a odběrné místo</u> nalezneme v <strong>Tarifu</strong> a v <strong>popisku</strong> označení <strong>EE</strong>, <strong>VN</strong> nebo <strong>ZP</strong>.</p>
+            <div class="image-grid single">
+              <img src="https://i.postimg.cc/dtbWzTPH/velko.png" alt="Tarif – EE / VN / ZP" class="training-img">
+            </div>
+          </div>
+
+          <div class="template-box">
+            <pre>Jedná se o zákazníky spadající pod VN (vysoké napětí) nebo VNN (velmi vysoké napětí).
+
+O zákazníky se stará OZ (obchodní zástupce). Kontaktní údaje nalezneme na smlouvě.
+
+Zákaznický servis zajišťuje oddělení TOP, tel. 255 70 70 97.
+
+E-maily se přeposílají na top@epet.cz.</pre>
+            <button class="copy-btn" onclick="copyTemplate(this)"><i class="bi bi-clipboard"></i> Kopírovat</button>
+          </div>
+        </div>
+
+        <div id="section-video" class="content-section">
+          <div class="section-header">
+            <h2><span class="section-number">5</span>Video tutoriály</h2>
+          </div>
+          <p class="text-muted mb-4">Vyberte si konkrétní téma, které vás zajímá. Pro zvětšení videa využijte ikonu čtverečku v pravém horním rohu přehrávače.</p>
+          <div class="row row-cols-1 row-cols-xl-2 g-4">
+            <div class="col">
+              <div class="video-card p-3 rounded-4 shadow-sm bg-light h-100">
+                <h6 class="fw-bold mb-2"><i class="bi bi-play-circle me-2"></i>INDIV/Velkoodoběr/TOP</h6>
+                <div class="ratio ratio-16x9 rounded-3 overflow-hidden shadow-sm bg-black">
+                  <iframe src="https://drive.google.com/file/d/11QWHe50Iu7rM-cDde4Sgzj8lR64_aR7W/preview" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="section-test" class="content-section">
+          <div class="section-header">
+            <h2><span class="section-number">6</span>Ověření znalostí</h2>
+          </div>
+          <p>Po prostudování manuálu prosím vyplňte tento opakovací test. Výsledky budou automaticky zaznamenány.</p>
+          <div class="shadow-sm rounded-3 overflow-hidden" style="border:1px solid #eee;">
+            <iframe width="100%" height="600px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__abHlldUOVJVS01VNjBRT0JLNFFEQVlEUDZHN0FXQS4u" frameborder="0" marginwidth="0" marginheight="0" style="border:none;max-width:100%;max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="toast" class="toast-copy">Zkopírováno</div>
+
+  <script>
+    function openSection(evt, sectionId){
+      const sections = document.querySelectorAll('.content-section');
+      sections.forEach(section => section.classList.remove('active'));
+
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(button => button.classList.remove('active'));
+
+      document.getElementById(sectionId).classList.add('active');
+      evt.currentTarget.classList.add('active');
+      document.querySelector('.content-panel').scrollTop = 0;
+    }
+
+    function showToast(message){
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.style.display = 'block';
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(() => toast.style.display = 'none', 1800);
+    }
+
+    function copyTemplate(button){
+      const box = button.closest('.template-box');
+      const text = box ? box.querySelector('pre').innerText.trim() : '';
+      if(!text) return;
+
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.left = '-9999px';
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+
+      try{
+        document.execCommand('copy');
+        showToast('Text zkopírován');
+      }catch(error){
+        showToast('Nepodařilo se zkopírovat');
+      }
+      document.body.removeChild(textarea);
+    }
+  </script>
+</body>
+</html>

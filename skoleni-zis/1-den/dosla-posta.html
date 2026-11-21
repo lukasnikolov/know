@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Hledání zákazníků – Pracovní postup</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
+
+<style>
+/* ZNALOSTKA • HTML ŠKOLENÍ / firemní design system */
+:root {
+  --epet:#94c11f; --epet-dark:#60781a;
+  --purple:#9362d6; --blue:#2563eb; --cyan:#0891b2;
+  --orange:#f59e0b; --red:#dc3545;
+  --ink:#1e293b; --muted:#64748b;
+  --line:#e2e8f0; --soft:#f8fafc; --card:#fff;
+  --radius:18px; --shadow:0 14px 34px rgba(15,23,42,.08);
+}
+*,*::before,*::after {box-sizing:border-box}
+html {scroll-behavior:smooth}
+body {
+  margin:0; padding:10px 12px 30px; color:var(--ink); background:transparent;
+  font-family:"Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,Arial,sans-serif;
+  font-size:15px; line-height:1.62; -webkit-font-smoothing:antialiased;
+}
+body > .breadcrumb-nav, body > .hero-banner, body > .book-container {
+  width:100%; max-width:1180px; margin-left:auto; margin-right:auto;
+}
+/* Navigační drobečky */
+.breadcrumb-nav {
+  margin-bottom:14px; padding:10px 14px; border-radius:14px;
+  background:rgba(255,255,255,.9); border:1px solid var(--line);
+  backdrop-filter:blur(8px);
+}
+.breadcrumb {display:flex; flex-wrap:wrap; list-style:none; padding:0; margin:0; font-size:.86rem; gap:0}
+.breadcrumb-item {display:flex; align-items:center; color:#6b7280}
+.breadcrumb-item a {color:var(--epet-dark); text-decoration:none; font-weight:700}
+.breadcrumb-item a:hover {color:var(--purple)}
+.breadcrumb-item + .breadcrumb-item::before {
+  content:"\F285";font-family:"bootstrap-icons"; padding:0 9px;
+  font-size:.72rem; color:#94a3b8; font-weight:400;
+}
+.breadcrumb-item.active {font-weight:700; color:#475569}
+/* Výrazná titulní hlavička podle referenčního školení */
+.hero-banner {
+  position:relative;isolation:isolate;overflow:hidden;
+  display:flex!important;justify-content:space-between!important;align-items:center!important;
+  gap:20px;flex-wrap:wrap;
+  margin-bottom:18px;padding:34px 32px;min-height:180px;border-radius:24px;
+  color:#fff;
+  background:
+    radial-gradient(900px 360px at 92% 20%,rgba(255,255,255,.24),transparent 62%),
+    linear-gradient(135deg,var(--epet) 0%,var(--epet-dark) 52%,#2f3f0f 100%);
+  box-shadow:var(--shadow);
+}
+.hero-banner::before {
+  content:"";position:absolute; z-index:-1;
+  width:320px;height:320px;border-radius:50%;right:-80px;bottom:-126px;
+  background:rgba(255,255,255,.11);pointer-events:none;
+}
+.hero-banner::after {
+  content:"";position:absolute;z-index:-1;
+  right:95px;top:-190px;width:300px;height:300px;border:1px solid rgba(255,255,255,.14);
+  border-radius:50%;pointer-events:none;
+}
+.hero-banner > div {position:relative;z-index:1}
+.hero-banner h1 {
+  margin:0 0 10px!important;font-size:clamp(1.5rem,2.7vw,2.15rem)!important;
+  color:#fff;font-weight:850!important;letter-spacing:-.035em;line-height:1.16;
+}
+.hero-banner p {margin:0!important;font-size:.96rem;color:rgba(255,255,255,.91)!important}
+.btn-download {
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;white-space:nowrap;
+  padding:11px 19px;border:1px solid rgba(255,255,255,.4);border-radius:999px;
+  background:#fff;color:var(--epet-dark)!important;font-weight:800;text-decoration:none;
+  box-shadow:0 8px 18px rgba(15,23,42,.1);transition:transform .2s ease,box-shadow .2s ease;
+}
+.btn-download:hover,.btn-download:focus-visible {
+  color:#466010!important;transform:translateY(-2px);box-shadow:0 12px 24px rgba(15,23,42,.17);
+}
+/* Dvousloupcové pracovní prostředí */
+.book-container {
+  display:grid!important;grid-template-columns:270px minmax(0,1fr);
+  align-items:start;gap:18px;overflow:visible;background:transparent;border:0;min-height:0;
+}
+.book-tabs {
+  position:sticky;top:12px;width:auto!important;min-width:0;
+  display:flex!important;flex-direction:column!important;gap:4px;
+  padding:12px;border:1px solid var(--line);border-radius:22px;background:#fff;
+  box-shadow:0 10px 28px rgba(15,23,42,.06);
+}
+.book-tabs::before {
+  content:"";display:block;height:5px;margin:0 8px 8px;border-radius:999px;
+  background:linear-gradient(90deg,var(--epet),#cce88a);
+}
+.tab-item {
+  display:flex;align-items:center;gap:11px;min-width:0;
+  padding:12px 13px;margin:0;border-radius:14px;
+  background:transparent;border:1px solid transparent!important;
+  color:#475569;font-size:.94rem;font-weight:720;line-height:1.35;
+  cursor:pointer;outline:none;transition:background .18s,color .18s,box-shadow .18s,transform .18s;
+}
+.tab-item i {width:20px;flex:0 0 20px;font-size:1.05rem;text-align:center;color:#718096}
+.tab-item:hover,.tab-item:focus-visible {
+  background:var(--soft);color:var(--epet-dark);transform:translateX(2px);
+}
+.tab-item.active {
+  background:#f1fccf;color:#435f00;font-weight:850;
+  border-color:rgba(148,193,31,.28)!important;box-shadow:inset 0 0 0 1px rgba(148,193,31,.09);
+}
+.tab-item.active i {color:var(--epet-dark)}
+.tab-item.tab-purple {margin-top:5px;border-top:1px solid var(--line)!important;border-radius:14px}
+.tab-item.tab-purple.active {background:#f6efff;color:#7048a6;border-color:rgba(147,98,214,.22)!important}
+.tab-item.tab-purple.active i {color:var(--purple)}
+.book-page {
+  min-width:0;position:relative;overflow:visible;
+  padding:27px 27px 30px;min-height:365px;
+  border:1px solid var(--line);border-radius:24px;background:#fff;box-shadow:var(--shadow);
+}
+.content-section {display:none;animation:fadeIn .25s ease}
+.content-section.active {display:block}
+@keyframes fadeIn {from {opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)}}
+.content-section > h2 {
+  display:flex;align-items:center;gap:11px;min-width:0;
+  padding:0 0 17px;margin:0 0 19px!important;
+  border-bottom:1px solid var(--line);
+  font-size:clamp(1.22rem,2.15vw,1.55rem);letter-spacing:-.025em;
+  line-height:1.3;color:var(--epet-dark)!important;font-weight:850!important;
+}
+.section-number {
+  display:inline-flex;align-items:center;justify-content:center;flex:0 0 39px;
+  width:39px;height:39px;border-radius:50%;background:var(--epet);
+  color:white;font-size:1rem;font-weight:850;letter-spacing:0;box-shadow:0 5px 12px rgba(148,193,31,.15);
+}
+#page-video > h2 {color:var(--epet-dark)!important}
+#page-video > h2::before,#page-test > h2::before {
+  content:"";display:block;width:5px;min-height:29px;border-radius:99px;background:var(--epet);
+}
+#page-test > h2 {color:var(--purple)!important}
+#page-test > h2::before {background:var(--purple)}
+/* Srozumitelně seskupené jednotlivé kroky bez změny textového obsahu */
+.content-steps {
+  padding:0!important;margin:0!important;border:0!important;background:transparent!important;
+  box-shadow:none!important;border-radius:0!important;
+}
+.step-card {
+  position:relative;overflow:hidden;
+  margin:0 0 16px;padding:20px 21px 18px;
+  border:1px solid var(--line);border-radius:20px;
+  background:linear-gradient(180deg,#fff 0%,#fcfdff 100%);
+  box-shadow:0 8px 22px rgba(15,23,42,.047);
+}
+.step-card::before {
+  content:"";height:4px;position:absolute;left:0;top:0;right:0;background:var(--epet);
+}
+.step-card:nth-child(3n+2)::before {background:var(--cyan)}
+.step-card:nth-child(3n+3)::before {background:var(--purple)}
+.step-card > p {margin:0 0 13px!important;line-height:1.66}
+.step-card > p:last-child {margin-bottom:0!important}
+.step-card > p:first-child {font-size:1rem;color:#26364a}
+.step-card > p:first-child .step-badge {
+  vertical-align:middle;margin-right:10px;margin-bottom:3px;
+}
+.step-badge {
+  display:inline-flex;align-items:center;justify-content:center;
+  width:34px;height:34px;min-width:34px;border-radius:50%;
+  background:var(--epet);color:#fff;font-weight:850;font-size:.96rem;box-shadow:0 3px 8px rgba(148,193,31,.2);
+}
+.step-card:nth-child(3n+2) .step-badge {background:var(--cyan);box-shadow:0 3px 8px rgba(8,145,178,.15)}
+.step-card:nth-child(3n+3) .step-badge {background:var(--purple);box-shadow:0 3px 8px rgba(147,98,214,.16)}
+.intro-grid {display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.intro-grid .step-card {margin:0;min-height:190px;display:flex;flex-direction:column;justify-content:flex-start}
+.intro-grid .step-card ul {margin-top:5px!important}
+/* Vnořené karty s vyhledávacími možnostmi */
+.search-grid {
+  display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;
+  margin:19px 0!important;
+}
+.search-grid > .col {padding:0!important;margin:0!important;width:auto;max-width:none;flex:none}
+.search-grid > .col:last-child {grid-column:1/-1}
+.search-grid .card {
+  height:100%;overflow:hidden;border:1px solid var(--line)!important;border-radius:17px;
+  background:#fff;box-shadow:0 5px 16px rgba(15,23,42,.04);transition:box-shadow .2s,transform .2s;
+}
+.search-grid .card:hover {transform:translateY(-2px);box-shadow:0 9px 22px rgba(15,23,42,.09)}
+.search-grid .card::before {content:"";display:block;height:4px;background:var(--epet)}
+.search-grid > .col:nth-child(3n+2) .card::before {background:var(--cyan)}
+.search-grid > .col:nth-child(3n+3) .card::before {background:var(--purple)}
+.search-grid .card.border-warning::before {background:var(--orange)}
+.search-grid .card.border-warning {border-color:#f9dba3!important;background:#fffdf7}
+.search-grid .card-body {padding:16px 18px}
+.search-grid h5.card-title {display:flex;align-items:center;gap:6px;margin:0 0 9px;font-size:1rem;font-weight:820;color:var(--ink)}
+.search-grid h5.card-title i {font-size:1.2rem;color:var(--epet-dark)}
+.search-grid .card-text {margin:0;font-size:.93rem;line-height:1.62;color:#475569}
+/* Konkrétní upozornění a poznámky */
+.step-card .alert {
+  border:1px solid transparent;border-left-width:5px;border-radius:15px;
+  padding:14px 17px;margin:15px 0!important;box-shadow:none;line-height:1.62;
+}
+.step-card .alert-warning {border-color:#f9dc9f;border-left-color:var(--orange);background:#fffbeb;color:#774e10}
+.step-card .alert-info {border-color:#bee8f1;border-left-color:var(--cyan);background:#f0fdff;color:#15516a}
+.step-card .alert strong {color:inherit}
+.step-card .alert:last-child {margin-bottom:0!important}
+/* Původní screenshoty (beze změny URL) */
+.step-card img.img-thumbnail {
+  display:block;width:auto;max-width:100%;height:auto;
+  margin:15px auto 17px!important;padding:5px;border:1px solid var(--line);
+  border-radius:16px;background:#fff;box-shadow:0 8px 20px rgba(15,23,42,.08);
+}
+.step-card > img.img-thumbnail:last-child {margin-bottom:0!important}
+/* Společná typografie textů a vnořené formulace */
+.book-page p,.book-page li {line-height:1.64}
+.book-page ul,.book-page ol {padding-left:1.3rem}
+.step-card ul {margin-bottom:13px}
+.step-card li {padding-left:2px;margin-bottom:5px}
+.step-card li:last-child {margin-bottom:0}
+.book-page strong,.book-page b {font-weight:800}
+.book-page u {text-decoration:none;border-bottom:2px dotted var(--epet);padding-bottom:1px}
+.book-page em,.book-page i:not(.bi) {color:var(--purple)}
+.book-page a:not(.btn):not(.tab-item) {
+  color:var(--epet-dark);text-decoration:none;font-weight:750;
+  border-bottom:2px solid rgba(148,193,31,.28);padding:0 2px;
+}
+.book-page a:not(.btn):not(.tab-item):hover {border-color:var(--epet);background:#f4fae6}
+.book-page a[target="_blank"]::after {
+  content:"\F391";font-family:"bootstrap-icons";font-size:.75rem;
+  margin-left:5px;vertical-align:super;opacity:.7;
+}
+.step-card hr {margin:20px 0;border:0;border-top:1px solid var(--line);opacity:1}
+.step-card [style*="background-color:#d4edda"] {display:inline-block;border-radius:6px!important;font-weight:800}
+/* Významové barevné prvky z původního textu */
+.book-page .text-danger {color:#c72b3a!important}
+.book-page .text-warning {color:#ad710e!important}
+.book-page .text-primary {color:var(--blue)!important}
+.book-page .text-success {color:var(--epet-dark)!important}
+/* Videa / znalostní test */
+#page-video > p {color:var(--muted)!important;line-height:1.65;margin-bottom:22px!important}
+#page-video > .row {
+  display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:0!important;
+}
+#page-video > .row > .col {padding:0!important;width:auto;max-width:none;flex:none;margin:0}
+.video-card {
+  overflow:hidden;height:100%;padding:16px!important;border:1px solid var(--line)!important;
+  border-radius:20px!important;background:linear-gradient(180deg,#fff,#f8fafc)!important;
+  box-shadow:0 8px 22px rgba(15,23,42,.06)!important;
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+}
+.video-card:hover {transform:translateY(-3px);box-shadow:0 12px 26px rgba(15,23,42,.11)!important;border-color:var(--epet)!important}
+.video-card h6 {display:flex;align-items:center;gap:5px;min-height:34px;margin:0 0 11px!important;color:var(--epet-dark);font-weight:850!important;line-height:1.38}
+.video-card h6 i {font-size:1.17rem}
+.video-card .ratio {position:relative;width:100%;aspect-ratio:16/9;border-radius:13px!important;overflow:hidden}
+.video-card .ratio iframe {position:absolute;inset:0;width:100%;height:100%;border:0}
+#page-test > p {line-height:1.65;color:var(--muted)}
+#page-test > div {border:1px solid var(--line)!important;border-radius:18px!important;overflow:hidden;box-shadow:0 8px 22px rgba(15,23,42,.05)!important}
+#page-test iframe {width:100%;height:600px;display:block;border:0}
+/* Přístupnost a mobilní zobrazení pro Google Sites */
+@media (max-width:1020px) {
+  .book-container {grid-template-columns:1fr}
+  .book-tabs {position:static;flex-direction:row!important;overflow-x:auto;white-space:nowrap;padding:9px;gap:5px}
+  .book-tabs::before {display:none}
+  .tab-item {flex:0 0 auto;min-width:max-content;padding:10px 12px}
+  .tab-item:hover {transform:none}
+  .tab-item.tab-purple {margin-top:0;border-top:1px solid transparent!important}
+}
+@media (max-width:680px) {
+  body {padding:7px 6px 25px;font-size:14.5px}
+  .breadcrumb-nav {padding:9px 11px;margin-bottom:10px}
+  .breadcrumb {font-size:.78rem}
+  .breadcrumb-item + .breadcrumb-item::before {padding:0 5px}
+  .hero-banner {padding:25px 21px;min-height:160px;border-radius:20px;margin-bottom:12px}
+  .hero-banner h1 {font-size:1.6rem!important}
+  .hero-banner > div:last-child {width:100%}
+  .btn-download {padding:10px 15px}
+  .book-container {gap:12px}
+  .book-tabs {border-radius:17px}
+  .book-page {padding:19px 15px 23px;min-height:0;border-radius:20px}
+  .content-section > h2 {align-items:flex-start;font-size:1.21rem;gap:9px}
+  .section-number {flex-basis:34px;width:34px;height:34px;font-size:.9rem}
+  .step-card {padding:18px 15px;border-radius:17px}
+  .intro-grid,.search-grid,#page-video > .row {grid-template-columns:1fr!important}
+  .search-grid > .col:last-child {grid-column:auto}
+  .intro-grid .step-card {min-height:0}
+  .search-grid .card-body {padding:14px}
+}
+@media (prefers-reduced-motion:reduce) {
+  *,*::before,*::after {animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
+
+
+
+/* Znalostka | Školení ZIS | DOŠLÁ POŠTA – obsahové moduly */
+/* Vychází ze společného design systému, pouze formátuje původní prvky. */
+.book-page {min-height:410px}
+.book-tabs {gap:5px}
+.content-steps {display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+.content-steps > * {min-width:0}
+.content-steps > .step-card,.content-steps > .context-card {margin:0!important}
+.step-card {
+  position:relative;overflow:hidden;margin:0!important;padding:21px 23px 24px;
+  background:linear-gradient(180deg,#fff 0%,#fbfcfd 100%);
+  border:1px solid var(--line);border-radius:20px;
+  box-shadow:0 8px 22px rgba(15,23,42,.052);
+}
+.step-card::before {content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--epet)}
+.content-steps > .step-card:nth-child(3n+2)::before {background:var(--cyan)}
+.content-steps > .step-card:nth-child(3n+3)::before {background:var(--purple)}
+.step-card > p {margin:0 0 12px!important;line-height:1.72;color:#344358}
+.step-card > p:last-child {margin-bottom:0!important}
+.step-card > p:first-child {font-size:1rem}
+.step-card .step-badge {
+  vertical-align:middle; margin:0 10px 2px 0; width:35px;height:35px;min-width:35px;
+  border-radius:50%; background:var(--epet); color:white;font-weight:850;
+  box-shadow:0 5px 12px rgba(148,193,31,.16);
+}
+.content-steps > .step-card:nth-child(3n+2) .step-badge {background:var(--cyan)}
+.content-steps > .step-card:nth-child(3n+3) .step-badge {background:var(--purple)}
+/* Přesné screenshoty ze zdroje, nově čistá mediální plocha */
+.step-card img.img-thumbnail, .reply-options img.img-thumbnail {
+  display:block;width:auto;max-width:100%;height:auto;object-fit:contain;
+  padding:6px!important;margin:16px auto 20px!important;
+  border:1px solid var(--line);background:white;border-radius:16px;
+  box-shadow:0 9px 21px rgba(15,23,42,.085);
+}
+.step-card p:last-child img.img-thumbnail:last-child,
+.reply-options li img.img-thumbnail:last-child {margin-bottom:0!important}
+.context-card {
+  position:relative;padding:16px 18px;border:1px solid #cfe6bd;border-radius:17px;
+  background:linear-gradient(125deg,#f8fdef,#fff 95%);color:#365314;
+}
+.context-card p {margin:0!important;line-height:1.65}
+#page-odpoved .context-card {border-color:#dce8f1;background:#f4f9fd;color:#344358}
+#page-intro > p {
+  padding:20px 24px;margin:0 0 19px!important;line-height:1.75;
+  border:1px solid #e0ebd5;border-left:5px solid var(--epet);border-radius:18px;
+  color:#354a34;background:linear-gradient(120deg,#f8fdeb,#fff 90%);
+}
+/* Porovnání 2 způsobů odpovědi při zachování původní posloupnosti obsahu */
+.reply-options {
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;
+  list-style:none;padding:0!important;margin:0!important;
+}
+.reply-options > li {
+  position:relative;overflow:hidden;min-width:0;margin:0!important;padding:22px 20px 21px!important;
+  border:1px solid var(--line);border-radius:20px;
+  background:linear-gradient(180deg,#fff,#fafcfe);box-shadow:0 8px 22px rgba(15,23,42,.054);
+  line-height:1.7;
+}
+.reply-options > li::before {content:"";position:absolute;top:0;left:0;right:0;height:5px;background:var(--cyan)}
+.reply-options > li:nth-child(2)::before {background:var(--purple)}
+.reply-options .step-badge {
+  vertical-align:middle;background:var(--cyan);margin:0 9px 3px 0;
+  width:35px;height:35px;
+}
+.reply-options li:nth-child(2) .step-badge {background:var(--purple)}
+.reply-options > li > b:first-of-type {font-weight:850;color:var(--epet-dark)}
+.reply-options img.img-thumbnail {max-height:none}
+/* Varování jsou vždy samostatné a kontrastní */
+.content-steps > .alert-warning {
+  border:1px solid #f9daa1!important;border-left:5px solid var(--orange)!important;
+  border-radius:17px;padding:17px 19px;margin:0!important;
+  background:#fffbeb;color:#755016;line-height:1.72;
+  box-shadow:0 5px 13px rgba(148,109,30,.035);
+}
+.content-steps > .alert strong {color:inherit}
+.content-steps > .alert strong:first-child {font-weight:900}
+/* Vizuální příprava videa: stejná karta jako u ostatních materiálů */
+#page-video > div {
+  margin:0!important;border:1px dashed #cbd7e3!important;border-radius:23px!important;
+  padding:52px 25px!important;min-height:320px!important;
+  background:radial-gradient(circle at 50% 0%,rgba(148,193,31,.08),transparent 65%),
+             linear-gradient(180deg,#fbfcfd,#f6f9fb)!important;
+  box-shadow:0 8px 22px rgba(15,23,42,.045);
+}
+#page-video > div > div i {color:#94a3b8}
+#page-video h4 {color:#344358!important;font-weight:850!important;letter-spacing:-.01em}
+#page-video p {max-width:530px;line-height:1.7}
+#page-test > p {padding:17px 19px;border-left:4px solid var(--purple);
+  border-radius:15px;background:#faf7ff;color:#475569!important;margin-bottom:20px!important}
+#page-test > div {border-radius:19px!important;border-color:var(--line)!important}
+#page-test iframe {background:#fff}
+@media (max-width:1020px) {
+  .book-tabs {flex-wrap:nowrap}
+}
+@media (max-width:720px) {
+  .reply-options {grid-template-columns:1fr}
+}
+@media (max-width:680px) {
+  .step-card {padding:18px 16px 20px;border-radius:17px}
+  .reply-options > li {padding:18px 16px!important}
+  #page-intro > p {padding:17px 17px}
+  #page-video > div {padding:32px 16px!important;min-height:270px!important}
+}
+</style></head>
+<body>
+<nav aria-label="breadcrumb" class="breadcrumb-nav">
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+<a href="https://sites.google.com/view/znalostka/"><i class="bi bi-house-door-fill"></i> Znalostní báze</a>
+</li>
+<li class="breadcrumb-item">
+<a href="https://sites.google.com/view/znalostka/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat">Školení ZIS</a>
+</li>
+<li class="breadcrumb-item">
+<a href="https://sites.google.com/view/znalostka/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat/1-den">1. den</a>
+</li>
+<li aria-current="page" class="breadcrumb-item active">
+      Došlá pošta
+    </li>
+</ol>
+</nav>
+<div class="hero-banner d-flex justify-content-between align-items-center">
+<div>
+<h1 class="h2 fw-bold mb-1">Pracovní postup: Došlá pošta</h1>
+<p class="mb-0 opacity-75">Znalostní báze epet | Verze 2.0</p>
+</div>
+<div class="d-flex gap-2">
+<a class="btn-download" href="https://drive.google.com/file/d/1NWoQUTTAk679gO1oLK8dNun2pACS2kGH/view?usp=sharing" target="_blank">
+<i class="bi bi-file-pdf-fill"></i> Stáhnout PDF
+            </a>
+</div>
+</div>
+<div class="book-container">
+<div class="book-tabs">
+<div aria-selected="true" class="tab-item active" onclick="openPage(event, 'page-intro')" onkeypress="if(event.key === 'Enter') openPage(event, 'page-intro')" role="button" tabindex="0">
+<i class="bi bi-binoculars-fill"></i> Vyhledání pošty
+            </div>
+<div aria-selected="false" class="tab-item" onclick="openPage(event, 'page-uzavreni')" onkeypress="if(event.key === 'Enter') openPage(event, 'page-uzavreni')" role="button" tabindex="0">
+<i class="bi bi-sign-dead-end-fill"></i> Uzavření pošty
+            </div>
+<div aria-selected="false" class="tab-item" onclick="openPage(event, 'page-odpoved')" onkeypress="if(event.key === 'Enter') openPage(event, 'page-odpoved')" role="button" tabindex="0">
+<i class="bi bi-reply-all-fill"></i> Odpověď na e-mail
+            </div>
+<div aria-selected="false" class="tab-item" onclick="openPage(event, 'page-propojeni')" onkeypress="if(event.key === 'Enter') openPage(event, 'page-propojeni')" role="button" tabindex="0">
+<i class="bi bi-link-45deg"></i> Propojení e-mailu
+            </div>
+<div aria-selected="false" class="tab-item" onclick="openPage(event, 'page-odstraneni')" onkeypress="if(event.key === 'Enter') openPage(event, 'page-odstraneni')" role="button" tabindex="0">
+<i class="bi bi-file-earmark-x"></i> Odstranění e-mailu
+            </div>
+<div aria-selected="false" class="tab-item" onclick="openPage(event, 'page-video')" onkeypress="if(event.key === 'Enter') openPage(event, 'page-video')" role="button" tabindex="0">
+<i class="bi bi-play-circle-fill"></i> Video návod
+            </div>
+<div aria-selected="false" class="tab-item tab-purple" onclick="openPage(event, 'page-test')" onkeypress="if(event.key === 'Enter') openPage(event, 'page-test')" role="button" tabindex="0">
+<i class="bi bi-clipboard-check"></i> Opakovací test
+            </div>
+</div>
+<div class="book-page">
+<div aria-hidden="false" class="content-section active" id="page-intro">
+<h2 class="fw-bold mb-4 text-success"><span class="section-number">1.</span> Vyhledání pošty</h2>
+<p>E-mailová pošta je denně přiřazena na operátora. Operátor si zobrazení přidělené pošty zobrazí přes
+                    transakci <b>Došlá pošta</b>.</p>
+<div class="content-steps"><div class="step-card"><p class="mb-0"><span class="step-badge">1</span> V Došlé poště zvolí: <img alt="Filtr" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/CKMH1mcd/filtr.png"/></p></div><div class="step-card"><p class="mb-0 mt-2"><span class="step-badge">2</span> Zadá následující: záložka <b>Základní</b>,
+                        kde vybere u <b>Prohledat</b> poštu s garantem a z kostiček vybere své <b>jméno.</b>
+<img alt="Pošta s garantem" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/dVwGH5Pn/vyhled-po-ta.png"/>
+</p></div><div class="step-card"><p class="mb-0 mt-2"><span class="step-badge">3</span> Následně se přepne na záložku: <i>Doplňující
+                            údaje</i> a <u>2x</u> proklikne <u>vyřízeno</u>. Následně dá <b>Použít</b>
+<img alt="Vyřízeno" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/GtvszyXZ/vy-zeno.png"/>
+</p></div><div class="step-card"><p class="mb-0 mt-2"><span class="step-badge">4</span> V došlé poště je možnost vyhledat i přímo dle
+                        čísla potvrzení např. <i>P221200058773.</i> Dáme
+                        znovu <img alt="Filtr" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/CKMH1mcd/filtr.png"/> a do pole <b>Číslo jednací</b> napíšeme
+                        potvrzovací číslo <b>P221200058773</b>. Následně dáme použít.
+                        <img alt="Jednací číslo pošty" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/4NZKsnLx/jednaci.png"/>
+</p><p>Systém vyfiltruje veškerou komunikaci, která byla přidělena k vašemu zpracování.</p></div></div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-uzavreni">
+<h2 class="fw-bold mb-4 text-success"><span class="section-number">2.</span> Uzavření pošty</h2>
+<div class="content-steps"><div class="step-card"><p class="mb-0"><span class="step-badge">1</span>V případě vyřízení e-mailu je potřeba e-mail
+                        uzavřít. Uzavření provedeme přes tlačítko <img alt="opravit" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/bJcygF4w/oprava.png"/> </p></div><div class="step-card"><p class="mb-0"><span class="step-badge">2</span> kde se nám e-mail otevře pro úpravy. Následně
+                        zaškrtneme pole <b>Vyřízeno</b> a do <b>Poznámky</b> zapíšeme jak byl e-mail vyřešen.<img alt="vyřízeno" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/bNCqWv4M/vyrizeno-dosla-posta.png"/></p></div><div class="step-card"><p class="mb-0"><span class="step-badge">3</span> Následně dáme <img alt="zapsat změny" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/vTGQFxYR/zapsat.png"/> </p></div></div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-odpoved">
+<h2 class="fw-bold mb-4 text-success"><span class="section-number">3.</span> Odpověď na e-mail</h2>
+<!-- KARTA: ODPOVĚĎ ZÁKAZNÍKOVI -->
+<div class="content-steps"><div class="step-card"><p class="mb-3">
+<span class="step-badge">1</span>
+                        Pokud chceme na daný e-mail <b>zákazníkovi odpovědět</b>,
+                        klikneme na tlačítko:
+                        <img alt="Odpovědět" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/xTW4XDm8/odpov-d-t.png"/>
+</p><p class="mb-2">
+                        Máme <i>2 možnosti</i>, jak zákazníkovi odpovědět:
+                    </p></div><ul class="mb-3 reply-options">
+<li class="mb-4">
+<span class="step-badge">2</span>
+<b>E-mail</b> – otevře se záložka <b>Odchozí pošta</b> a můžeme
+                            klasicky psát textaci do těla e-mailu.
+                            <img alt="E-mail" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/Kvg9SqW2/odpov.png"/>
+                            Po dopsání klikneme na:
+                            <img alt="Zapsat změny" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/N0bD7WK1/zapsat-zmeny.png"/>
+                            a následně e-mail odešleme:
+                            <img alt="Odeslat" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/766VBmzj/odeslat.png"/>
+</li>
+<li>
+<span class="step-badge">3</span>
+<b>E-mailem ze šablony</b> – vybereme jednu ze šablon, která může mít
+                            vazbu na PDF soubor.
+                            <img alt="Výběr šablony" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/RZLyyp30/e-mail-sablona.png"/>
+
+                            Výběr šablony potvrdíme:
+                            <img alt="Potvrzení šablony" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/cJDj4KBy/vyber-sablony.png"/>
+
+                            Následně se vytvoří e-mail spolu s PDF přílohou:
+                            <img alt="E-mail ze šablony" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/1tfdg9vg/kategorie.png"/>
+
+                            Pro odeslání klikneme na:
+                            <img alt="Zapsat změny" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/N0bD7WK1/zapsat-zmeny.png"/>
+                            a následně:
+                            <img alt="Odeslat" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/766VBmzj/odeslat.png"/>
+</li>
+</ul><div class="alert alert-warning mt-3 instruction-alert" role="alert">
+<strong>POZOR:</strong>
+                        Někdy systém automaticky nedoplní <b>Kategorii e-mailu</b>.
+                        Je nutné ji ručně vybrat dle typu požadavku zákazníka,
+                        aby byla komunikace přehledná a profesionální.
+                    </div></div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-propojeni">
+<h2 class="fw-bold mb-4 text-success"><span class="section-number">4.</span> Propojení e-mailu ze zákaznickým číslem</h2>
+<div class="content-steps"><div class="alert alert-warning instruction-alert" role="alert">
+<strong>POZOR:</strong>
+                        Vždy je nutné kontrolovat propojení e-mailu, zda se zákazníkův požadavek týká daného
+                        zákaznického účtu.
+                        Systém může propojit i zákaznická čísla, která byla v historii vyřizována.
+                        Pokud propojení není správně, e-mail se uloží do kontaktní historie ke špatným zákazníkům.
+                    </div><div class="step-card"><p class="mb-3">
+<span class="step-badge">1</span>
+                        Nejprve zkontrolujeme sekci <b>Připojení</b>:
+                        <img alt="Připojení" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/Wp7ZDMJk/pripojeni.png"/>
+</p></div><div class="step-card"><p class="mb-3">
+<span class="step-badge">2</span>
+                        Pokud systém provede chybné napojení, je potřeba jej opravit.
+                        Opravu provedeme přes tlačítko:
+                        <img alt="Oprava" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/bJcygF4w/oprava.png"/>
+</p></div><div class="step-card"><p class="mb-3">
+<span class="step-badge">3</span>
+                        V připojení označíme chybný údaj a na klávesnici stiskneme <b>DELETE</b>.
+                        Správné údaje přiřadíme pomocí <b>přetažení zákaznického čísla</b> ze <b>Stručného přehledu</b>.
+                    </p></div><div class="step-card"><p class="mb-0">
+<span class="step-badge">4</span>
+                        Pro zapsání správného propojení klikneme na:
+                        <img alt="Zapsat změnu" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/N0bD7WK1/zapsat-zmeny.png"/>
+</p></div></div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-odstraneni">
+<h2 class="fw-bold mb-4 text-success"><span class="section-number">5.</span> Odstranění neodeslaného e-mailu</h2>
+<div class="content-steps"><div class="step-card"><p class="mb-3">
+<span class="step-badge">1</span>
+                        Pokud potřebujeme <b>odstranit vytvořený e-mail</b>, který ale
+                        <b>nebyl odeslán</b>, klikneme pouze na tlačítko:
+                        <img alt="Odstranit e-mail" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/KjY833dP/odstranit.png"/>
+</p></div><div class="step-card"><p class="mb-0">
+<span class="step-badge">2</span>
+                        Následně se vytvořený e-mail <b>přeškrtne</b>, čímž je jasně označeno,
+                        že nebyl odeslán:
+                        <img alt="Odstraněná pošta" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/RhbV7VBj/odstranena-posta.png"/>
+</p></div></div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-video">
+<h2 class="fw-bold mb-4 text-primary">Video tutoriál</h2>
+<div class="d-flex flex-column align-items-center justify-content-center text-center p-5 rounded-4" style="background: #f8f9fa; border: 2px dashed #dee2e6; min-height: 300px;">
+<div class="mb-3" style="font-size: 3rem; color: #ced4da;">
+<i class="bi bi-camera-video-off"></i>
+</div>
+<h4 class="fw-bold text-secondary">Video je v přípravě</h4>
+<p class="text-muted">Právě pro vás stříháme aktuální verzi návodu.<br/>Jakmile bude hotová, najdete ji
+                    přímo zde.</p>
+</div></div>
+<div aria-hidden="true" class="content-section" id="page-test">
+<h2 class="fw-bold mb-4" style="color: var(--epet-purple);">Ověření znalostí</h2>
+<p>Po prostudování manuálu prosím vyplňte tento opakovací test. Výsledky budou automaticky zaznamenány.</p>
+<div class="shadow-sm rounded-3 overflow-hidden" style="border: 1px solid #eee;">
+<iframe allowfullscreen="" frameborder="0" height="600px" marginheight="0" marginwidth="0" mozallowfullscreen="" msallowfullscreen="" src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__abHlldUN0pIN1ZMUUNHTDgyV0NYVFRDM1FTVkdMQS4u&amp;embed=true" style="border: none; max-width:100%; max-height:100vh" webkitallowfullscreen="" width="100%">
+</iframe>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+function openPage(evt, pageId) {
+  const selected=document.getElementById(pageId);
+  if (!selected) return;
+  document.querySelectorAll('.content-section').forEach(section=>{
+    const active=section===selected;
+    section.classList.toggle('active',active);
+    section.setAttribute('aria-hidden',active?'false':'true');
+  });
+  document.querySelectorAll('.book-tabs .tab-item').forEach(tab=>{
+    const active=tab===evt.currentTarget;
+    tab.classList.toggle('active',active);
+    tab.setAttribute('aria-selected',active?'true':'false');
+  });
+  const page=document.querySelector('.book-page');
+  if (page) page.scrollTop=0;
+}
+document.querySelectorAll('.book-tabs .tab-item').forEach(tab=>{
+  tab.addEventListener('keydown',event=>{
+    if (event.key===' ') {event.preventDefault();tab.click();}
+  });
+});
+</script></body>
+</html>

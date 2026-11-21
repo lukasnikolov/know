@@ -1,0 +1,944 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Identifikace – Pracovní postup</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --epet:#94c11f;
+      --epet-dark:#60781a;
+      --purple:#9362d6;
+      --blue:#2563eb;
+      --cyan:#0891b2;
+      --orange:#f59e0b;
+      --ink:#1e293b;
+      --muted:#64748b;
+      --line:#e2e8f0;
+      --soft:#f8fafc;
+      --card:#ffffff;
+      --radius:18px;
+      --shadow:0 14px 34px rgba(15,23,42,.08);
+    }
+
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      padding:10px;
+      background:transparent;
+      color:var(--ink);
+      font-family:"Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    .training-shell{max-width:1180px;margin:0 auto;}
+
+    .breadcrumb-nav{
+      margin-bottom:14px;
+      padding:10px 14px;
+      background:rgba(255,255,255,.86);
+      border:1px solid rgba(226,232,240,.95);
+      border-radius:14px;
+      backdrop-filter:blur(8px);
+    }
+    .breadcrumb{margin:0;font-size:.86rem;}
+    .breadcrumb-item{display:flex;align-items:center;color:#6c757d;}
+    .breadcrumb-item a{color:var(--epet-dark);text-decoration:none;font-weight:650;}
+    .breadcrumb-item a:hover{color:var(--purple);}
+    .breadcrumb-item + .breadcrumb-item::before{
+      content:"\F285";
+      font-family:"bootstrap-icons";
+      color:#94a3b8;
+      font-size:.72rem;
+      padding:0 9px;
+    }
+    .breadcrumb-item.active{color:#495057;font-weight:650;}
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      border-radius:24px;
+      color:white;
+      padding:30px;
+      margin-bottom:20px;
+      background:
+        radial-gradient(900px 360px at 92% 20%, rgba(255,255,255,.24), transparent 62%),
+        linear-gradient(135deg, var(--epet) 0%, var(--epet-dark) 52%, #2f3f0f 100%);
+      box-shadow:var(--shadow);
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      right:-80px;
+      bottom:-110px;
+      width:330px;
+      height:330px;
+      border-radius:999px;
+      background:rgba(255,255,255,.12);
+    }
+    .hero-content{position:relative;z-index:1;}
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.18);
+      border:1px solid rgba(255,255,255,.25);
+      font-size:.78rem;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.06em;
+      margin-bottom:12px;
+    }
+    .hero h1{margin:0 0 8px 0;font-weight:850;letter-spacing:-.03em;line-height:1.08;}
+    .hero p{margin:0;opacity:.9;max-width:760px;}
+    .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;}
+    .btn-download{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 18px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.38);
+      background:#fff;
+      color:var(--epet-dark);
+      text-decoration:none;
+      font-weight:750;
+      box-shadow:0 8px 18px rgba(15,23,42,.1);
+      transition:.2s ease;
+    }
+    .btn-download:hover{transform:translateY(-1px);color:var(--epet);}
+
+    .lesson-meta{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      gap:12px;
+      margin-bottom:18px;
+    }
+    .meta-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:14px 16px;
+      box-shadow:0 8px 22px rgba(15,23,42,.05);
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    }
+    .meta-card i{font-size:1.35rem;color:var(--epet-dark);}
+    .meta-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:850;margin-bottom:2px;}
+    .meta-card p{margin:0;font-size:.92rem;line-height:1.45;}
+
+    .layout{
+      display:grid;
+      grid-template-columns:270px minmax(0, 1fr);
+      gap:18px;
+      align-items:start;
+    }
+    .side-nav{
+      position:sticky;
+      top:10px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:12px;
+      box-shadow:0 10px 28px rgba(15,23,42,.06);
+    }
+    .nav-title{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px 12px;
+      font-weight:850;
+      color:var(--ink);
+      border-bottom:1px solid var(--line);
+      margin-bottom:10px;
+    }
+    .tab-btn{
+      width:100%;
+      border:0;
+      background:transparent;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:11px 12px;
+      margin:4px 0;
+      text-align:left;
+      border-radius:14px;
+      color:#475569;
+      font-weight:700;
+      transition:.18s ease;
+      cursor:pointer;
+    }
+    .tab-btn:hover{background:var(--soft);color:var(--epet-dark);}
+    .tab-btn.active{background:#f1fccf;color:#435f00;box-shadow:inset 0 0 0 1px rgba(148,193,31,.28);}
+    .tab-btn i{width:20px;text-align:center;}
+
+    .content-panel{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:24px;
+      box-shadow:var(--shadow);
+      padding:24px;
+      min-height:640px;
+    }
+    .content-section{display:none;animation:fadeIn .28s ease;}
+    .content-section.active{display:block;}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+
+    .section-header{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:18px;
+      margin-bottom:18px;
+      padding-bottom:16px;
+      border-bottom:1px solid var(--line);
+    }
+    .section-header h2{margin:0;font-weight:850;letter-spacing:-.02em;color:var(--epet-dark);}
+    .section-number{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:38px;
+      height:38px;
+      border-radius:999px;
+      background:var(--epet);
+      color:white;
+      font-weight:850;
+      margin-right:10px;
+    }
+
+    .quick-grid{display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:14px;margin-bottom:18px;}
+    .quick-card{
+      position:relative;
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:18px;
+      background:linear-gradient(180deg,#fff,#f8fafc);
+      box-shadow:0 8px 22px rgba(15,23,42,.05);
+    }
+    .quick-card::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:var(--epet);}
+    .quick-card.indiv::before{background:var(--epet);}
+    .quick-card.velko::before{background:var(--cyan);}
+    .quick-card.top::before{background:var(--purple);}
+    .quick-card h3{font-size:1.02rem;font-weight:850;margin:0 0 10px;display:flex;align-items:center;gap:8px;}
+    .quick-card ul{padding-left:1.1rem;margin-bottom:0;}
+    .quick-card li{margin-bottom:6px;line-height:1.45;}
+
+    .decision-card{
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:18px;
+      background:#fff;
+      margin-bottom:18px;
+    }
+    .decision-flow{
+      display:grid;
+      grid-template-columns:1fr auto 1fr auto 1fr;
+      gap:10px;
+      align-items:stretch;
+    }
+    .flow-step{
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:14px;
+      background:var(--soft);
+    }
+    .flow-step .badge-soft{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:5px 9px;
+      border-radius:999px;
+      font-size:.76rem;
+      font-weight:850;
+      background:#fff;
+      border:1px solid var(--line);
+      margin-bottom:8px;
+    }
+    .flow-arrow{display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:1.2rem;}
+
+    .training-card{
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:var(--soft);
+      padding:18px;
+      margin-bottom:18px;
+    }
+    .training-card.white{background:#fff;box-shadow:0 8px 22px rgba(15,23,42,.05);}
+    .training-card h3,.training-card h4,.training-card h5{font-weight:850;color:var(--ink);}
+    .training-card p,.training-card li{line-height:1.62;}
+
+    .highlight-box{
+      border-left:5px solid var(--epet);
+      background:#fbfff0;
+      border-radius:16px;
+      padding:14px 16px;
+      margin:14px 0;
+    }
+    .highlight-box.blue{border-left-color:var(--cyan);background:#f0fdff;}
+    .highlight-box.purple{border-left-color:var(--purple);background:#faf5ff;}
+    .highlight-box.orange{border-left-color:var(--orange);background:#fffbeb;}
+
+    .image-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:14px;}
+    .training-img{
+      width:100%;
+      height:auto;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#fff;
+      box-shadow:0 8px 20px rgba(15,23,42,.06);
+    }
+    .image-grid.single{grid-template-columns:1fr;}
+    .image-grid.single .training-img{max-width:820px;margin:0 auto;display:block;}
+
+    .compare-wrap{overflow-x:auto;margin:14px 0;}
+    .compare-table{
+      width:100%;
+      min-width:760px;
+      border-collapse:separate;
+      border-spacing:0;
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:#fff;
+    }
+    .compare-table th{
+      background:var(--soft);
+      color:#365314;
+      font-weight:850;
+      padding:13px 14px;
+      border-bottom:1px solid var(--line);
+    }
+    .compare-table td{padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top;}
+    .compare-table tr:last-child td{border-bottom:0;}
+
+    .custom-table{width:100%;border-collapse:collapse;text-align:left;font-size:.95rem;background:#fff;}
+    .custom-table thead tr:first-child th{
+      background:var(--soft);
+      color:#3f6212;
+      padding:16px;
+      text-align:center;
+      font-size:1.1rem;
+      font-weight:800;
+      letter-spacing:.5px;
+      border-bottom:2px solid var(--epet);
+    }
+    .custom-table thead tr:nth-child(2) th{
+      background:#fff;
+      color:var(--ink);
+      padding:12px 16px;
+      font-weight:750;
+      border-bottom:2px solid var(--line);
+      text-align:center;
+    }
+    .custom-table td{padding:14px 16px;border:1px solid var(--line);vertical-align:middle;color:#334155;}
+    .sub-cat{background:#fdfdfd;}
+    .table-wrapper{background:#fff;border-radius:16px;box-shadow:0 4px 20px -2px rgba(0,0,0,.05);border:1px solid var(--line);overflow:hidden;}
+    .tables-container{display:flex;flex-wrap:wrap;gap:24px;margin:0 auto;}
+    .tables-container .table-wrapper{flex:1 1 500px;}
+
+    .template-box{
+      background:#0f172a;
+      color:#e2e8f0;
+      border-radius:18px;
+      padding:16px;
+      margin:14px 0;
+      position:relative;
+      overflow:hidden;
+    }
+    .template-box pre{
+      margin:0;
+      white-space:pre-wrap;
+      font-family:"Segoe UI", system-ui, sans-serif;
+      font-size:.92rem;
+      line-height:1.55;
+      color:inherit;
+    }
+    .copy-btn{
+      border:0;
+      border-radius:999px;
+      padding:8px 12px;
+      background:#fff;
+      color:var(--epet-dark);
+      font-weight:800;
+      font-size:.8rem;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      margin-top:10px;
+    }
+
+    .video-card{transition:transform .2s ease, box-shadow .2s ease;border:1px solid var(--line);}
+    .video-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.1)!important;border-color:var(--epet);}
+    .video-card h6{color:var(--epet-dark);}
+
+    .toast-copy{
+      position:fixed;
+      left:50%;
+      top:20px;
+      transform:translateX(-50%);
+      z-index:99999;
+      background:#0f172a;
+      color:white;
+      padding:10px 16px;
+      border-radius:999px;
+      display:none;
+      font-weight:750;
+      box-shadow:0 10px 25px rgba(15,23,42,.24);
+    }
+
+    .book-page a:not(.btn):not(.tab-item):not(.btn-download),
+    .content-panel a:not(.btn):not(.tab-item):not(.btn-download){
+      color:var(--epet-dark);
+      text-decoration:none;
+      font-weight:700;
+      border-bottom:2px solid rgba(148,193,31,.3);
+      padding:0 2px;
+    }
+    .book-page a[target="_blank"]::after,
+    .content-panel a[target="_blank"]::after{
+      content:"\F391";
+      font-family:"bootstrap-icons";
+      font-size:.75rem;
+      margin-left:5px;
+      vertical-align:super;
+      opacity:.6;
+    }
+    strong,b{font-weight:800;}
+    u{text-decoration:none;border-bottom:2px dotted var(--epet);padding-bottom:1px;}
+    i:not(.bi){color:var(--purple);}
+
+    @media (max-width: 992px){
+      .layout{grid-template-columns:1fr;}
+      .side-nav{position:static;display:flex;overflow-x:auto;gap:8px;}
+      .nav-title{display:none;}
+      .tab-btn{width:auto;white-space:nowrap;}
+      .quick-grid,.lesson-meta{grid-template-columns:1fr;}
+      .decision-flow{grid-template-columns:1fr;}
+      .flow-arrow{transform:rotate(90deg);}
+      .image-grid{grid-template-columns:1fr;}
+    }
+    @media (max-width: 576px){
+      body{padding:6px;}
+      .hero{padding:22px;border-radius:20px;}
+      .content-panel{padding:18px;border-radius:20px;}
+    }
+  
+
+    /* ===== Doplnění pro zachovaný původní obsah Identifikace ===== */
+    .content-panel .card{
+      border:1px solid var(--line)!important;
+      border-radius:20px!important;
+      background:var(--soft)!important;
+      padding:18px!important;
+      margin-bottom:18px!important;
+      box-shadow:none!important;
+    }
+    .content-panel .card.white{background:#fff!important;}
+    .content-panel h2{font-weight:850;letter-spacing:-.02em;color:var(--epet-dark)!important;}
+    .content-panel h3,.content-panel h4,.content-panel h5{font-weight:850;color:var(--ink);}
+    .content-panel p,.content-panel li{line-height:1.62;}
+    .content-panel .step-badge{
+      display:inline-flex;align-items:center;justify-content:center;
+      min-width:30px;height:30px;border-radius:999px;
+      background:var(--epet);color:white;font-weight:850;margin-right:10px;
+    }
+    .content-panel .badge{border-radius:999px;padding:.45em .7em;}
+    .content-panel .text-danger{color:#dc2626!important;}
+    .content-panel iframe{border-radius:18px;}
+    .content-panel .shadow-sm{box-shadow:0 8px 22px rgba(15,23,42,.06)!important;}
+
+  </style>
+</head>
+<body>
+  <div class="training-shell">
+    <nav aria-label="breadcrumb" class="breadcrumb-nav">
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+<a href="https://sites.google.com/view/znalostka"><i class="bi bi-house-door-fill"></i> Znalostní
+                    báze</a>
+</li>
+<li class="breadcrumb-item">
+<a href="https://sites.google.com/view/znalostka/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat">Školení
+                    ZIS</a>
+</li>
+<li class="breadcrumb-item">
+<a href="https://sites.google.com/view/znalostka/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat/1-den">1.
+                    den</a>
+</li>
+<li aria-current="page" class="breadcrumb-item active">
+                Identifikace
+            </li>
+</ol>
+</nav>
+
+    <header class="hero">
+      <div class="hero-content">
+        <div class="eyebrow"><i class="bi bi-mortarboard-fill"></i> Školení ZIS | 1. den</div>
+        <h1>Pracovní postup: Identifikace</h1>
+        <p>Znalostní báze epet | Verze 2.0</p>
+        <div class="hero-actions">
+          <a href="https://drive.google.com/file/d/1l5WEW1SBZc6Czxk_zIii9G5SDMHxT3t_/view?usp=drive_link" target="_blank" class="btn-download"><i class="bi bi-file-pdf-fill"></i> Stáhnout PDF</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="lesson-meta">
+      <div class="meta-card">
+        <i class="bi bi-book"></i>
+        <div>
+          <div class="meta-label">Modul</div>
+          <p>Pracovní postup: Identifikace</p>
+        </div>
+      </div>
+      <div class="meta-card">
+        <i class="bi bi-shield-lock"></i>
+        <div>
+          <div class="meta-label">Téma</div>
+          <p>Identifikace a kontrola zákazníka</p>
+        </div>
+      </div>
+      <div class="meta-card">
+        <i class="bi bi-clipboard-check"></i>
+        <div>
+          <div class="meta-label">Součást školení</div>
+          <p>Video návod a opakovací test</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="layout">
+      <aside class="side-nav" aria-label="Navigace školením">
+        <div class="nav-title"><i class="bi bi-list-check"></i> Obsah školení</div>
+        <button class="tab-btn active" onclick="openSection(event,'page-intro')"><i class="bi bi-book"></i> Pracovní postup</button>
+        <button class="tab-btn" onclick="openSection(event,'page-pravidla')"><i class="bi bi-shield-fill-exclamation me-2"></i> Základní pravidla</button>
+        <button class="tab-btn" onclick="openSection(event,'page-udaje')"><i class="bi bi-shield-lock me-2"></i> Identifikační údaje</button>
+        <button class="tab-btn" onclick="openSection(event,'page-identifikacehovor')"><i class="bi bi-telephone-forward-fill me-2"></i> Identifikace v hovoru</button>
+        <button class="tab-btn" onclick="openSection(event,'page-identifikaceemail')"><i class="bi bi-envelope-open me-2"></i> Identifikace v e-mailu</button>
+        <button class="tab-btn" onclick="openSection(event,'page-ZIS')"><i class="bi bi-inboxes me-2"></i> Ověřování v ZIS</button>
+        <button class="tab-btn" onclick="openSection(event,'page-otazky')"><i class="bi bi-patch-question me-2"></i> Jak se ptát</button>
+        <button class="tab-btn" onclick="openSection(event,'page-video')"><i class="bi bi-play-circle-fill"></i> Video návod</button>
+        <button class="tab-btn" onclick="openSection(event,'page-test')"><i class="bi bi-clipboard-check"></i> Opakovací test</button>
+      </aside>
+
+      <section class="content-panel">
+        <div id="page-intro" class="content-section active">
+
+<h2 class="fw-bold mb-4 text-success">1. Pracovní postup</h2>
+<div class="card border-0 bg-light p-3 mb-4">
+<p>Dokument popisuje pravidla týkající se identifikace a kontroly zákazníka. Identifikace
+                        zákazníka je úkon, při kterém zjišťujeme, zaznamenáváme a ověřujeme identifikační údaje
+                        (identifikační údaje prokazující totožnost zákazníka / údaje z interního systému ZIS, tzv. údaje
+                        přidělené společností epet související s poskytovanou službou).
+                        Pracovní postup je určen pro všechny zaměstnance epet, kteří komunikují se zákazníky.</p>
+<div class="mb-3">
+<h5><strong>ZKRATKY:</strong></h5>
+<p>
+<span class="badge bg-primary">OM</span> = Odběrné místo   
+                            <span class="badge bg-success">OP</span> = Obchodní partner   
+                            <span class="badge bg-warning text-dark">ZÚ</span> = Zákaznický účet   
+                            <span class="badge bg-info text-dark">ZČ</span> = Zákaznické číslo   
+                        </p>
+</div>
+</div>
+
+</div>
+
+        <div id="page-pravidla" class="content-section">
+
+<h2 class="fw-bold mb-4 text-success">2. Základní pravidla identifikace</h2>
+<div class="card border-0 bg-light p-3 mb-4">
+<p class="mb-2"><strong>PŘÍCHOZÍ HOVOR</strong></p>
+<p class="mb-3">
+<span class="step-badge">1</span>
+<strong>Identifikace probíhá na základě tříbodového ověření zákazníka</strong>,
+                        tedy ověřujeme, zda je kontaktující osoba ta, na kterou je odběrné místo vedeno,
+                        případně osoba oprávněná ohledně daného OM jednat.
+                    </p>
+<p class="mb-3">
+<span class="step-badge">2</span>
+<strong>Samotný způsob identifikace rozlišujeme</strong> podle toho, zda se jedná o
+                        domácnost (fyzická osoba), podnikatele (právnická osoba / OSVČ), nebo obchodního zástupce.
+                    </p>
+<p class="mb-3">
+<span class="step-badge">3</span>
+<strong>Telefonní hovor:</strong> Identifikační údaje diktuje <strong>volající</strong>, nikoliv
+                        operátor.
+                    </p>
+<hr/>
+<p class="mb-2"><strong>E-MAIL</strong></p>
+<p class="mb-3">
+<span class="step-badge">4</span>
+                        V případě elektronické komunikace je <strong>klíčový údaj</strong> pro ověření e-mailová adresa,
+                        která musí souhlasit s e-mailovou adresou evidovanou v ZIS.
+                    </p>
+<p class="mb-0">
+<span class="step-badge">5</span>
+                        Jako doplňující parametry pro ověření k e-mailové adrese mohou být pak číselné údaje ze ZIS.
+                    </p>
+</div>
+
+</div>
+
+        <div id="page-udaje" class="content-section">
+
+<h2 class="fw-bold mb-4 text-success">3. Výčet Identifikačních údajů</h2>
+<div class="card border-0 bg-light p-3 mb-4">
+<h4 class="mb-3">
+<i class="bi bi-person-badge me-2"></i>
+<strong>Identifikační údaje prokazující totožnost zákazníka</strong>
+</h4>
+<p class="mb-2"><span class="step-badge">1</span> Jméno / příjmení</p>
+<p class="mb-2"><span class="step-badge">2</span> Datum narození</p>
+<p class="mb-2"><span class="step-badge">3</span> Název organizace + identifikace kontaktní osoby</p>
+<p class="mb-3"><span class="step-badge">4</span> IČO / DIČ</p>
+<h4 class="mb-3">
+<i class="bi bi-telephone me-2"></i>
+<strong>Kontaktní údaje zákazníka</strong>
+</h4>
+<p class="mb-2"><span class="step-badge">5</span> Adresa trvalého bydliště / sídla společnosti</p>
+<p class="mb-2"><span class="step-badge">6</span> Korespondenční adresa</p>
+<p class="mb-2"><span class="step-badge">7</span> Telefonní číslo</p>
+<p class="mb-3"><span class="step-badge">8</span> E-mailová adresa</p>
+<h4 class="mb-3">
+<i class="bi bi-hash me-2"></i>
+<strong>
+                            Identifikační údaje přidělené epet
+                            <small class="text-muted">(číselné údaje přidělené interním systémem SAP)</small>
+</strong>
+</h4>
+<p class="mb-2"><span class="step-badge">9</span> Číslo obchodního partnera</p>
+<p class="mb-2"><span class="step-badge">10</span> Číslo smluvního účtu</p>
+<p class="mb-2"><span class="step-badge">11</span> Číslo faktury</p>
+<p class="mb-2"><span class="step-badge">12</span> Číslo smlouvy (kromě závěrkových listů)</p>
+<p class="mb-3"><span class="step-badge">13</span> Další interní identifikátory dle potřeby</p>
+<h4 class="mb-3">
+<i class="bi bi-pin-map me-2"></i>
+<strong>Identifikační údaje prokazující dotčené odběrné místo (OM)</strong>
+</h4>
+<p class="mb-2"><span class="step-badge">14</span> EAN / EIC</p>
+<p class="mb-0"><span class="step-badge">15</span> Adresa odběrného místa</p>
+</div>
+
+</div>
+
+        <div id="page-identifikacehovor" class="content-section">
+
+<h2 class="fw-bold mb-4 text-success">4. Identifikace zákazníka v příchozím/odchozím hovoru</h2>
+<div class="card border-0 bg-light p-3 mb-4">
+<h3 class="mb-3">
+<strong>FYZICKÁ OSOBA – NEPODNIKATEL (DOMÁCNOST / MALOODBĚR)</strong>
+</h3>
+<p class="mb-2"><span class="step-badge">1</span> <strong>Majitel odběrného místa (OM)</strong></p>
+<p class="mb-2">
+<span class="step-badge">2</span>
+                        Vždy ověřujeme jméno, na které je obchodní partner veden, a adresu (ideálně adresu odběrného místa).
+                    </p>
+<p class="mb-2">
+<span class="step-badge">3</span>
+                        Číselný údaj – <strong>první volba ověření</strong>: ZÚ nebo ZČ nebo EAN / EIC.
+                    </p>
+<p class="mb-2">
+<span class="step-badge">4</span>
+                        Alternativní volba ověření (pokud nelze použít první): <strong>datum narození zákazníka</strong>.
+                    </p>
+<p class="mb-3">
+<span class="step-badge">5</span>
+<strong>Identifikace pomocí telefonního čísla:</strong>
+                        pokud volá majitel z kontaktního čísla evidovaného v <strong>ZIS</strong>,
+                        postupujeme dle platných pravidel identifikace.
+                    </p>
+<p class="mb-2">
+<span class="step-badge">6</span>
+<strong>Osoba žijící ve společné domácnosti (rodinný příslušník)</strong>
+</p>
+<p class="mb-2">
+<span class="step-badge">7</span>
+                        Vždy ověřujeme jméno, na které je OP veden, a adresu.
+                    </p>
+<p class="mb-2">
+<span class="step-badge">8</span>
+<strong>Nájemník</strong> – <strong class="text-danger">NESDĚLUJEME</strong>
+                        žádné informace týkající se smluvního vztahu.
+                    </p>
+<p class="mb-0">
+<span class="step-badge">9</span>
+<strong>Přidání telefonního čísla nebo e-mailu:</strong>
+                        pokud volá rodinný příslušník, postupujeme dle pravidel identifikace.
+                    </p>
+</div>
+<div class="card border-0 bg-light p-3 mb-4">
+<h3 class="mb-3">
+<strong>PRÁVNICKÁ OSOBA (FIRMA)</strong>
+</h3>
+<p class="mb-2">
+<span class="step-badge">1</span>
+<strong>Kontaktní osoba</strong> (jednatel, majitel, pověřená osoba apod.).
+                    </p>
+<p class="mb-2">
+<span class="step-badge">2</span>
+                        Vždy ověřujeme jméno kontaktní osoby, název firmy a adresu odběrného místa.
+                    </p>
+<p class="mb-2">
+<span class="step-badge">3</span>
+                        Číselný údaj – <strong>první volba</strong>: ZÚ nebo ZČ nebo EAN / EIC.
+                    </p>
+<p class="mb-2">
+<span class="step-badge">4</span>
+                        Pomocný údaj: <strong>IČO / DIČ</strong> (veřejný údaj).
+                    </p>
+<p class="mb-2">
+<span class="step-badge">5</span>
+<strong>Identifikace pomocí telefonního čísla</strong> probíhá dle interních pravidel.
+                    </p>
+<p class="mb-2">
+<span class="step-badge">6</span>
+<strong>Není-li kontaktní osoba oprávněná</strong>, postupujeme dle alternativního ověření.
+                    </p>
+<p class="mb-2">
+<span class="step-badge">7</span>
+                        Vždy ověřujeme název firmy a adresu.
+                    </p>
+<p class="mb-2">
+<span class="step-badge">8</span>
+                        Číselný údaj: první volba ZČ / ZÚ / EAN / EIC, pomocný údaj IČO / DIČ.
+                    </p>
+<p class="mb-0">
+<span class="step-badge">9</span>
+                        Ověření lze provést také přes veřejné registry (justice.cz, ARES).
+                    </p>
+</div>
+<div class="card border-0 bg-light p-3 mb-4">
+<h3 class="mb-3">
+<strong>OBCHODNÍ ZÁSTUPCE</strong>
+</h3>
+<p class="mb-2">
+<span class="step-badge">1</span>
+                        Vždy ověřujeme <strong>platnou plnou moc</strong>.
+                    </p>
+<p class="mb-0">
+<span class="step-badge">2</span>
+                        Podmínkou je, že se jedná o evidovaného OZ. Seznam obchodních zástupců naleznete
+                        <a href="https://sites.google.com/view/znalostn-bze/smlouvy-kontaktn%C3%AD-%C3%BAdaje/obchodn%C3%AD-z%C3%A1stupci?authuser=0" target="_blank">zde</a>.
+                    </p>
+</div>
+
+</div>
+
+        <div id="page-identifikaceemail" class="content-section">
+
+<h2 class="fw-bold mb-4 text-success">5. Identifikace zákazníka v e-mailu</h2>
+<div class="card border-0 bg-light p-3 mb-4">
+<h3 class="mb-3">
+<strong>Fyzická osoba – nepodnikatel (domácnost / maloodběr)</strong>
+</h3>
+<p class="mb-2">
+<span class="step-badge">1</span>
+<u>Majitel OM</u> – vždy musíme ověřit e-mailovou adresu,
+                        která musí být totožná s e-mailovou adresou evidovanou v <strong>ZIS</strong>.
+                    </p>
+<p class="mb-2">
+<span class="step-badge">2</span>
+<strong>Doplňující údaj:</strong> ZČ nebo ZÚ nebo EAN / EIC.
+                    </p>
+<p class="mb-2">
+<span class="step-badge">3</span>
+                        Pokud e-mailová adresa <strong>nesouhlasí</strong>, nelze identifikaci považovat za platnou
+                        a postupujeme dle interních pravidel.
+                    </p>
+<p class="mb-2">
+<span class="step-badge">4</span>
+<u>Osoba žijící ve společné domácnosti (rodinný příslušník)</u> –
+                        vždy musíme ověřit e-mailovou adresu dle stejných pravidel.
+                    </p>
+<p class="mb-0">
+<span class="step-badge">5</span>
+<u>Nájemník</u> – s nájemníkem <strong class="text-danger">nic neřešíme</strong>
+                        a žádné informace nesdělujeme.
+                    </p>
+</div>
+<div class="card border-0 bg-light p-3 mb-4">
+<h3 class="mb-3">
+<strong>Právnická osoba (firma)</strong>
+</h3>
+<p class="mb-2">
+<span class="step-badge">1</span>
+<strong>Kontaktní osoba</strong> (jednatel, majitel nebo pověřená osoba).
+                    </p>
+<p class="mb-2">
+<span class="step-badge">2</span>
+                        Vždy musíme ověřit e-mailovou adresu, která musí odpovídat údajům evidovaným v <strong>ZIS</strong>.
+                    </p>
+<p class="mb-2">
+<span class="step-badge">3</span>
+<strong>Doplňující údaj k e-mailové adrese</strong> slouží k potvrzení identity dle interních pravidel.
+                    </p>
+<p class="mb-2">
+<span class="step-badge">4</span>
+                        Pokud e-mailová adresa nesouhlasí, identifikace není platná (výjimka může nastat u samoodečtů dle metodiky).
+                    </p>
+<p class="mb-2">
+<span class="step-badge">5</span>
+<strong>Není kontaktní osoba</strong> – postupujeme dle alternativního ověření.
+                    </p>
+<p class="mb-2">
+<span class="step-badge">6</span>
+                        Vždy ověřujeme název společnosti a adresu.
+                    </p>
+<p class="mb-2">
+<span class="step-badge">7</span>
+                        Pokud nesouhlasí doména v e-mailové adrese, identifikace není považována za platnou.
+                    </p>
+<p class="mb-2">
+<span class="step-badge">8</span>
+<strong>Doplňující identifikační údaj</strong> využíváme dle konkrétní situace.
+                    </p>
+<p class="mb-0">
+<span class="step-badge">9</span>
+                        Kontaktní osobu může změnit nebo přidat oprávněná osoba (ověření např. přes justice.cz, ARES).
+                    </p>
+</div>
+<div class="card border-0 bg-light p-3 mb-4">
+<h3 class="mb-3">
+<strong>Obchodní zástupce</strong>
+</h3>
+<p class="mb-2">
+<span class="step-badge">1</span>
+                        Vždy ověřujeme <strong>platnou plnou moc</strong>. Pokud obchodní zástupce není oprávněn,
+                        žádné informace neposkytujeme.
+                    </p>
+<p class="mb-0">
+<span class="step-badge">2</span>
+                        Obchodní zástupce musí být evidován pod IO <strong>EXT004</strong>. Seznam naleznete
+                        <a href="https://sites.google.com/view/znalostka/smlouvy-kontaktn%C3%AD-%C3%BAdaje/obchodn%C3%AD-z%C3%A1stupci?authuser=0" target="_blank">zde</a>.
+                    </p>
+</div>
+
+</div>
+
+        <div id="page-ZIS" class="content-section">
+
+<h2 class="fw-bold mb-4 text-success">6. Ověřování kontaktních údajů v ZIS</h2>
+<div class="card border-0 bg-light p-3 mb-4">
+<h5 class="mb-3">
+<strong>Kontaktní údaje</strong>
+</h5>
+<p class="mb-2">
+<span class="step-badge">1</span>
+                        Za <strong>kontaktní údaje</strong> jsou považovány zejména:
+                        telefonní číslo, e-mailová adresa, trvalá adresa a zasílací adresa.
+                    </p>
+<p class="mb-2">
+<span class="step-badge">2</span>
+<strong>Poznámka:</strong>
+                        Změnu zasílací adresy lze provést pouze v souladu s platnými interními pravidly.
+                    </p>
+<p class="mb-2">
+<span class="step-badge">3</span>
+<strong>Kontaktní údaje v běžných hovorech ověřujeme</strong>
+                        dle stanoveného postupu:
+                        <br/>a) ověření základních údajů,
+                        <br/>b) kontrola shody se ZIS,
+                        <br/>c) potvrzení správnosti zákazníkem.
+                    </p>
+<p class="mb-2">
+<span class="step-badge">4</span>
+                        O provedení ověření zapíše operátor <strong>záznam do systému</strong>.
+                        <strong class="text-danger">POZOR:</strong>
+                        poznámku smíme zapsat pouze tehdy, pokud bylo ověření skutečně provedeno.
+                    </p>
+<p class="mb-0">
+<span class="step-badge">5</span>
+                        Ověření kontaktních údajů provádíme <strong>výhradně s majitelem odběrného místa</strong>
+                        nebo s osobou k tomu oprávněnou.
+                    </p>
+</div>
+
+</div>
+
+        <div id="page-otazky" class="content-section">
+
+<h2 class="fw-bold mb-4 text-success">7. Jak se ptát v rámci identifikace</h2>
+<div class="card border-0 bg-light p-3 mb-4">
+<h5 class="mb-3"><strong>Fyzická osoba:</strong></h5>
+<p class="mb-2"><strong>Identifikace:</strong></p>
+<p class="mb-2"><span class="step-badge">1</span> Zákaznické číslo / zákaznický účet / EAN/EIC</p>
+<p class="mb-2"><span class="step-badge">2</span> Na koho je smlouva vedená</p>
+<p class="mb-2"><span class="step-badge">3</span> Nevolá z kontaktního telefonu – potřeba ověřit datum narození</p>
+<p class="mb-3"><span class="step-badge">4</span> Volá z kontaktního telefonu – „vidím, že voláte z kontaktního telefonu…“</p>
+<p class="mb-2"><strong>Ověření údajů:</strong></p>
+<p class="mb-2"><span class="step-badge">5</span> Trvalá adresa</p>
+<p class="mb-2"><span class="step-badge">6</span> Doručovací adresa</p>
+<p class="mb-2"><span class="step-badge">7</span> E-mail</p>
+<p class="mb-0"><span class="step-badge">8</span> Poznámka o ověření údajů</p>
+</div>
+<div class="card border-0 bg-light p-3 mb-4">
+<h5 class="mb-3"><strong>Právnická osoba:</strong></h5>
+<p class="mb-2"><strong>Identifikace:</strong></p>
+<p class="mb-2"><span class="step-badge">1</span> Zákaznické číslo / zákaznický účet / EAN/EIC</p>
+<p class="mb-2"><span class="step-badge">2</span> Na koho je smlouva vedená</p>
+<p class="mb-2"><span class="step-badge">3</span> Volá z kontaktního telefonu – věta o kontakt. telefonu</p>
+<p class="mb-2"><span class="step-badge">4</span> Nevolá z kontaktního telefonu</p>
+<p class="mb-3"><span class="step-badge">5</span> Musí sdělit, kdo je evidován jako kontaktní osoba v ZIS ...</p>
+<p class="mb-2"><strong>Ověření údajů:</strong></p>
+<p class="mb-2"><span class="step-badge">6</span> Doručovací adresa</p>
+<p class="mb-0"><span class="step-badge">7</span> E-mail</p>
+</div>
+
+</div>
+
+        <div id="page-video" class="content-section">
+
+<h2 class="fw-bold mb-4 text-primary">Video tutoriál</h2>
+<div class="d-flex flex-column align-items-center justify-content-center text-center p-5 rounded-4" style="background: #f8f9fa; border: 2px dashed #dee2e6; min-height: 300px;">
+<div class="mb-3" style="font-size: 3rem; color: #ced4da;">
+<i class="bi bi-camera-video-off"></i>
+</div>
+<h4 class="fw-bold text-secondary">Video je v přípravě</h4>
+<p class="text-muted">Právě pro vás stříháme aktuální verzi návodu.<br/>Jakmile bude hotová, najdete ji přímo zde.</p>
+</div>
+
+</div>
+
+        <div id="page-test" class="content-section">
+
+<h2 class="fw-bold mb-4" style="color: var(--epet-purple);">Ověření znalostí</h2>
+<p>Po prostudování manuálu prosím vyplňte tento opakovací test. Výsledky budou automaticky
+                    zaznamenány.
+                </p>
+<div class="shadow-sm rounded-3 overflow-hidden" style="border: 1px solid #eee;">
+<iframe allowfullscreen="" frameborder="0" height="600px" marginheight="0" marginwidth="0" mozallowfullscreen="" msallowfullscreen="" src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__abHlldUNFdISkgwRkFUN1ZENFdZV1JaTVA4TUkyTS4u&amp;embed=true" style="border: none; max-width:100%; max-height:100vh" webkitallowfullscreen="" width="100%">
+</iframe>
+</div>
+
+</div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    function openSection(evt, sectionId) {
+      const sections = document.querySelectorAll('.content-section');
+      sections.forEach(section => section.classList.remove('active'));
+
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(button => button.classList.remove('active'));
+
+      const target = document.getElementById(sectionId);
+      if (target) target.classList.add('active');
+      if (evt && evt.currentTarget) evt.currentTarget.classList.add('active');
+
+      const panel = document.querySelector('.content-panel');
+      if (panel) panel.scrollTop = 0;
+    }
+  </script>
+</body>
+</html>

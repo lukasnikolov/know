@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+
+<html lang="cs">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="light" name="color-scheme"/>
+<title>Dědické řízení (DINHE) – Pracovní postup</title>
+
+<style>
+
+:root{--epet:#94C11F;--epet-dark:#60781a;--epet-deep:#384b11;--orange:#F99F1C;--red:#d64747;--navy:#20354a;--purple:#8056ba;--ink:#29384b;--muted:#66758a;--line:#e2e8ee;--shadow:0 14px 35px rgba(28,48,72,.065)}
+*,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:#fff;color:var(--ink);font:15px/1.7 "Segoe UI",Inter,system-ui,-apple-system,Arial,sans-serif;-webkit-font-smoothing:antialiased;margin:0;padding:12px 12px 38px}
+button{font:inherit}a{overflow-wrap:anywhere}.site-wrap{max-width:1210px;margin:auto;min-width:0}.svg-icon{width:20px;height:20px;display:inline-block;flex:none;vertical-align:middle}
+.breadcrumb-nav{padding:10px 15px;border:1px solid var(--line);border-radius:13px;margin-bottom:14px;background:#fff}.breadcrumb{display:flex;flex-wrap:wrap;gap:0;align-items:center;list-style:none;margin:0;padding:0;font-size:.84rem}
+.breadcrumb-item{display:flex;gap:4px;align-items:center;color:var(--muted)}.breadcrumb-item:not(:first-child)::before{content:'›';color:#9ba6b6;margin:0 11px;font-size:1.12rem;font-weight:400}.breadcrumb-item a{color:var(--epet-dark);text-decoration:none;font-weight:750}.breadcrumb-item a:hover{text-decoration:underline}.breadcrumb-item .svg-icon{width:15px;height:15px;margin-right:3px}.breadcrumb-item.active{font-weight:700;color:#3d4c60}
+.hero-banner{isolation:isolate;position:relative;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:17px;padding:32px 33px;min-height:170px;margin-bottom:19px;border-radius:23px;color:white;background:radial-gradient(520px 230px at 92% 22%,rgba(255,255,255,.2),transparent 70%),linear-gradient(128deg,#94c11f 0%,#759c1f 52%,#35460f 100%);box-shadow:var(--shadow)}.hero-banner::after{content:'';z-index:-1;pointer-events:none;position:absolute;top:15px;right:210px;width:150px;height:150px;border-radius:50%;border:1px solid rgba(255,255,255,.16)}
+.hero-main{min-width:0;flex:1 1 440px}.hero-banner h1{font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:850;letter-spacing:-.034em;line-height:1.22;margin:0 0 11px}.hero-banner p{font-size:.94rem;color:rgba(255,255,255,.9);margin:0}
+.download-container{position:relative;z-index:10}.download-disclosure{position:relative;max-width:100%}.download-disclosure summary{cursor:pointer;user-select:none;list-style:none;display:flex;align-items:center;gap:10px;color:var(--epet-dark);background:#fff;padding:11px 17px;border-radius:50px;font-size:.9rem;font-weight:800;box-shadow:0 5px 18px rgba(0,0,0,.12);outline-offset:4px}.download-disclosure summary::-webkit-details-marker{display:none}.download-disclosure summary::after{content:'';width:8px;height:8px;border-bottom:2px solid currentColor;border-right:2px solid currentColor;transform:rotate(45deg) translateY(-3px);margin:0 4px;transition:transform .2s}.download-disclosure[open] summary::after{transform:rotate(225deg) translateY(-1px)}
+.download-options{position:absolute;right:0;top:calc(100% + 8px);width:365px;max-width:min(365px,calc(100vw - 40px));padding:8px;background:#fff;border-radius:15px;border:1px solid var(--line);box-shadow:0 14px 35px rgba(20,40,65,.21)}.download-options a{display:flex;align-items:center;gap:10px;padding:12px 13px;text-decoration:none;border-radius:10px;color:var(--ink);font-size:.91rem;font-weight:750;line-height:1.4}.download-options a:hover{color:var(--epet-dark);background:#f2f8e6}.download-options .svg-icon{color:#d85356}
+.book-container{display:grid;grid-template-columns:270px minmax(0,1fr);align-items:start;gap:18px}.book-tabs{position:sticky;top:12px;display:flex;flex-direction:column;gap:5px;padding:12px;border:1px solid var(--line);border-radius:21px;background:#fff;box-shadow:0 8px 22px rgba(30,50,74,.045)}.book-tabs::before{content:'';height:5px;border-radius:90px;background:linear-gradient(90deg,var(--epet),#cfe795);margin:0 8px 10px}
+.tab-item{display:flex;align-items:center;gap:11px;width:100%;text-align:left;min-width:0;cursor:pointer;background:transparent;border:1px solid transparent;color:#536378;border-radius:12px;font-size:.91rem;font-weight:700;line-height:1.44;padding:12px 12px;transition:background .17s,color .17s,transform .17s}.tab-item>.svg-icon{width:20px;height:20px;color:#8794a6}.tab-item:hover,.tab-item:focus-visible{color:var(--epet-dark);background:#f7f9f3;transform:translateX(2px)}.tab-item.active{color:#415e11;background:#eff9d8;border-color:#dbe9b5;font-weight:850}.tab-item.active>.svg-icon{color:#60781a}.tab-purple{border-top:1px solid #e2e8f0;margin-top:7px}.tab-purple.active{background:#f5eefc;color:#7a43b2;border-color:#e6d4f6}.tab-featured{color:#6d4a9e}.tab-featured.active{background:#f2effa;color:#6d4a9e;border-color:#e4d9f3}.nav-text{min-width:0;flex:1}
+.book-page{min-width:0;min-height:460px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:29px 30px 35px;box-shadow:var(--shadow)}.content-section{display:none;animation:showPage .25s ease}.content-section.active{display:block}@keyframes showPage{from{opacity:.2;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.section-title{display:flex;align-items:center;gap:11px;line-height:1.35;letter-spacing:-.02em;font-size:clamp(1.27rem,2.1vw,1.56rem);margin:0 0 22px;padding-bottom:17px;border-bottom:1px solid var(--line);color:var(--epet-dark);font-weight:850}.section-number{display:inline-flex;justify-content:center;align-items:center;min-width:43px;height:43px;flex:0 0 auto;border-radius:99px;background:var(--epet);color:#fff;font-size:.92rem;letter-spacing:-.01em;font-weight:850}
+.book-page h3{font-size:1.07rem;font-weight:800;margin:23px 0 12px;color:#34485e}.book-page h4{font-size:1rem;font-weight:800;margin:18px 0 11px}.book-page h5{font-size:1.03rem;font-weight:850;margin:17px 0 12px}.book-page h6{font-size:.97rem;font-weight:800;margin:14px 0 10px}.book-page p{line-height:1.72;color:#34475b;margin:0 0 12px}.book-page ul,.book-page ol{padding-left:24px;margin:10px 0 15px}.book-page li{line-height:1.67;margin-bottom:8px}.book-page strong,.book-page b{font-weight:800}.book-page a:not(.dt-option-card){color:var(--epet-dark);text-decoration:none;font-weight:750;border-bottom:2px solid #dae8b3}.book-page a:not(.dt-option-card):hover{background:#f3f9e7;border-bottom-color:var(--epet)}
+.book-page > .content-section > .card,.book-page .card:not(.dt-option-card){background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;margin:0 0 16px;box-shadow:0 7px 22px rgba(30,50,74,.038)}
+.intro-panel{background:linear-gradient(180deg,#fff,#fbfdf8)!important;border-top:5px solid var(--epet)!important;padding:27px!important}.intro-panel>p{font-size:1.05rem;margin-bottom:18px}.intro-panel h3{margin:13px 0 16px}.abbrev-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.abbrev-item{background:#fff;border:1px solid #e1e9d4;border-radius:13px;padding:12px 13px;display:flex;align-items:center;gap:6px;line-height:1.5;min-height:60px}.abbrev-item .bi{color:var(--epet-dark)!important;font-size:20px;margin-right:5px!important}.abbrev-item b{color:#34485e}
+.steps-holder{border:0!important;background:transparent!important;padding:0!important;box-shadow:none!important;margin:0!important}.step-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:17px;padding:20px 21px 20px 22px;margin:0 0 17px;box-shadow:0 6px 18px rgba(35,54,78,.045)}.step-card>p:first-child,.step-card>h6:first-child{margin-bottom:12px}.step-badge{display:inline-flex;justify-content:center;align-items:center;flex-shrink:0;width:32px;height:32px;vertical-align:middle;margin-right:9px;border-radius:50%;background:var(--epet);color:#fff!important;font-size:.85rem;font-weight:850;line-height:1}
+.step-card p .step-badge{margin-top:-3px}.step-card>img,.step-card>p>img{margin-top:16px}.zis-shot{display:block;max-width:100%;height:auto;width:auto;object-fit:contain;margin:12px auto 10px;padding:7px;border:1px solid #e3e8ef;border-radius:13px;background:#f8fafc;box-shadow:0 6px 20px rgba(30,50,75,.07)}.step-card .zis-shot{max-height:515px}
+#page-vysvetlivky .steps-holder,#page-info-umrti .steps-holder,#page-kanaly .steps-holder{display:grid;gap:13px}#page-vysvetlivky .step-card,#page-info-umrti .step-card,#page-kanaly .step-card{margin:0}#page-kanaly .steps-holder{grid-template-columns:repeat(2,minmax(0,1fr))}#page-kanaly .step-card{display:flex;align-items:center;min-height:98px}
+.gs-quote{position:relative;border:1px solid #dfe9cc;border-left:5px solid var(--epet);border-radius:13px;background:#f9fdf3;padding:18px 19px;margin:18px 0;color:#415333;box-shadow:0 4px 18px rgba(25,45,57,.03)}.gs-quote p{margin:0}.gs-quote cite{font-style:normal;display:block;font-size:.82rem;font-weight:800;letter-spacing:.01em;color:var(--epet-dark);margin-top:9px}#page-vysvetlivky .gs-quote{border-color:#f8d1d0;border-left-color:#e25455;background:#fff7f7}#page-vysvetlivky .gs-quote cite{color:#b73538}
+#page-notare .step-card:nth-child(4),#page-zis .step-card:nth-child(10){border-left:4px solid #9dbe49}#page-notare .step-card ul ul{padding-left:18px;border-left:2px solid #e6eee0;list-style:disc}
+.situation-grid,.payout-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px;align-items:start}.situation-pane,.payout-column{min-width:0}.status-panel{border:1px solid var(--line);border-top:4px solid #e35d54;background:#fff;border-radius:16px;padding:19px 21px;margin:0 0 18px;box-shadow:0 7px 22px rgba(30,50,74,.04)}.status-panel.status-clear{border-top-color:var(--epet)}.status-panel h5{color:#a73b36;margin:0 0 16px;font-size:1.02rem}.status-panel.status-clear h5{color:var(--epet-dark)}.status-panel h5 span{color:inherit!important}.status-panel h3{font-size:1rem;color:var(--navy);margin:19px 0 10px;border-top:1px solid #eef1f4;padding-top:15px}.status-panel h3:first-of-type{margin-top:0;padding-top:0;border:0}.status-panel ul{padding-left:20px}.status-panel>li{margin-left:18px}
+.payout-column{border:1px solid var(--line);padding:22px 22px 10px;border-radius:18px;background:#fff;box-shadow:0 8px 22px rgba(30,50,74,.038)}.payout-column>h5{font-size:1.06rem;line-height:1.45;background:#f6faee;border:1px solid #e1ecce;border-radius:11px;color:#4d6c20;padding:14px 15px;margin:0 0 15px}.payout-column>h5:not(:first-of-type){margin-top:27px}.payout-column h3,.payout-column h4{font-size:1rem;color:var(--navy);margin-top:21px;border-top:1px solid #eff1f4;padding-top:16px}.payout-column li{margin-bottom:13px}.payout-column li li{margin-top:7px}.payout-column a{overflow-wrap:anywhere}
+#page-MBA>.d-flex{padding:12px 17px;background:#f6f9fd;border:1px solid var(--line);border-bottom:0;border-radius:13px 13px 0 0;margin-bottom:0!important}#page-MBA>.alert{padding:21px;border:1px solid var(--line);border-left:5px solid #5394cf;border-radius:0 0 14px 14px;background:#f8fbff;margin:0 0 19px}#page-MBA>.alert h6{margin-top:0;color:var(--navy)}#page-MBA>.alert ul{margin-bottom:0}
+#page-video .d-flex.flex-column{border:2px dashed #d9e4ed!important;background:#fafcfd!important;border-radius:18px;padding:36px!important;min-height:270px!important}#page-test iframe{display:block;width:100%;height:650px;border:0;background:white}#page-test .shadow-sm{border-radius:15px;overflow:hidden;border:1px solid var(--line)}
+/* Decision tree: preserve all original questions, decisions and scripts, upgrade visual hierarchy. */
+.decision-section .section-title{color:var(--purple)}.dt-container{max-width:100%;min-width:0;margin:0}.dt-header{border:1px solid var(--line);background:#fafcfe;border-radius:13px;padding:13px 15px;margin-bottom:19px}.dt-breadcrumb{display:flex;gap:7px;align-items:center;flex-wrap:wrap;font-size:.86rem;color:#637389;min-height:28px}.dt-breadcrumb-item{background:#eff8df;border:1px solid #d8eabb;color:var(--epet-dark);padding:4px 10px;border-radius:99px;font-weight:750}
+.dt-step-container{display:none}.dt-step-container.active{display:block}.dt-question-title{font-size:1.15rem;line-height:1.45;font-weight:850;letter-spacing:-.012em;margin:0 0 17px;color:var(--navy)}.dt-options-grid{display:grid;grid-template-columns:1fr;gap:12px}.dt-option-card{display:flex;text-align:left;align-items:flex-start;gap:13px;padding:17px 18px;background:#fff;border:1px solid #dfe6ed;border-left:5px solid #c7dca2;border-radius:14px;width:100%;cursor:pointer;transition:box-shadow .18s,border-color .18s,transform .18s}.dt-option-card:hover,.dt-option-card:focus-visible{border-color:var(--epet);background:#fafff3;box-shadow:0 8px 18px rgba(25,55,65,.075);transform:translateY(-2px)}.dt-option-icon{width:39px;height:39px;flex-shrink:0;display:grid;place-items:center;background:#eef7e1;border-radius:10px;color:#60781a;font-size:19px}.dt-option-content{flex:1;min-width:0}.dt-option-title{font-size:1rem;font-weight:800;color:#304254;line-height:1.4;margin-bottom:4px}.dt-option-desc{font-size:.9rem;color:#6b778a;margin:0!important}
+.dt-result-box{border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 7px 23px rgba(30,50,74,.055)}.dt-result-header{padding:15px 19px;background:var(--epet);font-weight:850;color:white;font-size:1.06rem}.dt-result-content{padding:23px;background:#fff}.dt-result-content ol,.dt-result-content ul{margin:13px 0}.dt-alert{display:flex;gap:10px;align-items:center;background:#fff9ec;color:#855a07;border:1px solid #f8dfad;border-radius:11px;padding:13px 15px;margin:17px 0;font-weight:750}.dt-example{background:#f7f9fb;border-left:4px solid #a3acb7;border-radius:0 10px 10px 0;padding:13px 16px;margin:14px 0;color:#48566a;font-size:.94rem}.dt-result-content>div[style*="display: flex"]{gap:13px!important}.dt-result-content>div[style*="display: flex"]>div{border-color:var(--line)!important;background:#fbfcfd;border-radius:11px!important}
+.dt-controls{display:flex;gap:10px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:17px;margin-top:20px}.dt-btn-nav{display:inline-flex;gap:9px;align-items:center;padding:10px 15px;background:#fff;color:var(--navy);cursor:pointer;font-weight:800;border:1px solid var(--line);border-radius:10px}.dt-btn-nav:hover{background:#f3f8e8;border-color:#d1e4a7}.dt-result-content a.btn-dark{display:inline-flex;padding:11px 16px;border-radius:10px;color:white!important;border:0!important;background:var(--navy);font-weight:750}
+.site-footer{display:flex;justify-content:space-between;gap:15px;margin-top:23px;border-top:1px solid #e3ebf1;padding:19px 7px;font-size:.78rem;color:#8290a1}.site-footer span:first-child{color:var(--epet-dark);font-weight:800}
+@media(max-width:1050px){.book-container{grid-template-columns:240px minmax(0,1fr)}.book-page{padding:23px}.book-tabs{padding:9px}.tab-item{padding:10px 8px;font-size:.88rem}.situation-grid,.payout-grid{grid-template-columns:1fr}}
+@media(max-width:800px){body{padding:9px 9px 30px}.book-container{grid-template-columns:minmax(0,1fr);gap:13px}.book-tabs{position:static;display:flex;flex-direction:row;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;padding:9px;border-radius:16px;gap:6px}.book-tabs::before{display:none}.tab-item{flex:0 0 auto;width:auto;max-width:235px;padding:10px 13px}.book-page{padding:22px;border-radius:17px}.hero-banner{padding:25px 23px;min-height:140px}.hero-banner::after{display:none}}
+@media(max-width:550px){.hero-banner{border-radius:17px;padding:23px 20px;gap:12px}.hero-banner h1{font-size:1.54rem}.download-container{width:100%}.download-disclosure{width:100%}.download-disclosure summary{width:100%}.download-options{left:0;right:auto;width:100%;max-width:100%}.book-page{padding:17px 14px 26px}.section-title{font-size:1.22rem;gap:9px}.section-number{min-width:35px;height:35px}.step-card{padding:16px 14px}.abbrev-grid,#page-kanaly .steps-holder{grid-template-columns:1fr}.status-panel,.payout-column{padding:17px 15px}.dt-result-content{padding:16px}.dt-option-card{padding:14px 12px}.book-page p,.book-page li{font-size:.95rem}.breadcrumb{font-size:.78rem}.site-footer{flex-direction:column;gap:3px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:0.01ms!important;scroll-behavior:auto!important;transition-duration:0.01ms!important}}
+
+
+/* Native SVG icons remain crisp without externally loaded icon fonts. */
+.content-icon{display:inline-block;width:19px;height:19px;vertical-align:-.22em;flex:none;color:#7b9f2f;margin-right:6px}
+.content-icon.large-icon{width:24px;height:24px}
+.content-icon.red-icon{color:#d85456}.content-icon.orange-icon{color:#d98e18}.content-icon.green-icon{color:#68931c}
+.abbrev-item .content-icon{width:21px;height:21px;margin-right:8px;color:#729827}
+.dt-option-icon .content-icon{width:21px;height:21px;margin:0}
+.dt-result-header .content-icon{color:inherit}
+.book-page .d-flex.align-items-center{display:flex;align-items:center;gap:7px}
+.book-page .justify-content-between{justify-content:space-between}
+.book-page .flex-column{flex-direction:column}.book-page .text-center{text-align:center}
+#page-video .d-flex.flex-column{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+#page-MBA .d-flex.align-items-start{display:flex;align-items:flex-start;gap:9px}
+.bi-chevron-right::before{content:'›';font:700 16px/1 Arial,sans-serif}
+</style>
+</head>
+<body>
+<div class="site-wrap">
+<nav aria-label="Drobečková navigace" class="breadcrumb-nav"><ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="https://sites.google.com/view/znalostka/"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m3 10 9-7 9 7v11H3zM9 21v-8h6v8"></path></svg>Znalostní báze</a></li>
+<li class="breadcrumb-item"><a href="https://sites.google.com/view/znalostka/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat">Školení ZIS</a></li>
+<li class="breadcrumb-item"><a href="https://sites.google.com/view/znalostka/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat/6-den">6. den</a></li>
+<li aria-current="page" class="breadcrumb-item active">Dědické řízení (DINHE)</li>
+</ol></nav>
+<header class="hero-banner"><div class="hero-main"><h1>Pracovní postup: Dědické řízení (DINHE)</h1><p>Znalostní databáze epet | Dokumentace a přílohy</p></div>
+<div class="download-container"><details class="download-disclosure"><summary><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"></path></svg> Dokumenty ke stažení</summary><div class="download-options"><a href="https://docs.google.com/presentation/d/18HqsWcgW0AFPdL_5RwM1drI0M-q7J_NleyJPHCMhwvc/export/pdf" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"></path></svg> <span>Prezentace - Dědické řízení (DINHE)  (PPTX)</span></a>
+<a href="https://drive.google.com/uc?export=download&amp;id=1UsephGHUFSFWGwdzXl871MLDKDAJ14ck" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"></path></svg> <span>Dědické řízení (DINHE) (PDF)</span></a></div></details></div>
+</header>
+<div class="book-container"><nav aria-label="Navigace školením" class="book-tabs" role="tablist"><button aria-controls="page-intro" aria-selected="true" class="tab-item active" data-target="page-intro" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 5h7a3 3 0 0 1 3 3v13H6a3 3 0 0 0-3 0zm10 3a3 3 0 0 1 3-3h5v16a3 3 0 0 0-3 0h-5"></path></svg><span class="nav-text">Pracovní postup</span></button>
+<button aria-controls="page-vysvetlivky" aria-selected="false" class="tab-item" data-target="page-vysvetlivky" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v6m0-10h.01"></path></svg><span class="nav-text">Vysvětlivky pojmů</span></button>
+<button aria-controls="page-info-umrti" aria-selected="false" class="tab-item" data-target="page-info-umrti" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"></path></svg><span class="nav-text">Informace o úmrtí zákazníka</span></button>
+<button aria-controls="page-kanaly" aria-selected="false" class="tab-item" data-target="page-kanaly" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="2" width="19" x="2.5" y="5"></rect><path d="m3 7 9 6 9-6"></path></svg><span class="nav-text">Kanály přijetí požadavku</span></button>
+<button aria-controls="page-notare" aria-selected="false" class="tab-item" data-target="page-notare" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 21v-2a8 8 0 0 1 16 0v2"></path></svg><span class="nav-text">Kontaktování notáře</span></button>
+<button aria-controls="page-zis" aria-selected="false" class="tab-item" data-target="page-zis" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="15" rx="2" width="20" x="2" y="3"></rect><path d="M8 22h8m-4-4v4"></path></svg><span class="nav-text">Evidence v ZIS</span></button>
+<button aria-controls="page-situace" aria-selected="false" class="tab-item" data-target="page-situace" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M4 7h16m-4-4 4 4-4 4M20 17H4m4-4-4 4 4 4"></path></svg><span class="nav-text">Řešení situací</span></button>
+<button aria-controls="page-preplatky" aria-selected="false" class="tab-item" data-target="page-preplatky" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="9" cy="9" r="6"></circle><path d="M15 7a6 6 0 1 1-6 8M8 6v6m2-5H8a2 2 0 0 0 0 4h2"></path></svg><span class="nav-text">Přeplatky</span></button>
+<button aria-controls="page-pruvodce" aria-selected="false" class="tab-item tab-featured" data-target="page-pruvodce" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="5" rx="1" width="6" x="9" y="2"></rect><rect height="5" rx="1" width="6" x="2" y="16"></rect><rect height="5" rx="1" width="6" x="16" y="16"></rect><path d="M12 7v4M5 16v-5h14v5"></path></svg><span class="nav-text">Jak postupovat v rámci Dědického řízení - kdy máme usnesení</span></button>
+<button aria-controls="page-MBA" aria-selected="false" class="tab-item" data-target="page-MBA" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"></path></svg><span class="nav-text">Evidence MBA / Odpisy</span></button>
+<button aria-controls="page-video" aria-selected="false" class="tab-item" data-target="page-video" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="2" width="20" x="2" y="5"></rect><path d="m10 9 5 3-5 3z"></path></svg><span class="nav-text">Video návod</span></button>
+<button aria-controls="page-test" aria-selected="false" class="tab-item tab-purple" data-target="page-test" role="tab" type="button"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="19" rx="2" width="16" x="4" y="3"></rect><path d="M9 3V2h6v1M8 13l3 3 5-6"></path></svg><span class="nav-text">Opakovací test</span></button></nav>
+<article class="book-page"><div aria-hidden="false" class="content-section active" id="page-intro" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">1.</span> Pracovní postup</h2>
+<div class="card border-0 bg-light p-3 mb-4 intro-panel">
+<p class="mb-3">
+                        Tato část popisuje základní orientaci v postupu při řešení situace,
+                        kdy dojde k <strong>úmrtí zákazníka</strong>, a s tím související komunikaci
+                        mezi jednotlivými odděleními.
+                    </p>
+<h3><strong>Zkratky:</strong></h3>
+<div class="abbrev-grid">
+<div class="abbrev-item">
+<svg aria-hidden="true" class="content-icon large-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 21v-2a8 8 0 0 1 16 0v2"></path></svg>
+<b>ZK</b> = zákazník
+                        </div>
+<div class="abbrev-item">
+<svg aria-hidden="true" class="content-icon large-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m3 10 9-7 9 7v11H3zM9 21v-8h6v8"></path></svg>
+<b>FO</b> = front office (zákaznická linka)
+                        </div>
+<div class="abbrev-item">
+<svg aria-hidden="true" class="content-icon green-icon large-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m13 2-9 12h7l-1 8 10-12h-7z"></path></svg>
+<svg aria-hidden="true" class="content-icon green-icon large-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M12 22c-5 0-7-3-7-7 0-4 3-6 3-10 3 2 4 4 4 6 1-4 5-5 5-9 3 4 3 8 3 11 0 5-2 9-8 9z"></path></svg>
+<b>OM</b> = odběrné místo
+                        </div>
+<div class="abbrev-item">
+<svg aria-hidden="true" class="content-icon large-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="2" width="20" x="2" y="7"></rect><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M2 12h20"></path></svg>
+<b>BO</b> = back office (interní oddělení)
+                        </div>
+<div class="abbrev-item">
+<svg aria-hidden="true" class="content-icon orange-icon large-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="20" rx="2" width="18" x="3" y="2"></rect><path d="M8 7h2m4 0h2M8 12h2m4 0h2M10 22v-5h4v5"></path></svg>
+<b>FINANCE</b> = pohledávky a platby
+                        </div>
+<div class="abbrev-item">
+<svg aria-hidden="true" class="content-icon orange-icon large-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m12 2 8 4v6c0 5-3 8-8 10-5-2-8-5-8-10V6z"></path><path d="m8 12 3 3 5-6"></path></svg>
+<b>Legal</b> = právní oddělení
+                        </div>
+</div>
+</div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-vysvetlivky" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">2.</span> Vysvětlivky pojmů</h2>
+<div class="card border-0 bg-light p-3 mb-4 steps-holder"><div class="step-card"><p class="mb-3">
+<span class="step-badge">1</span>
+<strong>Doložka právní moci</strong> – je potvrzení, že usnesení nabylo právní moci,
+                        tedy že po vynesení usnesení do 15 dní žádný z dědiců výsledek dědického řízení
+                        nerozporoval. Poznáme ji tak, že na první straně usnesení je
+                        <strong>modré razítko s datem nabytí právní moci a podpisem</strong>.
+                        V případě, že razítko není, usnesení sice bylo vydáno, ale dědicové mají
+                        <strong>15 dní na rozpor</strong>, tedy výsledek se může ještě změnit.
+                    </p></div><div class="step-card"><p class="mb-0">
+<span class="step-badge">2</span>
+<strong>Správce</strong> – je osoba pověřená správou majetku zemřelého
+                        od okamžiku jeho smrti až do ukončení dědického řízení.
+                        Tato osoba může být určena zůstavitelem (zemřelým) ve své závěti
+                        nebo může být jmenována soudem, pokud zůstavitel nikoho neurčil.
+                        Případně může být osoba určena potenciálními dědici,
+                        tuto skutečnost však musí písemně prohlásit
+                        (<em>tato varianta není preferována</em>).
+                        Potvrzení od notáře, že je daná osoba správcem, je velmi snadné získat
+                        (<em>tato varianta je preferována</em>).
+                    </p></div></div>
+<blockquote class="gs-quote">
+<p>
+                        V případě úmrtí zákazníka <b>nezaniká smlouva</b>, naopak přechází
+                        do dědického řízení stejně jako např. nemovitost.
+                        To znamená, že smlouva je i nadále <b>platná</b> a
+                        <b>zálohy musí být hrazeny</b>.
+                    </p>
+<cite>Pozor</cite>
+</blockquote>
+</div>
+<div aria-hidden="true" class="content-section" id="page-info-umrti" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">3.</span> Informace o úmrtí zákazníka</h2>
+<div class="card border-0 bg-light p-3 mb-4 steps-holder"><div class="step-card"><p class="mb-2">
+<span class="step-badge">1</span>
+<strong>Oznámení od notáře</strong>
+</p></div><div class="step-card"><p class="mb-2">
+<span class="step-badge">2</span>
+<strong>Oznámení od dědiců / potenciálních dědiců</strong>
+</p><ul class="mb-3">
+<li>Zasláním <strong>úmrtního listu</strong></li>
+<li>Zákazník může dodat již i <strong>Usnesení o dědictví</strong></li>
+</ul></div><div class="step-card"><p class="mb-2">
+<span class="step-badge">3</span>
+<strong>Třetí strana</strong>
+                        (<em>Česká pošta – zjištění z důvodu nedoručené pošty = úmrtí, soud, jiný dodavatel apod.</em>)
+                    </p><ul class="mb-0">
+<li>
+                            Třetí strana <strong>nepožaduje zaslat dokumenty k přepisu</strong>,
+                            <strong>nebude novým majitelem odběrného místa</strong> a
+                            <strong>není dědicem, rodinou ani notářem</strong>.
+                        </li>
+</ul></div></div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-kanaly" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">4.</span> Kanály přijetí požadavku</h2>
+<div class="card border-0 bg-light p-3 mb-4 steps-holder"><div class="step-card"><p class="mb-2">
+<span class="step-badge">1</span>
+<svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 2h5l2 5-3 2a15 15 0 0 0 5 5l2-3 5 2v5c-1 4-4 4-8 2C5 16 1 9 2 5c.3-1.3 2-3 4-3z"></path></svg>
+<strong>Telefonicky</strong>
+</p></div><div class="step-card"><p class="mb-2">
+<span class="step-badge">2</span>
+<svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="2" width="19" x="2.5" y="5"></rect><path d="m3 7 9 6 9-6"></path></svg>
+<strong>E-mailem</strong>
+</p></div><div class="step-card"><p class="mb-2">
+<span class="step-badge">3</span>
+<svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="7"></rect><path d="M3 13h18M9 7v14M14 11l4 0"></path></svg>
+<strong>Poštou</strong>
+</p></div><div class="step-card"><p class="mb-0">
+<span class="step-badge">4</span>
+<svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="18" rx="2" width="18" x="3" y="3"></rect><path d="M3 11h18m-14 0 4 4 4-4"></path></svg>
+<strong>Datovou schránkou</strong>
+</p></div></div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-notare" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">5.</span> Kontaktování notáře</h2>
+<div class="card border-0 bg-light p-3 mb-4 steps-holder"><div class="step-card"><p>
+<span class="step-badge">1</span>
+<strong>Příslušného notáře zjistíme na seznamu notářů.</strong>
+                        Rovnou můžete kliknout na odkaz -&gt;
+                        <a data-bs-placement="top" data-bs-toggle="tooltip" href="https://www.nkcr.cz/seznam-notaru/rozvrhy-rizeni-o-pozustalosti" rel="noopener noreferrer" target="_blank" title="Notářská komora">
+                            Notářská komora
+                        </a>
+</p></div><div class="step-card"><p>
+<span class="step-badge">2</span>
+<strong>Notáře vyhledáme podle místa posledního trvalého pobytu zemřelého zákazníka:</strong>
+</p><ul>
+<li>Vyhledávání notáře probíhá podle obce, okresu a následně zjistíme, pod jaký krajský soud spadá + dle
+                            roku a data úmrtí zákazníka.</li>
+<li>Pokud informaci získáme od třetí strany a nemáme k dispozici úmrtní list, nevíme tedy na 100 % na jakého
+                            notáře se obrátit.</li>
+<li>Pokud zemřelý zákazník změnil trvalý pobyt a nedal nám o tom vědět, tak jediné, kde se informaci o
+                            trvalém pobytu dozvíme, je úmrtní list.</li>
+</ul></div><div class="step-card"><p>
+<span class="step-badge">3</span>
+<strong>Dotaz položený notáři je zdarma.</strong>
+</p></div><div class="step-card"><p>
+<span class="step-badge">4</span>
+<strong>Problém je, že notáři nemají zákonnou povinnost nám informace o potenciálních dědicích či osobách
+                            spravujících dědictví sdělovat.</strong>
+                        Nemusí nám tedy na dotaz reagovat.
+                    </p></div><div class="step-card"><p>
+<span class="step-badge">5</span>
+<strong>Cílem oslovení notáře by mělo být zejména:</strong>
+</p><ul>
+<li>Zjistit, kdo je správcem pozůstalosti
+                            <ul>
+<li>Správce pozůstalosti nemusí být vždy stanoven. Pokud není stanoven, stačí nám údaje
+                                    potenciálních dědiců. Každopádně dotaz ohledně správce pozůstalosti směrem k notáři vzneseme.
+                                    Správce pozůstalosti většinou bývá stanoven u podnikatelů.</li>
+</ul>
+</li>
+<li>Zjistit jména a kontaktní údaje potenciálních dědiců</li>
+<li>Informovat notáře, že má s námi zůstavitel (zemřelý zákazník) uzavřenou smlouvu a že jedné nebo druhé
+                            smluvní straně z ní vyplývají nebo vyplynou nároky – tím bychom měli zajistit, že nebudeme v rámci
+                            dědického usnesení opomenuti – notář po nás bude chtít předložit příslušné dokumenty (např. smlouvu,
+                            faktury, plnění platebního kalendáře –&gt; tj. dluhy na zálohách).</li>
+<li>
+<strong>Vzor dopisu pro oslovení notáře:</strong>
+<a data-bs-placement="top" data-bs-toggle="tooltip" href="https://sites.google.com/view/znalostka/d%C4%9Bdick%C3%A9-%C5%99%C3%ADzen%C3%AD/d%C4%9Bdick%C3%A9-%C5%99%C3%ADzen%C3%AD/gener%C3%A1tor-dopisu-osloven%C3%AD-not%C3%A1%C5%99e" rel="noopener noreferrer" target="_blank" title="Oslovení notáře">
+                                Oslovení notáře
+                            </a>
+</li>
+<li>Soud neoslovujeme – oslovení soudu písemným dotazem je zpoplatněno. V případě nutnosti soud osloví
+                            externí vymáhací společnost (MBA), které případ předáváme v rámci procesů níž.</li>
+</ul></div><div class="step-card"><p>
+<span class="step-badge">6</span>
+<strong>Komunikace s notářem – situace, které mohou vzniknout</strong>
+</p><p>
+                        Notář nás osloví, kde nás informuje o úmrtí zákazníka s tím, že chce sdělit případné pohledávky/přeplatky,
+                        které neznáme, jelikož na OM není realizovaný přepis/není ukončeno.
+                    </p><ul>
+<li>Notáře seznámíme s reálným stavem, tj. sdělíme mu, že v současné době neznáme stavy. Zároveň notáři
+                            sdělíme, kdy stavy pro fakturaci budeme znát (v rámci pravidelného vyúčtování).</li>
+<li>Dědické řízení se vede poměrně dlouho, takže se může stát, že do té doby obdržíme od distributora data
+                            pro vystavení faktury (pravidelné vyúčtování).</li>
+<li>Pokud evidujeme v době obdržení dotazu notáře nějaké přeplatky/nedoplatky, tak mu je zašleme s tím, že
+                            jsou vystaveny k určitému datu.</li>
+<li>FO sdělí výši pohledávek</li>
+<li>Pokud by v saldu mělo FO problém se soupisem pohledávek/nebylo by si jisté, obrátí se na FINANCE
+                            prostřednictvím úkolu, kde si nechá výši pohledávek potvrdit</li>
+<li>Směrem k notáři stačí uvést pouze soupis pohledávek standardním dopisem, či e-mailem/datovou schránkou
+                            (podle toho, jak s notářem probíhá komunikace), nemusí být potvrzeno razítkem či podpisem</li>
+<li>Vždy bychom měli notáři sdělit info, že ať už budeme mít k dispozici cokoliv, nejsme mu schopni
+                            poskytnout informace o stavu měřidla, a tedy též nedoplatku/přeplatku ke dni úmrtí zákazníka.</li>
+<li>
+                            Využijeme vzor dopisu:
+                            <a href="https://sites.google.com/view/znalostka/d%C4%9Bdick%C3%A9-%C5%99%C3%ADzen%C3%AD/d%C4%9Bdick%C3%A9-%C5%99%C3%ADzen%C3%AD/gener%C3%A1tor-dopisu-informace-pro-not%C3%A1%C5%99e-m%C3%A1me-dluh" rel="noopener noreferrer" target="_blank">Informace pro notáře - máme nedoplatek</a>,
+                            <a href="https://sites.google.com/view/znalostka/d%C4%9Bdick%C3%A9-%C5%99%C3%ADzen%C3%AD/d%C4%9Bdick%C3%A9-%C5%99%C3%ADzen%C3%AD/gener%C3%A1tor-dopisu-informace-pro-not%C3%A1%C5%99e-p%C5%99eplatek" rel="noopener noreferrer" target="_blank">Informace pro notáře - máme přeplatek</a>,
+                            <a href="https://sites.google.com/view/znalostka/d%C4%9Bdick%C3%A9-%C5%99%C3%ADzen%C3%AD/d%C4%9Bdick%C3%A9-%C5%99%C3%ADzen%C3%AD/gener%C3%A1tor-dopisu-informace-pro-not%C3%A1%C5%99e-nem%C5%AF%C5%BEeme-sd%C4%9Blit-stav-om-nen%C3%AD-ukon" rel="noopener noreferrer" target="_blank">Informace pro notáře - nemůžeme sdělit stav účtu</a>,
+                            <a href="https://sites.google.com/view/znalostka/d%C4%9Bdick%C3%A9-%C5%99%C3%ADzen%C3%AD/d%C4%9Bdick%C3%A9-%C5%99%C3%ADzen%C3%AD/gener%C3%A1tor-dopisu-informace-pro-not%C3%A1%C5%99e-p%C5%99eplatek-je-ji%C5%BE-vyplacen" rel="noopener noreferrer" target="_blank">Informace pro notáře - přeplatek již vyplacen</a>.
+                        </li>
+</ul></div><div class="step-card"><p>
+<span class="step-badge">7</span>
+<strong>Notáře známe, oslovil nás, ale následně již přestane komunikovat nebo komunikace vázne.</strong>
+</p><p>
+                        Pokud notář nekomunikuje a jsou na místě dluhy, předáváme úkol dle postupu viz níže na vymáhací společnost
+                        MBA.
+                        Ti mají nástroje na zjištění stavu.
+                    </p></div><div class="step-card"><p>
+<span class="step-badge">8</span>
+<strong>Notáře známe, a potřebujeme vědět, kdo je potenciální dědic</strong>
+</p><p>
+                        V případě, kdy potřebujeme vědět kdo je případný dědic nebo správce.
+                        Tedy víme že ZK zemřel (pošta), příbuzní přestanou reagovat, na odběrném místě vznikají dluhy.
+                    </p><p>
+                        Notář by nám měl sdělit správce nebo potenciálního dědice,
+                        případně nám může zaslat již výsledek dědického řízení.
+                    </p><p>
+                        Využijeme vzor dopisu:
+                        <a href="https://sites.google.com/view/znalostka/d%C4%9Bdick%C3%A9-%C5%99%C3%ADzen%C3%AD/d%C4%9Bdick%C3%A9-%C5%99%C3%ADzen%C3%AD/gener%C3%A1tor-dopisu-osloven%C3%AD-not%C3%A1%C5%99e" rel="noopener noreferrer" target="_blank">
+                            Oslovení notáře
+                        </a>
+</p></div></div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-zis" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">6.</span> Evidence v ZIS</h2>
+<div class="card border-0 bg-light p-3 mb-4 steps-holder"><div class="step-card"><p>
+<span class="step-badge">1</span>
+                        V ZIS při zjištění úmrtí zákazníka provádíme blokace upomínek a vyplacení případných přeplatků.
+                    </p></div><div class="step-card"><p>
+<span class="step-badge">2</span>
+                        Blokaci provádíme ve Stručném přehledu proklikem na <b>Zákaznický účet</b>. Následně klikneme na
+                            tlačítko.
+                    </p><img alt="ZÚ" class="zis-shot" decoding="async" loading="lazy" src="https://i.postimg.cc/fRS64K09/z.png"/></div><div class="step-card"><p>
+<span class="step-badge">3</span>
+                        Na záložce Blokace a ostatní, zvolíme přes zelené plus.
+                    </p><img alt="ZÚ" class="zis-shot" decoding="async" loading="lazy" src="https://i.postimg.cc/zBWQ4t92/blokace.png"/></div><div class="step-card"><p>
+<span class="step-badge">4</span>
+                        Přes mřížku vybereme typ blokace
+                    </p><img alt="ZÚ" class="zis-shot" decoding="async" loading="lazy" src="https://i.postimg.cc/hPKY30MM/mrizka.png"/></div><div class="step-card"><p>
+<span class="step-badge">5</span>
+                        Nejdříve nastavíme blokaci vyplacení přeplatků <b>VRATK</b>.
+                          
+                    </p><img alt="ZÚ" class="zis-shot" decoding="async" loading="lazy" src="https://i.postimg.cc/5tX2FsHd/vratk.png"/></div><div class="step-card"><p>
+<span class="step-badge">6</span>
+                        Blokace uložíme přes
+                    </p><img alt="Partner" class="zis-shot" decoding="async" loading="lazy" src="https://i.postimg.cc/qqx4fGhr/zapsat.png"/></div><div class="step-card"><p>
+<span class="step-badge">7</span>
+                       Dále je potřeba založit úkol s informací o úmrtí. Otevřeme si tedy <b>ÚKOLY</b> a zvolíme
+                    </p><img alt="Partner" class="zis-shot" decoding="async" loading="lazy" src="https://i.postimg.cc/1t4Pj75G/sab.png"/></div><div class="step-card"><p>
+<span class="step-badge">8</span>
+                        Vybíráme šablonu s názvem <b>20002438168 -&gt; Dědické řízení</b>.
+                    </p><img alt="Partner" class="zis-shot" decoding="async" loading="lazy" src="https://i.postimg.cc/rm8WLzb6/sablo.png"/></div><div class="step-card"><p>
+<span class="step-badge">9</span>
+                        Následně zaznamenáme informace do úkolu
+                    </p><img alt="Partner" class="zis-shot" decoding="async" loading="lazy" src="https://i.postimg.cc/qBFt1mkH/uko.png"/></div><div class="step-card"><h6 class="mt-3">
+<span class="step-badge">10</span>
+<svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"></path></svg>Parametry úkolu
+                    </h6><ul class="list-group mb-3">
+<li class="list-group-item"><svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M4 20h16M6 17l10-10 3 3-10 10H6zM15 8l3-3 3 3-3 3"></path></svg><strong>Věc a popis
+                                úkolu:</strong> Dědické řízení</li>
+<li class="list-group-item"><svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M2 6h8l3 3h9v12H2z"></path></svg><strong>Zdroj:</strong> Volná
+                            událost / Došlá pošta</li>
+<li class="list-group-item"><svg aria-hidden="true" class="content-icon green-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 4h18v14H9l-6 4zM7 9h10M7 13h7"></path></svg><strong>Popis
+                                zadání:</strong> např. ZK zemřel, zadány blokace na vyplacení přeplatků a zasílání upomínek.Úmrtí
+                            nahlásil syn/dcera, jméno a tel./ mail. (dopíšeme případné potřebné informace jako notář informován o
+                            přeplatku/nedoplatku, pozůstalí nechtějí přepis do vyřešení Dř,..)</li>
+<li class="list-group-item"><svg aria-hidden="true" class="content-icon red-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 21v-2a8 8 0 0 1 16 0v2"></path></svg><strong>Řešitel:</strong>
+                            DINHE</li>
+<li class="list-group-item"><svg aria-hidden="true" class="content-icon orange-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="18" rx="2" width="18" x="3" y="4"></rect><path d="M8 2v4m8-4v4M3 10h18m-13 4h4"></path></svg><strong>DO:</strong> D+30
+                        </li>
+<li class="list-group-item"><svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m7 12 3 3 6-6"></path></svg><strong> STAV:</strong> V řešení</li>
+</ul></div><div class="step-card"><p>
+<span class="step-badge">11</span>
+                        Úkol pravidelně kontrolujeme a značíme do něj všechny potřebné informace.
+                    </p><blockquote class="gs-quote">
+<p>
+                            Snažíme se s dědicem dohodnout na přepisu, v případě, že do ukončení Dř nechtějí přepsat OM,
+                            není to povinnost, ale je zapotřebí pozůstalé upozornit, že v případě nehrazení záloh může dojít
+                            k odpojení OM. Náklady na hrazení záloh si musí dát do dědického řízení.
+                        </p>
+<cite>Interní poznámka / metodika</cite>
+</blockquote></div><div class="step-card"><p>
+<span class="step-badge">12</span>
+                        V případě, že zákazník souhlasí s přepisem, máme dvě možnosti:
+                    </p><ol>
+<li>
+<b>Možnost</b> - se zákazníkem se dohodneme, že mu na e-mail zašleme odkaz k vyplnění online formuláře k
+                            přepisu odběrného místa
+                            <blockquote class="gs-quote">
+<p>
+                                    Šablonu na tento typ e-mailu nalezneme
+                                    <a href="https://sites.google.com/view/znalostka/%C5%A1ablony/%C5%A1ablona-na-e-maily" rel="noopener noreferrer" target="_blank">zde</a>
+                                    (Pod kategorií: <i>Přepisy -&gt; Přepis odběrného místa - Zaslání Odkazu</i>)
+                                </p>
+<cite>Interní poznámka / metodika</cite>
+</blockquote>
+</li>
+<li>
+<b>Možnost</b> - Domluvit se se zákazníkem, že mu necháme podklady k přepisu zaslat na e-mail
+                            (preferovaná varianta) nebo korespondečně na adresu
+                            (v případech, kdy není jiná možnost! <b>proaktivně nenabízet</b>).
+                            V tomto případě, je nutné založit v ZIS úkol, kde řešitelem takového úkolu bude <b>BO_CC</b>
+<blockquote class="gs-quote">
+<p>
+                                    Šablonu na tento typ úkolu nalezneme
+                                    <a href="https://sites.google.com/view/znalostka/%C5%A1ablony/%C5%A1ablona-%C3%BAkoly" rel="noopener noreferrer" target="_blank">zde</a>
+                                    (Pod kategorií: <i>Přepis</i>)
+                                    </p>
+<cite>Interní poznámka / metodika</cite>
+</blockquote>
+</li>
+</ol></div></div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-situace" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">7.</span> Řešení situací</h2>
+<div class="situation-grid">
+<div class="situation-pane"><div class="status-panel status-due"><h5>AKTIVNÍ ODBĚRNÉ MÍSTO A <span style="color:red;">DLUŽÍ</span></h5><h3><strong>Máme výsledek dědického řízení</strong></h3><p>Nejdříve upozorníme dědice dle usnesení na dlužné částky, a to pomocí výzvy dle <b>vzoru č. 3.</b> +
+                            telefonicky navoláme (upozorníme na možnost vymáhání MBA).</p><ul>
+<li>Pro doručení výzvy postačí, když se dostane do dispoziční sféry aspoň jednoho z dědiců – pokud je
+                                dědiců více (protože jsou odpovědní společně a nerozdílně).
+                                <ul>
+<li>Dispoziční sféra = okamžik doručení či odmítnutí zásilky, popř. vhozením výzvy k vyzvednutí
+                                        zásilky do poštovní schránky.</li>
+</ul>
+</li>
+<li>Úkol termínujeme D+14. Za 14 dní provedeme kontrolu úhrady.</li>
+<li>V případě, že pozůstalí nereagují, předáme úkol na finance a zaevidujeme případ do sdílené tabulky
+                                na vymáhání MBA →
+                                <a href="https://testepet.sharepoint.com/:x:/r/sites/ComdataFOepetDE/Sdilene%20dokumenty/Tabulka%20D%C5%98.xlsx" rel="noopener noreferrer" target="_blank">Tabulka MBA</a>
+</li>
+</ul><h3><strong>Nemáme výsledek dědického řízení</strong></h3><ul>
+<li>V tomto případě urgujeme o výsledek řízení pozůstalé a notáře. Pro notáře využijeme zaslání
+                                <b>šablony č. 4.</b></li>
+<li>Pozůstalým zasíláme <b>urgenci šablonu č. 5.</b></li>
+<li>Úkol termínujeme D+30. Za 30 dní provedeme kontrolu, zda známe dědice nebo správce.</li>
+<li>Pokud notář nebo dědic nespolupracují – urgujeme po dobu 3 měsíců (3× zaslaná urgence), v případě, že
+                                po 3 měsících jsme nedostali odpověď, tak předáváme na <i>FINANCE</i> a případ evidujeme do tabulky.
+                            </li>
+</ul><h3><strong>Máme správce</strong></h3><ul>
+<li>Pokud víme, kdo je správce pozůstalosti, tak jej urgujeme na přepis smlouvy a na dlužné částky.</li>
+<li>V případě, že správce po dobu 3 měsíců (3× urgence) nereaguje ani není uhrazeno, předáváme na
+                                finance + evidujeme do sdílené tabulky.</li>
+</ul><h3><strong>Oslovení soudu</strong></h3><ul>
+<li>Pokud neznáme notáře ani stav případu (nejsou příbuzní) předáváme úkol na finance + evidujeme do
+                                sdílené tabulky.</li>
+<li>Finance předají případ MBA, která si zajistí notáře případně u uzavřeného dědického řízení výsledek
+                                přímo u soudu.</li>
+</ul></div><div class="status-panel status-clear"><h5>AKTIVNÍ ODBĚRNÉ MÍSTO A <span style="color:rgb(8, 226, 63)">NEDLUŽÍ</span></h5><li>U zákazníka provádíme pouze urgenci přepisu viz bod č. 1, <b>šablony č. 1 a č. 2.</b></li></div></div>
+<div class="situation-pane"><div class="status-panel status-due"><h5>NEAKTIVNÍ ODBĚRNÉ MÍSTO A <span style="color:red;">DLUŽÍ</span></h5><h4><strong>Máme výsledek dědického řízení</strong></h4><ul>
+<li>Nejdříve upozorníme dědice dle usnesení na dlužné částky, a to pomocí výzvy dle <b>vzoru č. 3.</b> +
+                                telefonicky navoláme.</li>
+<li>Úkol termínujeme D+14</li>
+<li>Pokud do 14 dní dědic nereaguje ani nedojde k úhradě dluhu, předáváme na FINANCE + evidujeme do
+                                tabulky.</li>
+</ul><h4><strong>Nemáme výsledek dědického řízení</strong></h4><ul>
+<li>V tomto případě urgujeme o výsledek řízení pozůstalé a notáře.</li>
+<li>Pozůstalým zasíláme šablonu č. 6.</li>
+<li>Úkol termínujeme D+30.</li>
+<li>Pokud po 3 měsících není reakce, předáváme na <i>FINANCE</i>.</li>
+</ul><h4><strong>Máme správce</strong></h4><ul>
+<li>Pokud víme, kdo je správce pozůstalosti, tak jej urgujeme na úhradu dlužné částky.</li>
+<li>Pokud nereaguje 3 měsíce, předáváme na <i>FINANCE</i>.</li>
+</ul></div><div class="status-panel status-clear"><h5>NEAKTIVNÍ ODBĚRNÉ MÍSTO A <span style="color:rgb(8, 226, 63)">NEDLUŽÍ</span></h5><li>V případě, že je OM ukončeno a není na něm dluh, tak úkol uzavíráme.</li><li>Pokud je na OM přeplatek, úkol nezavíráme – řešíme vyplacení přeplatku pozůstalým.</li></div></div>
+</div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-preplatky" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">8.</span> Přeplatky</h2>
+<div class="payout-grid">
+<div class="payout-column">
+<h5>Přeplatek vznikl před smrtí zákazníka (součást pozůstalosti)</h5>
+<p>
+<li>Situace, kdy přeplatek vznikl pouze ze záloh, které platil zesnulý zákazník za svého života</li>
+</p>
+<h3>Neukončené pozůstalostní řízení</h3>
+<ul>
+<li>
+<strong>Potvrzení notáře jako soudního komisaře o tom, kdo je správce pozůstalosti:</strong>
+                                Jelikož správce pozůstalosti nepotřebuje ke svému ustanovení jmenování soudem (notářem), je nutné,
+                                aby si zákazník takové potvrzení vyžádal od notáře.
+                                <a href="https://testepet-my.sharepoint.com/personal/sandra_faltus_epet_cz/Documents/Dokumenty/ZLCC/MALUÁLY%20NOVÉ/Dědické%20řízení/Potvrzení%20soudního%20komisaře%20-%20vzor.JPG" rel="noopener noreferrer" target="_blank">VZOR pověření</a>
+</li>
+<li>
+<strong>Přeplatek se vyplatí správci pozůstalosti,</strong>
+                                který do ukončení dědického řízení spravuje pozůstalost jako celek (má prostou správu).
+                            </li>
+<li>
+<strong>Výjimečně, v případě, že by takové potvrzení nebylo možné obstarat,</strong>
+                                vyžádat dohodu od všech dědiců, kteří se účastní dědického řízení, o tom, který z nich je správcem
+                                pozůstalosti, abychom mohli vyplatit přeplatek a prohlášení, že jsou jedinými potenciálními dědici.
+                                Podpis na prohlášení musí být úředně ověřený.
+                            </li>
+</ul>
+<h3><strong>Ukončené pozůstalostní řízení</strong></h3>
+<ul>
+<li>
+<strong>Usnesení o skončení pozůstalostního řízení s doložkou právní moci:</strong>
+                                V usnesení je postaveno na jisto, kdo jsou dědicové a na koho přešla smlouva, příp. samotný
+                                přeplatek. V takovém případě vyplatit přeplatek dědici, na kterého přešel.
+                            </li>
+<li>
+<strong>Pokud rovným dílem:</strong>
+                                Přešlo to na všechny a měli by tedy všichni získat poměrnou část podle jejich dědického podílu.
+                            </li>
+<li>
+<strong>Písemný projev vůle dědiců:</strong>
+                                Zejména pro situace, kdy přeplatek přešel na všechny rovným dílem (abychom nemuseli vyplácet všem)
+                                nebo pokud by se stalo, že zálohy platil jiný dědic, než na kterého přešla smlouva/přeplatek v rámci
+                                dědického řízení.
+                                <ul>
+<li>
+                                        Z tohoto dokumentu by mělo být zřejmé, že ostatní dědici souhlasí s tím, aby byl přeplatek
+                                        vyplacen jednomu z dědiců. Např. plná moc, čestné prohlášení, souhlas, smlouva o postoupení
+                                        pohledávky. Podpisy vyžadujeme úředně ověřené.
+                                    </li>
+</ul>
+</li>
+</ul>
+<h5><strong>Přeplatek vznikl před smrtí zákazníka (není součástí pozůstalosti)</strong></h5>
+<li>Míří typicky na situace, kdy přeplatek nebyl v pozůstalostním řízení řešen.</li>
+<li>Proto pouze varianta pro ukončené pozůstalostní řízení – do té doby totiž nevíme, jestli se přeplatek v
+                            rámci řízení řešil nebo ne.</li>
+<h3>Ukončené pozůstalostní řízení</h3>
+<ul>
+<li>
+<strong>Usnesení o skončení pozůstalostního řízení s doložkou právní moci:</strong>
+                                Původní dědické řízení skončilo vydáním usnesení o pozůstalosti a až následně se „objevil“ přeplatek
+                                nebo dědicové přeplatek neřešili.
+                                <ul>
+<li>
+                                        V usnesení je postaveno na jisto, kdo jsou dědicové, ale smlouva/přeplatek v něm není
+                                        vyřešen. V takovém případě nabývají přeplatek všichni dědici podle poměru svých podílů.
+                                    </li>
+<li>
+<strong>Písemný projev vůle dědiců:</strong>
+                                        Z tohoto dokumentu by mělo být zřejmé, že ostatní dědici souhlasí s tím, aby byl přeplatek
+                                        vyplacen jednomu z dědiců nebo aby ho převzal. Např. plná moc, čestné prohlášení, souhlas,
+                                        smlouva o postoupení pohledávky. Podpisy vyžadujeme úředně ověřené.
+                                    </li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="payout-column">
+<h5>Přeplatek vznikl po smrti zákazníka (nebyl součástí pozůstalosti)</h5>
+<p>
+<li>Situace, kdy jeden z dědiců platí zálohy po smrti původního zákazníka, ale neukončil smlouvu
+                                zemřelého</li>
+</p>
+<p>
+<li>Smlouva přešla na všechny dědice, a to, že platí pouze jeden, nevadí – všichni jsou v postavení
+                                spoludlužníků, pokud nebylo rozhodnuto jinak nebo to není uvedeno v pořízení pro případ smrti. Jsou
+                                zavázáni společně a nerozdílně, náhradu by mohli požadovat po sobě, ale ne po epet, neboť pro toho
+                                jsou dědicové v postavení spoludlužníků.</li>
+</p>
+<h4>Neukončené pozůstalostní řízení</h4>
+<ul>
+<li><strong>VARIANTA 1:</strong>
+<ul>
+<li>
+<strong>Potvrzení notáře jako soudního komisaře o tom, kdo je správce pozůstalosti:</strong>
+                                        Jelikož správce pozůstalosti nepotřebuje ke svému ustanovení jmenování soudem (notářem), je
+                                        nutné takové potvrzení vyžádat od notáře.
+                                    </li>
+<li>
+                                        Výjimečně, v případě, že by takové potvrzení nebylo možné obstarat, vyžádat dohodu od všech
+                                        dědiců, kteří se účastní dědického řízení, o tom, který z nich je správcem pozůstalosti,
+                                        respektive koho pověřili k přijetí přeplatku, abychom mu mohli vyplatit přeplatek a
+                                        prohlášení, že jsou jedinými potenciálními dědici. Podpisy vyžadujeme úředně ověřené.
+                                    </li>
+</ul>
+</li>
+<li><strong>VARIANTA 2:</strong>
+<ul>
+<li>
+<strong>Potvrzení od banky o platbách záloh / výpis z účtu:</strong>
+                                        Tato varianta pouze při ojedinělých případech, resp. po posouzení všech okolností. Kdyby
+                                        chtěl přeplatek vyplatit jenom jeden z dědiců, ať doloží, že platil on.
+                                    </li>
+<li>
+                                        Jelikož přeplatek vznikl ze záloh, které byly placeny jinou osobou po smrti zákazníka, dává
+                                        smysl vyplatit ho osobě, která platila zálohy. Tato osoba totiž fakticky plnila ze smlouvy.
+                                        I když nevíme jistě, zda je tato dědicem nebo správcem pozůstalosti, dá se argumentovat, že
+                                        konkludentně přistoupila ke smlouvě dle § 1892 a my na ni tedy pohlížíme jako na (dalšího)
+                                        dlužníka ze smlouvy, kde jsou všichni společně a nerozdílně, tak případné nároky by si mezi
+                                        sebou měli vyřešit dědicové sami.
+                                    </li>
+</ul>
+</li>
+</ul>
+<h4><strong>Ukončené pozůstalostní řízení</strong></h4>
+<ul>
+<li>
+<strong>Usnesení o pozůstalosti s doložkou právní moci:</strong>
+                                V usnesení je postaveno na jisto, kdo jsou dědicové, ale smlouva/přeplatek v něm není vyřešen. V
+                                takovém případě smlouva přešla na všechny dědice, a i když plní pouze jeden, zavázáni jsou všichni.
+                            </li>
+<li>
+<strong>Čestné prohlášení:</strong>
+                                Žadatel o vyplacení přeplatku by měl prohlásit, že je oprávněn ho obdržet, že je s ostatními dědici
+                                dohodnut/že se s nimi vypořádá.
+                            </li>
+<li>
+<strong>Potvrzení od banky o platbách záloh / výpis z účtu:</strong>
+                                Kdyby chtěl přeplatek vyplatit jenom jeden z dědiců, ať doloží, že zálohy platil on.
+                                <ul>
+<li>
+                                        Jelikož přeplatek vznikl ze záloh, které byly placeny jinou osobou po smrti zákazníka, dává
+                                        smysl vyplatit ho osobě, která platila zálohy. Tato osoba totiž fakticky plnila ze smlouvy.
+                                        I když nevíme jistě, zda je tato dědicem nebo správcem pozůstalosti, dá se argumentovat, že
+                                        konkludentně přistoupila ke smlouvě dle § 1892 a my na ni tedy pohlížíme jako na (dalšího)
+                                        dlužníka ze smlouvy, kde jsou všichni společně a nerozdílně, tak případné nároky by si mezi
+                                        sebou měli vyřešit dědicové sami.
+                                    </li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div aria-hidden="true" class="content-section decision-section" id="page-pruvodce" role="tabpanel" tabindex="0">
+<h2 class="section-title" style="color: var(--epet-purple);">Rozhodovací strom: Dědické řízení a přeplatky</h2>
+<div class="dt-container">
+<div class="dt-header">
+<div class="dt-breadcrumb" id="dt-breadcrumb-container">
+<span style="color:#9ca3af;">Začněte výběrem níže...</span>
+</div>
+</div>
+<div class="dt-step-container active" id="dt-step-1">
+<div class="dt-question-title">1. Jaký je aktuální stav dědického řízení?</div>
+<div class="dt-options-grid">
+<button class="dt-option-card" onclick="dtChoice('dt-step-1', 'dt-step-2a', 'Standardní usnesení')">
+<div class="dt-option-icon"><svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"></path></svg></div>
+<div class="dt-option-content">
+<div class="dt-option-title">Máme standardní usnesení o dědictví</div>
+<p class="dt-option-desc">Běžný průběh, majetek je rozdělován mezi dědice.</p>
+</div>
+</button>
+<button class="dt-option-card" onclick="dtChoice('dt-step-1', 'dt-step-2b', 'Řízení zastaveno')">
+<div class="dt-option-icon text-danger"><svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m8 2 8 0 6 6v8l-6 6H8l-6-6V8z"></path><path d="M8 12h8"></path></svg></div>
+<div class="dt-option-content">
+<div class="dt-option-title">Dědické řízení bylo usnesením zastaveno</div>
+<p class="dt-option-desc">Např. pro nemajetnost zůstavitele.</p>
+</div>
+</button>
+<button class="dt-option-card" onclick="dtChoice('dt-step-1', 'dt-result-6', 'Vzdání se nároku (Nízký přeplatek)')">
+<div class="dt-option-icon text-warning"><svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="9" cy="9" r="6"></circle><path d="M15 7a6 6 0 1 1-6 8M8 6v6m2-5H8a2 2 0 0 0 0 4h2"></path></svg></div>
+<div class="dt-option-content">
+<div class="dt-option-title">Vzdání se nároku na vyplacení (Nízký přeplatek)</div>
+<p class="dt-option-desc">Více dědiců se chce vzdát nároku, aby nemuseli platit notáře za ověřování podpisů.</p>
+</div>
+</button>
+</div>
+</div>
+<div class="dt-step-container" id="dt-step-2a">
+<div class="dt-question-title">2. Kolik je uvedeno dědiců a co se píše o přeplatku?</div>
+<div class="dt-options-grid">
+<button class="dt-option-card" onclick="dtChoice('dt-step-2a', 'dt-result-1', 'Jeden dědic')">
+<div class="dt-option-icon"><svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 21v-2a8 8 0 0 1 16 0v2"></path></svg></div>
+<div class="dt-option-content">
+<div class="dt-option-title">Je uveden pouze JEDEN dědic</div>
+<p class="dt-option-desc">Celé dědictví připadá jedné osobě.</p>
+</div>
+</button>
+<button class="dt-option-card" onclick="dtChoice('dt-step-2a', 'dt-result-2', 'Více dědiců - výslovně přiřazeno')">
+<div class="dt-option-icon"><svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="10" r="7"></circle><path d="m8 16-2 6 6-3 6 3-2-6"></path></svg></div>
+<div class="dt-option-content">
+<div class="dt-option-title">Více dědiců, ale přeplatek je VÝSLOVNĚ přiřazen</div>
+<p class="dt-option-desc">V textu usnesení je přeplatek od EP Energy Trading konkrétně zmíněn u jednoho z dědiců.</p>
+</div>
+</button>
+<button class="dt-option-card" onclick="dtChoice('dt-step-2a', 'dt-result-3', 'Více dědiců - nepřiřazeno')">
+<div class="dt-option-icon"><svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="8" cy="8" r="3"></circle><circle cx="18" cy="9" r="2"></circle><path d="M2 20v-2a6 6 0 0 1 12 0v2m1-7a5 5 0 0 1 7 5v2"></path></svg></div>
+<div class="dt-option-content">
+<div class="dt-option-title">Více dědiců a přeplatek NENÍ výslovně přiřazen</div>
+<p class="dt-option-desc">Přeplatek spadá do společného jmění nebo obecného „ostatního majetku“.</p>
+</div>
+</button>
+</div>
+</div>
+<div class="dt-step-container" id="dt-step-2b">
+<div class="dt-question-title">2. Jsou přeplatky za energie v usnesení o zastavení vůbec zmíněné?</div>
+<div class="dt-options-grid">
+<button class="dt-option-card" onclick="dtChoice('dt-step-2b', 'dt-result-4', 'Přeplatky nezmíněny')">
+<div class="dt-option-icon text-danger"><svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m9 9 6 6m0-6-6 6"></path></svg></div>
+<div class="dt-option-content">
+<div class="dt-option-title">NE, přeplatky nejsou v usnesení zmíněné</div>
+<p class="dt-option-desc">V dokumentu není o pohledávkách u dodavatele energie ani zmínka.</p>
+</div>
+</button>
+<button class="dt-option-card" onclick="dtChoice('dt-step-2b', 'dt-result-5', 'Přeplatky zmíněny')">
+<div class="dt-option-icon text-success"><svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m7 12 3 3 6-6"></path></svg></div>
+<div class="dt-option-content">
+<div class="dt-option-title">ANO, přeplatky jsou v usnesení zmíněné</div>
+<p class="dt-option-desc">Je jasně určeno, kdo na ně má nárok.</p>
+</div>
+</button>
+</div>
+</div>
+<div class="dt-step-container" id="dt-result-1">
+<div class="dt-result-box">
+<div class="dt-result-header"><svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m7 12 3 3 6-6"></path></svg> Situace 1: Jeden dědic (Snadný proces)</div>
+<div class="dt-result-content">
+<p>V usnesení je uveden pouze jeden dědic, celá situace je tedy velmi jednoduchá.</p>
+<ol>
+<li>Kontaktujte dědice a požádejte ho o sdělení, <strong>jakým způsobem si přeje přeplatek vyplatit</strong> (poštovní poukázkou na adresu, nebo převodem na bankovní účet).</li>
+<li>Zjištěný způsob výplaty nastavte na Zákaznickém účtu (ZÚ).</li>
+<li>Úkol následně předejte k vyplacení na oddělení <strong>FINANCE</strong>.</li>
+</ol>
+<div class="dt-example" style="border-left-color: var(--epet-green); background: rgba(148,193,31,0.1);">
+                                    💡 <strong>Tip:</strong> Není vyžadováno žádné dodatečné čestné prohlášení.
+                                </div>
+</div>
+</div>
+</div>
+<div class="dt-step-container" id="dt-result-2">
+<div class="dt-result-box">
+<div class="dt-result-header"><svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m7 12 3 3 6-6"></path></svg> Situace 2: Přeplatek je výslovně přiřazen</div>
+<div class="dt-result-content">
+<p>Usnesení obsahuje více dědiců, ale při pečlivé kontrole dokumentu jste zjistili, že přeplatek je konkrétně definován a přiřazen oprávněnému dědici.</p>
+<div class="dt-example">
+<strong>Příklad textace v usnesení:</strong><br/>
+                                    "a) pozůstalé manželce Janě Novákové... do jejího výlučného vlastnictví připadá tento majetek:<br/>
+                                    - pohledávka zůstavitele za společností EP ENERGY TRADING, a.s. ... z titulu vyúčtování energií ve výši 10 869,00 Kč."
+                                </div>
+<p>Jelikož je z dokumentu jasné, kdo přeplatek dědí, <strong>postupujeme stejně jako u jednoho dědice:</strong></p>
+<ol>
+<li>Není nutné vyžadovat žádné Čestné prohlášení.</li>
+<li>Zjistěte od určeného dědice platební údaje.</li>
+<li>Nastavte na ZÚ a předejte k vyplacení na oddělení <strong>FINANCE</strong>.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="dt-step-container" id="dt-result-3">
+<div class="dt-result-box">
+<div class="dt-result-header" style="background: #eab308;"><svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m12 3 10 18H2zM12 9v5m0 4h.01"></path></svg> Situace 3: Vyžaduje Čestné prohlášení</div>
+<div class="dt-result-content">
+<p>Usnesení uvádí více dědiců, ale přeplatky od EP Energy Trading nejsou v dokumentu nijak konkrétně rozděleny (případně spadají do obecného "ostatního majetku").</p>
+<div class="dt-alert">
+<svg aria-hidden="true" class="content-icon large-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m12 3 10 18H2zM12 9v5m0 4h.01"></path></svg>
+                                    Nelze rovnou vyplatit. Musíme mít jistotu, že s vyplacením jedné osobě souhlasí i ostatní.
+                                </div>
+<p><strong>Závazný postup:</strong></p>
+<ol>
+<li>Informujte žádajícího dědice, že k vyplacení přeplatku je nutné doložit <strong>podepsané a úředně ověřené Čestné prohlášení (ČP) od VŠECH ostatních dědiců</strong> uvedených v usnesení.</li>
+<li>Teprve po doložení tohoto ověřeného ČP od všech stran může být přeplatek vyplacen zvolenému dědici.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="dt-step-container" id="dt-result-4">
+<div class="dt-result-box">
+<div class="dt-result-header" style="background: #dc2626;"><svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m8 2 8 0 6 6v8l-6 6H8l-6-6V8z"></path><path d="M8 12h8"></path></svg> Situace 4: Nelze vyplatit (Řízení zastaveno)</div>
+<div class="dt-result-content">
+<p>Dědické řízení bylo zastaveno (např. pro nemajetnost) a v dokumentu nejsou naše přeplatky nijak zmíněné ani přiřazené.</p>
+<div class="dt-alert" style="background: #fee2e2; border-color: #fecaca; color: #991b1b;">
+<svg aria-hidden="true" class="content-icon large-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m9 9 6 6m0-6-6 6"></path></svg>
+                                    Za tohoto stavu nemáme právní podklad a přeplatek nelze nijak vyplatit.
+                                </div>
+<p><strong>Postup pro zákazníka:</strong><br/>
+                                Doporučte zákazníkovi obrátit se zpět na příslušný soud (nebo na notáře, který věc projednával) a požádat o:</p>
+<ul>
+<li><strong>Doplnění usnesení</strong> o určení dědice tohoto konkrétního přeplatku.</li>
+<li>Nebo <strong>uzavření dodatečné dohody</strong> mezi případnými dědici, která bude následně schválena soudem.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="dt-step-container" id="dt-result-5">
+<div class="dt-result-box">
+<div class="dt-result-header"><svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m7 12 3 3 6-6"></path></svg> Situace 5: Řízení zastaveno, ale nárok je určen</div>
+<div class="dt-result-content">
+<p>Ačkoliv bylo dědické řízení zastaveno, přeplatky u EP Energy Trading jsou v dokumentu výslovně zmíněné a je u nich jasně určen nárok.</p>
+<p><strong>Postup závisí na počtu uvedených dědiců nároku:</strong></p>
+<div style="display: flex; flex-direction: column; gap: 15px; margin-top: 15px;">
+<div style="border: 1px solid #e5e7eb; padding: 15px; border-radius: 8px;">
+<strong>A) Pouze 1 osoba má nárok:</strong><br/>
+                                        Postupujeme jednoduše. Zjistěte platební údaje, zadejte do ZÚ a předejte na FINANCE. Žádné ČP není třeba.
+                                    </div>
+<div style="border: 1px solid #e5e7eb; padding: 15px; border-radius: 8px;">
+<strong>B) Více osob má nárok:</strong><br/>
+                                        Pro vyplacení jedné konkrétní osobě je nutné doložit podepsané a <strong>úředně ověřené Čestné prohlášení (ČP) od ostatních</strong> dědiců.
+                                    </div>
+</div>
+</div>
+</div>
+</div>
+<div class="dt-step-container" id="dt-result-6">
+<div class="dt-result-box">
+<div class="dt-result-header" style="background: var(--epet-purple);"><svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"></path></svg> Situace 6: Vzdání se nízkého přeplatku</div>
+<div class="dt-result-content">
+<p>Evidujeme velmi nízký přeplatek. Je uvedeno více dědiců, kteří by museli dokládat úředně ověřené Čestné prohlášení. Cena za ověření u notáře/na poště by převýšila hodnotu přeplatku, a proto se chtějí vyplacení vzdát.</p>
+<div class="dt-alert" style="background: #f3f4f6; border-color: #d1d5db; color: #374151;">
+<svg aria-hidden="true" class="content-icon large-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v6m0-10h.01"></path></svg>
+                                    Pouhé sdělení v telefonním hovoru nebo běžný text v e-mailu nestačí!
+                                </div>
+<p><strong>Správný postup:</strong></p>
+<ol>
+<li>Informujte zákazníka, že ústní nebo e-mailové vzdání se nároku neakceptujeme z právních důvodů.</li>
+<li>Zašlete zákazníkovi náš formulář <strong>ČP - Nesouhlas s vyplacením přeplatku</strong>.</li>
+<li>Až po obdržení správně vyplněného formuláře je možné případ v systému uzavřít.</li>
+</ol>
+<a class="btn btn-dark mt-2" href="https://drive.google.com/file/d/1nCXJL0WiMyeujCtDlA-WsVGP_Io6lHbp/view?usp=drive_link" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M12 3v13m-5-5 5 5 5-5M4 18v3h16v-3"></path></svg>Stáhnout formulář k zaslání
+                                </a>
+</div>
+</div>
+</div>
+<div class="dt-controls" id="dt-controls" style="display: none;">
+<button class="dt-btn-nav" onclick="dtGoBack()">
+<svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m12 4-8 8 8 8M4 12h16"></path></svg> Zpět o krok
+                        </button>
+<button class="dt-btn-nav" onclick="dtRestart()">
+<svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M20 8a8 8 0 1 0 1 6M20 2v6h-6"></path></svg> Začít znovu
+                        </button>
+</div>
+</div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-MBA" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">9.</span> Evidence MBA / Odpisy</h2>
+<div class="d-flex align-items-center justify-content-between mb-3">
+<div class="d-flex align-items-center gap-2">
+<svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"></path></svg>
+<h6 class="mb-0">Novinka k 17.10.2025</h6>
+</div>
+<small class="text-muted">Poslední aktualizace: 17.10.2025</small>
+</div>
+<div class="alert alert-info border rounded-3 p-3 mb-3" role="alert">
+<div class="d-flex align-items-start gap-2">
+<svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v6m0-10h.01"></path></svg>
+<div>
+<h6 class="mb-2">Odpisy</h6>
+<ul class="mb-0 ps-3">
+<li>
+                                    V případě, že řešíme zákazníka více než 3 roky, a dědic, ani notář na naše opakované výzvy
+                                    (neodpovídá), a na zákaznickém účtu evidujeme přeplatek, předáváme úkol na odpis - tedy na
+                                    Petra Duška - do úkolu vypíšeme, že nikdo nereaguje na výzvy a ať platbu odepíše
+                                </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="d-flex align-items-center justify-content-between mb-3">
+<div class="d-flex align-items-center gap-2">
+<svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"></path></svg>
+<h6 class="mb-0">Novinka k 13.10.2025</h6>
+</div>
+<small class="text-muted">Poslední aktualizace: 13.10.2025</small>
+</div>
+<div class="alert alert-info border rounded-3 p-3 mb-3" role="alert">
+<div class="d-flex align-items-start gap-2">
+<svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v6m0-10h.01"></path></svg>
+<div>
+<h6 class="mb-2">Nová pravidla pro řešení DŘ přes MBA</h6>
+<ul class="mb-0 ps-3">
+<li>v rámci spolupráce na dědickém řízení zasílám prosbu – nová pravidla pro řešení DŘ přes MBA.
+                                </li>
+<li>MBA za nás DŘ vyřeší s tím, že OM ale musí být ukončené. Nemůže na mě jít úkol s tím, že OM je
+                                    aktivní a mění se nám dluh pod rukama – předkládáme pak soudu, notáři nesprávné informace).</li>
+<li>OM jsou ukončené a IDEÁLNĚ je vystavena KOFA</li>
+<li>Pokud jsou přeplatky a nedoplatky, udělat nejdřív zápočet</li>
+<li>Jakmile dám do tabulky DŘ nebo přes úkol na p. Duška, tak je to již v řešení AK MBA LEGAL (pokud
+                                    dojde k nějaké potřebě řešení zk, vždy přes FINANCE na p. Duška). Jedná se o stejné pravidlo
+                                    jako v mimosoudním vymáhání – řeší již externí partner, my nezasahujeme do procesu.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-video" role="tabpanel" tabindex="0">
+<h2 class="section-title">Video tutoriál</h2>
+<div class="d-flex flex-column align-items-center justify-content-center text-center p-5 rounded-4" style="background: #f8f9fa; border: 2px dashed #dee2e6; min-height: 300px;">
+<div class="mb-3" style="font-size: 3rem; color: #ced4da;">
+<svg aria-hidden="true" class="content-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="2" width="20" x="2" y="5"></rect><path d="m10 9 5 3-5 3z"></path></svg>
+</div>
+<h4 class="fw-bold text-secondary">Video je v přípravě</h4>
+<p class="text-muted">Právě pro vás stříháme aktuální verzi návodu.<br/>Jakmile bude hotová, najdete ji
+                    přímo zde.</p>
+</div></div>
+<div aria-hidden="true" class="content-section" id="page-test" role="tabpanel" tabindex="0">
+<h2 class="section-title" style="color: var(--epet-purple);">Ověření znalostí</h2>
+<p>Po prostudování manuálu prosím vyplňte tento opakovací test. Výsledky budou automaticky
+                    zaznamenány.
+                </p>
+<div class="shadow-sm rounded-3 overflow-hidden" style="border: 1px solid #eee;">
+<iframe allowfullscreen="" frameborder="0" height="600px" loading="lazy" marginheight="0" marginwidth="0" mozallowfullscreen="" msallowfullscreen="" src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__abHlldUQklJRlJWM0paS045UTQ0VDRFQVZOTEZBWC4u" style="border: none; max-width:100%; max-height:100vh" webkitallowfullscreen="" width="100%">
+</iframe>
+</div>
+</div></article></div>
+<footer class="site-footer"><span>6. den</span><span>Znalostní databáze epet | Dokumentace a přílohy</span></footer>
+</div>
+<script>
+(function(){'use strict';const root=document.querySelector('.book-container');if(!root)return;const buttons=[...root.querySelectorAll('.book-tabs [data-target]')],pages=[...root.querySelectorAll('.content-section')];function show(id){const target=pages.find(p=>p.id===id);if(!target)return;pages.forEach(p=>{const active=p===target;p.classList.toggle('active',active);p.setAttribute('aria-hidden',String(!active))});buttons.forEach(b=>{const active=b.dataset.target===id;b.classList.toggle('active',active);b.setAttribute('aria-selected',String(active));b.tabIndex=active?0:-1})}buttons.forEach(b=>{b.addEventListener('click',()=>show(b.dataset.target));b.addEventListener('keydown',e=>{if(!['ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.key))return;e.preventDefault();const step=['ArrowDown','ArrowRight'].includes(e.key)?1:-1;const i=buttons.indexOf(b);const next=buttons[(i+step+buttons.length)%buttons.length];next.focus();show(next.dataset.target)})});const hash=(location.hash||'').slice(1);show(pages.some(p=>p.id===hash)?hash:'page-intro')})();
+</script>
+<script>
+
+                    let dtHistory = [];
+            
+                    function dtChoice(fromStep, toStep, choiceLabel) {
+                        dtHistory.push({ stepId: fromStep, label: choiceLabel });
+                        dtShowSection(toStep);
+                        dtUpdateUI();
+                    }
+            
+                    function dtGoBack() {
+                        if (dtHistory.length > 0) {
+                            const lastStep = dtHistory.pop();
+                            dtShowSection(lastStep.stepId);
+                            dtUpdateUI();
+                        }
+                    }
+            
+                    function dtRestart() {
+                        dtHistory = [];
+                        dtShowSection('dt-step-1');
+                        dtUpdateUI();
+                    }
+            
+                    function dtShowSection(id) {
+                        document.querySelectorAll('.dt-step-container').forEach(el => el.classList.remove('active'));
+                        document.getElementById(id).classList.add('active');
+                    }
+            
+                    function dtUpdateUI() {
+                        const breadcrumb = document.getElementById('dt-breadcrumb-container');
+                        const controls = document.getElementById('dt-controls');
+            
+                        breadcrumb.innerHTML = '';
+                        
+                        if (dtHistory.length === 0) {
+                            breadcrumb.innerHTML = '<span style="color:#9ca3af;">Začněte výběrem níže...</span>';
+                            controls.style.display = 'none';
+                        } else {
+                            controls.style.display = 'flex';
+                            
+                            dtHistory.forEach((item, index) => {
+                                const badge = document.createElement('span');
+                                badge.className = 'dt-breadcrumb-item';
+                                badge.innerText = item.label;
+                                breadcrumb.appendChild(badge);
+            
+                                if (index < dtHistory.length - 1) {
+                                    const arrow = document.createElement('i');
+                                    arrow.className = 'bi bi-chevron-right text-muted mx-1';
+                                    arrow.style.fontSize = '12px';
+                                    breadcrumb.appendChild(arrow);
+                                }
+                            });
+                        }
+                    }
+                
+</script>
+</body></html>

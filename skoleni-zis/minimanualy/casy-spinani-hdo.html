@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>Časy spínání HDO – Pracovní postup</title><style>
+:root{--epet:#94C11F;--green:#638719;--deep:#425b10;--orange:#F99F1C;--navy:#20354a;--ink:#29394c;--muted:#68798a;--line:#e1e9ef;--soft:#f7f9f5;--shadow:0 14px 35px rgba(28,48,72,.06)}
+*,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);padding:12px 12px 34px;font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:15px;line-height:1.69;-webkit-font-smoothing:antialiased}button{font:inherit}a{overflow-wrap:anywhere}.site-wrap{max-width:1200px;min-width:0;margin:auto}.svg-icon,.icon-inline{display:inline-block;flex:none;vertical-align:middle;width:19px;height:19px}.icon-inline{width:20px;height:20px;color:#6e902b;margin:0 6px 0 0}
+.breadcrumb-nav{padding:10px 15px;border:1px solid var(--line);border-radius:13px;margin-bottom:15px;background:#fff}.breadcrumb{display:flex;align-items:center;flex-wrap:wrap;list-style:none;gap:0;font-size:.83rem;padding:0;margin:0}.breadcrumb-item{color:#6b7b8b;display:flex;align-items:center;min-width:0}.breadcrumb-item:not(:first-child)::before{content:'›';font-size:1.08rem;font-weight:500;color:#a5b0bb;margin:0 11px}.breadcrumb-item a{color:var(--green);font-weight:750;text-decoration:none}.breadcrumb-item a:hover{text-decoration:underline}.breadcrumb-item a .icon-inline{width:15px;height:15px}.breadcrumb-item.active{font-weight:750;color:#3e5267}
+.hero-banner{position:relative;isolation:isolate;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;margin-bottom:19px;padding:33px 36px;border-radius:23px;min-height:185px;color:#fff;background:radial-gradient(430px 260px at 92% 16%,rgba(255,255,255,.17),transparent 70%),linear-gradient(125deg,#94c11f 0%,#789d20 48%,#354c0e 100%);box-shadow:var(--shadow);overflow:visible}
+.hero-banner::before{content:"";position:absolute;right:31%;top:24px;width:135px;height:135px;border:1px solid rgba(255,255,255,.13);border-radius:50%;pointer-events:none;z-index:-1}.hero-banner::after{content:"";position:absolute;right:33%;top:36px;width:90px;height:90px;border:1px solid rgba(255,255,255,.13);border-radius:50%;pointer-events:none;z-index:-1}.hero-main{min-width:0;flex:1 1 490px}.hero-banner h1{font-size:clamp(1.54rem,2.7vw,2.18rem);font-weight:800;line-height:1.25;letter-spacing:-.034em;margin:0 0 11px;max-width:760px}.hero-banner p{margin:0;color:rgba(255,255,255,.9);font-size:.92rem;font-weight:500}
+.download-disclosure{position:relative;z-index:10;max-width:100%}.download-disclosure summary{display:flex;align-items:center;gap:10px;border-radius:40px;background:white;color:var(--deep);padding:11px 17px;box-shadow:0 5px 16px rgba(22,41,19,.16);font-size:.88rem;font-weight:800;cursor:pointer;list-style:none;user-select:none}.download-disclosure summary::-webkit-details-marker{display:none}.download-disclosure summary::after{content:'';width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-3px);margin-left:6px;transition:.18s}.download-disclosure[open] summary::after{transform:rotate(225deg) translateY(-1px)}.download-options{position:absolute;right:0;top:calc(100% + 9px);max-width:min(365px,calc(100vw - 35px));width:330px;background:#fff;border:1px solid var(--line);border-radius:15px;padding:8px;box-shadow:0 17px 37px rgba(28,42,61,.21)}.download-options a{display:flex;align-items:center;gap:11px;color:var(--ink);text-decoration:none;font-size:.89rem;font-weight:700;padding:12px;border-radius:10px;line-height:1.35}.download-options a:hover{background:#f4fae9;color:var(--green)}.download-options .svg-icon{color:#c94f50}
+.book-container{display:grid;grid-template-columns:273px minmax(0,1fr);align-items:start;gap:19px}.mobile-shell{min-width:0}.mobile-nav-summary{display:none}.book-tabs{position:sticky;top:12px;display:flex;flex-direction:column;gap:5px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:13px;box-shadow:0 7px 24px rgba(28,48,72,.042)}.book-tabs::before{content:"";display:block;height:5px;border-radius:10px;margin:0 9px 9px;background:linear-gradient(90deg,var(--epet),#d3eaa6)}.nav-tab{display:flex;gap:12px;align-items:center;text-align:left;width:100%;padding:12px 13px;line-height:1.42;font-size:.90rem;font-weight:720;border-radius:12px;border:1px solid transparent;background:transparent;color:#55667b;cursor:pointer;transition:background .16s,color .16s,transform .16s}.nav-tab .svg-icon{color:#8693a1;width:20px;height:20px}.nav-tab:hover,.nav-tab:focus-visible{background:#f7faef;color:var(--deep);transform:translateX(2px)}.nav-tab.active{background:#f0f9dd;border-color:#d8e9b6;color:#405d12;font-weight:800}.nav-tab.active .svg-icon{color:#587d19}.nav-tab.test-tab{border-top:1px solid var(--line);margin-top:5px;border-radius:0 0 12px 12px}.nav-tab.test-tab.active{border:1px solid #e8daf4;background:#f6f0fc;color:#794caf}.nav-tab.test-tab.active .svg-icon{color:#794caf}
+.book-page{background:#fff;min-width:0;border:1px solid var(--line);border-radius:22px;padding:30px 31px 35px;min-height:530px;box-shadow:var(--shadow)}.content-section{display:none;min-width:0;animation:show .22s ease}.content-section.active{display:block}@keyframes show{from{opacity:.25;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}.section-title{display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line);padding:0 0 19px;margin:0 0 23px;font-size:clamp(1.24rem,2.15vw,1.58rem);font-weight:800;letter-spacing:-.026em;line-height:1.35;color:var(--green)}.section-number{flex:none;display:inline-flex;align-items:center;justify-content:center;min-width:43px;height:43px;padding:0 6px;border-radius:50%;background:var(--epet);color:#fff;font-size:1rem;font-weight:850}.section-title-icon{flex:none;display:inline-block;width:42px;height:42px;padding:10px;border-radius:12px;background:#f1f8e2;color:var(--green)}.book-page h3{font-size:1.08rem;font-weight:800;color:#34495c;margin:18px 0 12px}.book-page h4{font-size:1.12rem;font-weight:800;margin:15px 0 10px}.book-page p{margin:0 0 13px;line-height:1.72;color:#364a5c}.book-page ul{padding-left:24px;margin:11px 0 15px}.book-page li{line-height:1.7;margin-bottom:9px}.book-page li::marker{color:#74982d}.book-page a{color:var(--green);font-weight:750;text-decoration:none;border-bottom:2px solid #d6e5b3}.book-page a:hover{background:#f5fae9;border-bottom-color:var(--epet)}.book-page b,.book-page strong{font-weight:800;color:#3f581e}.book-page em{color:#526578}.book-page blockquote{margin:18px 0;padding:16px 20px;border-left:4px solid var(--epet);background:#f8fbf2;border-radius:0 12px 12px 0}.book-page blockquote p:last-child{margin-bottom:0}
+.training-card,.email-card{background:#fff;border:1px solid var(--line);border-radius:18px;margin:0 0 16px;padding:21px 22px;box-shadow:0 6px 21px rgba(36,58,79,.04)}.intro-panel{padding:25px 24px;border-top:5px solid var(--epet);background:linear-gradient(180deg,#fff,#fbfdf7)}.intro-panel>p{font-size:1.03rem;color:#34485b;margin-bottom:21px}.intro-panel h3{margin-top:15px;padding-top:18px;border-top:1px solid #e7eee0}.abbrev-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.abbrev-item{display:flex;align-items:center;gap:7px;border:1px solid #e1ebd4;background:#fff;border-radius:12px;padding:12px 13px;min-height:56px;font-size:.91rem;line-height:1.5}.abbrev-item b{color:var(--green)}
+.steps-holder{padding:0;margin:0;border:0;box-shadow:none}.step-panel,.example-panel{border:1px solid var(--line);border-radius:17px;padding:20px 21px;margin:0 0 16px;background:#fff;box-shadow:0 7px 20px rgba(28,48,72,.045)}.step-panel{border-left:4px solid var(--epet)}.step-panel p:last-child,.example-panel p:last-child{margin-bottom:0}.step-panel .step-badge{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--epet);color:white;font-weight:800;margin-right:10px;vertical-align:middle;box-shadow:0 0 0 4px #f2f8e5}.step-panel>p:first-child{margin:0 0 14px}.distributor-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:0!important;list-style:none;margin:6px 0 0!important}.distributor-card{border:1px solid #e5eaf0;border-radius:12px;background:#f9fbfd;padding:14px 13px;font-size:.88rem;line-height:1.55!important;margin:0!important;min-width:0}.distributor-card strong{display:inline-block;margin-bottom:8px;color:var(--green)}.example-panel{background:#f6faff;border-color:#dce8f4}.example-panel p>strong{color:#385c83}.example-panel ul{margin-bottom:0}.gs-quote{margin:0 0 13px!important;padding:18px 20px!important;position:relative;background:#f7fbf1!important;border:1px solid #dbeac5!important;border-left:5px solid var(--epet)!important;border-radius:13px!important}.gs-quote cite{display:block;margin-top:11px;font-style:normal;color:#6f7f86;font-size:.82rem}
+.email-card{padding:17px;background:#f7fafc}.outlook-window{max-width:100%;overflow:hidden;border:1px solid #dce4ec;background:#fff;border-radius:16px;box-shadow:0 12px 28px rgba(30,45,70,.09)}.outlook-header{display:flex;align-items:center;gap:9px;background:linear-gradient(90deg,#0b72c8,#248bd4);color:white;font-size:.85rem;font-weight:800;padding:12px 17px}.outlook-header-title{font-size:.85rem;letter-spacing:.02em}.outlook-header .icon-inline{color:#fff;width:18px;height:18px}.window-controls{display:flex;gap:6px;margin-left:auto}.window-controls::after{content:'●   ●   ●';font-size:.60rem;letter-spacing:3px;color:#dbecfa}.outlook-meta{padding:17px 20px 12px;background:#fbfcfd;border-bottom:1px solid #e4eaf0}.meta-row{display:grid;grid-template-columns:76px minmax(0,1fr);gap:11px;align-items:start;padding:7px 0;font-size:.86rem}.meta-label{color:#7c8794;font-weight:650}.meta-value{color:#34485b;font-weight:600;overflow-wrap:anywhere}.meta-value.blue{color:#1175c2}.outlook-attachments{background:#fff;padding:12px 20px;border-bottom:1px solid #e4eaf0}.outlook-attachments .attachment-box{display:inline-flex;align-items:center;gap:10px;padding:9px 12px;background:#fff9f9;border:1px solid #efdada;border-radius:11px;color:#465165;font-size:.84rem;font-weight:700;max-width:100%;text-decoration:none}.attachment-box .attachment-info{display:flex;flex-direction:column;min-width:0}.attachment-name{max-width:250px;white-space:normal;line-height:1.4}.attachment-size{color:#9a7280;font-size:.75rem;font-weight:500}.attachment-icon{color:#c95a58}.outlook-body{padding:27px 30px 25px;background:#fff;color:#334455;font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:.92rem;line-height:1.7}.outlook-body p{color:#34475a;margin-bottom:15px}.outlook-body ul{margin:11px 0 17px}.outlook-signature{margin-top:24px;border-top:1px solid #e2e8ef;padding-top:17px;color:#526479;font-size:.85rem;line-height:1.7}.outlook-signature a{font-weight:700}.outlook-body i.icon-inline{width:16px;height:16px}.book-page .email-card strong{background:transparent}
+.empty-media{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:325px;padding:40px 30px;border:1px dashed #d7e4cf;border-radius:18px;background:radial-gradient(170px 150px at 50% 10%,#eaf5d9,transparent 90%),linear-gradient(#fff,#fbfcf9)}.empty-media>div:first-child{margin-bottom:13px!important;color:#7e9c55;font-size:2.5rem!important}.empty-media .icon-inline{width:48px;height:48px;color:#8eaa62}.empty-media h4{font-size:1.13rem;color:#526b2d;margin:0 0 11px}.empty-media p{margin:0;max-width:460px;color:#697b8e}.empty-media br{display:block}.book-page .email-card a{word-break:break-word}
+.site-footer{margin-top:19px;height:7px;background:linear-gradient(90deg,#273b50 0 65%,#94c11f 65% 86%,#f99f1c 86% 100%);border-radius:50px}
+@media(max-width:1030px){.book-container{grid-template-columns:minmax(0,1fr)}.mobile-nav-summary{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border:1px solid #d7e5c0;border-radius:13px;background:#f6fbea;color:#536f23;font-weight:800;cursor:pointer;margin-bottom:10px;list-style:none}.mobile-nav-summary::after{content:'⌄';font-size:23px;line-height:1}.mobile-shell[open] .mobile-nav-summary::after{transform:rotate(180deg)}.mobile-shell:not([open]) .book-tabs{display:none}.book-tabs{position:static;max-height:440px;overflow-y:auto;margin-bottom:14px}.book-page{padding:27px 26px}}
+@media(max-width:700px){body{padding:8px 8px 30px}.hero-banner{padding:25px 21px;gap:16px;border-radius:19px;min-height:0}.hero-banner h1{font-size:1.46rem}.book-page{padding:20px 16px;border-radius:18px}.section-title{align-items:flex-start;font-size:1.23rem;gap:10px}.section-number{min-width:40px;height:40px;font-size:.85rem}.training-card{padding:17px 16px}.intro-panel{padding:19px 15px}.abbrev-grid,.distributor-grid{grid-template-columns:1fr}.step-panel,.example-panel{padding:17px 15px}.email-card{padding:9px}.outlook-meta{padding:12px 13px}.meta-row{grid-template-columns:60px minmax(0,1fr);gap:8px}.outlook-body{padding:22px 17px;font-size:.87rem}.outlook-attachments{padding:10px 13px}.download-options{right:auto;left:0}.empty-media{min-height:270px;padding:30px 17px}.book-page ul{padding-left:21px}}
+@media(prefers-reduced-motion:reduce){.content-section{animation:none}.nav-tab{transition:none}}@media print{body{padding:0}.hero-banner{box-shadow:none}.book-container{display:block}.mobile-shell{display:none}.book-page{box-shadow:none;border:none;padding:0}.content-section{display:block!important;break-inside:auto;margin-bottom:30px}.site-footer{display:none}}
+
+
+
+
+/* Zranitelný zákazník / jednotný vizuální standard školicích manuálů */
+.book-page .training-card{margin-bottom:20px}
+.book-page .intro-panel{padding:28px 26px;background:linear-gradient(125deg,#ffffff 0%,#f8fbf2 100%)}
+.book-page .intro-panel p{font-size:1.03rem;line-height:1.8;margin:0}
+.nav-tab{align-items:flex-start}.nav-tab .svg-icon{margin-top:1px}
+.nav-subgroup{display:none;border-left:2px solid #d6e8bd;margin:0 8px 8px 19px;padding:3px 0 3px 9px}
+.nav-subgroup.expanded{display:flex;flex-direction:column;gap:4px}
+.nav-subgroup .sub-nav-tab{font-size:.80rem;padding:10px 8px 10px 11px;border-radius:10px;gap:8px;line-height:1.35;font-weight:670}
+.nav-subgroup .sub-nav-tab .svg-icon{width:16px;height:16px;margin-top:2px}
+.nav-subgroup .sub-nav-tab.active{background:#f0f9df}
+.definition-container{display:flex;flex-direction:column;gap:18px}
+.definition-group{background:#fff;border:1px solid var(--line);border-radius:17px;padding:22px 23px;box-shadow:0 6px 18px rgba(29,50,70,.04);min-width:0}
+.definition-heading,.phase-heading{display:flex;align-items:center;gap:11px;color:#4d6c23!important;font-size:1.11rem!important;font-weight:820!important;border-bottom:1px solid #e2ebd6;padding-bottom:13px;margin:0 0 16px!important;line-height:1.45}
+.definition-heading::before,.phase-heading::before{content:'';display:block;flex:none;width:8px;height:25px;background:var(--epet);border-radius:5px}
+.definition-step,.work-step,.workflow-step{display:flow-root;padding:12px 13px;border-radius:11px;background:#fbfdf8;border:1px solid #eef2e8;margin:0 0 9px!important;line-height:1.66!important;min-width:0}
+.definition-step .step-badge,.work-step .step-badge,.workflow-step .step-badge{float:left;margin:0 12px 4px 0!important;display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:#94c11f;box-shadow:0 0 0 3px #eff7db;color:#fff;font-weight:850;font-size:.85rem;line-height:1}
+.definition-group .notice{margin:12px 0}
+.definition-group.condition-grid .definition-heading{grid-column:1/-1}
+.definition-group.condition-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.condition-grid .definition-step{height:100%;margin:0!important}
+.book-page .acceptance-card{padding:24px 24px;border-top:5px solid #94c11f}
+.acceptance-card>h5{font-weight:820;font-size:1.15rem;color:#516b2a;border-left:5px solid var(--epet);padding:9px 0 10px 17px;margin:24px 0 16px}
+.acceptance-card>h6{font-weight:800;font-size:1rem;color:var(--navy);margin:24px 0 11px}
+.book-page .nested-training-card{padding:19px 19px;border:1px solid #dfebd4;border-radius:15px;background:#fafff6;margin:14px 0 20px}
+.book-page .task-fields-card{border:1px solid #e0e8f0;border-radius:15px;background:#fff;overflow:hidden;padding:0;margin:0 0 19px}
+.task-fields{margin:0!important;padding:0!important;list-style:none}
+.task-field{padding:13px 17px;margin:0!important;border-bottom:1px solid #e7edf2;display:flex;align-items:flex-start;gap:6px;flex-wrap:wrap;line-height:1.5!important}
+.task-field:last-child{border-bottom:0}.task-field:nth-child(even){background:#fafcf9}.task-field .image-frame{width:100%;margin:7px 0}
+.notice{border:1px solid #d6e5f3;border-left:5px solid #5b9bd6;background:#f3f8ff;border-radius:13px;padding:15px 17px;margin:15px 0 17px;color:#30475e;line-height:1.65}
+.notice p:last-child{margin-bottom:0}.notice-warning{border-color:#f1ddc3;border-left-color:#F99F1C;background:#fff8ee;color:#794911}
+.notice-danger{border-color:#efd1d6;border-left-color:#c95461;background:#fff1f3;color:#803a43}
+.notice-note{border-color:#d6e5f3;border-left-color:#5488bd;background:#f4f8fc}
+.notice-secondary{border-color:#e2e7ea;border-left-color:#8494a4;background:#f8fafb}
+.notice .step-badge{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;margin-right:8px;vertical-align:middle;flex:none;border-radius:50%;background:#f99f1c;color:#fff;font-weight:800}
+.notice a{white-space:normal}.notice a:hover{background:#e7f0ff}
+.workflow-container{display:flex;flex-direction:column;gap:16px}
+.workflow-phase{border:1px solid var(--line);border-radius:17px;background:#fff;padding:20px 23px;box-shadow:0 6px 21px rgba(36,58,79,.04);min-width:0}
+.workflow-phase:nth-child(1){border-top:4px solid #94c11f}
+.workflow-phase.success-phase{border-left:5px solid #94c11f;background:#fbfdf8}
+.workflow-phase.danger-phase{border-left:5px solid #ce5963;background:#fffafa}
+.workflow-phase.danger-phase .phase-heading{color:#a54c57!important}
+.workflow-phase.danger-phase .phase-heading::before{background:#ce5963}
+.workflow-phase>ul{border:1px solid #e3eaf0;padding:12px 17px 12px 33px;border-radius:13px;background:#f9fbfc;margin-top:9px}
+.workflow-phase>ul li{margin-bottom:6px}
+.workflow-step{background:#fff}
+.workflow-phase .badge{display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:.8rem;font-weight:780;border:1px solid #e0e7ef;background:#eff4f9;color:#345268;vertical-align:baseline}
+.workflow-phase .bg-danger{background:#fff0f1;color:#9b4654;border-color:#f2d7d9}
+.workflow-phase .bg-warning{background:#fff2dc;color:#986214;border-color:#f5e1bb}
+.workflow-phase .bg-success{background:#eef8df;color:#4e7427;border-color:#d7e8bd}
+.workflow-phase .bg-info{background:#e8f3ff;color:#2e6d91;border-color:#cee4f7}
+.copy-template{display:inline-flex;align-items:center;gap:10px;border:1px solid #cfe1b0;border-radius:12px;background:#eff7e2;color:#4d7117;font-size:.88rem;font-weight:800;padding:10px 15px;margin:0 0 13px;cursor:pointer}
+.copy-template:hover,.copy-template:focus-visible{background:#dff0be;outline-color:#739c27}
+.copy-card{border-left:5px solid #94c11f!important;background:#fff!important;padding:23px 25px!important}
+.copy-card p{margin-bottom:17px}.copy-card p:last-child{margin-bottom:0}
+.image-frame{display:block;margin:17px 0 23px;padding:9px;border-radius:15px;background:#f7f9fc;border:1px solid #e0e7ef;text-align:center;overflow:hidden}
+.manual-screenshot{max-width:100%;height:auto;display:block;margin:0 auto;border-radius:10px;object-fit:contain;box-shadow:0 6px 20px rgba(18,38,60,.08);cursor:zoom-in}
+.image-frame img:focus-visible{outline:3px solid #94c11f;outline-offset:3px}
+.responsive-video{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:#17273d;border-radius:15px}
+.responsive-video iframe{position:absolute;inset:0;border:0;width:100%;height:100%}
+.video-card{padding:19px;background:#fff;border:1px solid #e1e9ee;border-radius:17px;box-shadow:0 8px 23px rgba(22,40,58,.06)}
+.video-card h6{font-size:1.08rem;font-weight:820;color:#4f701d;margin:0 0 14px}
+.video-card .icon-inline{margin-right:8px}
+.book-page .empty-media{min-height:290px}
+.empty-media .icon-inline{width:48px;height:48px}
+.image-lightbox{max-width:min(95vw,1350px);max-height:92vh;padding:33px 14px 14px;border-radius:16px;border:1px solid #e0e7ee;box-shadow:0 20px 75px rgba(10,20,39,.4);background:#fff}
+.image-lightbox::backdrop{background:rgba(11,24,37,.76)}.lightbox-image{max-width:100%;max-height:80vh;object-fit:contain;display:block;margin:auto}.lightbox-close{position:absolute;right:9px;top:5px;border:0;background:#eef4e3;color:#3a5517;font-size:24px;font-weight:800;cursor:pointer;border-radius:7px;line-height:1;padding:4px 9px}
+@media(max-width:700px){.definition-group{padding:17px 15px}.definition-group.condition-grid{grid-template-columns:1fr}.book-page .acceptance-card{padding:17px 15px}.book-page .nested-training-card{padding:15px 12px}.workflow-phase{padding:17px 14px}.copy-card{padding:18px 15px!important}.notice{padding:13px 12px}.definition-step,.work-step,.workflow-step{padding:10px}.task-field{padding:12px}.image-frame{padding:5px;margin:12px 0 19px}}
+
+/* HDO-specific presentation */
+.nav-disclosure{border-radius:13px;overflow:hidden;background:#fafbf8;border:1px solid #e4ead9}.nav-disclosure>.nav-tab{border-radius:12px;background:#f7fbea;padding-top:13px;padding-bottom:13px;color:#56722f}.nav-disclosure .group-arrow{margin-left:auto;flex:none;height:15px;width:15px;transition:transform .18s}.nav-disclosure.is-open .group-arrow{transform:rotate(180deg)}.nav-subgroup{display:grid;gap:2px;padding:2px 6px 7px 17px}.nav-subgroup[hidden]{display:none}.sub-nav-tab{padding:10px 12px 10px 11px;font-size:.85rem;border-left:2px solid #dceac4;border-radius:2px 9px 9px 2px}.sub-nav-tab.active{border-left:3px solid var(--epet)}
+.intro-panel{padding:29px 28px;border-left:0}.intro-panel>p{margin:0!important;max-width:840px;line-height:1.86}.intro-panel b{font-weight:800;color:#567e14;background:#f0f8df;border-radius:5px;padding:0 5px}
+.hdo-option-list{display:grid;grid-template-columns:1fr 1fr;gap:13px;list-style:none;padding:0!important;margin:15px 0 0!important}.hdo-option-list li{border-radius:13px;border:1px solid #e0e8ec;background:white;margin:0!important;padding:17px 18px!important;line-height:1.68;font-size:.91rem}.hdo-option-list li::marker{content:''}.hdo-option-list li strong{background:#edf5dd;color:#557d18;border-radius:5px;padding:0 5px}.hdo-option-list li:nth-child(3){border-color:#eadfbf;background:#fffaf0}.hdo-option-list li:nth-child(4){border-color:#d9e6ef;background:#f8fbfd}.step-panel{padding:23px 22px}.step-panel>p:last-child{margin-bottom:0}.step-panel .step-badge{background:#94c11f;color:#fff}.gs-quote{margin-top:19px!important;padding:19px 22px!important}
+.pds-guide{padding:18px 19px 20px;border-top:4px solid #94c11f}.pds-guide .guide-step{padding:13px 15px;border:1px solid #e1ebef;background:#fafdff;border-radius:13px;margin:8px 0 15px!important}.pds-guide .guide-step:first-child{background:#f4fae8;border-color:#e0ebca}.pds-guide .guide-step:last-child{margin-bottom:0!important}.pds-guide .step-badge{margin-right:12px}.screenshot-frame{margin:17px auto 22px;border:1px solid #e4eaf1;background:linear-gradient(180deg,#f8fafc,#fff);padding:15px;border-radius:15px;box-shadow:0 5px 22px rgba(39,53,74,.035);max-width:100%;text-align:center}.training-screenshot{display:block;width:auto;max-width:100%;height:auto;max-height:600px;object-fit:contain;margin:0 auto;border:1px solid #d7e2e8;border-radius:9px;box-shadow:0 4px 17px rgba(0,0,0,.05);cursor:zoom-in}.hdo-code-guide .img-zoom-wrapper{margin-top:10px}.hdo-code-guide .training-screenshot{max-height:700px}.training-screenshot:focus-visible{outline:3px solid #94c11f;outline-offset:5px}
+#page-video .empty-media,#page-test .empty-media{min-height:280px}#page-video .empty-media>div:first-child,#page-test .empty-media>div:first-child{font-size:2.6rem!important}#page-test .section-title-icon{background:#f4eefb;color:#9362d6}
+.lightbox{position:fixed;inset:0;z-index:1000;border:0;outline:0;background:rgba(20,35,48,.88);color:#fff;max-width:100vw;max-height:100vh;width:100%;height:100%;padding:55px 18px 20px;overflow:auto}.lightbox::backdrop{background:rgba(20,35,48,.88)}.lightbox-content{display:block;max-width:min(1180px,95vw);max-height:calc(100vh - 95px);object-fit:contain;margin:auto;border-radius:6px}.lightbox-close{position:fixed;top:13px;right:18px;border:1px solid #738093;border-radius:50%;background:#fff;color:#253d52;height:38px;width:38px;font-size:24px;line-height:34px;cursor:pointer}
+@media(max-width:760px){.hdo-option-list{grid-template-columns:minmax(0,1fr)}.pds-guide{padding:14px}.screenshot-frame{padding:8px;margin:15px 0}.intro-panel{padding:21px 19px}.step-panel{padding:19px 17px}.hdo-option-list li{padding:14px!important}}
+</style></head><body><div class="site-wrap"><nav aria-label="Drobečková navigace" class="breadcrumb-nav">
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+<a href="https://sites.google.com/view/znalostka/"><svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m3 10 9-7 9 7v11H3zM9 21v-8h6v8"></path></svg> Znalostní
+                    báze</a>
+</li>
+<li class="breadcrumb-item">
+<a href="https://sites.google.com/view/znalostka/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat">Školení
+                    ZIS</a>
+</li>
+<li class="breadcrumb-item">
+<a href="https://sites.google.com/view/znalostka/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat/minimanu%C3%A1ly">Minimanuály</a>
+</li>
+<li aria-current="page" class="breadcrumb-item active">
+                Časy spínání HDO
+            </li>
+</ol>
+</nav>
+<header class="hero-banner"><div class="hero-main"><h1>Časy spínání HDO</h1><p>Znalostní databáze epet | Dokumentace a přílohy</p></div><details class="download-disclosure"><summary><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"/></svg> Dokumenty ke stažení</summary><div class="download-options"><a href="https://drive.google.com/file/d/1Z_Lj1KdHtZoWH2zIdgkqRGVnu0nrDKTn/view?usp=drive_link" target="_blank" rel="noopener noreferrer"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"/></svg><span>Časy spínání HDO (PDF)</span></a></div></details></header>
+<main class="book-container"><details class="mobile-shell" open><summary class="mobile-nav-summary">Pracovní postup</summary><nav class="book-tabs" role="tablist" aria-label="Navigace školením"><button class="nav-tab active" type="button" role="tab" id="nav-page-intro" aria-controls="page-intro" aria-selected="true" data-target="page-intro"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 5h7a3 3 0 0 1 3 3v13H6a3 3 0 0 0-3 0zm10 3a3 3 0 0 1 3-3h5v16a3 3 0 0 0-3 0h-5"/></svg><span>Pracovní postup</span></button><button class="nav-tab" type="button" role="tab" id="nav-page-casy" aria-controls="page-casy" aria-selected="false" data-target="page-casy"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span>Jak zjistit časy spínání HDO distribuce, pokud se nás zákazník dotazuje?</span></button><div class="nav-disclosure"><button class="nav-tab nav-group-toggle" type="button" aria-expanded="false" aria-controls="provider-submenu"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m13 2-8 12h7l-1 8 8-12h-7z"/></svg><span>Odkazy na zjištění časů spínání HDO pro jednotlivé PDS</span><svg class="group-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></button><div class="nav-subgroup" id="provider-submenu" hidden><button class="nav-tab sub-nav-tab" type="button" role="tab" id="nav-page-cez" aria-controls="page-cez" aria-selected="false" data-target="page-cez"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m13 2-8 12h7l-1 8 8-12h-7z"/></svg><span>ČEZ Distribuce</span></button><button class="nav-tab sub-nav-tab" type="button" role="tab" id="nav-page-eon" aria-controls="page-eon" aria-selected="false" data-target="page-eon"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m13 2-8 12h7l-1 8 8-12h-7z"/></svg><span>E.ON Distribuce</span></button><button class="nav-tab sub-nav-tab" type="button" role="tab" id="nav-page-pre" aria-controls="page-pre" aria-selected="false" data-target="page-pre"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m13 2-8 12h7l-1 8 8-12h-7z"/></svg><span>PRE distribuce</span></button></div></div><button class="nav-tab" type="button" role="tab" id="nav-page-zmena" aria-controls="page-zmena" aria-selected="false" data-target="page-zmena"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="7"/><path d="m16 16 5 5"/></svg><span>Kde naleznu na HDO kód povelu?</span></button><button class="nav-tab" type="button" role="tab" id="nav-page-video" aria-controls="page-video" aria-selected="false" data-target="page-video"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="m10 8 5 4-5 4z"/></svg><span>Video návod</span></button><button class="nav-tab test-tab" type="button" role="tab" id="nav-page-test" aria-controls="page-test" aria-selected="false" data-target="page-test"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="5" width="14" height="16" rx="2"/><path d="M9 5V3h6v2M9 11h6M9 15h6"/></svg><span>Opakovací test</span></button></nav></details><div class="book-page"><div aria-labelledby="nav-page-intro" class="content-section active" id="page-intro" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">1.</span> Pracovní postup</h2>
+<!-- Pracovní postup -->
+<div class="training-card intro-panel">
+<p class="mb-0">
+                        V pracovním postupu je uvedeno, jak lze zjistit časy spínání HDO pro jednotlivé distribuční sazby
+                        v rámci provozovatelů distribučních soustav elektrické energie. <b>HDO </b> = Hromadné dálkové
+                        ovládání. Jedná se o zařízení, které reguluje odběr elektrické energie na dálku, např. umožňuje
+                        vysílat povely nebo signály za účelem přepínání tarifů (T1/VT, T2/NT).
+                    </p>
+</div>
+</div><div aria-labelledby="nav-page-casy" class="content-section" id="page-casy" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">2.</span> Jak zjistit časy spínání HDO distribuce, pokud se nás zákazník dotazuje?</h2>
+<!-- Jak zjistit časy spínání HDO distribuce, pokud se nás zákazník dotazuje?-->
+<div class="steps-holder"><div class="step-panel"><p class="mb-3">
+<span class="step-badge">1</span>
+                        Zjistím <strong>distributora odběrného místa (OM)</strong>
+                        (<a href="https://www.cezdistribuce.cz/pro-zakazniky/potrebuji-vyresit/stavajici-pripojeni/casy-spinani-nizkeho-tarifu" rel="noopener noreferrer" target="_blank">ČEZ</a> /
+                        <a href="https://www.predistribuce.cz/cs/potrebuji-zaridit/zakaznici/stav-hdo/" rel="noopener noreferrer" target="_blank">PRE</a> /
+                        <a href="https://www.eon.cz/domacnosti/zakaznicka-pece/technicke-dotazy/casy-nizkeho-tarifu-hdo/" rel="noopener noreferrer" target="_blank">EG.D</a>).
+                    </p></div><div class="step-panel"><p class="mb-2">
+<span class="step-badge">2</span>
+                        Zjistím, zda má zákazník k dispozici <strong>povel / kód povelu HDO</strong>
+                        (najde ho přímo na přijímači HDO v rozvodné skříni u elektroměru):
+                    </p><ul class="hdo-option-list">
+<li>
+<strong>a)</strong> Pokud má zákazník k dispozici kód nebo povel, můžeme mu
+                            informaci o <strong>časech spínání HDO</strong> sdělit (a následně poslat e-mailem)
+                            přímo na lince a zároveň ho informujeme o odkazu, kde si tyto informace může zjistit sám.
+                        </li>
+<li>
+<strong>b)</strong> Pokud zákazník nemá potřebnou informaci (kód povelu),
+                            kterou nalezne na HDO v rozvodné skříni u elektroměru, můžeme mu
+                            <strong>zaslat odkaz e-mailem</strong> i se stručným popisem, jak kód zjistit.
+                        </li>
+<li>
+<strong>c)</strong> Pokud zákazník nemá informaci a zároveň
+                            <strong>nemá přístup k internetu</strong>, poprosíme ho o zjištění kódu/povelu
+                            a domluvíme se na <strong>zpětném kontaktu</strong>. Následně můžeme časy spínání
+                            zjistit pomocí odkazu distributora.
+                        </li>
+<li>
+<strong>d)</strong> Zákazník může rovněž <strong>napřímo kontaktovat svého distributora</strong>,
+                            který mu časy spínání HDO sdělí.
+                        </li>
+</ul></div><blockquote class="gs-quote">
+<p>
+                            Pro zjištění časů spínání HDO lze využít také přehledy na webových stránkách
+                            jednotlivých distributorů (podle kódu povelu HDO na přijímači).
+                        </p>
+<cite>Interní poznámka / metodika</cite>
+</blockquote></div>
+</div><div class="content-section" id="page-odkazy" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">3.</span> Odkazy na zjištění časů spínání HDO pro jednotlivé PDS</h2>
+<!-- Odkazy na zjištění časů spínání HDO pro jednotlivé PDS -->
+</div><div aria-labelledby="nav-page-cez" class="content-section" id="page-cez" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">3.1</span> ČEZ</h2>
+<!-- ČEZ -->
+<div class="training-card pds-guide">
+<p class="guide-step">
+<span class="step-badge">1</span>
+                        Odkaz najdeme
+                        <a href="https://www.cezdistribuce.cz/pro-zakazniky/potrebuji-vyresit/stavajici-pripojeni/casy-spinani-nizkeho-tarifu" rel="noopener noreferrer" target="_blank">zde</a>
+</p>
+<p class="guide-step">
+<span class="step-badge">2</span>
+                        Uvedený odkaz distribuce ČEZ umožňuje zjistit aktuální časy spínání HDO po výběru
+                        oblasti a zadání povelu, kódu nebo kódu k povelu (informace je na HDO v rozvodné
+                        skříni u elektroměru). Zvolíme lokalitu, vyplníme kód/povel a dáme vyhledat.
+                    </p>
+<div class="screenshot-frame"><img alt="ČEZ – HDO časy spínání" aria-label="Zvětšit obrázek: ČEZ – HDO časy spínání" class="training-screenshot" decoding="async" loading="lazy" role="button" src="https://i.postimg.cc/bNtnwgBX/cez-hdo.png" tabindex="0"/></div>
+</div>
+</div><div aria-labelledby="nav-page-eon" class="content-section" id="page-eon" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">3.2</span> E.ON</h2>
+<!-- E.ON -->
+<div class="training-card pds-guide">
+<p class="guide-step">
+<span class="step-badge">1</span>
+                        Odkaz najdeme
+                        <a href="https://www.eon.cz/domacnosti/zakaznicka-pece/technicke-dotazy/casy-nizkeho-tarifu-hdo/" rel="noopener noreferrer" target="_blank">zde</a>
+</p>
+<p class="guide-step">
+<span class="step-badge">2</span>
+                        Nejprve vybereme lokalitu, poté zadáme kód/povel a dáme zobrazit.
+                    </p>
+<div class="screenshot-frame"><img alt="EG.D – výběr lokality a kódu HDO" aria-label="Zvětšit obrázek: EG.D – výběr lokality a kódu HDO" class="training-screenshot" decoding="async" loading="lazy" role="button" src="https://i.postimg.cc/MTgy9FLK/egd-hdo-1.png" tabindex="0"/></div>
+<div class="screenshot-frame"><img alt="EG.D – zobrazení časů HDO" aria-label="Zvětšit obrázek: EG.D – zobrazení časů HDO" class="training-screenshot" decoding="async" loading="lazy" role="button" src="https://i.postimg.cc/KYHLYWxP/egd-hdo-2.png" tabindex="0"/></div>
+</div>
+</div><div aria-labelledby="nav-page-pre" class="content-section" id="page-pre" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">3.3</span> PRE</h2>
+<!-- PRE -->
+<div class="training-card pds-guide">
+<p class="guide-step">
+<span class="step-badge">1</span>
+                        Odkaz najdeme
+                        <a href="https://www.predistribuce.cz/cs/potrebuji-zaridit/zakaznici/stav-hdo/" rel="noopener noreferrer" target="_blank">zde</a>
+</p>
+<p class="guide-step">
+<span class="step-badge">2</span>
+                        Stačí pouze vybrat povel přijímače a zobrazí se časová osa spínání.
+                    </p>
+<div class="screenshot-frame"><img alt="PRE – časy spínání HDO" aria-label="Zvětšit obrázek: PRE – časy spínání HDO" class="training-screenshot" decoding="async" loading="lazy" role="button" src="https://i.postimg.cc/kGd263Zt/pre-hdo.png" tabindex="0"/></div>
+<p class="guide-step">
+<span class="step-badge">3</span>
+                        Ovládací kód je vždy uveden na samotném přijímači HDO nebo na elektroměru.
+                    </p>
+</div>
+</div><div aria-labelledby="nav-page-zmena" class="content-section" id="page-zmena" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">4.</span> Kde naleznu na HDO kód povelu?</h2>
+<!-- Kde naleznu na HDO kód povelu? -->
+<div class="training-card pds-guide hdo-code-guide">
+<p class="mb-3">
+<span class="step-badge">1</span>
+                        Náhled povelů HDO:
+                    </p>
+<div class="img-zoom-wrapper text-center">
+<img alt="povely" aria-label="Zvětšit obrázek: povely" class="training-screenshot" decoding="async" loading="lazy" role="button" src="https://i.postimg.cc/nhsnJSRq/povely.png" tabindex="0"/>
+</div>
+</div>
+</div><div aria-labelledby="nav-page-video" class="content-section" id="page-video" role="tabpanel" tabindex="0">
+<h2 class="section-title"><svg aria-hidden="true" class="section-title-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="16" rx="3" width="18" x="3" y="4"></rect><path d="m10 8 5 4-5 4z"></path></svg>Video tutoriál</h2>
+<div class="empty-media">
+<div class="mb-3" style="font-size: 3rem; color: #ced4da;">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"></path></svg>
+</div>
+<h4 class="fw-bold text-secondary">Video je v přípravě</h4>
+<p class="text-muted">Právě pro vás stříháme aktuální verzi návodu.<br/>Jakmile bude hotová, najdete ji
+                    přímo zde.</p>
+</div></div><div aria-labelledby="nav-page-test" class="content-section" id="page-test" role="tabpanel" tabindex="0">
+<h2 class="section-title" style="color: var(--epet-purple);"><svg aria-hidden="true" class="section-title-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="16" rx="2" width="14" x="5" y="5"></rect><path d="M9 5V3h6v2M9 11h6M9 15h6"></path></svg>Ověření znalostí</h2>
+<div class="empty-media">
+<div class="mb-3" style="font-size: 3.5rem; color: #ced4da;">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"></path></svg>
+</div>
+<h4 class="fw-bold text-secondary">Opakovací test je v přípravě</h4>
+<p class="text-muted">
+                        Právě pro vás připravujeme aktuální verzi testu.<br/>
+                        Jakmile bude hotový, možnost ověření znalostí se zobrazí přímo zde.
+                    </p>
+</div>
+</div></div></main><div class="site-footer" aria-hidden="true"></div></div><dialog class="lightbox"><button class="lightbox-close" type="button" aria-label="Zavřít zvětšený obrázek">×</button><img class="lightbox-content" alt=""></dialog><script>(() => {
+ const tabs=[...document.querySelectorAll('.nav-tab[data-target]')],sections=[...document.querySelectorAll('.content-section')],shell=document.querySelector('.mobile-shell'),summary=document.querySelector('.mobile-nav-summary'),group=document.querySelector('.nav-disclosure'),toggle=document.querySelector('.nav-group-toggle'),submenu=document.getElementById('provider-submenu');
+ function toggleGroup(force){const open=force===undefined?!group.classList.contains('is-open'):force;group.classList.toggle('is-open',open);toggle.setAttribute('aria-expanded',String(open));submenu.hidden=!open;}
+ toggle.addEventListener('click',()=>toggleGroup());
+ function openPage(id,scroll=true){const selected=document.getElementById(id);if(!selected)return;sections.forEach(s=>s.classList.toggle('active',s===selected));tabs.forEach(t=>{let a=t.dataset.target===id;t.classList.toggle('active',a);t.setAttribute('aria-selected',String(a));t.tabIndex=a?0:-1});if(submenu.contains(document.getElementById('nav-'+id)))toggleGroup(true);const b=tabs.find(t=>t.dataset.target===id);if(summary&&b)summary.textContent=b.textContent.trim();if(matchMedia('(max-width:1030px)').matches&&shell)shell.open=false;if(scroll)document.querySelector('.book-container').scrollIntoView({block:'start',behavior:'instant'});}
+ tabs.forEach((b,i)=>{b.addEventListener('click',()=>openPage(b.dataset.target));b.addEventListener('keydown',e=>{let n;if(['ArrowDown','ArrowRight'].includes(e.key))n=(i+1)%tabs.length;else if(['ArrowUp','ArrowLeft'].includes(e.key))n=(i+tabs.length-1)%tabs.length;else if(e.key==='Home')n=0;else if(e.key==='End')n=tabs.length-1;else return;e.preventDefault();let t=tabs[n];if(submenu.contains(t))toggleGroup(true);t.focus();openPage(t.dataset.target,false);});});
+ document.addEventListener('click',e=>{let d=document.querySelector('.download-disclosure');if(d&&d.open&&!d.contains(e.target))d.open=false;});
+ const dlg=document.querySelector('.lightbox'),image=dlg.querySelector('img');document.querySelectorAll('.training-screenshot').forEach(img=>{const show=()=>{image.src=img.src;image.alt=img.alt;dlg.showModal()};img.addEventListener('click',show);img.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();show();}})});dlg.querySelector('.lightbox-close').addEventListener('click',()=>dlg.close());dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+})();</script></body></html>

@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Vrácená korespondence – Pracovní postup</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
+
+
+<style>/* ZNALOSTKA – HTML ŠKOLENÍ | Jednotný firemní vizuální standard */
+:root{
+  --epet:#94c11f; --epet-dark:#60781a; --epet-deep:#34470b;
+  --purple:#9362d6; --blue:#2563eb; --cyan:#0891b2;
+  --orange:#f59e0b; --red:#d9414f;
+  --ink:#1e293b; --muted:#64748b; --line:#e2e8f0;
+  --soft:#f8fafc; --card:#fff;
+  --shadow:0 14px 34px rgba(15,23,42,.075);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; padding:10px 12px 34px; background:transparent; color:var(--ink);
+  font-family:"Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,Arial,sans-serif;
+  font-size:15px;line-height:1.64;-webkit-font-smoothing:antialiased;
+}
+body>.breadcrumb-nav,body>.hero-banner,body>.book-container{
+  width:100%;max-width:1180px;margin-left:auto;margin-right:auto;
+}
+/* Ostrá a jednotná ikonografie SVG, nezávislá na síťovém načtení ikonového fontu. */
+i.bi::before{display:none!important}
+.svg-icon{width:19px;height:19px;vertical-align:middle;display:inline-block;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.breadcrumb .svg-icon{width:15px;height:15px}
+.btn-download .svg-icon{width:18px;height:18px}
+.video-card .svg-icon{width:20px;height:20px}
+.list-group .svg-icon{width:17px;height:17px}
+.glossary .bg-primary{background:var(--blue)!important;color:#fff}
+.glossary .bg-success{background:var(--epet-dark)!important;color:#fff}
+.glossary .bg-warning{background:#fff0ba!important;color:#664300}
+.glossary .bg-info{background:#d7f6fa!important;color:#155a70}
+/* Drobečková navigace */
+.breadcrumb-nav{
+  margin-bottom:14px;padding:10px 14px;background:rgba(255,255,255,.92);
+  border:1px solid var(--line);border-radius:14px;backdrop-filter:blur(8px);
+}
+.breadcrumb{display:flex;flex-wrap:wrap;list-style:none;padding:0;margin:0;font-size:.85rem}
+.breadcrumb-item{display:flex;align-items:center;color:#6b7280}
+.breadcrumb-item a{color:var(--epet-dark);text-decoration:none;font-weight:700}
+.breadcrumb-item a:hover{color:var(--purple)}
+.breadcrumb-item+.breadcrumb-item::before{
+  content:"›";font-family:inherit;font-size:1.1rem;
+  padding:0 9px;color:#94a3b8;
+}
+.breadcrumb-item.active{color:#475569;font-weight:720}
+/* Firemní gradientový hero */
+.hero-banner{
+  position:relative;isolation:isolate;overflow:visible;
+  display:flex!important;align-items:center!important;justify-content:space-between!important;
+  gap:25px;flex-wrap:wrap;margin-bottom:18px;min-height:184px;
+  border-radius:24px;padding:35px 33px;color:#fff;
+  background:
+    radial-gradient(900px 360px at 92% 20%,rgba(255,255,255,.24),transparent 62%),
+    linear-gradient(135deg,var(--epet) 0%,var(--epet-dark) 52%,#2f3f0f 100%);
+  box-shadow:var(--shadow);
+}
+.hero-banner::before{
+  content:"";z-index:-1;position:absolute;right:18px;bottom:0;
+  width:190px;height:140px;border-radius:100% 60% 0 0;
+  background:linear-gradient(135deg,rgba(255,255,255,.025),rgba(255,255,255,.09));
+  pointer-events:none;
+}
+.hero-banner::after{
+  content:"";position:absolute;z-index:-1;right:105px;top:16px;
+  width:130px;height:130px;border:1px solid rgba(255,255,255,.14);border-radius:50%;pointer-events:none;
+}
+.hero-banner>div{position:relative;z-index:1}
+.hero-banner>div:first-child{flex:1 1 480px;min-width:0}
+.hero-banner h1{
+  margin:0 0 10px!important;color:white!important;
+  font-size:clamp(1.56rem,2.75vw,2.18rem)!important;
+  letter-spacing:-.034em;line-height:1.16;font-weight:850!important;
+}
+.hero-banner p{margin:0!important;color:rgba(255,255,255,.91)!important;font-size:.95rem}
+.btn-download{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  border:1px solid rgba(255,255,255,.45);border-radius:999px;
+  padding:11px 19px;background:#fff;color:var(--epet-dark)!important;
+  font-weight:820;text-decoration:none;white-space:nowrap;
+  box-shadow:0 8px 18px rgba(15,23,42,.12);transition:transform .18s ease,box-shadow .18s ease;
+}
+.btn-download:hover,.btn-download:focus-visible{transform:translateY(-2px);box-shadow:0 11px 24px rgba(15,23,42,.17)}
+.hero-banner .dropdown{z-index:80}
+.hero-banner .dropdown-menu{
+  display:none!important;position:absolute;list-style:none;margin:0;
+  min-width:340px;max-width:min(440px,calc(100vw - 24px));
+  background:#fff;color:var(--ink);padding:9px;border:1px solid var(--line)!important;border-radius:16px!important;
+  box-shadow:0 18px 38px rgba(15,23,42,.2)!important;z-index:9999;
+}
+.hero-banner .dropdown.open>.dropdown-menu{display:block!important;position:absolute;top:calc(100% + 8px);right:0;left:auto}
+.hero-banner .dropdown-item{
+  display:flex;align-items:center;gap:8px;padding:11px 12px!important;border-radius:10px;
+  color:#334155;font-weight:680;font-size:.91rem;white-space:normal;text-decoration:none;
+}
+.hero-banner .dropdown-item:hover{background:#f1f8e3;color:var(--epet-dark)}
+.hero-banner .dropdown-toggle::after{margin-left:5px}
+/* Navigace a pravý obsahový panel */
+.book-container{
+  display:grid!important;grid-template-columns:270px minmax(0,1fr);
+  align-items:start;gap:18px;min-height:0;overflow:visible;background:transparent;border:0;
+}
+.book-tabs{
+  position:sticky;top:12px;width:auto!important;min-width:0;
+  display:flex!important;flex-direction:column!important;gap:5px;
+  padding:12px;border:1px solid var(--line);border-radius:22px;
+  background:#fff;box-shadow:0 10px 28px rgba(15,23,42,.055);
+}
+.book-tabs::before{
+  content:"";display:block;height:5px;margin:0 8px 9px;
+  border-radius:999px;background:linear-gradient(90deg,var(--epet),#cce88a);
+}
+.tab-item{
+  display:flex;align-items:center;gap:11px;min-width:0;
+  padding:12px 13px;margin:0;border-radius:14px;
+  background:transparent;border:1px solid transparent!important;
+  color:#475569;font-size:.925rem;font-weight:700;line-height:1.4;
+  cursor:pointer;outline:0;transition:background .18s,color .18s,transform .18s,box-shadow .18s;
+}
+.tab-item i{width:20px;flex:0 0 20px;text-align:center;font-size:1.1rem;color:#718096}
+.tab-item:hover,.tab-item:focus-visible{background:var(--soft);color:var(--epet-dark);transform:translateX(2px)}
+.tab-item.active{
+  background:#f1fccf;color:#435f00;font-weight:850;
+  border-color:rgba(148,193,31,.28)!important;
+  box-shadow:inset 0 0 0 1px rgba(148,193,31,.09);
+}
+.tab-item.active i{color:var(--epet-dark)}
+.tab-item.tab-purple{margin-top:6px;border-top:1px solid var(--line)!important}
+.tab-item.tab-purple.active{color:#7048a6;background:#f6efff;border-color:rgba(147,98,214,.25)!important}
+.tab-item.tab-purple.active i{color:var(--purple)}
+.book-page{
+  position:relative;min-width:0;min-height:430px;overflow:visible;
+  background:#fff;padding:27px 27px 32px;border:1px solid var(--line);
+  border-radius:24px;box-shadow:var(--shadow);
+}
+.content-section{display:none;animation:fadeIn .25s ease}
+.content-section.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.content-section>h2{
+  display:flex;align-items:center;gap:11px;min-width:0;
+  margin:0 0 19px!important;padding:0 0 18px;border-bottom:1px solid var(--line);
+  font-size:clamp(1.22rem,2.05vw,1.55rem);line-height:1.35;
+  letter-spacing:-.025em;color:var(--epet-dark)!important;font-weight:850!important;
+}
+.section-number{
+  display:inline-flex;align-items:center;justify-content:center;flex:0 0 41px;
+  width:41px;height:41px;border-radius:50%;background:var(--epet);color:#fff;
+  font-size:1rem;font-weight:850;letter-spacing:0;
+  box-shadow:0 5px 12px rgba(148,193,31,.16);
+}
+#page-video>h2::before,#page-test>h2::before{
+  content:"";display:block;flex:0 0 5px;width:5px;min-height:30px;
+  border-radius:99px;background:var(--epet);
+}
+#page-test>h2{color:var(--purple)!important}
+#page-test>h2::before{background:var(--purple)}
+/* Úvodní shrnutí, významové zkratky */
+.overview-card{
+  position:relative;overflow:hidden;border:1px solid #dfebd4;
+  padding:26px 28px 26px;border-radius:21px;
+  background:radial-gradient(280px 220px at 100% 100%,rgba(148,193,31,.1),transparent 75%),
+             linear-gradient(140deg,#fff,#f9fcf3);
+  box-shadow:0 9px 22px rgba(15,23,42,.046);
+}
+.overview-card::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:var(--epet)}
+.overview-card>p{font-size:1.065rem;line-height:1.82;margin:0 0 23px;color:#2f473e}
+.glossary{border-top:1px solid #dfeada;padding-top:20px;margin:0!important}
+.glossary h5{font-size:.89rem;letter-spacing:.065em;color:var(--muted);font-weight:850;margin:0 0 13px}
+.glossary h5 strong{color:var(--epet-dark)}
+.glossary p{margin:0;line-height:2.4;color:#475569;font-weight:580}
+.glossary .badge{
+  margin-right:5px;vertical-align:middle;padding:8px 10px;border-radius:9px;
+  font-size:.81rem;letter-spacing:.01em;line-height:1;font-weight:850;
+}
+/* Pracovní postup tvoří série navazujících karet. */
+.content-steps{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;
+  padding:0!important;margin:0!important;border:0!important;background:transparent!important;box-shadow:none!important}
+.step-card{
+  position:relative;overflow:hidden;min-width:0;
+  background:linear-gradient(180deg,#fff,#fbfcfd);
+  padding:21px 23px 23px;border:1px solid var(--line);
+  border-radius:20px;box-shadow:0 8px 22px rgba(15,23,42,.05);
+}
+.step-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--epet)}
+.content-steps>.step-card:nth-child(3n+2)::before{background:var(--cyan)}
+.content-steps>.step-card:nth-child(3n+3)::before{background:var(--purple)}
+.step-card>p{margin:0 0 13px!important;color:#334155;line-height:1.74}
+.step-card>p:last-child{margin-bottom:0!important}
+.step-card>p:first-child{font-size:1rem}
+.step-card .step-badge{
+  display:inline-flex;align-items:center;justify-content:center;
+  vertical-align:middle;width:35px;height:35px;min-width:35px;
+  margin:0 10px 2px 0;border-radius:50%;background:var(--epet);
+  box-shadow:0 5px 12px rgba(148,193,31,.16);
+  color:#fff;font-size:.95rem;font-weight:850;
+}
+.content-steps>.step-card:nth-child(3n+2) .step-badge{background:var(--cyan)}
+.content-steps>.step-card:nth-child(3n+3) .step-badge{background:var(--purple)}
+.step-card img.img-thumbnail{
+  display:block;width:auto;max-width:100%;height:auto;
+  object-fit:contain;margin:17px auto!important;padding:6px;
+  border:1px solid var(--line);border-radius:15px;
+  background:#fff;box-shadow:0 8px 20px rgba(15,23,42,.08);
+}
+/* Významové položky do přehledných mřížek */
+.step-card ul.list-group{
+  display:grid;grid-template-columns:minmax(0,1fr);gap:8px;
+  list-style:none;margin:14px 0 13px!important;padding:0;border:0;border-radius:0;background:transparent;
+}
+.step-card ul.privacy-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.step-card .list-group-item{
+  min-width:0;display:block;margin:0!important;padding:12px 14px!important;
+  background:#fafcfe;border:1px solid var(--line)!important;border-radius:12px!important;
+  color:#334155;line-height:1.55;font-size:.93rem;
+}
+.step-card .privacy-grid .list-group-item{
+  text-align:center;display:flex;align-items:center;justify-content:center;
+  min-height:54px;background:#fff7ed;color:#81500f;border-color:#f4dba8!important;font-weight:720;
+}
+.step-card .task-fields{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.step-card .task-fields .list-group-item{background:linear-gradient(180deg,#fff,#f8fafc);padding:14px 15px!important}
+.step-card .task-fields .list-group-item:nth-child(5){grid-column:1/-1}
+.step-card .task-fields .list-group-item i.bi{color:var(--epet-dark)}
+.step-card .task-fields .list-group-item b{color:var(--ink)}
+.step-card .critical-note{
+  margin:15px 0!important;padding:15px 18px;
+  border:1px solid #f3bec7!important;border-left:5px solid var(--red)!important;
+  border-radius:15px;background:#fff4f5;color:#8e2430;line-height:1.68;
+}
+.step-card .critical-note strong{color:inherit}
+/* Textové odkazy a zvýraznění */
+.book-page strong,.book-page b{font-weight:800}
+.book-page p,.book-page li{line-height:1.68}
+.book-page a:not(.btn){
+  color:var(--epet-dark);text-decoration:none;font-weight:770;
+  border-bottom:2px solid rgba(148,193,31,.31);padding:0 2px;
+}
+.book-page a:not(.btn):hover{background:#f4fae6;border-bottom-color:var(--epet)}
+.book-page a[target="_blank"]::after{
+  content:"↗";font-family:inherit;font-size:.77rem;
+  margin-left:5px;vertical-align:super;opacity:.7;
+}
+.book-page i:not(.bi),.book-page em{color:var(--purple)}
+.book-page u{text-decoration:none;border-bottom:2px dotted var(--epet);padding-bottom:1px}
+/* Videa a opakovací test */
+#page-video>p{color:var(--muted)!important;line-height:1.7;margin-bottom:21px!important}
+#page-video>.row{
+  display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;margin:0!important;
+}
+#page-video>.row>.col{padding:0!important;width:auto;max-width:none;flex:none;margin:0}
+.video-card{
+  height:100%;overflow:hidden;padding:16px!important;
+  background:linear-gradient(180deg,#fff,#f8fafc)!important;
+  border:1px solid var(--line)!important;border-radius:20px!important;
+  box-shadow:0 8px 22px rgba(15,23,42,.05)!important;
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+}
+.video-card:hover{transform:translateY(-3px);border-color:var(--epet)!important;
+  box-shadow:0 12px 25px rgba(15,23,42,.1)!important}
+.video-card h6{
+  min-height:44px;display:flex;align-items:center;gap:6px;margin:0 0 12px!important;
+  color:var(--epet-dark);font-size:.98rem;line-height:1.45;font-weight:850!important;
+}
+.video-card h6 i{font-size:1.2rem}
+.video-card .ratio{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:13px!important}
+.video-card iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+#page-test>p{
+  margin:0 0 20px!important;padding:17px 19px;
+  border-left:4px solid var(--purple);border-radius:15px;
+  background:#faf7ff;color:#475569;line-height:1.7;
+}
+#page-test>div{overflow:hidden;border:1px solid var(--line)!important;
+  border-radius:19px!important;box-shadow:0 8px 22px rgba(15,23,42,.05)!important}
+#page-test iframe{display:block;width:100%;height:600px;border:0}
+/* Responzivní tablet/mobile; nevynucuje horizontální scroll dokumentu. */
+@media(max-width:1020px){
+  .book-container{grid-template-columns:1fr}
+  .book-tabs{position:static;flex-direction:row!important;overflow-x:auto;white-space:nowrap;padding:9px;gap:5px}
+  .book-tabs::before{display:none}
+  .tab-item{flex:0 0 auto;min-width:max-content;padding:10px 12px}
+  .tab-item:hover{transform:none}
+  .tab-item.tab-purple{margin-top:0;border-top:1px solid transparent!important}
+}
+@media(max-width:690px){
+  body{padding:7px 6px 26px;font-size:14.5px}
+  .breadcrumb-nav{padding:9px 11px;margin-bottom:10px}
+  .breadcrumb{font-size:.79rem}
+  .breadcrumb-item+.breadcrumb-item::before{padding:0 5px}
+  .hero-banner{padding:26px 21px;gap:18px;min-height:160px;border-radius:20px;margin-bottom:13px}
+  .hero-banner h1{font-size:1.62rem!important}
+  .hero-banner .dropdown{width:100%}
+  .btn-download{padding:10px 15px;white-space:normal;text-align:center}
+  .hero-banner .dropdown-menu{min-width:0;max-width:100%;width:100%;right:auto;left:0}
+  .book-container{gap:12px}
+  .book-tabs{border-radius:17px}
+  .book-page{padding:19px 15px 24px;min-height:0;border-radius:20px}
+  .content-section>h2{align-items:flex-start;gap:9px;font-size:1.2rem}
+  .section-number{flex-basis:35px;width:35px;height:35px;font-size:.86rem}
+  .overview-card{padding:20px 19px 21px}
+  .overview-card>p{font-size:1rem}
+  .step-card{padding:17px 16px 19px;border-radius:17px}
+  .step-card ul.privacy-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .step-card .task-fields{grid-template-columns:1fr}
+  .step-card .task-fields .list-group-item:nth-child(5){grid-column:auto}
+  #page-video>.row{grid-template-columns:1fr}
+  .video-card h6{min-height:0}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+
+/* Dokumenty ke stažení: stabilní nativní rozbalení bez Bootstrap JS */
+.hero-banner{z-index:5}
+.hero-banner .download-container{position:relative;z-index:8;min-width:0;flex:0 1 auto}
+.download-disclosure{position:relative;width:100%}
+.download-disclosure>summary{list-style:none;cursor:pointer;user-select:none;display:inline-flex;align-items:center}
+.download-disclosure>summary::-webkit-details-marker{display:none}
+.download-disclosure>summary::marker{content:''}
+.download-disclosure>summary::after{
+  content:'';width:8px;height:8px;margin-left:7px;display:inline-block;
+  border-right:2px solid currentColor;border-bottom:2px solid currentColor;
+  transform:translateY(-2px) rotate(45deg);transition:transform .2s ease;
+}
+.download-disclosure[open]>summary::after{transform:translateY(2px) rotate(225deg)}
+.download-disclosure>summary:focus-visible{outline:3px solid #fff9bb;outline-offset:3px}
+.download-options{margin-top:10px;padding:8px;background:#fff;color:var(--ink);
+  border:1px solid var(--line);border-radius:16px;box-shadow:0 10px 26px rgba(15,23,42,.16);
+  width:370px;max-width:min(440px,calc(100vw - 36px));}
+.download-link{display:flex;align-items:center;gap:9px;border-radius:11px;
+  padding:12px;color:#334155!important;font-weight:720;font-size:.91rem;
+  line-height:1.4;text-decoration:none!important;overflow-wrap:anywhere}
+.download-link i{color:#cf3347}
+.download-link:hover,.download-link:focus-visible{background:#f1f8e3;color:var(--epet-dark)!important}
+@media(max-width:690px){
+  .hero-banner .download-container{width:100%;flex-basis:100%}
+  .download-disclosure>summary{width:100%;justify-content:center}
+  .download-options{width:100%;max-width:none}
+}
+
+
+
+/* Vratena korespondence | thematic extension with no modifications of source text */
+#page-intro .step-card:first-child{background:linear-gradient(130deg,#fff,#f8fcf2)}
+#page-intro .step-card:last-child::before{background:var(--purple)}
+/* Original illustrations stay externally hosted with exactly the same source URLs. */
+.step-card>img.img-thumbnail,.step-card img.img-thumbnail{display:block;max-width:min(100%,720px);max-height:560px;object-fit:contain}
+/* Stage-specific document overview / handoff lists */
+#page-korespondence .step-card ul.resource-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:17px 0 10px!important}
+.step-card .resource-grid .list-group-item{position:relative;padding:13px 14px 13px 29px!important;border:1px solid #e1e8ef!important;background:linear-gradient(180deg,#fff,#f9fbfd);font-size:.92rem}
+.step-card .resource-grid .list-group-item::before{content:'';position:absolute;left:13px;top:22px;width:6px;height:6px;border-radius:50%;background:var(--epet)}
+#page-korespondence .step-card ul.routing-grid{display:grid;grid-template-columns:1fr;gap:10px;margin:14px 0 0!important}
+.step-card .routing-grid .list-group-item{border-left:4px solid var(--cyan)!important;background:#f8fcfd;padding:16px 17px!important}
+.step-card .routing-grid .list-group-item:nth-child(2){border-left-color:var(--purple)!important;background:#fcfaff}
+.step-card .routing-grid .list-group-item:nth-child(3){border-left-color:var(--epet)!important;background:#fbfdf7}
+/* Contact sequences – original ordered list structure, presented as a vertical process */
+.workflow-title{margin:23px 0 14px!important;padding:0 0 12px;border-bottom:1px solid var(--line);font-size:1.14rem;font-weight:850;color:var(--epet-dark)}
+.workflow-title i.bi{color:var(--epet-dark)}
+.workflow-lead{margin:0 0 16px!important;padding:19px 21px;border-radius:17px;border:1px solid #deead7;
+ background:linear-gradient(120deg,#fbfdf7,#fff);box-shadow:0 8px 18px rgba(15,23,42,.035);line-height:1.76}
+ol.workflow-list{counter-reset:workflow;display:grid;gap:15px;margin:0!important;padding:0!important;border:0;list-style:none;background:transparent}
+.workflow-list>li.list-group-item{counter-increment:workflow;display:block;position:relative;min-width:0;
+  margin:0!important;padding:19px 20px 19px 68px!important;background:linear-gradient(180deg,#fff,#fafcfd);
+  border:1px solid var(--line)!important;border-radius:18px!important;
+  box-shadow:0 8px 20px rgba(15,23,42,.045);line-height:1.76;color:#334155;overflow-wrap:anywhere}
+.workflow-list>li.list-group-item::before{content:counter(workflow);position:absolute;top:17px;left:19px;
+ display:flex;align-items:center;justify-content:center;background:var(--epet);color:#fff;
+ width:33px;height:33px;border-radius:50%;font-size:.93rem;font-weight:850;box-shadow:0 5px 11px rgba(148,193,31,.17)}
+.workflow-list>li.list-group-item:nth-child(3n+2)::before{background:var(--cyan)}
+.workflow-list>li.list-group-item:nth-child(3n+3)::before{background:var(--purple)}
+.workflow-list>li.list-group-item:last-child{background:linear-gradient(145deg,#fff,#f9fcf4)}
+.workflow-list>li.list-group-item>ul{display:grid;grid-template-columns:1fr;list-style:none;gap:12px;margin:13px 0 0!important;padding:0}
+.workflow-list>li.list-group-item>ul>li{min-width:0;padding:15px 17px!important;border-radius:13px;background:#fff;
+ border:1px solid var(--line);border-left:4px solid var(--epet);box-shadow:0 4px 10px rgba(15,23,42,.025)}
+.workflow-list>li.list-group-item>ul>li:nth-child(2){border-left-color:var(--cyan)}
+.workflow-list>li.list-group-item>ul>li i{color:var(--purple)}
+.workflow-list b,.workflow-list strong{color:#426311}
+.workflow-list>li.list-group-item>ul>li{white-space:normal}
+/* Status phrases and reusable templated task text remain exactly as in source */
+.workflow-list li i:not(.bi){font-style:italic;color:#64409a}
+#page-video .video-pending{background:linear-gradient(135deg,#f9fbfd,#f5f9ef)!important;border:2px dashed #dce8d0!important;
+ border-radius:22px!important;padding:48px 25px!important;color:#64748b}
+#page-video .video-pending h4{font-size:1.22rem;font-weight:850;color:#52662a!important}
+#page-video .video-pending p{max-width:500px;line-height:1.7}
+#page-video .video-pending .svg-icon{width:52px;height:52px;color:#9bb56a}
+/* More visual breathing room for long operations without altering information density */
+.step-card>p{font-size:.98rem}
+#page-korespondence .step-card{padding:22px 23px 23px}
+@media(max-width:720px){
+ #page-korespondence .step-card ul.resource-grid{grid-template-columns:1fr}
+ .workflow-list>li.list-group-item{padding:56px 16px 17px!important}
+ .workflow-list>li.list-group-item::before{top:15px;left:16px}
+ #page-korespondence .step-card{padding:18px 16px}
+}
+</style>
+</head>
+<body>
+<nav aria-label="breadcrumb" class="breadcrumb-nav">
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+<a href="https://sites.google.com/view/znalostka/"><i class="bi bi-house-door-fill"><svg aria-hidden="true" class="svg-icon" focusable="false" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"></path></svg></i> Znalostní
+                    báze</a>
+</li>
+<li class="breadcrumb-item">
+<a href="https://sites.google.com/view/znalostka/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat">Školení
+                    ZIS</a>
+</li>
+<li class="breadcrumb-item">
+<a href="https://sites.google.com/view/znalostka/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat/3-den">3.
+                    den</a>
+</li>
+<li aria-current="page" class="breadcrumb-item active">
+                Vrácená korespondence
+            </li>
+</ol>
+</nav>
+<div class="hero-banner d-flex justify-content-between align-items-center">
+<div>
+<h1 class="h2 fw-bold mb-1">Pracovní postup: Vrácená korespondence</h1>
+<p class="mb-0 opacity-75">Znalostní databáze epet | Dokumentace a přílohy</p>
+</div>
+<div class="download-container"><details class="download-disclosure"><summary class="btn-download">
+<i class="bi bi-file-earmark-pdf-fill"><svg aria-hidden="true" class="svg-icon" focusable="false" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6M7 16h10M7 12h6"></path></svg></i> Dokumenty ke stažení
+            </summary><div class="download-options"><a class="download-link" href="https://drive.google.com/file/d/1kBtvllr8sX1UfAWbdbb5N3e1gD6vcmRI/view?usp=drive_link" target="_blank">
+<i class="bi bi-file-pdf text-danger me-2"><svg aria-hidden="true" class="svg-icon" focusable="false" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6M7 16h10M7 12h6"></path></svg></i> Vrácená korespondence (PDF)
+                    </a></div></details></div>
+</div>
+<!-- Navigace -->
+<div class="book-container">
+<div aria-label="Navigace školením" aria-orientation="vertical" class="book-tabs" role="tablist">
+<div aria-controls="page-intro" aria-selected="true" class="tab-item active" onclick="openPage(event, 'page-intro')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" role="tab" tabindex="0">
+<i class="bi bi-book"><svg aria-hidden="true" class="svg-icon" focusable="false" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 7v14"></path><path d="M3 18V5a2 2 0 0 1 2-2h3a4 4 0 0 1 4 4 4 4 0 0 1 4-4h3a2 2 0 0 1 2 2v13h-5a4 4 0 0 0-4 3 4 4 0 0 0-4-3z"></path></svg></i> Pracovní postup
+            </div>
+<div aria-controls="page-korespondence" aria-selected="false" class="tab-item" onclick="openPage(event, 'page-korespondence')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" role="tab" tabindex="0">
+<i class="bi bi-stickies"><svg aria-hidden="true" class="svg-icon" focusable="false" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect height="15" rx="2" width="13" x="7" y="4"></rect><path d="M4 8H3v13h13v-2"></path><path d="M11 9h5M11 13h5"></path></svg></i> Zpracování vrácené korespondence v ZIS
+            </div>
+<div aria-controls="page-dopis" aria-selected="false" class="tab-item" onclick="openPage(event, 'page-dopis')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" role="tab" tabindex="0">
+<i class="bi bi-envelope-paper"><svg aria-hidden="true" class="svg-icon" focusable="false" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 9V4h16v5M4 9l8 6 8-6M3 9h18v12H3z"></path><path d="M8 6h8"></path></svg></i> Zpracování písemné nedoručenky (dopis)
+            </div>
+<div aria-controls="page-e-mail" aria-selected="false" class="tab-item" onclick="openPage(event, 'page-e-mail')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" role="tab" tabindex="0">
+<i class="bi bi-envelope-exclamation"><svg aria-hidden="true" class="svg-icon" focusable="false" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect height="14" rx="2" width="20" x="2" y="6"></rect><path d="m3 8 9 7 9-7M12 2v2"></path></svg></i> Zpracování emailové nedoručenky (e-mail)
+            </div>
+<div aria-controls="page-video" aria-selected="false" class="tab-item" onclick="openPage(event, 'page-video')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" role="tab" tabindex="0">
+<i class="bi bi-play-circle-fill"><svg aria-hidden="true" class="svg-icon" focusable="false" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9"></circle><path d="m10 8 6 4-6 4z"></path></svg></i> Video návod
+            </div>
+<div aria-controls="page-test" aria-selected="false" class="tab-item tab-purple" onclick="openPage(event, 'page-test')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" role="tab" tabindex="0">
+<i class="bi bi-clipboard-check"><svg aria-hidden="true" class="svg-icon" focusable="false" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect height="18" rx="2" width="14" x="5" y="4"></rect><path d="M9 4.5V3h6v1.5M8.5 13l2.5 2.5 4.5-5"></path></svg></i> Opakovací test
+            </div>
+</div>
+<div class="book-page">
+<div aria-hidden="false" class="content-section active" id="page-intro" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4 text-success"><span class="section-number">1.</span> Pracovní postup</h2>
+<!-- KARTA: NEDORUČENÁ POŠTA – ÚVOD -->
+<div class="content-steps"><div class="step-card"><p class="mb-2">
+<span class="step-badge">1</span>
+                        Tento manuál slouží k tomu jak správně pracovat s úkoly,
+                        nebo e-maily – které se nám vrátily jako nedoručená pošta.
+                    </p></div><div class="step-card"><p class="mb-2">
+<span class="step-badge">2</span>
+                        Jedná se o dokumenty, které nebyly doručeny svému adresátovi
+                        a je potřeba ověřit se zákazníkem, kam má být znovu odesláno.
+                    </p></div><div class="step-card"><p class="mb-3">
+<span class="step-badge">3</span>
+                        Na obálce vrácené poštovní zásilky je poznámka,
+                        z jakého důvodu nebyla dodána.
+                    </p><img alt="Vrácená pošta" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/YC9tvVyL/po-ta.png"/></div></div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-korespondence" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4 text-success"><span class="section-number">2.</span> Zpracování vrácené korespondence v ZIS</h2>
+<!-- KARTA: NEDORUČENÁ POŠTA – ZALOŽENÍ ÚKOLU A DOKUMENTY -->
+<div class="content-steps"><div class="step-card"><p class="mb-3">
+<span class="step-badge">1</span>
+                        V ZIS zodpovědná osoba (Martin Blažek) zakládá úkol,
+                        kde v textu úkolu uvádí <strong>ZÚ</strong>, <strong>předmět dopisu</strong>
+                        a <strong>důvod nevyzvednuté korespondence</strong>.
+                    </p><img alt="Vrácená pošta – úkol" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/tTr54s1x/nedoru-en.png"/></div><div class="step-card"><p class="mb-3">
+<span class="step-badge">2</span>
+                        Veškeré dokumenty se již do ZIS neskenují a je nutné zákazníkovi
+                        dle popisu úkolu znovu dané dokumenty vytvořit/případně dohledat v ZIS.
+                        Které dokumenty je možné dohledat v ZIS:
+                    </p><ul class="list-group mb-3 resource-grid">
+<li class="list-group-item">Daňový doklad k platbě</li>
+<li class="list-group-item">Storno přijaté zálohové platby</li>
+<li class="list-group-item">Upomínka na neuhrazené platby za dodávku energií (1. stupeň)*</li>
+<li class="list-group-item">Upomínka na neuhrazené platby za dodávku elektřiny (2. stupeň)*</li>
+<li class="list-group-item">Upomínka před podáním žaloby na neuhrazení plateb za dodávky energií
+                            (3. stupeň)*</li>
+<li class="list-group-item">Oznámení před přerušením dodávky (4. stupeň)*</li>
+<li class="list-group-item">Dohoda o splnění dluhu ve splátkách a uznání dluhu</li>
+<li class="list-group-item">Jednostranné započtení pohledávek</li>
+<li class="list-group-item">Vyúčtování úroků z prodlení</li>
+<li class="list-group-item">Daňový doklad / Faktura – Znovupřipojení odběrného místa</li>
+<li class="list-group-item">Daňový doklad / Faktura – Smluvní pokuta</li>
+<li class="list-group-item">Vrácená smluvní dokumentace</li>
+<li class="list-group-item">Dokumenty k realizaci změny dodavatele</li>
+<li class="list-group-item">Faktura za dodávku</li>
+<li class="list-group-item">Platební kalendář</li>
+</ul></div><div class="step-card"><p class="mb-2">
+<span class="step-badge">3</span>
+                        Dokumenty, které je potřeba fyzicky předat na jednotlivá oddělení:
+                    </p><ul class="list-group mb-3 routing-grid">
+<li class="list-group-item">
+                            Smluvní dokumentace (pokud není možné smlouvu v ZIS dohledat) a Dokumenty k realizaci změny
+                            dodavatele – <strong>Back Office</strong>
+</li>
+<li class="list-group-item">
+                            Smluvní dokumentace (Smlouvy/Dodatky Individuál) – <strong>SA</strong>
+</li>
+<li class="list-group-item">
+                            Dohoda o splnění dluhu ve splátkách a uznání dluhu – <strong>FINANCE</strong>
+</li>
+</ul></div><div class="step-card"><p class="mb-0">
+<span class="step-badge">4</span>
+                        U této vrácené korespondence doplníme do kontaktu informaci,
+                        že dokument byl fyzicky předán na konkrétní oddělení.
+                    </p></div></div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-dopis" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4 text-success"><span class="section-number">3.</span> Zpracování písemné nedoručenky (dopis)</h2>
+<!-- KARTA: Zpracování písemné nedoručenky (dopis) -->
+<div class="content-steps"><p class="workflow-lead">Operátor ověří telefonicky se zákazníkem písemnou zasílací adresu a případně založí a
+                        nastaví novou zasílací adresu na SÚ viz postup Změna zasílací adresy. Nabídneme zasílání
+                        prostřednictvím e-mailu (nutné ověřit e-mailovou adresu). Dále ověříme i trvalé bydliště.
+                        Vrácený dokument znovu zasíláme na zákazníka. Podobně jako u úkolů z financí se snažíme o obvolání zákazníka
+                        – <i>3× a zavřít</i>. V rozmezí cca 2 dnů oslovit zákazníka ve tři různé časy hovor/e‑mail. Pokud
+                        nezareaguje během těchto ~2 dnů, úkol zavřít.</p><h5 class="workflow-title">Jak často a správně pracovat s tímto úkolem?:</h5><ol class="workflow-list list-group mb-0 list-group-numbered">
+<li class="list-group-item">
+<strong>HOVOR</strong> – pokud nezvedá, zasílám e-mail,
+                            dávám úkol do stavu <b>„ČEKÁ NA ZÁKAZNÍKA“</b>
+                            a posouvám termín úkolu <b>DO +1 PD</b>.
+                        </li>
+<li class="list-group-item">
+<strong>HOVOR</strong> – pokud nezvedá, zasílán e-mail
+                            a posílám SMS zprávu:<br/>
+<i>
+                                „Dobrý den, poslali jsme Vám důležité sdělení na e-mail.
+                                Prosíme o reakci. Děkujeme. epet“
+                            </i><br/>
+                            Aktualizuji úkol s poznámkou, že nezvedá,
+                            byla zaslána SMS + e-mail a posouvám termín úkolu
+                            <b>DO +1 PD</b>.
+                        </li>
+<li class="list-group-item">
+<strong>HOVOR</strong> – pokud nezvedá, znovu posílám
+                            e-mail + SMS, aktualizuji úkol s poznámkou,
+                            že nezvedá, byl zaslán e-mail + SMS
+                            a termín úkolu <b>DO +1 PD</b>.
+                        </li>
+<li class="list-group-item">
+<strong>HOVOR</strong> – pokud nezvedá, nereaguje
+                            na e-maily ani hovory,
+                            úkol zavírám s poznámkou
+                            <b>„Zákazník není kontaktní“</b>.
+                        </li>
+<li class="list-group-item">
+                            Pokud zákazník nereaguje na hovory ani e-maily
+                            a předchozí úkol byl uzavřen s poznámkou
+                            <b>„Zákazník není kontaktní“</b>:
+            
+                            <ul class="mt-2">
+<li>
+<b>DLUH</b> – zakládám nový
+                                    <b>úkol ze šablony 20002309946 – Platby a upomínání – Upomínání (4200)</b>
+                                    a do popisu zadání uvádím:<br/>
+<i>
+                                        EAN/EIC {{EAN_EIC}} – zákazník nekontaktní.
+                                        Opakované pokusy o kontakt (tel/e-mail/dopis) bez odezvy.
+                                        Prosíme o zvážení předání pohledávky na IA.
+                                        Dluh: {{výše_dluhu}} Kč, VS {{VS}}, splatnost {{splatnost}}.
+                                    </i><br/>
+                                    Řešitel: <b>Finance</b>
+</li>
+<li class="mt-2">
+<b>Přeplatky / informace k platbám</b> – zakládám nový
+                                    <b>úkol ze šablony 20002309943 – Platby a upomínání – Platby (4100)</b>
+                                    a do popisu zadání uvádím:<br/>
+<i>
+                                        EAN/EIC {{EAN_EIC}} – zákazník nekontaktní.
+                                        Opakované pokusy o kontakt (tel/e-mail/dopis) bez odezvy.
+                                    </i><br/>
+                                    Řešitel: <b>Finance</b>
+</li>
+</ul>
+</li>
+</ol></div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-e-mail" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4 text-success"><span class="section-number">4.</span> Zpracování emailové nedoručenky (e-mail) </h2>
+<!-- KARTA: NEDORUČENÝ E-MAIL -->
+<div class="content-steps"><div class="step-card"><p class="mb-2">
+<span class="step-badge">1</span>
+                        V případě že se nám vrátil nedoručený e-mail,
+                        je zapotřebí zákazníka <strong>telefonicky kontaktovat</strong>
+                        a ověřit <strong>e-mailovou adresu</strong>.
+                        Změnu e-mailu provedeme dle postupu
+                        <strong>Změna kontaktních údajů</strong>.
+                    </p></div><div class="step-card"><p class="mb-2">
+<span class="step-badge">2</span>
+                        Dále ověříme i <strong>trvalé bydliště</strong>
+                        a <strong>zasílací písemnou adresu</strong>.
+                        Sdělení, které se nám vrátilo, znovu zasíláme
+                        zákazníkovi již na <strong>správné kontaktní údaje</strong>.
+                    </p></div><div class="step-card"><p class="mb-3">
+<span class="step-badge">3</span>
+                        Jak často a správně pracovat s tímto úkolem:
+                    </p></div><h4 class="mt-4 mb-3 workflow-title">
+<i class="bi bi-journal-x me-2"><svg aria-hidden="true" class="svg-icon" focusable="false" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16v16H4zM8 9h8M8 13h8M8 17h5"></path></svg></i>
+                        POSTUP PRO ÚKOLY – NEDORUČENKY
+                    </h4><p class="mb-3 workflow-lead">
+                        Podobně jako u úkolů z financí – <b>3× a zavřít</b>.
+                        V <u>rozmezí cca 2 dnů</u> oslovit zákazníka ve
+                        <i>tři různé časy</i> (hovor / e-mail).
+                        Pokud nezareaguje během těchto ~2 dnů, úkol (e-mail- s poznámkou) zavřít.
+                    </p><ol class="workflow-list list-group mb-0 list-group-numbered">
+<li class="list-group-item">
+<strong>HOVOR</strong> – pokud nezvedá,
+                            e-mail zavírám s komentářem, že řeším v úkolu,
+                            zakládám si úkol ve stavu
+                            <b>„ČEKÁ NA ZÁKAZNÍKA“</b>
+                            a posouvám termín úkolu <b>DO +1 PD</b>.
+                        </li>
+<li class="list-group-item">
+<strong>HOVOR</strong> – pokud nezvedá,
+                            posílám SMS zprávu:<br/>
+<i>
+                                „Dobrý den, poslali jsme Vám důležité sdělení na e-mail.
+                                Prosíme o reakci. Děkujeme. epet“
+                            </i><br/>
+                            Aktualizuji úkol s poznámkou, že nezvedá,
+                            byla zaslána SMS a posouvám termín úkolu <b>DO +1 PD</b>.
+                        </li>
+<li class="list-group-item">
+<strong>HOVOR</strong> – pokud nezvedá,
+                            posílám e-mail + dopis,
+                            aktualizuji úkol s poznámkou, že nezvedá,
+                            byl zaslán dopis
+                            a posouvám termín úkolu <b>DO +5 PD</b>.
+                        </li>
+<li class="list-group-item">
+<strong>HOVOR</strong> – pokud nezvedá,
+                            nereaguje na e-maily ani zaslaný dopis,
+                            úkol zavírám s poznámkou
+                            <b>„Zákazník není kontaktní“</b>.
+                        </li>
+<li class="list-group-item">
+                            Pokud zákazník nereaguje na hovory ani dopis
+                            a předchozí úkol byl uzavřen s poznámkou
+                            <b>„Zákazník není kontaktní“</b>:
+            
+                            <ul class="mt-2">
+<li>
+<b>DLUH</b> – zakládám nový
+                                    <b>úkol ze šablony 20002309946 – Platby a upomínání – Upomínání (4200)</b>
+                                    a do popisu zadání uvádím:<br/>
+<i>
+                                        EAN/EIC {{EAN_EIC}} – zákazník nekontaktní.
+                                        Opakované pokusy o kontakt (tel/e-mail/dopis) bez odezvy.
+                                        Prosíme o zvážení předání pohledávky na IA.
+                                        Dluh: {{výše_dluhu}} Kč, VS {{VS}}, splatnost {{splatnost}}.
+                                    </i><br/>
+                                    Řešitel: <b>Finance</b>
+</li>
+<li class="mt-2">
+<b>Přeplatky / informace k platbám</b> – zakládám nový
+                                    <b>úkol ze šablony 20002309943 – Platby a upomínání – Platby (4100)</b>
+                                    a do popisu zadání uvádím:<br/>
+<i>
+                                        EAN/EIC {{EAN_EIC}} – zákazník nekontaktní.
+                                        Opakované pokusy o kontakt (tel/e-mail/dopis) bez odezvy.
+                                    </i><br/>
+                                    Řešitel: <b>Finance</b>
+</li>
+</ul>
+</li>
+</ol></div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-video" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4 text-primary">Video tutoriál</h2>
+<div class="d-flex flex-column align-items-center justify-content-center text-center p-5 rounded-4 video-pending" style="background: #f8f9fa; border: 2px dashed #dee2e6; min-height: 300px;">
+<div class="mb-3" style="font-size: 3rem; color: #ced4da;">
+<i class="bi bi-camera-video-off"><svg aria-hidden="true" class="svg-icon" focusable="false" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 3l18 18M4 8h11a2 2 0 0 1 2 2v5M4 8a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-1M17 11l4-2v8l-2-1"></path></svg></i>
+</div>
+<h4 class="fw-bold text-secondary">Video je v přípravě</h4>
+<p class="text-muted">Právě pro vás stříháme aktuální verzi návodu.<br/>Jakmile bude hotová, najdete ji
+                    přímo zde.</p>
+</div></div>
+<div aria-hidden="true" class="content-section" id="page-test" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4" style="color: var(--epet-purple);">Ověření znalostí</h2>
+<p>Po prostudování manuálu prosím vyplňte tento opakovací test. Výsledky budou automaticky
+                    zaznamenány.
+                </p>
+<div class="shadow-sm rounded-3 overflow-hidden" style="border: 1px solid #eee;">
+<iframe allowfullscreen="" frameborder="0" height="600px" marginheight="0" marginwidth="0" mozallowfullscreen="" msallowfullscreen="" src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__abHlldUN0gwT0xYMkhEM1pTNDhIMTU5STFDSldVWC4u" style="border: none; max-width:100%; max-height:100vh" webkitallowfullscreen="" width="100%">
+</iframe>
+</div>
+</div>
+</div>
+</div>
+
+<script>function openPage(evt,pageId){
+  const dest=document.getElementById(pageId);
+  if(!dest)return;
+  document.querySelectorAll('.content-section').forEach(sec=>{
+    const on=sec.id===pageId;
+    sec.classList.toggle('active',on);
+    sec.setAttribute('aria-hidden',String(!on));
+  });
+  document.querySelectorAll('.book-tabs .tab-item').forEach(tab=>{
+    const on=tab===evt.currentTarget;
+    tab.classList.toggle('active',on);
+    tab.setAttribute('aria-selected',String(on));
+  });
+  const panel=document.querySelector('.book-page');
+  if(panel)panel.scrollTop=0;
+}</script></body>
+</html>

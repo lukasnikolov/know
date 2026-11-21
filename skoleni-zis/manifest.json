@@ -1,0 +1,345 @@
+{
+  "title": "Školicí manuály ZIS",
+  "manuals": [
+    {
+      "title": "Došlá pošta",
+      "group": "1-den",
+      "group_label": "1. den",
+      "path": "1-den/dosla-posta.html",
+      "icon": "file-text",
+      "size": 35730,
+      "original_name": "1. DEN/Došlá pošta.html",
+      "display_title": "Došlá pošta"
+    },
+    {
+      "title": "Hledání zákazníků",
+      "group": "1-den",
+      "group_label": "1. den",
+      "path": "1-den/hledani-zakazniku.html",
+      "icon": "users",
+      "size": 36327,
+      "original_name": "1. DEN/Hledání zákazníků.html",
+      "display_title": "Hledání zákazníků"
+    },
+    {
+      "title": "Identifikace",
+      "group": "1-den",
+      "group_label": "1. den",
+      "path": "1-den/identifikace.html",
+      "icon": "users",
+      "size": 37911,
+      "original_name": "1. DEN/Identifikace.html",
+      "display_title": "Identifikace"
+    },
+    {
+      "title": "Pracovní postup-INDIV - VELKOODBĚR - TOP",
+      "group": "1-den",
+      "group_label": "1. den",
+      "path": "1-den/pracovni-postup-indiv-velkoodber-top.html",
+      "icon": "clipboard",
+      "size": 35068,
+      "original_name": "1. DEN/Pracovní postup-INDIV - VELKOODBĚR - TOP.html",
+      "display_title": "Pracovní postup-INDIV - VELKOODBĚR - TOP"
+    },
+    {
+      "title": "SBĚRNÉ LOGINY V ZIS",
+      "group": "1-den",
+      "group_label": "1. den",
+      "path": "1-den/sberne-loginy-v-zis.html",
+      "icon": "users",
+      "size": 16805,
+      "original_name": "1. DEN/SBĚRNÉ LOGINY V ZIS.html",
+      "display_title": "Sběrné loginy v ZIS"
+    },
+    {
+      "title": "Úkoly, volná relace, zápis z hovoru",
+      "group": "1-den",
+      "group_label": "1. den",
+      "path": "1-den/ukoly-volna-relace-zapis-z-hovoru.html",
+      "icon": "clipboard",
+      "size": 50546,
+      "original_name": "1. DEN/Úkoly, volná relace, zápis z hovoru.html",
+      "display_title": "Úkoly, volná relace, zápis z hovoru"
+    },
+    {
+      "title": "Změna názvu společnosti a sídla společnosti",
+      "group": "2-den",
+      "group_label": "2. den",
+      "path": "2-den/zmena-nazvu-spolecnosti-a-sidla-spolecnosti.html",
+      "icon": "book",
+      "size": 46289,
+      "original_name": "2. DEN/Změna názvu společnosti a sídla společnosti.html",
+      "display_title": "Změna názvu společnosti a sídla společnosti"
+    },
+    {
+      "title": "Změna platebního způsobu",
+      "group": "2-den",
+      "group_label": "2. den",
+      "path": "2-den/zmena-platebniho-zpusobu.html",
+      "icon": "wallet",
+      "size": 55172,
+      "original_name": "2. DEN/Změna platebního způsobu.html",
+      "display_title": "Změna platebního způsobu"
+    },
+    {
+      "title": "Změna příjmení a trvalého bydliště zákazníka",
+      "group": "2-den",
+      "group_label": "2. den",
+      "path": "2-den/zmena-prijmeni-a-trvaleho-bydliste-zakaznika.html",
+      "icon": "book",
+      "size": 47663,
+      "original_name": "2. DEN/Změna příjmení a trvalého bydliště zákazníka.html",
+      "display_title": "Změna příjmení a trvalého bydliště zákazníka"
+    },
+    {
+      "title": "Změna zasílání dokladů",
+      "group": "2-den",
+      "group_label": "2. den",
+      "path": "2-den/zmena-zasilani-dokladu.html",
+      "icon": "file-text",
+      "size": 33374,
+      "original_name": "2. DEN/Změna zasílání dokladů.html",
+      "display_title": "Změna zasílání dokladů"
+    },
+    {
+      "title": "Bezzálohový režim",
+      "group": "3-den",
+      "group_label": "3. den",
+      "path": "3-den/bezzalohovy-rezim.html",
+      "icon": "wallet",
+      "size": 80942,
+      "original_name": "3. DEN/Bezzálohový režim.html",
+      "display_title": "Bezzálohový režim"
+    },
+    {
+      "title": "Saldo",
+      "group": "3-den",
+      "group_label": "3. den",
+      "path": "3-den/saldo.html",
+      "icon": "wallet",
+      "size": 77722,
+      "original_name": "3. DEN/Saldo.html",
+      "display_title": "Saldo"
+    },
+    {
+      "title": "Splátkový kalendář (SPK)",
+      "group": "3-den",
+      "group_label": "3. den",
+      "path": "3-den/splatkovy-kalendar-spk.html",
+      "icon": "wallet",
+      "size": 52507,
+      "original_name": "3. DEN/Splátkový kalendář (SPK).html",
+      "display_title": "Splátkový kalendář (SPK)"
+    },
+    {
+      "title": "Upomínky, odpojení a inkasní agentura",
+      "group": "3-den",
+      "group_label": "3. den",
+      "path": "3-den/upominky-odpojeni-a-inkasni-agentura.html",
+      "icon": "shield-alert",
+      "size": 77560,
+      "original_name": "3. DEN/Upomínky, odpojení a inkasní agentura.html",
+      "display_title": "Upomínky, odpojení a inkasní agentura"
+    },
+    {
+      "title": "Vrácená korespondence",
+      "group": "3-den",
+      "group_label": "3. den",
+      "path": "3-den/vracena-korespondence.html",
+      "icon": "file-text",
+      "size": 45950,
+      "original_name": "3. DEN/Vrácená korespondence.html",
+      "display_title": "Vrácená korespondence"
+    },
+    {
+      "title": "Změna výše záloh",
+      "group": "3-den",
+      "group_label": "3. den",
+      "path": "3-den/zmena-vyse-zaloh.html",
+      "icon": "wallet",
+      "size": 73238,
+      "original_name": "3. DEN/Změna výše záloh.html",
+      "display_title": "Změna výše záloh"
+    },
+    {
+      "title": "Daňové doklady",
+      "group": "4-den",
+      "group_label": "4. den",
+      "path": "4-den/danove-doklady.html",
+      "icon": "file-text",
+      "size": 50296,
+      "original_name": "4. DEN/Daňové doklady.html",
+      "display_title": "Daňové doklady"
+    },
+    {
+      "title": "Evidence a předávání samoodečtů",
+      "group": "4-den",
+      "group_label": "4. den",
+      "path": "4-den/evidence-a-predavani-samoodectu.html",
+      "icon": "gauge",
+      "size": 95630,
+      "original_name": "4. DEN/Evidence a předávání samoodečtů.html",
+      "display_title": "Evidence a předávání samoodečtů"
+    },
+    {
+      "title": "Faktury",
+      "group": "4-den",
+      "group_label": "4. den",
+      "path": "4-den/faktury.html",
+      "icon": "file-text",
+      "size": 122310,
+      "original_name": "4. DEN/Faktury.html",
+      "display_title": "Faktury"
+    },
+    {
+      "title": "Reklamace",
+      "group": "5-den",
+      "group_label": "5. den",
+      "path": "5-den/reklamace.html",
+      "icon": "shield-alert",
+      "size": 34872,
+      "original_name": "5. DEN/Reklamace.html",
+      "display_title": "Reklamace"
+    },
+    {
+      "title": "ZÁKAZNICKÝ PORTÁL",
+      "group": "5-den",
+      "group_label": "5. den",
+      "path": "5-den/zakaznicky-portal.html",
+      "icon": "users",
+      "size": 1806853,
+      "original_name": "5. DEN/ZÁKAZNICKÝ PORTÁL.html",
+      "display_title": "Zákaznický portál"
+    },
+    {
+      "title": "Dědické řízení (DINHE)",
+      "group": "6-den",
+      "group_label": "6. den",
+      "path": "6-den/dedicke-rizeni-dinhe.html",
+      "icon": "file-check",
+      "size": 92137,
+      "original_name": "6. DEN/Dědické řízení (DINHE).html",
+      "display_title": "Dědické řízení (DINHE)"
+    },
+    {
+      "title": "Montáže",
+      "group": "6-den",
+      "group_label": "6. den",
+      "path": "6-den/montaze.html",
+      "icon": "zap",
+      "size": 31278,
+      "original_name": "6. DEN/Montáže.html",
+      "display_title": "Montáže"
+    },
+    {
+      "title": "Odstoupení od smlouvy",
+      "group": "6-den",
+      "group_label": "6. den",
+      "path": "6-den/odstoupeni-od-smlouvy.html",
+      "icon": "file-check",
+      "size": 91236,
+      "original_name": "6. DEN/Odstoupení od smlouvy.html",
+      "display_title": "Odstoupení od smlouvy"
+    },
+    {
+      "title": "Ukončení smluvního vztahu (výpověď)",
+      "group": "6-den",
+      "group_label": "6. den",
+      "path": "6-den/ukonceni-smluvniho-vztahu-vypoved.html",
+      "icon": "file-check",
+      "size": 120229,
+      "original_name": "6. DEN/Ukončení smluvního vztahu (výpověď).html",
+      "display_title": "Ukončení smluvního vztahu (výpověď)"
+    },
+    {
+      "title": "Změna sazby a jističe na odběrném místě",
+      "group": "6-den",
+      "group_label": "6. den",
+      "path": "6-den/zmena-sazby-a-jistice-na-odbernem-miste.html",
+      "icon": "zap",
+      "size": 184156,
+      "original_name": "6. DEN/Změna sazby a jističe na odběrném místě.html",
+      "display_title": "Změna sazby a jističe na odběrném místě"
+    },
+    {
+      "title": "Změna sazby z C na D u SVJ",
+      "group": "6-den",
+      "group_label": "6. den",
+      "path": "6-den/zmena-sazby-z-c-na-d-u-svj.html",
+      "icon": "zap",
+      "size": 40677,
+      "original_name": "6. DEN/Změna sazby z C na D u SVJ.html",
+      "display_title": "Změna sazby z C na D u SVJ"
+    },
+    {
+      "title": "AKTIVNÍ FORMULÁŘ",
+      "group": "minimanualy",
+      "group_label": "Minimanuály",
+      "path": "minimanualy/aktivni-formular.html",
+      "icon": "clipboard",
+      "size": 35204,
+      "original_name": "MINIMANUÁLY/AKTIVNÍ FORMULÁŘ.html",
+      "display_title": "Aktivní formulář"
+    },
+    {
+      "title": "Vyplnění formuláře pro kauce - Sloužící pro smlouvy pro Cizince",
+      "group": "minimanualy",
+      "group_label": "Minimanuály",
+      "path": "minimanualy/vyplneni-formulare-pro-kauce-slouzici-pro-smlouvy-pro-cizince.html",
+      "icon": "wallet",
+      "size": 43517,
+      "original_name": "MINIMANUÁLY/Vyplnění formuláře pro kauce - Sloužící pro smlouvy pro Cizince.html",
+      "display_title": "Vyplnění formuláře pro kauce - Sloužící pro smlouvy pro Cizince"
+    },
+    {
+      "title": "ZRANITELNÝ ZÁKAZNÍK",
+      "group": "minimanualy",
+      "group_label": "Minimanuály",
+      "path": "minimanualy/zranitelny-zakaznik.html",
+      "icon": "book",
+      "size": 69294,
+      "original_name": "MINIMANUÁLY/ZRANITELNÝ ZÁKAZNÍK.html",
+      "display_title": "Zranitelný zákazník"
+    },
+    {
+      "title": "Časy spínání HDO",
+      "group": "minimanualy",
+      "group_label": "Minimanuály",
+      "path": "minimanualy/casy-spinani-hdo.html",
+      "icon": "zap",
+      "size": 45190,
+      "original_name": "MINIMANUÁLY/Časy spínání HDO.html",
+      "display_title": "Časy spínání HDO"
+    }
+  ],
+  "groups": [
+    {
+      "slug": "1-den",
+      "label": "1. den"
+    },
+    {
+      "slug": "2-den",
+      "label": "2. den"
+    },
+    {
+      "slug": "3-den",
+      "label": "3. den"
+    },
+    {
+      "slug": "4-den",
+      "label": "4. den"
+    },
+    {
+      "slug": "5-den",
+      "label": "5. den"
+    },
+    {
+      "slug": "6-den",
+      "label": "6. den"
+    },
+    {
+      "slug": "minimanualy",
+      "label": "Minimanuály"
+    }
+  ]
+}

@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+
+<html lang="cs">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Změna výše záloh – Pracovní postup</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
+
+
+<style>/* ZNALOSTKA – HTML ŠKOLENÍ | Jednotný firemní vizuální standard */
+:root{
+  --epet:#94c11f; --epet-dark:#60781a; --epet-deep:#34470b;
+  --purple:#9362d6; --blue:#2563eb; --cyan:#0891b2;
+  --orange:#f59e0b; --red:#d9414f;
+  --ink:#1e293b; --muted:#64748b; --line:#e2e8f0;
+  --soft:#f8fafc; --card:#fff;
+  --shadow:0 14px 34px rgba(15,23,42,.075);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; padding:10px 12px 34px; background:transparent; color:var(--ink);
+  font-family:"Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,Arial,sans-serif;
+  font-size:15px;line-height:1.64;-webkit-font-smoothing:antialiased;
+}
+body>.breadcrumb-nav,body>.hero-banner,body>.book-container{
+  width:100%;max-width:1180px;margin-left:auto;margin-right:auto;
+}
+/* Ostrá a jednotná ikonografie SVG, nezávislá na síťovém načtení ikonového fontu. */
+i.bi.has-svg::before{display:none!important}
+.svg-icon{width:19px;height:19px;vertical-align:middle;display:inline-block;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.breadcrumb .svg-icon{width:15px;height:15px}
+.btn-download .svg-icon{width:18px;height:18px}
+.video-card .svg-icon{width:20px;height:20px}
+.list-group .svg-icon{width:17px;height:17px}
+.glossary .bg-primary{background:var(--blue)!important;color:#fff}
+.glossary .bg-success{background:var(--epet-dark)!important;color:#fff}
+.glossary .bg-warning{background:#fff0ba!important;color:#664300}
+.glossary .bg-info{background:#d7f6fa!important;color:#155a70}
+/* Drobečková navigace */
+.breadcrumb-nav{
+  margin-bottom:14px;padding:10px 14px;background:rgba(255,255,255,.92);
+  border:1px solid var(--line);border-radius:14px;backdrop-filter:blur(8px);
+}
+.breadcrumb{display:flex;flex-wrap:wrap;list-style:none;padding:0;margin:0;font-size:.85rem}
+.breadcrumb-item{display:flex;align-items:center;color:#6b7280}
+.breadcrumb-item a{color:var(--epet-dark);text-decoration:none;font-weight:700}
+.breadcrumb-item a:hover{color:var(--purple)}
+.breadcrumb-item+.breadcrumb-item::before{
+  content:"›";font-family:inherit;font-size:1.1rem;
+  padding:0 9px;color:#94a3b8;
+}
+.breadcrumb-item.active{color:#475569;font-weight:720}
+/* Firemní gradientový hero */
+.hero-banner{
+  position:relative;isolation:isolate;overflow:visible;
+  display:flex!important;align-items:center!important;justify-content:space-between!important;
+  gap:25px;flex-wrap:wrap;margin-bottom:18px;min-height:184px;
+  border-radius:24px;padding:35px 33px;color:#fff;
+  background:
+    radial-gradient(900px 360px at 92% 20%,rgba(255,255,255,.24),transparent 62%),
+    linear-gradient(135deg,var(--epet) 0%,var(--epet-dark) 52%,#2f3f0f 100%);
+  box-shadow:var(--shadow);
+}
+.hero-banner::before{
+  content:"";z-index:-1;position:absolute;right:18px;bottom:0;
+  width:190px;height:140px;border-radius:100% 60% 0 0;
+  background:linear-gradient(135deg,rgba(255,255,255,.025),rgba(255,255,255,.09));
+  pointer-events:none;
+}
+.hero-banner::after{
+  content:"";position:absolute;z-index:-1;right:105px;top:16px;
+  width:130px;height:130px;border:1px solid rgba(255,255,255,.14);border-radius:50%;pointer-events:none;
+}
+.hero-banner>div{position:relative;z-index:1}
+.hero-banner>div:first-child{flex:1 1 480px;min-width:0}
+.hero-banner h1{
+  margin:0 0 10px!important;color:white!important;
+  font-size:clamp(1.56rem,2.75vw,2.18rem)!important;
+  letter-spacing:-.034em;line-height:1.16;font-weight:850!important;
+}
+.hero-banner p{margin:0!important;color:rgba(255,255,255,.91)!important;font-size:.95rem}
+.btn-download{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  border:1px solid rgba(255,255,255,.45);border-radius:999px;
+  padding:11px 19px;background:#fff;color:var(--epet-dark)!important;
+  font-weight:820;text-decoration:none;white-space:nowrap;
+  box-shadow:0 8px 18px rgba(15,23,42,.12);transition:transform .18s ease,box-shadow .18s ease;
+}
+.btn-download:hover,.btn-download:focus-visible{transform:translateY(-2px);box-shadow:0 11px 24px rgba(15,23,42,.17)}
+.hero-banner .dropdown{z-index:80}
+.hero-banner .dropdown-menu{
+  display:none!important;position:absolute;list-style:none;margin:0;
+  min-width:340px;max-width:min(440px,calc(100vw - 24px));
+  background:#fff;color:var(--ink);padding:9px;border:1px solid var(--line)!important;border-radius:16px!important;
+  box-shadow:0 18px 38px rgba(15,23,42,.2)!important;z-index:9999;
+}
+.hero-banner .dropdown.open>.dropdown-menu{display:block!important;position:absolute;top:calc(100% + 8px);right:0;left:auto}
+.hero-banner .dropdown-item{
+  display:flex;align-items:center;gap:8px;padding:11px 12px!important;border-radius:10px;
+  color:#334155;font-weight:680;font-size:.91rem;white-space:normal;text-decoration:none;
+}
+.hero-banner .dropdown-item:hover{background:#f1f8e3;color:var(--epet-dark)}
+.hero-banner .dropdown-toggle::after{margin-left:5px}
+/* Navigace a pravý obsahový panel */
+.book-container{
+  display:grid!important;grid-template-columns:270px minmax(0,1fr);
+  align-items:start;gap:18px;min-height:0;overflow:visible;background:transparent;border:0;
+}
+.book-tabs{
+  position:sticky;top:12px;width:auto!important;min-width:0;
+  display:flex!important;flex-direction:column!important;gap:5px;
+  padding:12px;border:1px solid var(--line);border-radius:22px;
+  background:#fff;box-shadow:0 10px 28px rgba(15,23,42,.055);
+}
+.book-tabs::before{
+  content:"";display:block;height:5px;margin:0 8px 9px;
+  border-radius:999px;background:linear-gradient(90deg,var(--epet),#cce88a);
+}
+.tab-item{
+  display:flex;align-items:center;gap:11px;min-width:0;
+  padding:12px 13px;margin:0;border-radius:14px;
+  background:transparent;border:1px solid transparent!important;
+  color:#475569;font-size:.925rem;font-weight:700;line-height:1.4;
+  cursor:pointer;outline:0;transition:background .18s,color .18s,transform .18s,box-shadow .18s;
+}
+.tab-item i{width:20px;flex:0 0 20px;text-align:center;font-size:1.1rem;color:#718096}
+.tab-item:hover,.tab-item:focus-visible{background:var(--soft);color:var(--epet-dark);transform:translateX(2px)}
+.tab-item.active{
+  background:#f1fccf;color:#435f00;font-weight:850;
+  border-color:rgba(148,193,31,.28)!important;
+  box-shadow:inset 0 0 0 1px rgba(148,193,31,.09);
+}
+.tab-item.active i{color:var(--epet-dark)}
+.tab-item.tab-purple{margin-top:6px;border-top:1px solid var(--line)!important}
+.tab-item.tab-purple.active{color:#7048a6;background:#f6efff;border-color:rgba(147,98,214,.25)!important}
+.tab-item.tab-purple.active i{color:var(--purple)}
+.book-page{
+  position:relative;min-width:0;min-height:430px;overflow:visible;
+  background:#fff;padding:27px 27px 32px;border:1px solid var(--line);
+  border-radius:24px;box-shadow:var(--shadow);
+}
+.content-section{display:none;animation:fadeIn .25s ease}
+.content-section.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.content-section>h2{
+  display:flex;align-items:center;gap:11px;min-width:0;
+  margin:0 0 19px!important;padding:0 0 18px;border-bottom:1px solid var(--line);
+  font-size:clamp(1.22rem,2.05vw,1.55rem);line-height:1.35;
+  letter-spacing:-.025em;color:var(--epet-dark)!important;font-weight:850!important;
+}
+.section-number{
+  display:inline-flex;align-items:center;justify-content:center;flex:0 0 41px;
+  width:41px;height:41px;border-radius:50%;background:var(--epet);color:#fff;
+  font-size:1rem;font-weight:850;letter-spacing:0;
+  box-shadow:0 5px 12px rgba(148,193,31,.16);
+}
+#page-video>h2::before,#page-test>h2::before{
+  content:"";display:block;flex:0 0 5px;width:5px;min-height:30px;
+  border-radius:99px;background:var(--epet);
+}
+#page-test>h2{color:var(--purple)!important}
+#page-test>h2::before{background:var(--purple)}
+/* Úvodní shrnutí, významové zkratky */
+.overview-card{
+  position:relative;overflow:hidden;border:1px solid #dfebd4;
+  padding:26px 28px 26px;border-radius:21px;
+  background:radial-gradient(280px 220px at 100% 100%,rgba(148,193,31,.1),transparent 75%),
+             linear-gradient(140deg,#fff,#f9fcf3);
+  box-shadow:0 9px 22px rgba(15,23,42,.046);
+}
+.overview-card::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:var(--epet)}
+.overview-card>p{font-size:1.065rem;line-height:1.82;margin:0 0 23px;color:#2f473e}
+.glossary{border-top:1px solid #dfeada;padding-top:20px;margin:0!important}
+.glossary h5{font-size:.89rem;letter-spacing:.065em;color:var(--muted);font-weight:850;margin:0 0 13px}
+.glossary h5 strong{color:var(--epet-dark)}
+.glossary p{margin:0;line-height:2.4;color:#475569;font-weight:580}
+.glossary .badge{
+  margin-right:5px;vertical-align:middle;padding:8px 10px;border-radius:9px;
+  font-size:.81rem;letter-spacing:.01em;line-height:1;font-weight:850;
+}
+/* Pracovní postup tvoří série navazujících karet. */
+.content-steps{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;
+  padding:0!important;margin:0!important;border:0!important;background:transparent!important;box-shadow:none!important}
+.step-card{
+  position:relative;overflow:hidden;min-width:0;
+  background:linear-gradient(180deg,#fff,#fbfcfd);
+  padding:21px 23px 23px;border:1px solid var(--line);
+  border-radius:20px;box-shadow:0 8px 22px rgba(15,23,42,.05);
+}
+.step-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--epet)}
+.content-steps>.step-card:nth-child(3n+2)::before{background:var(--cyan)}
+.content-steps>.step-card:nth-child(3n+3)::before{background:var(--purple)}
+.step-card>p{margin:0 0 13px!important;color:#334155;line-height:1.74}
+.step-card>p:last-child{margin-bottom:0!important}
+.step-card>p:first-child{font-size:1rem}
+.step-card .step-badge{
+  display:inline-flex;align-items:center;justify-content:center;
+  vertical-align:middle;width:35px;height:35px;min-width:35px;
+  margin:0 10px 2px 0;border-radius:50%;background:var(--epet);
+  box-shadow:0 5px 12px rgba(148,193,31,.16);
+  color:#fff;font-size:.95rem;font-weight:850;
+}
+.content-steps>.step-card:nth-child(3n+2) .step-badge{background:var(--cyan)}
+.content-steps>.step-card:nth-child(3n+3) .step-badge{background:var(--purple)}
+.step-card img.img-thumbnail{
+  display:block;width:auto;max-width:100%;height:auto;
+  object-fit:contain;margin:17px auto!important;padding:6px;
+  border:1px solid var(--line);border-radius:15px;
+  background:#fff;box-shadow:0 8px 20px rgba(15,23,42,.08);
+}
+/* Významové položky do přehledných mřížek */
+.step-card ul.list-group{
+  display:grid;grid-template-columns:minmax(0,1fr);gap:8px;
+  list-style:none;margin:14px 0 13px!important;padding:0;border:0;border-radius:0;background:transparent;
+}
+.step-card ul.privacy-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.step-card .list-group-item{
+  min-width:0;display:block;margin:0!important;padding:12px 14px!important;
+  background:#fafcfe;border:1px solid var(--line)!important;border-radius:12px!important;
+  color:#334155;line-height:1.55;font-size:.93rem;
+}
+.step-card .privacy-grid .list-group-item{
+  text-align:center;display:flex;align-items:center;justify-content:center;
+  min-height:54px;background:#fff7ed;color:#81500f;border-color:#f4dba8!important;font-weight:720;
+}
+.step-card .task-fields{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.step-card .task-fields .list-group-item{background:linear-gradient(180deg,#fff,#f8fafc);padding:14px 15px!important}
+.step-card .task-fields .list-group-item:nth-child(5){grid-column:1/-1}
+.step-card .task-fields .list-group-item i.bi{color:var(--epet-dark)}
+.step-card .task-fields .list-group-item b{color:var(--ink)}
+.step-card .critical-note{
+  margin:15px 0!important;padding:15px 18px;
+  border:1px solid #f3bec7!important;border-left:5px solid var(--red)!important;
+  border-radius:15px;background:#fff4f5;color:#8e2430;line-height:1.68;
+}
+.step-card .critical-note strong{color:inherit}
+/* Textové odkazy a zvýraznění */
+.book-page strong,.book-page b{font-weight:800}
+.book-page p,.book-page li{line-height:1.68}
+.book-page a:not(.btn){
+  color:var(--epet-dark);text-decoration:none;font-weight:770;
+  border-bottom:2px solid rgba(148,193,31,.31);padding:0 2px;
+}
+.book-page a:not(.btn):hover{background:#f4fae6;border-bottom-color:var(--epet)}
+.book-page a[target="_blank"]::after{
+  content:"↗";font-family:inherit;font-size:.77rem;
+  margin-left:5px;vertical-align:super;opacity:.7;
+}
+.book-page i:not(.bi),.book-page em{color:var(--purple)}
+.book-page u{text-decoration:none;border-bottom:2px dotted var(--epet);padding-bottom:1px}
+/* Videa a opakovací test */
+#page-video>p{color:var(--muted)!important;line-height:1.7;margin-bottom:21px!important}
+#page-video>.row{
+  display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;margin:0!important;
+}
+#page-video>.row>.col{padding:0!important;width:auto;max-width:none;flex:none;margin:0}
+.video-card{
+  height:100%;overflow:hidden;padding:16px!important;
+  background:linear-gradient(180deg,#fff,#f8fafc)!important;
+  border:1px solid var(--line)!important;border-radius:20px!important;
+  box-shadow:0 8px 22px rgba(15,23,42,.05)!important;
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+}
+.video-card:hover{transform:translateY(-3px);border-color:var(--epet)!important;
+  box-shadow:0 12px 25px rgba(15,23,42,.1)!important}
+.video-card h6{
+  min-height:44px;display:flex;align-items:center;gap:6px;margin:0 0 12px!important;
+  color:var(--epet-dark);font-size:.98rem;line-height:1.45;font-weight:850!important;
+}
+.video-card h6 i{font-size:1.2rem}
+.video-card .ratio{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:13px!important}
+.video-card iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+#page-test>p{
+  margin:0 0 20px!important;padding:17px 19px;
+  border-left:4px solid var(--purple);border-radius:15px;
+  background:#faf7ff;color:#475569;line-height:1.7;
+}
+#page-test>div{overflow:hidden;border:1px solid var(--line)!important;
+  border-radius:19px!important;box-shadow:0 8px 22px rgba(15,23,42,.05)!important}
+#page-test iframe{display:block;width:100%;height:600px;border:0}
+/* Responzivní tablet/mobile; nevynucuje horizontální scroll dokumentu. */
+@media(max-width:1020px){
+  .book-container{grid-template-columns:1fr}
+  .book-tabs{position:static;flex-direction:row!important;overflow-x:auto;white-space:nowrap;padding:9px;gap:5px}
+  .book-tabs::before{display:none}
+  .tab-item{flex:0 0 auto;min-width:max-content;padding:10px 12px}
+  .tab-item:hover{transform:none}
+  .tab-item.tab-purple{margin-top:0;border-top:1px solid transparent!important}
+}
+@media(max-width:690px){
+  body{padding:7px 6px 26px;font-size:14.5px}
+  .breadcrumb-nav{padding:9px 11px;margin-bottom:10px}
+  .breadcrumb{font-size:.79rem}
+  .breadcrumb-item+.breadcrumb-item::before{padding:0 5px}
+  .hero-banner{padding:26px 21px;gap:18px;min-height:160px;border-radius:20px;margin-bottom:13px}
+  .hero-banner h1{font-size:1.62rem!important}
+  .hero-banner .dropdown{width:100%}
+  .btn-download{padding:10px 15px;white-space:normal;text-align:center}
+  .hero-banner .dropdown-menu{min-width:0;max-width:100%;width:100%;right:auto;left:0}
+  .book-container{gap:12px}
+  .book-tabs{border-radius:17px}
+  .book-page{padding:19px 15px 24px;min-height:0;border-radius:20px}
+  .content-section>h2{align-items:flex-start;gap:9px;font-size:1.2rem}
+  .section-number{flex-basis:35px;width:35px;height:35px;font-size:.86rem}
+  .overview-card{padding:20px 19px 21px}
+  .overview-card>p{font-size:1rem}
+  .step-card{padding:17px 16px 19px;border-radius:17px}
+  .step-card ul.privacy-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .step-card .task-fields{grid-template-columns:1fr}
+  .step-card .task-fields .list-group-item:nth-child(5){grid-column:auto}
+  #page-video>.row{grid-template-columns:1fr}
+  .video-card h6{min-height:0}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+
+/* Dokumenty ke stažení: stabilní nativní rozbalení bez Bootstrap JS */
+.hero-banner{z-index:5}
+.hero-banner .download-container{position:relative;z-index:8;min-width:0;flex:0 1 auto}
+.download-disclosure{position:relative;width:100%}
+.download-disclosure>summary{list-style:none;cursor:pointer;user-select:none;display:inline-flex;align-items:center}
+.download-disclosure>summary::-webkit-details-marker{display:none}
+.download-disclosure>summary::marker{content:''}
+.download-disclosure>summary::after{
+  content:'';width:8px;height:8px;margin-left:7px;display:inline-block;
+  border-right:2px solid currentColor;border-bottom:2px solid currentColor;
+  transform:translateY(-2px) rotate(45deg);transition:transform .2s ease;
+}
+.download-disclosure[open]>summary::after{transform:translateY(2px) rotate(225deg)}
+.download-disclosure>summary:focus-visible{outline:3px solid #fff9bb;outline-offset:3px}
+.download-options{margin-top:10px;padding:8px;background:#fff;color:var(--ink);
+  border:1px solid var(--line);border-radius:16px;box-shadow:0 10px 26px rgba(15,23,42,.16);
+  width:370px;max-width:min(440px,calc(100vw - 36px));}
+.download-link{display:flex;align-items:center;gap:9px;border-radius:11px;
+  padding:12px;color:#334155!important;font-weight:720;font-size:.91rem;
+  line-height:1.4;text-decoration:none!important;overflow-wrap:anywhere}
+.download-link i{color:#cf3347}
+.download-link:hover,.download-link:focus-visible{background:#f1f8e3;color:var(--epet-dark)!important}
+@media(max-width:690px){
+  .hero-banner .download-container{width:100%;flex-basis:100%}
+  .download-disclosure>summary{width:100%;justify-content:center}
+  .download-options{width:100%;max-width:none}
+}
+
+
+
+/* ZMĚNA VÝŠE ZÁLOH – navazující jednotný vizuální styl školení Znalostka */
+:root{--epet-green:#94c11f;--epet-green-dark:#60781a;--epet-purple:#9362d6;--epet-orange:#f99f1c}
+body{background:#fff!important}
+.book-container{grid-template-columns:280px minmax(0,1fr)}
+.book-tabs{gap:6px}
+.book-tabs .tab-item{font-family:inherit;text-align:left;width:100%;white-space:normal;min-width:0;appearance:none}
+.book-tabs .tab-item.active{background:#eff8d9;color:#45651a}
+.book-tabs .tab-item.sub{font-size:.88rem;line-height:1.4;padding:10px 11px 10px 13px;border-radius:11px;border-left:3px solid transparent!important}
+.book-tabs .tab-item.sub i{width:16px;flex-basis:16px}
+.book-tabs .tab-item.sub.active{border-left:3px solid #94c11f!important;background:#f4fae8;color:#405c12}
+.book-tabs .tab-group{display:flex;flex-direction:column;gap:3px;min-width:0}
+.book-tabs .tab-group>.tab-item{position:relative}
+.book-tabs .tab-group>.tab-item .nav-chevron{margin-left:auto;flex:0 0 auto;transition:transform .18s ease}
+.book-tabs .tab-group.open>.tab-item .nav-chevron{transform:rotate(180deg)}
+.book-tabs .sub-tabs{display:none;flex-direction:column;gap:3px;margin:0 0 4px 17px;padding:4px 0 3px 10px;border-left:1px solid #dbe9c3;background:transparent}
+.book-tabs .tab-group.open>.sub-tabs{display:flex}
+.book-page{font-size:15.25px;line-height:1.68;overflow-wrap:break-word}
+.book-page>div.content-section{width:100%}
+.book-page h2 .section-number{letter-spacing:0}
+.book-page h3,.book-page h4,.book-page h5,.book-page h6{line-height:1.4;color:#293d4d}
+.book-page p{line-height:1.78}
+.book-page .alert{padding:17px 19px;border-radius:16px;margin:16px 0;box-shadow:none;font-size:.963rem;line-height:1.7}
+.book-page .alert-danger{border:1px solid #f2c6ce;border-left:5px solid #d9414f;background:#fff5f5;color:#8c2f40}
+.book-page .alert-warning{border:1px solid #f3deb0;border-left:5px solid #f99f1c;background:#fff9eb;color:#80521d}
+.book-page .alert-info{border:1px solid #bfdfef;border-left:5px solid #1a8bb3;background:#f1faff;color:#315d72}
+.book-page .alert-success{border:1px solid #cfe8b6;border-left:5px solid #94c11f;background:#f5fbed;color:#42641b}
+.book-page .alert a{color:#365a10}
+.book-page .card{background:#fff!important;box-shadow:0 8px 22px rgba(15,23,42,.045);border:1px solid #e1e8ed!important;border-radius:19px!important;padding:23px!important}
+.book-page .overview-card{padding:29px!important;background:linear-gradient(180deg,#fff,#fcfef8)!important;border-top:5px solid #94c11f!important}
+.abbr-list{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px!important;margin-top:12px}
+.abbr-chip{display:flex!important;align-items:center;gap:9px;min-width:0;padding:11px 12px;border:1px solid #e2ebdc;border-radius:11px;background:#f8fbf1;color:#44556a;font-size:.89rem}
+.abbr-chip>i{font-size:1.15rem;color:#60781a}
+.abbr-chip strong{color:#415e0e}
+.intro-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}
+.intro-fact{padding:17px 18px;min-width:0;border:1px solid #e2e8f0;border-radius:16px;background:#fff;box-shadow:0 4px 13px rgba(15,23,42,.035);border-top:3px solid #94c11f}
+.intro-fact:nth-child(3n + 2){border-top-color:#f99f1c}
+.intro-fact:nth-child(3n + 3){border-top-color:#32a6aa}
+.intro-fact:first-child{grid-column:1/-1;background:#f9fdf2}
+.intro-fact p{margin:0!important;color:#405265}
+.rule-stack,.content-steps{display:flex;flex-direction:column;gap:15px;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important}
+.rule-stack>p,.rule-stack>ul,.rule-stack>div.alert{margin:0!important}
+.rule-stack>p{padding:16px 19px;border:1px solid #e2e8f0;border-radius:15px;background:#fff;line-height:1.75}
+.rule-stack>p:nth-of-type(2n){background:#fbfcf9}
+.rule-stack>ul:not(.list-group){padding:18px 22px 18px 45px;margin:0;background:#f8fbf3;border:1px solid #e0eacf;border-radius:16px}
+.rule-stack>ul li{margin:6px 0;line-height:1.68}
+.rule-stack .alert{margin:0!important}
+.content-steps>.step-card{position:relative;min-width:0;margin:0!important;padding:19px 23px!important;background:#fff;border:1px solid #dfe7ed;border-radius:18px;box-shadow:0 7px 19px rgba(15,23,42,.05);border-top:4px solid #94c11f}
+.content-steps>.step-card:nth-child(3n+2){border-top-color:#36a5b1}
+.content-steps>.step-card:nth-child(3n+3){border-top-color:#f99f1c}
+.content-steps>.step-card p{margin:0!important;color:#34465b;font-size:1rem;line-height:1.74}
+.content-steps .step-badge{width:36px;height:36px;border-radius:50%;background:#94c11f;color:white;font-weight:850;display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;line-height:1;flex-shrink:0;margin:0 12px 2px 0;box-shadow:0 5px 13px rgba(148,193,31,.24)}
+.content-steps>.step-card:nth-child(3n+2) .step-badge{background:#36a5b1}
+.content-steps>.step-card:nth-child(3n+3) .step-badge{background:#ed941a}
+.content-steps:not(.has-steps)>p{padding:14px 18px;border:1px solid #e2e8f0;border-radius:14px;background:#fff}
+.content-steps .alert{margin:0!important}
+.content-steps .step-card>p:last-child{margin-bottom:0!important}
+.content-steps .step-card img{max-width:100%;height:auto}
+/* Navýšení žádostí OZ: tematické karty v původním pořadí. */
+#page-pravidlo9 .content-steps{gap:13px}
+#page-pravidlo9 .oz-intro{padding:21px!important;background:#fff;border:1px solid #e0e9f0!important;border-radius:17px}
+#page-pravidlo9 .oz-branch{padding:20px 22px;border:1px solid #dde7ed;border-radius:17px;background:#fff;box-shadow:0 6px 16px rgba(15,23,42,.043)}
+#page-pravidlo9 .oz-branch:nth-of-type(2n){background:#f9fcf3}
+#page-pravidlo9 .oz-branch h3{font-size:1.1rem;margin:0 0 13px!important;font-weight:850;color:#415c14}
+#page-pravidlo9 .oz-branch p{margin:0 0 12px!important;line-height:1.73}
+#page-pravidlo9 .oz-branch p:last-child{margin-bottom:0!important}
+#page-pravidlo9 .oz-branch a{overflow-wrap:anywhere}
+/* native document menu: all four PDFs are visible after one click */
+.hero-banner .download-container{max-width:100%}
+.download-options{width:445px;max-width:min(445px,calc(100vw - 45px))}
+.download-link{white-space:normal}
+/* Videos & test */
+#page-video>.row{grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+#page-video>.row>.col{min-width:0}
+#page-video .video-card{border-radius:18px!important}
+#page-test iframe{width:100%;height:600px;border:0;max-height:none!important}
+/* Minimal fallbacks when external bootstrap stylesheet is unavailable */
+.d-flex{display:flex}.justify-content-between{justify-content:space-between}.align-items-center{align-items:center}
+.mb-0{margin-bottom:0}.mb-2{margin-bottom:.5rem}.mb-3{margin-bottom:1rem}.mb-4{margin-bottom:1.5rem}.mt-3{margin-top:1rem}
+.fw-bold{font-weight:800}.text-center{text-align:center}.text-muted{color:#64748b}
+@media(max-width:1020px){
+ .book-container{grid-template-columns:1fr!important}
+ .book-tabs{display:flex!important;flex-flow:row wrap!important;overflow:visible!important;align-items:flex-start;position:static}
+ .book-tabs>.tab-item,.book-tabs>.tab-group{flex:0 1 auto;min-width:0}
+ .book-tabs .tab-item{white-space:normal;min-width:0}
+ .book-tabs .tab-group.open{flex:1 1 100%}
+ .book-tabs .tab-group.open .sub-tabs{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));margin:4px 0 8px 12px}
+ .book-tabs .tab-group.open>.tab-item{width:100%}
+ .book-tabs .tab-group.open .sub-tabs .tab-item{min-width:0}
+}
+@media(max-width:700px){
+ .book-tabs{padding:10px!important;display:flex!important;flex-direction:column!important;gap:4px!important}
+ .book-tabs>.tab-item,.book-tabs>.tab-group{width:100%;flex-basis:auto}
+ .book-tabs .tab-group.open .sub-tabs{grid-template-columns:repeat(2,minmax(0,1fr));margin:0 0 5px 12px;padding-left:10px}
+ .book-tabs .tab-item{padding:10px 12px}
+ .book-page{padding:19px 15px!important}
+ .book-page .overview-card{padding:20px 17px!important}
+ .intro-facts,.abbr-list{grid-template-columns:1fr!important}
+ .intro-fact:first-child{grid-column:auto}
+ .rule-stack>p{padding:15px}
+ .content-steps>.step-card{padding:17px 16px!important}
+ #page-pravidlo9 .oz-branch{padding:17px 16px}
+ #page-video>.row{grid-template-columns:1fr!important}
+}
+@media(max-width:400px){.book-tabs .tab-group.open .sub-tabs{grid-template-columns:1fr}}
+
+/* NOVÉ – povinné upozornění při telefonickém navýšení záloh u domácností */
+.zalohy-duty{
+  margin:0;overflow:hidden;border:1px solid #efc98c;border-radius:19px;
+  background:#fffdfa;box-shadow:0 9px 24px rgba(117,71,12,.09);
+  color:#334155;
+}
+.zalohy-duty__header{
+  display:flex;align-items:center;gap:15px;padding:20px 22px;
+  background:linear-gradient(110deg,#fff3d9 0%,#fffaee 100%);
+  border-bottom:1px solid #f2d5a7;
+}
+.zalohy-duty__icon{
+  display:grid;place-items:center;flex:0 0 48px;width:48px;height:48px;
+  color:#a65409;background:#fff;border:1px solid #f3d6a1;border-radius:15px;
+}
+.zalohy-duty__icon svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.zalohy-duty__headtext{min-width:0;flex:1}
+.zalohy-duty__eyebrow{font-weight:850;letter-spacing:.09em;font-size:.72rem;color:#985a16}
+.zalohy-duty__header h3{margin:4px 0 0;font-size:1.19rem;color:#5d3c10!important;font-weight:850;letter-spacing:-.01em}
+.zalohy-duty__flag{
+  display:inline-flex;align-items:center;flex:0 0 auto;padding:7px 10px;
+  color:#9e2932;background:#fff0f1;border:1px solid #f1c3c7;border-radius:9px;
+  font-size:.72rem;font-weight:850;letter-spacing:.025em;
+}
+.zalohy-duty__body{padding:20px 22px 22px}
+.zalohy-duty__lead{margin:0 0 17px!important;line-height:1.7;color:#435161}
+.zalohy-duty__steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin-bottom:20px}
+.zalohy-duty__step{padding:15px 15px 17px;background:#fff;border:1px solid #e7e9e9;border-radius:14px;min-width:0}
+.zalohy-duty__stepnum{display:flex;align-items:center;justify-content:center;width:30px;height:30px;background:#fff1d4;color:#9c5e12;border-radius:50%;font-weight:850;font-size:.82rem;margin-bottom:11px}
+.zalohy-duty__step h4{font-size:.93rem!important;margin:0 0 7px;font-weight:850;color:#4a3e2c!important}
+.zalohy-duty__step p{margin:0!important;line-height:1.55;font-size:.91rem;color:#526071}
+.zalohy-duty__script{border:1px solid #d7e5eb;border-left:5px solid #1e8ab3;background:#f4faff;border-radius:13px;padding:17px 20px;margin-bottom:14px}
+.zalohy-duty__label{display:block;text-transform:uppercase;font-weight:850;letter-spacing:.06em;font-size:.74rem;margin-bottom:10px;color:#2c7188}
+.zalohy-duty__script blockquote{margin:0;color:#27465b;font-size:.96rem;line-height:1.74;font-weight:570}
+.zalohy-duty__record{position:relative;border:1px solid #efbdc4;border-left:5px solid #d9414f;border-radius:13px;background:#fff5f5;padding:17px 20px}
+.zalohy-duty__record .zalohy-duty__label{color:#9f2635;margin-bottom:8px}
+.zalohy-duty__record p{margin:0 0 9px!important;font-weight:720;color:#812d38}
+.zalohy-duty__record-sample{color:#6b2931;background:white;border:1px solid #f1d2d6;border-radius:9px;padding:12px 14px;line-height:1.6;overflow-wrap:anywhere}
+.zalohy-duty__copy{display:inline-flex;align-items:center;gap:7px;border:0;border-radius:10px;cursor:pointer;background:#b73544;color:#fff;margin-top:12px;padding:9px 13px;font-size:.85rem;font-weight:790}
+.zalohy-duty__copy:hover,.zalohy-duty__copy:focus-visible{background:#8f2430}
+.zalohy-duty__copy:focus-visible{outline:3px solid #f4b1b6;outline-offset:2px}
+.zalohy-duty__feedback{margin-left:10px;font-size:.83rem;color:#475569}
+@media(max-width:850px){.zalohy-duty__steps{grid-template-columns:1fr}}
+@media(max-width:570px){
+  .zalohy-duty__header{display:grid;grid-template-columns:42px minmax(0,1fr);padding:16px;align-items:start;gap:11px}
+  .zalohy-duty__icon{width:42px;height:42px;flex-basis:42px}
+  .zalohy-duty__flag{grid-column:2;justify-self:start;margin-left:0}
+  .zalohy-duty__header h3{font-size:1.08rem}
+  .zalohy-duty__body{padding:15px}
+  .zalohy-duty__script,.zalohy-duty__record{padding:15px}
+}
+</style>
+</head>
+<body>
+<!-- Drobečková navigace -->
+<nav aria-label="breadcrumb" class="breadcrumb-nav">
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+<a href="https://sites.google.com/view/znalostka/"><i class="bi bi-house-door-fill has-svg"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 10 12 3l9 7v11h-7v-7h-4v7H3z"></path></svg></i> Znalostní
+                    báze</a>
+</li>
+<li class="breadcrumb-item">
+<a href="https://sites.google.com/view/znalostka/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat">Školení
+                    ZIS</a>
+</li>
+<li class="breadcrumb-item">
+<a href="https://sites.google.com/view/znalostka/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat/3-den">3.
+                    den</a>
+</li>
+<li aria-current="page" class="breadcrumb-item active">
+               Změna výše záloh     
+            </li>
+</ol>
+</nav>
+<!-- Název školení -->
+<div class="hero-banner d-flex justify-content-between align-items-center">
+<div>
+<h1 class="h2 fw-bold mb-1">Pracovní postup: Změna výše záloh</h1>
+<p class="mb-0 opacity-75">Znalostní databáze epet | Dokumentace a přílohy</p>
+</div>
+<!-- Stáhnutí PDF -->
+<div class="download-container"><details class="download-disclosure"><summary class="btn-download"><i class="bi bi-file-earmark-pdf-fill has-svg"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 13h6M9 17h6"></path></svg></i> Dokumenty ke stažení</summary><div class="download-options"><a class="download-link" href="https://drive.google.com/file/d/1Pt-xgxaF3RihMYey0hTfpKFXXvnjdZBo/view?usp=drive_link" rel="noopener noreferrer" target="_blank"><i class="bi bi-file-pdf has-svg"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 13h6M9 17h6"></path></svg></i> Zálohy (PDF)</a><a class="download-link" href="https://drive.google.com/file/d/1rv9HTDpwuyCvCyrcgBDR9dW0RhMzNOGX/view?usp=sharing" rel="noopener noreferrer" target="_blank"><i class="bi bi-file-pdf has-svg"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 13h6M9 17h6"></path></svg></i> Bezzálohový režim - Domácnosti (PDF)</a><a class="download-link" href="https://drive.google.com/file/d/1aEMG9QI1jjNzsqTgoiUwN-npmvChYBMe/view" rel="noopener noreferrer" target="_blank"><i class="bi bi-file-pdf has-svg"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 13h6M9 17h6"></path></svg></i> Bezzálohový režim - Firmy (PDF)</a><a class="download-link" href="https://drive.google.com/file/d/1M9rpMSXuaFfKpbBMCwNhFuudJ-Gu8lkG/view?usp=drive_link" rel="noopener noreferrer" target="_blank"><i class="bi bi-file-pdf has-svg"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 13h6M9 17h6"></path></svg></i> Procesní manuál na AF 058 a Hromadná změna výše záloh (PDF)</a></div></details></div>
+</div>
+<!-- Navigace -->
+<div class="book-container">
+<nav aria-label="Navigace školením" aria-orientation="vertical" class="book-tabs" role="tablist"><button aria-controls="page-intro" aria-selected="true" class="tab-item active" data-target="page-intro" role="tab" type="button"><i class="bi bi-book has-svg"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 5h7a3 3 0 0 1 3 3v13H6a3 3 0 0 0-3 0zm10 3a3 3 0 0 1 3-3h5v16a3 3 0 0 0-3 0h-5"></path></svg></i> Pracovní postup</button><div class="tab-group" id="group-pravidla"><button aria-controls="page-pravidla" aria-selected="false" class="tab-item" data-target="page-pravidla" role="tab" type="button"><i class="bi-file-text has-svg"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"></path></svg></i> Pravidla změn výše záloh<i class="bi bi-chevron-down nav-chevron has-svg"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="m5 9 7 7 7-7"></path></svg></i></button><div class="sub-tabs"><button aria-controls="page-pravidlo1" aria-selected="false" class="tab-item sub" data-target="page-pravidlo1" role="tab" type="button"><i class="bi bi-arrow-return-right me-2 has-svg"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 8v3a6 6 0 0 0 6 6h11m-5-5 5 5-5 5"></path></svg></i> FVE</button><button aria-controls="page-pravidlo2" aria-selected="false" class="tab-item sub" data-target="page-pravidlo2" role="tab" type="button"><i class="bi bi-arrow-return-right me-2 has-svg"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 8v3a6 6 0 0 0 6 6h11m-5-5 5 5-5 5"></path></svg></i> Tepelné čerpadlo</button><button aria-controls="page-pravidlo3" aria-selected="false" class="tab-item sub" data-target="page-pravidlo3" role="tab" type="button"><i class="bi bi-arrow-return-right me-2 has-svg"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 8v3a6 6 0 0 0 6 6h11m-5-5 5 5-5 5"></path></svg></i> Chybně nahlášená spotřeba</button><button aria-controls="page-pravidlo4" aria-selected="false" class="tab-item sub" data-target="page-pravidlo4" role="tab" type="button"><i class="bi bi-arrow-return-right me-2 has-svg"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 8v3a6 6 0 0 0 6 6h11m-5-5 5 5-5 5"></path></svg></i> Prodej nemovitosti, rekonstrukce</button><button aria-controls="page-pravidlo5" aria-selected="false" class="tab-item sub" data-target="page-pravidlo5" role="tab" type="button"><i class="bi bi-arrow-return-right me-2 has-svg"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 8v3a6 6 0 0 0 6 6h11m-5-5 5 5-5 5"></path></svg></i> Úmrtí</button><button aria-controls="page-pravidlo6" aria-selected="false" class="tab-item sub" data-target="page-pravidlo6" role="tab" type="button"><i class="bi bi-arrow-return-right me-2 has-svg"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 8v3a6 6 0 0 0 6 6h11m-5-5 5 5-5 5"></path></svg></i> OM bude prázdné</button><button aria-controls="page-pravidlo7" aria-selected="false" class="tab-item sub" data-target="page-pravidlo7" role="tab" type="button"><i class="bi bi-arrow-return-right me-2 has-svg"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 8v3a6 6 0 0 0 6 6h11m-5-5 5 5-5 5"></path></svg></i> PLYN - FVE/TČ</button><button aria-controls="page-pravidlo8" aria-selected="false" class="tab-item sub" data-target="page-pravidlo8" role="tab" type="button"><i class="bi bi-arrow-return-right me-2 has-svg"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 8v3a6 6 0 0 0 6 6h11m-5-5 5 5-5 5"></path></svg></i> PLYN - Úspora/Uhlí</button><button aria-controls="page-pravidlo9" aria-selected="false" class="tab-item sub" data-target="page-pravidlo9" role="tab" type="button"><i class="bi bi-arrow-return-right me-2 has-svg"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 8v3a6 6 0 0 0 6 6h11m-5-5 5 5-5 5"></path></svg></i> Navýšení záloh - OZ</button></div></div><button aria-controls="page-video" aria-selected="false" class="tab-item" data-target="page-video" role="tab" type="button"><i class="bi bi-play-circle-fill has-svg"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m10 8 6 4-6 4z"></path></svg></i> Video návod</button><button aria-controls="page-test" aria-selected="false" class="tab-item tab-purple" data-target="page-test" role="tab" type="button"><i class="bi bi-clipboard-check has-svg"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><rect height="18" rx="2" width="14" x="5" y="4"></rect><path d="M9 3h6v4H9zm0 12 2 2 4-4"></path></svg></i> Opakovací test</button></nav>
+<div class="book-page">
+<div aria-hidden="false" class="content-section active" id="page-intro" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4 text-success"><span class="section-number">1.</span> Pracovní postup</h2>
+<div class="card overview-card">
+<p>
+                        Pracovní postup popisuje <strong>pravidla a postup pro změnu výše záloh</strong>.
+                    </p>
+<div class="mb-3 abbr-block">
+<h5><strong>ZKRATKY:</strong></h5>
+<div class="abbr-list">
+<div class="abbr-chip">
+<i class="bi bi-house-fill me-1 has-svg"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 10 12 3l9 7v11h-7v-7h-4v7H3z"></path></svg></i>
+<strong>OM</strong> – odběrné místo
+                            </div>
+<div class="abbr-chip">
+<i class="bi bi-person-fill-check me-1 has-svg"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="11" cy="8" r="4"></circle><path d="M4 21v-2c0-4 14-4 14 0v2m0-9 2 2 3-4"></path></svg></i>
+<strong>ZK</strong> – zákazník
+                            </div>
+<div class="abbr-chip">
+<i class="bi bi-cash-coin me-1 has-svg"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><rect height="12" rx="2" width="18" x="3" y="7"></rect><circle cx="12" cy="13" r="3"></circle><path d="M6 4h12"></path></svg></i>
+<strong>RZ</strong> – rozpis záloh
+                            </div>
+<div class="abbr-chip">
+<i class="bi bi-cash-coin me-1 has-svg"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><rect height="12" rx="2" width="18" x="3" y="7"></rect><circle cx="12" cy="13" r="3"></circle><path d="M6 4h12"></path></svg></i>
+<strong>PK</strong> – platební kalendář
+                            </div>
+<div class="abbr-chip">
+<i class="bi bi-file-earmark-bar-graph me-1 has-svg"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 19v-3m3 3v-6m3 6v-4"></path></svg></i>
+<strong>DD</strong> – daňový doklad
+                            </div>
+</div>
+</div>
+
+
+
+
+
+
+<div class="intro-facts"><div class="intro-fact"><p>
+                        Zákazníkovi můžeme vystavit buď <i>Rozpis záloh (RZ)</i>,
+                        nebo <i>Platební kalendář (PK)</i>.
+                        Rozdíl mezi RZ a PK je následující:
+                        u <strong>RZ</strong> se jedná pouze o informaci o splatnosti záloh
+                        a v případě úhrady dle RZ je zákazníkovi
+                        <strong>zasílán samostatný daňový doklad</strong>
+                        ke každé platbě.
+                        Pokud je vystaven <strong>PK</strong>,
+                        je <strong>platební kalendář sám o sobě daňovým dokladem</strong>
+                        a na uhrazené platby již samostatný daňový doklad neodchází.
+                    </p></div><div class="intro-fact"><p>
+<strong>Daňový doklad (DD)</strong> u platebního kalendáře
+                        je vystaven pouze v případě,
+                        že zákazník hradí <strong>mimo předepsaný PK</strong>.
+                    </p></div><div class="intro-fact"><p>
+                        Záloha je částka hrazená zákazníkem <strong>předem</strong>,
+                        než dojde k vyúčtování skutečné spotřeby
+                        za uplynulé období a za poskytované služby
+                        dodávky elektřiny nebo plynu.
+                    </p></div><div class="intro-fact"><p>
+<u>Výše zálohy</u> na dané období je stanovena tak,
+                        aby pokrývala náklady spojené
+                        s <strong>celkovou dodávkou energií</strong>
+                        (distribuce, dodávka, daně a poplatky).
+                    </p></div><div class="intro-fact"><p>
+                        Záloha je stanovena na základě
+                        spotřeby uvedené ve smlouvě,
+                        případně dle dat od distributora
+                        a sjednané ceny dle smlouvy.
+                    </p></div><div class="intro-fact"><p>
+                        U domácností a maloodběru je záloha
+                        stanovena každý měsíc ve <strong>stejné výši</strong>,
+                        a to i za předpokladu,
+                        že se skutečná spotřeba
+                        v jednotlivých měsících liší.
+                    </p></div></div></div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-pravidla" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4 text-success"><span class="section-number">2.</span> Pravidla změn výše záloh</h2>
+<!-- KARTA: Pravidla -->
+<div class="rule-stack">
+<div class="alert alert-danger mb-3">
+<strong>DŮLEŽITÉ:</strong><br/>
+<strong>Zálohy</strong> nesnižujeme, pokud evidujeme u zákazníka
+                        <strong>pohledávky</strong>.
+                        Požadavek na snížení rovnou <strong>zamítáme</strong>.
+                        Zákazník musí mít <strong>uhrazené platby a faktury</strong>.
+                        (neplatí v případě poplatku <strong>100 Kč</strong>)
+                    </div>
+<p>
+                        Platební kalendář můžeme měnit pouze u
+                        <strong>aktivních odběrných míst</strong>
+                        a pouze <strong>do budoucnosti</strong>.
+                    </p>
+<p>
+                        Navýšení zálohových plateb dodávky elektřiny nebo plynu
+                        u maloodběru lze realizovat
+                        <strong>o jakoukoliv částku požadovanou zákazníkem</strong>.
+                    </p>
+<!-- POVINNÉ DOPLNĚNÍ: telefonické navýšení záloh – primárně domácnosti -->
+<section aria-labelledby="zalohy-duty-title" class="zalohy-duty">
+  <div class="zalohy-duty__header">
+    <span aria-hidden="true" class="zalohy-duty__icon"><svg viewBox="0 0 24 24"><path d="M12 3 22 21H2L12 3Z"/><path d="M12 9v5m0 3v.3"/></svg></span>
+    <div class="zalohy-duty__headtext">
+      <span class="zalohy-duty__eyebrow">POVINNÝ POSTUP · DOMÁCNOSTI</span>
+      <h3 id="zalohy-duty-title">Telefonické navýšení zálohových plateb</h3>
+    </div>
+    <span class="zalohy-duty__flag">NELZE VYNECHAT</span>
+  </div>
+  <div class="zalohy-duty__body">
+    <p class="zalohy-duty__lead">Změny záloh nahoru lze přijímat telefonicky, ale <strong>zákazník musí být v hovoru upozorněn</strong> na možný vyšší přeplatek i na ustanovení <strong>§ 11 odst. 6 energetického zákona</strong>. Zákazník musí tuto skutečnost vzít v potaz a s navýšením souhlasit.</p>
+    <div class="zalohy-duty__steps">
+      <div class="zalohy-duty__step"><span class="zalohy-duty__stepnum">01</span><h4>Upozornit na přeplatek</h4><p>Zvýšení zálohy může generovat <strong>vyšší přeplatek při vyúčtování</strong>.</p></div>
+      <div class="zalohy-duty__step"><span class="zalohy-duty__stepnum">02</span><h4>Upozornit na § 11 odst. 6</h4><p>Navýšením nebude dodrženo pravidlo stanovení zálohy podle <strong>předpokládané spotřeby</strong>.</p></div>
+      <div class="zalohy-duty__step"><span class="zalohy-duty__stepnum">03</span><h4>Vyžádat souhlas</h4><p>Zákazník bere upozornění na vědomí a <strong>výslovně souhlasí</strong> s požadovanou částkou.</p></div>
+    </div>
+    <div class="zalohy-duty__script">
+      <span class="zalohy-duty__label">Vzorová formulace do hovoru</span>
+      <blockquote>„Pane/Paní [příjmení], upozorňuji Vás, že navýšení záloh může při vyúčtování způsobit vyšší přeplatek. Zároveň to nebude odpovídat § 11 odst. 6 energetického zákona, podle kterého se zálohy stanovují podle předpokládané spotřeby. Berete tuto skutečnost na vědomí a souhlasíte s navýšením záloh na požadovanou částku?“</blockquote>
+    </div>
+    <div class="zalohy-duty__record">
+      <span class="zalohy-duty__label">Povinné zaznamenání do relace hovoru</span>
+      <p>Souhlas je nutné zaznačit v relaci hovoru.</p>
+      <div class="zalohy-duty__record-sample" id="zalohy-duty-record-example">„ZK upozorněn na §11, odst. 6 energ. zákona a vyjádřil souhlas s navýšením záloh“</div>
+      <button class="zalohy-duty__copy" id="zalohy-duty-copy" type="button">Kopírovat zápis do relace</button><span aria-live="polite" class="zalohy-duty__feedback" id="zalohy-duty-copy-feedback"></span>
+    </div>
+  </div>
+</section>
+
+<p>
+                        Snížení zálohových plateb lze realizovat
+                        pouze v <strong>odůvodněných případech</strong>,
+                        a to na základě následujících skutečností:
+                    </p>
+<ul>
+<li>
+                            výše zálohy uvedené ve smlouvě,
+                        </li>
+<li>
+                            pokud zákazníkovi výše zálohy ve smlouvě nevyhovuje,
+                            můžeme zálohy snížit maximálně o
+                            <strong>30 % z aktuální částky</strong>,
+                            a to <strong>1× ročně</strong>
+                            (mimo periodickou fakturaci).
+                            Zákazník musí uvést <strong>relevantní důvod</strong>,
+                            proč chce zálohy snížit.
+                            Bez důvodu a bez prokázání změny spotřeby
+                            <strong>není snížení možné</strong>.
+                        </li>
+<li>
+                            pokud chce zákazník snížit zálohy
+                            na nižší částku, než je uvedeno výše,
+                            musí doložit <strong>aktuální fotografie měřidel</strong>.
+                        </li>
+</ul>
+<p>
+                        Snížení záloh musí povolit
+                        <strong>kompetentní osoba</strong>
+                        (<i>Lukáš Nikolov, Ludvíková Michaela</i>).
+                        Úkol, ve kterém bude uvedeno
+                        <strong>ZÚ, důvod a potřebné doklady</strong>,
+                        předáváme na loginy uvedených
+                        kompetentních osob ve stavu
+                        <strong>„ke schválení“</strong>.
+                        Kompetentní osoba provede posouzení
+                        a vyjádření, zda zálohy snížíme,
+                        snížíme za určitých podmínek,
+                        nebo nesnížíme.
+                    </p>
+<p>
+                        Upravovat lze pouze
+                        <strong>nevyrovnané (neuhrazené) zálohy</strong>.
+                        Nelze upravovat zálohy
+                        s <strong>aktivním platebním příkazem</strong>
+                        (je požádáno o SIPO nebo inkaso).
+                    </p>
+<div class="alert alert-info border-start border-4 border-info shadow-sm mt-3" role="alert">
+<center><strong>DŮLEŽITÉ:</strong></center>
+<strong>Záloha</strong> je stanovena dle
+                        <strong>
+<a href="https://1684053905.rsc.cdn77.org/files/2025/09/12/13-10-53/EPET_obchodnipodminky_MO.pdf" rel="noopener noreferrer" target="_blank">
+                                Obchodních podmínek
+                            </a>
+</strong>
+                        bodu 4.3.<br/>
+                        „V průběhu zúčtovacího období je Zákazník povinen platit Dodavateli
+                        pravidelné <strong>zálohové platby</strong>
+                        (dále jen „Zálohy“), jejichž
+                        <strong>výši</strong>, <strong>počet</strong> a
+                        <strong>splatnost</strong> stanoví Dodavatel
+                        v <strong>platebním kalendáři</strong>.“
+                    </div>
+</div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-pravidlo1" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4 text-success"><span class="section-number">2.1</span> FVE</h2>
+<!-- ===================== -->
+<!-- FVE -->
+<!-- ===================== -->
+<div class="content-steps has-steps">
+<div class="step-card"><p class="mb-2">
+<span class="step-badge">1</span>
+                        V případě, že zákazník sděluje, že instaloval fotovoltaiku,
+                        musí doložit akt.
+                        <u>fotografie měřidla, Smlouvu o připojení a Protokol o instalaci FVE</u>.
+                    </p></div>
+<div class="step-card"><p class="mb-2">
+<span class="step-badge">2</span>
+                        V první řadě nabídneme
+                        snížení o 30 %. Pokud zákazník chce snížit na nižší částku,
+                        sdělíme, co je potřeba zaslat!
+                    </p></div>
+<div class="step-card"><p class="mb-2">
+<span class="step-badge">3</span>
+                        Jakmile zákazník doloží výše uvedené dokumenty,
+                        zakládáme úkol na <i>Kompetentní osoby</i> –
+                        Do úkolu nahrajeme dané dokumenty,
+                        předáváme na kompetentní osoby
+                        a čekáme na jejich vyjádření.
+                    </p></div>
+</div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-pravidlo2" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4 text-success"> <span class="section-number">2.2</span> Tepelné čerpadlo </h2>
+<!-- KARTA: Tepelné čerpadlo -->
+<div class="content-steps has-steps">
+<div class="step-card"><p class="mb-2">
+<span class="step-badge">1</span>
+                        V případě, že zákazník sděluje, že instaloval TČ,
+                        musí doložit akt.
+                        <u>fotografie měřidla, Smlouvu o připojení a Protokol o instalaci TČ</u>.
+                    </p></div>
+<div class="step-card"><p class="mb-2">
+<span class="step-badge">2</span>
+                        V první řadě nabídneme snížení o 30 %. Pokud zákazník chce snížit na nižší částku,
+                        sdělíme, co je potřeba zaslat!
+                    </p></div>
+<div class="step-card"><p class="mb-2">
+<span class="step-badge">3</span>
+                        Jakmile zákazník doloží výše uvedené dokumenty,
+                        zakládáme úkol na <i>Kompetentní osoby</i> –
+                        Do úkolu nahrajeme dané dokumenty,
+                        předáváme na kompetentní osoby
+                        a čekáme na jejich vyjádření.
+                    </p></div>
+</div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-pravidlo3" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4 text-success"><span class="section-number">2.3</span> Chybně nahlášená spotřeba </h2>
+<!-- KARTA: Chybná spotřeba  -->
+<div class="content-steps has-steps">
+<div class="step-card"><p class="mb-2">
+<span class="step-badge">1</span>
+                        V případě, že si zákazník nahlásil špatnou spotřebu do smlouvy,
+                        je nutné, aby nám zaslal poslední fakturu od předchozího dodavatele,
+                        kde spotřebu ověříme.
+                    </p></div>
+<div class="step-card"><p class="mb-2">
+<span class="step-badge">2</span>
+                        V případě, že je spotřeba skutečně uvedena chybně,
+                        kompetentní osoba udělá přepočet zálohy dle skutečnosti.
+                    </p></div>
+</div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-pravidlo4" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4 text-success"> <span class="section-number">2.4</span> Prodej nemovitosti, rekonstrukce </h2>
+<!-- KARTA: Prodej nemovitosti, rekonstrukce -->
+<div class="content-steps has-steps">
+<div class="step-card"><p class="mb-2">
+<span class="step-badge">1</span>
+                        Pokud je nemovitost prodávána nebo bude probíhat její rekonstrukce,
+                        nabídneme snížení o 30 %.
+                    </p></div>
+<div class="step-card"><p class="mb-2">
+<span class="step-badge">2</span>
+                        Pokud nesouhlasí, musí zákazník doložit aktuální foto měřidla
+                        s datumovkou (lísteček s aktuálním datem, který bude vyfocen
+                        spolu s měřidlem).
+                    </p></div>
+<div class="step-card"><p class="mb-2">
+<span class="step-badge">3</span>
+                        Jakmile zákazník doloží výše uvedené dokumenty, zakládáme úkol
+                        na <i>Kompetentní osoby</i> – Do úkolu nahrajeme dané dokumenty,
+                        předáváme na kompetentní osoby a čekáme na jejich vyjádření.
+                    </p></div>
+</div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-pravidlo5" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4 text-success"><span class="section-number">2.5</span> Úmrtí </h2>
+<!-- KARTA: Úmrtí -->
+<div class="content-steps has-steps">
+<div class="step-card"><p class="mb-2">
+<span class="step-badge">1</span>
+                        V případě úmrtí zákazníka je potřeba doložit úmrtní list
+                        (nutná kontrola, zda již neřešíme úkol na dědické řízení,
+                        kde by byl úmrtní list již doložen).
+                    </p></div>
+<div class="step-card"><p class="mb-2">
+<span class="step-badge">2</span>
+                        Nabídneme snížení o 30 %. Pokud nesouhlasí, musí zákazník doložit
+                        aktuální foto měřidla s datumovkou (lísteček s aktuálním datem,
+                        který bude vyfocen spolu s měřidlem).
+                    </p></div>
+<div class="step-card"><p class="mb-2">
+<span class="step-badge">3</span>
+                        Jakmile zákazník doloží výše uvedené dokumenty, zakládáme úkol
+                        na <i>Kompetentní osoby</i> – Do úkolu nahrajeme dané dokumenty,
+                        předáváme na kompetentní osoby a čekáme na jejich vyjádření.
+                    </p></div>
+</div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-pravidlo6" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4 text-success"><span class="section-number">2.6</span> OM bude prázdné </h2>
+<!-- KARTA: OM bude prázdné -->
+<div class="content-steps has-steps">
+<div class="step-card"><p class="mb-2">
+<span class="step-badge">1</span>
+                        Zákazník nám sděluje, že bude odběrné místo bez spotřeby,
+                        tedy prázdné.
+                    </p></div>
+<div class="step-card"><p class="mb-2">
+<span class="step-badge">2</span>
+                        Nabídneme snížení o 30 %. Pokud nesouhlasí, musí zákazník doložit
+                        aktuální foto měřidla s datumovkou (lísteček s aktuálním datem,
+                        který bude vyfocen spolu s měřidlem).
+                    </p></div>
+<div class="step-card"><p class="mb-2">
+<span class="step-badge">3</span>
+                        Jakmile zákazník doloží výše uvedené dokumenty, zakládáme úkol
+                        na <i>Kompetentní osoby</i> – Do úkolu nahrajeme dané dokumenty,
+                        předáváme na kompetentní osoby a čekáme na jejich vyjádření.
+                    </p></div>
+</div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-pravidlo7" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4 text-success"><span class="section-number">2.7</span> PLYN - TEPELNÉ ČERPADLO, FVE </h2>
+ KARTA: PLYN - TEPELNÉ ČERPADLO, FVE 
+<div class="content-steps has-steps">
+<div class="step-card"><p class="mb-2">
+<span class="step-badge">1</span>
+                        Má-li zákazník u nás pouze odběr plynu a sděluje nám, že plyn nebude
+                        využívat, případně bude využívat jen na vaření a topení bude řešit
+                        pomocí FVE nebo TČ,
+                    </p></div>
+<div class="step-card"><p class="mb-2">
+<span class="step-badge">2</span>
+                        musí doložit Smlouvu o připojení a Protokol o instalaci FVE/TČ.
+                    </p></div>
+<div class="step-card"><p class="mb-2">
+<span class="step-badge">3</span>
+                        Po doložení dokumentů a posouzení kompetentní osobou je možnost
+                        snížit zálohy na 1000,- Kč měsíčně.
+                    </p></div>
+</div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-pravidlo8" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4 text-success"><span class="section-number">2.8</span> PLYN - BUDE TOPIT UHLÍM, DŘEVEM, SNÍŽÍ SPOTŘEBU </h2>
+<!-- KARTA: PLYN - BUDE TOPIT UHLÍM, DŘEVEM, SNÍŽÍ SPOTŘEBU -->
+<div class="content-steps has-steps">
+<div class="step-card"><p class="mb-2">
+<span class="step-badge">1</span>
+                        V případě, že se na nás obrátí zákazník s požadavkem na snížení záloh
+                        z důvodu, že na odběrném místě bude méně osob, není to pro nás relevantní
+                        prokázání změny spotřeby.
+                    </p></div>
+<div class="step-card"><p class="mb-2">
+<span class="step-badge">2</span>
+                        V případě, že se v domě/bytě svítí v místnosti, je nerelevantní,
+                        zda v ní je 5 osob nebo jedna. Totéž platí pro vytápění – je vytápěna místnost
+                        a nezáleží, kolik osob se v ní nachází.
+                    </p></div>
+<div class="step-card"><p class="mb-2">
+<span class="step-badge">3</span>
+                        V případech, kdy zákazník sděluje, že bude topit dřevem, uhlím, sníží spotřebu, to pro nás není relevantním důkazem toho, že ke snížení spotřeby došlo
+                        nebo dojde.
+                    </p></div>
+<div class="step-card"><p class="mb-0">
+<span class="step-badge">4</span>
+                        Zákazníkovi tak sdělujeme, že není možné v tuto chvíli prokázat
+                        relevantní změnu spotřeby.
+                    </p></div>
+</div></div>
+<div aria-hidden="true" class="content-section" id="page-pravidlo9" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4 text-success"><span class="section-number">2.9</span> Navýšení záloh na žádost OZ </h2>
+<!-- KARTA: PLYN - BUDE TOPIT UHLÍM, DŘEVEM, SNÍŽÍ SPOTŘEBU -->
+<div class="content-steps">
+<p class="mb-3 oz-intro">
+                      Tento postup se týká situace, kdy se na nás obrátí <strong>OZ za zákazníka</strong> a požaduje
+                      <strong>navýšení zálohových plateb</strong>, například po vystavené fakturaci.
+                    </p>
+<div class="alert alert-warning d-flex align-items-center" role="alert">
+<i class="bi bi-exclamation-triangle-fill me-2 has-svg"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="m12 3 10 18H2z"></path><path d="M12 9v5m0 3v.2"></path></svg></i>
+                      Nově u EPET není možné navýšit zálohy pouze na základě telefonické nebo neformální žádosti od OZ.
+                    </div>
+<p class="mb-3 oz-intro">
+                      Pokud OZ žádá o navýšení záloh za zákazníka, je nutné, aby nám zaslal požadavek
+                      <strong>e-mailem</strong> a doložil <strong>písemnou žádost o navýšení záloh</strong>.
+                      K tomu slouží příslušné formuláře.
+                      <a href="https://1684053905.rsc.cdn77.org/files/2025/11/11/09-41-02/ZAKEP0175_prohlaseni_zvyseni_zaloh_epet_PO_02_EDIT.pdf"> Epet žádost změna výše záloh Domácnost</a> / <a href="https://1684053905.rsc.cdn77.org/files/2025/11/11/09-41-01/ZAKEP0175_prohlaseni_zvyseni_zaloh_epet_FO_01_EDIT.pdf"> Epet žádost změna výše záloh FIRMA</a>
+</p>
+<div class="oz-branch"><h3 class="h5 mt-3 mb-2"><strong>Postup pro EPET</strong></h3>
+<p class="mb-2">
+                      OZ informujeme, že pro navýšení záloh musí zaslat písemnou žádost prostřednictvím formuláře.
+                    </p>
+<p class="mb-2">
+                      Bez doloženého formuláře není možné zálohy zákazníkovi navýšit.
+                    </p>
+<p class="mb-2">
+                      Pokud OZ s tímto postupem nesouhlasí nebo má problém s doložením formuláře, můžeme jej případně
+                      nasměrovat na <strong>Zákaznický portál</strong>, kde si může změnu záloh řešit přímo zákazník.
+                    </p>
+</div><div class="oz-branch"><h3 class="h5 mt-3 mb-2"><strong>Dobrá energie</strong></h3>
+<p class="mb-2">
+                      U Dobré energie se postup nemění. OZ jsou na tento způsob doložení žádosti zvyklí.
+                    </p>
+</div><div class="oz-branch"><h3 class="h5 mt-3 mb-2"><strong>Výjimka – zákazník volá sám</strong></h3>
+<p class="mb-0">
+                      Pokud se na nás obrátí přímo zákazník, postupujeme standardně tak, jak jsme zvyklí.
+                      Tento nový postup se týká pouze případů, kdy žádost podává <strong>OZ za zákazníka</strong>.
+                    </p>
+</div></div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-video" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4 text-primary">Video tutoriály</h2>
+<p class="text-muted mb-4">Vyberte si konkrétní téma, které vás zajímá. Pro zvětšení videa využijte ikonu čtverečku
+                    v pravém horním rohu přehrávače.</p>
+<div class="row row-cols-1 row-cols-xl-2 g-4">
+<div class="col">
+<div class="video-card p-3 rounded-4 shadow-sm bg-light h-100">
+<h6 class="fw-bold mb-2"><i class="bi bi-play-circle me-2 has-svg"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m10 8 6 4-6 4"></path></svg></i> Zálohy - Teorie</h6>
+<div class="ratio ratio-16x9 rounded-3 overflow-hidden shadow-sm bg-black">
+<iframe allow="autoplay; fullscreen" allowfullscreen="" src="https://drive.google.com/file/d/1UDq9toUMH_zBGh300T3DNC-S2kjOWGgT/preview"></iframe>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="video-card p-3 rounded-4 shadow-sm bg-light h-100">
+<h6 class="fw-bold mb-2"><i class="bi bi-play-circle me-2 has-svg"><svg aria-hidden="true" class="svg-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m10 8 6 4-6 4"></path></svg></i> Zálohy - Zpětné generování platebního kalendáře </h6>
+<div class="ratio ratio-16x9 rounded-3 overflow-hidden shadow-sm bg-black">
+<iframe allow="autoplay; fullscreen" allowfullscreen="" src="https://drive.google.com/file/d/1lBahcdLnNys4FzH_o0kHTVP23Jc5LU3I/preview"></iframe>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-test" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4" style="color: var(--epet-purple);">Ověření znalostí</h2>
+<p>Po prostudování manuálu prosím vyplňte tento opakovací test. Výsledky budou automaticky
+                    zaznamenány.
+                </p>
+<div class="shadow-sm rounded-3 overflow-hidden" style="border: 1px solid #eee;">
+<iframe allowfullscreen="" frameborder="0" height="600px" marginheight="0" marginwidth="0" mozallowfullscreen="" msallowfullscreen="" src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__abHlldUOUZBRDVITFhWNkJVNktZNlBNVVpTUDU1SS4u" style="border: none; max-width:100%; max-height:100vh" webkitallowfullscreen="" width="100%">
+</iframe>
+</div>
+</div>
+</div>
+</div>
+<!-- JS: Funkce pro přepínání záložek a skupin -->
+
+<script>(function(){
+'use strict';
+const root=document.querySelector('.book-container');if(!root)return;
+const tabs=Array.from(root.querySelectorAll('.book-tabs [data-target]'));
+const sections=Array.from(root.querySelectorAll('.book-page .content-section'));
+const group=root.querySelector('.tab-group');
+function openPage(id,updateHash){
+ const target=sections.find(s=>s.id===id);if(!target)return;
+ sections.forEach(s=>{const active=s===target;s.classList.toggle('active',active);s.setAttribute('aria-hidden',String(!active))});
+ tabs.forEach(t=>{const on=t.dataset.target===id;t.classList.toggle('active',on);t.setAttribute('aria-selected',String(on));t.setAttribute('tabindex',on?'0':'-1')});
+ if(group){
+   const isSub=!!group.querySelector('.sub-tabs [data-target="'+id+'"]');
+   if(isSub)group.classList.add('open');
+   const p=group.querySelector(':scope > [data-target]');
+   if(p){p.setAttribute('aria-expanded',String(group.classList.contains('open')))}
+ }
+ const page=root.querySelector('.book-page');if(page)page.scrollTop=0;
+ if(updateHash){try{history.replaceState(null,'','#'+id)}catch(e){}}
+}
+tabs.forEach(tab=>{
+ tab.addEventListener('click',()=>{
+   if(group&&group.contains(tab)&&tab.parentElement===group){group.classList.toggle('open');tab.setAttribute('aria-expanded',String(group.classList.contains('open')))}
+   openPage(tab.dataset.target,true);
+ });
+ tab.addEventListener('keydown',e=>{
+   if(!['ArrowRight','ArrowLeft','ArrowDown','ArrowUp'].includes(e.key))return;
+   e.preventDefault();const visible=tabs.filter(t=>t.getClientRects().length);const i=visible.indexOf(tab);const off=['ArrowRight','ArrowDown'].includes(e.key)?1:-1;
+   const next=visible[(i+off+visible.length)%visible.length];if(next){next.focus();openPage(next.dataset.target,true)}
+ });
+});
+const hash=decodeURIComponent((location.hash||'').slice(1));openPage(sections.some(s=>s.id===hash)?hash:'page-intro',false);
+})();</script>
+<script>
+/* Kopírování povinného zápisu; alternativa pro prostředí bez Clipboard API. */
+(function(){
+ const button=document.getElementById('zalohy-duty-copy');
+ const sample=document.getElementById('zalohy-duty-record-example');
+ const feedback=document.getElementById('zalohy-duty-copy-feedback');
+ if(!button||!sample)return;
+ button.addEventListener('click',async function(){
+   const value=sample.textContent.trim();
+   let ok=false;
+   try{
+     if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(value);ok=true}
+   }catch(err){}
+   if(!ok){
+     const helper=document.createElement('textarea');helper.value=value;
+     helper.style.cssText='position:fixed;left:-9999px;top:0;opacity:0';
+     document.body.appendChild(helper);helper.focus();helper.select();
+     try{ok=document.execCommand('copy')}catch(err){}
+     helper.remove();
+   }
+   if(feedback)feedback.textContent=ok?'Zápis zkopírován':'Kopírování není povoleno. Označte a zkopírujte text ručně.';
+ });
+})();
+</script>
+</body>
+</html>

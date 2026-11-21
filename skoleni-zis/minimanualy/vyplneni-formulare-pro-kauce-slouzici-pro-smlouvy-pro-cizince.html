@@ -1,0 +1,318 @@
+<!DOCTYPE html><html lang="cs"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Vyplnění formuláře pro kauce - sloužící pro smlouvy pro „cizince“ – Pracovní postup</title><style>
+:root{--epet:#94C11F;--green:#638719;--deep:#425b10;--orange:#F99F1C;--navy:#20354a;--ink:#29394c;--muted:#68798a;--line:#e1e9ef;--soft:#f7f9f5;--shadow:0 14px 35px rgba(28,48,72,.06)}
+*,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);padding:12px 12px 34px;font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:15px;line-height:1.69;-webkit-font-smoothing:antialiased}button{font:inherit}a{overflow-wrap:anywhere}.site-wrap{max-width:1200px;min-width:0;margin:auto}.svg-icon,.icon-inline{display:inline-block;flex:none;vertical-align:middle;width:19px;height:19px}.icon-inline{width:20px;height:20px;color:#6e902b;margin:0 6px 0 0}
+.breadcrumb-nav{padding:10px 15px;border:1px solid var(--line);border-radius:13px;margin-bottom:15px;background:#fff}.breadcrumb{display:flex;align-items:center;flex-wrap:wrap;list-style:none;gap:0;font-size:.83rem;padding:0;margin:0}.breadcrumb-item{color:#6b7b8b;display:flex;align-items:center;min-width:0}.breadcrumb-item:not(:first-child)::before{content:'›';font-size:1.08rem;font-weight:500;color:#a5b0bb;margin:0 11px}.breadcrumb-item a{color:var(--green);font-weight:750;text-decoration:none}.breadcrumb-item a:hover{text-decoration:underline}.breadcrumb-item a .icon-inline{width:15px;height:15px}.breadcrumb-item.active{font-weight:750;color:#3e5267}
+.hero-banner{position:relative;isolation:isolate;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;margin-bottom:19px;padding:33px 36px;border-radius:23px;min-height:185px;color:#fff;background:radial-gradient(430px 260px at 92% 16%,rgba(255,255,255,.17),transparent 70%),linear-gradient(125deg,#94c11f 0%,#789d20 48%,#354c0e 100%);box-shadow:var(--shadow);overflow:visible}
+.hero-banner::before{content:"";position:absolute;right:31%;top:24px;width:135px;height:135px;border:1px solid rgba(255,255,255,.13);border-radius:50%;pointer-events:none;z-index:-1}.hero-banner::after{content:"";position:absolute;right:33%;top:36px;width:90px;height:90px;border:1px solid rgba(255,255,255,.13);border-radius:50%;pointer-events:none;z-index:-1}.hero-main{min-width:0;flex:1 1 490px}.hero-banner h1{font-size:clamp(1.54rem,2.7vw,2.18rem);font-weight:800;line-height:1.25;letter-spacing:-.034em;margin:0 0 11px;max-width:760px}.hero-banner p{margin:0;color:rgba(255,255,255,.9);font-size:.92rem;font-weight:500}
+.download-disclosure{position:relative;z-index:10;max-width:100%}.download-disclosure summary{display:flex;align-items:center;gap:10px;border-radius:40px;background:white;color:var(--deep);padding:11px 17px;box-shadow:0 5px 16px rgba(22,41,19,.16);font-size:.88rem;font-weight:800;cursor:pointer;list-style:none;user-select:none}.download-disclosure summary::-webkit-details-marker{display:none}.download-disclosure summary::after{content:'';width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-3px);margin-left:6px;transition:.18s}.download-disclosure[open] summary::after{transform:rotate(225deg) translateY(-1px)}.download-options{position:absolute;right:0;top:calc(100% + 9px);max-width:min(365px,calc(100vw - 35px));width:330px;background:#fff;border:1px solid var(--line);border-radius:15px;padding:8px;box-shadow:0 17px 37px rgba(28,42,61,.21)}.download-options a{display:flex;align-items:center;gap:11px;color:var(--ink);text-decoration:none;font-size:.89rem;font-weight:700;padding:12px;border-radius:10px;line-height:1.35}.download-options a:hover{background:#f4fae9;color:var(--green)}.download-options .svg-icon{color:#c94f50}
+.book-container{display:grid;grid-template-columns:273px minmax(0,1fr);align-items:start;gap:19px}.mobile-shell{min-width:0}.mobile-nav-summary{display:none}.book-tabs{position:sticky;top:12px;display:flex;flex-direction:column;gap:5px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:13px;box-shadow:0 7px 24px rgba(28,48,72,.042)}.book-tabs::before{content:"";display:block;height:5px;border-radius:10px;margin:0 9px 9px;background:linear-gradient(90deg,var(--epet),#d3eaa6)}.nav-tab{display:flex;gap:12px;align-items:center;text-align:left;width:100%;padding:12px 13px;line-height:1.42;font-size:.90rem;font-weight:720;border-radius:12px;border:1px solid transparent;background:transparent;color:#55667b;cursor:pointer;transition:background .16s,color .16s,transform .16s}.nav-tab .svg-icon{color:#8693a1;width:20px;height:20px}.nav-tab:hover,.nav-tab:focus-visible{background:#f7faef;color:var(--deep);transform:translateX(2px)}.nav-tab.active{background:#f0f9dd;border-color:#d8e9b6;color:#405d12;font-weight:800}.nav-tab.active .svg-icon{color:#587d19}.nav-tab.test-tab{border-top:1px solid var(--line);margin-top:5px;border-radius:0 0 12px 12px}.nav-tab.test-tab.active{border:1px solid #e8daf4;background:#f6f0fc;color:#794caf}.nav-tab.test-tab.active .svg-icon{color:#794caf}
+.book-page{background:#fff;min-width:0;border:1px solid var(--line);border-radius:22px;padding:30px 31px 35px;min-height:530px;box-shadow:var(--shadow)}.content-section{display:none;min-width:0;animation:show .22s ease}.content-section.active{display:block}@keyframes show{from{opacity:.25;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}.section-title{display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line);padding:0 0 19px;margin:0 0 23px;font-size:clamp(1.24rem,2.15vw,1.58rem);font-weight:800;letter-spacing:-.026em;line-height:1.35;color:var(--green)}.section-number{flex:none;display:inline-flex;align-items:center;justify-content:center;min-width:43px;height:43px;padding:0 6px;border-radius:50%;background:var(--epet);color:#fff;font-size:1rem;font-weight:850}.section-title-icon{flex:none;display:inline-block;width:42px;height:42px;padding:10px;border-radius:12px;background:#f1f8e2;color:var(--green)}.book-page h3{font-size:1.08rem;font-weight:800;color:#34495c;margin:18px 0 12px}.book-page h4{font-size:1.12rem;font-weight:800;margin:15px 0 10px}.book-page p{margin:0 0 13px;line-height:1.72;color:#364a5c}.book-page ul{padding-left:24px;margin:11px 0 15px}.book-page li{line-height:1.7;margin-bottom:9px}.book-page li::marker{color:#74982d}.book-page a{color:var(--green);font-weight:750;text-decoration:none;border-bottom:2px solid #d6e5b3}.book-page a:hover{background:#f5fae9;border-bottom-color:var(--epet)}.book-page b,.book-page strong{font-weight:800;color:#3f581e}.book-page em{color:#526578}.book-page blockquote{margin:18px 0;padding:16px 20px;border-left:4px solid var(--epet);background:#f8fbf2;border-radius:0 12px 12px 0}.book-page blockquote p:last-child{margin-bottom:0}
+.training-card,.email-card{background:#fff;border:1px solid var(--line);border-radius:18px;margin:0 0 16px;padding:21px 22px;box-shadow:0 6px 21px rgba(36,58,79,.04)}.intro-panel{padding:25px 24px;border-top:5px solid var(--epet);background:linear-gradient(180deg,#fff,#fbfdf7)}.intro-panel>p{font-size:1.03rem;color:#34485b;margin-bottom:21px}.intro-panel h3{margin-top:15px;padding-top:18px;border-top:1px solid #e7eee0}.abbrev-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.abbrev-item{display:flex;align-items:center;gap:7px;border:1px solid #e1ebd4;background:#fff;border-radius:12px;padding:12px 13px;min-height:56px;font-size:.91rem;line-height:1.5}.abbrev-item b{color:var(--green)}
+.steps-holder{padding:0;margin:0;border:0;box-shadow:none}.step-panel,.example-panel{border:1px solid var(--line);border-radius:17px;padding:20px 21px;margin:0 0 16px;background:#fff;box-shadow:0 7px 20px rgba(28,48,72,.045)}.step-panel{border-left:4px solid var(--epet)}.step-panel p:last-child,.example-panel p:last-child{margin-bottom:0}.step-panel .step-badge{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--epet);color:white;font-weight:800;margin-right:10px;vertical-align:middle;box-shadow:0 0 0 4px #f2f8e5}.step-panel>p:first-child{margin:0 0 14px}.distributor-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:0!important;list-style:none;margin:6px 0 0!important}.distributor-card{border:1px solid #e5eaf0;border-radius:12px;background:#f9fbfd;padding:14px 13px;font-size:.88rem;line-height:1.55!important;margin:0!important;min-width:0}.distributor-card strong{display:inline-block;margin-bottom:8px;color:var(--green)}.example-panel{background:#f6faff;border-color:#dce8f4}.example-panel p>strong{color:#385c83}.example-panel ul{margin-bottom:0}.gs-quote{margin:0 0 13px!important;padding:18px 20px!important;position:relative;background:#f7fbf1!important;border:1px solid #dbeac5!important;border-left:5px solid var(--epet)!important;border-radius:13px!important}.gs-quote cite{display:block;margin-top:11px;font-style:normal;color:#6f7f86;font-size:.82rem}
+.email-card{padding:17px;background:#f7fafc}.outlook-window{max-width:100%;overflow:hidden;border:1px solid #dce4ec;background:#fff;border-radius:16px;box-shadow:0 12px 28px rgba(30,45,70,.09)}.outlook-header{display:flex;align-items:center;gap:9px;background:linear-gradient(90deg,#0b72c8,#248bd4);color:white;font-size:.85rem;font-weight:800;padding:12px 17px}.outlook-header-title{font-size:.85rem;letter-spacing:.02em}.outlook-header .icon-inline{color:#fff;width:18px;height:18px}.window-controls{display:flex;gap:6px;margin-left:auto}.window-controls::after{content:'●   ●   ●';font-size:.60rem;letter-spacing:3px;color:#dbecfa}.outlook-meta{padding:17px 20px 12px;background:#fbfcfd;border-bottom:1px solid #e4eaf0}.meta-row{display:grid;grid-template-columns:76px minmax(0,1fr);gap:11px;align-items:start;padding:7px 0;font-size:.86rem}.meta-label{color:#7c8794;font-weight:650}.meta-value{color:#34485b;font-weight:600;overflow-wrap:anywhere}.meta-value.blue{color:#1175c2}.outlook-attachments{background:#fff;padding:12px 20px;border-bottom:1px solid #e4eaf0}.outlook-attachments .attachment-box{display:inline-flex;align-items:center;gap:10px;padding:9px 12px;background:#fff9f9;border:1px solid #efdada;border-radius:11px;color:#465165;font-size:.84rem;font-weight:700;max-width:100%;text-decoration:none}.attachment-box .attachment-info{display:flex;flex-direction:column;min-width:0}.attachment-name{max-width:250px;white-space:normal;line-height:1.4}.attachment-size{color:#9a7280;font-size:.75rem;font-weight:500}.attachment-icon{color:#c95a58}.outlook-body{padding:27px 30px 25px;background:#fff;color:#334455;font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:.92rem;line-height:1.7}.outlook-body p{color:#34475a;margin-bottom:15px}.outlook-body ul{margin:11px 0 17px}.outlook-signature{margin-top:24px;border-top:1px solid #e2e8ef;padding-top:17px;color:#526479;font-size:.85rem;line-height:1.7}.outlook-signature a{font-weight:700}.outlook-body i.icon-inline{width:16px;height:16px}.book-page .email-card strong{background:transparent}
+.empty-media{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:325px;padding:40px 30px;border:1px dashed #d7e4cf;border-radius:18px;background:radial-gradient(170px 150px at 50% 10%,#eaf5d9,transparent 90%),linear-gradient(#fff,#fbfcf9)}.empty-media>div:first-child{margin-bottom:13px!important;color:#7e9c55;font-size:2.5rem!important}.empty-media .icon-inline{width:48px;height:48px;color:#8eaa62}.empty-media h4{font-size:1.13rem;color:#526b2d;margin:0 0 11px}.empty-media p{margin:0;max-width:460px;color:#697b8e}.empty-media br{display:block}.book-page .email-card a{word-break:break-word}
+.site-footer{margin-top:19px;height:7px;background:linear-gradient(90deg,#273b50 0 65%,#94c11f 65% 86%,#f99f1c 86% 100%);border-radius:50px}
+@media(max-width:1030px){.book-container{grid-template-columns:minmax(0,1fr)}.mobile-nav-summary{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border:1px solid #d7e5c0;border-radius:13px;background:#f6fbea;color:#536f23;font-weight:800;cursor:pointer;margin-bottom:10px;list-style:none}.mobile-nav-summary::after{content:'⌄';font-size:23px;line-height:1}.mobile-shell[open] .mobile-nav-summary::after{transform:rotate(180deg)}.mobile-shell:not([open]) .book-tabs{display:none}.book-tabs{position:static;max-height:440px;overflow-y:auto;margin-bottom:14px}.book-page{padding:27px 26px}}
+@media(max-width:700px){body{padding:8px 8px 30px}.hero-banner{padding:25px 21px;gap:16px;border-radius:19px;min-height:0}.hero-banner h1{font-size:1.46rem}.book-page{padding:20px 16px;border-radius:18px}.section-title{align-items:flex-start;font-size:1.23rem;gap:10px}.section-number{min-width:40px;height:40px;font-size:.85rem}.training-card{padding:17px 16px}.intro-panel{padding:19px 15px}.abbrev-grid,.distributor-grid{grid-template-columns:1fr}.step-panel,.example-panel{padding:17px 15px}.email-card{padding:9px}.outlook-meta{padding:12px 13px}.meta-row{grid-template-columns:60px minmax(0,1fr);gap:8px}.outlook-body{padding:22px 17px;font-size:.87rem}.outlook-attachments{padding:10px 13px}.download-options{right:auto;left:0}.empty-media{min-height:270px;padding:30px 17px}.book-page ul{padding-left:21px}}
+@media(prefers-reduced-motion:reduce){.content-section{animation:none}.nav-tab{transition:none}}@media print{body{padding:0}.hero-banner{box-shadow:none}.book-container{display:block}.mobile-shell{display:none}.book-page{box-shadow:none;border:none;padding:0}.content-section{display:block!important;break-inside:auto;margin-bottom:30px}.site-footer{display:none}}
+
+
+
+
+
+/* Kauce OZ – subject-specific visual layout, matching shared Znalostka system */
+.hero-banner h1{max-width:780px}.book-page .training-card{margin-bottom:18px}
+.book-page .intro-panel{border-top:5px solid var(--epet);padding:28px;background:linear-gradient(140deg,#fff 0%,#f6faed 100%)}
+.book-page .intro-panel p{margin:0;font-size:1.04rem;line-height:1.88}
+.conditions-panel{border-top:5px solid #f99f1c;background:#fffaf3}
+.condition-list{border:0;background:transparent}.conditions-grid{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));padding:0!important;gap:13px;margin:0!important}
+.conditions-grid .condition-item{display:flex;align-items:flex-start;position:relative;padding:20px 18px 20px 45px;border:1px solid #f2ddbd;border-radius:13px;background:#fff;margin:0;min-height:100px;line-height:1.69}
+.condition-copy{min-width:0;flex:1;display:block;overflow-wrap:anywhere}.condition-item::before{content:'✓';position:absolute;top:18px;left:16px;display:inline-flex;width:22px;height:22px;justify-content:center;align-items:center;background:#fdf0d8;color:#ae6509;border-radius:50%;font-weight:900;font-size:13px}
+.condition-item strong{color:#815100}.process-container{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.workflow-step{display:flow-root!important;position:relative;border:1px solid #dfebd0;background:#fff;border-radius:15px;padding:20px 19px!important;margin:0!important;line-height:1.72!important;box-shadow:0 6px 18px rgba(30,50,76,.045);min-height:130px}
+.workflow-step::before{content:'';height:4px;background:linear-gradient(90deg,#94c11f,#d5eaa8);position:absolute;top:0;left:19px;right:19px;border-radius:0 0 6px 6px}
+.step-badge{float:left;display:inline-flex!important;align-items:center;justify-content:center;flex:none;width:35px;height:35px;border-radius:50%;font-size:.86rem;line-height:1;font-weight:850;margin:2px 13px 6px 0;background:var(--epet);color:white;box-shadow:0 0 0 4px #f0f7e2}
+.critical-note{grid-column:1/-1;border:1px solid #f3c5c5;border-left:5px solid #d85050;background:#fff5f5;padding:20px 21px;border-radius:14px;color:#85352e;display:flex;align-items:flex-start;gap:12px;line-height:1.65;font-size:.98rem}.critical-note .icon-inline{flex:none;color:#c94747;width:26px;height:26px;margin-top:2px}.critical-note strong{color:#a53131!important}.critical-note>div{min-width:0}
+.field-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field-step{display:flow-root;border-radius:15px;border:1px solid #e0e7ef;background:#fff;padding:20px 18px;margin:0!important;box-shadow:0 6px 18px rgba(35,50,70,.04);line-height:1.65}.field-step .step-badge{background:#708f2a}.field-step strong{font-weight:850}.field-step:nth-child(7){grid-column:1/-1;background:#f5faec;border-color:#d8e7b9}
+.formula-grid,.calculator-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin:0 0 18px}
+.formula-card,.calc-card{margin:0!important;min-width:0;padding:22px!important;border-top:5px solid #94c11f}.formula-card.gas-card,.calc-card.gas-card{border-top-color:#f99f1c}.formula-card.gas-card{background:#fffcf8}
+.calc-heading{display:flex;align-items:center;gap:9px;font-size:1.075rem;font-weight:840;margin:0 0 15px;color:#344c61}.calc-heading .icon-inline{color:#789a2c}.gas-card .calc-heading .icon-inline{color:#db8a19}
+.formula-card ul{padding-left:19px!important;margin-bottom:0}.formula-card li{padding:0;margin-bottom:13px}.formula-card li:last-child{margin-bottom:0}
+.calc-card label{display:block;margin:0 0 7px;font-size:.89rem;color:#5b6a78;font-weight:700}.calc-card .mb-3{margin-bottom:15px}
+.form-control{display:block;width:100%;border:1px solid #cfd9e2;border-radius:10px;background:#fff;color:#253549;padding:11px 13px;font:inherit;min-height:45px;outline-offset:2px;transition:border-color .16s,box-shadow .16s}
+.form-control:focus{border-color:var(--epet);outline:0;box-shadow:0 0 0 3px rgba(148,193,31,.17)}.form-control::placeholder{color:#a5afba}
+.calc-action{width:100%;background:#567821;border:1px solid #567821;color:#fff;cursor:pointer;padding:12px 13px;border-radius:11px;font-weight:800;display:flex;align-items:center;justify-content:center;gap:10px;line-height:1.35;transition:background .15s,transform .15s}.gas-card .calc-action{background:#ba7210;border-color:#ba7210}.calc-action:hover{filter:brightness(1.08);transform:translateY(-1px)}.calc-action:focus-visible{outline:3px solid #c7db8c;outline-offset:2px}.calc-action .icon-inline{width:19px;height:19px;color:#fff;margin:0}
+.calc-result-info{font-size:.88rem;color:#6e7c89;margin-top:12px!important;line-height:1.55}
+.calc-result-value{font-size:1.07rem;color:#486e14;font-weight:850;margin-top:6px!important;line-height:1.5}.calc-card.gas-card .calc-result-value{color:#9b610e}
+.empty-media{min-height:290px;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:32px 24px;border:2px dashed #dce5ed;background:#f9fafb;border-radius:16px;color:#8794a3}.empty-media>.mb-3{font-size:2.6rem}.empty-media .icon-inline{width:46px;height:46px;color:#a9b5bf}.empty-media-heading{font-size:1.15rem!important;color:#536679!important;margin:6px 0 9px!important}.empty-media p{max-width:510px;color:#788795;font-size:.96rem;line-height:1.65;margin:0!important}
+.book-page a{overflow-wrap:anywhere}.site-footer{margin-top:21px}.hero-main{min-width:0}.hero-banner .text-danger{color:#fff8e9;background:rgba(109,40,27,.25);border:1px solid rgba(255,255,255,.27);font-size:.64em;padding:4px 10px;border-radius:10px;display:inline-block;vertical-align:middle;letter-spacing:0}
+@media(max-width:1050px){.conditions-grid,.process-container{grid-template-columns:1fr 1fr}.workflow-step{min-height:0}}
+@media(max-width:740px){.conditions-grid,.process-container,.field-grid,.formula-grid,.calculator-grid{grid-template-columns:1fr}.field-step:nth-child(7),.critical-note{grid-column:auto}.training-card.formula-card,.training-card.calc-card{padding:19px!important}.condition-item{min-height:0}.workflow-step{min-height:0}}
+</style></head><body><div class="site-wrap"><nav aria-label="Drobečková navigace" class="breadcrumb-nav">
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+<a href="https://sites.google.com/view/znalostka/"><svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m3 10 9-7 9 7v11H3zM9 21v-8h6v8"></path></svg> Znalostní
+                    báze</a>
+</li>
+<li class="breadcrumb-item">
+<a href="https://sites.google.com/view/znalostka/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat">Školení
+                    ZIS</a>
+</li>
+<li class="breadcrumb-item">
+<a href="https://sites.google.com/view/znalostka/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat/minimanu%C3%A1ly">Minimanuály</a>
+</li>
+<li aria-current="page" class="breadcrumb-item active">
+                Vyplnění formuláře pro kauce - sloužící pro smlouvy pro „cizince“
+            </li>
+</ol>
+</nav><header class="hero-banner"><div class="hero-main"><h1>Vyplnění formuláře pro kauce - sloužící pro smlouvy pro „cizince“ - Určeno pro OZ</h1><p>Znalostní databáze epet | Dokumentace a přílohy</p></div><details class="download-disclosure"><summary><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"/></svg> Dokumenty ke stažení</summary><div class="download-options"><a href="https://drive.google.com/file/d/1nBOQi-ysofb2lTzTZO8UBqU2kk9puyvj/view?usp=drive_link" target="_blank" rel="noopener noreferrer"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"/></svg><span>Vyplnění formuláře pro kauce - sloužící pro smlouvy pro „cizince“ - Určeno pro OZ  (PDF)</span></a></div></details></header><main class="book-container"><details class="mobile-shell" open><summary class="mobile-nav-summary">Pracovní postup</summary><nav class="book-tabs" aria-label="Navigace školením" role="tablist"><button class="nav-tab active" type="button" role="tab" id="nav-page-intro" data-target="page-intro" aria-controls="page-intro" aria-selected="true"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 5h7a3 3 0 0 1 3 3v13H6a3 3 0 0 0-3 0zm10 3a3 3 0 0 1 3-3h5v16a3 3 0 0 0-3 0h-5"/></svg><span>Pracovní postup</span></button><button class="nav-tab" type="button" role="tab" id="nav-page-podminky" data-target="page-podminky" aria-controls="page-podminky" aria-selected="false"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2 4 5v6c0 6 4 9 8 11 4-2 8-5 8-11V5z"/><path d="m9 12 2 2 4-4"/></svg><span>Podmínky použití</span></button><button class="nav-tab" type="button" role="tab" id="nav-page-postup" data-target="page-postup" aria-controls="page-postup" aria-selected="false"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 6h12M9 12h12M9 18h12"/><path d="m3.5 6 .8.8 1.5-1.7m-2.3 6.9 .8.8 1.5-1.7m-2.3 6.9 .8.8 1.5-1.7"/></svg><span>Pracovní postup</span></button><button class="nav-tab" type="button" role="tab" id="nav-page-formular" data-target="page-formular" aria-controls="page-formular" aria-selected="false"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 8h7M7 12h10M7 16h5"/></svg><span>Postup vyplnění formuláře</span></button><button class="nav-tab" type="button" role="tab" id="nav-page-kauce" data-target="page-kauce" aria-controls="page-kauce" aria-selected="false"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="2" width="14" height="20" rx="2"/><rect x="8" y="5" width="8" height="4"/><path d="M8 13h2m4 0h2m-8 4h2m4 0h2"/></svg><span>Výpočet zálohy / kauce</span></button><button class="nav-tab" type="button" role="tab" id="nav-page-video" data-target="page-video" aria-controls="page-video" aria-selected="false"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="m10 8 5 4-5 4z"/></svg><span>Video návod</span></button><button class="nav-tab test-tab" type="button" role="tab" id="nav-page-test" data-target="page-test" aria-controls="page-test" aria-selected="false"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="5" width="14" height="16" rx="2"/><path d="M9 5V3h6v2M9 11h6M9 15h6"/></svg><span>Opakovací test</span></button></nav></details><div class="book-page"><div aria-labelledby="nav-page-intro" class="content-section active" id="page-intro" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">1.</span> Pracovní postup</h2>
+<!-- Pracovní postup -->
+<div class="training-card intro-panel">
+<p class="mb-0">
+                        Formulář je určený pouze pro zahraniční zákazníky (mimo EU), kteří nemají trvalý pobyt v ČR a zároveň
+                        mají odběr vyšší než 20 MWh za rok (za jednu komoditu).
+                    </p>
+</div>
+</div><div aria-labelledby="nav-page-podminky" class="content-section" id="page-podminky" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">2.</span> Podmínky použití</h2>
+<!-- Podmínky použití-->
+<div class="training-card conditions-panel">
+<div class="condition-list">
+<ul class="conditions-grid">
+<li class="condition-item"><span class="condition-copy">
+<a href="https://drive.google.com/file/d/1Z2ZjlHUP2akTd_pheEOxiLQ5LIEH0Y7Y/view?usp=drive_link" rel="noopener noreferrer" target="_blank">
+                                    Formulář
+                                </a>
+                                je určený pouze pro <strong>zahraniční zákazníky (mimo EU)</strong>, kteří
+                                nemají trvalý pobyt v ČR a zároveň mají odběr vyšší než
+                                <strong>20 MWh / rok</strong> (za jednu komoditu).
+                            </span></li>
+<li class="condition-item"><span class="condition-copy">Zákazník doloží ke smlouvě <strong>nájemní smlouvu</strong>.</span></li>
+<li class="condition-item"><span class="condition-copy">Zákazník musí mít <strong>český bankovní účet</strong>.</span></li>
+<li class="condition-item"><span class="condition-copy">
+                                Pokud zákazník <strong>prolonguje</strong> smlouvu –
+                                <strong>nemusí skládat kauci</strong>.
+                            </span></li>
+</ul>
+</div>
+</div>
+</div><div aria-labelledby="nav-page-postup" class="content-section" id="page-postup" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">3.</span> Pracovní postup</h2>
+<!-- Pracovní postup -->
+<div class="process-container">
+<p class="workflow-step">
+<span class="step-badge">1</span>
+<strong>OZ</strong> připraví smlouvu v CRM (nepodepsanou) – stav
+                        <strong>„Smlouva vygenerována“ (50 %)</strong>.
+                    </p>
+<p class="workflow-step">
+<span class="step-badge">2</span>
+<strong>OZ</strong> pošle zákazníkovi vyplněný formulář – zákazník formulář
+                        podepíše (po podpisu má <strong>3 dny na zaplacení</strong>).
+                    </p>
+<p class="workflow-step">
+<span class="step-badge">3</span>
+                        Zároveň <strong>OZ</strong> zažádá o písemnou výjimku – žádost odešle na
+                        <strong>poptavky@epet.cz</strong>, že u daného čísla smlouvy (s daným
+                        variabilním symbolem) žádá o výjimku z kauce.
+                        Žádost musí obsahovat:
+                        <strong>jméno, příjmení, číslo smlouvy</strong>.
+                    </p>
+<p class="workflow-step">
+<span class="step-badge">4</span>
+                        Výjimka bude na poptávkách schválena – řešitel na poptávkách odešle
+                        informaci na <strong>roman.smid@dobra-energie.eu</strong> ohledně očekávané
+                        platby vč. variabilního symbolu, která proběhne do 3 dnů.
+                    </p>
+<p class="workflow-step">
+<span class="step-badge">5</span>
+<strong>OZ</strong> vloží podepsaný formulář do CRM do kategorie
+                        <strong>„Jiné“</strong>.
+                    </p>
+<p class="workflow-step">
+<span class="step-badge">6</span>
+                        Jakmile dorazí platba, <strong>Roman Šmíd</strong> přepošle informaci na
+                        <strong>SA</strong> na e-mail <strong>poptavky@epet.cz</strong>, že je
+                        zaplaceno.
+                    </p>
+<p class="workflow-step">
+<span class="step-badge">7</span>
+<strong>SA</strong> odpoví danému OZ na jeho e-mail se žádostí, že je vše v
+                        pořádku a že si má přes CRM dořešit odeslání smlouvy k podpisu.
+                    </p>
+<p class="workflow-step">
+<span class="step-badge">8</span>
+                        Zákazník smlouvu <strong>podepíše</strong>.
+                    </p>
+<p class="workflow-step">
+<span class="step-badge">9</span>
+<strong>OPS</strong> zpracuje smlouvu a společně s pohledávkami napárují
+                        Kauci na smluvní účet zákazníka.
+                    </p>
+<p class="workflow-step">
+<span class="step-badge">10</span>
+<strong>Zahájení dodávky</strong> dle <strong>TZD</strong>.
+                    </p>
+<!-- UPOZORNĚNÍ -->
+<div class="critical-note">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m12 3 10 18H2z"></path><path d="M12 9v5m0 3h.01"></path></svg>
+<div>
+<strong>Co se stane, když zákazník neuhradí do 3 dnů?</strong><br/>
+                            Smlouva se <strong>neuzavře</strong>.
+                        </div>
+</div>
+</div>
+</div><div aria-labelledby="nav-page-formular" class="content-section" id="page-formular" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">4.</span> Postup vyplnění formuláře</h2>
+<!--  Postup vyplnění formuláře -->
+<div class="field-grid">
+<p class="field-step">
+<span class="step-badge">1</span>
+<strong>Variabilní symbol</strong><br/>
+                        = číslo smlouvy za podtržítkem (bez písmen).
+                    </p>
+<p class="field-step">
+<span class="step-badge">2</span>
+<strong>Jméno a příjmení</strong><br/>
+                        Vyplní se údaj zákazníka (ze smlouvy).<br/>
+                        Samo se propíše na konec druhé stránky do polí „Zákazník“ a pod podpis.
+                    </p>
+<p class="field-step">
+<span class="step-badge">3</span>
+<strong>Datum narození</strong><br/>
+                        Vyplní se údaj zákazníka (ze smlouvy).
+                    </p>
+<p class="field-step">
+<span class="step-badge">4</span>
+<strong>Adresa přechodného pobytu / kontaktní adresa</strong><br/>
+                        Vyplní se údaj zákazníka (ze smlouvy).
+                    </p>
+<p class="field-step">
+<span class="step-badge">5</span>
+<strong>Bankovní spojení</strong><br/>
+                        Vyplní se údaj zákazníka (ze smlouvy).
+                    </p>
+<p class="field-step">
+<span class="step-badge">6</span>
+<strong>Číslo smlouvy v I. Úvodní ustanovení</strong><br/>
+                        Vyplní se celé číslo smlouvy (včetně písmen).
+                    </p>
+<p class="field-step">
+<span class="step-badge">7</span>
+<strong>Výše kauce v II. Výše kauce a její složení</strong><br/>
+                        = výše zálohy (viz výpočty níže),<br/>
+                        minimálně však <strong>2 000 Kč</strong>.
+                    </p>
+</div>
+</div><div aria-labelledby="nav-page-kauce" class="content-section" id="page-kauce" role="tabpanel" tabindex="0">
+<h2 class="section-title"><span class="section-number">5.</span> Výpočet zálohy / kauce</h2>
+<!-- Výpočet zálohy / kauce -->
+
+<div class="formula-grid"><div class="training-card formula-card gas-card">
+<h6 class="calc-heading">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M12 22c-5 0-8-3.5-8-8 0-4.3 3-6.7 5-8 0 3 1 4 2 5 1-5 3-7 4-9 0 5 5 8 5 13 0 4-3 7-8 7Z"></path></svg>
+                                        Plyn (vč. DPH)
+                                    </h6>
+<ul class="mb-0">
+<li>
+                                            Roční spotřeba (MWh/rok) × cena za MWh (Kč/MWh) =
+                                            <strong>celková cena za rok (Kč/rok)</strong>
+</li>
+<li>
+                                            Celková cena za rok (Kč/rok) / 12 měsíců =
+                                            <strong>Kč/měsíc = výše zálohy / kauce</strong>
+</li>
+</ul>
+</div><div class="training-card formula-card ele-card">
+<h6 class="calc-heading">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m13 2-8 12h7l-1 8 8-12h-7z"></path></svg>
+                                        Elektřina (vč. DPH)
+                                    </h6>
+<ul class="mb-0">
+<li>
+                                            (Roční spotřeba VT (MWh/rok) × cena za MWh) +<br/>
+                                            (Roční spotřeba NT (MWh/rok) × cena za MWh) =
+                                            <strong>celková cena za rok (Kč/rok)</strong>
+</li>
+<li>
+                                            Celková cena za rok (Kč/rok) / 12 měsíců =
+                                            <strong>Kč/měsíc = výše zálohy / kauce</strong>
+</li>
+</ul>
+</div></div><div class="calculator-grid"><div class="training-card calc-card gas-card">
+<h6 class="calc-heading">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M12 22c-5 0-8-3.5-8-8 0-4.3 3-6.7 5-8 0 3 1 4 2 5 1-5 3-7 4-9 0 5 5 8 5 13 0 4-3 7-8 7Z"></path></svg>Plyn – rychlý výpočet
+                                        </h6>
+<div class="mb-3">
+<label class="form-label" for="plynSpotreba">Roční spotřeba (MWh/rok)</label>
+<input class="form-control" id="plynSpotreba" inputmode="decimal" min="0" placeholder="např. 20" step="0.01" type="number"/>
+</div>
+<div class="mb-3">
+<label class="form-label" for="plynCena">Cena za MWh (Kč/MWh, vč. DPH)</label>
+<input class="form-control" id="plynCena" inputmode="decimal" min="0" placeholder="např. 1500" step="0.01" type="number"/>
+</div>
+<button class="calc-action" data-calculator="gas" type="button">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="20" rx="2" width="14" x="5" y="2"></rect><rect height="4" width="8" x="8" y="5"></rect><path d="M8 13h2m4 0h2m-8 4h2m4 0h2"></path></svg>Spočítat zálohu / kauci
+                                        </button>
+<div class="calc-result-info" id="plynVysledekInfo"></div>
+<div class="calc-result-value" id="plynVysledek"></div>
+</div><div class="training-card calc-card ele-card">
+<h6 class="calc-heading">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m13 2-8 12h7l-1 8 8-12h-7z"></path></svg>Elektřina – rychlý výpočet
+                                        </h6>
+<div class="mb-3">
+<label class="form-label" for="eleVtSpotreba">Roční spotřeba VT (MWh/rok)</label>
+<input class="form-control" id="eleVtSpotreba" inputmode="decimal" min="0" placeholder="např. 3.5" step="0.01" type="number"/>
+</div>
+<div class="mb-3">
+<label class="form-label" for="eleVtCena">Cena za MWh VT (Kč/MWh, vč. DPH)</label>
+<input class="form-control" id="eleVtCena" inputmode="decimal" min="0" placeholder="např. 4500" step="0.01" type="number"/>
+</div>
+<div class="mb-3">
+<label class="form-label" for="eleNtSpotreba">Roční spotřeba NT (MWh/rok)</label>
+<input class="form-control" id="eleNtSpotreba" inputmode="decimal" min="0" placeholder="např. 2.0" step="0.01" type="number"/>
+</div>
+<div class="mb-3">
+<label class="form-label" for="eleNtCena">Cena za MWh NT (Kč/MWh, vč. DPH)</label>
+<input class="form-control" id="eleNtCena" inputmode="decimal" min="0" placeholder="např. 3500" step="0.01" type="number"/>
+</div>
+<button class="calc-action" data-calculator="ele" type="button">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="20" rx="2" width="14" x="5" y="2"></rect><rect height="4" width="8" x="8" y="5"></rect><path d="M8 13h2m4 0h2m-8 4h2m4 0h2"></path></svg>Spočítat zálohu / kauci
+                                        </button>
+<div class="calc-result-info" id="eleVysledekInfo"></div>
+<div class="calc-result-value" id="eleVysledek"></div>
+</div></div></div><div aria-labelledby="nav-page-video" class="content-section" id="page-video" role="tabpanel" tabindex="0">
+<h2 class="section-title"><svg aria-hidden="true" class="section-title-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="16" rx="3" width="18" x="3" y="4"></rect><path d="m10 8 5 4-5 4z"></path></svg> Video tutoriál</h2>
+<div class="empty-media">
+<div class="mb-3">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"></path></svg>
+</div>
+<h4 class="empty-media-heading">Video je v přípravě</h4>
+<p class="text-muted">Právě pro vás stříháme aktuální verzi návodu.<br/>Jakmile bude hotová, najdete ji
+                    přímo zde.</p>
+</div></div><div aria-labelledby="nav-page-test" class="content-section" id="page-test" role="tabpanel" tabindex="0">
+<h2 class="section-title"><svg aria-hidden="true" class="section-title-icon" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="16" rx="2" width="14" x="5" y="5"></rect><path d="M9 5V3h6v2M9 11h6M9 15h6"></path></svg> Ověření znalostí</h2>
+<div class="empty-media">
+<div class="mb-3">
+<svg aria-hidden="true" class="icon-inline" fill="none" focusable="false" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 16h7"></path></svg>
+</div>
+<h4 class="empty-media-heading">Opakovací test je v přípravě</h4>
+<p class="text-muted">
+                        Právě pro vás připravujeme aktuální verzi testu.<br/>
+                        Jakmile bude hotový, možnost ověření znalostí se zobrazí přímo zde.
+                    </p>
+</div>
+</div></div></main><footer class="site-footer" aria-hidden="true"></footer></div><script>
+(()=>{
+const tabs=[...document.querySelectorAll('.nav-tab[data-target]')],sections=[...document.querySelectorAll('.content-section')],shell=document.querySelector('.mobile-shell'),summary=document.querySelector('.mobile-nav-summary');
+function openPage(id,scroll=true){const sec=document.getElementById(id);if(!sec)return;sections.forEach(s=>s.classList.toggle('active',s===sec));tabs.forEach(t=>{const active=t.dataset.target===id;t.classList.toggle('active',active);t.setAttribute('aria-selected',String(active));t.tabIndex=active?0:-1;});const tab=tabs.find(t=>t.dataset.target===id);if(summary&&tab)summary.textContent=tab.textContent.trim();if(window.matchMedia('(max-width:1030px)').matches&&shell)shell.open=false;if(scroll)document.querySelector('.book-container').scrollIntoView({block:'start',behavior:'instant'})}
+tabs.forEach((button,i)=>{button.addEventListener('click',()=>openPage(button.dataset.target));button.addEventListener('keydown',e=>{let n;if(['ArrowDown','ArrowRight'].includes(e.key))n=(i+1)%tabs.length;else if(['ArrowUp','ArrowLeft'].includes(e.key))n=(i+tabs.length-1)%tabs.length;else if(e.key==='Home')n=0;else if(e.key==='End')n=tabs.length-1;else return;e.preventDefault();tabs[n].focus();openPage(tabs[n].dataset.target,false)})});
+document.addEventListener('click',e=>{let d=document.querySelector('.download-disclosure');if(d&&d.open&&!d.contains(e.target))d.open=false});
+function valueOf(id){return parseFloat((document.getElementById(id)?.value||'').replace(',','.'))||0}
+function money(v){return v.toLocaleString('cs-CZ',{minimumFractionDigits:2,maximumFractionDigits:2})+' Kč'}
+function writeCalc(type,annual,err){const info=document.getElementById(type==='gas'?'plynVysledekInfo':'eleVysledekInfo'),out=document.getElementById(type==='gas'?'plynVysledek':'eleVysledek');if(err){info.textContent=err;out.textContent='';return}info.textContent='Celková cena za rok: '+money(annual);out.textContent='Doporučená záloha / kauce: '+money(annual/12)+' / měsíc';}
+function vypocetPlyn(){const sp=valueOf('plynSpotreba'),pr=valueOf('plynCena');if(sp<=0||pr<=0)writeCalc('gas',0,'Zadej kladné hodnoty spotřeby a ceny.');else writeCalc('gas',sp*pr,'')}
+function vypocetElektrina(){const vt=valueOf('eleVtSpotreba'),vtr=valueOf('eleVtCena'),nt=valueOf('eleNtSpotreba'),ntr=valueOf('eleNtCena');if((vt<=0||vtr<=0)&&(nt<=0||ntr<=0))writeCalc('ele',0,'Zadej alespoň VT nebo NT (spotřebu i cenu).');else writeCalc('ele',vt*vtr+nt*ntr,'')}
+document.querySelectorAll('[data-calculator]').forEach(b=>b.addEventListener('click',()=>b.dataset.calculator==='gas'?vypocetPlyn():vypocetElektrina()));
+})();</script></body></html>

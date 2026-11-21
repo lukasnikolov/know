@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Změna platebního způsobu – Pracovní postup</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+<style>/* ZNALOSTKA – HTML ŠKOLENÍ | Jednotný firemní vizuální standard */
+:root{
+  --epet:#94c11f; --epet-dark:#60781a; --epet-deep:#34470b;
+  --purple:#9362d6; --blue:#2563eb; --cyan:#0891b2;
+  --orange:#f59e0b; --red:#d9414f;
+  --ink:#1e293b; --muted:#64748b; --line:#e2e8f0;
+  --soft:#f8fafc; --card:#fff;
+  --shadow:0 14px 34px rgba(15,23,42,.075);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; padding:10px 12px 34px; background:transparent; color:var(--ink);
+  font-family:"Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,Arial,sans-serif;
+  font-size:15px;line-height:1.64;-webkit-font-smoothing:antialiased;
+}
+body>.breadcrumb-nav,body>.hero-banner,body>.book-container{
+  width:100%;max-width:1180px;margin-left:auto;margin-right:auto;
+}
+/* Ostrá a jednotná ikonografie SVG, nezávislá na síťovém načtení ikonového fontu. */
+i.bi::before{display:none!important}
+.svg-icon{width:19px;height:19px;vertical-align:middle;display:inline-block;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.breadcrumb .svg-icon{width:15px;height:15px}
+.btn-download .svg-icon{width:18px;height:18px}
+.video-card .svg-icon{width:20px;height:20px}
+.list-group .svg-icon{width:17px;height:17px}
+.glossary .bg-primary{background:var(--blue)!important;color:#fff}
+.glossary .bg-success{background:var(--epet-dark)!important;color:#fff}
+.glossary .bg-warning{background:#fff0ba!important;color:#664300}
+.glossary .bg-info{background:#d7f6fa!important;color:#155a70}
+/* Drobečková navigace */
+.breadcrumb-nav{
+  margin-bottom:14px;padding:10px 14px;background:rgba(255,255,255,.92);
+  border:1px solid var(--line);border-radius:14px;backdrop-filter:blur(8px);
+}
+.breadcrumb{display:flex;flex-wrap:wrap;list-style:none;padding:0;margin:0;font-size:.85rem}
+.breadcrumb-item{display:flex;align-items:center;color:#6b7280}
+.breadcrumb-item a{color:var(--epet-dark);text-decoration:none;font-weight:700}
+.breadcrumb-item a:hover{color:var(--purple)}
+.breadcrumb-item+.breadcrumb-item::before{
+  content:"›";font-family:inherit;font-size:1.1rem;
+  padding:0 9px;color:#94a3b8;
+}
+.breadcrumb-item.active{color:#475569;font-weight:720}
+/* Firemní gradientový hero */
+.hero-banner{
+  position:relative;isolation:isolate;overflow:visible;
+  display:flex!important;align-items:center!important;justify-content:space-between!important;
+  gap:25px;flex-wrap:wrap;margin-bottom:18px;min-height:184px;
+  border-radius:24px;padding:35px 33px;color:#fff;
+  background:
+    radial-gradient(900px 360px at 92% 20%,rgba(255,255,255,.24),transparent 62%),
+    linear-gradient(135deg,var(--epet) 0%,var(--epet-dark) 52%,#2f3f0f 100%);
+  box-shadow:var(--shadow);
+}
+.hero-banner::before{
+  content:"";z-index:-1;position:absolute;right:18px;bottom:0;
+  width:190px;height:140px;border-radius:100% 60% 0 0;
+  background:linear-gradient(135deg,rgba(255,255,255,.025),rgba(255,255,255,.09));
+  pointer-events:none;
+}
+.hero-banner::after{
+  content:"";position:absolute;z-index:-1;right:105px;top:16px;
+  width:130px;height:130px;border:1px solid rgba(255,255,255,.14);border-radius:50%;pointer-events:none;
+}
+.hero-banner>div{position:relative;z-index:1}
+.hero-banner>div:first-child{flex:1 1 480px;min-width:0}
+.hero-banner h1{
+  margin:0 0 10px!important;color:white!important;
+  font-size:clamp(1.56rem,2.75vw,2.18rem)!important;
+  letter-spacing:-.034em;line-height:1.16;font-weight:850!important;
+}
+.hero-banner p{margin:0!important;color:rgba(255,255,255,.91)!important;font-size:.95rem}
+.btn-download{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  border:1px solid rgba(255,255,255,.45);border-radius:999px;
+  padding:11px 19px;background:#fff;color:var(--epet-dark)!important;
+  font-weight:820;text-decoration:none;white-space:nowrap;
+  box-shadow:0 8px 18px rgba(15,23,42,.12);transition:transform .18s ease,box-shadow .18s ease;
+}
+.btn-download:hover,.btn-download:focus-visible{transform:translateY(-2px);box-shadow:0 11px 24px rgba(15,23,42,.17)}
+.hero-banner .dropdown{z-index:80}
+.hero-banner .dropdown-menu{
+  display:none!important;position:absolute;list-style:none;margin:0;
+  min-width:340px;max-width:min(440px,calc(100vw - 24px));
+  background:#fff;color:var(--ink);padding:9px;border:1px solid var(--line)!important;border-radius:16px!important;
+  box-shadow:0 18px 38px rgba(15,23,42,.2)!important;z-index:9999;
+}
+.hero-banner .dropdown.open>.dropdown-menu{display:block!important;position:absolute;top:calc(100% + 8px);right:0;left:auto}
+.hero-banner .dropdown-item{
+  display:flex;align-items:center;gap:8px;padding:11px 12px!important;border-radius:10px;
+  color:#334155;font-weight:680;font-size:.91rem;white-space:normal;text-decoration:none;
+}
+.hero-banner .dropdown-item:hover{background:#f1f8e3;color:var(--epet-dark)}
+.hero-banner .dropdown-toggle::after{margin-left:5px}
+/* Navigace a pravý obsahový panel */
+.book-container{
+  display:grid!important;grid-template-columns:270px minmax(0,1fr);
+  align-items:start;gap:18px;min-height:0;overflow:visible;background:transparent;border:0;
+}
+.book-tabs{
+  position:sticky;top:12px;width:auto!important;min-width:0;
+  display:flex!important;flex-direction:column!important;gap:5px;
+  padding:12px;border:1px solid var(--line);border-radius:22px;
+  background:#fff;box-shadow:0 10px 28px rgba(15,23,42,.055);
+}
+.book-tabs::before{
+  content:"";display:block;height:5px;margin:0 8px 9px;
+  border-radius:999px;background:linear-gradient(90deg,var(--epet),#cce88a);
+}
+.tab-item{
+  display:flex;align-items:center;gap:11px;min-width:0;
+  padding:12px 13px;margin:0;border-radius:14px;
+  background:transparent;border:1px solid transparent!important;
+  color:#475569;font-size:.925rem;font-weight:700;line-height:1.4;
+  cursor:pointer;outline:0;transition:background .18s,color .18s,transform .18s,box-shadow .18s;
+}
+.tab-item i{width:20px;flex:0 0 20px;text-align:center;font-size:1.1rem;color:#718096}
+.tab-item:hover,.tab-item:focus-visible{background:var(--soft);color:var(--epet-dark);transform:translateX(2px)}
+.tab-item.active{
+  background:#f1fccf;color:#435f00;font-weight:850;
+  border-color:rgba(148,193,31,.28)!important;
+  box-shadow:inset 0 0 0 1px rgba(148,193,31,.09);
+}
+.tab-item.active i{color:var(--epet-dark)}
+.tab-item.tab-purple{margin-top:6px;border-top:1px solid var(--line)!important}
+.tab-item.tab-purple.active{color:#7048a6;background:#f6efff;border-color:rgba(147,98,214,.25)!important}
+.tab-item.tab-purple.active i{color:var(--purple)}
+.book-page{
+  position:relative;min-width:0;min-height:430px;overflow:visible;
+  background:#fff;padding:27px 27px 32px;border:1px solid var(--line);
+  border-radius:24px;box-shadow:var(--shadow);
+}
+.content-section{display:none;animation:fadeIn .25s ease}
+.content-section.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.content-section>h2{
+  display:flex;align-items:center;gap:11px;min-width:0;
+  margin:0 0 19px!important;padding:0 0 18px;border-bottom:1px solid var(--line);
+  font-size:clamp(1.22rem,2.05vw,1.55rem);line-height:1.35;
+  letter-spacing:-.025em;color:var(--epet-dark)!important;font-weight:850!important;
+}
+.section-number{
+  display:inline-flex;align-items:center;justify-content:center;flex:0 0 41px;
+  width:41px;height:41px;border-radius:50%;background:var(--epet);color:#fff;
+  font-size:1rem;font-weight:850;letter-spacing:0;
+  box-shadow:0 5px 12px rgba(148,193,31,.16);
+}
+#page-video>h2::before,#page-test>h2::before{
+  content:"";display:block;flex:0 0 5px;width:5px;min-height:30px;
+  border-radius:99px;background:var(--epet);
+}
+#page-test>h2{color:var(--purple)!important}
+#page-test>h2::before{background:var(--purple)}
+/* Úvodní shrnutí, významové zkratky */
+.overview-card{
+  position:relative;overflow:hidden;border:1px solid #dfebd4;
+  padding:26px 28px 26px;border-radius:21px;
+  background:radial-gradient(280px 220px at 100% 100%,rgba(148,193,31,.1),transparent 75%),
+             linear-gradient(140deg,#fff,#f9fcf3);
+  box-shadow:0 9px 22px rgba(15,23,42,.046);
+}
+.overview-card::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:var(--epet)}
+.overview-card>p{font-size:1.065rem;line-height:1.82;margin:0 0 23px;color:#2f473e}
+.glossary{border-top:1px solid #dfeada;padding-top:20px;margin:0!important}
+.glossary h5{font-size:.89rem;letter-spacing:.065em;color:var(--muted);font-weight:850;margin:0 0 13px}
+.glossary h5 strong{color:var(--epet-dark)}
+.glossary p{margin:0;line-height:2.4;color:#475569;font-weight:580}
+.glossary .badge{
+  margin-right:5px;vertical-align:middle;padding:8px 10px;border-radius:9px;
+  font-size:.81rem;letter-spacing:.01em;line-height:1;font-weight:850;
+}
+/* Pracovní postup tvoří série navazujících karet. */
+.content-steps{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;
+  padding:0!important;margin:0!important;border:0!important;background:transparent!important;box-shadow:none!important}
+.step-card{
+  position:relative;overflow:hidden;min-width:0;
+  background:linear-gradient(180deg,#fff,#fbfcfd);
+  padding:21px 23px 23px;border:1px solid var(--line);
+  border-radius:20px;box-shadow:0 8px 22px rgba(15,23,42,.05);
+}
+.step-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--epet)}
+.content-steps>.step-card:nth-child(3n+2)::before{background:var(--cyan)}
+.content-steps>.step-card:nth-child(3n+3)::before{background:var(--purple)}
+.step-card>p{margin:0 0 13px!important;color:#334155;line-height:1.74}
+.step-card>p:last-child{margin-bottom:0!important}
+.step-card>p:first-child{font-size:1rem}
+.step-card .step-badge{
+  display:inline-flex;align-items:center;justify-content:center;
+  vertical-align:middle;width:35px;height:35px;min-width:35px;
+  margin:0 10px 2px 0;border-radius:50%;background:var(--epet);
+  box-shadow:0 5px 12px rgba(148,193,31,.16);
+  color:#fff;font-size:.95rem;font-weight:850;
+}
+.content-steps>.step-card:nth-child(3n+2) .step-badge{background:var(--cyan)}
+.content-steps>.step-card:nth-child(3n+3) .step-badge{background:var(--purple)}
+.step-card img.img-thumbnail{
+  display:block;width:auto;max-width:100%;height:auto;
+  object-fit:contain;margin:17px auto!important;padding:6px;
+  border:1px solid var(--line);border-radius:15px;
+  background:#fff;box-shadow:0 8px 20px rgba(15,23,42,.08);
+}
+/* Významové položky do přehledných mřížek */
+.step-card ul.list-group{
+  display:grid;grid-template-columns:minmax(0,1fr);gap:8px;
+  list-style:none;margin:14px 0 13px!important;padding:0;border:0;border-radius:0;background:transparent;
+}
+.step-card ul.privacy-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.step-card .list-group-item{
+  min-width:0;display:block;margin:0!important;padding:12px 14px!important;
+  background:#fafcfe;border:1px solid var(--line)!important;border-radius:12px!important;
+  color:#334155;line-height:1.55;font-size:.93rem;
+}
+.step-card .privacy-grid .list-group-item{
+  text-align:center;display:flex;align-items:center;justify-content:center;
+  min-height:54px;background:#fff7ed;color:#81500f;border-color:#f4dba8!important;font-weight:720;
+}
+.step-card .task-fields{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.step-card .task-fields .list-group-item{background:linear-gradient(180deg,#fff,#f8fafc);padding:14px 15px!important}
+.step-card .task-fields .list-group-item:nth-child(5){grid-column:1/-1}
+.step-card .task-fields .list-group-item i.bi{color:var(--epet-dark)}
+.step-card .task-fields .list-group-item b{color:var(--ink)}
+.step-card .critical-note{
+  margin:15px 0!important;padding:15px 18px;
+  border:1px solid #f3bec7!important;border-left:5px solid var(--red)!important;
+  border-radius:15px;background:#fff4f5;color:#8e2430;line-height:1.68;
+}
+.step-card .critical-note strong{color:inherit}
+/* Textové odkazy a zvýraznění */
+.book-page strong,.book-page b{font-weight:800}
+.book-page p,.book-page li{line-height:1.68}
+.book-page a:not(.btn){
+  color:var(--epet-dark);text-decoration:none;font-weight:770;
+  border-bottom:2px solid rgba(148,193,31,.31);padding:0 2px;
+}
+.book-page a:not(.btn):hover{background:#f4fae6;border-bottom-color:var(--epet)}
+.book-page a[target="_blank"]::after{
+  content:"↗";font-family:inherit;font-size:.77rem;
+  margin-left:5px;vertical-align:super;opacity:.7;
+}
+.book-page i:not(.bi),.book-page em{color:var(--purple)}
+.book-page u{text-decoration:none;border-bottom:2px dotted var(--epet);padding-bottom:1px}
+/* Videa a opakovací test */
+#page-video>p{color:var(--muted)!important;line-height:1.7;margin-bottom:21px!important}
+#page-video>.row{
+  display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;margin:0!important;
+}
+#page-video>.row>.col{padding:0!important;width:auto;max-width:none;flex:none;margin:0}
+.video-card{
+  height:100%;overflow:hidden;padding:16px!important;
+  background:linear-gradient(180deg,#fff,#f8fafc)!important;
+  border:1px solid var(--line)!important;border-radius:20px!important;
+  box-shadow:0 8px 22px rgba(15,23,42,.05)!important;
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+}
+.video-card:hover{transform:translateY(-3px);border-color:var(--epet)!important;
+  box-shadow:0 12px 25px rgba(15,23,42,.1)!important}
+.video-card h6{
+  min-height:44px;display:flex;align-items:center;gap:6px;margin:0 0 12px!important;
+  color:var(--epet-dark);font-size:.98rem;line-height:1.45;font-weight:850!important;
+}
+.video-card h6 i{font-size:1.2rem}
+.video-card .ratio{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:13px!important}
+.video-card iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+#page-test>p{
+  margin:0 0 20px!important;padding:17px 19px;
+  border-left:4px solid var(--purple);border-radius:15px;
+  background:#faf7ff;color:#475569;line-height:1.7;
+}
+#page-test>div{overflow:hidden;border:1px solid var(--line)!important;
+  border-radius:19px!important;box-shadow:0 8px 22px rgba(15,23,42,.05)!important}
+#page-test iframe{display:block;width:100%;height:600px;border:0}
+/* Responzivní tablet/mobile; nevynucuje horizontální scroll dokumentu. */
+@media(max-width:1020px){
+  .book-container{grid-template-columns:1fr}
+  .book-tabs{position:static;flex-direction:row!important;overflow-x:auto;white-space:nowrap;padding:9px;gap:5px}
+  .book-tabs::before{display:none}
+  .tab-item{flex:0 0 auto;min-width:max-content;padding:10px 12px}
+  .tab-item:hover{transform:none}
+  .tab-item.tab-purple{margin-top:0;border-top:1px solid transparent!important}
+}
+@media(max-width:690px){
+  body{padding:7px 6px 26px;font-size:14.5px}
+  .breadcrumb-nav{padding:9px 11px;margin-bottom:10px}
+  .breadcrumb{font-size:.79rem}
+  .breadcrumb-item+.breadcrumb-item::before{padding:0 5px}
+  .hero-banner{padding:26px 21px;gap:18px;min-height:160px;border-radius:20px;margin-bottom:13px}
+  .hero-banner h1{font-size:1.62rem!important}
+  .hero-banner .dropdown{width:100%}
+  .btn-download{padding:10px 15px;white-space:normal;text-align:center}
+  .hero-banner .dropdown-menu{min-width:0;max-width:100%;width:100%;right:auto;left:0}
+  .book-container{gap:12px}
+  .book-tabs{border-radius:17px}
+  .book-page{padding:19px 15px 24px;min-height:0;border-radius:20px}
+  .content-section>h2{align-items:flex-start;gap:9px;font-size:1.2rem}
+  .section-number{flex-basis:35px;width:35px;height:35px;font-size:.86rem}
+  .overview-card{padding:20px 19px 21px}
+  .overview-card>p{font-size:1rem}
+  .step-card{padding:17px 16px 19px;border-radius:17px}
+  .step-card ul.privacy-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .step-card .task-fields{grid-template-columns:1fr}
+  .step-card .task-fields .list-group-item:nth-child(5){grid-column:auto}
+  #page-video>.row{grid-template-columns:1fr}
+  .video-card h6{min-height:0}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+
+/* Dokumenty ke stažení: stabilní nativní rozbalení bez Bootstrap JS */
+.hero-banner{z-index:5}
+.hero-banner .download-container{position:relative;z-index:8;min-width:0;flex:0 1 auto}
+.download-disclosure{position:relative;width:100%}
+.download-disclosure>summary{list-style:none;cursor:pointer;user-select:none;display:inline-flex;align-items:center}
+.download-disclosure>summary::-webkit-details-marker{display:none}
+.download-disclosure>summary::marker{content:''}
+.download-disclosure>summary::after{
+  content:'';width:8px;height:8px;margin-left:7px;display:inline-block;
+  border-right:2px solid currentColor;border-bottom:2px solid currentColor;
+  transform:translateY(-2px) rotate(45deg);transition:transform .2s ease;
+}
+.download-disclosure[open]>summary::after{transform:translateY(2px) rotate(225deg)}
+.download-disclosure>summary:focus-visible{outline:3px solid #fff9bb;outline-offset:3px}
+.download-options{margin-top:10px;padding:8px;background:#fff;color:var(--ink);
+  border:1px solid var(--line);border-radius:16px;box-shadow:0 10px 26px rgba(15,23,42,.16);
+  width:370px;max-width:min(440px,calc(100vw - 36px));}
+.download-link{display:flex;align-items:center;gap:9px;border-radius:11px;
+  padding:12px;color:#334155!important;font-weight:720;font-size:.91rem;
+  line-height:1.4;text-decoration:none!important;overflow-wrap:anywhere}
+.download-link i{color:#cf3347}
+.download-link:hover,.download-link:focus-visible{background:#f1f8e3;color:var(--epet-dark)!important}
+@media(max-width:690px){
+  .hero-banner .download-container{width:100%;flex-basis:100%}
+  .download-disclosure>summary{width:100%;justify-content:center}
+  .download-options{width:100%;max-width:none}
+}
+
+
+/* Specifická vizuální úprava platebních způsobů */
+.book-tabs .tab-group{display:flex;flex-direction:column;gap:4px;min-width:0;width:100%}
+.book-tabs .tab-group>.tab-item{width:100%}
+.book-tabs .tab-group>.tab-item>.bi-chevron-down{margin-left:auto!important;transform:rotate(0);transition:transform .2s ease}
+.book-tabs .tab-group.open>.tab-item>.bi-chevron-down{transform:rotate(180deg)}
+.book-tabs .tab-group.open>.tab-item{background:#f7faed;border-color:#e1ecc6!important;color:var(--epet-dark)}
+.book-tabs .sub-tabs{display:none;flex-direction:column;gap:4px;padding:5px 0 5px 14px;margin:0 0 3px 11px;border-left:2px solid #e1e9d8}
+.book-tabs .tab-group.open .sub-tabs{display:flex}
+.book-tabs .sub-tabs .tab-item{width:100%;border-radius:10px;padding:9px 8px;font-size:.89rem;white-space:normal;color:#526276}
+.book-tabs .sub-tabs .tab-item i{width:16px;flex-basis:16px;color:#8aa956}
+.book-tabs .sub-tabs .tab-item.active{background:#eff9dc;color:#435f00}
+#page-intro .overview-card{background:radial-gradient(330px 200px at 100% 90%,rgba(148,193,31,.1),transparent 70%),linear-gradient(145deg,#fff,#f9fcf2)}
+#page-intro .overview-card>p{margin-bottom:18px}
+#page-intro .note-prominent{margin:10px 0 0!important;padding:14px 18px;background:#effaff;border:1px solid #bce8f5;border-left:5px solid var(--cyan);border-radius:15px;color:#145367;font-weight:750}
+#page-intro .note-prominent .svg-icon{color:var(--cyan);width:20px;height:20px}
+#page-prichozi .overview-card{background:linear-gradient(135deg,#fff,#f8fcf3)}
+#page-prichozi .overview-card p{font-size:1.07rem;margin:0}
+.content-steps>.notice-card{margin:0!important;padding:19px 21px;border-radius:17px;border:1px solid #c9e8f3!important;border-left:5px solid var(--cyan)!important;background:#f2fbff;color:#18526a;line-height:1.75;box-shadow:0 5px 16px rgba(15,23,42,.025)}
+.content-steps>.notice-card.alert-warning{border-color:#f2dbab!important;border-left-color:var(--orange)!important;background:#fffbef;color:#6f4b15}
+.step-card>.notice-card{margin:16px 0 0!important;padding:17px 19px;border:1px solid #f2dbab!important;border-left:5px solid var(--orange)!important;border-radius:15px;background:#fffbef;color:#78511b;line-height:1.72}
+.step-card>.notice-card.alert-danger{border-color:#f1bdc5!important;border-left-color:#d9414f!important;background:#fff4f5;color:#8c2534}
+.step-card>.notice-card b,.step-card>.notice-card strong{color:inherit}
+.content-steps>.step-card:nth-child(3n+1)::before{background:var(--epet)}
+.content-steps>.step-card:nth-child(3n+2)::before{background:var(--cyan)}
+.content-steps>.step-card:nth-child(3n+3)::before{background:var(--purple)}
+#page-preplatky>.content-steps>.notice-card{margin-top:3px!important}
+#page-preplatky>.content-steps>.notice-card.alert-warning{background:#fffbef}
+#page-preplatky>.content-steps>.notice-card.centered{display:block}
+#page-preplatky>.content-steps>.notice-card center{font-size:1rem;margin:0 0 9px}
+#page-prichozi-3>.content-steps>.notice-card{order:0}
+/* All original manual body text remains in place. Decorative cards don't add visible copy. */
+@media(max-width:1020px){
+ .book-tabs{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;overflow:visible;white-space:normal}
+ .tab-item{width:100%;min-width:0;white-space:normal}
+ .book-tabs .tab-group{grid-column:1 / -1}
+ .book-tabs .tab-group.open .sub-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:580px){
+ .book-tabs{grid-template-columns:1fr}
+ .book-tabs .tab-group.open .sub-tabs{grid-template-columns:1fr}
+ .book-tabs .tab-group{grid-column:auto}
+ .book-tabs .tab-item{padding:10px 12px}
+ .book-tabs .sub-tabs .tab-item{padding:9px 9px}
+ .step-card{padding:17px 16px 18px}
+ .content-steps>.notice-card{padding:16px}
+}
+</style>
+</head>
+<body>
+<nav aria-label="breadcrumb" class="breadcrumb-nav">
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+<a href="https://sites.google.com/view/znalostka/"><i class="bi bi-house-door-fill"><svg aria-hidden="true" class="svg-icon" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"></path></svg></i> Znalostní
+                    báze</a>
+</li>
+<li class="breadcrumb-item">
+<a href="https://sites.google.com/view/znalostka/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat">Školení
+                    ZIS</a>
+</li>
+<li class="breadcrumb-item">
+<a href="https://sites.google.com/view/znalostka/%C5%A1kolen%C3%AD-zis-podle-t%C3%A9mat/2-den">2.
+                    den</a>
+</li>
+<li aria-current="page" class="breadcrumb-item active">
+                Změna platebního způsobu
+            </li>
+</ol>
+</nav>
+<div class="hero-banner d-flex justify-content-between align-items-center">
+<div>
+<h1 class="h2 fw-bold mb-1">Pracovní postup: Změna platebního způsobu</h1>
+<p class="mb-0 opacity-75">Znalostní databáze epet | Dokumentace a přílohy</p>
+</div>
+<div class="download-container"><details class="download-disclosure"><summary class="btn-download">
+<i class="bi bi-file-earmark-pdf-fill"><svg aria-hidden="true" class="svg-icon" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6M7 16h10M7 12h6"></path></svg></i> Dokumenty ke stažení
+        </summary><div class="download-options"><a class="download-link" href="https://drive.google.com/file/d/1RZ7Y1pYbmMp8eOJZ1a3-ovT-NeTbyWbF/view?usp=drive_link" target="_blank">
+<i class="bi bi-file-pdf text-danger me-2"><svg aria-hidden="true" class="svg-icon" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6M7 16h10M7 12h6"></path></svg></i> Změna platebního způsobu (PDF)
+                </a></div></details></div>
+</div>
+<!-- Navigace -->
+<div class="book-container">
+<div aria-label="Navigace školením" aria-orientation="vertical" class="book-tabs" role="tablist">
+<div aria-controls="page-intro" aria-selected="true" class="tab-item active" onclick="openPage(event, 'page-intro')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" role="tab" tabindex="0">
+<i class="bi bi-book"><svg aria-hidden="true" class="svg-icon" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 7v14"></path><path d="M3 18V5a2 2 0 0 1 2-2h3a4 4 0 0 1 4 4 4 4 0 0 1 4-4h3a2 2 0 0 1 2 2v13h-5a4 4 0 0 0-4 3 4 4 0 0 0-4-3z"></path></svg></i> Pracovní postup
+            </div>
+<div class="tab-group" id="group-prichozi">
+<div aria-controls="page-prichozi" aria-expanded="false" aria-selected="false" class="tab-item" onclick="toggleGroup('group-prichozi'); openPage(event, 'page-prichozi')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" role="tab" tabindex="0">
+<i class="bi-cash-stack bi"><svg aria-hidden="true" class="svg-icon" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect height="14" rx="2" width="20" x="2" y="5"></rect><circle cx="12" cy="12" r="3"></circle><path d="M5 9h1M18 15h1"></path></svg></i> Příchozí platby <i class="bi bi-chevron-down ms-auto small"><svg aria-hidden="true" class="svg-icon" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m6 9 6 6 6-6"></path></svg></i>
+</div>
+<div class="sub-tabs">
+<div aria-controls="page-prichozi-1" aria-selected="false" class="tab-item sub" onclick="openPage(event, 'page-prichozi-1')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" role="tab" tabindex="0">
+<i class="bi bi-arrow-return-right me-2"><svg aria-hidden="true" class="svg-icon" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 5v5a5 5 0 0 0 5 5h13"></path><path d="m17 11 4 4-4 4"></path></svg></i> Složenka
+
+            </div>
+<div aria-controls="page-prichozi-2" aria-selected="false" class="tab-item sub" onclick="openPage(event, 'page-prichozi-2')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" role="tab" tabindex="0">
+<i class="bi bi-arrow-return-right me-2"><svg aria-hidden="true" class="svg-icon" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 5v5a5 5 0 0 0 5 5h13"></path><path d="m17 11 4 4-4 4"></path></svg></i> Příkaz k úhradě
+            </div>
+<div aria-controls="page-prichozi-3" aria-selected="false" class="tab-item sub" onclick="openPage(event, 'page-prichozi-3')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" role="tab" tabindex="0">
+<i class="bi bi-arrow-return-right me-2"><svg aria-hidden="true" class="svg-icon" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 5v5a5 5 0 0 0 5 5h13"></path><path d="m17 11 4 4-4 4"></path></svg></i> SIPO
+            </div>
+<div aria-controls="page-prichozi-4" aria-selected="false" class="tab-item sub" onclick="openPage(event, 'page-prichozi-4')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" role="tab" tabindex="0">
+<i class="bi bi-arrow-return-right me-2"><svg aria-hidden="true" class="svg-icon" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 5v5a5 5 0 0 0 5 5h13"></path><path d="m17 11 4 4-4 4"></path></svg></i> Inkaso z bankovního účtu
+            </div>
+</div>
+</div>
+<div aria-controls="page-nastaveni" aria-selected="false" class="tab-item" onclick="openPage(event, 'page-nastaveni')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" role="tab" tabindex="0">
+<i class="bi bi-sliders"><svg aria-hidden="true" class="svg-icon" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 7h16M4 17h16"></path><circle cx="9" cy="7" r="3"></circle><circle cx="15" cy="17" r="3"></circle></svg></i> Nastavení platebního způsobu
+            </div>
+<div aria-controls="page-preplatky" aria-selected="false" class="tab-item" onclick="openPage(event, 'page-preplatky')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" role="tab" tabindex="0">
+<i class="bi bi-piggy-bank"><svg aria-hidden="true" class="svg-icon" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 9a8 8 0 0 1 13 3h2v5h-4l-1 3h-3l-.7-2h-3l-.7 2H6l-1-4-2-2V9h3z"></path><circle cx="15" cy="10" r="1"></circle><path d="M6 5h6"></path></svg></i> Přeplatky
+            </div>
+<div aria-controls="page-video" aria-selected="false" class="tab-item" onclick="openPage(event, 'page-video')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" role="tab" tabindex="0">
+<i class="bi bi-play-circle-fill"><svg aria-hidden="true" class="svg-icon" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9"></circle><path d="m10 8 6 4-6 4z"></path></svg></i> Video návod
+            </div>
+<div aria-controls="page-test" aria-selected="false" class="tab-item tab-purple" onclick="openPage(event, 'page-test')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" role="tab" tabindex="0">
+<i class="bi bi-clipboard-check"><svg aria-hidden="true" class="svg-icon" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect height="18" rx="2" width="14" x="5" y="4"></rect><path d="M9 4.5V3h6v1.5M8.5 13l2.5 2.5 4.5-5"></path></svg></i> Opakovací test
+            </div>
+</div>
+<div class="book-page">
+<div aria-hidden="false" class="content-section active" id="page-intro" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4 text-success"><span aria-hidden="true" class="section-number">1.</span> Pracovní postup</h2>
+<!-- KARTA: ZMĚNA ÚHRADY A VYPLÁCENÍ PLATEB -->
+<div class="overview-card">
+<p class="mb-3">
+                     Pracovní postup popisuje změnu úhradu plateb ale změnu vyplácení plateb
+                     (přeplatků z faktur).
+                    </p>
+<div class="alert alert-info d-flex align-items-center note-prominent" role="alert">
+<i class="bi bi-info-circle-fill me-2"><svg aria-hidden="true" class="svg-icon" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"></circle><path d="M12 10v6M12 7h.01"></path></svg></i> Číslo účtu Epet: 9960227/0100
+                   </div>
+</div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-prichozi" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4 text-success"> <span aria-hidden="true" class="section-number">2.</span> Příchozí platby</h2>
+<!-- KARTA: ZMĚNA NÁZVU SPOLEČNOSTI -->
+<div class="overview-card">
+<p class="mb-3">
+                        Zákazník má 4 možnosti úhrad záloh – příkaz k úhradě, složenka, SIPO, inkaso z bankovního účtu.
+                    </p>
+</div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-prichozi-1" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4 text-success"> Složenka</h2>
+<!-- KARTA: SLOŽENKA – ÚHRADA PLATEB -->
+<div class="content-steps">
+
+<div class="step-card"><p class="mb-0">
+<span class="step-badge">1</span>
+<strong>Složenka</strong> – zákazník má možnost uhradit prostřednictvím složenky,
+                        kterou si ale musí <strong>SÁM vypsat</strong>.
+                        Naše společnost <strong>složenky typu A (červená) nezasílá</strong>.
+                        V systému je nastavena možnost <strong>příkaz k úhradě</strong>.
+                    </p></div></div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-prichozi-2" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4 text-success"> Příkaz k úhradě</h2>
+<!-- KARTA: PŘÍKAZ K ÚHRADĚ / PLATBA PŘEVODEM -->
+<div class="content-steps">
+
+
+
+
+
+<div class="step-card"><p class="mb-3">
+<span class="step-badge">1</span>
+<strong>Příkaz k úhradě</strong> – zákazník si na základě
+                        <strong>zaslaného rozpisu záloh</strong> ve své bance nastaví
+                        <strong>trvalý příkaz</strong>.
+                        Potřebuje k tomu <strong>variabilní symbol</strong>, který nalezne
+                        na rozpisu a <strong>číslo bankovního účtu viz výše</strong>.
+                    </p></div><div class="step-card"><p class="mb-3">
+<span class="step-badge">2</span>
+                        Pro platby prostřednictvím Převodem potřebujeme znát čísla účtu
+                        a musíme si jej nejdříve založit v systému.
+                    </p></div><div class="step-card"><p class="mb-3">
+<span class="step-badge">3</span>
+                        Založení provedeme přímo na Partnerovi kde zvolíme možnost
+                        <img alt="Partner" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/tRcvN6Yv/oprava.png"/>
+</p></div><div class="step-card"><p class="mb-3">
+<span class="step-badge">4</span>
+                        Pro založení bankovního účtu volíme možnost zeleného plus.
+                        Následně jen vyplníme číslo bankovního účtu do pole Čísla účtu.
+                        <img alt="Partner" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/FHV2pRtf/SIPO.png"/>
+</p></div><div class="step-card"><p class="mb-0">
+<span class="step-badge">5</span>
+                        Po zapsání BÚ uložíme čísla pomocí
+                        <img alt="Partner" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/MGZgFSx9/zapsat.png"/>
+</p></div></div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-prichozi-3" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4 text-success"> SIPO</h2>
+<!-- KARTA: SIPO / INKASO -->
+<div class="content-steps">
+
+
+
+
+
+<div class="alert alert-info notice-card" role="alert">
+<strong>SIPO – (Soustředěné inkaso plateb obyvatelstva)</strong> je služba poskytována
+                        <strong>Českou poštou s.p.</strong> SIPO umožňuje sdružit několik pravidelných inkasních
+                        příkazů od různých společností (např. za telefon, nájem, televizi, elektřinu,
+                        vodu, plyn apod.) do jedné platby, kterou strhne z účtu plátce.
+                        Plátci je přiděleno <strong>spojovací číslo</strong> (specifický symbol, 10místné číslo,
+                        nalezneme jej v pravém horním rohu SIPO lístku druhý řádek.), které stačí oznámit
+                        poskytovatelům služeb. Přes SIPO není možné u epet hradit
+                        <strong>nedoplatky vyúčtování</strong>. SIPO slouží pro úhradu pravidelně se opakujících
+                        plateb (záloh). O SIPO si žádáme v období od <strong>20.–25. dne v měsíci</strong>
+                        a obdržíme jej nejpozději na počátku měsíce po měsíci následujícím
+                        (<strong>cca 45 dní nejpozději</strong>).
+                    </div><div class="step-card"><p class="mb-3">
+<span class="step-badge">1</span>
+                        Pro platby prostřednictvím SIPO nebo Inkaso potřebujeme znát čísla účtu/SIPO
+                        a musíme si jej nejdříve založit v systému.
+                    </p></div><div class="step-card"><p class="mb-3">
+<span class="step-badge">2</span>
+                        Založení provedeme přímo na Partnerovi kde zvolíme možnost
+                        <img alt="Partner" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/tRcvN6Yv/oprava.png"/>
+</p></div><div class="step-card"><p class="mb-3">
+<span class="step-badge">3</span>
+                        Pro založení čísla SIPO volíme možnost zeleného plus SIPO.
+                        Následně jen vyplníme číslo SIPO do pole Čísla účtu.
+                        <img alt="SIPO" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/FHV2pRtf/SIPO.png"/>
+</p></div><div class="step-card"><p class="mb-0">
+<span class="step-badge">4</span>
+                        Po zapsání čísla SIPO uložíme čísla pomocí
+                        <img alt="Zapsat" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/MGZgFSx9/zapsat.png"/>
+</p></div></div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-prichozi-4" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4 text-success"> Inkaso z bankovního účtu</h2>
+<!-- KARTA: INKASO Z BANKOVNÍHO ÚČTU -->
+<div class="content-steps">
+
+
+
+
+
+
+<div class="step-card"><p class="mb-3">
+<span class="step-badge">1</span>
+<strong>Inkaso z bankovního účtu</strong> – strháváme si zálohy případně i
+                        nedoplatkové faktury <strong>přímo ze zákazníkova účtu</strong>.
+                        K tomu potřebujeme <strong>číslo bankovního účtu zákazníka</strong>.
+                        Zákazník musí ve své bance <strong>inkaso povolit</strong>.
+                    </p><div class="alert alert-warning notice-card" role="alert">
+<strong>Povolení k inkasu / souhlas s inkasem</strong> – musí obsahovat:<br/>
+                        - <strong>Číslo b.ú. epet:</strong> 9960227/0100<br/>
+                        - <strong>Dostatečnou výši limitu</strong> (maximálně stažena částka epet z b.ú.)
+                        nebo bez limitu<br/>
+                        - <strong>Při nastavení inkasa nesmí zk uvádět žádný VS.</strong>
+                        Jinak platba neproběhne.<br/>
+                        - Pokud bude zákazník požadovat inkasování PK i FA, může se stát,
+                        že budeme inkasovat v jednom měsíci dvě platby.
+                        Je důležité, aby měl zákazník nastaveno
+                        <strong>povolení k inkasování více jak jedné platby v měsíci</strong>
+                        z naší strany.<br/>
+                        - <strong>Neuvádět konstantní (KS) ani specifický symbol (SS).</strong>
+</div></div><div class="step-card"><p class="mb-3">
+<span class="step-badge">2</span>
+                        Pro platby prostřednictvím INKASA potřebujeme znát čísla účtu
+                        a musíme si jej nejdříve založit v systému.
+                    </p></div><div class="step-card"><p class="mb-3">
+<span class="step-badge">3</span>
+                        Založení provedeme přímo na Partnerovi kde zvolíme možnost
+                        <img alt="Partner" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/tRcvN6Yv/oprava.png"/>
+</p></div><div class="step-card"><p class="mb-3">
+<span class="step-badge">4</span>
+                        Pro založení bankovního účtu volíme možnost zeleného plus.
+                        Následně jen vyplníme číslo bankovního účtu do pole Čísla účtu.
+                        <img alt="Bankovní účet" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/FHV2pRtf/SIPO.png"/>
+</p></div><div class="step-card"><p class="mb-0">
+<span class="step-badge">5</span>
+                        Po zapsání BÚ uložíme čísla pomocí
+                        <img alt="Zapsat" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/MGZgFSx9/zapsat.png"/>
+</p></div></div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-nastaveni" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4 text-success"><span aria-hidden="true" class="section-number">3.</span> Nastavení platebního způsobu</h2>
+<!-- KARTA: NASTAVENÍ PLATEBNÍHO ZPŮSOBU NA ZÚ -->
+<div class="content-steps">
+
+
+
+
+
+
+
+
+
+
+<div class="step-card"><p class="mb-3">
+<span class="step-badge">1</span>
+                        Pro nastavení platebního způsobu musíme provést změnu na <b>Zákaznickém účtu.</b>
+</p></div><div class="step-card"><p class="mb-3">
+<span class="step-badge">2</span>
+                        Po rozkliknutí <u>Zákaznického účtu</u> zvolíme
+                        <img alt="ZÚ" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/fRS64K09/z.png"/>
+</p></div><div class="step-card"><p class="mb-3">
+<span class="step-badge">3</span>
+                        V poli Platební styk můžeme nastavit platební způsob zvlášť pro faktury (úhrada předpisů)
+                        tak i zálohy (úhrada zálohy).
+                        <img alt="Platební styk" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/TYF4cDHY/platebn.png"/>
+</p></div><div class="step-card"><p class="mb-3">
+<span class="step-badge">4</span>
+                        Pro změnu platebního způsobu u záloh klikneme na mřížku.
+                        <img alt="Nastavení" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/Y2mnC9C5/nastaveni.png"/>
+</p></div><div class="step-card"><p class="mb-3">
+<span class="step-badge">5</span>
+                        Kde následně vybereme požadovanou možnost a dáme <b>použít</b>..
+                        <img alt="Použít" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/FsYL4dFS/pou-t.png"/>
+</p></div><div class="step-card"><p class="mb-3">
+<span class="step-badge">6</span>
+                        Pro hrazení záloh formou inkasa nebo SIPO musíme následně vybrat číslo,
+                        ze kterého má být inkasováno. Klikneme tedy na mřížku a otevře se nám nové okno.
+                        <img alt="Účet" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/RFSs0QqG/ucet.png"/>
+</p></div><div class="step-card"><p class="mb-3">
+<span class="step-badge">7</span>
+                        Z nového okna vybereme číslo, které jsme si založili na partnerovi a dáme <b>použít</b>.
+                        <img alt="Výběr účtu" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/DzSvWsDQ/ucet.png"/>
+</p></div><div class="step-card"><p class="mb-3">
+<span class="step-badge">8</span>
+                        Uložení nastavení provedeme přes.
+                        <img alt="Zapsat" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/qqx4fGhr/zapsat.png"/>
+</p></div><div class="step-card"><p class="mb-3">
+<span class="step-badge">9</span>
+                        Stejný způsob nastavujeme i u hrazení faktur.
+                    </p><div class="alert alert-danger d-flex align-items-center mb-0 notice-card" role="alert">
+<i class="bi bi-exclamation-triangle-fill me-2"><svg aria-hidden="true" class="svg-icon" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3 2 21h20z"></path><path d="M12 9v5M12 17h.01"></path></svg></i>
+<div>
+<strong>POZOR:</strong> faktury nelze hradit přes <strong>SIPO</strong>.
+                            Faktury lze hradit pouze <strong>převodním příkazem</strong> nebo
+                            <strong>inkasováním z účtu</strong>.
+                        </div>
+</div></div></div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-preplatky" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4 text-success"><span aria-hidden="true" class="section-number">4.</span> Přeplatky</h2>
+<!-- KARTA: VRÁCENÍ PŘEPLATKU -->
+<div class="content-steps">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="step-card"><p class="mb-3">
+<span class="step-badge">1</span>
+                        Zákazníkovi můžeme vrátit přeplatek z faktury dvěma způsoby. Na účet, ale potřebujeme zná
+                        číslo účtu, případně Složenkou typu B (žlutá) ale tato služba je zpoplatněna dle ceníku služeb.
+                        Složenka je mu zaslána na doručovací adresu.
+                    </p></div><div class="step-card"><p class="mb-3">
+<span class="step-badge">2</span>
+                        V případě, že zákazník chce změnit zasílání přeplatků na účet, musíme jeho číslo bankovního
+                        účtu evidovat v systému.
+                    </p></div><div class="step-card"><p class="mb-3">
+<span class="step-badge">3</span>
+                        Založení provedeme přímo na <b>Partnerovi</b> kde zvolíme možnost
+                    </p></div><div class="step-card"><p class="mb-3">
+<span class="step-badge">4</span>
+                        Po rozkliknutí <u>Zákaznického účtu</u> zvolíme
+                        <img alt="Partner" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/Pqs3ZnV6/partner.png"/>
+</p></div><div class="step-card"><p class="mb-3">
+<span class="step-badge">5</span>
+                        Pro založení čísla bankovního účtu zvolíme zelené plus a vyplníme číslo bankovního účtu
+                        a kód banky. V případě že celé číslo účtu i s kódem banky vložíme pouze do pole Číslo účtu,
+                        systém si sám číslo účtu rozdělí na číslo a kód banky.
+                        <img alt="Číslo účtu" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/FHV2pRtf/SIPO.png"/>
+</p></div><div class="step-card"><p class="mb-3">
+<span class="step-badge">6</span>
+                        Po zapsání čísla účtu uložíme čísla pomocí
+                        <img alt="Zapsat" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/qqx4fGhr/zapsat.png"/>
+</p></div><div class="step-card"><p class="mb-3">
+<span class="step-badge">7</span>
+                        Následně pro nastavení platebního způsobu musíme provést změnu na Zákaznickém účtu.
+                        Po rozkliknutí Zákaznického účtu zvolíme
+                        <img alt="Zákaznický účet" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/fRS64K09/z.png"/>
+</p></div><div class="step-card"><p class="mb-3">
+<span class="step-badge">8</span>
+                        V poli Platební styk můžeme nastavit Přeplatky rozkliknutím mřížky.
+                        <img alt="Přeplatky" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/RhHJwyDR/preplatek.png"/>
+</p></div><div class="step-card"><p class="mb-3">
+<span class="step-badge">9</span>
+                        Vybereme požadovanou možnost a dáme Použít..
+                        <img alt="Možnost" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/Njgkm81H/moznost.png"/>
+</p></div><div class="step-card"><p class="mb-3">
+<span class="step-badge">10</span>
+                        Pro vyplácení na bankovní účet musíme ještě nastavit na jaký účet má být přeplatek zaslán.
+                        To provedeme stisknutím mřížky
+                        <img alt="Výběr účtu" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/pTXdBTsk/styk.png"/>
+</p></div><div class="step-card"><p class="mb-3">
+<span class="step-badge">11</span>
+                        Z nového okna vybereme číslo a dáme použít.
+                        <img alt="Účet" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/DzSvWsDQ/ucet.png"/>
+</p></div><div class="step-card"><p class="mb-4">
+<span class="step-badge">12</span>
+                        Uložení nastavení provedeme přes.
+                        <img alt="Zapsat" class="img-thumbnail d-block mx-auto mt-3 mb-3" src="https://i.postimg.cc/qqx4fGhr/zapsat.png"/>
+</p></div><div class="alert alert-warning notice-card" role="alert">
+<center><b><u>POZOR – FIREMNÍ ZÁKAZNÍCI</u></b></center><br/>
+                        U firemního zákazníka lze změnit bankovní účet pro vyplácení přeplatků
+                        <strong>výhradně na základě písemné žádosti – nikdy ne na základě ústního nebo
+                        telefonického požadavku</strong>.<br/><br/>
+
+                        Žádost musí být doručena <strong>e-mailem od kontaktní osoby evidované u zákazníka</strong>
+                        a musí z ní jednoznačně vyplývat požadavek na změnu bankovního účtu pro vyplácení
+                        přeplatků. V ideálním případě má být žádost také <strong>opatřena podpisem oprávněné osoby</strong>.
+                    </div><div class="alert alert-warning notice-card" role="alert">
+<center><b><u>POZOR</u></b></center><br/>
+                        Pokud se nás <strong>zk</strong> obrátí s informací, že na základě vystavené přeplatkové
+                        faktury chce <strong>ZK</strong> daný přeplatek zaslat na jiný účet, musíme nejdříve provést
+                        kontrolu, zda přeplatek nebyl již zaslán zákazníkovi. Tuto kontrolu provedeme na záložce
+                        <strong>Předpisy</strong>, kde vidíme, jakou má faktura splatnost. Pokud byl přeplatek již
+                        vyplacen, je zapotřebí informovat <strong>ZK telefonicky</strong>, že přeplatek již odešel.
+                        Dále je potřeba ověřit zda číslo účtu je funkční nebo už neexistuje.<br/><br/>
+            
+                        Jestliže je účet aktivní, tak <strong>zk odešel přeplatek</strong> na tento účet.
+                        Pokud <strong>ZK sdělí</strong>, že bankovní účet neexistuje, tak se nám částka vrátí zpět,
+                        kde na základě této informace <strong>založíme úkol a předáme ho na FINANCE</strong>.<br/><br/>
+<strong>POZOR:</strong> nesmíme zapomenout nastavit <strong>správný účet</strong>, kam má být
+                        následně přeplatek zaslán. Tuto informaci zadáme i do úkolu. Opravu účtu provedeme dle manuálu
+                        <strong>Změna platebního způsobu</strong>.<br/><br/>
+            
+                        U nevyplaceného přeplatku změníme číslo bankovního účtu dle manuálu
+                        <strong>Změna platebního způsobu</strong> a provádíme <strong>blokace na Zákaznickém účtu</strong>,
+                        aby přeplatek neodešel na špatný účet. Opravou účtu bohužel nedochází k automatické opravě
+                        na pozadí. Jakmile na faktuře je špatné číslo účtu, tak bez zásahu financí odchází přeplatek
+                        pouze na účet uvedený ve faktuře.<br/><br/>
+            
+                        Po opravě čísla účtu pro budoucí přeplatky tedy provedeme <strong>blokaci účtu</strong>.
+                        Tu provádíme na <strong>Zákaznickém účtu</strong>, kde jako typ blokace volíme typ
+                        <strong>VRATK</strong>.
+                    </div></div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-video" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4 text-primary">Video tutoriály</h2>
+<p class="text-muted mb-4">Vyberte si konkrétní téma, které vás zajímá. Pro zvětšení videa využijte ikonu čtverečku
+                    v pravém horním rohu přehrávače.</p>
+<div class="row row-cols-1 row-cols-xl-2 g-4">
+<div class="col">
+<div class="video-card p-3 rounded-4 shadow-sm bg-light h-100">
+<h6 class="fw-bold mb-2"><i class="bi bi-play-circle me-2"><svg aria-hidden="true" class="svg-icon" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9"></circle><path d="m10 8 6 4-6 4z"></path></svg></i> Změna platebního způsobu</h6>
+<div class="ratio ratio-16x9 rounded-3 overflow-hidden shadow-sm bg-black">
+<iframe allow="autoplay; fullscreen" allowfullscreen="" src="https://drive.google.com/file/d/1IM8d1WxifRPVDOdYxmL6D9-2-raL-stG/preview"></iframe>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div aria-hidden="true" class="content-section" id="page-test" role="tabpanel" tabindex="0">
+<h2 class="fw-bold mb-4" style="color: var(--epet-purple);">Ověření znalostí</h2>
+<p>Po prostudování manuálu prosím vyplňte tento opakovací test. Výsledky budou automaticky
+                        zaznamenány.
+                    </p>
+<div class="shadow-sm rounded-3 overflow-hidden" style="border: 1px solid #eee;">
+<iframe allowfullscreen="" frameborder="0" height="600px" marginheight="0" marginwidth="0" mozallowfullscreen="" msallowfullscreen="" src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__abHlldUMU1HQ0dFR0JHRlIyS0lVTTM1SkNOVDRLRy4u" style="border: none; max-width:100%; max-height:100vh" webkitallowfullscreen="" width="100%">
+</iframe>
+</div>
+</div>
+</div>
+</div>
+<script>function toggleGroup(groupId){
+  const group=document.getElementById(groupId);
+  if(!group)return;
+  const next=!group.classList.contains('open');
+  group.classList.toggle('open',next);
+  const trigger=group.querySelector('.tab-item');
+  if(trigger)trigger.setAttribute('aria-expanded',String(next));
+}
+function openPage(evt,pageId){
+  const requested=document.getElementById(pageId);
+  if(!requested)return;
+  const tabs=document.querySelectorAll('.book-tabs .tab-item');
+  document.querySelectorAll('.content-section').forEach(section=>{
+    const selected=section.id===pageId;
+    section.classList.toggle('active',selected);
+    section.setAttribute('aria-hidden',selected?'false':'true');
+  });
+  tabs.forEach(tab=>{
+    const selected=tab===evt.currentTarget;
+    tab.classList.toggle('active',selected);
+    tab.setAttribute('aria-selected',selected?'true':'false');
+  });
+  const panel=document.querySelector('.book-page');
+  if(panel)panel.scrollTop=0;
+}</script>
+</body>
+</html>
