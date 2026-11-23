@@ -1515,6 +1515,72 @@ ${PORTAL_BLOCK}`,
     files: [],
     tags: ["Dědické řízení"]
 },
+
+"Podklady k ukončení smlouvy po úmrtí odběratele - Přepis + DEMO": {
+    text: `${OSLOVENI_BLOCK}
+
+<p>je nám velice líto Vaší ztráty a dovolujeme si Vám vyjádřit upřímnou soustrast.</p>
+
+<p>Abychom mohli provést potřebné změny na zákaznickém účtu zesnulého, dovolujeme si Vás požádat o součinnost a doložení následujících dokumentů:</p>
+
+<ul>
+  <li><strong>Kopie úmrtního listu</strong> – pro doložení úmrtí zákazníka.</li>
+  <li><strong>Kopie usnesení o dědictví</strong> – po ukončení dědického řízení, pro vypořádání případných finančních závazků či přeplatků.</li>
+</ul>
+
+<p>Současně Vás prosíme o sdělení, jakým způsobem si přejete naložit s následujícími odběrnými místy:</p>
+
+<p><strong>${EAN_BLOCK}</strong></p>
+
+<p>Prosíme o upřesnění, zda mají být uvedená odběrná místa <strong>přepsána na nového odběratele</strong>, případně zda požadujete <strong>ukončení odběru spojené s demontáží měřidel</strong>.</p>
+
+<p><strong>1. Přepis odběrného místa na nového odběratele</strong></p>
+
+<p>Pokud si přejete zachovat dodávky energií a převést odběrné místo na jinou osobu, můžete využít náš <a href="https://epet.cz/chci-prepsat-smlouvu-na-jinou-osobu-38" target="_blank" title="On-line formulář pro přepis odběrného místa" rel="noopener noreferrer"><strong>on-line formulář pro přepis odběrného místa</strong></a>.</p>
+
+<p>Po otevření odkazu budete nejprve přesměrováni na kalkulačku pro výpočet ceny energií. Tento krok je standardní součástí procesu přepisu.</p>
+
+<p>Po zadání údajů o odběrném místě se Vám zobrazí dostupné cenové nabídky. Po výběru konkrétní nabídky budete následně přesměrováni do samotného formuláře pro přepis smlouvy, ve kterém doplníte potřebné údaje o novém odběrateli.</p>
+
+<p><strong>Upozorňujeme, že přepis je nutné provést pro každé odběrné místo samostatně.</strong></p>
+
+<p><strong>2. Ukončení odběru s demontáží měřidla</strong></p>
+
+<p>Pokud si nepřejete v dodávkách energií pokračovat a požadujete ukončení odběru spojené s demontáží měřidla, prosíme o vyplnění příslušného formuláře, který Vám zasíláme v příloze tohoto e-mailu.</p>
+
+<p><strong>Formulář je nutné vyplnit samostatně pro každé odběrné místo, u kterého požadujete demontáž.</strong></p>
+
+<p>V případě odběrných míst elektřiny nacházejících se v distribuční oblasti společnosti <strong>ČEZ Distribuce, a. s.</strong>, Vám zároveň v příloze zasíláme také formulář této distribuční společnosti, který je pro vyřízení požadavku na demontáž rovněž nutné vyplnit.</p>
+
+<p><strong>I tento formulář je potřeba vyplnit pro každé dotčené odběrné místo elektřiny samostatně.</strong></p>
+
+<p>Po obdržení požadovaných dokumentů a upřesnění dalšího postupu budeme moci zahájit příslušné kroky k vyřízení Vaší žádosti.</p>
+
+<p>Děkujeme Vám za spolupráci a pochopení v této nelehké životní situaci. V případě jakýchkoliv dotazů jsme Vám rádi k dispozici.</p>
+
+${PORTAL_BLOCK}`,
+    files: [
+        {
+            url: "https://drive.google.com/open?id=1U-3hFZF25hXpdj9-8XrYpbI6w_rQH5S7",
+            name: "Žádost o ukončení",
+            type: "pdf",
+            brand: "epet"
+        },
+        {
+            url: "https://drive.google.com/file/d/13HAJSD1s13kpkpwDMRy3ZNCXNCIKJj8X/view?usp=drive_link",
+            name: "Žádost o ukončení",
+            type: "pdf",
+            brand: "de"
+        },
+        {
+            url: "https://drive.google.com/file/d/17jVzJYN7fq_zsdPM3SSoU4upzVz8AK3p/view?usp=drive_web",
+            name: "ČEZ žádost o ukončení - Trvalá demontáž",
+            type: "pdf"
+        }
+    ],
+    tags: ["Dědické řízení"]
+},
+
  "Připomenutí žádosti o doložení usnesení o dědictví": {
     text: `${OSLOVENI_BLOCK}
 <p>je nám líto, že řešíte tuto smutnou událost. Abychom mohli provést potřebné změny na zákaznickém účtu, budeme potřebovat Vaši součinnost.</p>
