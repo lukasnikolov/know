@@ -951,7 +951,8 @@ html:not(.access-granted) #kalk-access-gate{display:grid!important;visibility:vi
         commodity:&#x27;electricity&#x27;, months:12, startDate, endDate, days,
         vt: (tariffs.find(t=&gt;t.label===&#x27;VT&#x27;)?.annual || 0) / 1000,
         nt: (tariffs.find(t=&gt;t.label===&#x27;NT&#x27;)?.annual || 0) / 1000,
-        total: totalAnnual / 1000
+        total: totalAnnual / 1000,
+        readings: tariffs.map(t =&gt; ({register:t.label,start:t.start,end:t.end}))
       });
       result.classList.add(&quot;visible&quot;);
     }
@@ -1010,7 +1011,8 @@ html:not(.access-granted) #kalk-access-gate{display:grid!important;visibility:vi
         ${taskNoteMarkup(&quot;gas-task-text&quot;)}`;
       annualNoteGenerated(&#x27;gas&#x27;, &#x27;gas-task-text&#x27;, gasTaskText(startDate, endDate, days, start, end, factor, consumption, annualM3, annualKwh), {
         commodity:&#x27;gas&#x27;, months:12, startDate, endDate, days, factor,
-        vt:annualKwh / 1000, nt:0, total:annualKwh / 1000
+        vt:annualKwh / 1000, nt:0, total:annualKwh / 1000,
+        readings: [{register:&#x27;PLYN&#x27;,start,end}]
       });
       result.classList.add(&quot;visible&quot;);
     }
@@ -4530,6 +4532,8 @@ function calculate(){
       updateTaskNote();
       talkToShell(&#x27;noteEdited&#x27;,{kind:&#x27;advance&#x27;,note:el(&#x27;taskNoteText&#x27;).value,refreshed:true});
     });
+    let posledniOdecetProPdf = null;
+    let posledniPrenosProPdf = null;
     window.addEventListener(&#x27;message&#x27;,event =&gt; {
       if(event.source!==window.parent || event.data?.bridge!==&#x27;EPET_COMBINED_V1&#x27;) return;
       if(event.data.type===&#x27;resetNote&#x27; &amp;&amp; event.data.kind===&#x27;advance&#x27;) {
@@ -4544,6 +4548,13 @@ function calculate(){
         const data=event.data.payload;
         if (!data || ![&#x27;gas&#x27;,&#x27;electricity&#x27;].includes(data.commodity) ||
             !Number.isFinite(data.vt) || !Number.isFinite(data.nt) || data.vt&lt;0 || data.nt&lt;0) return;
+        posledniPrenosProPdf = data;
+        posledniOdecetProPdf = Array.isArray(data.readings) &amp;&amp; data.readings.length ? {
+          startDate: data.startDate,
+          endDate: data.endDate,
+          readings: data.readings.map(r =&gt; ({register:r.register,start:r.start,end:r.end})),
+          ...(data.commodity===&#x27;gas&#x27; ? {factor:data.factor} : {})
+        } : null;
         advanceNoteDirty=false;
         el(&#x27;commodity&#x27;).value=data.commodity;
         toggleCommodityUI();
@@ -4638,7 +4649,15 @@ document.getElementById(&#x27;btnPDF&#x27;).addEventListener(&#x27;click&#x27;, 
             regulatedSum: document.getElementById(&#x27;sumRegulated&#x27;).innerText,
             circuitBreaker: document.getElementById(&#x27;breakerClass&#x27;).innerText,
             commercialRows: commRows,
-            regulatedRows: finalRegRows
+            regulatedRows: finalRegRows,
+            // Volitelná příloha výpočtu: jen pokud zůstává zachována přenesená roční spotřeba.
+            consumptionCalculation: (
+              posledniPrenosProPdf &amp;&amp; posledniOdecetProPdf &amp;&amp;
+              posledniPrenosProPdf.commodity === commodityVal &amp;&amp;
+              Number(document.getElementById(&#x27;months&#x27;).value) === 12 &amp;&amp;
+              Math.abs(Number(document.getElementById(&#x27;consVT&#x27;).value) - posledniPrenosProPdf.vt) &lt; 0.002 &amp;&amp;
+              Math.abs(Number(document.getElementById(&#x27;consNT&#x27;).value) - posledniPrenosProPdf.nt) &lt; 0.002
+            ) ? posledniOdecetProPdf : null
         };
 
         const SCRIPT_URL = &#x27;https://script.google.com/macros/s/AKfycbx0_BAl6Gphn_dJVSxxNkfjN5mLP8cOq5DvIn-a-k02JjaYBR9FAVloFI-S07xcF4QhlQ/exec&#x27;;
