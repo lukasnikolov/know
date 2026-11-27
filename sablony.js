@@ -652,7 +652,7 @@ ${PORTAL_BLOCK}`,
     text: `${OSLOVENI_BLOCK}
 <p>potvrzujeme vyřízení Vašeho požadavku na změnu distribuční sazby na <strong>{XXXX}</strong> / změnu hodnoty hlavního jističe na <strong>{XXXX A}</strong> u odběrného místa <strong>EAN/EIC ${EAN_BLOCK}</strong>.</p>
 
-<p>Změna byla provedena k datu<strong>{DD. MM. RRRR}</strong>.</p>
+<p>Změna byla provedena k datu <strong>{DD. MM. RRRR}</strong>.</p>
 
 ${PORTAL_BLOCK}`,
     files: [],
