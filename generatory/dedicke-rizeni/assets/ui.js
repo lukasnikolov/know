@@ -39,9 +39,46 @@
   }
   const copyBtns=[...document.querySelectorAll('button[onclick*="copySubject"],button[onclick*="copyEmailText"]')];
   if(copyBtns.length){
-   const bar=copyBtns[0].parentNode;
+
+   const subjectField=$('subject-output'), emailField=$('email-content'), dsInput=$('data-box-input'), fullName=$('fullname-input');
+   const dispatch=subjectField?.closest('.card-custom,.dispatch-card');
+   let dsCopy;
+   if(dispatch&&emailField&&dispatch.contains(emailField)&&!dispatch.querySelector('.preview-box')){
+    dispatch.classList.add('dn-dispatch','dn-databox');
+    const paper=document.querySelector('.preview-box');
+    const target=paper?.closest('.dn-letter-frame')||paper;
+    if(target&&form.contains(target)&&form.contains(dispatch)&&!dispatch.contains(target))target.after(dispatch);
+    const heading=dispatch.querySelector('.dispatch-heading')||dispatch.querySelector('h3');
+    if(heading){const h=heading.querySelector('h3')||heading;h.textContent='Podklady k odeslání';}
+    if(heading&&!dispatch.querySelector('.dn-dispatch-intro')){
+      const intro=document.createElement('p');intro.className='dn-dispatch-intro';intro.textContent='Připravte předmět, datovou schránku a doprovodnou zprávu pro odeslání.';heading.after(intro);
+    }
+    function fieldIcon(input,icon){if(!input)return;const label=input.closest('.col-md-6')?.querySelector('label');if(label){label.htmlFor=input.id;if(!label.querySelector('.bi')){const i=document.createElement('i');i.className='bi '+icon+' dn-dispatch-label-icon';i.setAttribute('aria-hidden','true');label.prepend(i);}}}
+    fieldIcon(fullName,'bi-person');fieldIcon(dsInput,'bi-mailbox');
+    if(dsInput){
+      dsInput.setAttribute('autocomplete','off');dsInput.setAttribute('spellcheck','false');dsInput.setAttribute('aria-describedby','dn-ds-hint');
+      const group=dsInput.closest('.input-group');const insert=group?.querySelector('button[onclick*="addDataBoxCode"]');
+      if(insert){
+       const raw=insert.getAttribute('onclick');insert.removeAttribute('onclick');
+       const apply=()=>{const id=dsInput.value.trim();if(!/^[a-z0-9]{7}$/i.test(id)){dsInput.classList.add('is-invalid');dsInput.setAttribute('aria-invalid','true');announce('ID datové schránky musí obsahovat 7 písmen nebo číslic.','warning');return false;}dsInput.classList.remove('is-invalid');dsInput.removeAttribute('aria-invalid');dsInput.value=id;try{if(typeof window.addDataBoxCode==='function')window.addDataBoxCode();else if(typeof addDataBoxCode==='function')addDataBoxCode();else return false;}catch(e){return false;}return true;};
+       insert.addEventListener('click',apply);
+       dsInput.addEventListener('input',()=>{dsInput.classList.remove('is-invalid');dsInput.removeAttribute('aria-invalid');});
+       dsInput.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();apply();}});
+      }
+      const hint=document.createElement('div');hint.id='dn-ds-hint';hint.className='form-text';hint.textContent='7 znaků · vložte ID do textu zprávy.';
+      group?.after(hint);
+      dsCopy=document.createElement('button');dsCopy.type='button';dsCopy.className='btn dn-dispatch-copy';dsCopy.innerHTML='<i class="bi bi-copy" aria-hidden="true"></i> Kopírovat ID';group?.after(dsCopy);
+      dsCopy.addEventListener('click',async()=>{const id=dsInput.value.trim();if(!/^[a-z0-9]{7}$/i.test(id)){announce('Zadejte platné sedmimístné ID datové schránky.','warning');return;}const ok=await safeCopy(id);announce(ok?'ID datové schránky bylo zkopírováno.':'Kopírování se nezdařilo.',''+(ok?'success':'error'));if(!ok)dsInput.select();});
+    }
+    const subjRow=subjectField.parentElement;subjRow.classList.add('dn-dispatch-subject');const emailRow=emailField.parentElement;emailRow.classList.add('dn-dispatch-email');
+    const subjBtn=copyBtns.find(b=>b.getAttribute('onclick')?.includes('copySubject'));const mailBtn=copyBtns.find(b=>b.getAttribute('onclick')?.includes('copyEmailText'));
+    if(subjBtn){subjBtn.classList.add('dn-dispatch-copy');subjRow.append(subjBtn);}
+    if(mailBtn){mailBtn.classList.add('dn-dispatch-copy');emailRow.append(mailBtn);}
+   }
+
+   const bar=dispatch||copyBtns[0].parentNode;
    const feedback=document.createElement('div');feedback.className='dn-copy-feedback';feedback.id='dn-copy-feedback';feedback.setAttribute('role','status');feedback.setAttribute('aria-live','polite');
-   bar.insertAdjacentElement('afterend',feedback);
+   if(dispatch)dispatch.append(feedback);else bar.insertAdjacentElement('afterend',feedback);
    const toast=document.createElement('div');toast.className='dn-toast';toast.setAttribute('role','status');toast.setAttribute('aria-live','polite');document.body.append(toast);
    let timer;
    function announce(message,kind='success'){
