@@ -157,6 +157,11 @@
     }
   </style>
   <link rel="stylesheet" href="../assets/theme.css?v=1">
+<style>
+.paper-sheet .contact-details-table{width:100%;table-layout:fixed;border-collapse:collapse;margin:14px 0 20px;color:inherit;font:inherit}
+.paper-sheet .contact-details-table th{border:0;padding:5px 12px 5px 0;text-align:left;vertical-align:middle;font-weight:400}
+.paper-sheet .contact-details-table td{height:34px;border:3px solid #000;padding:5px 8px;background:transparent}
+</style>
 </head>
 <body data-ko-template="aktualizace-kontaktnich-udaju">
 
@@ -292,11 +297,12 @@
           <div class="letter-recipient">
             <span id="preview-jmeno" class="highlight-var">[Jméno]</span> <span id="preview-prijmeni" class="highlight-var">[Příjmení]</span><br>
             <span id="preview-ulice" class="highlight-var">[Ulice a číslo]</span><br>
-            <span id="preview-psc" class="highlight-var">[PSČ]</span> &nbsp; <span id="preview-mesto" class="highlight-var">[Město]</span>
+            <span id="preview-mesto" class="highlight-var">[Město]</span><br>
+            <span id="preview-psc" class="highlight-var">[PSČ]</span>
           </div>
 
           <div class="letter-date">
-            V Praze dne <span id="preview-datum" class="highlight-var">...</span>
+            V Praze <span id="preview-datum" class="highlight-var">...</span>
           </div>
 
           <div class="letter-subject">
@@ -311,14 +317,16 @@
               Nedaří se nám Vás kontaktovat telefonem ani e-mailem, prosíme o aktualizaci Vašich kontaktních údajů:
             </p>
             
-            <div class="write-box">
-               <div>Telefon: ____________________________</div>
-               <div style="margin-top: 10px;">E-mail:&nbsp; ____________________________</div>
-            </div>
-
-            <p>
-              Prosíme o doplnění kontaktních údajů a zaslání zpět na naši adresu v přiložené odpovědní obálce.
-            </p>
+            <table class="contact-details-table" aria-label="Kontaktní údaje k doplnění">
+              <colgroup><col style="width:32%"><col style="width:68%"></colgroup>
+              <tbody>
+                <tr><th scope="row">Telefon:</th><td></td></tr>
+                <tr><th scope="row">E-mail:</th><td></td></tr>
+                <tr><th scope="row">Korespondenční adresa:</th><td></td></tr>
+              </tbody>
+            </table>
+            <p id="preview-return">Doplněné údaje nám prosím zašlete e-mailem na adresu info@epet.cz, případně poštou na adresu epet energie, a.s., Klimentská 46, 110 00 Praha 1.</p>
+            <p>Rádi bychom Vás také informovali, že můžete využít náš Zákaznický portál <span id="preview-portal">www.zakaznici.epet.cz</span>, kde naleznete informace o platbách, fakturách, zálohách. Portál Vám rovněž umožňuje zadat samoodečet, upravit výši záloh a využívat další užitečné služby.</p>
           </div>
 
           <div class="letter-footer" id="preview-footer">
@@ -435,13 +443,17 @@
     const hiddenOsloveni = document.getElementById('osloveni_formalne');
     const prevFooter = document.getElementById('preview-footer');
 
+    // Aktualizace textů náhledu podle originální šablony
+    document.getElementById('preview-return').textContent = spolecnost === 'de'
+      ? 'Prosíme o doplnění kontaktních údajů a zaslání zpět na naši adresu Dobrá Energie, s. r. o., Klimentská 46, 110 00 Praha 1 případně elektronicky na e-mail info@dobra-energie.eu.'
+      : 'Doplněné údaje nám prosím zašlete e-mailem na adresu info@epet.cz, případně poštou na adresu epet energie, a.s., Klimentská 46, 110 00 Praha 1.';
+    document.getElementById('preview-portal').textContent = spolecnost === 'de' ? 'www.zakaznici.dobra-energie.eu' : 'www.zakaznici.epet.cz';
     // Aktualizace patičky podle společnosti
     if (spolecnost === 'epet') {
       prevFooter.innerHTML = `
-        <p class="text-muted small border-top pt-3">
+        <p>
           Pro komunikaci s námi můžete využívat zákaznickou linku 255 70 70 99, která je Vám k dispozici v pracovní dny od 8 do 17 hodin, nebo nás můžete kontaktovat e-mailem na info@epet.cz.
         </p>
-        <br>
         <p style="text-align: right;">
           S přáním hezkého dne<br>
           <strong>tým společnosti epet</strong>
@@ -449,10 +461,9 @@
       `;
     } else if (spolecnost === 'de') {
       prevFooter.innerHTML = `
-        <p class="text-muted small border-top pt-3">
-          Pro komunikaci s námi můžete využívat zákaznickou linku 226 284 283, která je Vám k dispozici v pracovní dny od 8:30 do 17 hodin, nebo nás můžete kontaktovat e-mailem na info@dobra-energie.eu.
+        <p>
+          Pro komunikaci s námi můžete využívat zákaznickou linku 226 284 283, která je Vám k dispozici v pracovní dny od 8:00 do 17 hodin, nebo nás můžete kontaktovat e-mailem na info@dobra-energie.eu.
         </p>
-        <br>
         <p style="text-align: right;">
           S přáním hezkého dne<br>
           <strong style="color: #F99F1C;">tým společnosti Dobrá Energie</strong>
