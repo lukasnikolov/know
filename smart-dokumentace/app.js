@@ -5,7 +5,7 @@ function documentApp() {
       searchQuery: '',
       page: 1,
       itemsPerPage: 24,
-      viewMode: 'grid',
+      viewMode: 'list',
       filtersOpen: false,
       sidebarOpen: false,
       formatFilter: 'all',
@@ -204,7 +204,7 @@ function documentApp() {
       },
 
       initApp() {
-        this.viewMode = localStorage.getItem('smartdocs_view') || 'grid';
+        this.viewMode = localStorage.getItem('smartdocs_view_v4') || 'list';
         this.itemsPerPage = Number(localStorage.getItem('smartdocs_per_page')) || 24;
         this.usageCounts = this.safeJsonParse(localStorage.getItem('smartdocs_usage'), {});
 
@@ -264,7 +264,7 @@ function documentApp() {
       },
 
       savePreferences() {
-        localStorage.setItem('smartdocs_view', this.viewMode);
+        localStorage.setItem('smartdocs_view_v4', this.viewMode);
         localStorage.setItem('smartdocs_per_page', String(this.itemsPerPage));
       },
 
