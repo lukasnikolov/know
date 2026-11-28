@@ -859,87 +859,90 @@ input[type=date]{color-scheme:light}
 
     function extractNotaryPdfData(rawLines) {
       const lines = rawLines.map(pdfClean).filter(Boolean);
-      const txt = lines.join('\n');
-      const result = {};
-      if (!txt.trim()) return result;
-
-      // Přesné spisové značky; "Naše značka" v dopise notáře odpovídá
-      // poli "Vaše značka" v naší odpovědi.
-      let m = txt.match(/NAŠE\s+ZNAČKA\s*:\s*(Nd\s*\d+\s*\/\s*\d{4})/i);
-      if (m) result.spis_ND = pdfClean(m[1]);
-      m = txt.match(/SOUDNÍ\s+ZNAČKA\s*:\s*((?:\d+\s*)?D\s*\d+\s*\/\s*\d{4})/i)
-          || txt.match(/sp\.?\s*zn\.?\s*:\s*((?:\d+\s*)?D\s*\d+\s*\/\s*\d{4})/i);
-      if (m) result.spis_D = pdfClean(m[1]);
-
-      // Rozpoznání adresáta z hlavičky dokumentu (nikoliv z libovolné zmínky v těle).
-      const header = lines.slice(0, Math.min(22, lines.length)).join(' ');
-      const de = /Dobrá\s+Energie\s*,?\s*s\.?\s*r\.?\s*o\.?/i.test(header);
-      const epet = /(?:EP\s+ENERGY\s+TRADING|epet\s+energie\s*a\.?\s*s\.?)\b/i.test(header);
-      if (de !== epet) result.spolecnost = de ? 'de' : 'epet';
-
-      // Notář a sídlo: hledáme výslovnou identifikaci typu "JUDr. ... , notář".
-      const ni = lines.findIndex(line => /notář(?:ka)?\s+(?:se\s+sídlem|v\s+)/i.test(line));
-      if (ni >= 0) {
-        const row = lines[ni];
-        const nm = row.match(/((?:(?:JUDr|Mgr|PhDr|Ing|Ph\.D)\.\s*)?[\p{Lu}][\p{L}’'\-]+(?:\s+[\p{Lu}][\p{L}’'\-]+){1,3})\s*,?\s*notář(?:ka)?/iu);
-        if (nm) {
-          let parts = pdfClean(nm[1]).split(/\s+/);
-          let title = '';
-          if (/^(?:JUDr|Mgr|PhDr|Ing|Ph\.D)\.$/i.test(parts[0])) title = parts.shift();
-          if (parts.length >= 2) {
-            result.prijmeni_notar = parts.pop();
-            result.jmeno_notar = (title ? title + ' ' : '') + parts.join(' ');
-            const female = /notářka/i.test(row);
-            if (/^(?:JUDr|PhDr)\./i.test(title)) result.osloveni_notare_formalne = female ? 'Vážená paní doktorko' : 'Vážený pane doktore';
-            else if (/^Mgr\./i.test(title)) result.osloveni_notare_formalne = female ? 'Vážená paní magistro' : 'Vážený pane magistře';
-          }
+      const txt = lines.join('\n'), result = {};
+      const unique = a => [...new Set(a.map(pdfClean))];
+      const refs = (re,format) => unique(Array.from(txt.matchAll(re),m=>format(m)));
+      const nd=refs(/\bNd\s*(\d+)\s*\/\s*(\d{4})\b/gi,m=>'Nd '+m[1]+'/'+m[2]);
+      const d=refs(/(?:^|[^\p{L}\d])(\d{1,3})\s*D\s*(\d+)\s*\/\s*(\d{4})\b/gimu,m=>m[1]+' D '+m[2]+'/'+m[3]);
+      if(nd.length===1)result.spis_ND=nd[0];
+      if(d.length===1)result.spis_D=d[0];
+      const header=lines.slice(0,18).join(' ');
+      const de=/\bDobrá\s+Energie\b/i.test(header), epet=/\b(?:EP\s+ENERGY\s+TRADING|epet\s+energie)\b/i.test(header);
+      if(de!==epet)result.spolecnost=de?'de':'epet';
+      const titleRe=/^(?:(?:JUDr|Mgr|Bc|PhDr|Ing|JUDr|Ph\.D)\.\s*)+/i;
+      const word="\\p{Lu}[\\p{L}’'\\-]+";
+      const nameRe=new RegExp('^'+word+'(?:\\s+'+word+'){1,3}$','u');
+      const normalizeCase=v=>v===v.toLocaleUpperCase('cs')?v.toLocaleLowerCase('cs').replace(/(^|[\\s-])\\p{L}/gu,x=>x.toLocaleUpperCase('cs')):v;
+      function splitName(v,notary){
+        v=pdfClean(v);let title='';
+        if(notary){const m=v.match(titleRe);if(m){title=m[0].trim().split(/\s+/).map(x=>({judr:'JUDr.',mgr:'Mgr.',bc:'Bc.',phdr:'PhDr.',ing:'Ing.'})[x.toLowerCase().replace(/\.$/,'')]||x).join(' ');v=v.slice(m[0].length).trim();}}
+        if(!nameRe.test(v))return null;
+        v=v.split(/\s+/).map(w=>w===w.toLocaleUpperCase('cs')?w.toLocaleLowerCase('cs').replace(/(^|-)\p{L}/gu,x=>x.toLocaleUpperCase('cs')):w).join(' ');
+        const p=v.split(' '),last=p.pop();return {first:(title?title+' ':'')+p.join(' '),last,title};
+      }
+      let ni=-1,notary=null,role='';
+      for(let i=0;i<Math.min(lines.length,8);i++){
+        const row=lines[i];
+        if(!titleRe.test(row))continue;
+        const m=row.match(/^(.*?)\s*,?\s+(notář(?:ka)?|soudní komisař(?:ka)?)\b/iu);
+        const candidate=m?m[1]:row.replace(/[,;]$/,'');
+        const n=splitName(candidate,true);
+        if(n&&(m||/^(?:notář(?:ka)?|soudní komisař(?:ka)?)\b/i.test(lines[i+1]||''))){ni=i;notary=n;role=m?m[2]:lines[i+1];break;}
+      }
+      if(notary){
+        result.jmeno_notar=notary.first;result.prijmeni_notar=notary.last;
+        const female=/notářka|komisařka/i.test(role), male=/notář\b|komisař\b/i.test(role);
+        if(female||male){
+          if(/^(?:JUDr|PhDr)\./i.test(notary.title))result.osloveni_notare_formalne=female?'Vážená paní doktorko':'Vážený pane doktore';
+          else if(/^Mgr\./i.test(notary.title))result.osloveni_notare_formalne=female?'Vážená paní magistro':'Vážený pane magistře';
         }
-        // Přímé pokračování hlavičky – nehledáme adresu odesílajícího dodavatele.
-        const nearby = lines.slice(ni+1, ni+5);
-        for (const line of nearby) {
-          const addr = line.match(/^(.+?\d+(?:\s*\/\s*\d+)?(?:\s*[A-Za-z])?)\s*,\s*(\d{3}\s?\d{2})\s+(.+?)\s*$/u);
-          if (addr && !/^(?:tel\.|e-mail|IDDS)/i.test(addr[1])) {
-            result.ulice_sidlo = pdfClean(addr[1]);
-            result.psc_sidlo = pdfClean(addr[2]).replace(/\s/g,'').replace(/^(\d{3})(\d{2})$/,'$1 $2');
-            result.mesto_sidlo = pdfClean(addr[3]).replace(/[,.]$/,'');
-            break;
-          }
+        for(let i=ni+1;i<Math.min(ni+5,lines.length);i++){
+          const row=lines[i];
+          if(/(?:značka|čj\s*:|sp\.?\s*zn|Dobrá Energie|epet energie|Klimentská|^tel|e-mail)/i.test(row))break;
+          const a=row.match(/^(.+?\d+(?:\s*\/\s*\d+)?(?:[a-z])?)(?:,\s*([^,]+))?,\s*(\d{3}\s?\d{2})\s+(.+?)$/u);
+          if(a){result.ulice_sidlo=pdfClean(a[1]);result.psc_sidlo=a[3].replace(/\s/g,'').replace(/^(\d{3})(\d{2})$/,'$1 $2');result.mesto_sidlo=pdfClean(a[4]);break;}
+          const street=row.match(/^([\p{L}][\p{L}\s.]+\d+(?:\/\d+)?)(?=\s*,|$)/u);
+          if(street&&!result.ulice_sidlo)result.ulice_sidlo=pdfClean(street[1]);
+          const pc=row.match(/^(\d{3}\s?\d{2})\s+([\p{L}][\p{L}\s-]+)$/u);
+          if(pc&&result.ulice_sidlo){result.psc_sidlo=pc[1].replace(/\s/g,'').replace(/^(\d{3})(\d{2})$/,'$1 $2');result.mesto_sidlo=pdfClean(pc[2]);break;}
         }
       }
-
-      // Jméno zůstavitele pouze ze sekce "Zůstavitel", nikoli jméno dalšího dědice.
-      const zi = lines.findIndex(line => /\bZŮSTAVITEL(?:KA)?\s*:/i.test(line));
-      if (zi >= 0) {
-        const nameLine = lines[zi].match(/ZŮSTAVITEL(?:KA)?\s*:\s*([\p{Lu}][\p{L}'\-]+(?:\s+[\p{Lu}][\p{L}'\-]+){1,3})/iu);
-        if (nameLine) {
-          const parts = pdfClean(nameLine[1]).split(/\s+/);
-          if (parts.length >= 2) {
-            result.prijmeni_zemreleho = parts.pop();
-            result.jmeno_zemreleho = parts.join(' ');
+      const ds=unique(Array.from(lines.slice(0,10).join(' ').matchAll(/(?:IDDS|ID\s*DS|datová\s+schránka(?:\s+ID)?)\s*:\s*([a-z0-9]{7})\b/gi),m=>m[1].toLowerCase()));
+      if(ds.length===1)result.dataBoxCode=ds[0];
+      let zi=-1;
+      for(let i=0;i<lines.length;i++){
+        const row=lines[i];
+        const m=row.match(/(?:^|\s)(zůstavitelka|zůstavitele\(ky\)|zůstavitele|zůstavitel)\s*:?\s+(.+?)(?=,|$)/iu);
+        if(!m)continue;
+        const n=splitName(m[2],false);
+        if(!n)continue;
+        result.jmeno_zemreleho=n.first;result.prijmeni_zemreleho=n.last;zi=i;
+        if(/ka$/i.test(m[1]))result.pohlavi_zakaznika='female';
+        else if(!/\(ky\)/i.test(m[1]))result.pohlavi_zakaznika='male';
+        break;
+      }
+      if(zi>=0){
+        const section=lines.slice(Math.max(0,zi-5),Math.min(zi+8,lines.length));
+        const stop=/(?:rodné\s+číslo|r\.\s*č\.|zemřel|zemř\.|narozen|Vážení|dědic|Sdělení žádáme)/i;
+        for(let i=0;i<section.length;i++){
+          const m=section[i].match(/(?:posledně\s+(?:trvale\s+)?bytem|(?:^|[,;]\s*)bytem)\s*:?\s*(.+)$/i);
+          if(!m)continue;
+          let a=m[1].split(stop)[0];
+          for(let j=i+1;j<Math.min(i+3,section.length);j++){
+            if(stop.test(section[j])||!/^(?:\d|[\p{Lu}][\p{L}]+(?:\s|$))/u.test(section[j]))break;
+            if(/^\d{2,3}\s+[\p{L}]|^\d+\s*[.,]?$|^\d{3}\s?\d{2}/u.test(section[j]))a+=' '+section[j];else break;
           }
+          result.bydliste_zemreleho=pdfClean(a).replace(/[,;]\s*$/,'');break;
         }
-        for (let i=zi; i<Math.min(zi+8,lines.length); i++) {
-          const bydl = lines[i].match(/posledně\s+(?:trvale\s+)?bytem\s+(.+)$/i);
-          if (!bydl) continue;
-          let address = bydl[1];
-          for (let j=i+1; j<Math.min(i+3,lines.length); j++) {
-            if (/\b(?:zemřel|narozen|Vážení|S\s+pozdravem|ZŮSTAVITEL)\w*/i.test(lines[j])) break;
-            address += ' ' + lines[j];
-          }
-          result.bydliste_zemreleho = pdfClean(address).replace(/[,;]\s*$/,'');
-          break;
+        if(!result.bydliste_zemreleho){
+          const row=lines[zi+1]||'';
+          if(/^[\p{L}].*\d.*,\s*\d{3}\s?\d{2}\s+[\p{L}]/u.test(row)&&!stop.test(row))result.bydliste_zemreleho=row;
         }
       }
-
-      // Číslo smlouvy lze doplnit jen tehdy, je-li výslovně uvedeno a jednoznačné.
-      const explicitContracts = Array.from(txt.matchAll(/(?:číslo\s+smlouvy|smlouva\s+číslo)\s*[:č.]?\s*([0-9][0-9\/-]{5,})/gi), x=>x[1]);
-      const uniqueContracts = [...new Set(explicitContracts)];
-      if (uniqueContracts.length === 1) result.contractNumber = uniqueContracts[0];
-      // Datum odeslání/na písemnosti není datum přijetí žádosti – nevyplňovat!
-      // Neukládat do formuláře datum narození/úmrtí ani jiné nesouvisející údaje.
+      const contracts=unique(Array.from(txt.matchAll(/(?:číslo\s+smlouvy|smlouva\s+číslo)\s*[:č.]?\s*([A-Z0-9][A-Z0-9_\/-]{5,})/gi),m=>m[1]));
+      if(contracts.length===1)result.contractNumber=contracts[0];
       return result;
     }
-
 
     async function importPdfToForm() {
       const picker = document.getElementById('pdf-file-upload');
@@ -966,7 +969,7 @@ input[type=date]{color-scheme:light}
           osloveni_notare_formalne:'oslovení', ulice_sidlo:'ulice notáře', mesto_sidlo:'město notáře',
           psc_sidlo:'PSČ notáře', spis_ND:'značka ND', spis_D:'soudní značka D',
           jmeno_zemreleho:'jméno zůstavitele', prijmeni_zemreleho:'příjmení zůstavitele',
-          bydliste_zemreleho:'poslední bydliště', contractNumber:'číslo smlouvy'
+          bydliste_zemreleho:'poslední bydliště', pohlavi_zakaznika:'pohlaví zůstavitele', contractNumber:'číslo smlouvy'
         };
         const changed = [];
         const form = document.getElementById('notarForm');
@@ -992,21 +995,18 @@ input[type=date]{color-scheme:light}
             }
             continue;
           }
+          if (key === 'dataBoxCode') {
+            const field = document.getElementById('data-box-input');
+            if (field && (!field.value.trim() || field.value === value)) { field.value=value; field.classList.add('pdf-autofilled'); addDataBoxCode(); changed.push('datová schránka'); }
+            continue;
+          }
           const field = form.elements.namedItem(key);
           if (!field || !('value' in field)) continue;
           if (field.tagName === 'SELECT' && ![...field.options].some(o => o.value === value)) continue;
+          if (field.tagName !== 'SELECT' && field.value.trim() && field.value !== value && !field.classList.contains('pdf-autofilled')) continue;
           field.value = value;
           field.classList.add('pdf-autofilled');
           changed.push(labels[key] || key);
-        }
-        // Změna ženského rodu jen při výslovném označení ZŮSTAVITELKA.
-        if (lines.some(line => /\bZŮSTAVITELKA\s*:/i.test(line))) {
-          const field = form.elements.namedItem('pohlavi_zakaznika');
-          if (field) {
-            field.value = 'female';
-            field.classList.add('pdf-autofilled');
-            changed.push('pohlaví zůstavitelky');
-          }
         }
         if (changed.length) {
           updatePreview();
