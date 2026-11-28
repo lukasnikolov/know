@@ -6,3 +6,20 @@
 .dn-letter-frame .preview-box.dn-letter[data-brand="de"]{--letter-color:#F99F1C;--letter-pale:#f9e8c4}
 .dn-letter-frame .preview-box.dn-letter[data-brand="de"] .dn-letter-url,.dn-letter-frame .preview-box.dn-letter[data-brand="de"] .dn-letter-symbol{background:#F99F1C!important}
 .dn-letter-frame .preview-box.dn-letter[data-brand="de"] .dn-letter-wordmark,.dn-letter-frame .preview-box.dn-letter[data-brand="de"] .dn-letter-footer strong,.dn-letter-frame .preview-box.dn-letter[data-brand="de"] #p_footer_text b{color:#F99F1C!important}
+
+/* Generic letters and declarations preserve original content and white-space. */
+.dn-letter-generic .dn-letter-head{white-space:normal;text-align:left}
+.dn-letter-generic .dn-letter-head .dn-letter-address>div{margin-bottom:0!important;white-space:normal!important}
+.dn-letter-generic .dn-letter-no-address{grid-template-columns:1fr}
+.dn-letter-generic .dn-letter-no-address .dn-letter-address{display:none}
+.dn-letter-generic .dn-letter-body{white-space:normal;min-width:0}
+.dn-letter-generic .dn-letter-plain{white-space:pre-wrap}
+.dn-letter-generic .dn-letter-body .highlight-var{background:transparent!important;color:inherit!important}
+.dn-letter-generic .dn-letter-body table{max-width:100%;width:100%;table-layout:auto}
+.dn-letter-generic .dn-letter-body td{overflow-wrap:anywhere}
+.dn-letter-generic .dn-letter-body .text-end{text-align:right!important}
+.dn-letter-generic .dn-letter-body img{max-width:100%;height:auto}
+.dn-letter-generic .dn-letter-body p{margin:15px 0!important}
+.dn-letter-generic .dn-letter-body .mb-5{margin-bottom:24px!important}
+.dn-letter-generic .dn-letter-body .mb-4{margin-bottom:18px!important}
+.dn-letter-frame .preview-box.dn-letter{white-space:normal!important}
