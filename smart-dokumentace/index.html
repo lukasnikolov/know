@@ -10,7 +10,7 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style.css?v=4">
 </head>
 
 <body>
@@ -44,10 +44,10 @@
       <div class="section-label">Společnost</div>
       <div class="brand-switch">
         <button type="button" class="brand-btn" :class="activeBrand === 'epet' ? 'active' : ''" @click="setBrand('epet')">
-          <i class="fa fa-fire me-1"></i> EPET
+          epet
         </button>
         <button type="button" class="brand-btn" :class="activeBrand === 'de' ? 'active' : ''" @click="setBrand('de')">
-          <i class="fa fa-sun-o me-1"></i> DE
+          Dobrá Energie
         </button>
       </div>
 
@@ -187,10 +187,12 @@
         <span class="result-pill" :title="filteredItems.length + ' výsledků'" x-text="filteredItems.length"></span>
       </div>
 
+      <div class="document-list-heading" x-show="viewMode === 'list' && filteredItems.length > 0"><span>Název dokumentu</span><span>Formát</span><span>Akce</span></div>
       <div class="document-grid" :class="viewMode === 'list' ? 'list-view' : ''" x-show="filteredItems.length > 0">
         <template x-for="doc in paginatedItems" :key="doc.id">
           <article class="doc-card" :class="'brand-' + doc.brand">
             <div class="card-actions">
+              <a class="icon-btn open-action" :href="getPreviewLink(doc)" target="_blank" rel="noopener" @click="openDocument(doc)" title="Otevřít dokument" aria-label="Otevřít dokument"><i class="fa fa-external-link"></i></a>
               <button type="button" class="icon-btn fav" @click.stop="toggleFav(doc)" :title="isFav(doc) ? 'Odebrat z oblíbených' : 'Přidat do oblíbených'">
                 <i class="fa" :class="isFav(doc) ? 'fa-star fav-active' : 'fa-star-o'"></i>
               </button>
@@ -209,13 +211,13 @@
               <div class="doc-copy">
                 <div class="doc-title" x-text="doc.name"></div>
                 <div class="doc-meta">
-                  <span class="format-badge" x-text="doc.format || 'soubor'"></span>
+                  
                   <span class="brand-badge" :class="doc.brand" x-text="getBrandLabel(doc.brand)"></span>
                   <span class="doc-category" x-text="doc.category"></span>
                 </div>
               </div>
-              <span class="open-hint"><i class="fa fa-external-link"></i></span>
             </a>
+            <div class="doc-format"><span class="format-badge" x-text="doc.format || 'soubor'"></span></div>
           </article>
         </template>
       </div>
@@ -263,6 +265,6 @@
 </div>
 
 <script src="./dokumenty.js"></script>
-<script src="./app.js"></script>
+<script src="./app.js?v=4"></script>
 </body>
 </html>
