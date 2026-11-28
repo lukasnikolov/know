@@ -905,3 +905,14 @@ body{padding:0;background:#fff}
 .pagination-bar{border-top:0;margin-top:14px}.page-btn.active{background:rgba(var(--accent-rgb),.16);color:var(--accent-dark);border-color:var(--accent)}
 @media(max-width:920px){.app-shell{padding:0 14px 18px}.app-header{min-height:68px}.layout{grid-template-columns:1fr}.sidebar{position:fixed;top:0;max-height:none;padding:18px;overflow:auto;z-index:100;box-shadow:12px 0 30px #0002}.content-panel{padding:16px 0 0}.mobile-filter-btn{display:inline-flex}.sidebar-head{display:flex}}
 @media(max-width:600px){.app-shell{padding:0 10px 16px}.document-list-heading{display:none!important}.document-grid.list-view{border-radius:9px}.list-view .doc-card{grid-template-columns:minmax(0,1fr) auto;gap:4px 8px;padding:10px}.list-view .doc-open{grid-column:1/-1}.list-view .doc-format{padding-left:48px}.list-view .card-actions{grid-column:2}.document-grid:not(.list-view){grid-template-columns:1fr}.toolbar-actions{flex-wrap:wrap}.search-shortcut{display:none}.search-input{padding-right:38px}.app-header h1{font-size:19px}}
+
+/* Explicit column placement: actions precede the document link in DOM order. */
+.document-grid.list-view .doc-card > .doc-open{grid-column:1;grid-row:1;min-width:0;width:100%}
+.document-grid.list-view .doc-card > .doc-format{grid-column:2;grid-row:1;min-width:0}
+.document-grid.list-view .doc-card > .card-actions{grid-column:3;grid-row:1;justify-self:end;min-width:0}
+.document-grid.list-view .doc-copy{min-width:0;width:100%}
+@media(max-width:600px){
+ .document-grid.list-view .doc-card > .doc-open{grid-column:1/-1;grid-row:1}
+ .document-grid.list-view .doc-card > .doc-format{grid-column:1;grid-row:2}
+ .document-grid.list-view .doc-card > .card-actions{grid-column:2;grid-row:2}
+}
