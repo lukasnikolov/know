@@ -872,7 +872,7 @@ input[type=date]{color-scheme:light}
       const titleRe=/^(?:(?:JUDr|Mgr|Bc|PhDr|Ing|JUDr|Ph\.D)\.\s*)+/i;
       const word="\\p{Lu}[\\p{L}’'\\-]+";
       const nameRe=new RegExp('^'+word+'(?:\\s+'+word+'){1,3}$','u');
-      const normalizeCase=v=>v===v.toLocaleUpperCase('cs')?v.toLocaleLowerCase('cs').replace(/(^|[\\s-])\\p{L}/gu,x=>x.toLocaleUpperCase('cs')):v;
+
       function splitName(v,notary){
         v=pdfClean(v);let title='';
         if(notary){const m=v.match(titleRe);if(m){title=m[0].trim().split(/\s+/).map(x=>({judr:'JUDr.',mgr:'Mgr.',bc:'Bc.',phdr:'PhDr.',ing:'Ing.'})[x.toLowerCase().replace(/\.$/,'')]||x).join(' ');v=v.slice(m[0].length).trim();}}
