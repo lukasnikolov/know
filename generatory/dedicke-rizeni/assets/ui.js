@@ -4,6 +4,13 @@
  const $=id=>document.getElementById(id);
  function start(){
   const form=document.querySelector('form');if(!form)return;
+  // Load the common preview layer for every generator. The original pilot already links it.
+  if(document.querySelector('.preview-box')){
+    const existingCss=document.querySelector('link[href*="letter-preview.css"]');
+    if(!existingCss){const link=document.createElement('link');link.rel='stylesheet';link.href='../assets/letter-preview.css?v=3';document.head.append(link);}
+    if(!document.querySelector('script[src*="letter-preview.js"]')){const script=document.createElement('script');script.src='../assets/letter-preview.js?v=3';document.head.append(script);}
+  }
+
   document.body.dataset.dnBrand=$('spol_de')?.checked?'de':'epet';
   for(const id of ['spol_de','spol_epet'])$(id)?.addEventListener('change',()=>{document.body.dataset.dnBrand=$('spol_de')?.checked?'de':'epet';});
   const header=document.querySelector('body>header')||document.querySelector('header');
