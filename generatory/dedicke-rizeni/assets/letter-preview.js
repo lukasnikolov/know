@@ -35,6 +35,21 @@ if(pilot){
  p.replaceChildren(decoration,head,body,bottom,page);
 }
 function brand(){const key=selected(),c=config[key];p.dataset.brand=key;decoration.querySelector('.dn-letter-url').textContent=c.url;contact.innerHTML='<span>Vyřizuje:</span><span>Oddělení péče o zákazníky</span><span>Telefon:</span><span>'+c.tel+'</span><span>E-mail:</span><span>'+c.email+'</span>';legal.innerHTML='<strong>'+c.name+'</strong> · '+c.address+'<br>'+c.url+' · '+c.tel+' · '+c.email;mark.textContent=c.mark;}
+
+// Update company wording only inside the visible document, including subsequent live updates.
+function normalizePreview(){
+ const walker=document.createTreeWalker(p,NodeFilter.SHOW_TEXT);
+ let n;while((n=walker.nextNode())){
+   const old=n.nodeValue;const next=old
+    .replace(/EP\s+ENERGY\s+TRADING(?:\s*,?\s*a\.\s*s\.)?/gi,config.epet.name)
+    .replace(/255\s*70\s*70\s*99\b/g,config.epet.tel)
+    .replace(/info@dobra-energie\.cz\b/gi,config.de.email)
+    .replace(/Klimentská\s+1216\s*\/\s*46\b/gi,'Klimentská 46');
+   if(next!==old)n.nodeValue=next;
+ }
+}
+normalizePreview();
+new MutationObserver(normalizePreview).observe(p,{subtree:true,childList:true,characterData:true});
 let zoom='75';function fit(){const available=frame.clientWidth;if(!available)return;const height=p.offsetHeight;const maxWidth=available/794;const target=zoom==='fit'?Math.min(maxWidth,Math.max(360,window.innerHeight-120)/height,1):Number(zoom)/100;const scale=Math.min(target,maxWidth);p.style.transform='scale('+scale+')';stage.style.width=(794*scale)+'px';stage.style.height=(height*scale)+'px';tools.querySelector('.dn-letter-scale').textContent='('+Math.round(scale*100)+' % skutečně)';}
 tools.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{zoom=b.dataset.zoom;tools.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));fit();}));document.addEventListener('change',e=>{if(e.target.name==='spolecnost'){brand();fit();}});new MutationObserver(()=>{brand();fit();}).observe(document.body,{attributes:true,attributeFilter:['data-dn-brand']});if(typeof ResizeObserver==='function')new ResizeObserver(fit).observe(p);if(typeof ResizeObserver==='function')new ResizeObserver(fit).observe(frame);window.addEventListener('resize',fit);brand();fit();
 };if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
